@@ -3,7 +3,7 @@
 Publisher: Keddeh Systems | Rights holder: Keddeh Systems (project attribution; legal ownership not independently verified)
 Author: OpenAI Codex, technical assessment and document preparation | Architecture and supplied source: Aboudy Keddeh
 Classification: Project research | Licence: Reserved rights; no new licence grant
-Version: 1.0 | Date: 8 October 2026 (Australia/Adelaide)
+Version: 1.1 | Date: 8 October 2026 (Australia/Adelaide)
 Status: Prepared for owner review and publication; no independent approval or certification
 Imported source baseline, followed by identified local fixes: Keddeh1/KEDDEH--, commit 29a22dcfdd89d8c7cf90c83d1bda7d7f9a5e37b9
 

@@ -1,0 +1,26 @@
+[
+  {
+    "artifact": "RV-A01.pdf",
+    "pages": 2,
+    "header_footer_page_checks": "PASS",
+    "rendered": true
+  },
+  {
+    "artifact": "RV-D01.pdf",
+    "pages": 4,
+    "header_footer_page_checks": "PASS",
+    "rendered": true
+  },
+  {
+    "artifact": "RV-F01.pdf",
+    "pages": 2,
+    "header_footer_page_checks": "PASS",
+    "rendered": true
+  },
+  {
+    "artifact": "RV-P01.pdf",
+    "pages": 2,
+    "header_footer_page_checks": "PASS",
+    "rendered": true
+  }
+]

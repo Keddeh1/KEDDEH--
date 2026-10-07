@@ -3,7 +3,7 @@
 Publisher: Keddeh Systems | Rights holder: Keddeh Systems (project attribution; legal ownership not independently verified)
 Author: OpenAI Codex, technical assessment and document preparation | Architecture and supplied source: Aboudy Keddeh
 Classification: Project research | Licence: Reserved rights; no new licence grant
-Version: 1.0 | Date: 8 October 2026 (Australia/Adelaide)
+Version: 1.1 | Date: 8 October 2026 (Australia/Adelaide)
 Status: Prepared for owner review and publication; no independent approval or certification
 Imported source baseline, followed by identified local fixes: Keddeh1/KEDDEH--, commit 29a22dcfdd89d8c7cf90c83d1bda7d7f9a5e37b9
 
@@ -69,6 +69,6 @@ Begin with T01 and T02 together. Resolve ABI/build failures in T08 before treati
 ## 6. Decision rules
 Promotion requires all mandatory checks for the selected deployment target to pass. An unavailable external service is an unexecuted external gate, not a local pass. The corrected native compilation permits further native validation; it does not replace concurrency, lifecycle or production operation checks. Repair must never change its own release gates or downgrade verification to manufacture success.
 ## 7. Limitations and unresolved decisions
-Required deployment decisions are database authority, worker identity model, Chromium isolation, checkpoint storage, network topology and release signing authority. The referenced formal publishing standard and DOCX template could not be retrieved by the skill reader. This release uses the accessible skill's metadata and rights requirements; exact template conformance remains unverified. Publication approval is not inferred from document generation.
+Required deployment decisions are database authority, worker identity model, Chromium isolation, checkpoint storage, network topology and release signing authority. The skill catalogue lists publishing-standard.md and KEDDEH_Research_Formal_Publishing_Template.docx. Direct reads failed; the catalogue bundle retrieval received proxy HTTP 403. The assets are listed but not retrieved in this execution context. Exact asset-based conformance has therefore not been tested. This is an access and verification boundary, not evidence of a document defect or missing template. Publication approval is not inferred from document generation.
 ## 8. Sources and research disposition
 Source references: paths above are relative to the stated GitHub baseline. Evidence E01-E06 is supplied in evidence/ with commands, exit codes and SHA-256 receipts. E05-generated-receipt.json is the current generated receipt; original repository evidence was restored after the test. The separate session-control module is outside the source baseline and is not represented as deployed. Source inspection establishes structure, not operating performance. No third-party literature review, standards certification, live pool share acceptance or deployed recovery experiment is claimed.

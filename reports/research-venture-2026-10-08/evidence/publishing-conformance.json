@@ -1,0 +1,39 @@
+{
+  "requirement_source": "retrieved SKILL.md; full reference and template listed but not retrieved",
+  "requirements": [
+    {
+      "requirement": "separate report identity",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "author and contribution attribution",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "publisher and rights attribution",
+      "status": "VERIFIED_WITH_ATTRIBUTION_LIMIT"
+    },
+    {
+      "requirement": "licence classification revision status",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "sources and execution evidence",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "rendering and header/footer/page checks",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "exact publishing-standard requirements",
+      "status": "NOT_EVALUATED_ASSET_ACCESS_BLOCKED"
+    },
+    {
+      "requirement": "exact DOCX template layout and structure",
+      "status": "NOT_EVALUATED_ASSET_ACCESS_BLOCKED"
+    }
+  ],
+  "access_result": "bundle request through managed proxy received HTTP 403",
+  "recourse": "saved additive network draft for sdmntprcentralus.oaiusercontent.com; requires settings save and environment publication"
+}
