@@ -23,6 +23,7 @@ export class VFSPrimitive {
   private inodes: Map<InodeId, z.infer<typeof InodeSchema>> = new Map();
   private locks: Set<InodeId> = new Set();
   private isHydrated = false;
+  constructor(private readonly storage = VFS_STORAGE_INDEXED_DB) {}
 
   private async acquireLock(id: InodeId): Promise<void> {
     while (this.locks.has(id)) {
@@ -40,7 +41,7 @@ export class VFSPrimitive {
    */
   async hydrateFromIndexedDb(): Promise<void> {
     try {
-      const persistedInodes = await VFS_STORAGE_INDEXED_DB.getAllInodes();
+      const persistedInodes = await this.storage.getAllInodes();
       for (const record of persistedInodes) {
         const brandedId = brandInodeId(record.id);
         this.inodes.set(brandedId, {
@@ -63,16 +64,15 @@ export class VFSPrimitive {
     await this.acquireLock(brandedId);
     try {
       if (this.inodes.has(brandedId)) throw new Error(`Inode already exists: ${id}`);
-      this.inodes.set(brandedId, validated);
-
-      // Async write-through to IndexedDB
-      VFS_STORAGE_INDEXED_DB.saveInode({
+      // Commit durable state before publishing the in-memory version.
+      await this.storage.saveInode({
         id,
         path: metadata.path,
         metadata,
         data,
         updatedAt: new Date().toISOString()
-      }).catch(err => console.warn(`[VFSPrimitive] Inode persist error for ${id}:`, err));
+      });
+      this.inodes.set(brandedId, validated);
     } finally {
       this.releaseLock(brandedId);
     }
@@ -85,7 +85,7 @@ export class VFSPrimitive {
       let inode = this.inodes.get(brandedId);
       if (!inode) {
         // Attempt lazy load from IndexedDB
-        const persisted = await VFS_STORAGE_INDEXED_DB.getInode(id);
+        const persisted = await this.storage.getInode(id);
         if (persisted) {
           inode = {
             id: persisted.id,
@@ -109,16 +109,15 @@ export class VFSPrimitive {
     await this.acquireLock(brandedId);
     try {
       if (!this.inodes.has(brandedId)) throw new Error(`Inode not found: ${id}`);
-      this.inodes.set(brandedId, validated);
-
-      // Async write-through to IndexedDB
-      VFS_STORAGE_INDEXED_DB.saveInode({
+      // Commit durable state before publishing the in-memory version.
+      await this.storage.saveInode({
         id,
         path: metadata.path,
         metadata,
         data,
         updatedAt: new Date().toISOString()
-      }).catch(err => console.warn(`[VFSPrimitive] Inode update persist error for ${id}:`, err));
+      });
+      this.inodes.set(brandedId, validated);
     } finally {
       this.releaseLock(brandedId);
     }
@@ -128,8 +127,9 @@ export class VFSPrimitive {
     const brandedId = brandInodeId(id);
     await this.acquireLock(brandedId);
     try {
-      if (!this.inodes.delete(brandedId)) throw new Error(`Inode not found: ${id}`);
-      VFS_STORAGE_INDEXED_DB.deleteInode(id).catch(err => console.warn(`[VFSPrimitive] Inode delete error for ${id}:`, err));
+      if (!this.inodes.has(brandedId)) throw new Error(`Inode not found: ${id}`);
+      await this.storage.deleteInode(id);
+      this.inodes.delete(brandedId);
     } finally {
       this.releaseLock(brandedId);
     }
@@ -137,7 +137,7 @@ export class VFSPrimitive {
 
   async flushToIndexedDb(): Promise<void> {
     for (const [id, inode] of this.inodes.entries()) {
-      await VFS_STORAGE_INDEXED_DB.saveInode({
+      await this.storage.saveInode({
         id: inode.id,
         path: inode.metadata.path,
         metadata: inode.metadata,

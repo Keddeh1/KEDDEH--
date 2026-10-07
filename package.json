@@ -16,7 +16,11 @@
     "mcp:start": "node mcp/server.mjs",
     "mcp:self-test": "node mcp/server.mjs --self-test",
     "test:engineering": "node --test tests/engineering-layer.test.mjs",
-    "mcp:stdio": "node mcp/server.mjs"
+    "mcp:stdio": "node mcp/server.mjs",
+    "test:core": "node --import tsx --import ./tests/register-assets.mjs --test tests/core-primitives.test.ts",
+    "inventory": "node scripts/source-inventory.mjs",
+    "runtime:bootstrap": "python3 scripts/bootstrap-keddeh-runtime.py",
+    "runtime:test": ".runtime-env/bin/python tests/runtime-package.test.py"
   },
   "dependencies": {
     "@google/genai": "^2.26.0",

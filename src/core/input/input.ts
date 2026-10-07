@@ -1,27 +1,19 @@
-/**
- * Input Primitive Implementation
- * 
- * Performance Goal: <16.6ms input resolution
- */
+export interface RuntimeInput { type: string; [key: string]: unknown; }
 
 export class InputPrimitive {
-  private handlers: Map<string, (e: any) => void> = new Map();
-
-  // Normalize all input types to a single event object
-  normalizeEvent(rawEvent: any): { type: string, payload: any } {
+  private readonly handlers = new Map<string, Set<(event: RuntimeInput) => void>>();
+  normalizeEvent(rawEvent: RuntimeInput): { type: string; payload: RuntimeInput } {
+    if (!rawEvent || typeof rawEvent.type !== 'string' || !rawEvent.type.trim()) throw new Error('INVALID_INPUT_EVENT');
     return { type: rawEvent.type, payload: rawEvent };
   }
-
-  // <16.6ms resolution
-  handleEvent(rawEvent: any): void {
+  handleEvent(rawEvent: RuntimeInput): void {
     const event = this.normalizeEvent(rawEvent);
-    const handler = this.handlers.get(event.type);
-    if (handler) {
-      handler(event.payload);
-    }
+    for (const handler of [...(this.handlers.get(event.type) ?? [])]) handler(event.payload);
   }
-
-  on(type: string, handler: (e: any) => void): void {
-    this.handlers.set(type, handler);
+  on(type: string, handler: (event: RuntimeInput) => void): () => void {
+    if (!type.trim() || typeof handler !== 'function') throw new Error('INVALID_INPUT_HANDLER');
+    const handlers = this.handlers.get(type) ?? new Set();
+    handlers.add(handler); this.handlers.set(type, handlers);
+    return () => { handlers.delete(handler); if (!handlers.size) this.handlers.delete(type); };
   }
 }

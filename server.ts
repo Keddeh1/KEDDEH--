@@ -1498,7 +1498,7 @@ const PROXY_HEADERS = {
   'Accept': 'application/json'
 };
 
-const ai = new GoogleGenAI(process.env.GEMINI_API_KEY ? { apiKey: process.env.GEMINI_API_KEY } : {});
+const ai = process.env.GEMINI_API_KEY ? new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY }) : null;
 
 async function startServer() {
   const app = express();
@@ -1723,6 +1723,7 @@ Provide engineering-aligned responses with rigorous discipline.`;
           parts: [{ text: m.content }]
         }));
 
+        if (!ai) return res.status(503).json({ ok: false, error: 'GEMINI_API_KEY_NOT_CONFIGURED' });
         const geminiResult = await ai.models.generateContent({
           model: "gemini-3.8-flash",
           contents: contents.length > 0 ? contents : [{ role: 'user', parts: [{ text: inputSymbol || 'System ping' }] }],

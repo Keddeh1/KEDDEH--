@@ -19,15 +19,17 @@ export class ProcessPrimitive extends EventEmitter {
 
   spawn(pid: number): void {
     const brandedPid = brandPid(pid);
+    if (this.processes.get(brandedPid)?.status === 'running') throw new Error('PROCESS_ALREADY_RUNNING');
     this.processes.set(brandedPid, { pid: brandedPid, status: 'running' });
     this.emit('spawn', brandedPid);
   }
 
-  // Guaranteed <5ms propagation
+  // Synchronous event dispatch; latency must be measured by the caller.
   terminate(pid: number, signal: 'SIGTERM' | 'SIGKILL'): void {
+    if (signal !== 'SIGTERM' && signal !== 'SIGKILL') throw new Error('INVALID_PROCESS_SIGNAL');
     const brandedPid = brandPid(pid);
     const proc = this.processes.get(brandedPid);
-    if (proc) {
+    if (proc && proc.status === 'running') {
       proc.status = 'terminated';
       this.emit('signal', { pid: brandedPid, signal });
       this.emit('terminated', brandedPid);
