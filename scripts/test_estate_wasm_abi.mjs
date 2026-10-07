@@ -99,6 +99,7 @@ async function runEstateVerificationSuite() {
     const exists = fs.existsSync(fullPath);
     const size = exists ? fs.statSync(fullPath).size : 0;
     const sha = exists ? sha256File(item.path) : 'UNLOCATED_ON_DISK';
+    const status = exists ? item.status : 'UNVERIFIED_MISSING_ARTIFACT';
 
     artifactsInventory.push({
       id: item.id,
@@ -108,11 +109,11 @@ async function runEstateVerificationSuite() {
       exists,
       byteSize: size,
       sha256: sha,
-      status: item.status,
+      status,
       targetSpecification: item.spec
     });
 
-    console.log(`  [CUSTODY] ${item.id.padEnd(12)} : ${item.name.padEnd(30)} | Size: ${size.toString().padStart(6)} B | SHA: ${sha.slice(0, 16)}... | Status: ${item.status}`);
+    console.log(`  [CUSTODY] ${item.id.padEnd(12)} : ${item.name.padEnd(30)} | Size: ${size.toString().padStart(6)} B | SHA: ${sha.slice(0, 16)}... | Status: ${status}`);
   }
 
   console.log('\n[PHASE 2: ISO/IEC/IEEE 29119 TEST CASE EXECUTION]');

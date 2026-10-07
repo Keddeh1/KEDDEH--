@@ -1,0 +1,65 @@
+[
+  {
+    "id": "E01",
+    "command": [
+      "node",
+      "--test",
+      "tests/engineering-layer.test.mjs"
+    ],
+    "cwd": "/workspace/KEDDEH--",
+    "exit_code": 0,
+    "sha256": "1b22f4d5310e90e6b086b76a775007541c32acf4de0b08468794172a2d0e331e"
+  },
+  {
+    "id": "E02",
+    "command": [
+      "node",
+      "mcp/server.mjs",
+      "--self-test"
+    ],
+    "cwd": "/workspace/KEDDEH--",
+    "exit_code": 0,
+    "sha256": "4f15f67be7ca8ed92c5554629c60e82b5f71306df7900196d6b73e4e4c75e1b2"
+  },
+  {
+    "id": "E03",
+    "command": [
+      "python3",
+      "mining-engine/moebius_memory_contract.py"
+    ],
+    "cwd": "/workspace/KEDDEH--",
+    "exit_code": 0,
+    "sha256": "a7dcdaafddfcfb3c07d29fc76860e2ef57e26b14ba96bc4e7c995250c5193e2f"
+  },
+  {
+    "id": "E04",
+    "command": [
+      "make",
+      "-C",
+      "opt/keddeh"
+    ],
+    "cwd": "/workspace/KEDDEH--",
+    "exit_code": 0,
+    "sha256": "2cc91caaf6d9f3fd4cf88d310340d44a9adcd31e5605450fd098a84e0cd1746a"
+  },
+  {
+    "id": "E05",
+    "command": [
+      "node",
+      "scripts/test_estate_wasm_abi.mjs"
+    ],
+    "cwd": "/workspace/KEDDEH--",
+    "exit_code": 0,
+    "sha256": "de9958008e649a0ca3f8b0fa0cf8d378a15dde2d0abc99f699d9dd6ac25fb30b"
+  },
+  {
+    "id": "E06",
+    "command": [
+      "node",
+      "scripts/test_wasm_kernel.cjs"
+    ],
+    "cwd": "/workspace/KEDDEH--",
+    "exit_code": 0,
+    "sha256": "9f45e9903c9e8e01e77c192e3b35c53fe87d72a7703e434fc378b70f0d340da0"
+  }
+]

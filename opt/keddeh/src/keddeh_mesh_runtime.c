@@ -4,7 +4,9 @@
  * ==============================================================================
  */
 
+#ifndef _GNU_SOURCE
 #define _GNU_SOURCE
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -18,6 +20,7 @@
 #include <fcntl.h>
 #include <time.h>
 #include <assert.h>
+#include <stddef.h>
 
 #define CACHE_LINE_SIZE     64
 #define TOTAL_LANES         20
@@ -62,11 +65,12 @@ _Static_assert(sizeof(KeddehMMIOTelemetryBlock) == CACHE_LINE_SIZE, "MMIO Block 
 /* Complete 128KB Linear SRAM Layout */
 typedef struct __attribute__((aligned(CACHE_LINE_SIZE))) {
     SpatialLanePacket lanes[TOTAL_LANES];      /* MEM-04 / MEM-05 */
-    uint8_t           sram_gap[52096];
+    uint8_t           sram_gap[0xD000 - sizeof(SpatialLanePacket) * TOTAL_LANES];
     KeddehMMIOTelemetryBlock mmio;             /* MEM-07 (Offset 0x0000D000) */
-    uint8_t           sram_tail[76736];
+    uint8_t           sram_tail[TOTAL_SRAM_SIZE - 0xD000 - sizeof(KeddehMMIOTelemetryBlock)];
 } KeddehSRAMCanvas;
 
+_Static_assert(offsetof(KeddehSRAMCanvas, mmio) == 0xD000, "MMIO offset must equal 0xD000");
 _Static_assert(sizeof(KeddehSRAMCanvas) == TOTAL_SRAM_SIZE, "Canvas must equal 128KB");
 
 static KeddehSRAMCanvas* g_canvas = NULL;
@@ -127,15 +131,22 @@ void* lane_execution_worker(void* arg) {
     return NULL;
 }
 
-int main() {
+int main(int argc, char **argv) {
+    if (argc == 2 && strcmp(argv[1], "--layout-check") == 0) {
+        printf("packet=%zu mmio_offset=%zu canvas=%zu\n", sizeof(SpatialLanePacket), offsetof(KeddehSRAMCanvas, mmio), sizeof(KeddehSRAMCanvas));
+        return 0;
+    }
     printf("====================================================================\n");
     printf("     KEDDEH DETERMINISTIC SPATIAL MESH KERNEL: PRODUCTION ENGINE   \n");
     printf("     DO-178C DAL-A / ISO 13485 / 64B Aligned / Zeroless Origin     \n");
     printf("====================================================================\n");
 
     int fd = shm_open(SHM_PATH, O_CREAT | O_RDWR, 0666);
-    ftruncate(fd, TOTAL_SRAM_SIZE);
+    if (fd == -1) { perror("shm_open"); return 1; }
+    if (ftruncate(fd, TOTAL_SRAM_SIZE) == -1) { perror("ftruncate"); close(fd); return 1; }
     g_canvas = (KeddehSRAMCanvas*)mmap(NULL, TOTAL_SRAM_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    if (g_canvas == MAP_FAILED) { perror("mmap"); close(fd); return 1; }
+    close(fd);
     memset(g_canvas, 0, TOTAL_SRAM_SIZE);
 
     /* Hardware Telemetry Registers Configuration */
@@ -164,7 +175,7 @@ int main() {
                    p->lane_id, p->base_nonce, p->gate_5_terminal, p->epistemic_state, p->rtt_latency_ns);
         }
         SpatialLanePacket* p20 = &g_canvas->lanes[19];
-        printf("Lane 20 | Nonce: %u | Digest: %u | State: %u | Trigger: %s\n",
+        printf("Lane %02u | Nonce: %u | Digest: %u | State: %u | Trigger: %s\n",
                p20->lane_id, p20->base_nonce, p20->gate_5_terminal, p20->epistemic_state,
                p20->comparator_trigger == 1 ? "BLOCK SOLVED" : "HASH > TARGET");
     }
