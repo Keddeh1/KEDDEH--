@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether OS · Sovereign Microkernel · A. Keddeh</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030712;
+      --panel-bg: rgba(15, 23, 42, 0.65);
+      --border: rgba(148, 163, 184, 0.12);
+      --accent-cyan: #22d3ee;
+      --accent-purple: #a855f7;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --font-main: 'Inter', -apple-system, system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      background-image: 
+        radial-gradient(circle at 50% -20%, rgba(34, 211, 238, 0.08), transparent 70%),
+        radial-gradient(circle at 0% 100%, rgba(168, 85, 247, 0.05), transparent 50%);
+    }
+
+    #desktop {
+      position: relative;
+      height: calc(100vh - 48px);
+      width: 100vw;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      grid-template-rows: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 16px;
+      z-index: 10;
+    }
+
+    .desktop-icon {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      border: 1px solid transparent;
+    }
+
+    .desktop-icon:hover {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .desktop-icon .icon-img {
+      font-size: 36px;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    }
+
+    .desktop-icon .label {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: center;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+      letter-spacing: 0.5px;
+    }
+
+    /* Taskbar Bottom */
+    #taskbar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: rgba(10, 15, 25, 0.85);
+      backdrop-filter: blur(24px) saturate(180%);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 8px;
+      z-index: 2000;
+    }
+
+    .taskbar-item {
+      height: 36px;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid transparent;
+    }
+    .taskbar-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .taskbar-item.active-window {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: rgba(34, 211, 238, 0.3);
+      box-shadow: 0 0 10px rgba(34, 211, 238, 0.1);
+    }
+
+    .taskbar-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--border);
+      margin: 0 4px;
+    }
+
+    #taskbar-telemetry {
+      margin-left: auto;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    /* Window System */
+    .window {
+      position: absolute;
+      background: var(--panel-bg);
+      backdrop-filter: blur(32px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 30px 70px -15px rgba(0,0,0,0.7);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 100;
+      animation: window-appear 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .window.maximized {
+      inset: 0 !important;
+      width: 100vw !important;
+      height: calc(100vh - 48px) !important;
+      border-radius: 0;
+    }
+    .window.minimized {
+      display: none;
+    }
+
+    @keyframes window-appear {
+      from { opacity: 0; transform: scale(0.92) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .window-header {
+      height: 38px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.05);
+      cursor: move;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .window-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .window-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .window-btn {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      color: rgba(0,0,0,0.5);
+      font-weight: bold;
+    }
+    .window-btn:hover { color: rgba(0,0,0,0.8); }
+
+    .btn-close { background: #ff5f56; }
+    .btn-min { background: #ffbd2e; }
+    .btn-max { background: #27c93f; }
+
+    .window-content {
+      flex: 1;
+      position: relative;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+    }
+
+    /* System Components */
+    .sys-panel { padding: 20px; font-family: var(--font-mono); font-size: 12px; height: 100%; overflow-y: auto; }
+    .sys-table { width: 100%; border-collapse: collapse; }
+    .sys-table th { text-align: left; padding: 8px; border-bottom: 2px solid var(--border); color: var(--accent-cyan); }
+    .sys-table td { padding: 8px; border-bottom: 1px solid var(--border); }
+    .sys-btn { padding: 4px 12px; background: rgba(255,255,255,0.1); border: 1px solid var(--border); border-radius: 4px; color: #fff; cursor: pointer; }
+    .sys-btn:hover { background: rgba(255,255,255,0.2); }
+    .sys-btn.danger { color: #ff5f56; border-color: #ff5f5644; }
+
+    /* Boot Overlay */
+    #boot-overlay {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      transition: opacity 0.8s;
+    }
+
+    .boot-logo {
+      font-size: 64px;
+      filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.4));
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(0.98); }
+    }
+
+    #boot-terminal {
+      width: 500px;
+      height: 200px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-cyan);
+      overflow: hidden;
+      padding: 16px;
+      background: rgba(34, 211, 238, 0.05);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="boot-overlay">
+    <div class="boot-logo">⌬</div>
+    <div id="boot-terminal"></div>
+  </div>
+
+  <div id="desktop"></div>
+
+  <div id="taskbar">
+    <div class="taskbar-item" onclick="toggleMenu()" title="Start Menu">⌬</div>
+    <div class="taskbar-divider"></div>
+    <div class="taskbar-item" onclick="openApp('chrome')" title="Google Chrome">🌐</div>
+    <div class="taskbar-item" onclick="openApp('terminal')" title="System Terminal">🐚</div>
+    <div class="taskbar-item" onclick="openApp('braink')" title="Braink Neural Studio">🧠</div>
+    <div class="taskbar-item" onclick="openApp('sql')" title="SQL Studio">📊</div>
+    <div class="taskbar-divider"></div>
+    <div id="taskbar-telemetry">
+      <div class="telemetry-row">
+        <span>CPU</span>
+        <span class="telemetry-val" id="val-cpu">--%</span>
+      </div>
+      <div class="telemetry-row">
+        <span>RAM</span>
+        <span class="telemetry-val" id="val-mem">--/-- GB</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let apps = [];
+    let openWindows = [];
+    let zIndexCounter = 100;
+    let focusedWindowId = null;
+
+    // Syscall Bridge
+    async function syscall(action, args = []) {
+      return new Promise((resolve) => {
+        const id = Math.random().toString(36).substring(2);
+        const handler = (e) => {
+          if (e.data && e.data.__kernel_syscall_response && e.data.__kernel_syscall_response.id === id) {
+            window.removeEventListener('message', handler);
+            resolve(e.data.__kernel_syscall_response.result);
+          }
+        };
+        window.addEventListener('message', handler);
+        window.parent.postMessage({ __kernel_syscall: { call: action, args, id } }, '*');
+      });
+    }
+
+    async function initSystem() {
+      logBoot('Initializing Sovereign Microkernel (AetherOS v6.8)...');
+      await new Promise(r => setTimeout(r, 400));
+      
+      logBoot('Verifying application provenance...');
+      const kernelInfo = window.__kernel_info || { id: 'aether-os', hash: 'none' };
+      const verified = await syscall(8, [kernelInfo.id, kernelInfo.hash]);
+      if (verified) logBoot('Provenance verified. Trusted Domain Active.');
+
+      logBoot('Scanning /bin for workstation binaries...');
+      const binEntries = await syscall(12, ['/bin']);
+      apps = (binEntries || []).map(e => ({
+        id: e.name.replace('.html', ''),
+        name: e.name.replace('.html', '').replace(/-/g, ' ').toUpperCase(),
+        icon: getIconForApp(e.name),
+        path: `/bin/${e.name}`,
+        width: 950, height: 650
+      }));
+
+      // Built-in system utilities
+      apps.push({ id: 'sys-files', name: 'File Explorer', icon: '📁', type: 'sys', width: 800, height: 500 });
+      apps.push({ id: 'sys-monitor', name: 'Task Manager', icon: '📈', type: 'sys', width: 700, height: 450 });
+
+      logBoot(`Starting Userspace Graphics Server...`);
+      await new Promise(r => setTimeout(r, 400));
+
+      document.getElementById('boot-overlay').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('boot-overlay').style.display = 'none';
+        renderDesktop();
+        updateTaskbar();
+        startTelemetry();
+      }, 800);
+    }
+
+    function getIconForApp(name) {
+      if (name.includes('chrome')) return '🌐';
+      if (name.includes('terminal')) return '🐚';
+      if (name.includes('sql')) return '📊';
+      if (name.includes('calc')) return '🧮';
+      if (name.includes('paint')) return '🎨';
+      if (name.includes('markdown')) return '📝';
+      if (name.includes('synth')) return '🎹';
+      if (name.includes('physics')) return '⚛️';
+      if (name.includes('game')) return '🕹️';
+      return '📄';
+    }
+
+    function renderDesktop() {
+      const desktop = document.getElementById('desktop');
+      desktop.innerHTML = '';
+      const desktopApps = apps.filter(a => ['chrome-browser', 'kex-linux-terminal', 'sys-files', 'sys-monitor'].includes(a.id));
+      desktopApps.forEach(app => {
+        const icon = document.createElement('div');
+        icon.className = 'desktop-icon';
+        icon.onclick = () => openApp(app.id);
+        icon.innerHTML = `<div class="icon-img">${app.icon}</div><div class="label">${app.name}</div>`;
+        desktop.appendChild(icon);
+      });
+    }
+
+    function updateTaskbar() {
+      const taskbar = document.getElementById('taskbar');
+      // Clear current app items (keep start and telemetry)
+      const existingItems = taskbar.querySelectorAll('.taskbar-item:not([title="Start Menu"])');
+      existingItems.forEach(i => i.remove());
+
+      const startDivider = taskbar.querySelector('.taskbar-divider');
+      
+      openWindows.forEach(win => {
+        const item = document.createElement('div');
+        item.className = `taskbar-item ${focusedWindowId === win.id ? 'active-window' : ''}`;
+        item.onclick = () => focusWindow(win.id);
+        item.innerHTML = `<span>${win.icon}</span><span style="max-width:100px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${win.name}</span>`;
+        taskbar.insertBefore(item, document.getElementById('taskbar-telemetry'));
+      });
+    }
+
+    async function openApp(type) {
+      const app = apps.find(a => a.id === type);
+      if (!app) return;
+
+      const winId = `win-${type}-${Date.now()}`;
+      const winData = { id: winId, type: app.id, name: app.name, icon: app.icon, maximized: false };
+      openWindows.push(winData);
+
+      const win = document.createElement('div');
+      win.id = winId;
+      win.className = 'window';
+      win.style.width = `${app.width}px`;
+      win.style.height = `${app.height}px`;
+      win.style.left = `${100 + (openWindows.length * 20)}px`;
+      win.style.top = `${80 + (openWindows.length * 20)}px`;
+      win.onmousedown = () => focusWindow(winId);
+
+      win.innerHTML = `
+        <div class="window-header">
+          <div class="window-title">${app.icon} ${app.name}</div>
+          <div class="window-controls">
+            <div class="window-btn btn-min" onclick="minimizeWindow('${winId}', event)">_</div>
+            <div class="window-btn btn-max" onclick="maximizeWindow('${winId}', event)">□</div>
+            <div class="window-btn btn-close" onclick="closeWindow('${winId}', event)">×</div>
+          </div>
+        </div>
+        <div class="window-content" id="content-${winId}">
+          <div class="loader" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.4); backdrop-filter:blur(10px); z-index:10;">
+             <div style="color:var(--accent-cyan); font-family:var(--font-mono); font-size:11px;">MOUNTING BINARY...</div>
+          </div>
+          <iframe id="frame-${winId}" src="about:blank"></iframe>
+        </div>
+      `;
+
+      document.body.appendChild(win);
+      makeDraggable(win);
+      focusWindow(winId);
+      updateTaskbar();
+
+      if (app.type === 'sys') {
+        renderSysApp(app.id, winId);
+      } else {
+        const inode = await syscall(2, [app.path]);
+        const frame = document.getElementById(`frame-${winId}`);
+        const contentDiv = document.getElementById(`content-${winId}`);
+        if (inode && inode.content) {
+          frame.srcdoc = inode.content;
+          frame.onload = () => contentDiv.querySelector('.loader').style.display = 'none';
+        } else {
+          contentDiv.innerHTML = `<div class="sys-panel" style="color:#ff5f56">EXEC_ERR: Access denied to ${app.path}</div>`;
+        }
+      }
+    }
+
+    async function renderSysApp(type, winId) {
+      const content = document.getElementById(`content-${winId}`);
+      content.querySelector('.loader').style.display = 'none';
+      content.querySelector('iframe').style.display = 'none';
+      
+      const panel = document.createElement('div');
+      panel.className = 'sys-panel';
+      content.appendChild(panel);
+
+      if (type === 'sys-files') {
+        renderFileExplorer(panel, '/');
+      } else if (type === 'sys-monitor') {
+        renderTaskManager(panel);
+      }
+    }
+
+    async function renderFileExplorer(container, path) {
+      container.innerHTML = `<div style="display:flex; justify-content:space-between; margin-bottom:15px; border-bottom:1px solid #333; padding-bottom:10px;">
+        <div style="color:var(--accent-cyan)">Index of ${path}</div>
+        <div style="cursor:pointer" onclick="this.parentElement.parentElement.innerHTML='Loading...'; renderFileExplorer(this.parentElement.parentElement, '/')">🏠 Root</div>
+      </div>`;
+      
+      const entries = await syscall(12, [path]);
+      if (!entries || entries.length === 0) {
+        container.innerHTML += '<div>Directory is empty.</div>';
+        return;
+      }
+
+      const table = document.createElement('table');
+      table.className = 'sys-table';
+      table.innerHTML = `<tr><th>Name</th><th>Type</th><th>Actions</th></tr>`;
+      
+      entries.forEach(e => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${e.type === 'dir' ? '📁' : '📄'} ${e.name}</td>
+          <td>${e.type.toUpperCase()}</td>
+          <td>
+            ${e.type === 'dir' ? `<button class="sys-btn" onclick="this.closest('.sys-panel').innerHTML='Loading...'; renderFileExplorer(this.closest('.sys-panel'), '${path === '/' ? '' : path}/${e.name}')">Open</button>` : ''}
+          </td>
+        `;
+        table.appendChild(tr);
+      });
+      container.appendChild(table);
+    }
+
+    async function renderTaskManager(container) {
+      container.innerHTML = `<div style="color:var(--accent-cyan); margin-bottom:15px; border-bottom:1px solid #333; padding-bottom:10px;">Kernel Process Table (Ring-0)</div>`;
+      const procs = await syscall(4);
+      
+      const table = document.createElement('table');
+      table.className = 'sys-table';
+      table.innerHTML = `<tr><th>PID</th><th>Command</th><th>State</th><th>Actions</th></tr>`;
+      
+      procs.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${p.pid}</td>
+          <td>${p.command}</td>
+          <td><span style="color:${p.state === 'RUNNING' ? '#27c93f' : '#94a3b8'}">${p.state}</span></td>
+          <td>
+            ${p.pid > 1 ? `<button class="sys-btn danger" onclick="syscall(5, [${p.pid}]).then(() => renderTaskManager(this.closest('.sys-panel')))">Kill</button>` : 'System'}
+          </td>
+        `;
+        table.appendChild(tr);
+      });
+      container.appendChild(table);
+    }
+
+    function focusWindow(id) {
+      const win = document.getElementById(id);
+      if (!win) return;
+      focusedWindowId = id;
+      win.style.zIndex = ++zIndexCounter;
+      document.querySelectorAll('.window').forEach(w => w.style.opacity = '0.7');
+      win.style.opacity = '1';
+      updateTaskbar();
+    }
+
+    function closeWindow(id, e) {
+      if (e) e.stopPropagation();
+      const win = document.getElementById(id);
+      if (win) win.remove();
+      openWindows = openWindows.filter(w => w.id !== id);
+      updateTaskbar();
+    }
+
+    function maximizeWindow(id, e) {
+      if (e) e.stopPropagation();
+      const win = document.getElementById(id);
+      win.classList.toggle('maximized');
+    }
+
+    function minimizeWindow(id, e) {
+      if (e) e.stopPropagation();
+      const win = document.getElementById(id);
+      win.classList.add('minimized');
+      focusedWindowId = null;
+      updateTaskbar();
+    }
+
+    function makeDraggable(el) {
+      const header = el.querySelector('.window-header');
+      let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      header.onmousedown = (e) => {
+        if (e.target.className.includes('window-btn')) return;
+        e.preventDefault();
+        pos3 = e.clientX; pos4 = e.clientY;
+        document.onmouseup = () => { document.onmouseup = null; document.onmousemove = null; };
+        document.onmousemove = (e) => {
+          e.preventDefault();
+          pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY;
+          pos3 = e.clientX; pos4 = e.clientY;
+          if (!el.classList.contains('maximized')) {
+            el.style.top = (el.offsetTop - pos2) + "px";
+            el.style.left = (el.offsetLeft - pos1) + "px";
+          }
+        };
+      }
+    }
+
+    async function startTelemetry() {
+      setInterval(async () => {
+        const stats = await syscall(6);
+        if (stats) {
+          document.getElementById('val-cpu').textContent = `${stats.cpu.toFixed(1)}%`;
+          document.getElementById('val-mem').textContent = `${stats.memUsed} / ${stats.memTotal} GB`;
+        }
+      }, 2000);
+    }
+
+    function logBoot(msg) {
+      const term = document.getElementById('boot-terminal');
+      const line = document.createElement('div');
+      line.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+      term.appendChild(line);
+      term.scrollTop = term.scrollHeight;
+    }
+
+    window.onload = initSystem;
+  </script>
+</body>
+</html>

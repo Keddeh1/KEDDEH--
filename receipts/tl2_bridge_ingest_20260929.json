@@ -1,0 +1,46 @@
+{
+  "schema": "kex.braink.github_ingest_receipt.v1",
+  "timestamp_local": "2026-09-29T23:15:00+09:30",
+  "repository": "aboudykeddeh276-stack/NEW-ENV-APP",
+  "target": "MCP and runtime ingestion for TL2 carrier bridge",
+  "source_package": "keddeh_tl2_bridge_actuation_20260929",
+  "commits": [
+    {
+      "sha": "e9ad3b32bc9c3aa09692131af4d27fc772b8ffc6",
+      "path": "mining-engine/carrier_tl2_bridge.py",
+      "claim": "host TL2 bridge entrypoint committed"
+    },
+    {
+      "sha": "57cbd8ab304cde53a82f95c0ac6e7ea3c94bcacf",
+      "path": "mining-engine/moebius_memory_contract.py",
+      "claim": "128KB memory contract checker committed"
+    },
+    {
+      "sha": "b663612303e8dd0d52e5e4fd86bad8b3a0da213c",
+      "path": "mcp/tools/tl2_bridge.json",
+      "claim": "MCP tool descriptor committed"
+    },
+    {
+      "sha": "f9cca2f06cba676876f909882adb92c5e8ee2e8d",
+      "path": "mcp/runtime-manifest.json",
+      "claim": "runtime manifest wired to TL2 resources"
+    },
+    {
+      "sha": "f3233397592ed673a57072a4fb18ee8f71230e75",
+      "path": "mcp/server.json",
+      "claim": "MCP server tool list exposes TL2 actions"
+    },
+    {
+      "sha": "a4b498817f14a03f45d940cc26cb0da047bb3990",
+      "path": "package.json",
+      "claim": "npm scripts expose TL2 runtime commands"
+    }
+  ],
+  "runtime_commands": [
+    "npm run tl2:memory",
+    "npm run tl2:probe",
+    "npm run tl2:serve-once",
+    "npm run tl2:send-valid"
+  ],
+  "truth_boundary": "Repository ingestion is complete. Live ViaBTC acceptance is not claimed by this receipt; it requires executing npm run tl2:probe or the bridge command in an environment with DNS/TCP access to bitcoin.viabtc.io:3333."
+}

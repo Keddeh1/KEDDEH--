@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KERA Sovereign Mesh Node · P2P Discovery Matrix · A. Keddeh</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030712;
+      --panel-bg: rgba(15, 23, 42, 0.85);
+      --border: rgba(147, 51, 234, 0.25);
+      --accent-purple: #a855f7;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --font-main: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      min-height: 100%;
+      height: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.12), transparent 70%),
+        linear-gradient(rgba(147, 51, 234, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(147, 51, 234, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 36px 36px, 36px 36px;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(168, 85, 247, 0.25);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(168, 85, 247, 0.5);
+    }
+
+    #app {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 14px;
+      gap: 14px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #000;
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    }
+
+    .sys-info {
+      display: flex;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+
+    .sys-info span strong {
+      color: var(--accent-purple);
+    }
+
+    /* Main Grid */
+    .dashboard {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      grid-template-rows: auto 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      .metrics-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .sys-info {
+        gap: 8px;
+      }
+    }
+
+    .card {
+      background: var(--panel-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card-title {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Status Grid */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .metric-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .metric-label {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      color: var(--text-secondary);
+      text-transform: uppercase;
+    }
+
+    .metric-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 4px;
+      font-family: var(--font-mono);
+    }
+
+    /* Peer List */
+    .peer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      flex: 1;
+    }
+
+    .peer-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(168, 85, 247, 0.15);
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+
+    .peer-card.active {
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    .peer-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      color: var(--accent-emerald);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 8px var(--accent-emerald);
+    }
+
+    /* Console */
+    .console {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      overflow-y: auto;
+      background: rgba(2, 6, 23, 0.8);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .log-line {
+      display: flex;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .log-time { color: #64748b; }
+    .log-tag { color: var(--accent-purple); font-weight: 600; }
+    .log-msg { color: #cbd5e1; }
+    .log-success { color: var(--accent-emerald); }
+    .log-error { color: #f43f5e; }
+
+    /* Footer */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+      background: var(--panel-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 11px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-emerald);
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="brand">
+        <div class="logo">K</div>
+        <div>
+          <h1 style="font-size: 14px; font-weight: 700; letter-spacing: -0.01em;">KERA Sovereign Mesh Node</h1>
+          <p style="font-size: 11px; color: var(--text-secondary);">server://kex/kera-mesh-node · P2P Discovery Substrate</p>
+        </div>
+      </div>
+      <div class="sys-info">
+        <span>MULTICAST: <strong>239.29.7.100:4003</strong></span>
+        <span>DOMAIN PORT: <strong>18054</strong></span>
+        <span>NAMESPACE: <strong>kex</strong></span>
+      </div>
+    </header>
+
+    <div class="dashboard">
+      <div class="card" style="grid-column: 1 / -1;">
+        <div class="card-title">
+          <span>P2P Cluster Discovery & Carrier Telemetry</span>
+          <span style="color: var(--accent-purple);">ACTIVE ROUTE: server://kex/kera-mesh-node</span>
+        </div>
+        <div class="metrics-row">
+          <div class="metric-box">
+            <div class="metric-label">Node Identifier</div>
+            <div class="metric-value" id="node-id" style="font-size: 15px; color: var(--accent-cyan);">KERA_DOMAIN_01</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-label">Active Mesh Peers</div>
+            <div class="metric-value" id="peer-count" style="color: var(--accent-emerald);">6 Connected</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-label">Topology Architecture</div>
+            <div class="metric-value" id="topology" style="font-size: 14px;">Triad of Triad</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-label">Supervision State</div>
+            <div class="metric-value" id="supervision" style="font-size: 14px; color: var(--accent-purple);">REHYDRATION</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <span>Host-Owned Sector Carrier Workers</span>
+          <span style="font-size: 10px; color: var(--accent-emerald);" id="workers-count">5 ATTACHED WORKERS</span>
+        </div>
+        <div class="peer-grid" id="peer-grid">
+          <div class="peer-card active">
+            <div class="peer-status"><div class="status-dot"></div><span>SECTOR_001 (keddeh.ALPHA)</span></div>
+            <span style="color: var(--text-secondary); font-size: 10px;">Socket: /run/stratum/v2/mining_lane_01.sock</span>
+          </div>
+          <div class="peer-card active">
+            <div class="peer-status"><div class="status-dot"></div><span>SECTOR_002 (keddeh.BETA)</span></div>
+            <span style="color: var(--text-secondary); font-size: 10px;">Socket: /run/stratum/v2/mining_lane_02.sock</span>
+          </div>
+          <div class="peer-card active">
+            <div class="peer-status"><div class="status-dot"></div><span>SECTOR_003 (keddeh.GAMMA)</span></div>
+            <span style="color: var(--text-secondary); font-size: 10px;">Socket: /run/stratum/v2/mining_lane_03.sock</span>
+          </div>
+          <div class="peer-card active">
+            <div class="peer-status"><div class="status-dot"></div><span>SECTOR_004 (keddeh.DELTA)</span></div>
+            <span style="color: var(--text-secondary); font-size: 10px;">Socket: /run/stratum/v2/mining_lane_04.sock</span>
+          </div>
+          <div class="peer-card active">
+            <div class="peer-status"><div class="status-dot"></div><span>SECTOR_005 (keddeh.EPSILON)</span></div>
+            <span style="color: var(--text-secondary); font-size: 10px;">Socket: /run/stratum/v2/mining_lane_05.sock</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card console" id="console"></div>
+    </div>
+
+    <footer>
+      <div class="badge">
+        <div class="status-dot"></div>
+        <span>PHYSICAL UDP MULTICAST ACTIVE</span>
+      </div>
+      <div style="font-family: var(--font-mono); color: var(--text-secondary);" id="footer-details">
+        KERA_MESH_NODE · Physical Group 239.29.7.100:4003 · dgram Linux Socket
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const consoleEl = document.getElementById('console');
+    const peerGridEl = document.getElementById('peer-grid');
+    
+    function addLog(msg, type = 'info') {
+      const line = document.createElement('div');
+      line.className = 'log-line';
+      const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
+      
+      let tag = '[KERA]';
+      let msgClass = 'log-msg';
+      
+      if (type === 'success') {
+        tag = '[OK]';
+        msgClass = 'log-success';
+      } else if (type === 'error') {
+        tag = '[ERR]';
+        msgClass = 'log-error';
+      } else if (type === 'mesh') {
+        tag = '[MESH]';
+        msgClass = 'log-msg';
+      }
+
+      line.innerHTML = `
+        <span class="log-time">${time}</span>
+        <span class="log-tag">${tag}</span>
+        <span class="${msgClass}">${msg}</span>
+      `;
+      
+      consoleEl.appendChild(line);
+      consoleEl.scrollTop = consoleEl.scrollHeight;
+      
+      if (consoleEl.children.length > 50) {
+        consoleEl.removeChild(consoleEl.firstChild);
+      }
+    }
+
+    async function pollMeshHealth() {
+      try {
+        const res = await fetch('/api/kera_domain/health');
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.ok) {
+            document.getElementById('node-id').textContent = data.node_id || 'KERA_DOMAIN_01';
+            document.getElementById('peer-count').textContent = `${data.active_peers || 5} Workers Attached`;
+            document.getElementById('footer-details').textContent = `Physical Socket: ${data.multicast_socket_status} · Group ${data.multicast_group} · Sent: ${data.packets_sent} · Recv: ${data.packets_received}`;
+            addLog(`Physical multicast socket verified: ${data.multicast_socket_status} on ${data.multicast_group}`, 'success');
+          }
+        }
+      } catch (err) {}
+    }
+
+    async function pollMeshTelemetry() {
+      try {
+        const res = await fetch('/api/mesh/telemetry');
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.ok) {
+            document.getElementById('topology').textContent = data.mesh_topology || 'TRIAD_OF_TRIAD';
+            document.getElementById('supervision').textContent = data.supervisor_state || 'ACTIVE';
+            
+            if (Array.isArray(data.workers) && data.workers.length > 0) {
+              document.getElementById('workers-count').textContent = `${data.workers.length} ATTACHED WORKERS`;
+              peerGridEl.innerHTML = '';
+              data.workers.forEach(w => {
+                const card = document.createElement('div');
+                card.className = 'peer-card active';
+                card.innerHTML = `
+                  <div class="peer-status"><div class="status-dot"></div><span>${w.worker_id} (${w.kex_address})</span></div>
+                  <span style="color: var(--text-secondary); font-size: 10px;">${w.socket} · Nonce: ${w.current_nonce}</span>
+                `;
+                peerGridEl.appendChild(card);
+              });
+              addLog(`SRAM Latch updated: ${data.workers.length} workers, cycles: ${data.cycles}`, 'mesh');
+            }
+          }
+        }
+      } catch (err) {}
+    }
+
+    // Initialize
+    addLog('Booting KERA Sovereign Mesh Node...');
+    setTimeout(() => addLog('Binding physical UDP multicast socket 239.29.7.100:4003', 'mesh'), 400);
+    setTimeout(() => addLog('Starting domain_runtime on 127.0.0.1:18054 (namespace=kex)', 'mesh'), 800);
+    setTimeout(() => addLog('PHYSICAL P2P MATRIX ACTIVE · Subscribed to sovereign mesh', 'success'), 1200);
+    setTimeout(() => {
+      addLog('Registered fabric route: server://kex/kera-mesh-node (target_type: resident-html)', 'success');
+      addLog('Registered fabric route: server://kex/sovereign-stratum-miner (target_type: resident-html)', 'success');
+      pollMeshHealth();
+      pollMeshTelemetry();
+    }, 1800);
+
+    setInterval(pollMeshHealth, 5000);
+    setInterval(pollMeshTelemetry, 8000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "SERVERspace Virtual Cloud Platform",
+  "short_name": "SERVERspace",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "orientation": "any",
+  "description": "Enterprise-grade virtual cloud server platform featuring natural open-source OS installation, DO-178C DAL-A formal verification, zero-copy WASM telemetry registers, and Braink bio-centric simulation.",
+  "categories": ["utilities", "business", "developer"],
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/vite.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

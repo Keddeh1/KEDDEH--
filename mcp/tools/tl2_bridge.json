@@ -1,0 +1,24 @@
+{
+  "schema": "kex.braink.mcp.tool.v1",
+  "name": "tl2_bridge",
+  "runtime": "python3",
+  "entrypoint": "mining-engine/carrier_tl2_bridge.py",
+  "commands": {
+    "probe_pool": "python3 mining-engine/carrier_tl2_bridge.py probe-pool --host bitcoin.viabtc.io --port 3333 --timeout 7",
+    "serve_once": "python3 mining-engine/carrier_tl2_bridge.py serve-once --sock /tmp/keddeh_guest_lane_001.sock",
+    "send_lane": "python3 mining-engine/carrier_tl2_bridge.py send-lane --sock /tmp/keddeh_guest_lane_001.sock --payload '<json-line>'",
+    "memory_contract": "python3 mining-engine/moebius_memory_contract.py"
+  },
+  "ports": {
+    "mcp_line_stream": 4002,
+    "bare_metal_tunnel": 19999,
+    "udp_multicast": 4003,
+    "stratum_carrier": 3333
+  },
+  "pool": {
+    "host": "bitcoin.viabtc.io",
+    "port": 3333,
+    "protocol": "stratum-v1"
+  },
+  "truth_boundary": "This MCP tool proves local code paths only when commands are executed. Live pool actuation requires successful DNS resolution and TCP connect to bitcoin.viabtc.io:3333."
+}

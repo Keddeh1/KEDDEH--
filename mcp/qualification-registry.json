@@ -1,0 +1,133 @@
+{
+  "schema": "kex.braink.qualification-registry.v1",
+  "constructs": {
+    "worker_lease": {
+      "construct": "worker lease",
+      "classification": "ESTABLISHED_CS_MECHANISM_WITH_KEDDEH_EXTENSION",
+      "established_correspondence": [
+        "lease-based ownership",
+        "heartbeat renewal",
+        "epoch/fencing token"
+      ],
+      "qualifications": [
+        "Lease expiry establishes ownership eligibility, not exactly-once external effects.",
+        "External effects require idempotency/fencing/readback."
+      ],
+      "falsification_obligations": [
+        "Demonstrate stale-holder rejection after successor epoch.",
+        "Run concurrent recovery against one expired work item and prove one logical disposition.",
+        "Inject a crash after external effect but before completion and verify reconciliation prevents duplicate effect."
+      ]
+    },
+    "wasm_isolation": {
+      "construct": "WASM isolation",
+      "classification": "ESTABLISHED_CS_MECHANISM_WITH_HOST_POLICY_DEPENDENCY",
+      "established_correspondence": [
+        "WebAssembly sandboxed execution",
+        "capability/import-controlled host interaction"
+      ],
+      "qualifications": [
+        "WebAssembly alone does not prove network denial.",
+        "Network, filesystem, syscall and resource isolation remain host/runtime responsibilities."
+      ],
+      "falsification_obligations": [
+        "Attempt unauthorized socket access.",
+        "Attempt undeclared filesystem access.",
+        "Verify resource bounds and host imports actually exposed to the module."
+      ]
+    },
+    "network_policy": {
+      "construct": "network policy",
+      "classification": "ESTABLISHED_ORCHESTRATION_MECHANISM_REQUIRING_RUNTIME_ENFORCEMENT",
+      "established_correspondence": [
+        "Kubernetes NetworkPolicy ingress/egress policy"
+      ],
+      "qualifications": [
+        "Policy YAML is desired state, not proof of enforcement.",
+        "Enforcement depends on the active networking implementation."
+      ],
+      "falsification_obligations": [
+        "Attempt prohibited ingress and egress from selected workload.",
+        "Capture observable denial at the enforcing layer.",
+        "Verify allowed DNS targets are explicitly scoped rather than port-only."
+      ]
+    },
+    "postgresql_tls": {
+      "construct": "PostgreSQL TLS",
+      "classification": "ESTABLISHED_DATABASE_SECURITY_MECHANISM",
+      "established_correspondence": [
+        "hostssl TLS transport",
+        "SCRAM-SHA-256 authentication",
+        "client certificate verification"
+      ],
+      "qualifications": [
+        "hostssl + SCRAM is TLS plus password authentication, not mutual TLS by itself.",
+        "mTLS requires client certificate verification or certificate authentication."
+      ],
+      "falsification_obligations": [
+        "Reject a client lacking the required certificate when mTLS is claimed.",
+        "Reject a client outside the allowed address scope.",
+        "Verify server identity from the client side."
+      ]
+    },
+    "braink": {
+      "construct": "BRAINK",
+      "classification": "KEDDEH_PROJECT_DEFINED_REASONING_ARCHITECTURE",
+      "established_correspondence": [
+        "lexical/dictionary data structures",
+        "symbolic routing",
+        "typed workflow composition",
+        "deterministic state-machine patterns"
+      ],
+      "qualifications": [
+        "Correspondence to established mechanisms does not make BRAINK semantically equivalent to them.",
+        "BRAINK-specific claims require KEDDEH implementation and execution evidence."
+      ],
+      "falsification_obligations": [
+        "Define an executable input/state/output contract for the claimed BRAINK operation.",
+        "Compare repeated runs for deterministic state/output where determinism is claimed.",
+        "Challenge semantic-preservation claims with adversarial lexical/relational inputs."
+      ]
+    },
+    "il_llm": {
+      "construct": "IL-LLM",
+      "classification": "KEDDEH_PROJECT_DEFINED_MATHEMATICAL_LANGUAGE_ARCHITECTURE",
+      "established_correspondence": [
+        "indexed data structures",
+        "graph/relational traversal",
+        "matrix/coordinate representations",
+        "formal language processing concepts"
+      ],
+      "qualifications": [
+        "External concepts establish correspondence only; they do not independently prove IL-LLM's stronger project-defined semantics.",
+        "Mathematical claims must be evaluated against the exact equations and invariants in KEDDEH research."
+      ],
+      "falsification_obligations": [
+        "State the precise mathematical invariant under test.",
+        "Construct counterexamples at boundary coordinates/states.",
+        "Compare declared mathematics to executable transition behavior and persisted state."
+      ]
+    },
+    "kex": {
+      "construct": "KEX",
+      "classification": "KEDDEH_CUMULATIVE_COMPUTE_TECHNOLOGY",
+      "established_correspondence": [
+        "state machines",
+        "virtual filesystems",
+        "checkpoint/recovery",
+        "runtime dispatch",
+        "capability routing",
+        "deterministic serialization"
+      ],
+      "qualifications": [
+        "Each KEX subsystem must retain its own evidence class.",
+        "A seed, manifest or route declaration is not automatically runtime operation."
+      ],
+      "falsification_obligations": [
+        "Trace seed -> instantiated state -> runtime action -> persisted/readback state.",
+        "Invalidate one dependency and verify rehydration/recovery behavior.",
+        "Prove route identity and state continuity across restart."
+      ]
+    }
+  }
+}

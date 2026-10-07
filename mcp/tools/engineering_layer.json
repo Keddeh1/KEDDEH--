@@ -1,0 +1,46 @@
+{
+  "schema": "kex.braink.mcp.engineering-tools.v1",
+  "protocol_target": "2026-07-28",
+  "tools": [
+    {
+      "name": "tot_safety_evaluate",
+      "purpose": "Decision/evidence gate; no private reasoning exposure.",
+      "invariants": [
+        "authority required",
+        "mutation evidence required",
+        "zero not address/state",
+        "capability escalation rejected"
+      ]
+    },
+    {
+      "name": "coordinate_register",
+      "purpose": "Evidence-backed coordinate registration without silent overwrite."
+    },
+    {
+      "name": "coordinate_resolve",
+      "purpose": "Resolve one nonzero coordinate."
+    },
+    {
+      "name": "coordinate_list",
+      "purpose": "Deterministic coordinate listing."
+    },
+    {
+      "name": "coordinate_promote",
+      "purpose": "Explicit evidence-backed supersession only."
+    },
+    {
+      "name": "layer2_reconcile",
+      "purpose": "Deterministic reconciliation; unresolved conflicts remain unresolved."
+    },
+    {
+      "name": "polarity_assess",
+      "purpose": "Compute opposing-polarity assessment; zero is result-only."
+    }
+  ],
+  "truth_boundaries": [
+    "tool registration != official MCP conformance",
+    "in-process coordinate directory != distributed peer federation",
+    "logical Layer-2 reconciliation != Ethernet/link-layer implementation",
+    "zero assessment result != zero address/state"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "worker_id": "SECTOR_003",
+  "worker_name": "keddeh.GAMMA",
+  "protocol": "Stratum V2 / IPC",
+  "pools": [
+    {
+      "url": "stratum+tcp://btc.viabtc.io:3333",
+      "user": "keddeh.GAMMA",
+      "pass": "123"
+    }
+  ]
+}

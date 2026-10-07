@@ -1,0 +1,3 @@
+# Production Environment Manifest
+# Generated for isolated Python 3.12+ execution environments.
+# Zero external runtime dependencies required - uses native OS socket extensions.

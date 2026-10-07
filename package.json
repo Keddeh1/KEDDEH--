@@ -1,0 +1,53 @@
+{
+  "name": "aether-os-kernel-substrate",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build",
+    "start": "node server.ts",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit",
+    "tl2:memory": "python3 mining-engine/moebius_memory_contract.py",
+    "tl2:probe": "python3 mining-engine/carrier_tl2_bridge.py probe-pool --host bitcoin.viabtc.io --port 3333 --timeout 7",
+    "tl2:serve-once": "python3 mining-engine/carrier_tl2_bridge.py serve-once --sock /tmp/keddeh_guest_lane_001.sock",
+    "tl2:send-valid": "python3 mining-engine/carrier_tl2_bridge.py send-lane --sock /tmp/keddeh_guest_lane_001.sock --payload '{\"id\":4,\"method\":\"mining.submit\",\"params\":[\"worker\",\"job\",\"00000000\",\"ffffffff\",\"00000001\"]}'",
+    "mcp:start": "node mcp/server.mjs",
+    "mcp:self-test": "node mcp/server.mjs --self-test",
+    "test:engineering": "node --test tests/engineering-layer.test.mjs",
+    "mcp:stdio": "node mcp/server.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "^2.26.0",
+    "@noble/hashes": "^2.4.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/crypto-js": "^4.2.2",
+    "@types/express": "^5.0.6",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "^5.0.4",
+    "axios": "^1.20.0",
+    "crypto-js": "^4.2.0",
+    "express": "^5.2.1",
+    "firebase": "^12.19.0",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "react-rnd": "^10.5.3",
+    "tsx": "^4.23.15",
+    "vite": "^6.2.3",
+    "wabt": "^1.0.39",
+    "ws": "^8.22.0",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.14",
+    "typescript": "~5.8.2"
+  }
+}

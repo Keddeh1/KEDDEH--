@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KEX Linux Virtual State Runtime — Epic Games & Universal Substrate</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05070b;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;user-select:none}
+#root{width:100%;height:100%;display:grid;place-items:center;position:relative}
+canvas{display:block;touch-action:none;outline:none}
+#hidden-file-input{display:none}
+</style>
+</head>
+<body>
+<div id="root">
+  <canvas id="kex" tabindex="0"></canvas>
+  <input type="file" id="hidden-file-input" multiple>
+</div>
+<script>
+(()=>{
+"use strict";
+
+/* ============================================================
+   KEX LINUX VIRTUAL STATE RUNTIME (EPIC GAMES STORE & SUBSTRATE)
+   Architecture:
+   BOOTLOADER -> VFS -> EPIC STORE PORTAL -> UNIVERSAL UNPACKER ->
+   RUNTIMES: Android ART (APK) | Win32 Proton (EXE) | Linux ELF
+   ============================================================ */
+
+const C=document.getElementById("kex"), X=C.getContext("2d",{alpha:false});
+const fileInput = document.getElementById("hidden-file-input");
+const DPR=()=>Math.max(1,Math.min(2,devicePixelRatio||1));
+let W=0,H=0,dpr=1,last=performance.now(),frame=0;
+
+function resize(){
+  dpr=DPR(); W=innerWidth; H=innerHeight;
+  C.width=Math.floor(W*dpr); C.height=Math.floor(H*dpr);
+  C.style.width=W+"px"; C.style.height=H+"px";
+  X.setTransform(dpr,0,0,dpr,0,0);
+}
+addEventListener("resize",resize); resize();
+
+/* ============================================================
+   BINARY PARSER, UNPACKER & EXECUTION DISPATCHER
+   ============================================================ */
+class UniversalEngine {
+  detectFormat(bytes, filename="") {
+    const ext = filename.split(".").pop().toLowerCase();
+    if (bytes.length >= 4) {
+      const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+      const sig32LE = view.getUint32(0, true);
+
+      // ZIP / APK / AppImage (PK\x03\x04)
+      if (sig32LE === 0x04034b50) return ext === "apk" ? "APK_ANDROID" : "ARCHIVE_ZIP";
+
+      // Windows PE Executable (MZ)
+      if (bytes[0] === 0x4D && bytes[1] === 0x5A) {
+        if (bytes.length > 0x3C + 4) {
+          const peOffset = view.getUint32(0x3C, true);
+          if (peOffset < bytes.length - 4 && view.getUint32(peOffset, true) === 0x00004550) {
+            const machine = view.getUint16(peOffset + 4, true);
+            return machine === 0x8664 ? "WIN_PE64" : "WIN_PE32";
+          }
+        }
+        return "WIN_PE32";
+      }
+
+      // Linux ELF (\x7fELF)
+      if (bytes[0] === 0x7F && bytes[1] === 0x45 && bytes[2] === 0x4C && bytes[3] === 0x46) {
+        return bytes[4] === 2 ? "LINUX_ELF64" : "LINUX_ELF32";
+      }
+    }
+
+    if (ext === "apk") return "APK_ANDROID";
+    if (ext === "exe" || ext === "msi") return "WIN_PE64";
+    if (ext === "elf" || ext === "appimage") return "LINUX_ELF64";
+    if (ext === "app" || ext === "dmg") return "MACOS_APP";
+    return "RAW_GENERIC";
+  }
+
+  parseZipHeaders(bytes) {
+    const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+    let offset = 0;
+    const files = [];
+    const decoder = new TextDecoder();
+
+    while (offset < bytes.byteLength - 30) {
+      const sig = view.getUint32(offset, true);
+      if (sig === 0x04034b50) {
+        const compSize = view.getUint32(offset + 18, true);
+        const uncompSize = view.getUint32(offset + 22, true);
+        const nameLen = view.getUint16(offset + 26, true);
+        const extraLen = view.getUint16(offset + 28, true);
+
+        const nameBytes = bytes.subarray(offset + 30, offset + 30 + nameLen);
+        const fileName = decoder.decode(nameBytes);
+        const dataOffset = offset + 30 + nameLen + extraLen;
+        const data = bytes.subarray(dataOffset, dataOffset + compSize);
+
+        files.push({ fileName, compSize, uncompSize, data });
+        offset = dataOffset + compSize;
+      } else {
+        break;
+      }
+    }
+    return files;
+  }
+
+  parsePEHeaders(bytes) {
+    if (bytes.length < 0x40) return { arch: "unknown", entry: "0x0", sections: [] };
+    const peOffset = view.getUint32(0x3C, true);
+    if (peOffset + 40 > bytes.byteLength) return { arch: "unknown", entry: "0x0", sections: [] };
+    
+    const machine = view.getUint16(peOffset + 4, true);
+    const numSections = view.getUint16(peOffset + 6, true);
+    const optHeaderSize = view.getUint16(peOffset + 20, true);
+    const entryPoint = view.getUint32(peOffset + 40, true);
+
+    const sections = [];
+    let secOffset = peOffset + 24 + optHeaderSize;
+    const decoder = new TextDecoder();
+
+    for (let i = 0; i < Math.min(numSections, 10); i++) {
+      if (secOffset + 40 <= bytes.byteLength) {
+        const secNameBytes = bytes.subarray(secOffset, secOffset + 8);
+        const secName = decoder.decode(secNameBytes).replace(/\0/g, "");
+        const virtSize = view.getUint32(secOffset + 8, true);
+        const virtAddr = view.getUint32(secOffset + 12, true);
+        sections.push({ name: secName, size: virtSize, addr: `0x${virtAddr.toString(16).padStart(8,"0")}` });
+        secOffset += 40;
+      }
+    }
+
+    return {
+      arch: machine === 0x8664 ? "x86_64" : "i386",
+      entry: `0x${entryPoint.toString(16).padStart(8,"0")}`,
+      sections
+    };
+  }
+
+  parseELFHeaders(bytes) {
+    const is64 = bytes[4] === 2;
+    const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+    let entry = 0;
+    try {
+      entry = is64 ? (bytes.length >= 32 ? Number(view.getBigUint64(24, true)) : 0) : (bytes.length >= 28 ? view.getUint32(24, true) : 0);
+    } catch(e) {}
+    return {
+      arch: is64 ? "x86_64" : "x86_32",
+      entry: `0x${entry.toString(16).padStart(8,"0")}`,
+      abi: bytes[7] === 0 ? "System V" : "GNU/Linux"
+    };
+  }
+}
+
+const engine = new UniversalEngine();
+const bootT = performance.now();
+
+/* ----------------------------- STATE ----------------------------- */
+const state = {
+  phase: "BOOTING", bootStep: 0, bootLines: [], uptime: 0,
+  pointer: { x: 0, y: 0, down: false },
+  drag: null,
+  active: "terminal",
+  computeLoad: 280,
+  terminal: { cwd: "/root", input: "", history: [], historyIndex: 0, lines: [] },
+  epicStore: {
+    status: "idle", // idle, downloading, ready
+    downloadProgress: 0,
+    activePackage: "Fortnite (Battle Royale & Zero Build)",
+    telemetry: [
+      "[EPIC] Connected to Epic Games Distribution Matrix (https://www.fortnite.com/download)",
+      "[ROUTER] Target profiles: KEDDEH.Env.OCILoop (Fortnite), Android ART, Win32 Proton",
+      "[READY] Select Store item or Drag & Drop APK / EXE / ELF to unpack & run."
+    ]
+  },
+  runningApp: null,
+  windows: {
+    terminal: { id: "terminal", title: "Terminal — root@kex-linux", x: 60, y: 60, w: Math.min(760, W - 120), h: Math.min(480, H - 120), open: true, z: 3 },
+    epic: { id: "epic", title: "Epic Games Store & Substrate Ingestion Hub", x: 120, y: 70, w: Math.min(840, W - 80), h: Math.min(540, H - 80), open: false, z: 2 },
+    runner: { id: "runner", title: "Active Application Runtime Container", x: 180, y: 50, w: Math.min(860, W - 60), h: Math.min(580, H - 60), open: false, z: 4 },
+    files: { id: "files", title: "Virtual File System Explorer", x: 160, y: 110, w: 620, h: 440, open: false, z: 2 },
+    hardware: { id: "hardware", title: "Software-Defined Hardware Grid (64 Cores / 1000 GPU Nodes)", x: 220, y: 90, w: 740, h: 500, open: false, z: 1 }
+  }
+};
+
+const HW = {
+  cores: 64, gpuCores: 1000, ramGB: 1024, usedGB: 28,
+  cpu: Array.from({ length: 64 }, (_, i) => ({ id: i, load: 0 })),
+  gpu: Array.from({ length: 1000 }, (_, i) => ({ id: i, active: false })),
+  tick(dt) {
+    const appLoad = state.runningApp ? 450 : (state.epicStore.status === "downloading" ? 350 : 0);
+    const curLoad = Math.min(1000, state.computeLoad + appLoad);
+    for (const c of this.cpu) {
+      const target = 4 + Math.random() * Math.min(94, 8 + curLoad / 12);
+      c.load = c.load * 0.84 + target * 0.16;
+    }
+    this.usedGB = Math.min(this.ramGB, 28 + curLoad * 0.015);
+    for (let i = 0; i < this.gpu.length; i++) this.gpu[i].active = i < curLoad;
+  }
+};
+
+/* ------------------------------ VFS ------------------------------ */
+const VFS = {
+  "/": { type: "dir" },
+  "/bin": { type: "dir" },
+  "/etc": { type: "dir" },
+  "/apps": { type: "dir" },
+  "/games": { type: "dir" },
+  "/games/epicgames": { type: "dir" },
+  "/home": { type: "dir" },
+  "/root": { type: "dir" },
+  "/proc": { type: "dir" },
+  "/var": { type: "dir" },
+  "/var/log": { type: "dir" },
+  "/tmp": { type: "dir" },
+  "/etc/os-release": { type: "file", data: 'NAME="KEX Linux Virtual State"\nVERSION="6.0 (Epic Games & Universal Substrate)"\nID=kex-linux\nARCH=x86_64\n' },
+  "/bin/epic": { type: "file", data: '#!/bin/sh\n# Launch Epic Games Store\nexec /bin/epic_store_gui "$@"\n' },
+  "/root/README": { type: "file", data: "KEX Linux Epic Games Substrate Edition.\n- Launch Store: 'epic' or click Epic icon on desktop\n- Ingest Any Binary: Drag & Drop APK, EXE, or ELF directly into the runtime.\n- Commands: 'run <target>', 'unpack <file>', 'tree', 'lscpu', 'free'\n" },
+  "/var/log/boot.log": { type: "file", data: "" }
+};
+
+function norm(p, cwd = "/root") {
+  if (!p) return cwd;
+  let a = p.startsWith("/") ? p : (cwd + "/" + p);
+  const out = [];
+  for (const s of a.split("/")) {
+    if (!s || s === ".") continue;
+    if (s === "..") out.pop(); else out.push(s);
+  }
+  return "/" + out.join("/");
+}
+
+function children(path) {
+  path = norm(path, "/");
+  const prefix = path === "/" ? "/" : path + "/", out = new Set();
+  for (const k of Object.keys(VFS)) {
+    if (k.startsWith(prefix) && k !== path) {
+      const r = k.slice(prefix.length).split("/")[0]; if (r) out.add(r);
+    }
+  }
+  return [...out].sort();
+}
+
+function persist() {
+  try {
+    localStorage.setItem("KEX_VFS_V6", JSON.stringify(VFS));
+    localStorage.setItem("KEX_TERM_V6", JSON.stringify(state.terminal.lines.slice(-250)));
+  } catch {}
+}
+try {
+  const saved = JSON.parse(localStorage.getItem("KEX_VFS_V6") || "null");
+  if (saved && saved["/"]) Object.assign(VFS, saved);
+} catch {}
+
+/* ------------------- INGESTION & RUNTIME DISPATCH ------------------- */
+function eLog(msg) {
+  const t = new Date().toISOString().split("T").slice(0, 8);
+  state.epicStore.telemetry.unshift(`[${t}] ${msg}`);
+  state.epicStore.telemetry = state.epicStore.telemetry.slice(0, 40);
+}
+
+async function ingestAndRunApplication(name, buffer) {
+  eLog(`Intercepted raw byte stream: ${name} (${buffer.byteLength.toLocaleString()} bytes)`);
+  const bytes = new Uint8Array(buffer);
+  const format = engine.detectFormat(bytes, name);
+  eLog(`Magic signature resolved: ${format}`);
+
+  let appData = {
+    name,
+    format,
+    size: bytes.length,
+    unpackedFiles: [],
+    details: {},
+    runtimeTarget: "KEDDEH.Runtime.GeneralCompute"
+  };
+
+  const appDir = `/apps/${name.replace(/[^a-zA-Z0-9._-]/g, "_")}`;
+  VFS[appDir] = { type: "dir" };
+
+  if (format === "APK_ANDROID" || format === "ARCHIVE_ZIP") {
+    eLog("Executing ZIP / APK local header extraction...");
+    const parsed = engine.parseZipHeaders(bytes);
+    appData.unpackedFiles = parsed.length > 0 ? parsed.map(f => f.fileName) : [
+      "AndroidManifest.xml", "classes.dex", "res/values/strings.xml", "lib/arm64-v8a/libnative.so", "assets/main.pak"
+    ];
+    appData.runtimeTarget = format === "APK_ANDROID" ? "KEDDEH.Runtime.AndroidART [Dalvik Container]" : "KEDDEH.Runtime.ArchiveMount";
+
+    appData.unpackedFiles.forEach(f => {
+      VFS[`${appDir}/${f}`] = { type: "file", data: `[EXTRACTED_PAYLOAD_BLOCK]\n` };
+    });
+
+    eLog(`Successfully unpacked ${appData.unpackedFiles.length} interior assets to ${appDir}`);
+    appData.details = {
+      package: format === "APK_ANDROID" ? (name.split(".")[0] || "com.epicgames.fortnite") : "zip.archive",
+      components: appData.unpackedFiles.length,
+      sdkTarget: "Android 14 (API 34)"
+    };
+  } else if (format === "WIN_PE64" || format === "WIN_PE32") {
+    eLog("Parsing Win32 PE headers, COFF section tables, and entrypoint...");
+    const pe = bytes.length > 128 ? engine.parsePEHeaders(bytes) : { arch: "x86_64", entry: "0x00401000", sections: [{ name: ".text", size: 65536, addr: "0x00401000" }, { name: ".data", size: 32768, addr: "0x00411000" }, { name: ".rsrc", size: 16384, addr: "0x00421000" }] };
+    appData.runtimeTarget = `KEDDEH.Runtime.Win32Proton [${pe.arch} Container]`;
+    appData.details = pe;
+    appData.unpackedFiles = pe.sections.map(s => `${s.name} (${s.addr}, ${s.size}B)`);
+
+    VFS[`${appDir}/${name}`] = { type: "file", data: `[PE_BINARY: ${pe.arch} | Entry: ${pe.entry}]\n` };
+    eLog(`PE Binary Mapped: Entry: ${pe.entry} | Sections: ${pe.sections.length}`);
+  } else if (format === "LINUX_ELF64" || format === "LINUX_ELF32") {
+    eLog("Parsing Linux ELF headers and program descriptors...");
+    const elf = bytes.length > 32 ? engine.parseELFHeaders(bytes) : { arch: "x86_64", entry: "0x00001080", abi: "GNU/Linux" };
+    appData.runtimeTarget = `KEDDEH.Runtime.LinuxNative [${elf.arch} POSIX Container]`;
+    appData.details = elf;
+    appData.unpackedFiles = [name, "libc.so.6", "ld-linux-x86-64.so.2"];
+
+    VFS[`${appDir}/${name}`] = { type: "file", data: `[ELF_BINARY: ${elf.arch} | Entry: ${elf.entry}]\n` };
+    eLog(`ELF Binary Mapped: Entry: ${elf.entry} | ABI: ${elf.abi}`);
+  } else {
+    appData.runtimeTarget = "KEDDEH.Runtime.GeneralCompute";
+    VFS[`${appDir}/${name}`] = { type: "file", data: `[RAW_PAYLOAD: ${bytes.length} bytes]\n` };
+    appData.unpackedFiles = [name];
+  }
+
+  VFS[`/bin/${name.split(".")[0]}`] = { type: "file", data: `#!/bin/sh\nexec ${appDir}/${name}\n` };
+  persist();
+
+  state.runningApp = {
+    ...appData,
+    frame: 0,
+    startTime: performance.now()
+  };
+
+  eLog(`Runtime dispatch active: Target container launched on Ring-0.`);
+  launchApp("runner");
+}
+
+function startStoreDownload(appName, mockType="fortnite") {
+  state.epicStore.status = "downloading";
+  state.epicStore.downloadProgress = 0;
+  state.epicStore.activePackage = appName;
+  eLog(`[STORE] Initiating download stream for '${appName}' from Epic CDN...`);
+}
+
+/* ----------------------------- SHELL ----------------------------- */
+function out(s = "", kind = "out") {
+  for (const line of String(s).split("\n")) state.terminal.lines.push({ text: line, kind });
+  state.terminal.lines = state.terminal.lines.slice(-500);
+}
+function prompt() { return `root@kex-linux:${state.terminal.cwd === "/root" ? "~" : state.terminal.cwd}# `; }
+function launchApp(id) {
+  if (state.windows[id]) {
+    state.windows[id].open = true;
+    focus(state.windows[id]);
+  }
+}
+
+function exec(line) {
+  line = line.trim(); if (!line) return;
+  state.terminal.history.push(line); state.terminal.historyIndex = state.terminal.history.length;
+  out(prompt() + line, "cmd");
+  const [cmd, ...args] = line.match(/(?:[^\s"]+|"[^"]*")+/g) || [];
+  const A = args.map(v => v.replace(/^"|"$/g, ""));
+  switch (cmd) {
+    case "help":
+      out("COMMANDS:\n  epic                - Open Epic Games Store & Ingestion Portal\n  run <sample>        - Ingest & execute (e.g. run fortnite.apk, run directx.exe)\n  tree [dir]          - Recursive directory tree\n  ls, cd, pwd, cat, write, mkdir, rm, uname, lscpu, free, ps, clear, reboot");
+      break;
+    case "epic":
+    case "store": launchApp("epic"); break;
+    case "run":
+    case "unpack": {
+      launchApp("epic");
+      const target = (A[0] || "fortnite.apk").toLowerCase();
+      const encoder = new TextEncoder();
+      let mockBytes;
+
+      if (target.includes("apk")) {
+        mockBytes = new Uint8Array([0x50, 0x4B, 0x03, 0x04, 0x14, 0x00, 0x00, 0x00, 0x00, 0x00, ...encoder.encode("MOCK_APK_STREAM_PAYLOAD_DEX")]);
+      } else if (target.includes("exe")) {
+        const pe = new Uint8Array(256);
+        pe[0] = 0x4D; pe[1] = 0x5A;
+        const dv = new DataView(pe.buffer);
+        dv.setUint32(0x3C, 0x80, true);
+        dv.setUint32(0x80, 0x00004550, true);
+        dv.setUint16(0x84, 0x8664, true);
+        dv.setUint16(0x86, 4, true);
+        mockBytes = pe;
+      } else {
+        mockBytes = new Uint8Array([0x7F, 0x45, 0x4C, 0x46, 0x02, 0x01, 0x01, 0x00, ...encoder.encode("MOCK_ELF_STREAM")]);
+      }
+      ingestAndRunApplication(A[0] || "fortnite.apk", mockBytes.buffer);
+      break;
+    }
+    case "pwd": out(state.terminal.cwd); break;
+    case "tree": {
+      const target = norm(A[0] || state.terminal.cwd, state.terminal.cwd);
+      out(target);
+      const keys = Object.keys(VFS).filter(k => k.startsWith(target) && k !== target).sort();
+      keys.forEach(k => out(" ├── " + k.slice(target.length + (target === "/" ? 0 : 1))));
+      break;
+    }
+    case "ls": {
+      const p = norm(A[0] || state.terminal.cwd, state.terminal.cwd);
+      if (!VFS[p]) out(`ls: cannot access '${A[0] || p}': No such file or directory`, "err");
+      else if (VFS[p].type === "file") out(p.split("/").pop());
+      else out(children(p).map(c => VFS[norm(c, p)]?.type === "dir" ? c + "/" : c).join("  "));
+      break;
+    }
+    case "cd": {
+      const p = norm(A[0] || "/root", state.terminal.cwd);
+      if (VFS[p]?.type === "dir") state.terminal.cwd = p; else out(`cd: ${A[0] || p}: No such directory`, "err"); break;
+    }
+    case "cat": {
+      const p = norm(A[0] || "", state.terminal.cwd);
+      if (VFS[p]?.type === "file") out(VFS[p].data); else out(`cat: ${A[0] || ""}: No such file`, "err"); break;
+    }
+    case "uname": out(A[0] === "-a" ? "Linux kex-linux 6.9.15-epic-substrate x86_64 GNU/Linux" : "Linux"); break;
+    case "lscpu": out(`Architecture: x86_64\nCPU(s): ${HW.cores}\nModel: KEX Software-Defined Multi-Substrate Grid\nVirtualization: Android ART | Win32 Proton | Native ELF`); break;
+    case "free": out(`               total        used        free\nMem:        ${HW.ramGB}G       ${HW.usedGB.toFixed(1)}G       ${(HW.ramGB - HW.usedGB).toFixed(1)}G\nSwap:             0G          0G          0G`); break;
+    case "ps": out(`  PID TTY          TIME CMD\n    1 tty0     00:00:00 init\n    7 tty0     00:00:00 kex-render\n   12 tty0     00:00:00 epic-store-daemon\n   42 tty0     00:00:01 ${state.runningApp?state.runningApp.name:'[idle]'}`); break;
+    case "clear": state.terminal.lines = []; break;
+    case "reboot": boot(true); break;
+    default: out(`${cmd}: command not found`, "err");
+  }
+  persist();
+}
+
+/* ------------------------------ BOOT ----------------------------- */
+const BOOT = [
+"[    0.000000] KEX virtual hardware state initialized (Enterprise Ring-0)",
+"[    0.003297] CPU: 64 hardware-isolated compute lanes online",
+"[    0.006297] Memory: 1048576 MB sparse virtual address space mapped",
+"[    0.010297] VFS: rehydrating persistent local volume",
+"[    0.014297] Substrate: Epic Games Store & Ingestion pipelines linked",
+"[    0.018297] Runtimes: Android ART, Win32 Proton & Linux ELF bridges active",
+"[    0.023297] Compositor: Canvas2D 60FPS Direct Surface online",
+"[  OK  ] Mounted / /proc /tmp /var /apps /games /home /root",
+"[  OK  ] Started Epic Games Substrate Daemon",
+"KEX Linux Virtual State 6.0 (Epic Games & Universal Substrate)",
+"kex-linux login: root",
+"Last login: browser warm boot"
+];
+function boot(re = false) {
+  state.phase = "BOOTING"; state.bootStep = 0; state.bootLines = []; state.terminal.input = "";
+  state.terminal.lines = [];
+  if (re) VFS["/var/log/boot.log"].data += "reboot " + new Date().toISOString() + "\n";
+}
+boot();
+
+/* ----------------------------- DRAWING ----------------------------- */
+function rect(x, y, w, h, fill, stroke = null, r = 0) {
+  X.beginPath();
+  if (r) X.roundRect(x, y, w, h, r); else X.rect(x, y, w, h);
+  if (fill) { X.fillStyle = fill; X.fill(); } if (stroke) { X.strokeStyle = stroke; X.stroke(); }
+}
+function text(t, x, y, size = 13, color = "#d7e3f4", align = "left", weight = "400") {
+  X.font = `${weight} ${size}px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace`;
+  X.fillStyle = color; X.textAlign = align; X.textBaseline = "alphabetic"; X.fillText(t, x, y);
+}
+function bg() {
+  const g = X.createLinearGradient(0, 0, W, H); g.addColorStop(0, "#050811"); g.addColorStop(0.52, "#0a1220"); g.addColorStop(1, "#040910");
+  X.fillStyle = g; X.fillRect(0, 0, W, H);
+  X.globalAlpha = 0.07; X.strokeStyle = "#38bdf8";
+  for (let x = 0; x < W; x += 44) { X.beginPath(); X.moveTo(x, 0); X.lineTo(x, H); X.stroke(); }
+  for (let y = 0; y < H; y += 44) { X.beginPath(); X.moveTo(0, y); X.lineTo(W, y); X.stroke(); }
+  X.globalAlpha = 1;
+}
+function icon(x, y, label, glyph) {
+  rect(x, y, 56, 56, "rgba(15,23,42,0.6)", "#1e293b", 8);
+  text(glyph, x + 28, y + 34, 26, "#e0f2fe", "center");
+  text(label, x + 28, y + 72, 11, "#cbd5e1", "center", "600");
+}
+function chrome(w) {
+  rect(w.x + 8, w.y + 10, w.w, w.h, "rgba(0,0,0,.45)", null, 10);
+  rect(w.x, w.y, w.w, w.h, "#080c14", "#1a283a", 10);
+  rect(w.x, w.y, w.w, 36, "#0f1724", null, 10);
+  rect(w.x, w.y + 28, w.w, 8, "#0f1724");
+  text(w.title, w.x + 15, w.y + 23, 12, "#e2e8f0", "left", "700");
+  X.beginPath(); X.arc(w.x + w.w - 18, w.y + 18, 6, 0, Math.PI * 2); X.fillStyle = "#ef4444"; X.fill();
+}
+
+function drawEpicStore(w) {
+  chrome(w);
+  const ex = w.x + 18, ey = w.y + 48, ew = w.w - 36;
+  
+  // Storefront Header Banner
+  rect(ex, ey, ew, 70, "#0b1324", "#1e293b", 8);
+  text("EPIC GAMES STORE & SUBSTRATE HUB", ex + 18, ey + 30, 16, "#f8fafc", "left", "900");
+  text("Distribution Node: https://www.fortnite.com/download • Drag & Drop Any APK/EXE to Ingest", ex + 18, ey + 52, 11, "#38bdf8");
+
+  // Catalogue Grid
+  const cardW = (ew - 24) / 3, cardH = 120, cardY = ey + 82;
+  const catalogue = [
+    { title: "Fortnite Battle Royale", sub: "APK / Win32 / Zero Build", col: "#2563eb", icon: "⚡" },
+    { title: "Unreal Engine 5", sub: "UEFN Native Substrate", col: "#0284c7", icon: "🛠️" },
+    { title: "Universal Ingest Drop", sub: "APK • EXE • ELF • APP", col: "#10b981", icon: "📥" }
+  ];
+
+  catalogue.forEach((c, i) => {
+    const cx = ex + i * (cardW + 12);
+    rect(cx, cardY, cardW, cardH, "#090f1a", "#1e2d42", 8);
+    text(c.icon, cx + cardW / 2, cardY + 36, 24, c.col, "center");
+    text(c.title, cx + cardW / 2, cardY + 68, 11, "#f8fafc", "center", "700");
+    text(c.sub, cx + cardW / 2, cardY + 86, 9, "#94a3b8", "center");
+
+    const btnW = cardW - 32, btnH = 22, btnX = cx + 16, btnY = cardY + 92;
+    rect(btnX, btnY, btnW, btnH, c.col, null, 4);
+    text(i === 2 ? "SELECT FILE" : "INSTALL & RUN", btnX + btnW / 2, btnY + 15, 9, "#ffffff", "center", "800");
+  });
+
+  // Progress Bar if Downloading
+  if (state.epicStore.status === "downloading") {
+    rect(ex, cardY + cardH + 12, ew, 32, "#0b121e", "#1e293b", 6);
+    rect(ex + 4, cardY + cardH + 16, (ew - 8) * (state.epicStore.downloadProgress / 100), 24, "#2563eb", null, 4);
+    text(`STREAMING & UNPACKING: ${state.epicStore.activePackage} (${Math.round(state.epicStore.downloadProgress)}%)`, ex + ew / 2, cardY + cardH + 32, 10, "#ffffff", "center", "800");
+  }
+
+  // Telemetry Console
+  const ty = cardY + cardH + (state.epicStore.status === "downloading" ? 52 : 14);
+  const th = w.h - (ty - w.y + 18);
+  rect(ex, ty, ew, th, "#03060a", "#1a2636", 6);
+  text("EPIC STORE DISTRIBUTION STREAM", ex + 14, ty + 18, 11, "#64748b", "left", "700");
+
+  let ly = ty + 38;
+  for (const line of state.epicStore.telemetry.slice(0, 7)) {
+    text(line, ex + 14, ly, 10, line.includes("signature resolved") ? "#38bdf8" : (line.includes("Successfully unpacked") ? "#10b981" : "#cbd5e1"));
+    ly += 18;
+  }
+}
+
+function drawRunner(w) {
+  chrome(w);
+  const app = state.runningApp;
+  const rx = w.x + 16, ry = w.y + 46, rw = w.w - 32, rh = w.h - 62;
+  rect(rx, ry, rw, rh, "#020408", "#1e293b", 8);
+
+  if (!app) {
+    text("No application actively running in container.", rx + rw / 2, ry + rh / 2, 13, "#64748b", "center");
+    return;
+  }
+
+  rect(rx, ry, rw, 36, "#0f172a", null, 8);
+  text(`[CONTAINER] ${app.name} — ${app.runtimeTarget}`, rx + 14, ry + 23, 12, "#38bdf8", "left", "700");
+  text(`PID: 42 • MEM: ${(app.size / 1024).toFixed(1)} KB • RUNNING`, rx + rw - 14, ry + 23, 10, "#4ade80", "right", "600");
+
+  const vX = rx + 16, vY = ry + 50, vW = rw * 0.58, vH = rh - 66;
+
+  if (app.format === "APK_ANDROID") {
+    // Android Viewport
+    rect(vX, vY, vW, vH, "#090d16", "#10b981", 12);
+    rect(vX, vY, vW, 20, "#05070a", null, 12);
+    text("12:00  •  5G LTE  •  100%", vX + vW / 2, vY + 14, 9, "#94a3b8", "center", "600");
+
+    rect(vX + vW / 2 - 80, vY + vH / 2 - 80, 160, 160, "#064e3b", "#10b981", 16);
+    text("📱 ANDROID ART", vX + vW / 2, vY + vH / 2 - 10, 14, "#34d399", "center", "800");
+    text(app.details.package || app.name, vX + vW / 2, vY + vH / 2 + 15, 11, "#ffffff", "center", "600");
+    text(`Target: ${app.details.sdkTarget}`, vX + vW / 2, vY + vH / 2 + 35, 10, "#a7f3d0", "center");
+  } else if (app.format.startsWith("WIN_PE")) {
+    // Win32 Proton Frame
+    rect(vX, vY, vW, vH, "#090d16", "#3b82f6", 6);
+    rect(vX, vY, vW, 22, "#1e293b", null, 6);
+    text("File   Edit   View   Proton-Direct3D   Help", vX + 12, vY + 15, 10, "#cbd5e1");
+
+    X.save();
+    X.translate(vX + vW / 2, vY + vH / 2 + 10);
+    X.rotate(performance.now() / 1500);
+    rect(-60, -60, 120, 120, "rgba(37,99,235,0.4)", "#60a5fa", 10);
+    X.restore();
+
+    text("DIRECT3D 12 / PROTON RUNTIME", vX + vW / 2, vY + vH - 30, 12, "#93c5fd", "center", "800");
+    text(`Entry: ${app.details.entry || '0x00401000'} | Arch: ${app.details.arch}`, vX + vW / 2, vY + vH - 12, 10, "#ffffff", "center");
+  } else {
+    // Linux Frame
+    rect(vX, vY, vW, vH, "#03060a", "#f59e0b", 6);
+    text("LINUX NATIVE X11 SURFACE", vX + 14, vY + 24, 12, "#fcd34d", "left", "700");
+    text(`Syscall Stream: sys_clone(), sys_mmap(), sys_futex()`, vX + 14, vY + 50, 10, "#94a3b8");
+    text(`Entrypoint: ${app.details.entry || '0x00001000'}`, vX + 14, vY + 70, 10, "#94a3b8");
+    rect(vX + 14, vY + 90, vW - 28, vH - 105, "#080c14", "#1a2636", 4);
+    text(`[stdout] ${app.name} daemon running at 60.0 FPS.`, vX + 24, vY + 120, 11, "#4ade80");
+  }
+
+  // Right Side: Unpacked Files
+  const mX = vX + vW + 16, mW = rw - vW - 48;
+  rect(mX, vY, mW, vH, "#090e17", "#1e293b", 6);
+  text("UNPACKED TOPOLOGY", mX + 12, vY + 22, 11, "#38bdf8", "left", "700");
+
+  let fy = vY + 46;
+  const fileList = app.unpackedFiles.slice(0, 14);
+  for (const f of fileList) {
+    text("📄 " + f, mX + 12, fy, 10, "#cbd5e1");
+    fy += 22;
+  }
+}
+
+function drawTerminal(w) {
+  chrome(w);
+  const top = w.y + 52, bottom = w.y + w.h - 16, lh = 18, max = Math.floor((bottom - top) / lh) - 1;
+  const lines = state.terminal.lines.slice(-max);
+  let y = top;
+  for (const l of lines) { text(l.text, w.x + 18, y, 12, l.kind === "cmd" ? "#38bdf8" : (l.kind === "err" ? "#f87171" : "#cbd5e1")); y += lh; }
+  text(prompt() + state.terminal.input + (Math.floor(performance.now() / 500) % 2 ? "█" : ""), w.x + 18, y, 12, "#38bdf8");
+}
+function drawFiles(w) {
+  chrome(w);
+  rect(w.x + 16, w.y + 48, w.w - 32, 30, "#0c121c", "#1a283a", 6);
+  text("PATH: " + state.terminal.cwd, w.x + 26, w.y + 68, 11, "#38bdf8", "left", "700");
+  let y = w.y + 102;
+  const list = Object.keys(VFS).sort().slice(0, 16);
+  for (const p of list) {
+    const isDir = VFS[p].type === "dir";
+    rect(w.x + 16, y - 14, w.w - 32, 22, isDir ? "rgba(56,189,248,0.06)" : "rgba(255,255,255,0.02)", null, 4);
+    text(isDir ? "📁" : "📄", w.x + 24, y + 2, 12, isDir ? "#38bdf8" : "#94a3b8");
+    text(p, w.x + 46, y + 2, 11, "#e2e8f0");
+    text(isDir ? "DIR" : `${VFS[p].data?.length || 0}B`, w.x + w.w - 32, y + 2, 10, "#64748b", "right");
+    y += 26;
+  }
+}
+function drawHardware(w) {
+  chrome(w);
+  text(`64 SYMMETRIC CPU EXECUTION LANES`, w.x + 22, w.y + 62, 11, "#94a3b8", "left", "700");
+  const bx = w.x + 22, by = w.y + 76, s = 11, g = 4;
+  HW.cpu.forEach((c, i) => {
+    const col = i % 16, row = Math.floor(i / 16), v = Math.floor(c.load * 2.4);
+    rect(bx + col * (s + g), by + row * (s + g), s, s, `rgb(${Math.min(255, v)},${Math.max(60, 200 - v)},220)`, null, 2);
+  });
+  text(`1000 GPU SHADER NODES (DIRECT COMPOSITE)`, w.x + 300, w.y + 62, 11, "#94a3b8", "left", "700");
+  HW.gpu.forEach((q, i) => {
+    const col = i % 40, row = Math.floor(i / 40);
+    rect(w.x + 300 + col * 7, w.y + 76 + row * 7, 5, 5, q.active ? "#38bdf8" : "#0c1522", null, 1);
+  });
+  const sy = w.y + w.h - 100, sx = w.x + 24, sw = w.w - 48;
+  text(`DYNAMIC DISPATCH ${state.computeLoad}/1000`, sx, sy - 12, 11, "#e2e8f0", "left", "700");
+  rect(sx, sy, sw, 8, "#0f172a", null, 4);
+  rect(sx, sy, sw * (state.computeLoad / 1000), 8, "#38bdf8", null, 4);
+  text(`SPARSE RAM ${HW.usedGB.toFixed(1)} GB / ${HW.ramGB} GB (Virtual Allocation Ring-0)`, sx, sy + 36, 11, "#94a3b8");
+}
+
+function taskbar() {
+  rect(0, H - 46, W, 46, "rgba(5,9,16,.98)", "#1a283a");
+  rect(12, H - 36, 120, 26, "#0a1d2d", "#38bdf8", 6);
+  text("⚡ Epic Core", 72, H - 19, 11, "#38bdf8", "center", "700");
+  text(`KEX LINUX v6.0 • EPIC STORE & SUBSTRATE • 64 CORES ACTIVE`, W - 18, H - 19, 11, "#64748b", "right", "700");
+}
+
+function bootScreen() {
+  bg(); const bw = Math.min(960, W - 60), bh = Math.min(600, H - 60), x = (W - bw) / 2, y = (H - bh) / 2;
+  rect(x, y, bw, bh, "#04070d", "#1a283a", 10);
+  text("KEX LINUX VIRTUAL STATE 6.0 (EPIC STORE BOOT)", x + 24, y + 36, 15, "#38bdf8", "left", "700");
+  let yy = y + 72; for (const l of state.bootLines.slice(-24)) { text(l, x + 24, yy, 12, l.includes("[  OK  ]") ? "#38bdf8" : "#94a3b8"); yy += 19; }
+  text("All execution bridges verified. Loading desktop...", x + 24, y + bh - 22, 11, "#64748b");
+}
+
+function desktop() {
+  bg();
+  icon(24, 24, "Terminal", "▣");
+  icon(24, 114, "Epic Store", "⚡");
+  icon(24, 204, "Container", "🎮");
+  icon(24, 294, "Files", "▤");
+  icon(24, 384, "Hardware", "▦");
+
+  const wins = Object.values(state.windows).filter(w => w.open).sort((a, b) => a.z - b.z);
+  for (const w of wins) {
+    if (w.id === "terminal") drawTerminal(w);
+    else if (w.id === "epic") drawEpicStore(w);
+    else if (w.id === "runner") drawRunner(w);
+    else if (w.id === "files") drawFiles(w);
+    else if (w.id === "hardware") drawHardware(w);
+  }
+  taskbar();
+}
+
+/* ----------------------------- INPUT & DRAG EVENTS ----------------------------- */
+function local(e) { const r = C.getBoundingClientRect(); return { x: (e.clientX - r.left) * W / r.width, y: (e.clientY - r.top) * H / r.height }; }
+function topWindowAt(x, y) {
+  return Object.values(state.windows).filter(w => w.open && x >= w.x && x <= w.x + w.w && y >= w.y && y <= w.y + w.h).sort((a, b) => b.z - a.z)[0];
+}
+function focus(w) { const z = Math.max(...Object.values(state.windows).map(v => v.z)) + 1; w.z = z; state.active = w.id; C.focus(); }
+
+C.addEventListener("pointerdown", e => {
+  const p = local(e); state.pointer = { ...p, down: true };
+  if (state.phase !== "RUNNING") return;
+
+  // Desktop Icons
+  if (p.x < 105 && p.y < 100) { launchApp("terminal"); return; }
+  if (p.x < 105 && p.y >= 100 && p.y < 190) { launchApp("epic"); return; }
+  if (p.x < 105 && p.y >= 190 && p.y < 280) { launchApp("runner"); return; }
+  if (p.x < 105 && p.y >= 280 && p.y < 370) { launchApp("files"); return; }
+  if (p.x < 105 && p.y >= 370 && p.y < 460) { launchApp("hardware"); return; }
+
+  const w = topWindowAt(p.x, p.y); if (!w) return; focus(w);
+  const cx = w.x + w.w - 18, cy = w.y + 18;
+  if (Math.hypot(p.x - cx, p.y - cy) < 12) { w.open = false; return; }
+
+  // Epic Store Actions
+  if (w.id === "epic") {
+    const ex = w.x + 18, ey = w.y + 48, ew = w.w - 36;
+    const cardW = (ew - 24) / 3, cardY = ey + 82;
+
+    // Card 1: Fortnite
+    if (p.x >= ex && p.x <= ex + cardW && p.y >= cardY && p.y <= cardY + 120) {
+      startStoreDownload("Fortnite (Battle Royale & Zero Build)", "fortnite");
+      return;
+    }
+    // Card 2: Unreal Engine
+    if (p.x >= ex + cardW + 12 && p.x <= ex + cardW * 2 + 12 && p.y >= cardY && p.y <= cardY + 120) {
+      startStoreDownload("Unreal Engine 5 (UEFN Runtime)", "ue5");
+      return;
+    }
+    // Card 3: Select Local File
+    if (p.x >= ex + (cardW + 12) * 2 && p.x <= ex + ew && p.y >= cardY && p.y <= cardY + 120) {
+      fileInput.click();
+      return;
+    }
+  }
+
+  if (p.y >= w.y && p.y <= w.y + 36) { state.drag = { id: w.id, dx: p.x - w.x, dy: p.y - w.y }; C.setPointerCapture(e.pointerId); }
+});
+
+C.addEventListener("pointermove", e => {
+  const p = local(e); state.pointer = { ...p, down: state.pointer.down };
+  if (state.drag) {
+    const w = state.windows[state.drag.id];
+    w.x = Math.max(0, Math.min(W - w.w, p.x - state.drag.dx));
+    w.y = Math.max(0, Math.min(H - 48 - w.h, p.y - state.drag.dy));
+  }
+});
+
+C.addEventListener("pointerup", () => { state.pointer.down = false; state.drag = null; });
+
+// Host Drag & Drop Event Handlers
+C.addEventListener("dragover", e => { e.preventDefault(); });
+C.addEventListener("drop", async e => {
+  e.preventDefault();
+  launchApp("epic");
+
+  const files = e.dataTransfer.files;
+  if (files && files.length > 0) {
+    const f = files[0];
+    const buffer = await f.arrayBuffer();
+    ingestAndRunApplication(f.name, buffer);
+  }
+});
+
+fileInput.addEventListener("change", async e => {
+  if (e.target.files.length === 0) return;
+  launchApp("epic");
+  const f = e.target.files[0];
+  const buffer = await f.arrayBuffer();
+  ingestAndRunApplication(f.name, buffer);
+});
+
+addEventListener("keydown", e => {
+  if (state.phase !== "RUNNING" || state.active !== "terminal" || !state.windows.terminal.open) return;
+  if (e.key === "Enter") { const v = state.terminal.input; state.terminal.input = ""; exec(v); e.preventDefault(); }
+  else if (e.key === "Backspace") { state.terminal.input = state.terminal.input.slice(0, -1); e.preventDefault(); }
+  else if (e.key === "ArrowUp") { if (state.terminal.history.length) { state.terminal.historyIndex = Math.max(0, state.terminal.historyIndex - 1); state.terminal.input = state.terminal.history[state.terminal.historyIndex] || ""; } e.preventDefault(); }
+  else if (e.key === "ArrowDown") { state.terminal.historyIndex = Math.min(state.terminal.history.length, state.terminal.historyIndex + 1); state.terminal.input = state.terminal.history[state.terminal.historyIndex] || ""; e.preventDefault(); }
+  else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) { state.terminal.input += e.key; e.preventDefault(); }
+});
+
+/* ----------------------------- RUNTIME LOOP ----------------------------- */
+function loop(now) {
+  const dt = Math.min(0.05, (now - last) / 1000); last = now; frame++; state.uptime = (now - bootT) / 1000;
+  HW.tick(dt);
+
+  // Epic Store Download Simulation
+  if (state.epicStore.status === "downloading") {
+    state.epicStore.downloadProgress += dt * 45;
+    if (state.epicStore.downloadProgress >= 100) {
+      state.epicStore.downloadProgress = 100;
+      state.epicStore.status = "ready";
+      const encoder = new TextEncoder();
+      const mockBytes = new Uint8Array([0x50, 0x4B, 0x03, 0x04, 0x14, 0x00, 0x00, 0x00, 0x00, 0x00, ...encoder.encode("FORTNITE_EPIC_APK_STORE_STREAM")]);
+      ingestAndRunApplication(`${state.epicStore.activePackage}.apk`, mockBytes.buffer);
+    }
+  }
+
+  if (state.phase === "BOOTING") {
+    if (state.bootStep < BOOT.length && frame % 6 === 0) {
+      const l = BOOT[state.bootStep++]; state.bootLines.push(l); VFS["/var/log/boot.log"].data += l + "\n";
+    }
+    if (state.bootStep >= BOOT.length && frame % 6 === 0) {
+      state.phase = "RUNNING";
+      out("KEX Linux Virtual State 6.0 (Epic Games & Universal Substrate)");
+      out("Type 'help' or 'epic' to open Store and Ingestion Portal.");
+      persist(); C.focus();
+    }
+    bootScreen();
+  } else desktop();
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

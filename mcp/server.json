@@ -1,0 +1,127 @@
+{
+  "name": "NEW-ENV-APP",
+  "version": "2.0.0",
+  "transport": "stdio",
+  "runtime": "node-stdio-plus-browser-local-plus-python-host",
+  "resources": [
+    {
+      "uri": "kex://new-env-app/index",
+      "path": "index.html",
+      "mime_type": "text/html"
+    },
+    {
+      "uri": "kex://new-env-app/runtime-manifest",
+      "path": "mcp/runtime-manifest.json",
+      "mime_type": "application/json"
+    },
+    {
+      "uri": "kex://new-env-app/tl2-bridge",
+      "path": "mining-engine/carrier_tl2_bridge.py",
+      "mime_type": "text/x-python"
+    },
+    {
+      "uri": "kex://new-env-app/tl2-tool",
+      "path": "mcp/tools/tl2_bridge.json",
+      "mime_type": "application/json"
+    },
+    {
+      "uri": "kex://new-env-app/qualification-registry",
+      "path": "mcp/qualification-registry.json",
+      "mime_type": "application/json"
+    },
+    {
+      "uri": "kex://new-env-app/mcp-server",
+      "path": "mcp/server.mjs",
+      "mime_type": "text/javascript"
+    },
+    {
+      "uri": "kex://new-env-app/engineering",
+      "path": "runtime/engineering/index.mjs",
+      "mime_type": "text/javascript"
+    },
+    {
+      "uri": "kex://new-env-app/report-03",
+      "path": "reports/REPORT_03_ENGINEERING_LAYER.md",
+      "mime_type": "text/markdown"
+    },
+    {
+      "uri": "kex://new-env-app/mcp-stdio-server",
+      "path": "mcp/server.mjs",
+      "mime_type": "text/javascript"
+    },
+    {
+      "uri": "kex://new-env-app/engineering-evidence",
+      "path": "evidence/REPORT_03_EXECUTION_RECEIPT.json",
+      "mime_type": "application/json"
+    },
+    {
+      "uri": "kex://new-env-app/mcp-tool/engineering-layer",
+      "path": "mcp/tools/engineering_layer.json",
+      "mime_type": "application/json"
+    }
+  ],
+  "tools": [
+    {
+      "name": "qualify_construct",
+      "description": "Return established C/S correspondence and engineering admission obligations for a KEX/BRAINK construct."
+    },
+    {
+      "name": "challenge_construct",
+      "description": "Return falsification obligations while preserving failed results as evidence."
+    },
+    {
+      "name": "runtime_self_test",
+      "description": "Check workbench truth-boundary and qualification mechanics."
+    },
+    {
+      "name": "tl2_probe_pool",
+      "description": "Run the physical DNS/TCP Stratum subscribe probe against bitcoin.viabtc.io:3333 through mining-engine/carrier_tl2_bridge.py."
+    },
+    {
+      "name": "tl2_guest_lane_once",
+      "description": "Bind one Unix-domain guest lane socket, read one line, validate mining.submit shape, and return the raw verdict."
+    },
+    {
+      "name": "moebius_memory_contract",
+      "description": "Verify the 128KB layout, telemetry range, Moebius ring range, 64-byte alignment, and 124-byte packet capacity."
+    },
+    {
+      "name": "tot_safety_evaluate",
+      "description": "Evaluate an explicit action against authority, evidence, zeroless address/state and capability-escalation invariants; returns an append-only receipt."
+    },
+    {
+      "name": "coordinate_register",
+      "description": "Register an evidence-backed nonzero coordinate/state record without silent overwrite."
+    },
+    {
+      "name": "coordinate_resolve",
+      "description": "Resolve one registered coordinate record."
+    },
+    {
+      "name": "coordinate_list",
+      "description": "List coordinate records in deterministic address order."
+    },
+    {
+      "name": "coordinate_promote",
+      "description": "Promote a coordinate revision only when explicit supersession evidence names the current revision."
+    },
+    {
+      "name": "layer2_reconcile",
+      "description": "Reconcile two evidence-backed coordinate states; conflicts remain unresolved unless ordering is explicit."
+    },
+    {
+      "name": "polarity_assess",
+      "description": "Compute the sum of opposing polarities; zero is permitted only as the computed assessment result."
+    },
+    {
+      "name": "engineering_self_test",
+      "description": "Check the runtime presence of the safety kernel, coordinate directory, reconciler and zero-assessment rule."
+    }
+  ],
+  "command": [
+    "node",
+    "mcp/server.mjs"
+  ],
+  "protocol_version": "2026-07-28",
+  "entrypoint": "mcp/server.mjs"
+}

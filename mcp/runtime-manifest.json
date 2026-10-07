@@ -1,0 +1,140 @@
+{
+  "schema": "kex.braink.mcp.runtime.v2",
+  "repository": "aboudykeddeh276-stack/NEW-ENV-APP",
+  "runtime_id": "NEW_ENV_APP_ENGINEERING_QUALIFICATION",
+  "entrypoints": [
+    "index.html",
+    "mining-engine/carrier_tl2_bridge.py",
+    "mining-engine/moebius_memory_contract.py",
+    "mcp/server.mjs",
+    "server.ts",
+    "runtime/engineering/index.mjs"
+  ],
+  "capabilities": [
+    "load_construct",
+    "qualify_claim",
+    "challenge_claim",
+    "self_test",
+    "preserve_truth_boundaries",
+    "tl2_guest_lane_socket_validation",
+    "tl2_pool_probe",
+    "moebius_memory_contract_check",
+    "qualify_construct",
+    "challenge_construct",
+    "runtime_self_test",
+    "tl2_probe_pool",
+    "tl2_guest_lane_once",
+    "moebius_memory_contract",
+    "tot_safety_evaluate",
+    "coordinate_register",
+    "coordinate_resolve",
+    "coordinate_list",
+    "coordinate_promote",
+    "layer2_reconcile",
+    "polarity_assess",
+    "engineering_self_test"
+  ],
+  "resources": [
+    {
+      "uri": "kex://new-env-app/index",
+      "path": "index.html",
+      "mime_type": "text/html"
+    },
+    {
+      "uri": "kex://new-env-app/tl2-bridge",
+      "path": "mining-engine/carrier_tl2_bridge.py",
+      "mime_type": "text/x-python"
+    },
+    {
+      "uri": "kex://new-env-app/moebius-memory-contract",
+      "path": "mining-engine/moebius_memory_contract.py",
+      "mime_type": "text/x-python"
+    },
+    {
+      "uri": "kex://new-env-app/mcp-tool/tl2-bridge",
+      "path": "mcp/tools/tl2_bridge.json",
+      "mime_type": "application/json"
+    },
+    {
+      "uri": "kex://new-env-app/engineering",
+      "path": "runtime/engineering/index.mjs",
+      "mime_type": "text/javascript"
+    },
+    {
+      "uri": "kex://new-env-app/tot-safety-kernel",
+      "path": "runtime/engineering/tot-safety-kernel.mjs",
+      "mime_type": "text/javascript"
+    },
+    {
+      "uri": "kex://new-env-app/distributed-coordinate-directory",
+      "path": "runtime/engineering/distributed-coordinate-directory.mjs",
+      "mime_type": "text/javascript"
+    },
+    {
+      "uri": "kex://new-env-app/layer2-reconciler",
+      "path": "runtime/engineering/layer2-reconciler.mjs",
+      "mime_type": "text/javascript"
+    },
+    {
+      "uri": "kex://new-env-app/report-03",
+      "path": "reports/REPORT_03_ENGINEERING_LAYER.md",
+      "mime_type": "text/markdown"
+    },
+    {
+      "uri": "kex://new-env-app/mcp-stdio-server",
+      "path": "mcp/server.mjs",
+      "mime_type": "text/javascript"
+    },
+    {
+      "uri": "kex://new-env-app/engineering-evidence",
+      "path": "evidence/REPORT_03_EXECUTION_RECEIPT.json",
+      "mime_type": "application/json"
+    },
+    {
+      "uri": "kex://new-env-app/mcp-tool/engineering-layer",
+      "path": "mcp/tools/engineering_layer.json",
+      "mime_type": "application/json"
+    }
+  ],
+  "truth_boundaries": [
+    "structural similarity != semantic equivalence",
+    "replay equality != truth",
+    "State 1 != external proof",
+    "artifact existence != runtime operation",
+    "empty initialized storage surface awaiting records = storage surface awaiting records",
+    "MCP registration != live pool connection",
+    "local Unix-domain socket pass != ViaBTC accepted share",
+    "zero is a computed assessment value only; zero is not an address or state",
+    "conflict without explicit supersession remains unresolved",
+    "in-process directory qualification != distributed peer federation",
+    "engineering self-test pass != production deployment"
+  ],
+  "integration": {
+    "mcp": true,
+    "browser_runtime": true,
+    "local_first": true,
+    "repository_authority": "source",
+    "tl2_bridge": {
+      "status": "ingested",
+      "entrypoint": "mining-engine/carrier_tl2_bridge.py",
+      "tool_descriptor": "mcp/tools/tl2_bridge.json",
+      "pool": "bitcoin.viabtc.io:3333",
+      "guest_lane_socket": "/tmp/keddeh_guest_lane_001.sock"
+    },
+    "mcp_transport": "stdio",
+    "runtime_carrier": "node-plus-python-host",
+    "braink_route": "new-env-app-mcp",
+    "engineering_layer": {
+      "status": "ingested",
+      "runtime": "runtime/engineering/index.mjs",
+      "tests": "tests/engineering-layer.test.mjs",
+      "report": "reports/REPORT_03_ENGINEERING_LAYER.md"
+    },
+    "mcp_stdio": {
+      "status": "ingested",
+      "entrypoint": "mcp/server.mjs",
+      "protocol_declared": "2026-07-28",
+      "legacy_initialize_compatibility": true
+    }
+  }
+}

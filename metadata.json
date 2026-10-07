@@ -1,0 +1,8 @@
+{
+  "name": "KEDDEH GRID - Authoritative Engineering Substrate",
+  "description": "Industrial-grade operating environment for non-repudiable compute synthesis, hardware-aligned ASIC mining, and relational software ingestion via the A. Keddeh master substrate.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

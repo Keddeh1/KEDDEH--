@@ -1,0 +1,12 @@
+{
+  "worker_id": "SECTOR_005",
+  "worker_name": "keddeh.EPSILON",
+  "protocol": "Stratum V2 / IPC",
+  "pools": [
+    {
+      "url": "stratum+tcp://btc.viabtc.io:3333",
+      "user": "keddeh.EPSILON",
+      "pass": "123"
+    }
+  ]
+}

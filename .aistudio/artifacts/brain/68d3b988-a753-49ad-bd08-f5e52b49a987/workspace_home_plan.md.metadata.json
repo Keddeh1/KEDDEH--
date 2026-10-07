@@ -1,0 +1,6 @@
+{
+  "summary":  "Redefinition of the Workspace Home as a logical VFS Substrate Monitor, mapping CS primitives (I/O, Inodes, Process Tree) to UI affordances.",
+  "updatedAt":  "2026-10-02T10:59:32.936536248Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

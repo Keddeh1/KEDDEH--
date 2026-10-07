@@ -1,0 +1,33 @@
+[Unit]
+Description=KEX BRAINK VFS Core Stratum Engine Platform (keddeh Engine)
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+WorkingDirectory=/opt/stratum_engine
+
+# Explicit execution mapping via local Virtual Environment Python interpreter
+ExecStart=/opt/stratum_engine/.venv/bin/python3 /opt/stratum_engine/main.py
+
+# Structural Telemetry and Identity Environment Controls
+Environment=PYTHONUNBUFFERED=1
+Environment=STRATUM_HOST=bitcoin.viabtc.io
+Environment=STRATUM_PORT=3333
+Environment=STRATUM_WORKER=keddeh.001
+Environment=HTTPS_PORT=8443
+Environment=TLS_CERT_PATH=/opt/stratum_engine/cert.pem
+Environment=TLS_KEY_PATH=/opt/stratum_engine/key.pem
+Environment=CONTROL_USER=admin
+Environment=CONTROL_PASS=HardenYourPassword2026
+
+Restart=always
+RestartSec=5s
+TimeoutStartSec=10s
+TimeoutStopSec=15s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

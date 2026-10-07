@@ -1,0 +1,56 @@
+{
+  "schema": "kex.braink.report03.execution-receipt.v1",
+  "observed_at": "2026-09-29T23:15:00+09:30",
+  "repository": "aboudykeddeh276-stack/NEW-ENV-APP",
+  "scope": "missing engineering layer + MCP/runtime ingestion",
+  "local_execution": {
+    "node_version": "v22.16.0",
+    "engineering_fault_tests": {
+      "passed": 12,
+      "failed": 0,
+      "duration_ms": 113.730118
+    },
+    "mcp_stdio_smoke": {
+      "cases": 4,
+      "observed": [
+        "server/discover returned 2026-07-28 declaration",
+        "tools/list returned engineering tools",
+        "polarity_assess returned assessment=0",
+        "coordinate_register with address=0 returned ZERO_NOT_PERMITTED_AS_ADDRESS"
+      ]
+    },
+    "sha256": {
+      "runtime/engineering/common.mjs": "72a873a5bad754e40619afd826b9f7fd18592e9a7daceb37431143aed4f77810",
+      "runtime/engineering/distributed-coordinate-directory.mjs": "36cc7dd9693823c1526c24557b2650f49a2dfae3ec715d381e3abf451a0bf65b",
+      "runtime/engineering/index.mjs": "72f5e127ac210e932fa657cf8246236fcc5c93243340e3a77089000fd26c1641",
+      "runtime/engineering/layer2-reconciler.mjs": "04c44f6df40c86fdc1418b899daff941fd487ddc3b1ce197a56cf4debb3b660f",
+      "runtime/engineering/tot-safety-kernel.mjs": "c20db2e97e26a86600f335d2eb922a330ab252f80997377f8a724e57d420df46",
+      "tests/engineering-layer.test.mjs": "a2424d9afaa87f2cac37fdba2b66981691f18c10007be8f55f4d0a37ee3fd902",
+      "local-mcp-smoke": "0309e788cdcaa55d201384e47886b465d55ffa56c176dbe5785f89bbe16e5f13"
+    }
+  },
+  "repository_commits": {
+    "common_and_modules": [
+      "6ebe178a2ecf56ea929325065833b25994b4586e",
+      "b60bef55163d50456b0ac9f7cfcdb21b5c88bbde",
+      "67ddbe1b9533b2eec27ffe94dc84526edab71402",
+      "960cc3a5a24acbb5c6b743d456ce0d0e61ee4f2e",
+      "02d258e265b5dd2871fdc1128224b897cdc9e75a",
+      "efe29e780faef3085579caf376845180d73f0a3b"
+    ],
+    "http_runtime": "94f10bef91422c51e7a6bef24b41046dd79a3780",
+    "runtime_manifest": "8b411b52294fcc3ce7e7fda95c06fb81f66f547b",
+    "mcp_server": "88469fa4f90bd5aa1aae52b69021274c84b15de7",
+    "package_runtime_commands": "fae7bd98820a0a90042e609bd2d2fee4d70eebcd",
+    "qualification_workflow": "7f3f1e2d0adae0a126694daa8a00f3e35b96ceb2",
+    "mcp_server_config": "6794a24b6eed70c62fec2d0d48f8897fb0dc01ff",
+    "engineering_tool_descriptor": "42fc36fe4ffc24a3823f6c96c9ecb5cadb8ffe44",
+    "report_03": "59063f0aabd1a08908223c5ff1bf031e85bdbd3b",
+    "execution_receipt_initial": "d90b15f9b76a4d505217f9b7fcf4a3b7edb8048c"
+  },
+  "committed_ci_execution": {
+    "status": "UNOBSERVED",
+    "reason": "GitHub returned no workflow run for qualification workflow commit 7f3f1e2d0adae0a126694daa8a00f3e35b96ceb2 on two readbacks."
+  },
+  "evidence_grade": "LOCAL_EXECUTION_PLUS_REMOTE_SOURCE_COMMIT; REMOTE_CI_EXECUTION_UNOBSERVED"
+}

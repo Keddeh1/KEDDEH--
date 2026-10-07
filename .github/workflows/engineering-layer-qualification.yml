@@ -1,0 +1,45 @@
+name: Engineering Layer Qualification
+
+on:
+  push:
+    paths:
+      - 'runtime/engineering/**'
+      - 'tests/engineering-layer.test.mjs'
+      - 'mcp/**'
+      - 'server.ts'
+      - 'package.json'
+      - '.github/workflows/engineering-layer-qualification.yml'
+  workflow_dispatch:
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax check engineering runtime
+        run: |
+          node --check runtime/engineering/common.mjs
+          node --check runtime/engineering/tot-safety-kernel.mjs
+          node --check runtime/engineering/distributed-coordinate-directory.mjs
+          node --check runtime/engineering/layer2-reconciler.mjs
+          node --check runtime/engineering/index.mjs
+          node --check mcp/server.mjs
+      - name: Fault injection tests
+        run: node --test tests/engineering-layer.test.mjs
+      - name: MCP runtime self-test
+        run: node mcp/server.mjs --self-test
+      - name: MCP modern discovery and tool call smoke
+        run: |
+          printf '%s\n' \
+            '{"jsonrpc":"2.0","id":1,"method":"server/discover","params":{},"_meta":{"protocolVersion":"2026-07-28"}}' \
+            '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"polarity_assess","arguments":{"positive":3,"negative":-3}},"_meta":{"protocolVersion":"2026-07-28"}}' \
+            '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"coordinate_register","arguments":{"address":"0","state":"READY","revisionId":"R1","authority":"USER_OPERATOR","evidence":["fault"]}},"_meta":{"protocolVersion":"2026-07-28"}}' \
+            | node mcp/server.mjs | tee /tmp/mcp-smoke.jsonl
+          grep -q '"assessment":0' /tmp/mcp-smoke.jsonl
+          grep -q 'ZERO_NOT_PERMITTED_AS_ADDRESS' /tmp/mcp-smoke.jsonl

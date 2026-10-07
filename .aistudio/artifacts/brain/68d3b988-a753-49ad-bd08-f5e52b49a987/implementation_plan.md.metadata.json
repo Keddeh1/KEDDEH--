@@ -1,0 +1,6 @@
+{
+  "summary":  "Revised plan to restore the full application build as default, place decoupled planes and runtime tools into dedicated sidebar and header tabs, and make the floating window environment an accessible, toggleable workspace.",
+  "updatedAt":  "2026-10-03T03:45:34.007371386Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}
