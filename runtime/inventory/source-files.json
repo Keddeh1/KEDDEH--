@@ -1932,6 +1932,15 @@
       "review_status": "EVOLVED_VALIDATED"
     },
     {
+      "path": "src/core/kex/dependencyOrder.ts",
+      "bytes": 1107,
+      "sha256": "a68c138efa716c34b51fe4ef3de9866321ea5d1d973194c5997eccbf43943f16",
+      "sector": "src",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "src/core/kex/kex.ts",
       "bytes": 573,
       "sha256": "0df9ac5cf65e60c6dcaa074f501a46c920bac91b6bec3f584ab7da0880d5f33e",
@@ -2249,8 +2258,8 @@
     },
     {
       "path": "src/services/DependencyService.ts",
-      "bytes": 3837,
-      "sha256": "8ae495dc926ab447e4e2d1b4421813b08109ad79fdf5f4fa29430168aec44b0b",
+      "bytes": 3413,
+      "sha256": "e8a302c71e90d769bab2c3bf4f2a3a68416c1d79ca9918bd1a2aa849cbbac754",
       "sector": "src",
       "source": true,
       "review_signals": [
@@ -2565,8 +2574,8 @@
     },
     {
       "path": "tests/core-primitives.test.ts",
-      "bytes": 3227,
-      "sha256": "de474d6567474bc42655400b0a6f9c9d8cf2e89725b8da391530a6e5525db383",
+      "bytes": 3954,
+      "sha256": "219d6b65456c9b16fc2a2f68ed6ab8339e703df7cd932f3c9cf2e7a0c9909145",
       "sector": "tests",
       "source": true,
       "review_signals": [],

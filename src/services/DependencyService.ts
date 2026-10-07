@@ -1,5 +1,5 @@
 import { SoftwarePackage } from '../types';
-import { INITIAL_SOFTWARE_PACKAGES } from '../data/softwareCenterData';
+import { dependencyOrder } from '../core/kex/dependencyOrder';
 import { GLOBAL_KERNEL_SERVICE } from './KernelService';
 import { PROVENANCE_SERVICE } from './ProvenanceService';
 
@@ -20,6 +20,7 @@ class DependencyService {
   }
 
   private loadState() {
+    if (typeof localStorage === 'undefined') return;
     const saved = localStorage.getItem('kex_installed_software');
     if (saved) {
       try {
@@ -33,7 +34,7 @@ class DependencyService {
 
   private saveState() {
     const data = Object.fromEntries(this.installed.entries());
-    localStorage.setItem('kex_installed_software', JSON.stringify(data));
+    if (typeof localStorage !== 'undefined') localStorage.setItem('kex_installed_software', JSON.stringify(data));
   }
 
   getInstalledPackages(): InstalledSoftware[] {
@@ -46,35 +47,18 @@ class DependencyService {
 
   async resolveAndInstall(pkg: SoftwarePackage, allPkgs: SoftwarePackage[]): Promise<string[]> {
     const logs: string[] = [];
-    const missing = this.getMissingDependencies(pkg, allPkgs);
-
-    if (missing.length > 0) {
-      logs.push(`[RESOLVE] Cascading installation for dependencies: ${missing.map(d => d.id).join(', ')}`);
-      for (const dep of missing) {
-        await this.installInternal(dep, allPkgs, logs);
+    const ordered = dependencyOrder(pkg, allPkgs);
+    for (const item of ordered) {
+      if (this.installed.get(item.id)?.version !== item.version) {
+        logs.push(`[RESOLVE] ${item.id}@${item.version}`);
+        await this.installInternal(item, allPkgs, logs);
       }
     }
-
-    await this.installInternal(pkg, allPkgs, logs);
     return logs;
   }
 
-  private getMissingDependencies(pkg: SoftwarePackage, allPkgs: SoftwarePackage[]): SoftwarePackage[] {
-    const deps: SoftwarePackage[] = [];
-    pkg.dependencies.forEach(depId => {
-      if (!this.isInstalled(depId)) {
-        const dep = allPkgs.find(p => p.id === depId);
-        if (dep) {
-          deps.push(...this.getMissingDependencies(dep, allPkgs));
-          deps.push(dep);
-        }
-      }
-    });
-    return Array.from(new Set(deps));
-  }
-
   private async installInternal(pkg: SoftwarePackage, allPkgs: SoftwarePackage[], logs: string[]) {
-    if (this.isInstalled(pkg.id)) return;
+    if (this.installed.get(pkg.id)?.version === pkg.version) return;
 
     logs.push(`[BUILD] Compiling ${pkg.name} v${pkg.version}...`);
     

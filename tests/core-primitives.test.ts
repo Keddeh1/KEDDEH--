@@ -40,3 +40,14 @@ test('VFS persistence failures do not publish incomplete memory state', async ()
  fail=false;await vfs.update('inode-1',{},'second');assert.equal((await vfs.read('inode-1')).data,'second');
  await vfs.delete('inode-1');await assert.rejects(vfs.read('inode-1'),/Inode not found/);
 });
+
+test('dependency ordering handles shared dependencies, cycles and missing identities', async()=>{
+ const {dependencyOrder}=await import('../src/core/kex/dependencyOrder.ts');
+ const base={id:'base',version:'1',dependencies:[]};
+ const a={id:'a',version:'1',dependencies:['base']};const b={id:'b',version:'1',dependencies:['base']};
+ const root={id:'root',version:'1',dependencies:['a','b']};
+ assert.deepEqual(dependencyOrder(root,[base,a,b,root]).map(p=>p.id),['base','a','b','root']);
+ assert.throws(()=>dependencyOrder(root,[a,b,root]),/DEPENDENCY_NOT_FOUND/);
+ assert.throws(()=>dependencyOrder(a,[a,{...base,dependencies:['a']}]),/DEPENDENCY_CYCLE/);
+ assert.throws(()=>dependencyOrder(a,[a,a]),/DUPLICATE_PACKAGE/);
+});
