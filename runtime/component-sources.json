@@ -25,6 +25,12 @@
       "repository": "Keddeh1/SERVERSPACE",
       "commit": "735f5c4924ba46d7f271110e6afb1ff78ca61387",
       "role": "reference"
+    },
+    {
+      "repository": "aboudykeddeh276-stack/BRAINK-Sovereign-Virtual-Brain-Console",
+      "commit": "cfbee37c3c3a984201ce36f4c1d943ea395a63a3",
+      "role": "braink-family-runtime",
+      "entrypoint": "KEX_SUBSTRATE_CORE/keddeh_enterprise_runtime.py"
     }
   ],
   "derived_files": [

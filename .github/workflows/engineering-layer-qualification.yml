@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'runtime/engineering/**'
+      - 'runtime/braink_family.py'
+      - 'runtime/component-sources.json'
       - 'tests/engineering-layer.test.mjs'
       - 'mcp/**'
       - 'server.ts'
@@ -17,6 +19,16 @@ on:
   workflow_dispatch:
 
 jobs:
+  braink-family:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Resident BRAINK family integration and failure recovery
+        run: python3 scripts/bootstrap-braink-runtime.py
+
   qualify:
     runs-on: ubuntu-latest
     steps:
