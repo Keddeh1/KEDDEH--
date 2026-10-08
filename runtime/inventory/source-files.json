@@ -210,8 +210,8 @@
     },
     {
       "path": ".github/workflows/engineering-layer-qualification.yml",
-      "bytes": 1970,
-      "sha256": "d6c5270660ab6edb50e80e268979cc38c745a321bc6b078d0b118ade481a2215",
+      "bytes": 2736,
+      "sha256": "a15e3865b38e57c17e36d3f3d9d3a26999b434f890f898cbd8971b6dd3ef2897",
       "sector": ".github",
       "source": false,
       "review_signals": [],
@@ -878,8 +878,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 2183,
-      "sha256": "becdf9b67483cd106d1bd5d4a61fcd51da2c8fc52bbe1ce51438110750f4ccb4",
+      "bytes": 2308,
+      "sha256": "e38acdf0500980e431e642756e0fc596682b23bec5638ae605596cfb657fbd92",
       "sector": "package.json",
       "source": false,
       "review_signals": [],
@@ -977,8 +977,8 @@
     },
     {
       "path": "scripts/source-inventory.mjs",
-      "bytes": 1463,
-      "sha256": "42ab2a9c91f03021ef7e36d65dc545307204913239a3d119c6ea3ba6a8bdb909",
+      "bytes": 1548,
+      "sha256": "f3ea5cdcf78170c9708131c54be878e21524b6b64b99370bf3cd878b0d980a18",
       "sector": "scripts",
       "source": true,
       "review_signals": [
@@ -1823,14 +1823,14 @@
     },
     {
       "path": "src/components/substrate/RegistrySubstrate.tsx",
-      "bytes": 11417,
-      "sha256": "99209d02e8b32ecc129a3960a3180fcf2cfcb8719bc35e9030e69b288de5fdb0",
+      "bytes": 11949,
+      "sha256": "f476c1e2d27d31db7b93a22131be8649e70efdddf0ed42823077dd2588af38b6",
       "sector": "src",
       "source": true,
       "review_signals": [
         "placeholder"
       ],
-      "review_status": "PENDING_FILE_REVIEW"
+      "review_status": "EVOLVED_VALIDATED"
     },
     {
       "path": "src/components/substrate/ServerRackAiSuite.tsx",
@@ -1978,8 +1978,8 @@
     },
     {
       "path": "src/core/vfs/vfs.ts",
-      "bytes": 4527,
-      "sha256": "4227073b4d53abc2c1f64800d2872b073763c54b96d11172c4d6fa5e82a9559d",
+      "bytes": 5083,
+      "sha256": "27d1f1784b021c7dd4be4d1fac1142ad86392fc266cccf9cbeb731c6cf0cf6a8",
       "sector": "src",
       "source": true,
       "review_signals": [],
@@ -2258,15 +2258,12 @@
     },
     {
       "path": "src/services/DependencyService.ts",
-      "bytes": 3413,
-      "sha256": "e8a302c71e90d769bab2c3bf4f2a3a68416c1d79ca9918bd1a2aa849cbbac754",
+      "bytes": 7267,
+      "sha256": "423725c26fbbdcd20b89cb45cb1cdff6915cdbf6aa11f18f8cbe7c4befb2d0ea",
       "sector": "src",
       "source": true,
-      "review_signals": [
-        "Simulate",
-        "dummyContent"
-      ],
-      "review_status": "PENDING_FILE_REVIEW"
+      "review_signals": [],
+      "review_status": "EVOLVED_VALIDATED"
     },
     {
       "path": "src/services/FirmwareManager.ts",
@@ -2574,8 +2571,8 @@
     },
     {
       "path": "tests/core-primitives.test.ts",
-      "bytes": 3954,
-      "sha256": "219d6b65456c9b16fc2a2f68ed6ab8339e703df7cd932f3c9cf2e7a0c9909145",
+      "bytes": 5981,
+      "sha256": "5d651d0425e6ddda9e3ff05a6db8e19aa3af068352c4aab3227f17c449f8fcbc",
       "sector": "tests",
       "source": true,
       "review_signals": [],
@@ -2588,6 +2585,17 @@
       "sector": "tests",
       "source": true,
       "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "tests/package-installation.test.ts",
+      "bytes": 5345,
+      "sha256": "040f4716d1be3f58c8ff7a20a1e0252c1ccef81d376cdf8b2f2676ea348db826",
+      "sector": "tests",
+      "source": true,
+      "review_signals": [
+        "placeholder"
+      ],
       "review_status": "PENDING_FILE_REVIEW"
     },
     {

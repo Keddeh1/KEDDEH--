@@ -21,19 +21,24 @@ const InodeSchema = z.object({
 
 export class VFSPrimitive {
   private inodes: Map<InodeId, z.infer<typeof InodeSchema>> = new Map();
-  private locks: Set<InodeId> = new Set();
+  private locks = new Map<InodeId, Array<() => void>>();
   private isHydrated = false;
   constructor(private readonly storage = VFS_STORAGE_INDEXED_DB) {}
 
   private async acquireLock(id: InodeId): Promise<void> {
-    while (this.locks.has(id)) {
-      await new Promise(resolve => setTimeout(resolve, 1));
+    const queue = this.locks.get(id);
+    if (!queue) {
+      this.locks.set(id, []);
+      return;
     }
-    this.locks.add(id);
+    await new Promise<void>(resolve => queue.push(resolve));
   }
 
   private releaseLock(id: InodeId): void {
-    this.locks.delete(id);
+    const queue = this.locks.get(id);
+    const next = queue?.shift();
+    if (next) next();
+    else this.locks.delete(id);
   }
 
   /**
@@ -44,11 +49,16 @@ export class VFSPrimitive {
       const persistedInodes = await this.storage.getAllInodes();
       for (const record of persistedInodes) {
         const brandedId = brandInodeId(record.id);
-        this.inodes.set(brandedId, {
-          id: record.id,
-          metadata: record.metadata || {},
-          data: record.data,
-        });
+        await this.acquireLock(brandedId);
+        try {
+          const current = await this.storage.getInode(record.id);
+          if (current && !this.inodes.has(brandedId)) this.inodes.set(brandedId, {
+            id: current.id,
+            metadata: current.metadata || {},
+            data: current.data,
+          });
+        } finally { this.releaseLock(brandedId); }
+
       }
       this.isHydrated = true;
       console.log(`[VFSPrimitive] Hydrated ${persistedInodes.length} persistent inodes.`);
@@ -136,14 +146,19 @@ export class VFSPrimitive {
   }
 
   async flushToIndexedDb(): Promise<void> {
-    for (const [id, inode] of this.inodes.entries()) {
-      await this.storage.saveInode({
-        id: inode.id,
-        path: inode.metadata.path,
-        metadata: inode.metadata,
-        data: inode.data,
-        updatedAt: new Date().toISOString()
-      });
+    for (const id of [...this.inodes.keys()]) {
+      await this.acquireLock(id);
+      try {
+        const inode = this.inodes.get(id);
+        if (!inode) continue;
+        await this.storage.saveInode({
+          id: inode.id,
+          path: inode.metadata.path,
+          metadata: inode.metadata,
+          data: inode.data,
+          updatedAt: new Date().toISOString()
+        });
+      } finally { this.releaseLock(id); }
     }
   }
 }

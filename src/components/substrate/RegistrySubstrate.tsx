@@ -42,13 +42,21 @@ export const RegistrySubstrate: React.FC<SoftwareCenterStudioProps> = ({
   onOpenPortRule,
   onDaemonSync,
 }) => {
-  const { files, addFiles } = useVfs();
+  const { files, addFiles, deleteForever } = useVfs();
   const [activeCategory, setActiveCategory] = useState<'all' | 'ai' | 'database' | 'web' | 'dev' | 'monitoring' | 'security' | 'infrastructure'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [installingPkgId, setInstallingPkgId] = useState<string | null>(null);
   const [installProgress, setInstallProgress] = useState<number>(0);
   const [installLogs, setInstallLogs] = useState<string[]>([]);
   const [installedList, setInstalledList] = useState<string[]>(() => GLOBAL_DEPENDENCY_SERVICE.getInstalledPackages().map(p => p.pkgId));
+
+  useEffect(() => {
+    let active = true;
+    GLOBAL_DEPENDENCY_SERVICE.hydrateInstalledPackages(INITIAL_SOFTWARE_PACKAGES)
+      .then(records => { if (active) setInstalledList(records.map(record => record.pkgId)); })
+      .catch(error => { if (active) setInstallLogs([`[ERROR] ${error instanceof Error ? error.message : String(error)}`]); });
+    return () => { active = false; };
+  }, []);
 
   const filteredPackages = useMemo(() => {
     return INITIAL_SOFTWARE_PACKAGES.filter((pkg) => {
@@ -72,9 +80,7 @@ export const RegistrySubstrate: React.FC<SoftwareCenterStudioProps> = ({
       const binPath = pkg.id.startsWith('app-') ? `${pkg.id.replace('app-', '')}.html` : pkg.id;
       const binParentId = pkg.id.startsWith('app-') ? 'folder-bin' : 'folder-usr-bin';
       
-      const content = pkg.id.startsWith('app-') 
-        ? (HTML5_APP_TEMPLATES.find(t => t.id === pkg.id.replace('app-', ''))?.code || '<!-- BINARY_PLACEHOLDER -->')
-        : `/* KEX_BINARY:${pkg.id} */`;
+      const content = await GLOBAL_DEPENDENCY_SERVICE.getExecutable(pkg.id);
 
       await addFiles([{
         id: `file-bin-${pkg.id}`,
@@ -90,7 +96,7 @@ export const RegistrySubstrate: React.FC<SoftwareCenterStudioProps> = ({
 
       setInstallLogs(prev => [...prev, ...logs]);
       setInstallProgress(100);
-      setInstalledList(prev => [...prev, pkg.id]);
+      setInstalledList(GLOBAL_DEPENDENCY_SERVICE.getInstalledPackages().map(record => record.pkgId));
 
       if (onDaemonSync) onDaemonSync(pkg, 'install');
       
@@ -107,8 +113,14 @@ export const RegistrySubstrate: React.FC<SoftwareCenterStudioProps> = ({
     }
   };
 
-  const handleUninstall = (pkg: SoftwarePackage) => {
-    GLOBAL_DEPENDENCY_SERVICE.uninstall(pkg.id);
+  const handleUninstall = async (pkg: SoftwarePackage) => {
+    try {
+      await GLOBAL_DEPENDENCY_SERVICE.uninstall(pkg.id);
+    } catch (error) {
+      setInstallLogs([`[ERROR] ${error instanceof Error ? error.message : String(error)}`]);
+      return;
+    }
+    deleteForever(`file-bin-${pkg.id}`);
     setInstalledList(prev => prev.filter(id => id !== pkg.id));
     if (onDaemonSync) onDaemonSync(pkg, 'remove');
   };

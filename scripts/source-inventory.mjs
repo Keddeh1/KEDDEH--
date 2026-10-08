@@ -10,7 +10,7 @@ const files = names.filter(name => !name.startsWith('reports/') && !name.startsW
  const text = source ? data.toString() : '';
  return { path: name, bytes: data.length, sha256: crypto.createHash('sha256').update(data).digest('hex'), sector: name.split('/')[0], source,
   review_signals: source ? [...new Set(text.match(/\b(?:TODO|FIXME|placeholder|dummyContent|Math\.random|Simulate)\b/g) ?? [])] : [],
-  review_status: ['src/core/types.ts','src/core/input/input.ts','src/core/process/process.ts','src/core/telemetry/telemetry.ts','src/core/vfs/vfs.ts','src/core/kex/kex.ts'].includes(name) ? 'EVOLVED_VALIDATED' : 'PENDING_FILE_REVIEW' };
+  review_status: ['src/core/types.ts','src/core/input/input.ts','src/core/process/process.ts','src/core/telemetry/telemetry.ts','src/core/vfs/vfs.ts','src/core/kex/kex.ts','src/services/DependencyService.ts','src/components/substrate/RegistrySubstrate.tsx'].includes(name) ? 'EVOLVED_VALIDATED' : 'PENDING_FILE_REVIEW' };
 });
 fs.mkdirSync(path.join(root, 'runtime/inventory'), { recursive: true });
 fs.writeFileSync(path.join(root, 'runtime/inventory/source-files.json'), JSON.stringify({ schema: 'kex.source_inventory.v1', files }, null, 2) + '\n');

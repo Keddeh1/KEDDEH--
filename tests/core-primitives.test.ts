@@ -51,3 +51,23 @@ test('dependency ordering handles shared dependencies, cycles and missing identi
  assert.throws(()=>dependencyOrder(a,[a,{...base,dependencies:['a']}]),/DEPENDENCY_CYCLE/);
  assert.throws(()=>dependencyOrder(a,[a,a]),/DUPLICATE_PACKAGE/);
 });
+
+test('VFS queues concurrent writes in invocation order and releases a failed operation', async()=>{
+ const {VFSPrimitive}=await import('../src/core/vfs/vfs.ts');
+ const records=new Map();const writes:string[]=[];let release:()=>void=()=>{};
+ let blocked=false;
+ const storage={async saveInode(record:any){if(blocked){await new Promise<void>(resolve=>{release=resolve;});blocked=false;}writes.push(record.data);if(record.data==='fail')throw new Error('DISK_FAILURE');records.set(record.id,record);},async getInode(id:string){return records.get(id);},async deleteInode(id:string){records.delete(id);},async getAllInodes(){return [...records.values()];}};
+ const vfs=new VFSPrimitive(storage as any);await vfs.create('one',{},'initial');blocked=true;
+ const first=vfs.update('one',{},'first');const failed=vfs.update('one',{},'fail');const rejected=assert.rejects(failed,/DISK_FAILURE/);const last=vfs.update('one',{},'last');
+ await new Promise(resolve=>setImmediate(resolve));release();await first;await rejected;await last;
+ assert.deepEqual(writes,['initial','first','fail','last']);assert.equal((await vfs.read('one')).data,'last');
+});
+
+test('VFS hydration cannot resurrect a record deleted after its initial snapshot',async()=>{
+ const {VFSPrimitive}=await import('../src/core/vfs/vfs.ts');const records=new Map<string,any>();
+ let resume:()=>void=()=>{};let snapshotReady:()=>void=()=>{};
+ const ready=new Promise<void>(resolve=>{snapshotReady=resolve;});
+ const storage={async saveInode(record:any){records.set(record.id,record);},async getInode(id:string){return records.get(id);},async deleteInode(id:string){records.delete(id);},async getAllInodes(){const snapshot=[...records.values()];snapshotReady();await new Promise<void>(resolve=>{resume=resolve;});return snapshot;}};
+ const vfs=new VFSPrimitive(storage as any);await vfs.create('one',{},'value');const hydrate=vfs.hydrateFromIndexedDb();await ready;await vfs.delete('one');resume();await hydrate;
+ await assert.rejects(vfs.read('one'),/Inode not found/);
+});

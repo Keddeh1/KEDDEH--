@@ -8,6 +8,11 @@ on:
       - 'mcp/**'
       - 'server.ts'
       - 'package.json'
+      - 'package-lock.json'
+      - 'src/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'opt/keddeh/**'
       - '.github/workflows/engineering-layer-qualification.yml'
   workflow_dispatch:
 
@@ -43,3 +48,26 @@ jobs:
             | node mcp/server.mjs | tee /tmp/mcp-smoke.jsonl
           grep -q '"assessment":0' /tmp/mcp-smoke.jsonl
           grep -q 'ZERO_NOT_PERMITTED_AS_ADDRESS' /tmp/mcp-smoke.jsonl
+
+  workstation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Frozen dependency installation
+        run: npm ci
+      - name: Core runtime and carrier installation tests
+        run: |
+          npm run test:core
+          npm run test:installation
+      - name: Workstation type and build checks
+        run: |
+          npm run lint
+          npm run build
+      - name: Native layout compilation and readback
+        run: |
+          make -C opt/keddeh
+          opt/keddeh/bin/keddeh_mesh_runtime --layout-check
