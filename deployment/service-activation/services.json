@@ -1,0 +1,208 @@
+{
+  "schema": "keddeh.environment-service-configuration.v1",
+  "state_root": "/workspace/braink-setup/service-activation",
+  "services": [
+    {
+      "id": "vfs-hub",
+      "command": [
+        "python",
+        "-m",
+        "vfs_server.server",
+        "--root",
+        "/workspace/braink-setup/vfs-hub/store",
+        "--port",
+        "17887",
+        "--token-file",
+        "/workspace/braink-setup/vfs-hub/token"
+      ],
+      "cwd": "/workspace/Keddeh-SYSTEMS-Virtual-File-Space-ZCG-ARCHITECTURE",
+      "environment": {
+        "PYTHONPATH": "/workspace/Keddeh-SYSTEMS-Virtual-File-Space-ZCG-ARCHITECTURE"
+      },
+      "probe": {
+        "kind": "http",
+        "url": "http://127.0.0.1:17887/status",
+        "readiness": false,
+        "scope": "Runtime API and retained counts; full 527700-entry receipt audit is separate"
+      }
+    },
+    {
+      "id": "protocol-mesh",
+      "command": [
+        "/workspace/braink-setup/application-nodes/braink-ide-cli-ci/venv/bin/python",
+        "-m",
+        "braink_cli.cli",
+        "--workspace",
+        "/workspace/braink-setup/application-nodes/braink-ide-cli-ci/workspace",
+        "--state-dir",
+        "/workspace/braink-setup/application-nodes/braink-ide-cli-ci/state",
+        "protocol",
+        "mesh",
+        "--owner-export",
+        "/workspace/braink-setup/families/BRAINK-BETA-TEST/packages/estate/server/capability_broker.py",
+        "--mesh-token-file",
+        "/workspace/braink-setup/application-nodes/braink-ide-cli-ci/protocol-mesh.token",
+        "--port",
+        "8766"
+      ],
+      "cwd": "/workspace/braink-setup/application-nodes/braink-ide-cli-ci",
+      "environment": {},
+      "probe": {
+        "kind": "http",
+        "url": "http://127.0.0.1:8766/subscription",
+        "token_file": "/workspace/braink-setup/application-nodes/braink-ide-cli-ci/protocol-mesh.token",
+        "body": {
+          "instance": "braink-ecebc63be20b749ef75344a2d0a2e14f561e9d54968181e11c7f4ef6982fb4e1"
+        }
+      }
+    },
+    {
+      "id": "serverspace-primary",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/work/braink-node-repo/applications/braink-ide-cli-ci/integrations/serverspace-runtime/substrate.py",
+        "--root",
+        "/workspace/braink-setup/families/SERVERSPACE/runtime/substrate-primary",
+        "--identity",
+        "serverspace/substrate-primary",
+        "daemon"
+      ],
+      "cwd": "/workspace/work/braink-node-repo",
+      "environment": {},
+      "probe": {
+        "kind": "substrate",
+        "root": "/workspace/braink-setup/families/SERVERSPACE/runtime/substrate-primary",
+        "identity": "serverspace/substrate-primary"
+      }
+    },
+    {
+      "id": "serverspace-replica",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/work/braink-node-repo/applications/braink-ide-cli-ci/integrations/serverspace-runtime/substrate.py",
+        "--root",
+        "/workspace/braink-setup/families/SERVERSPACE/runtime/substrate-replica",
+        "--identity",
+        "serverspace/substrate-replica",
+        "daemon"
+      ],
+      "cwd": "/workspace/work/braink-node-repo",
+      "environment": {},
+      "probe": {
+        "kind": "substrate",
+        "root": "/workspace/braink-setup/families/SERVERSPACE/runtime/substrate-replica",
+        "identity": "serverspace/substrate-replica"
+      }
+    },
+    {
+      "id": "braink-ide-ci-supervisor",
+      "cwd": "/workspace/braink-setup/application-nodes/braink-ide-cli-ci",
+      "command": [
+        "/workspace/braink-setup/application-nodes/braink-ide-cli-ci/venv/bin/python",
+        "/workspace/braink-setup/application-nodes/braink-ide-cli-ci/releases/74b6daa350a8c3264718a22a4413bb7f96ee5463/source/scripts/supervise_node.py",
+        "--runtime-root",
+        "/workspace/braink-setup/application-nodes/braink-ide-cli-ci",
+        "--source",
+        "/workspace/braink-setup/application-nodes/braink-ide-cli-ci/releases/74b6daa350a8c3264718a22a4413bb7f96ee5463/source",
+        "--automation-config",
+        "/workspace/braink-setup/application-nodes/braink-ide-cli-ci/architecture-automation.json"
+      ],
+      "probe": {
+        "kind": "http",
+        "url": "http://127.0.0.1:8765/health"
+      },
+      "required_file": "/workspace/braink-setup/application-nodes/braink-ide-cli-ci/worker-credential.json"
+    }
+  ],
+  "additional_services": [
+    {
+      "id": "BRAINK-BETA-TEST",
+      "kind": "docker_family",
+      "command": [
+        "bash",
+        "/workspace/BRAINK-BETA-TEST/.keddeh/launch-family.sh"
+      ]
+    },
+    {
+      "id": "KEDDEH-SOVEREIGN-NAMESPACE-RUNTIME",
+      "kind": "docker_family",
+      "command": [
+        "bash",
+        "/workspace/KEDDEH-SOVEREIGN-NAMESPACE-RUNTIME/.keddeh/launch-family.sh"
+      ]
+    },
+    {
+      "id": "Keddeh-SYSTEMS-Virtual-File-Space-ZCG-ARCHITECTURE",
+      "kind": "docker_family",
+      "command": [
+        "bash",
+        "/workspace/Keddeh-SYSTEMS-Virtual-File-Space-ZCG-ARCHITECTURE/.keddeh/launch-family.sh"
+      ]
+    },
+    {
+      "id": "SERVERSPACE",
+      "kind": "docker_family",
+      "command": [
+        "bash",
+        "/workspace/SERVERSPACE/.keddeh/launch-family.sh"
+      ]
+    },
+    {
+      "id": "SERVERSPACE-EXTERNAL",
+      "kind": "docker_family",
+      "command": [
+        "bash",
+        "/workspace/SERVERSPACE-EXTERNAL/.keddeh/launch-family.sh"
+      ]
+    },
+    {
+      "id": "SYSTEMS-SERVICES-FOR-DEPLOYMENT-QUEUE",
+      "kind": "docker_family",
+      "command": [
+        "bash",
+        "/workspace/SYSTEMS-SERVICES-FOR-DEPLOYMENT-QUEUE/.keddeh/launch-family.sh"
+      ]
+    },
+    {
+      "id": "Virtual-File-Space-ZCG-ARCHITECTURE",
+      "kind": "docker_family",
+      "command": [
+        "bash",
+        "/workspace/Virtual-File-Space-ZCG-ARCHITECTURE/.keddeh/launch-family.sh"
+      ]
+    },
+    {
+      "id": "braink-foundary-schema",
+      "kind": "docker_family",
+      "command": [
+        "bash",
+        "/workspace/braink-foundary-schema/.keddeh/launch-family.sh"
+      ]
+    },
+    {
+      "id": "keddeh.com",
+      "kind": "docker_family",
+      "command": [
+        "bash",
+        "/workspace/keddeh.com/.keddeh/launch-family.sh"
+      ]
+    },
+    {
+      "id": "tensor-shell-resident-bundle",
+      "kind": "bundle",
+      "artifact": "/workspace/scratch/tensor-shell-final/keddeh-network.tar.gz",
+      "source_commit": "2d95818205a50a2026cff836fac0cfc392e7abf6",
+      "setup": "deployment/setup.py"
+    }
+  ],
+  "mcp_sdk": {
+    "package": "mcp",
+    "version": "1.29.0",
+    "transport": "stdio"
+  },
+  "platform_configuration": {
+    "source_config_id": "68a4a9d1-ee67-4cee-bf1e-e0f8936fd5ef~cecfg_6ac597fa1a4c8191add755351d80c0e0",
+    "observed_revision": "114",
+    "publication": "Requires platform environment configuration workflow; read-only connector"
+  }
+}
