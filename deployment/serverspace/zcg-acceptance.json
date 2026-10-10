@@ -49,7 +49,12 @@
         "file fsync, atomic rename and parent-directory fsync",
         "exclusive writer lock and revision conflicts",
         "exact canonical JSON readback and dataset CRC verification",
-        "worker restart preserves canonical state and mmap bytes"
+        "worker restart preserves canonical state and mmap bytes",
+        "opt-in canonical lineage writer with durable pending WAL",
+        "verified append-only SHA-256 lineage ledger and raw file byte digest",
+        "partial-append recovery authorized only by the exact durable pending record",
+        "stable request IDs with identical receipt retry and conflict rejection",
+        "sealed-lineage daemon/readiness mode; legacy roots rejected without migration"
       ],
       "learning": [
         "storage durability contracts",
@@ -58,9 +63,10 @@
       ],
       "unqualified": [
         "power-cut hardware campaign not run",
-        "canonical LINEAGE_AUDIT_LEDGER.jsonl and multi-file crash reconciliation are not implemented",
-        "process termination during each write stage not qualified",
-        "persistent lock files are retained deliberately; lock release differs from file deletion"
+        "persistent lock files are retained deliberately; lock release differs from file deletion",
+        "SIGKILL verified at five persistence boundaries; arbitrary instruction-level cuts, storage-controller faults and power loss remain unqualified",
+        "hash-chain proofs require external trusted anchors to resist authorized full-history rewrite",
+        "16-MiB lineage custody limit halts further commits pending reviewed archival; never truncates history"
       ]
     },
     {
@@ -126,7 +132,8 @@
     "real_disk_incident_tests": 2,
     "legacy_fixture_contract_tests": 12,
     "sdk_integration_suite": "FAILED_SETUP_MISSING_SERVICE_CONFIG",
-    "named_acceptance_campaigns": "ABSENT"
+    "named_acceptance_campaigns": "ABSENT",
+    "real_lineage_and_live_sealed_daemon_tests": 8
   },
   "measured_ipc": {
     "scope": "actual isolated local authenticated UDS round trips; not DMA, API ingress or UI rendering",
@@ -157,5 +164,6 @@
     "actual state/mmap ABI, workbook bindings and calculated environmental constraints for X",
     "bibliography mapping for references 1..14"
   ],
-  "owner_state_contract": "deployment/serverspace/zcg-state-contract.json"
+  "owner_state_contract": "deployment/serverspace/zcg-state-contract.json",
+  "lineage_canary_evidence": "lineage-live.json"
 }

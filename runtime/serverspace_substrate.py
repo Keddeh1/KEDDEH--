@@ -197,15 +197,25 @@ def probe(root, namespace):
         if observed['mask'] != 7: raise ValueError('SUBSTRATE_NOT_READY')
         state = validate(read_json(root / 'canonical-state.json'), namespace)
         if observed['digest'] != state['digest']: raise ValueError('STATE_HANDSHAKE_MISMATCH')
+        if read_json(root / 'daemon.json').get('sealed_lineage') is True:
+            from canonical_lineage import recover
+            sealed_state, records = recover(root, namespace)
+            if sealed_state['digest'] != observed['digest'] or records[-1]['seal'] != observed.get('lineage_seal'):
+                raise ValueError('LINEAGE_HANDSHAKE_MISMATCH')
         return observed
 
 
-def daemon(root, namespace):
+def daemon(root, namespace, sealed_lineage=False):
     root = secure_root(root); key = secret(root)
     with lock(root, 'daemon.lock', True):
         path = root / 'canonical-state.json'
-        if not path.exists(): write_state(root, namespace, {}, 0)
-        validate(read_json(path), namespace)
+        if sealed_lineage:
+            from canonical_lineage import commit, recover
+            if not path.exists(): commit(root, namespace, {}, 0, 'substrate-initialization')
+            recover(root, namespace)
+        else:
+            if not path.exists(): write_state(root, namespace, {}, 0)
+            validate(read_json(path), namespace)
         fd = private_open(root / 'shared-memory.bin', os.O_RDWR | os.O_CREAT)
         if os.fstat(fd).st_size == 0: os.ftruncate(fd, MEMORY_BYTES)
         if os.fstat(fd).st_size != MEMORY_BYTES: raise ValueError('SHARED_MEMORY_SIZE_MISMATCH')
@@ -222,11 +232,15 @@ def daemon(root, namespace):
         signal.signal(signal.SIGTERM, stop); signal.signal(signal.SIGINT, stop)
         with socket.socket(socket.AF_UNIX) as server:
             server.bind(str(endpoint)); os.chmod(endpoint, 0o600); server.listen(16); server.settimeout(.2)
-            atomic(root, 'daemon.json', {'namespace': namespace, 'pid': os.getpid(), 'uds': str(endpoint), 'ready': True, 'protocol': 'length-crc-hmac-v1'})
+            atomic(root, 'daemon.json', {'namespace': namespace, 'pid': os.getpid(), 'uds': str(endpoint), 'ready': True, 'protocol': 'length-crc-hmac-v1', 'sealed_lineage': sealed_lineage})
             try:
                 while running:
-                    state = validate(read_json(path), namespace)
+                    lineage = None
+                    if sealed_lineage:
+                        state, records = recover(root, namespace); lineage = records[-1]['seal']
+                    else: state = validate(read_json(path), namespace)
                     heartbeat = {'namespace': namespace, 'pid': os.getpid(), 'monotonic': time.monotonic(), 'mask': 7, 'digest': state['digest']}
+                    if lineage: heartbeat['lineage_seal'] = lineage
                     with lock(root, 'memory.lock'):
                         payload = encoded(heartbeat); memory[:4] = struct.pack('!I', len(payload)); memory[4:4+len(payload)] = payload; memory.flush()
                     try: connection, _ = server.accept()
@@ -256,7 +270,7 @@ def daemon(root, namespace):
                 endpoint.unlink(missing_ok=True); memory.close()
 
 
-def watchdog(root, namespace):
+def watchdog(root, namespace, sealed_lineage=False):
     root = secure_root(root)
     with lock(root, 'watchdog.lock', True):
         stopping = False; child = None; delay = .2
@@ -266,7 +280,7 @@ def watchdog(root, namespace):
         signal.signal(signal.SIGTERM, stop); signal.signal(signal.SIGINT, stop)
         while not stopping:
             started = time.monotonic()
-            child = subprocess.Popen([sys.executable, __file__, 'daemon', '--root', str(root), '--namespace', namespace])
+            child = subprocess.Popen([sys.executable, __file__, 'daemon', '--root', str(root), '--namespace', namespace, *(['--sealed-lineage'] if sealed_lineage else [])])
             unhealthy = 0
             while not stopping and child.poll() is None:
                 time.sleep(.2)
@@ -302,13 +316,14 @@ def main():
     parser.add_argument('mode', choices=['daemon', 'watchdog', 'probe', 'gate'])
     parser.add_argument('--root', required=True); parser.add_argument('--namespace', required=True)
     parser.add_argument('--timeout', type=float, default=30)
+    parser.add_argument('--sealed-lineage', action='store_true')
     args, command = parser.parse_known_args()
     if command[:1] == ['--']: command = command[1:]
     os.umask(0o077)
     resource.setrlimit(resource.RLIMIT_NOFILE, (256, 256))
     resource.setrlimit(resource.RLIMIT_AS, (512 * 1024 * 1024, 512 * 1024 * 1024))
-    if args.mode == 'daemon': daemon(args.root, args.namespace)
-    elif args.mode == 'watchdog': watchdog(args.root, args.namespace)
+    if args.mode == 'daemon': daemon(args.root, args.namespace, args.sealed_lineage)
+    elif args.mode == 'watchdog': watchdog(args.root, args.namespace, args.sealed_lineage)
     elif args.mode == 'probe': print(json.dumps(probe(args.root, args.namespace)))
     else: gate(args.root, args.namespace, command, args.timeout)
 
