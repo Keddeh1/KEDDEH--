@@ -54,4 +54,14 @@ else:raise RuntimeError('Canary gate did not recover')
 status,_=http_get('/api/mining/viabtc/config');assert status==200
 limits=(Path('/proc')/str(pid)/'limits').read_text();assert '268435456' in limits and '128' in limits
 report={'scope':'isolated local ServerSpace canary','readiness':call(root),'cached_datasets_verified':2,'uds_frames_sent':64,'uds_frames_verified':64,'loopback_tcp_responses_verified':64,'observed_missing_frames':0,'worker_crash_recovery':True,'canonical_and_shared_state_retained':True,'retry_receipt_equal':True,'substrate_unavailable_api_status':503,'upstream_mining_config_status':status,'worker_address_space_limit_bytes':268435456,'worker_open_file_limit':128,'projection_parent_identity_retained':True,'independent_domain_count':len(record['body']['payload']['domains']),'unassigned_unity_retained':record['body']['payload']['domains']['unassigned']['unity'] is None,'state_path':str(root/'canonical.json'),'uds_path':str(root/'ready.sock'),'verified_remote_serverspace_baseline':False,'external_canary_publication':False}
+# Verify the actual parent and HTTP worker limits, not just the substrate child.
+import re
+report['canary_process_limits']={}
+estate=Path('/workspace/deployments/service-estate')
+for name in ['serverspace-canary-watchdog','serverspace-canary-mining-api']:
+    worker=int((estate/(name+'.worker.pid')).read_text())
+    actual=Path(f'/proc/{worker}/limits').read_text()
+    assert re.search(r'Max address space\s+268435456\s+268435456',actual)
+    assert re.search(r'Max open files\s+128\s+128',actual)
+    report['canary_process_limits'][name]={'pid':worker,'address_space_bytes':268435456,'open_files':128}
 (root/'qualification.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report))

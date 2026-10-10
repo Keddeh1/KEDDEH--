@@ -96,6 +96,61 @@ class SubstrateTests(unittest.TestCase):
             except ConnectionError:time.sleep(.1)
             finally:client.close()
         else:self.fail('Gated API failed to start')
+    def test_api_upstream_failure_is_structured_and_bounded(self):
+        with socket.socket() as probe:probe.bind(('127.0.0.1',0));port=probe.getsockname()[1]
+        with socket.socket() as probe:probe.bind(('127.0.0.1',0));upstream=probe.getsockname()[1]
+        self.start('serverspace_watchdog.py');self.ready()
+        gate=self.start('serverspace_mining_gate.py','--port',str(port),'--upstream-port',str(upstream))
+        for _ in range(50):
+            client=http.client.HTTPConnection('127.0.0.1',port,timeout=2)
+            try:
+                client.request('GET','/api/mining/telemetry');response=client.getresponse()
+                self.assertEqual(response.status,502)
+                self.assertEqual(json.loads(response.read())['error'],'UPSTREAM_UNAVAILABLE');break
+            except ConnectionError:time.sleep(.1)
+            finally:client.close()
+        else:self.fail('Gate did not bind')
+        limits=Path(f'/proc/{gate.pid}/limits').read_text()
+        self.assertRegex(limits,r'Max address space\s+268435456\s+268435456')
+        self.assertRegex(limits,r'Max open files\s+128\s+128')
+    def test_http_worker_saturation_rejects_and_recovers(self):
+        import threading
+        from http.server import BaseHTTPRequestHandler
+        from serverspace_mining_gate import BoundedServer,MAX_REQUEST_WORKERS
+        class Handler(BaseHTTPRequestHandler):
+            def log_message(self,*args):pass
+            def do_GET(self):self.send_response(200);self.end_headers()
+        server=BoundedServer(('127.0.0.1',0),Handler)
+        thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+        held=[]
+        try:
+            for _ in range(MAX_REQUEST_WORKERS):
+                peer=socket.create_connection(server.server_address,timeout=2)
+                held.append(peer);peer.sendall(b'GET / HTTP/1.0\r\n')
+            for _ in range(100):
+                if threading.active_count()>=MAX_REQUEST_WORKERS+2:break
+                time.sleep(.01)
+            with socket.create_connection(server.server_address,timeout=2) as peer:
+                peer.sendall(b'GET / HTTP/1.0\r\n\r\n')
+                self.assertIn(b'503 Service Unavailable',peer.recv(1024))
+            for peer in held:peer.close()
+            held.clear()
+            for _ in range(100):
+                client=http.client.HTTPConnection(*server.server_address,timeout=2)
+                try:
+                    client.request('GET','/');response=client.getresponse();response.read()
+                    if response.status==200:break
+                finally:client.close()
+                time.sleep(.01)
+            else:self.fail('Worker slots did not recover')
+        finally:
+            for peer in held:peer.close()
+            server.shutdown();server.server_close();thread.join(timeout=2)
+    def test_watchdog_parent_has_resource_limits(self):
+        watchdog=self.start('serverspace_watchdog.py');self.ready()
+        limits=Path(f'/proc/{watchdog.pid}/limits').read_text()
+        self.assertRegex(limits,r'Max address space\s+268435456\s+268435456')
+        self.assertRegex(limits,r'Max open files\s+128\s+128')
     def test_paths_reject_symlink_and_open_permissions(self):
         (self.root/'canonical.json').unlink();(self.root/'canonical.json').symlink_to('/tmp/unrelated')
         with self.assertRaises(ValueError):CanonicalState(self.root)

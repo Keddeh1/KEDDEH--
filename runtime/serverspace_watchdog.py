@@ -20,9 +20,10 @@ def stop(signum,frame):
     if child is not None and child.poll() is None:child.terminate()
 def limits():
     resource.setrlimit(resource.RLIMIT_AS,(256*1024*1024,256*1024*1024));resource.setrlimit(resource.RLIMIT_NOFILE,(128,128));resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+limits()  # Bound watchdog and inherited substrate resources.
 signal.signal(signal.SIGTERM,stop);signal.signal(signal.SIGINT,stop)
 while not stopping:
-    child=subprocess.Popen([sys.executable,str(Path(__file__).with_name('serverspace_substrate.py')),'--root',str(root)],preexec_fn=limits)
+    child=subprocess.Popen([sys.executable,str(Path(__file__).with_name('serverspace_substrate.py')),'--root',str(root)])
     (root/'worker.pid').write_text(str(child.pid));misses=0
     while not stopping and child.poll() is None:
         try:
