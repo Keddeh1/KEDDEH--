@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "keddeh-services": {
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "args": [
+        "/workspace/braink-setup/service-activation/source/mcp_service.py",
+        "--manifest",
+        "/workspace/braink-setup/service-activation/source/services.json"
+      ]
+    }
+  }
+}
