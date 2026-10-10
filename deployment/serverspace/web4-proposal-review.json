@@ -1,0 +1,101 @@
+{
+  "source_sha256": "30f165f922f9020e25003cb7ea526900d563d94d076f0982621cc72e380523dd",
+  "source_bytes": 15142,
+  "original_preserved": "private local version-controlled intake; source not published",
+  "source_executed": false,
+  "promotion": "BLOCKED",
+  "findings": [
+    {
+      "severity": "BLOCKER",
+      "location": "KEDDEHHCIContract, pBFTConsensusRelay, Web4OrchestrationPlatform",
+      "finding": "init is not __init__; constructors do not initialize the supplied classes."
+    },
+    {
+      "severity": "BLOCKER",
+      "location": "pBFTConsensusRelay.process_pre_prepare",
+      "finding": "PRE_PREPARE is absent from Web4SystemState."
+    },
+    {
+      "severity": "BLOCKER",
+      "location": "KEXWireV1Processor.unpack_and_audit_context",
+      "finding": "Only minimum 52-byte length is checked; exact envelope size and payload length are not enforced. target_hmac is extracted but never authenticated."
+    },
+    {
+      "severity": "BLOCKER",
+      "location": "KEXWireV1Processor.local_epoch_floor",
+      "finding": "Accepted epochs never advance a durable floor; replay protection is incomplete."
+    },
+    {
+      "severity": "BLOCKER",
+      "location": "pBFTConsensusRelay.ingest_peer_shard",
+      "finding": "Peer identities, shard signatures, shard sizes and proposal binding are not checked; no validator allowlist or real consensus phases are implemented."
+    },
+    {
+      "severity": "BLOCKER",
+      "location": "pBFTConsensusRelay.process_pre_prepare",
+      "finding": "Signature shards from a prior pending proposal can remain when a new proposal replaces the context."
+    },
+    {
+      "severity": "BLOCKER",
+      "location": "Web4OrchestrationPlatform.execute_mcp_tool_route",
+      "finding": "The peer shard is a hard-coded local hash, not an observed authenticated peer response."
+    },
+    {
+      "severity": "BLOCKER",
+      "location": "pBFTConsensusRelay.ingest_peer_shard",
+      "finding": "Concatenated hashes are not the established 64-byte Ed25519 signature and cannot substitute for KEX geometry or contextual authority."
+    },
+    {
+      "severity": "BLOCKER",
+      "location": "Web4OrchestrationPlatform.trigger_self_corruption",
+      "finding": "Validation failure clears VFS state and exits. Rejection must preserve canonical state and allow controlled recovery."
+    },
+    {
+      "severity": "BLOCKER",
+      "location": "Web4OrchestrationPlatform.local_vfs_mram",
+      "finding": "Dictionary writes have no durable storage, concurrency lock, atomic publication or verified readback."
+    },
+    {
+      "severity": "BLOCKER",
+      "location": "Web4OrchestrationPlatform.execute_mcp_tool_route",
+      "finding": "The name does not provide an MCP SDK endpoint, protocol transport or principal authorization."
+    },
+    {
+      "severity": "LIMITATION",
+      "location": "KEDDEHHCIContract",
+      "finding": "ASCII framing and evidence labels do not establish ISO accessibility or usability compliance."
+    },
+    {
+      "severity": "LIMITATION",
+      "location": "render_surface_view",
+      "finding": "A truncated hash over str(bytes) is not the canonical byte digest; presence of a dictionary key does not establish secure state."
+    },
+    {
+      "severity": "LIMITATION",
+      "location": "Web4OrchestrationPlatform",
+      "finding": "No actual shared-memory substrate, UDS readiness, watchdog, Mining API gate, live worker observation or external publication verification is supplied."
+    }
+  ],
+  "reuse": {
+    "admission": "runtime/web4_admission.py retains authoritative 116-byte admission, literal-True verification, durable epoch comparison and receipt requirements. It fails closed while adapters are unbound.",
+    "substrate": "runtime/serverspace_substrate.py remains isolated canary; no destructive VFS purge added.",
+    "mcp": "existing official SDK and scoped backing handlers preserved",
+    "context": "independent namespaces and parent contexts remain distinct; no scalar-unity merge performed"
+  },
+  "checks": {
+    "admission_contract_tests": {
+      "passed": 12,
+      "scope": "existing explicitly mocked contract tests; not production signatures or durable commits"
+    },
+    "substrate_tests": {
+      "passed": 11,
+      "scope": "real isolated local processes, sockets, state writes and crash recovery"
+    }
+  },
+  "remaining_requirements": [
+    "Validated KEX payload authentication/geometry adapter and real registered peer verification",
+    "Durable ledger integration and pending-proposal reconciliation",
+    "Verified live ServerSpace baseline, secured directory and connection",
+    "Live Mining API handshake and full worker/publication/network verification"
+  ]
+}
