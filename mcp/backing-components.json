@@ -1,0 +1,10 @@
+{
+  "schema": "keddeh.mcp.backing-components.v1",
+  "sdk": {"package": "@modelcontextprotocol/sdk", "version": "1.32.1", "lock": "package-lock.json"},
+  "vfs": {"repository": "Keddeh1/BRAINK-BETA-TEST", "commit": "201e151b09c7762a1b3015ecbf4c0118f683b6a4", "interface": "vfs_server"},
+  "runtime_sources": "runtime/component-sources.json",
+  "adapters": "mcp/service-adapters.mjs",
+  "setup": "scripts/setup-service-estate.py",
+  "transports": ["stdio", "streamable-http"],
+  "credential_policy": "destination-local private credentials; secrets excluded from bundles"
+}

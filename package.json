@@ -28,16 +28,22 @@
     "test:admission": "python3 tests/web4-admission.test.py",
     "test:network": ".runtime-env/bin/python tests/network-registry.test.py",
     "network:bundle": "python3 scripts/build-network-bundle.py",
-    "test:quantum": "python3 tests/quantum-statevector.test.py"
+    "test:quantum": "python3 tests/quantum-statevector.test.py",
+    "mcp:sdk": "node mcp/sdk-server.mjs --config /workspace/deployments/keddeh-mcp-sdk/services.json",
+    "mcp:sdk-http": "node mcp/sdk-server.mjs --config /workspace/deployments/keddeh-mcp-sdk/services.json --http --port 8961",
+    "test:mcp-sdk": "node --test tests/mcp-sdk.test.mjs",
+    "services:setup": "python3 scripts/setup-service-estate.py"
   },
   "dependencies": {
     "@google/genai": "^2.26.0",
+    "@modelcontextprotocol/sdk": "1.32.1",
     "@noble/hashes": "^2.4.0",
     "@tailwindcss/vite": "^4.1.14",
     "@types/crypto-js": "^4.2.2",
     "@types/express": "^5.0.6",
     "@types/ws": "^8.18.1",
     "@vitejs/plugin-react": "^5.0.4",
+    "ajv": "8.20.0",
     "axios": "^1.20.0",
     "crypto-js": "^4.2.0",
     "express": "^5.2.1",

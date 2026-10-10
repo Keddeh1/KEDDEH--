@@ -436,6 +436,24 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "deployment/vfs-requirements.in",
+      "bytes": 17,
+      "sha256": "21fc068d5e30b7ae266a4e68938ebe1e76f956899645286224cdfe7f39eaa137",
+      "sector": "deployment",
+      "source": false,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "deployment/vfs-requirements.lock",
+      "bytes": 12843,
+      "sha256": "ee122d2d15c004b5b062cd55a737558f617832adb8aaf5e22821393d77ca76ae",
+      "sector": "deployment",
+      "source": false,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "firebase-applet-config.json",
       "bytes": 469,
       "sha256": "d2694f083b7c168eefe6d0694356e3c16ca96eff5312d37116581df27f986516",
@@ -472,6 +490,15 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "mcp/backing-components.json",
+      "bytes": 570,
+      "sha256": "1359fc48487110a99797fc9df7ed1fb68ad5b7b02d2f470f4995ea98bc0606a8",
+      "sector": "mcp",
+      "source": false,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "mcp/qualification-registry.json",
       "bytes": 5649,
       "sha256": "6593967327af0d40fb3ea676b361936cbd32ea8796096a28db5aeaa28961cb1b",
@@ -490,9 +517,18 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "mcp/sdk-server.mjs",
+      "bytes": 4476,
+      "sha256": "92787120b175b18d84abed01626d83b8cb6665a31bc23fc71dfc161c333c2d3a",
+      "sector": "mcp",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "mcp/server.json",
-      "bytes": 4215,
-      "sha256": "02f54387ebad371911ec8d0c990632813d2d11fb5df517b03276f6cb09ee9c52",
+      "bytes": 4752,
+      "sha256": "da884bc1d7366af669e66be315b6c7f98468fcea675645076ac1c59b86773e5b",
       "sector": "mcp",
       "source": false,
       "review_signals": [],
@@ -500,8 +536,17 @@
     },
     {
       "path": "mcp/server.mjs",
-      "bytes": 14880,
-      "sha256": "1f22d91862514299cb7da0d38da4a74f33f001cf117b0698fcbf23c53e88b8ab",
+      "bytes": 14989,
+      "sha256": "fdd207b28557e856d564e36e862cc4838c1e9894c39268abadd99135fe24a0cf",
+      "sector": "mcp",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "mcp/service-adapters.mjs",
+      "bytes": 4932,
+      "sha256": "8cf6544cf4a5e3685657c216e194cce16dd916d23b9addef3baa9d614db1d877",
       "sector": "mcp",
       "source": true,
       "review_signals": [],
@@ -878,8 +923,8 @@
     },
     {
       "path": "package-lock.json",
-      "bytes": 154532,
-      "sha256": "de1acee7c3091291c64121147465747e176103bdf0e1ac8d634e039c0a83bba2",
+      "bytes": 165180,
+      "sha256": "366b15107eb289ab2f567c627ee0f5b610afbe208e47a7477594a25953a667f8",
       "sector": "package-lock.json",
       "source": false,
       "review_signals": [],
@@ -887,8 +932,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 2764,
-      "sha256": "b0bc6ea7f49bfb6eee2b8b75afd794dff91babca56c3d1b2c4395adf33ff00f7",
+      "bytes": 3181,
+      "sha256": "6a87e6d32e9373ccd4f62048c708880db8c5a7523c5621914385a3b61801b25f",
       "sector": "package.json",
       "source": false,
       "review_signals": [],
@@ -1093,6 +1138,15 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "scripts/braink-family-request.py",
+      "bytes": 908,
+      "sha256": "552c969e5107c47f488a42ceb75c81bd68c201fefda7c510502221ec073bc733",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "scripts/build-network-bundle.py",
       "bytes": 3507,
       "sha256": "4e4a32e2f903f32c2511ede6f5cea78a566098fd49cedffd255dceb047d10cce",
@@ -1102,9 +1156,27 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "scripts/build-service-estate-bundle.py",
+      "bytes": 2595,
+      "sha256": "76b7128f421127987337ccf461a82f7b544741ed2c955c1a26d1e694564419e0",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "scripts/circuit-client.py",
       "bytes": 1647,
       "sha256": "0433361a6264853cb09034cf936e56974ff337d5a0bbbc3f81029d00871a1db3",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "scripts/install-service-estate.py",
+      "bytes": 4428,
+      "sha256": "6826029f03d093878dd0330ed05bc73feacf3a5a2416d8f73512dffd4080cc61",
       "sector": "scripts",
       "source": true,
       "review_signals": [],
@@ -1123,6 +1195,24 @@
       "path": "scripts/registry-client.py",
       "bytes": 3642,
       "sha256": "57a72ceeeb3dc303b38290eb153b92584117a0550cc8495b4d8ab6e002a16dc6",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "scripts/service-estate-supervisor.py",
+      "bytes": 1504,
+      "sha256": "fed8ec5834669c0b221f258c562ee46a9070f3a7647707933e6d06dc9149b464",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "scripts/setup-service-estate.py",
+      "bytes": 6227,
+      "sha256": "385231d9b503d3a108dff1622ccf5189d0bf05beb86159b9634d4ec119caf656",
       "sector": "scripts",
       "source": true,
       "review_signals": [],
@@ -2753,6 +2843,15 @@
       "path": "tests/engineering-layer.test.mjs",
       "bytes": 5528,
       "sha256": "f28a3af4bee4795f17a827331c53c964319036d6cb1f440b2751ddadd34759a0",
+      "sector": "tests",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "tests/mcp-sdk.test.mjs",
+      "bytes": 9114,
+      "sha256": "0780abed6372d3123abeab1c5f23efc35a48448b5abdfb4e6a1fda719568f48b",
       "sector": "tests",
       "source": true,
       "review_signals": [],

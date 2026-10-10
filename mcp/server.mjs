@@ -150,7 +150,7 @@ function selfTest() {
   };
 }
 
-const TOOLS = {
+export const TOOLS = {
   tot_safety_evaluate:{
     description:'Evaluate explicit action, authority, evidence and zeroless/capability invariants; returns an evidence receipt without exposing private reasoning.',
     schema:{type:'object',additionalProperties:true},
@@ -233,7 +233,7 @@ function toolResult(value){return {content:[{type:'text',text:JSON.stringify(val
 function rpcResult(id,result){return {jsonrpc:'2.0',id,result};}
 function rpcError(id,code,message,data){return {jsonrpc:'2.0',id,error:{code,message,...(data?{data}:{})}};}
 
-async function handle(msg){
+export async function handle(msg){
   const id=msg.id??null;
   if(msg.method==='server/discover') return rpcResult(id,{
     protocolVersion:MODERN_PROTOCOL_VERSION,
@@ -285,4 +285,6 @@ async function main(){
     if(out)process.stdout.write(JSON.stringify(out)+'\n');
   }
 }
-main().catch(e=>{process.stderr.write(String(e?.stack||e)+'\n');process.exit(1);});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch(e=>{process.stderr.write(String(e?.stack||e)+'\n');process.exit(1);});
+}
