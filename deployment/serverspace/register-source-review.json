@@ -1,0 +1,46 @@
+{
+  "source_sha256": "adf93658d46e77fa5d4f318fd8f79e08c23a66e70f43391ab68229e54abd732e",
+  "source_bytes": 113372,
+  "original_preserved": "private version-controlled intake; never executed or published",
+  "new_components": [
+    "runtime/cell_registers.py",
+    "tests/cell-registers.test.py"
+  ],
+  "checks": {
+    "register_cases": 6,
+    "scope": "exact register computations and real filesystem sealed-lineage persistence; no live workbook or matrix parity claim"
+  },
+  "context_rules": [
+    "custody, whole, variable, environment and family remain separate",
+    "equal local unity never merges wholes",
+    "unassigned X, alternatives and contradictions remain distinct",
+    "caller-supplied candidate assignments do not certify environmental conditioning"
+  ],
+  "historical_report_check": {
+    "reported_root": "/workspace/braink-setup/families/SERVERSPACE/runtime",
+    "observed_in_this_session": "ABSENT",
+    "reported_ports": [
+      38699,
+      42331,
+      40185
+    ],
+    "current_bindings": "UNVERIFIED; historical port values are not used as live discovery",
+    "claimed_96_refreshes": "not independently reproduced"
+  },
+  "claim_boundaries": [
+    "E=C*D enforces the supplied polarity relation; no claim that this alone prevents process/thread overlap",
+    "pBFT fault tolerance requires N>=3f+1; 3-of-3 availability is not f=1 Byzantine liveness",
+    "FROST/Ed25519 proof requires registered signing keys and a real signing protocol; SHA chains are not signatures",
+    "local flock is not distributed fencing",
+    "filesystem readback is not evidence of bypassing storage caches or surviving all power cuts",
+    "correct Q32.32 quantum is 2^-32; sum error scales with term count",
+    "existing 0.297 roles remain version-specific evidence; no parameter renaming or physical jitter claim"
+  ],
+  "remaining": [
+    "live workbook mount, signature verification and authorised formula mutation adapters",
+    "calculated environmental conditioning and independent canonical-consilience verifier",
+    "active ServerSpace connection and daemon/API metadata",
+    "threshold signing and distributed epoch-fencing deployment",
+    "primary/replica/canary endpoint verification and source bibliography"
+  ]
+}
