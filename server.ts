@@ -1,3 +1,4 @@
+import {unboundCapability} from './runtime/deployment_gate.mjs';
 import express from 'express';
 import { createServer } from 'http';
 import { WebSocketServer, WebSocket } from 'ws';
@@ -1797,29 +1798,9 @@ Provide engineering-aligned responses with rigorous discipline.`;
     res.json({ ok: true, packages: GLOBAL_SOFTWARE_REGISTRY.getPackages() });
   });
 
-  app.post('/api/software/ingest', async (req, res) => {
-    const { url, name } = req.body;
-    try {
-      // Deterministic Ingestion: Map URL to 1x Address
-      const manifoldCoord = BrainkAlgebraEngine.resolveSemanticCollision(url || name, 'REMOTE_INGEST');
-      const pkgId = `pkg-${manifoldCoord.toString(16)}`;
-      
-      GLOBAL_SOFTWARE_REGISTRY.ingest({
-        id: pkgId,
-        name: name || 'External Ingest',
-        version: '1.0.0-relational',
-        dependencies: ['Web-Proxy-Substrate', 'Relational-Bridge'],
-        state: 'CONNECTING',
-        manifold_coord: manifoldCoord
-      });
-
-      // Simulation of dependency management
-      setTimeout(() => GLOBAL_SOFTWARE_REGISTRY.updateState(pkgId, 'CONNECTED'), 2000);
-
-      res.json({ ok: true, pkg_id: pkgId, injective_address: `kex::1x${manifoldCoord.toString(16).toUpperCase()}` });
-    } catch (e) {
-      res.status(500).json({ ok: false, error: 'Ingestion failed' });
-    }
+  app.post('/api/software/ingest', (_req, res) => {
+    const result = unboundCapability('remote-software-ingestion');
+    res.status(result.statusCode).json(result.body);
   });
 
   app.post('/api/software/state', (req, res) => {
@@ -2175,16 +2156,9 @@ Provide engineering-aligned responses with rigorous discipline.`;
     });
   });
 
-  app.post('/api/kera_domain/register', (req, res) => {
-    const { domain, route, target_type } = req.body || {};
-    res.json({
-      ok: true,
-      domain: domain || 'runtime.keddeh.com',
-      route: route || 'server://kex/kera-mesh-node',
-      target_type: target_type || 'resident-html',
-      registered_at: new Date().toISOString(),
-      status: 'BOUND'
-    });
+  app.post('/api/kera_domain/register', (_req, res) => {
+    const result = unboundCapability('public-domain-registration');
+    res.status(result.statusCode).json(result.body);
   });
 
   app.all(/^\/api\/.*/, (req, res) => res.status(404).json({ error: 'API not found' }));

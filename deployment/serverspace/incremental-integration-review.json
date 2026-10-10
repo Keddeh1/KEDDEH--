@@ -1,0 +1,68 @@
+{
+  "schema": "deployment.incremental.review.v1",
+  "baseline_main": "09f45187dbec29ebe63153f916b67505452dc136",
+  "published_site": {
+    "project_id": "appgprj_6aa52748b7788191afe0f7f86fc78833",
+    "version": 90,
+    "source": "a2a9148b463a30aa800293eeeb87a35ae9afcc9f",
+    "action_this_review": "READ_ONLY; no republish or replacement"
+  },
+  "intake": {
+    "available_attachments": 30,
+    "bytes": 34243590,
+    "sha256_readback": "ALL_PASS",
+    "archive_containers": 7,
+    "archive_crc": "ALL_PASS",
+    "embedded_deployment_candidates": 22,
+    "instructions_executed": false,
+    "custody": "private local Git, no source uploads to public repository"
+  },
+  "incremental_components": [
+    {
+      "component": "register parent context",
+      "change": "required explicit metadata; no parent inference or context merging",
+      "scope": "isolated staging",
+      "checks": "7 register tests passed"
+    },
+    {
+      "component": "unverified public domain registration",
+      "change": "remove fabricated BOUND response; refuse with 503 until reviewed ingress adapter exists",
+      "scope": "isolated staging; active runtime not replaced",
+      "checks": "real local HTTP refusal test passed; TypeScript transformed and syntax checked"
+    },
+    {
+      "component": "remote software ingestion",
+      "change": "remove timed simulated CONNECTED transition; refuse with 503 until reviewed backing service exists",
+      "scope": "isolated staging; active runtime not replaced",
+      "checks": "same real HTTP refusal test"
+    }
+  ],
+  "canary_order": [
+    "source custody and archive integrity",
+    "isolated metadata contract",
+    "unbound capability refusal",
+    "production backing-adapter qualification",
+    "one-component canary on verified target",
+    "external endpoint readback",
+    "promote only after qualification"
+  ],
+  "rollback": {
+    "staging": "previous remote staging commit 840c3facc2ea97e8289187ae4d1143cf26d0f5f4; preserve inspection records and originals",
+    "site": "version 90 retained unchanged",
+    "native": "no active process, container, listener or canonical-state replacement occurred"
+  },
+  "unresolved": [
+    "exact keddeh.com/mcp forwarding still discards paths",
+    "www.keddeh.com/mcp remains reserved-route platform 404; /mcp/ works",
+    "apex binding conflict is unresolved; no takeover attempted",
+    "domain and ingestion corrections staged but not running on an externally verified native node",
+    "randomized mining submission paths still require independent proof-of-work and pool-response audit",
+    "local DNS listeners do not establish public authoritative delegation"
+  ],
+  "promotion_allowed": false,
+  "tests": {
+    "intake": 3,
+    "registers": 7,
+    "unbound_capability_real_http": 1
+  }
+}

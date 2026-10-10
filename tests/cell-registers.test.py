@@ -5,7 +5,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'runtime'))
 import cell_registers as m
 import canonical_lineage as ledger
 class RegisterTests(unittest.TestCase):
-    def setUp(self):self.context=m.Context('custody-A','whole-A','X','environment-A','family-A')
+    def setUp(self):self.context=m.Context('custody-A','whole-A','X','environment-A','family-A','parent-A')
     def resolve(self,**kwargs):return json.loads(m.resolve_registers(self.context,kwargs.pop('cells',{'C':'-1','D':'0.297','Target':'0','Hash':'1'}),[2,4],**kwargs)['snapshot'])
     def test_exact_polarity_and_signed_delta_preserve_source(self):
         cells={'C':'-1','D':'0.297','Target':'0','Hash':'1','formula':'=C*D'};before=copy.deepcopy(cells)
@@ -21,8 +21,13 @@ class RegisterTests(unittest.TestCase):
     def test_unassigned_alternatives_and_contradictions(self):
         self.assertEqual(self.resolve()['X']['status'],'UNASSIGNED');self.assertEqual(self.resolve(X_candidates=[])['X']['status'],'CONTRADICTION');self.assertEqual(self.resolve(X_candidates=['1','2'])['X']['status'],'ALTERNATIVES');self.assertEqual(self.resolve(X_candidates=['1'])['X']['status'],'RESOLVED')
     def test_different_wholes_stay_distinct_at_local_unity(self):
-        other=m.Context('custody-B','whole-B','X','environment-A','family-A')
+        other=m.Context('custody-B','whole-B','X','environment-A','family-A','parent-A')
         self.assertNotEqual(m.resolve_X(self.context,['1']),m.resolve_X(other,['1']))
+    def test_parent_context_is_explicit_and_distinct(self):
+        other=m.Context('custody-A','whole-A','X','environment-A','family-A','parent-B')
+        self.assertNotEqual(m.resolve_X(self.context,['1']),m.resolve_X(other,['1']))
+        with self.assertRaises(TypeError):m.Context('custody-A','whole-A','X','environment-A','family-A')
+        with self.assertRaises(ValueError):m.Context('custody-A','whole-A','X','environment-A','family-A','')
     def test_integrity_persistence_does_not_upgrade_authority(self):
         candidate=m.resolve_registers(self.context,{'C':'1','D':'2'},[4])
         with tempfile.TemporaryDirectory() as root:

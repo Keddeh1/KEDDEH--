@@ -41,6 +41,7 @@ class Context:
     variable_X: str
     environment: str
     family: str
+    parent_context: str
 
     def __post_init__(self):
         if any(type(value) is not str or not value for value in asdict(self).values()):
