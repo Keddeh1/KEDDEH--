@@ -15,6 +15,11 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 def health(service):
+    if service.get('kind')=='uds':
+        result=subprocess.run(service['health_command'],capture_output=True,text=True,timeout=3,check=True)
+        state=json.loads(result.stdout)
+        if state.get('readiness_mask')!=7:raise RuntimeError('Substrate readiness rejected')
+        return state
     secure=service['scheme']=='https'
     options={'context':ssl.create_default_context(cafile=service['ca_file'])} if secure else {}
     client=(http.client.HTTPSConnection if secure else http.client.HTTPConnection)('127.0.0.1',service['port'],timeout=3,**options)
@@ -68,6 +73,15 @@ def main():
       'mcp-sdk':entry([node,ROOT/'mcp/sdk-server.mjs','--config',sdk_path,'--http','--port','8961'],8961,marker='mcp-sdk')
     }
     services['vfs']['token_file']=str(vfs/'access.token');services['mcp-sdk']['token_file']=str(token)
+    addons_file=estate/'service-addons.json'
+    if addons_file.exists():
+        addons=json.loads(addons_file.read_text())
+        if set(addons)&set(services):raise RuntimeError('Service addon cannot replace an active service')
+        services.update(addons)
+        for name,service in addons.items():
+            if service.get('sdk_url'):
+                sdk_services[name]={'url':service['sdk_url'],'health':service['health']}
+        sdk_path.write_text(json.dumps(sdk,indent=2)+'\n')
     config=estate/'services.json';config.write_text(json.dumps(services,indent=2)+'\n');os.chmod(config,0o600)
     if args.configure_only:
         print(json.dumps({'configured':list(services),'sdk_config':str(sdk_path)}));return
@@ -75,7 +89,7 @@ def main():
     for name,service in services.items():
         try:
             result=health(service);outcomes[name]={'status':'ALREADY_RUNNING','health':result};continue
-        except (OSError,ConnectionError):pass
+        except (OSError,ConnectionError,subprocess.CalledProcessError,subprocess.TimeoutExpired):pass
         with open(estate/(name+'.log'),'ab') as log:
             os.chmod(estate/(name+'.log'),0o600)
             child=subprocess.Popen([sys.executable,str(ROOT/'scripts/service-estate-supervisor.py'),'--config',str(config),'--service',name],cwd=ROOT,stdout=log,stderr=log,start_new_session=True)
@@ -84,7 +98,7 @@ def main():
             if child.poll() is not None:raise RuntimeError(name+' supervisor failed; inspect its private log')
             try:
                 result=health(service);outcomes[name]={'status':'RUNNING','health':result};break
-            except (OSError,ConnectionError):time.sleep(.1)
+            except (OSError,ConnectionError,subprocess.CalledProcessError,subprocess.TimeoutExpired):time.sleep(.1)
         else:
             child.terminate();raise RuntimeError(name+' readiness failed; inspect its private log')
     report={'services':outcomes,'sdk_config':str(sdk_path),'stdio_command':[node,str(ROOT/'mcp/sdk-server.mjs'),'--config',str(sdk_path)]}

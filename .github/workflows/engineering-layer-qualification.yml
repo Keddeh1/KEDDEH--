@@ -39,6 +39,8 @@ jobs:
         run: python3 scripts/bootstrap-keddeh-runtime.py
       - name: Real TLS, signatures, concurrency and durable readback
         run: .runtime-env/bin/python tests/network-registry.test.py
+      - name: Isolated ServerSpace substrate lifecycle and API gating
+        run: .runtime-env/bin/python tests/serverspace-substrate.test.py
       - name: Authenticated circuit execution and durable recovery
         run: .runtime-env/bin/python tests/circuit-service.test.py
       - name: Fetch pinned BRAINK source and verify family integration

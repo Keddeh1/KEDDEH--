@@ -32,7 +32,10 @@
     "mcp:sdk": "node mcp/sdk-server.mjs --config /workspace/deployments/keddeh-mcp-sdk/services.json",
     "mcp:sdk-http": "node mcp/sdk-server.mjs --config /workspace/deployments/keddeh-mcp-sdk/services.json --http --port 8961",
     "test:mcp-sdk": "node --test tests/mcp-sdk.test.mjs",
-    "services:setup": "python3 scripts/setup-service-estate.py"
+    "services:setup": "python3 scripts/setup-service-estate.py",
+    "serverspace:canary": "python3 scripts/setup-serverspace-canary.py",
+    "test:serverspace": ".runtime-env/bin/python tests/serverspace-substrate.test.py",
+    "serverspace:qualify": ".runtime-env/bin/python scripts/qualify-serverspace-canary.py"
   },
   "dependencies": {
     "@google/genai": "^2.26.0",

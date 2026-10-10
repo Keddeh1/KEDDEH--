@@ -210,8 +210,8 @@
     },
     {
       "path": ".github/workflows/engineering-layer-qualification.yml",
-      "bytes": 4658,
-      "sha256": "a733d93b4e3c27f8cd80cf8fca15cdc5dd713913cd7d40b6c902819bbb1ab62b",
+      "bytes": 4801,
+      "sha256": "e18709f890c6214f3024a9dea708110203620a2160a47f84ca60d8c08688b634",
       "sector": ".github",
       "source": false,
       "review_signals": [],
@@ -932,8 +932,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 3181,
-      "sha256": "6a87e6d32e9373ccd4f62048c708880db8c5a7523c5621914385a3b61801b25f",
+      "bytes": 3433,
+      "sha256": "641a3a1feee11b00f16caacaf7db545cf66c79e823150ec1e3100eb1ceab9cf4",
       "sector": "package.json",
       "source": false,
       "review_signals": [],
@@ -1075,6 +1075,42 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "runtime/serverspace-baseline.json",
+      "bytes": 1398,
+      "sha256": "a852141d1a4d3412e761f37348daa3f5607ab75518f925ef022f62684afda61f",
+      "sector": "runtime",
+      "source": false,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "runtime/serverspace_mining_gate.py",
+      "bytes": 1728,
+      "sha256": "c65600347ae96166a5dc5700e863e2779b12abf79077334800239aec45236971",
+      "sector": "runtime",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "runtime/serverspace_substrate.py",
+      "bytes": 12232,
+      "sha256": "96c18bb8c34db2ef3c9e4a69bd697531bf911aaa2b3e96840c58f6c9fcfd0654",
+      "sector": "runtime",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "runtime/serverspace_watchdog.py",
+      "bytes": 1856,
+      "sha256": "ddf24b5b7b5b0d8f92ab3b98e57c2ee65cac991ed8dbad16a6c2525ae8d0fcd9",
+      "sector": "runtime",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "runtime/service_supervisor.py",
       "bytes": 1988,
       "sha256": "8f5fcc12692533e17ff0973c54483467941894708e9166b3e9f5b318dcd7787f",
@@ -1192,6 +1228,15 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "scripts/qualify-serverspace-canary.py",
+      "bytes": 4187,
+      "sha256": "8c84a037f1ac5c7e0a3c71d8871a625c6d2fcbb9192184c3437665a7153b6e59",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "scripts/registry-client.py",
       "bytes": 3642,
       "sha256": "57a72ceeeb3dc303b38290eb153b92584117a0550cc8495b4d8ab6e002a16dc6",
@@ -1210,9 +1255,18 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "scripts/setup-serverspace-canary.py",
+      "bytes": 1898,
+      "sha256": "fa2e584602769e01f95160a50c748c1943710d230991e6c5a424b31df60df860",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "scripts/setup-service-estate.py",
-      "bytes": 6227,
-      "sha256": "385231d9b503d3a108dff1622ccf5189d0bf05beb86159b9634d4ec119caf656",
+      "bytes": 7130,
+      "sha256": "daab810208c03dcae05ca2b551981d9f31faf337dda4d961d4a124070c3acc57",
       "sector": "scripts",
       "source": true,
       "review_signals": [],
@@ -2908,6 +2962,15 @@
       "path": "tests/runtime-package.test.py",
       "bytes": 1083,
       "sha256": "53c534ec0f2d12988eb362ecf17bfd5fbc2e31af81d52f9d6f5664bc0575df49",
+      "sector": "tests",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "tests/serverspace-substrate.test.py",
+      "bytes": 8021,
+      "sha256": "ba6fbbaa6ab88d69c3bdc345ccfdf43fffbebf10b8ed1e6f338aa8e02b7c1fde",
       "sector": "tests",
       "source": true,
       "review_signals": [],

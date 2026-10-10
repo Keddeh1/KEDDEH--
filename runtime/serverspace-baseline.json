@@ -1,0 +1,21 @@
+{
+  "schema": "keddeh.serverspace.canary-baseline.v1",
+  "source_repository": "Keddeh1/SERVERSPACE",
+  "source_commit": "735f5c4924ba46d7f271110e6afb1ff78ca61387",
+  "source_files": {
+    "k_cloud_substrate_master_daemon.py": "17414b23a824cd73452ab4118de70157f0e4837c287044f9b18655df03488b25",
+    "colab_substrate_mount.py": "a2c0e2c98a5301d708b66b072f7cdbfa47baadb56bb74b70613472f3493a81c7",
+    "android-apk-servers (1).zip": "eea7e2346d60a68a44d97f2e67670c354cb0f9ca1a3b3f7a85f158dd9a8c7e53"
+  },
+  "source_handling": "Preserved in the original version-controlled source checkout; embedded notebook/bootstrap commands were inspected, not executed.",
+  "verified_remote_baseline": null,
+  "deployment_scope": "Isolated local canary; remote ServerSpace operating configuration remains unverified.",
+  "readiness_bits": {
+    "1": "canonical state and every canary cached dataset pass SHA256 and CRC32 checks",
+    "2": "canonical and shared state readback under exclusive writer lock",
+    "4": "signed peer request admitted over same-UID UDS"
+  },
+  "frame_validation_scope": "Bounded observed IPC and loopback TCP runs; does not guarantee loss-free delivery on arbitrary networks.",
+  "paths": "Canary state, mmap, UDS, keys and locks reside in the selected secured ServerSpace runtime directory.",
+  "non_merging": "Equal unity values do not merge independently identified domain contexts."
+}
