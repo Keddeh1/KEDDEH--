@@ -1,0 +1,20 @@
+{
+  "baseline_commit": "09f45187dbec29ebe63153f916b67505452dc136",
+  "strategy": "additive isolated canary; no active node or state replacement",
+  "promotion": "blocked until target directory, baseline semantics and live verification are confirmed",
+  "runtime_directory": "explicit operator-selected private ServerSpace runtime directory; no inferred production path",
+  "contained_paths": ["readiness.sock", "canonical-state.json", "shared-memory.bin", "peer.key", "writer.lock", "daemon.lock", "watchdog.lock", "memory.lock"],
+  "permissions": {"directory": "0700", "files_and_socket": "0600"},
+  "mask": {"expected": 7, "bits": {"1": "persistent mmap opened", "2": "canonical state digest and dataset CRCs validated", "4": "owner-only UDS listener bound"}},
+  "peer_authentication": "SO_PEERCRED owner UID and response PID; HMAC-SHA256 nonce-bound namespace handshake",
+  "api_gate": "python runtime/serverspace_substrate.py gate --root PRIVATE_RUNTIME_DIRECTORY --namespace INDEPENDENT_CONTEXT --timeout 30 -- REVIEWED_MINING_API_COMMAND",
+  "writer": "write_state(root, namespace, datasets, expected_revision); exclusive flock, revision conflict rejection, fsync atomic rename, exact readback",
+  "state_continuity": "persistent mmap and canonical file survive worker restart; no existing state imported without validation",
+  "watchdog": "single-owner local recovery; failed handshake or worker exit triggers bounded restart; not multi-host high availability",
+  "resource_limits": {"virtual_memory_bytes": 536870912, "open_files": 256},
+  "projection_isolation": "namespace identity required; no scalar-unity inference or parent-context merging",
+  "mathematical_scope": "byte integrity and revision invariants only; owner environmental conditioning/algebra requires supplied verified contract",
+  "transport_scope": "bounded length-and-CRC framed UDS messages; test evidence does not prove loss-free arbitrary networks",
+  "rollback": "stop only this canary watchdog; keep its data quarantined for inspection; existing nodes unchanged",
+  "integration_requirements": ["map the actual ServerSpace directory and service user", "compare mmap ABI and canonical state schema to active baseline", "review every API command", "check all assigned workers and resource limits", "verify TLS peers and external network frame receipts", "smoke-test publication, routes and internal/external endpoints", "promote one compatible component at a time"]
+}
