@@ -39,6 +39,8 @@ def main():
     if not state.exists():
         subprocess.run([str(python), str(root / 'scripts/provision-local-registry.py'), '--deployment', str(state)], check=True)
     subprocess.run([str(python), str(root / 'tests/network-registry.test.py')], check=True)
+    subprocess.run([str(python), str(root / 'tests/quantum-statevector.test.py')], check=True)
+    subprocess.run([str(python), str(root / 'tests/braink-family.test.py')], check=True)
     if args.install_only:
         print(json.dumps({'installed': True, 'deployment': str(state), 'source_commit': manifest['namespace_commit']}))
         return

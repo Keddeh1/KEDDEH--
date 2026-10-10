@@ -30,7 +30,12 @@
       "repository": "aboudykeddeh276-stack/BRAINK-Sovereign-Virtual-Brain-Console",
       "commit": "cfbee37c3c3a984201ce36f4c1d943ea395a63a3",
       "role": "braink-family-runtime",
-      "entrypoint": "KEX_SUBSTRATE_CORE/keddeh_enterprise_runtime.py"
+      "entrypoint": "KEX_SUBSTRATE_CORE/keddeh_enterprise_runtime.py",
+      "files": {
+        "KEX_SUBSTRATE_CORE/keddeh_enterprise_runtime.py": "d8bb94d6b75199f839b4a919976ab12ff360d0c0b153d89b38efb493d30120ce",
+        "KEX_SUBSTRATE_CORE/config/product_registry.json": "bca30e3dea6449ca5535e17dad123e2927e5b9659b3e11fcff215c7ba6b7eff5",
+        "KEX_SUBSTRATE_CORE/core/bilateral_auth.py": "1e0fb6fdf4f6b0aeee7bcd4ced75a9cade743ae327bc6a81569a60bb0133035e"
+      }
     }
   ],
   "derived_files": [

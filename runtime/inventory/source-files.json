@@ -210,8 +210,8 @@
     },
     {
       "path": ".github/workflows/engineering-layer-qualification.yml",
-      "bytes": 4065,
-      "sha256": "3defc5206c38a674839e26557fb7345c16e3c6ade393f815d12912b0c4c913a3",
+      "bytes": 4419,
+      "sha256": "7de096470ce870ba899799446a585c5c4601be92bbbd6be8f404a634a0baceea",
       "sector": ".github",
       "source": false,
       "review_signals": [],
@@ -428,8 +428,8 @@
     },
     {
       "path": "deployment/setup.py",
-      "bytes": 3887,
-      "sha256": "cbbec640491dd2a807716029351285bab07ccf41adee86b87ca4c2ee39c80ea9",
+      "bytes": 4071,
+      "sha256": "c4bc22898265542cc6c7135dd15d6763ae3feb7a2ff3551c1bbc259724b7321a",
       "sector": "deployment",
       "source": true,
       "review_signals": [],
@@ -887,8 +887,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 2699,
-      "sha256": "f67bc8dcdf97737df2082486e58a414c513c9c878a9fb035187fc76c6c7edc90",
+      "bytes": 2764,
+      "sha256": "b0bc6ea7f49bfb6eee2b8b75afd794dff91babca56c3d1b2c4395adf33ff00f7",
       "sector": "package.json",
       "source": false,
       "review_signals": [],
@@ -914,17 +914,26 @@
     },
     {
       "path": "runtime/braink_family.py",
-      "bytes": 6355,
-      "sha256": "33fb6e60c013467b6b1a4cf792896714659fc53503203ba7fd7fd0fe88c20735",
+      "bytes": 7825,
+      "sha256": "cf2f70784281625cb41b9a79e9cc7496bc1c6bc025c188cf64b10d20755c3afa",
       "sector": "runtime",
       "source": true,
       "review_signals": [],
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "runtime/circuits/bell.json",
+      "bytes": 155,
+      "sha256": "f4e1bb6d8d0ff129e145a65bca2e2a65ded8d7ffc21097d651bee1e5cc20c388",
+      "sector": "runtime",
+      "source": false,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "runtime/component-sources.json",
-      "bytes": 1391,
-      "sha256": "0c59723bfeeb010337e8852a5bc07049348896aa09d0d503f5a35f1d4043aa64",
+      "bytes": 1791,
+      "sha256": "b2d8ecc8715b0d602a4d1f93147b71b45f907fe1a9d33ed6b2d059078aba3a60",
       "sector": "runtime",
       "source": false,
       "review_signals": [],
@@ -985,9 +994,27 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "runtime/learning-sources.json",
+      "bytes": 1853,
+      "sha256": "19fec62c153cd7f08512a1ccf23dd5b50fd77bf2ba17f5354680db906ff477f8",
+      "sector": "runtime",
+      "source": false,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "runtime/network_registry.py",
       "bytes": 1537,
       "sha256": "58be307f29c528dcd9b0eb034fb8892c2c5642dc61fef26621890ef605c1771b",
+      "sector": "runtime",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "runtime/quantum_statevector.py",
+      "bytes": 4125,
+      "sha256": "751424d10b7de92cfa20bfe5d3006ad83d70cafd84903d54c2763197ae200558",
       "sector": "runtime",
       "source": true,
       "review_signals": [],
@@ -1022,8 +1049,8 @@
     },
     {
       "path": "scripts/build-network-bundle.py",
-      "bytes": 2200,
-      "sha256": "3df841eac5e68c89b89c332dc7a381917eccf4f1d558eb86fa11a11cbc18ec4a",
+      "bytes": 3246,
+      "sha256": "2bba10a752586c82ec502471c0f8664a719b1f367f8e5934cb50eb4577471d75",
       "sector": "scripts",
       "source": true,
       "review_signals": [],
@@ -2643,8 +2670,8 @@
     },
     {
       "path": "tests/braink-family.test.py",
-      "bytes": 5061,
-      "sha256": "b600c6b11a842fd372fd013887bd7d4f37da18c792c82dbf9d95afa531929049",
+      "bytes": 6866,
+      "sha256": "39884d5dcd5a1506b420e041032bf88bc2b7af5c5d6edfb84e549df870422645",
       "sector": "tests",
       "source": true,
       "review_signals": [],
@@ -2686,6 +2713,15 @@
       "review_signals": [
         "placeholder"
       ],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "tests/quantum-statevector.test.py",
+      "bytes": 3620,
+      "sha256": "9018436fb9c9b65746eb70aca34c9e31cd04267dcea67c2da826b91de4c19a52",
+      "sector": "tests",
+      "source": true,
+      "review_signals": [],
       "review_status": "PENDING_FILE_REVIEW"
     },
     {

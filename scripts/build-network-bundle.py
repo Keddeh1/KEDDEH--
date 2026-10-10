@@ -1,5 +1,6 @@
 """Build a secret-free archive containing the actual pinned namespace source."""
 import hashlib
+import argparse
 import io
 import json
 from pathlib import Path
@@ -12,7 +13,9 @@ source = next(c for c in json.loads((ROOT / 'runtime/component-sources.json').re
 checkout = ROOT / '.runtime-components' / source['repository'].split('/')[1]
 if subprocess.check_output(['git', '-C', str(checkout), 'rev-parse', 'HEAD'], text=True).strip() != source['commit']:
     raise SystemExit('Namespace source pin mismatch')
-out = ROOT / 'dist/network-deployment'
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output', type=Path, default=ROOT / 'dist/network-deployment')
+out = parser.parse_args().output.resolve()
 out.mkdir(parents=True, exist_ok=True)
 bundle = out / 'keddeh-network'
 if bundle.exists():
@@ -23,7 +26,14 @@ vendor = bundle / 'vendor/namespace'
 vendor.mkdir(parents=True)
 with tarfile.open(fileobj=io.BytesIO(archive)) as tar:
     tar.extractall(vendor, filter='data')
-for name in ('runtime/network_registry.py', 'scripts/provision-local-registry.py', 'scripts/registry-client.py', 'tests/network-registry.test.py'):
+braink = next(c for c in json.loads((ROOT / 'runtime/component-sources.json').read_text())['components'] if c['role'] == 'braink-family-runtime')
+braink_checkout = ROOT / '.runtime-components' / braink['repository'].split('/')[1]
+if subprocess.check_output(['git', '-C', str(braink_checkout), 'rev-parse', 'HEAD'], text=True).strip() != braink['commit']:
+    raise SystemExit('BRAINK source pin mismatch')
+braink_archive = subprocess.check_output(['git', '-C', str(braink_checkout), 'archive', braink['commit'], *braink['files'].keys()])
+with tarfile.open(fileobj=io.BytesIO(braink_archive)) as tar:
+    tar.extractall(bundle / 'vendor/braink', filter='data')
+for name in ('runtime/braink_family.py', 'runtime/quantum_statevector.py', 'runtime/component-sources.json', 'runtime/circuits/bell.json', 'runtime/learning-sources.json', 'tests/braink-family.test.py', 'tests/quantum-statevector.test.py', 'runtime/network_registry.py', 'scripts/provision-local-registry.py', 'scripts/registry-client.py', 'tests/network-registry.test.py'):
     target = bundle / name
     target.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(ROOT / name, target)

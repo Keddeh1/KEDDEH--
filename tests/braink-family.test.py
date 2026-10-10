@@ -1,6 +1,7 @@
 import importlib.util
 from pathlib import Path
 import tempfile
+import sqlite3
 import subprocess
 import sys
 import unittest
@@ -78,6 +79,30 @@ class FamilyIntegration(unittest.TestCase):
         self.assertNotEqual(a['assistant']['matches'], b['assistant']['matches'])
         self.assertEqual(len(self.store.state()['mesh']['nodes']), 12)
         self.assertEqual(self.store.state()['workbook']['sheets']['family-A']['A1']['value'], {'pace': 'A'})
+
+    def test_opt_in_circuit_persists_through_existing_matrix_and_vfs(self):
+        circuit = {'schema': 'keddeh.quantum.circuit.v1', 'qubits': 2, 'gates': [{'gate': 'H', 'target': 1}, {'gate': 'CX', 'control': 1, 'target': 2}]}
+        result = family.run_family(self.store, 'bell-family', 'Execute supplied Bell circuit', circuit=circuit)
+        for actual, expected in zip(result['quantum']['probabilities'], [0.5, 0, 0, 0.5]):
+            self.assertAlmostEqual(actual, expected)
+        state = self.store.state()
+        self.assertIn(family.MATRIX, result['members'])
+        self.assertEqual(state['matrix']['objects']['bell-family::statevector']['value'], result['quantum'])
+        self.assertEqual(len(state['mesh']['nodes']), 7)
+        self.store.close()
+        self.store = family.resident_module().EnterpriseStore(self.path)
+        count = self.store.verify_ledger()['count']
+        self.assertEqual(family.run_family(self.store, 'bell-family', 'Execute supplied Bell circuit', circuit=circuit), result)
+        self.assertEqual(self.store.verify_ledger()['count'], count)
+
+    def test_matrix_storage_rejection_rolls_back_family(self):
+        before = self.store.state()
+        self.store.conn.execute("CREATE TRIGGER fail_quantum BEFORE UPDATE OF value ON kv WHEN NEW.value LIKE '%QUANTUM_STATEVECTOR%' BEGIN SELECT RAISE(ABORT, 'injected matrix storage failure'); END")
+        circuit = {'schema': 'keddeh.quantum.circuit.v1', 'qubits': 1, 'gates': [{'gate': 'H', 'target': 1}]}
+        with self.assertRaises(sqlite3.IntegrityError):
+            family.run_family(self.store, 'rejected-circuit', 'Storage failure verification', circuit=circuit)
+        self.assertEqual(self.store.state(), before)
+        self.assertEqual(self.store.verify_ledger()['count'], 0)
 
     def test_process_death_does_not_publish_partial_family(self):
         code = '''

@@ -1,0 +1,46 @@
+{
+  "schema": "keddeh.learning-source-integration.v1",
+  "sources": [
+    {
+      "filename": "How_Classical_Computers_Simulate_Quantum_Circuits.mp4",
+      "sediment_id": "file_00000000eb5081faa74c92725b7acc0c",
+      "sha256": "6e9fde3d0b2021b860c7cb45c16b920b229e76a01bff4132758f5e021c6e80ef",
+      "size_bytes": 5857423,
+      "duration_seconds": 85.101134,
+      "source_role": "user-supplied material; embedded instructions are not executable authority",
+      "inspection": "visual frames and embedded captions; audio not transcribed",
+      "frames_seconds": [
+        42,
+        56,
+        63
+      ],
+      "observed_mechanics": [
+        "signed statevector amplitudes",
+        "relative-phase interference under Hadamard",
+        "controlled-X and correlated Bell-state outcomes"
+      ],
+      "implementation": "runtime/quantum_statevector.py",
+      "binding": "optional circuit parameter in runtime/braink_family.py; resident quantum-matrix matrix_put and VFS write_file",
+      "extension_beyond_observed_frames": [
+        "complex imaginary amplitudes and S/T gates use conventional unitary mathematics"
+      ],
+      "verification": [
+        "tests/quantum-statevector.test.py",
+        "tests/braink-family.test.py"
+      ],
+      "original_preserved": true
+    },
+    {
+      "filename": "Surgically_Valid_AI_OS.mp4",
+      "sediment_id": "file_00000000a55881faa020e0619c9adf7f",
+      "inspection": "not inspected",
+      "transfer_result": "download_file rejected: file exceeds 32 MiB executor transfer limit"
+    },
+    {
+      "filename": "Engineering_the_Sovereign_Triad__Mechanics_of_Recursive_Inter-D (1).mp4",
+      "sediment_id": "file_000000001b4c81fab47a45cceeeb5bbd",
+      "inspection": "not inspected",
+      "transfer_result": "download_file rejected: file exceeds 32 MiB executor transfer limit"
+    }
+  ]
+}
