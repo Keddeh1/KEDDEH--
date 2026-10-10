@@ -36,7 +36,9 @@ def provision(root):
     write('tls.crt', cert.public_bytes(serialization.Encoding.PEM))
     generator = Ed25519PrivateKey.generate()
     write('generator.key', generator.private_bytes_raw())
-    write('trust.json', json.dumps({'local-deployment-generator': {'public_key': base64.b64encode(generator.public_key().public_bytes_raw()).decode(), 'roles': ['generator'], 'runtime_ids': ['runtime://kex/core']}}).encode())
+    executor = Ed25519PrivateKey.generate()
+    write('circuit-executor.key', executor.private_bytes_raw())
+    write('trust.json', json.dumps({'local-deployment-generator': {'public_key': base64.b64encode(generator.public_key().public_bytes_raw()).decode(), 'roles': ['generator'], 'runtime_ids': ['runtime://kex/core']}, 'local-circuit-executor': {'public_key': base64.b64encode(executor.public_key().public_bytes_raw()).decode(), 'roles': ['generator'], 'runtime_ids': ['runtime://keddeh/quantum-computer']}}).encode())
     write('registry.token', secrets.token_urlsafe(48).encode())
     fd = os.open(root, os.O_RDONLY | os.O_DIRECTORY)
     try:

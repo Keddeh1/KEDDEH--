@@ -15,6 +15,7 @@ import time
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, default=8443)
+    parser.add_argument('--service', choices=['registry', 'circuits'], default='registry')
     parser.add_argument('--install-only', action='store_true')
     args = parser.parse_args()
     if sys.version_info < (3, 12):
@@ -41,6 +42,7 @@ def main():
     subprocess.run([str(python), str(root / 'tests/network-registry.test.py')], check=True)
     subprocess.run([str(python), str(root / 'tests/quantum-statevector.test.py')], check=True)
     subprocess.run([str(python), str(root / 'tests/braink-family.test.py')], check=True)
+    subprocess.run([str(python), str(root / 'tests/circuit-service.test.py')], check=True)
     if args.install_only:
         print(json.dumps({'installed': True, 'deployment': str(state), 'source_commit': manifest['namespace_commit']}))
         return
@@ -53,6 +55,8 @@ def main():
             result = json.loads(response.read())
             if response.status != 200 or result.get('status') != 'ok':
                 raise RuntimeError('Resident registry readback failed')
+            if args.service == 'circuits' and result.get('service') != 'circuits':
+                raise RuntimeError('Port belongs to a different service')
             return result
         finally:
             client.close()
@@ -64,7 +68,7 @@ def main():
         pass
     with open(state / 'service.log', 'ab') as log:
         os.chmod(state / 'service.log', 0o600)
-        child = subprocess.Popen([str(python), str(root / 'runtime/network_registry.py'), '--deployment', str(state), '--port', str(args.port)], cwd=root, stdout=log, stderr=log, start_new_session=True)
+        child = subprocess.Popen([str(python), str(root / 'runtime/service_supervisor.py'), '--service', args.service, '--deployment', str(state), '--port', str(args.port)], cwd=root, stdout=log, stderr=log, start_new_session=True)
     (state / 'service.pid').write_text(str(child.pid))
     for attempt in range(30):
         if child.poll() is not None:

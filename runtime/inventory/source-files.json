@@ -210,8 +210,8 @@
     },
     {
       "path": ".github/workflows/engineering-layer-qualification.yml",
-      "bytes": 4419,
-      "sha256": "7de096470ce870ba899799446a585c5c4601be92bbbd6be8f404a634a0baceea",
+      "bytes": 4553,
+      "sha256": "cc8d0e88d1546a90eeec0a9b3975fe8c140d9166d262236cccb8785a7db05e7a",
       "sector": ".github",
       "source": false,
       "review_signals": [],
@@ -428,8 +428,8 @@
     },
     {
       "path": "deployment/setup.py",
-      "bytes": 4071,
-      "sha256": "c4bc22898265542cc6c7135dd15d6763ae3feb7a2ff3551c1bbc259724b7321a",
+      "bytes": 4439,
+      "sha256": "fa15d75e781800863281389811efadf5bd9d93194831d8cc63c1087878d11172",
       "sector": "deployment",
       "source": true,
       "review_signals": [],
@@ -922,6 +922,15 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "runtime/circuit_service.py",
+      "bytes": 7057,
+      "sha256": "d15cc926701c4f06ffdb3d9015216894814d52e68c6caeae505bbb5a1da305ee",
+      "sector": "runtime",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "runtime/circuits/bell.json",
       "bytes": 155,
       "sha256": "f4e1bb6d8d0ff129e145a65bca2e2a65ded8d7ffc21097d651bee1e5cc20c388",
@@ -1021,6 +1030,15 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "runtime/service_supervisor.py",
+      "bytes": 1988,
+      "sha256": "8f5fcc12692533e17ff0973c54483467941894708e9166b3e9f5b318dcd7787f",
+      "sector": "runtime",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "runtime/web4_admission.py",
       "bytes": 2658,
       "sha256": "c945a63fc7cc6a076bb27708b5ab918a1f82ca50bad0f4768c073df603ab58d9",
@@ -1049,8 +1067,17 @@
     },
     {
       "path": "scripts/build-network-bundle.py",
-      "bytes": 3246,
-      "sha256": "2bba10a752586c82ec502471c0f8664a719b1f367f8e5934cb50eb4577471d75",
+      "bytes": 3371,
+      "sha256": "6d97a500243cc23fd9bdb348148b186931c1f2246ad6c1c68b5b8a98b6c1be22",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "scripts/circuit-client.py",
+      "bytes": 1647,
+      "sha256": "0433361a6264853cb09034cf936e56974ff337d5a0bbbc3f81029d00871a1db3",
       "sector": "scripts",
       "source": true,
       "review_signals": [],
@@ -1058,8 +1085,8 @@
     },
     {
       "path": "scripts/provision-local-registry.py",
-      "bytes": 2506,
-      "sha256": "a14eef5cce455543f86ff151f46bd751a42905526ad67e0c24370dec9d9b15ac",
+      "bytes": 2803,
+      "sha256": "e72924e8e20ec9e88c27659b5fc34b414a66f8f4f3e14646f96e43f8bae7cd98",
       "sector": "scripts",
       "source": true,
       "review_signals": [],
@@ -2672,6 +2699,15 @@
       "path": "tests/braink-family.test.py",
       "bytes": 6866,
       "sha256": "39884d5dcd5a1506b420e041032bf88bc2b7af5c5d6edfb84e549df870422645",
+      "sector": "tests",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "tests/circuit-service.test.py",
+      "bytes": 4931,
+      "sha256": "849d8514d385216d8f9d8710332d1b0826ae411c1c82f68aea2f66427cc49ba5",
       "sector": "tests",
       "source": true,
       "review_signals": [],
