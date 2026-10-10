@@ -1,0 +1,34 @@
+{
+  "status": "QUALIFIED_LOCAL_EXPERIMENT_ONLY",
+  "production_deployed": false,
+  "promotion_allowed": false,
+  "reference": "https://www.rfc-editor.org/rfc/rfc9591.html#section-6.1",
+  "tests": {
+    "frost_kex_actual_disk": 11,
+    "lineage_regression": 8,
+    "result": "PASS"
+  },
+  "verified": [
+    "RFC Appendix E.1 exact binding factors and signature",
+    "independent cryptography Ed25519 verification",
+    "prime-order nonidentity point checks and canonical scalar checks",
+    "one-use in-memory nonce state",
+    "per-share verification before aggregation",
+    "participant-specific sealed incident and full session abort",
+    "exact 116-byte envelope with payload authentication",
+    "durable epoch fence and stable receipt replay",
+    "file and directory fsync, SHA-256 readback, sealed lineage"
+  ],
+  "unresolved": [
+    "active ServerSpace connection and daemon.json/api.json unavailable",
+    "experimental variable-time Python signer; no secure memory zeroization or durable nonce custody",
+    "trusted dealer is not distributed key generation",
+    "no inter-node signing, pBFT, quorum policy or network fault campaign",
+    "production group key registry and reviewed point-validation backend unbound",
+    "raw payload HMAC is an experimental profile; owner KEX geometry adapter unbound",
+    "local filesystem durability verified, not power-cut hardware proof",
+    "a group signature alone does not attest participant IDs or threshold policy"
+  ],
+  "source_preservation": "original upload retained privately without execution",
+  "baseline_main": "09f45187dbec29ebe63153f916b67505452dc136"
+}
