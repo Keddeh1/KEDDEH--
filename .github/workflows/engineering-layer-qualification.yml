@@ -43,6 +43,8 @@ jobs:
         run: .runtime-env/bin/python tests/circuit-service.test.py
       - name: Fetch pinned BRAINK source and verify family integration
         run: python3 scripts/bootstrap-braink-runtime.py
+      - name: Tensor shell boundaries and retained state
+        run: python3 tests/tensor-shell.test.py
       - name: Statevector physics and bounded circuit tests
         run: python3 tests/quantum-statevector.test.py
       - name: Build secret-free deployment bundle

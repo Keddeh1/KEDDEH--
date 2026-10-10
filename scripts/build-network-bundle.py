@@ -33,7 +33,7 @@ if subprocess.check_output(['git', '-C', str(braink_checkout), 'rev-parse', 'HEA
 braink_archive = subprocess.check_output(['git', '-C', str(braink_checkout), 'archive', braink['commit'], *braink['files'].keys()])
 with tarfile.open(fileobj=io.BytesIO(braink_archive)) as tar:
     tar.extractall(bundle / 'vendor/braink', filter='data')
-for name in ('scripts/circuit-client.py', 'runtime/circuit_service.py', 'runtime/service_supervisor.py', 'tests/circuit-service.test.py', 'runtime/braink_family.py', 'runtime/quantum_statevector.py', 'runtime/component-sources.json', 'runtime/circuits/bell.json', 'runtime/learning-sources.json', 'tests/braink-family.test.py', 'tests/quantum-statevector.test.py', 'runtime/network_registry.py', 'scripts/provision-local-registry.py', 'scripts/registry-client.py', 'tests/network-registry.test.py'):
+for name in ('runtime/tensor_shell.py', 'runtime/shells/tetrahedron.json', 'runtime/sources/tensor-shell-proof-4.txt', 'tests/tensor-shell.test.py', 'scripts/circuit-client.py', 'runtime/circuit_service.py', 'runtime/service_supervisor.py', 'tests/circuit-service.test.py', 'runtime/braink_family.py', 'runtime/quantum_statevector.py', 'runtime/component-sources.json', 'runtime/circuits/bell.json', 'runtime/learning-sources.json', 'tests/braink-family.test.py', 'tests/quantum-statevector.test.py', 'runtime/network_registry.py', 'scripts/provision-local-registry.py', 'scripts/registry-client.py', 'tests/network-registry.test.py'):
     target = bundle / name
     target.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(ROOT / name, target)

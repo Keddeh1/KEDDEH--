@@ -1,3 +1,4 @@
+import json
 import importlib.util
 from pathlib import Path
 import tempfile
@@ -23,6 +24,27 @@ class FamilyIntegration(unittest.TestCase):
     def tearDown(self):
         self.store.close()
         self.temp.cleanup()
+
+    def test_tensor_shell_persisted_retry_and_restart(self):
+        shell = json.loads((ROOT / 'runtime/shells/tetrahedron.json').read_text())
+        result = family.run_family(self.store, 'shell-family', 'Validate supplied shell', shell=shell)
+        self.assertEqual(result['tensor_shell']['signed_volume_times_six'], 1)
+        self.assertIn(family.MATRIX, result['members'])
+        self.store.close()
+        self.store = family.resident_module().EnterpriseStore(self.path)
+        count = self.store.verify_ledger()['count']
+        self.assertEqual(family.run_family(self.store, 'shell-family', 'Validate supplied shell', shell=shell), result)
+        self.assertEqual(self.store.verify_ledger()['count'], count)
+        with self.assertRaises(ValueError):
+            family.run_family(self.store, 'shell-family', 'Validate supplied shell', shell=dict(shell, origin='changed'))
+
+    def test_invalid_shell_leaves_no_state(self):
+        shell = json.loads((ROOT / 'runtime/shells/tetrahedron.json').read_text())
+        before = self.store.state()
+        with self.assertRaises(ValueError):
+            family.run_family(self.store, 'bad-shell', 'Reject broken boundary', shell=dict(shell, faces=shell['faces'][:-1]))
+        self.assertEqual(self.store.state(), before)
+        self.assertEqual(self.store.verify_ledger()['count'], 0)
 
     def test_group_readback_and_restart(self):
         result = family.run_family(self.store, 'family-01', 'Organise learning', {'pace': 'self-directed'})

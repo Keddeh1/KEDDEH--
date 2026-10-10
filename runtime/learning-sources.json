@@ -41,6 +41,32 @@
       "sediment_id": "file_000000001b4c81fab47a45cceeeb5bbd",
       "inspection": "not inspected",
       "transfer_result": "download_file rejected: file exceeds 32 MiB executor transfer limit"
+    },
+    {
+      "filename": "Pasted text.txt",
+      "sediment_id": "file_00000000f44c81fb80d4c04b17c1d80c",
+      "sha256": "04859262f4e8446d894856590d884267cddfa13620b08a5c56fea53c74797f7c",
+      "size_bytes": 5072,
+      "preserved_path": "runtime/sources/tensor-shell-proof-4.txt",
+      "inspection": "complete text",
+      "implementation": [
+        "runtime/tensor_shell.py",
+        "runtime/braink_family.py"
+      ],
+      "applied_mechanics": [
+        "one-origin vertex references",
+        "explicit signed orientation",
+        "non-erasing zero-coordinate transition",
+        "exact oriented edge pairing and vertex-link closure",
+        "integer oriented area balance",
+        "discrete L1 and Linf shell cardinalities"
+      ],
+      "implementation_scope": "bounded finite triangulated oriented combinatorial manifold; spatial self-intersections and continuous curvature not certified",
+      "source_test_claim": "20 checks reported by supplied text; no original test runner supplied; independently executed repository checks recorded separately",
+      "verification": [
+        "tests/tensor-shell.test.py",
+        "tests/braink-family.test.py"
+      ]
     }
   ]
 }

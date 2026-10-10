@@ -43,6 +43,7 @@ def main():
     subprocess.run([str(python), str(root / 'tests/quantum-statevector.test.py')], check=True)
     subprocess.run([str(python), str(root / 'tests/braink-family.test.py')], check=True)
     subprocess.run([str(python), str(root / 'tests/circuit-service.test.py')], check=True)
+    subprocess.run([str(python), str(root / 'tests/tensor-shell.test.py')], check=True)
     if args.install_only:
         print(json.dumps({'installed': True, 'deployment': str(state), 'source_commit': manifest['namespace_commit']}))
         return

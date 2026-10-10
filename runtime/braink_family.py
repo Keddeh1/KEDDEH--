@@ -10,6 +10,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'runtime'))
 from quantum_statevector import simulate_circuit
+from tensor_shell import validate_shell
 MESH = 'mesh://keddeh/software-nodes'
 BRAIN = 'system://braink'
 MEMORY = 'volume://braink/il-llm/sovereign-v1'
@@ -36,7 +37,7 @@ def resident_module():
     return importlib.import_module('keddeh_enterprise_runtime')
 
 
-def run_family(store, family_id, goal, learning_preferences=None, *, circuit=None):
+def run_family(store, family_id, goal, learning_preferences=None, *, circuit=None, shell=None):
     """Persist one complete family undertaking or roll it back, including its receipts.
 
     A family ID identifies one immutable request. A retry returns committed readback;
@@ -53,6 +54,10 @@ def run_family(store, family_id, goal, learning_preferences=None, *, circuit=Non
     circuit_result = simulate_circuit(circuit_snapshot) if circuit_snapshot is not None else None
     if circuit_snapshot is not None:
         request['quantum_circuit'] = circuit_snapshot
+    shell_snapshot = json.loads(json.dumps(shell, allow_nan=False)) if shell is not None else None
+    shell_result = validate_shell(shell_snapshot) if shell_snapshot is not None else None
+    if shell_snapshot is not None:
+        request['tensor_shell'] = shell_snapshot
     path = '/braink/families/' + resident_module().sha(family_id) + '.json'
     with store.lock:
         # This batch is a local CLI operation; streaming subscribers belong to the
@@ -79,7 +84,7 @@ def run_family(store, family_id, goal, learning_preferences=None, *, circuit=Non
                 return response['result']
 
             members = [BRAIN, MEMORY, SKILLS, WORKBOOK, QUANTUM, VFS]
-            if circuit_result is not None:
+            if circuit_result is not None or shell_result is not None:
                 members.append(MATRIX)
             for member in members:
                 product = store.product(member)
@@ -102,11 +107,16 @@ def run_family(store, family_id, goal, learning_preferences=None, *, circuit=Non
                 quantum = circuit_result
                 op(MATRIX, 'matrix_put', {'id': family_id + '::statevector', 'kind': 'QUANTUM_STATEVECTOR', 'value': quantum})
                 op(MEMORY, 'relate', {'source': QUANTUM, 'predicate': 'EXECUTION_RESULT', 'target': family_id + '::statevector', 'scope': family_id, 'observer': BRAIN})
+            if shell_result is not None:
+                op(MATRIX, 'matrix_put', {'id': family_id + '::tensor-shell', 'kind': 'TENSOR_SHELL_BOUNDARY', 'value': shell_result})
+                op(MEMORY, 'relate', {'source': MATRIX, 'predicate': 'BOUNDARY_VALIDATED', 'target': family_id + '::tensor-shell', 'scope': family_id, 'observer': BRAIN})
             claim_id = family_id + '::request'
             op(MEMORY, 'register_claim', {'id': claim_id, 'subject': family_id, 'predicate': 'REQUESTED', 'object': goal, 'source': path, 'scope': family_id})
             op('runtime://keddeh/governance-proof', 'append_evidence', {'id': claim_id + '::receipt', 'subject': claim_id, 'classification': 'EXECUTION_OBSERVED', 'payload': request, 'session': family_id})
             claim = op(MEMORY, 'resolve_claim', {'id': claim_id, 'session': family_id})
             result = {'request': request, 'members': members, 'continuation': continuation, 'assistant': task, 'claim': claim, 'quantum': quantum, 'receipt_digests': receipts.copy()}
+            if shell_result is not None:
+                result['tensor_shell'] = shell_result
             op(VFS, 'write_file', {'path': path, 'content': result})
             if store.verify_ledger()['status'] != 'PASS':
                 raise RuntimeError('Resident ledger verification failed')
@@ -124,10 +134,11 @@ def main():
     parser.add_argument('--goal', required=True)
     parser.add_argument('--learning-preferences', type=Path)
     parser.add_argument('--circuit', type=Path, help='Optional bounded classical circuit; existing product identities are retained')
+    parser.add_argument('--shell', type=Path, help='Optional finite oriented triangle-shell validation')
     args = parser.parse_args()
     store = resident_module().EnterpriseStore(args.state)
     try:
-        result = run_family(store, args.family, args.goal, json.loads(args.learning_preferences.read_text()) if args.learning_preferences else {}, circuit=json.loads(args.circuit.read_text()) if args.circuit else None)
+        result = run_family(store, args.family, args.goal, json.loads(args.learning_preferences.read_text()) if args.learning_preferences else {}, circuit=json.loads(args.circuit.read_text()) if args.circuit else None, shell=json.loads(args.shell.read_text()) if args.shell else None)
         print(json.dumps(result, indent=2))
     finally:
         store.close()
