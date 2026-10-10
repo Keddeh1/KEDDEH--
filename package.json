@@ -25,7 +25,9 @@
     "braink:bootstrap": "python3 scripts/bootstrap-braink-runtime.py",
     "braink:family": "python3 runtime/braink_family.py",
     "test:braink": "python3 tests/braink-family.test.py",
-    "test:admission": "python3 tests/web4-admission.test.py"
+    "test:admission": "python3 tests/web4-admission.test.py",
+    "test:network": ".runtime-env/bin/python tests/network-registry.test.py",
+    "network:bundle": "python3 scripts/build-network-bundle.py"
   },
   "dependencies": {
     "@google/genai": "^2.26.0",

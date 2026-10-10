@@ -6,6 +6,8 @@ on:
       - 'runtime/engineering/**'
       - 'runtime/braink_family.py'
       - 'runtime/web4_admission.py'
+      - 'runtime/network_registry.py'
+      - 'deployment/**'
       - 'runtime/component-sources.json'
       - 'tests/engineering-layer.test.mjs'
       - 'mcp/**'
@@ -20,6 +22,27 @@ on:
   workflow_dispatch:
 
 jobs:
+  live-network:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.12.19'
+      - name: Install pinned resident namespace
+        run: python3 scripts/bootstrap-keddeh-runtime.py
+      - name: Real TLS, signatures, concurrency and durable readback
+        run: .runtime-env/bin/python tests/network-registry.test.py
+      - name: Build secret-free deployment bundle
+        run: python3 scripts/build-network-bundle.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: keddeh-network-deployment
+          path: dist/network-deployment/keddeh-network.tar.gz*
+
   braink-family:
     runs-on: ubuntu-latest
     steps:

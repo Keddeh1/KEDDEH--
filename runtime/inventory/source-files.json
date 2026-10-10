@@ -210,8 +210,8 @@
     },
     {
       "path": ".github/workflows/engineering-layer-qualification.yml",
-      "bytes": 3245,
-      "sha256": "dde89b7e9aaa9ad22402d85948c18276d3237846eef250f59727cdb8c0b33e7e",
+      "bytes": 4065,
+      "sha256": "3defc5206c38a674839e26557fb7345c16e3c6ade393f815d12912b0c4c913a3",
       "sector": ".github",
       "source": false,
       "review_signals": [],
@@ -423,6 +423,15 @@
       "sha256": "11bc2787bbe45ed190c28179170ae662520b8f1d24e231e8d4868490732277e7",
       "sector": "bun.lock",
       "source": false,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "deployment/setup.py",
+      "bytes": 3887,
+      "sha256": "cbbec640491dd2a807716029351285bab07ccf41adee86b87ca4c2ee39c80ea9",
+      "sector": "deployment",
+      "source": true,
       "review_signals": [],
       "review_status": "PENDING_FILE_REVIEW"
     },
@@ -878,8 +887,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 2556,
-      "sha256": "6cfc4a3923e923bcefd8c315defb31ef83e6d22cb94182ef40c3cac365fc5385",
+      "bytes": 2699,
+      "sha256": "f67bc8dcdf97737df2082486e58a414c513c9c878a9fb035187fc76c6c7edc90",
       "sector": "package.json",
       "source": false,
       "review_signals": [],
@@ -976,6 +985,15 @@
       "review_status": "PENDING_FILE_REVIEW"
     },
     {
+      "path": "runtime/network_registry.py",
+      "bytes": 1537,
+      "sha256": "58be307f29c528dcd9b0eb034fb8892c2c5642dc61fef26621890ef605c1771b",
+      "sector": "runtime",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
       "path": "runtime/web4_admission.py",
       "bytes": 2658,
       "sha256": "c945a63fc7cc6a076bb27708b5ab918a1f82ca50bad0f4768c073df603ab58d9",
@@ -997,6 +1015,33 @@
       "path": "scripts/bootstrap-keddeh-runtime.py",
       "bytes": 1491,
       "sha256": "d3e74204e7f1cae279b89e02a6f20e7592ea83370bf3e7fbfc3694faf11a4594",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "scripts/build-network-bundle.py",
+      "bytes": 2200,
+      "sha256": "3df841eac5e68c89b89c332dc7a381917eccf4f1d558eb86fa11a11cbc18ec4a",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "scripts/provision-local-registry.py",
+      "bytes": 2506,
+      "sha256": "a14eef5cce455543f86ff151f46bd751a42905526ad67e0c24370dec9d9b15ac",
+      "sector": "scripts",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "scripts/registry-client.py",
+      "bytes": 3642,
+      "sha256": "57a72ceeeb3dc303b38290eb153b92584117a0550cc8495b4d8ab6e002a16dc6",
       "sector": "scripts",
       "source": true,
       "review_signals": [],
@@ -2618,6 +2663,15 @@
       "path": "tests/engineering-layer.test.mjs",
       "bytes": 5528,
       "sha256": "f28a3af4bee4795f17a827331c53c964319036d6cb1f440b2751ddadd34759a0",
+      "sector": "tests",
+      "source": true,
+      "review_signals": [],
+      "review_status": "PENDING_FILE_REVIEW"
+    },
+    {
+      "path": "tests/network-registry.test.py",
+      "bytes": 5962,
+      "sha256": "2cf16c987556ae20a30ea67db2b1bfab2a0748317f9929bcc92c9e3a76e496a8",
       "sector": "tests",
       "source": true,
       "review_signals": [],
