@@ -1,0 +1,93 @@
+{
+  "schema": "keddeh.service-activation-receipt.v1",
+  "observed_at": 1791629553.6811461,
+  "services": [
+    {
+      "id": "vfs-hub",
+      "state": "RESPONDING",
+      "action": "ADOPTED",
+      "pid": 2123
+    },
+    {
+      "id": "protocol-mesh",
+      "state": "READY",
+      "action": "ADOPTED",
+      "pid": 2124
+    },
+    {
+      "id": "serverspace-primary",
+      "state": "READY",
+      "action": "ADOPTED",
+      "pid": 16984
+    },
+    {
+      "id": "serverspace-replica",
+      "state": "READY",
+      "action": "ADOPTED",
+      "pid": 16901
+    },
+    {
+      "id": "braink-ide-ci-supervisor",
+      "state": "READY",
+      "action": "STARTED",
+      "pid": 18249
+    },
+    {
+      "id": "BRAINK-BETA-TEST",
+      "state": "UNRESOLVED",
+      "reason": "CalledProcessError"
+    },
+    {
+      "id": "KEDDEH-SOVEREIGN-NAMESPACE-RUNTIME",
+      "state": "UNRESOLVED",
+      "reason": "CalledProcessError"
+    },
+    {
+      "id": "Keddeh-SYSTEMS-Virtual-File-Space-ZCG-ARCHITECTURE",
+      "state": "UNRESOLVED",
+      "reason": "CalledProcessError"
+    },
+    {
+      "id": "SERVERSPACE",
+      "state": "UNRESOLVED",
+      "reason": "CalledProcessError"
+    },
+    {
+      "id": "SERVERSPACE-EXTERNAL",
+      "state": "UNRESOLVED",
+      "reason": "CalledProcessError"
+    },
+    {
+      "id": "SYSTEMS-SERVICES-FOR-DEPLOYMENT-QUEUE",
+      "state": "UNRESOLVED",
+      "reason": "CalledProcessError"
+    },
+    {
+      "id": "Virtual-File-Space-ZCG-ARCHITECTURE",
+      "state": "UNRESOLVED",
+      "reason": "CalledProcessError"
+    },
+    {
+      "id": "braink-foundary-schema",
+      "state": "UNRESOLVED",
+      "reason": "CalledProcessError"
+    },
+    {
+      "id": "keddeh.com",
+      "state": "UNRESOLVED",
+      "reason": "CalledProcessError"
+    },
+    {
+      "id": "tensor-shell-resident-bundle",
+      "state": "UNRESOLVED",
+      "reason": "Deployment bundle absent in current environment"
+    }
+  ],
+  "sdk": {
+    "version": "1.29.0",
+    "initialize": "PASS",
+    "list_tools": "PASS",
+    "call_service_status": "PASS"
+  },
+  "platform_environment_publication": "No write/publish capability exposed; revision 114 inspected only"
+}
