@@ -24,7 +24,8 @@
     "test:installation": "node --import tsx --import ./tests/register-assets.mjs --test tests/package-installation.test.ts",
     "braink:bootstrap": "python3 scripts/bootstrap-braink-runtime.py",
     "braink:family": "python3 runtime/braink_family.py",
-    "test:braink": "python3 tests/braink-family.test.py"
+    "test:braink": "python3 tests/braink-family.test.py",
+    "test:admission": "python3 tests/web4-admission.test.py"
   },
   "dependencies": {
     "@google/genai": "^2.26.0",
