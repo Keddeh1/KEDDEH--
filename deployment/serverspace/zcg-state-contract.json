@@ -1,0 +1,58 @@
+{
+  "authority": "owner-declared architecture; not independent empirical validation",
+  "axioms": {
+    "constitutive_polarity": {
+      "direction_values": [
+        -1,
+        1
+      ],
+      "magnitude": "strictly positive",
+      "cell_E": "C * D",
+      "scope": "coupled register state; this alone does not prove core/process isolation"
+    },
+    "absence": "numerical zero is present; absence is an explicit nullable state, never coerced to zero",
+    "observer_substrate": "memory changes are provisional; durability proof must remain separate from epistemic/legal authority",
+    "signed_delta": "retain Target - Hash using the defined numeric coordinate domain; a SHA digest is not a substitute for a coordinate",
+    "independent_consilience": "canonical declaration requires independent substrates and preserved contextual authority, not equal hashes alone"
+  },
+  "write_back_stages": [
+    "MOUNT",
+    "VERIFY",
+    "HYDRATE",
+    "RESOLVE",
+    "MUTATE",
+    "WRITE-BACK",
+    "PROOF"
+  ],
+  "origin": {
+    "definition": "single 1 with paired counterpart (-1+)",
+    "coordinate_tuple_origin_allowed": false
+  },
+  "whole_relative_identity": {
+    "expression": "1 * X",
+    "X": "unassigned until environmental constraints resolve it",
+    "alternatives": "retain all satisfying assignments",
+    "contradictions": "retain unsatisfiable constraint evidence; do not force a value",
+    "merge_by_local_unity_allowed": false
+  },
+  "metadata_separation": [
+    "source_object_custody_identity",
+    "whole_identity",
+    "variable_X",
+    "environment",
+    "family",
+    "resolved_numeric_identity"
+  ],
+  "jitter": {
+    "literal": "0.297",
+    "architectural_role": "lambda jitter function",
+    "legacy_oscillator_or_density_usage": "version-specific code evidence; requires traced cross-normalization, never silent semantic renaming"
+  },
+  "evidence_limits": [
+    "Dual fsync is an OS/filesystem/device durability operation, not a test of legal or epistemic authority.",
+    "The filename canonical-state.json does not by itself establish the owner Canonical classification.",
+    "Q32.32 constants remove runtime float evaluation for warrants 1..4; matrix inputs and remaining operations require their own deterministic specification.",
+    "Independent origins/wholes and contexts remain distinct even if their local unit equals 1.",
+    "The 125-workbook cascade has not been connected or verified in this session."
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "baseline_commit": "09f45187dbec29ebe63153f916b67505452dc136",
+  "strategy": "isolated additive staging; main and existing nodes unchanged",
+  "promotion_allowed": false,
+  "source_material_execution": "original proposal preserved privately, never executed",
+  "phases": [
+    {
+      "phase": 1,
+      "implemented": [
+        "private daemon.json publication",
+        "namespace/PID-bound dynamic UDS resolution",
+        "path containment",
+        "startup handshake gate",
+        "persistent listener and bounded watchdog recovery"
+      ],
+      "learning": [
+        "process isolation",
+        "metadata custody",
+        "Unix socket peer identity"
+      ],
+      "unqualified": [
+        "actual ServerSpace secured directory is absent and creation was denied",
+        "api.json and primary/replica HTTP endpoints are absent",
+        "four-layer live startup cascade and sustained IPC streams are not qualified"
+      ]
+    },
+    {
+      "phase": 2,
+      "implemented": [
+        "signed-64-bit Q32.32 integer accumulation using vetted constants for warrants 1..4",
+        "warrant zero rejected before arithmetic",
+        "invalid values and overflow rejected",
+        "owner-declared absence/zero, single-origin and non-merging contract recorded separately from executable authority"
+      ],
+      "learning": [
+        "log-domain constraints",
+        "fixed-point error accumulation",
+        "evidence classification is a separate authority decision"
+      ],
+      "unqualified": [
+        "no cross-CPU ARM64/WASM measurements",
+        "no authoritative register/matrix adapter is bound",
+        "no automatic upgrade of epistemic authority"
+      ]
+    },
+    {
+      "phase": 3,
+      "implemented": [
+        "file fsync, atomic rename and parent-directory fsync",
+        "exclusive writer lock and revision conflicts",
+        "exact canonical JSON readback and dataset CRC verification",
+        "worker restart preserves canonical state and mmap bytes"
+      ],
+      "learning": [
+        "storage durability contracts",
+        "crash boundaries",
+        "kernel lock ownership"
+      ],
+      "unqualified": [
+        "power-cut hardware campaign not run",
+        "canonical LINEAGE_AUDIT_LEDGER.jsonl and multi-file crash reconciliation are not implemented",
+        "process termination during each write stage not qualified",
+        "persistent lock files are retained deliberately; lock release differs from file deletion"
+      ]
+    },
+    {
+      "phase": 4,
+      "implemented": [
+        "existing exact 116-byte admission interface retained",
+        "non-destructive malformed-frame rejection",
+        "owner UID/PID and namespace-bound HMAC UDS handshake"
+      ],
+      "learning": [
+        "authenticated context and payload binding",
+        "replay protection",
+        "threshold signatures require a real distributed signing protocol"
+      ],
+      "unqualified": [
+        "admission verifier, KEX and durable ledger remain unbound to production",
+        "threshold Ed25519 signing/pBFT protocol not supplied",
+        "no destructive canonical-state purge installed"
+      ]
+    },
+    {
+      "phase": 5,
+      "implemented": [
+        "real Node high-resolution IPC measurement"
+      ],
+      "learning": [
+        "percentiles and metric scope",
+        "rendering vs IPC vs hardware DMA",
+        "accessibility targets require user/task evaluation"
+      ],
+      "unqualified": [
+        "UI rendering, hardware DMA, API ingress and interaction budgets unmeasured",
+        "20/80/83-column layouts and reduced-motion campaign not run",
+        "q=0 needs the owner identity/projection contract"
+      ]
+    },
+    {
+      "phase": 6,
+      "implemented": [
+        "real isolated socket/process failure campaigns",
+        "200-ticket, 5-MiB bounded hash-chained incident ledger",
+        "malformed IPC writes incident and leaves daemon responsive",
+        "production frontend build executed"
+      ],
+      "learning": [
+        "test evidence scope",
+        "incident-chain custody",
+        "build warnings are release findings"
+      ],
+      "unqualified": [
+        "12 legacy admission tests use explicit fixtures and are not physical end-to-end qualification",
+        "SDK suite failed before cases ran because services.json is absent",
+        "named 28-case and 33-case suites and DOM full suite do not exist in checkout",
+        "build completed with Zod annotation, mixed import and oversized-chunk warnings",
+        "incident rolling-window prefix needs external anchoring for full history proof",
+        "bibliography entries 1..14 were not supplied; citation support cannot be verified"
+      ]
+    }
+  ],
+  "tests": {
+    "real_substrate_process_tests": 14,
+    "fixedpoint_tests": 5,
+    "real_disk_incident_tests": 2,
+    "legacy_fixture_contract_tests": 12,
+    "sdk_integration_suite": "FAILED_SETUP_MISSING_SERVICE_CONFIG",
+    "named_acceptance_campaigns": "ABSENT"
+  },
+  "measured_ipc": {
+    "scope": "actual isolated local authenticated UDS round trips; not DMA, API ingress or UI rendering",
+    "samples": 100,
+    "worker_pid": 12347,
+    "namespace": "serverspace-zcg-canary-isolated",
+    "mask": 7,
+    "state_digest": "db1cb4d1574af1bba64c2217c08c52e4558245a1b6182c8e130c99a24472f052",
+    "timer": "process.hrtime.bigint()",
+    "latency_ms": {
+      "minimum": 0.20637,
+      "p50": 0.464981,
+      "p95": 0.810311,
+      "maximum": 3.659003
+    },
+    "per_request_process_spawn": "client performs no process spawn; daemon PID unchanged; transient OS-wide PID events not traced"
+  },
+  "corrections": {
+    "q32_quantum": 2.3283064365386963e-10,
+    "floor_per_term_error": "less than 2^-32 in log units; total error bound scales with term count",
+    "log_zero": "undefined; isolate warrant 0",
+    "fsync_scope": "durability depends on filesystem/device contract; no universal power-loss guarantee",
+    "threshold_signature": "hash concatenation is not threshold Ed25519",
+    "HCI_scope": "Fitts/Hick/Doherty figures are design targets, not universal conformance guarantees"
+  },
+  "required_context": [
+    "active ServerSpace connection and validated daemon.json/api.json",
+    "actual state/mmap ABI, workbook bindings and calculated environmental constraints for X",
+    "bibliography mapping for references 1..14"
+  ],
+  "owner_state_contract": "deployment/serverspace/zcg-state-contract.json"
+}

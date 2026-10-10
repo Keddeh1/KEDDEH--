@@ -103,6 +103,35 @@ class SubstrateTests(unittest.TestCase):
         self.assertNotEqual(duplicate.wait(timeout=3), 0)
         outside = self.root/'outside'; outside.mkdir(mode=0o700); link = self.root/'alias'; link.symlink_to(outside)
         with self.assertRaises(ValueError): s.secure_root(link)
+    def test_dynamic_socket_discovery_and_path_isolation(self):
+        self.launch('daemon'); self.ready()
+        metadata = s.read_json(self.root/'daemon.json')
+        renamed = self.root/'discovered.sock'; (self.root/'readiness.sock').rename(renamed)
+        metadata['uds'] = str(renamed); s.atomic(self.root,'daemon.json',metadata)
+        self.assertEqual(s.probe(self.root,'canary-A')['mask'],7)
+        metadata['uds'] = '/tmp/foreign.sock'; s.atomic(self.root,'daemon.json',metadata)
+        with self.assertRaisesRegex(ValueError,'ESCAPES_RUNTIME'): s.probe(self.root,'canary-A')
+    def test_malformed_payload_does_not_crash_daemon(self):
+        child = self.launch('daemon'); self.ready()
+        for bad in ([], {'payload':[],'signature':'bad'}, {'payload':{},'signature':7}):
+            with socket.socket(socket.AF_UNIX) as conn:
+                conn.settimeout(2);conn.connect(str(self.root/'readiness.sock'));s.send_frame(conn,bad)
+                with self.assertRaises(ConnectionError):s.receive_frame(conn)
+        self.assertIsNone(child.poll()); self.assertEqual(self.ready()['mask'],7)
+    def test_stable_worker_pid_and_observed_child_inventory(self):
+        child=self.launch('daemon');self.ready()
+        def children():
+            observed=[]
+            for entry in Path('/proc').iterdir():
+                if not entry.name.isdigit():continue
+                try:fields=(entry/'stat').read_text().rsplit(')',1)[1].split()
+                except (OSError,IndexError):continue
+                if int(fields[1])==child.pid:observed.append(entry.name)
+            return sorted(observed)
+        before=children()
+        for _ in range(25):self.assertEqual(s.probe(self.root,'canary-A')['pid'],child.pid)
+        self.assertEqual(children(),before)
+        self.assertIsNone(child.poll())
     def test_untrusted_signature_rejected_without_success(self):
         self.launch('daemon'); self.ready()
         with socket.socket(socket.AF_UNIX) as conn:

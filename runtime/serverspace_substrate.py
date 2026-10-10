@@ -79,12 +79,18 @@ def atomic(root, name, value):
 
 
 def validate(state, namespace):
+    if not isinstance(state, dict) or not all(k in state for k in ('namespace', 'revision', 'datasets', 'digest')):
+        raise ValueError('INVALID_STATE_SCHEMA')
+    if type(state['revision']) is not int or state['revision'] < 1 or not isinstance(state['datasets'], dict) or not isinstance(state['digest'], str):
+        raise ValueError('INVALID_STATE_SCHEMA')
     if state['namespace'] != namespace:
         raise ValueError('CONTEXT_IDENTITY_MISMATCH')
     body = {key: value for key, value in state.items() if key != 'digest'}
     if not hmac.compare_digest(state['digest'], hashlib.sha256(encoded(body)).hexdigest()):
         raise ValueError('STATE_DIGEST_MISMATCH')
     for item in state['datasets'].values():
+        if not isinstance(item, dict) or not isinstance(item.get('hex'), str) or type(item.get('crc32')) is not int:
+            raise ValueError('INVALID_DATASET_SCHEMA')
         payload = bytes.fromhex(item['hex'])
         if zlib.crc32(payload) & 0xffffffff != item['crc32']:
             raise ValueError('DATASET_CRC_MISMATCH')
@@ -157,10 +163,27 @@ def peer(connection):
     return pid
 
 
+def discovered_endpoint(root, namespace):
+    metadata = read_json(root / 'daemon.json')
+    if not isinstance(metadata, dict) or metadata.get('namespace') != namespace or metadata.get('ready') is not True:
+        raise ValueError('ENDPOINT_CONTEXT_OR_READINESS_REJECTED')
+    if not isinstance(metadata.get('uds'), str) or type(metadata.get('pid')) is not int:
+        raise ValueError('INVALID_ENDPOINT_METADATA')
+    endpoint = Path(metadata['uds'])
+    if not endpoint.is_absolute() or endpoint.parent != root or endpoint.is_symlink():
+        raise ValueError('ENDPOINT_ESCAPES_RUNTIME_DIRECTORY')
+    info = endpoint.stat()
+    if not stat.S_ISSOCK(info.st_mode) or info.st_uid != os.getuid() or stat.S_IMODE(info.st_mode) != 0o600:
+        raise ValueError('UNSAFE_DISCOVERED_ENDPOINT')
+    return endpoint, metadata['pid']
+
+
 def probe(root, namespace):
     root = secure_root(root); key = secret(root)
+    endpoint, expected_pid = discovered_endpoint(root, namespace)
     with socket.socket(socket.AF_UNIX) as connection:
-        connection.settimeout(2); connection.connect(str(root / 'readiness.sock')); peer_pid = peer(connection)
+        connection.settimeout(2); connection.connect(str(endpoint)); peer_pid = peer(connection)
+        if peer_pid != expected_pid: raise ValueError('METADATA_PEER_PID_MISMATCH')
         request = {'namespace': namespace, 'nonce': secrets.token_hex(24), 'op': 'readiness'}
         send_frame(connection, {'payload': request, 'signature': sign(key, request)})
         response = receive_frame(connection)
@@ -199,6 +222,7 @@ def daemon(root, namespace):
         signal.signal(signal.SIGTERM, stop); signal.signal(signal.SIGINT, stop)
         with socket.socket(socket.AF_UNIX) as server:
             server.bind(str(endpoint)); os.chmod(endpoint, 0o600); server.listen(16); server.settimeout(.2)
+            atomic(root, 'daemon.json', {'namespace': namespace, 'pid': os.getpid(), 'uds': str(endpoint), 'ready': True, 'protocol': 'length-crc-hmac-v1'})
             try:
                 while running:
                     state = validate(read_json(path), namespace)
@@ -210,14 +234,25 @@ def daemon(root, namespace):
                     with connection:
                         connection.settimeout(1)
                         try:
-                            peer(connection); incoming = receive_frame(connection); request = incoming['payload']
+                            peer(connection); incoming = receive_frame(connection)
+                            if not isinstance(incoming, dict) or not isinstance(incoming.get('payload'), dict) or not isinstance(incoming.get('signature'), str):
+                                raise ValueError('INVALID_FRAME_SCHEMA')
+                            request = incoming['payload']
+                            if not isinstance(request.get('nonce'), str) or not 1 <= len(request['nonce']) <= 128:
+                                raise ValueError('INVALID_NONCE')
                             if not hmac.compare_digest(incoming['signature'], sign(key, request)): raise ValueError('PEER_AUTHENTICATION_FAILED')
                             if request.get('namespace') != namespace or request.get('op') != 'readiness': raise ValueError('CONTEXT_IDENTITY_MISMATCH')
                             response = {**heartbeat, 'nonce': request['nonce']}
                             send_frame(connection, {'payload': response, 'signature': sign(key, response)})
                         except (ValueError, KeyError, OSError, json.JSONDecodeError) as error:
-                            print(json.dumps({'rejected': type(error).__name__}), file=sys.stderr, flush=True)
+                            from incident_ledger import record
+                            try:
+                                incident = record(root, 'IPC', {'failure': type(error).__name__, 'namespace': namespace})
+                                print(json.dumps({'rejected': type(error).__name__, 'incident_id': incident['incident_id']}), file=sys.stderr, flush=True)
+                            except (OSError, ValueError) as audit_error:
+                                print(json.dumps({'rejected': type(error).__name__, 'incident_record_failed': type(audit_error).__name__}), file=sys.stderr, flush=True)
             finally:
+                atomic(root, 'daemon.json', {'namespace': namespace, 'pid': os.getpid(), 'ready': False})
                 endpoint.unlink(missing_ok=True); memory.close()
 
 
