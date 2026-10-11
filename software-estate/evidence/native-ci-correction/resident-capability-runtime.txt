@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspace/component-sources/BRAINK/scripts/kex-ci/test_enterprise_capability_runtime_r6.py", line 6, in <module>
+    from mcp.braink_process_adapter.capability_catalog import GovernedCapabilityService
+ModuleNotFoundError: No module named 'mcp.braink_process_adapter'

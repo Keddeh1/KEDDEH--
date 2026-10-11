@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-11T16:51:47.736693+00:00",
+  "repositorySource": "8e0f4a37e398817be983433a84d1c487e86454e3",
+  "residentSource": "754e2919e986ac1e1936a38d33ca343f8285b35c",
+  "checks": [
+    {
+      "name": "repository-engineering",
+      "command": [
+        "node",
+        "--test",
+        "tests/engineering-layer.test.mjs"
+      ],
+      "cwd": "/workspace/KEDDEH--",
+      "exitCode": 0,
+      "output": "repository-engineering.txt",
+      "scope": "Existing tests; local temporary state. No production trigger or domain mutation."
+    },
+    {
+      "name": "repository-core",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "--import",
+        "./tests/register-assets.mjs",
+        "--test",
+        "tests/core-primitives.test.ts"
+      ],
+      "cwd": "/workspace/KEDDEH--",
+      "exitCode": 0,
+      "output": "repository-core.txt",
+      "scope": "Existing tests; local temporary state. No production trigger or domain mutation."
+    },
+    {
+      "name": "resident-authenticated-gateway",
+      "command": [
+        "python3",
+        "scripts/kex-ci/test_console_gateway_r25.py"
+      ],
+      "cwd": "/workspace/component-sources/BRAINK",
+      "exitCode": 0,
+      "output": "resident-authenticated-gateway.txt",
+      "scope": "Existing tests; local temporary state. No production trigger or domain mutation."
+    },
+    {
+      "name": "resident-sector-orchestration",
+      "command": [
+        "python3",
+        "scripts/kex-ci/test_sector_orchestration_r14.py"
+      ],
+      "cwd": "/workspace/component-sources/BRAINK",
+      "exitCode": 0,
+      "output": "resident-sector-orchestration.txt",
+      "scope": "Existing local test with in-memory/fake backend or disposable SQLite; no production offload."
+    },
+    {
+      "name": "resident-capability-runtime",
+      "command": [
+        "python3",
+        "scripts/kex-ci/test_enterprise_capability_runtime_r6.py"
+      ],
+      "cwd": "/workspace/component-sources/BRAINK",
+      "exitCode": 1,
+      "output": "resident-capability-runtime.txt",
+      "scope": "Existing local test with in-memory/fake backend or disposable SQLite; no production offload."
+    }
+  ],
+  "nativeWorkbookDispatcherExecuted": false,
+  "boundary": "Local existing qualification routines, not proof that a workbook outbox item was claimed or assessed."
+}

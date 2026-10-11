@@ -1,0 +1,18 @@
+{
+  "scope": "isolated local contract; fake backend; not native offload",
+  "capabilityCount": 25,
+  "checks": [
+    "unique capability identities",
+    "missing scope denied",
+    "wrong holder denied",
+    "stale epoch denied",
+    "replay does not invoke backend twice",
+    "idempotency conflict denied",
+    "semantic failure 0",
+    "semantic failure 1",
+    "semantic failure 2",
+    "circuit denies fourth failure",
+    "independent SQLite lifecycle readback"
+  ],
+  "passed": 11
+}

@@ -1,0 +1,23 @@
+✔ zero is valid only as computed polarity assessment (2.959655ms)
+✔ zero address is rejected (1.681616ms)
+✔ zero state is rejected (0.240657ms)
+✔ mutating safety action requires evidence (1.296219ms)
+✔ safety kernel preserves zero assessment without making zero state (0.493333ms)
+✔ directory registration is idempotent (0.254769ms)
+✔ conflicting revision is not silently overwritten (0.469183ms)
+✔ promotion requires explicit supersession (1.064237ms)
+✔ layer2 identical states converge (0.834173ms)
+✔ layer2 unresolved conflict remains unresolved (0.826937ms)
+✔ layer2 explicit supersession promotes successor (0.503826ms)
+✔ capability escalation flag is denied by safety kernel (0.196976ms)
+✔ tot node registers and emits chained safety receipt (0.511756ms)
+✔ tot node mutating transition requires evidence (0.608112ms)
+✔ tot supervisor registry audits all nodes with zero-assessment invariant (0.737519ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 243.343807

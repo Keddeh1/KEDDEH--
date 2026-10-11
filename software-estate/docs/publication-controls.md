@@ -38,6 +38,8 @@ Each Markdown document has a branding header, separated metadata, substantive bo
 No external publishing, sharing, signing, credential change or deployment is authorized by this skill itself. All original third-party licence and copyright notices remain in force. Metadata describing source ownership is attribution, not a legal reassignment of rights.
 
 
+Native CI qualification correction: R2 review is a same-model separate-worker review. It does not satisfy the owner runtime’s different-model assessment requirement, and no native assessment receipt is claimed. See [existing native CI and domain authority](development.md#existing-native-ci-and-domain-authority-r2-correction).
+
 ---
 © 2026 Aboudy Keddeh | Keddeh Systems | All rights reserved  
 KEDDEH-ENG-PUBLICATION-CONTROLS-001 | R2 | Private development material | Draft  

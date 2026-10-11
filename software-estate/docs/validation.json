@@ -1,7 +1,7 @@
 {
   "schema": "keddeh.docs.review.v1",
-  "at": "2026-10-11T16:45:25.362Z",
-  "linksChecked": 297,
+  "at": "2026-10-11T16:56:24.387Z",
+  "linksChecked": 311,
   "missingLinks": [],
   "htmlPages": [
     {
@@ -28,7 +28,7 @@
       "h1": "Development control and governance",
       "tables": 1,
       "overflow": false,
-      "bodyText": 3210,
+      "bodyText": 3467,
       "externalScripts": 0
     },
     {
@@ -46,7 +46,7 @@
       "h1": "Development, run and test guide",
       "tables": 1,
       "overflow": false,
-      "bodyText": 5009,
+      "bodyText": 7720,
       "externalScripts": 0
     },
     {
@@ -55,7 +55,7 @@
       "h1": "Evidence register and qualification boundary",
       "tables": 2,
       "overflow": false,
-      "bodyText": 5287,
+      "bodyText": 5544,
       "externalScripts": 0
     },
     {
@@ -109,7 +109,7 @@
       "h1": "Publication controls and layout dependency record",
       "tables": 1,
       "overflow": false,
-      "bodyText": 3762,
+      "bodyText": 4019,
       "externalScripts": 0
     },
     {

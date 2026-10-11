@@ -55,6 +55,20 @@ Documentation regeneration uses `marked` 17.0.5 and the validation runner uses P
 See the [evidence register](evidence-register.md) for final R2 reports when integrated. Not every root package script is a test: pool, mining submission and external services commands must not be run as part of this walkthrough.
 
 
+### Existing native CI and domain authority — R2 correction
+
+The owner states that the entire `keddeh.com` domain runs under their systems control. Requests to paths are mediated by that runtime. A redirect is evidence about routing; it does not establish a separate application, missing capability, or application identity. BRAINK, StoreSpace, ServerSpace, HCF and the public frontage remain distinct.
+
+The parent investigation of the existing WEBSITE DEVELOPMENT TEAM workbook identifies `/develop`, `/api/development`, `/api/development/source` and `/api/development/worker`. Its owner dispatcher `keddehDispatchReady` processes CONTROL OUTBOX commands through `/api/mcp`. TASK_ENQUEUE and TASK_CLAIM use the translation ledger, `braink://owner/workbook`, expectedVersion compare-and-swap and bounded leases. These are attributed existing-system contracts, not newly implemented integrations or evidence that this branch entered the native queue.
+
+The assistant-added `html-software-estate.yml` GitHub Actions workflow has been removed. The inherited engineering workflow remains unchanged. A historical GitHub Actions billing restriction says nothing about availability of the owner's native CI. The isolated browser runners are reusable qualification tools; they do not replace the owner dispatcher.
+
+The native verification contract requires a different software model and an assessment receipt document number. R2's separate-worker review used the same model and does not meet that requirement. No native assessment receipt exists for this branch in this evidence set.
+
+Existing local qualification passed 15 engineering tests, eight core tests and six authenticated gateway assertions with disposable state. See [execution evidence](../evidence/native-ci-correction/executions.json) and [source trace](../evidence/native-ci-correction/source-trace.json). No native queue, claim, publish or rollback action was submitted. The website dispatcher implementation is absent from the inspected local checkouts; the supported Sites source-opening helper and site-bindings reference were unavailable in this executor. That source-access boundary prevents checking the branch-to-native-job binding here. It does not establish that the native CI is absent or broken.
+
+The supplied BRAINK source also declares twelve sectors and 25 governed capabilities. Eleven isolated capability contract checks passed, including independent SQLite receipt readback. The older R6 test fails its stale 17-capability count after isolating an installed-package import collision. Epoch fencing in this local implementation has no lease expiry; automatic retries and dependency scheduling were not established. See the [offload contract and bounded unsubmitted assignments](../evidence/native-ci-correction/offload-contract.json) and [contract probe](../tests/native-capability-contract.py). These preparations do not grant access or claim external execution.
+
 ---
 © 2026 Aboudy Keddeh | Keddeh Systems | All rights reserved  
 KEDDEH-ENG-DEVELOPMENT-001 | R2 | Private development material | Draft  

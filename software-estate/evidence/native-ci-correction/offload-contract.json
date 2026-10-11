@@ -1,0 +1,400 @@
+{
+  "sourceCommit": "754e2919e986ac1e1936a38d33ca343f8285b35c",
+  "sourceFiles": {
+    "enterprise/SECTOR_FUNCTION_REGISTER_R14.json": "b5e3a43433ba0200392292c4bc767cb34837821ece432365ec982b05e01030d4",
+    "enterprise/orchestration/durable_execution_r5.py": "fd9070624676ebc786610fca7e6d995eeeb69f7dbc0c8edb45ec65eed43fbd5b",
+    "enterprise/orchestration/cross_sector_executor.py": "2d5048934db716b5099352cc5b6a6e9ddb2b00d49b506f431ddeec4511487ae5",
+    "mcp/braink_process_adapter/capability_catalog.py": "f06a6c04535124abe261e856ff3ba9c571a471d2590361284a40f8a95011ce79",
+    "mcp/braink_process_adapter/capability_runtime.py": "35b35293c4ec6198202445b7e36f773ed02a8793350f49c2e1dc100db3086f3d"
+  },
+  "sectors": {
+    "AI_CLOUD_INFRA": {
+      "market_functions": [
+        "capacity planning",
+        "GPU/server orchestration",
+        "model serving",
+        "AI workload routing",
+        "cost attribution",
+        "usage metering",
+        "SLA management",
+        "observability",
+        "data-center capacity",
+        "cloud/IaaS governance"
+      ],
+      "required_adapters": [
+        "compute",
+        "container",
+        "cloud",
+        "metrics",
+        "billing"
+      ],
+      "controls": [
+        "tenant isolation",
+        "quota",
+        "cost ceilings",
+        "availability",
+        "data residency"
+      ]
+    },
+    "CYBERSECURITY": {
+      "market_functions": [
+        "asset inventory",
+        "identity/access",
+        "threat detection",
+        "vulnerability management",
+        "incident response",
+        "security posture",
+        "agent/tool authorization",
+        "audit",
+        "policy enforcement",
+        "supply-chain security"
+      ],
+      "required_adapters": [
+        "identity",
+        "logs",
+        "network",
+        "endpoint",
+        "policy"
+      ],
+      "controls": [
+        "least privilege",
+        "fencing",
+        "tamper evidence",
+        "segmentation",
+        "incident containment"
+      ]
+    },
+    "ENTERPRISE_AUTOMATION": {
+      "market_functions": [
+        "workflow orchestration",
+        "agent handoff",
+        "process discovery",
+        "task routing",
+        "document operations",
+        "approvals",
+        "exception handling",
+        "service desk",
+        "CRM/ERP integration",
+        "ROI telemetry"
+      ],
+      "required_adapters": [
+        "email",
+        "calendar",
+        "documents",
+        "CRM",
+        "ERP",
+        "service-desk"
+      ],
+      "controls": [
+        "human approval boundaries",
+        "idempotency",
+        "handoff integrity",
+        "audit"
+      ]
+    },
+    "FINTECH_PAYMENTS": {
+      "market_functions": [
+        "payments",
+        "ledgering",
+        "reconciliation",
+        "fraud detection",
+        "KYC/identity",
+        "limits",
+        "entitlements",
+        "settlement",
+        "disputes",
+        "financial reporting"
+      ],
+      "required_adapters": [
+        "payment-rail",
+        "banking",
+        "ledger",
+        "identity",
+        "risk"
+      ],
+      "controls": [
+        "transaction limits",
+        "dual control",
+        "reconciliation",
+        "fraud rules",
+        "regulatory audit"
+      ]
+    },
+    "HEALTHCARE": {
+      "market_functions": [
+        "patient administration",
+        "clinical workflow support",
+        "scheduling",
+        "claims/revenue cycle",
+        "records routing",
+        "care coordination",
+        "inventory",
+        "compliance",
+        "decision support",
+        "audit"
+      ],
+      "required_adapters": [
+        "EHR",
+        "scheduling",
+        "claims",
+        "identity",
+        "documents"
+      ],
+      "controls": [
+        "privacy",
+        "role separation",
+        "clinical human authority",
+        "data provenance",
+        "audit"
+      ]
+    },
+    "LEGAL_REGTECH": {
+      "market_functions": [
+        "intake",
+        "matter management",
+        "evidence lineage",
+        "document generation",
+        "deadline tracking",
+        "rule mapping",
+        "source discovery",
+        "compliance monitoring",
+        "case chronology",
+        "client communication"
+      ],
+      "required_adapters": [
+        "documents",
+        "court/source registry",
+        "calendar",
+        "payments",
+        "identity"
+      ],
+      "controls": [
+        "jurisdiction",
+        "source provenance",
+        "no-outcome-guarantee",
+        "human legal authority",
+        "privacy"
+      ]
+    },
+    "DATA_INFORMATION_GOVERNANCE": {
+      "market_functions": [
+        "data catalog",
+        "lineage",
+        "retention",
+        "access policy",
+        "semantic indexing",
+        "data quality",
+        "provenance",
+        "search",
+        "knowledge graph",
+        "privacy classification"
+      ],
+      "required_adapters": [
+        "database",
+        "VFS",
+        "object-store",
+        "search",
+        "identity"
+      ],
+      "controls": [
+        "retention",
+        "purpose limitation",
+        "lineage",
+        "access scope",
+        "deletion"
+      ]
+    },
+    "SUPPLY_CHAIN_LOGISTICS": {
+      "market_functions": [
+        "inventory",
+        "procurement",
+        "orders",
+        "routing",
+        "warehouse operations",
+        "carrier management",
+        "ETA/exceptions",
+        "supplier risk",
+        "returns",
+        "demand planning"
+      ],
+      "required_adapters": [
+        "ERP",
+        "WMS",
+        "TMS",
+        "mapping",
+        "telemetry"
+      ],
+      "controls": [
+        "inventory integrity",
+        "supplier authority",
+        "exception escalation",
+        "audit"
+      ]
+    },
+    "MANUFACTURING_INDUSTRIAL": {
+      "market_functions": [
+        "production scheduling",
+        "maintenance",
+        "quality",
+        "work orders",
+        "asset state",
+        "digital work instructions",
+        "inventory",
+        "safety events",
+        "OEE telemetry",
+        "supplier coordination"
+      ],
+      "required_adapters": [
+        "MES",
+        "SCADA-readonly",
+        "CMMS",
+        "ERP",
+        "telemetry"
+      ],
+      "controls": [
+        "safety interlocks",
+        "human authority",
+        "change control",
+        "read-only OT boundaries"
+      ]
+    },
+    "ENERGY_UTILITIES": {
+      "market_functions": [
+        "asset management",
+        "outage management",
+        "workforce dispatch",
+        "demand forecasting",
+        "meter operations",
+        "maintenance",
+        "regulatory reporting",
+        "customer operations",
+        "energy trading support",
+        "grid telemetry"
+      ],
+      "required_adapters": [
+        "asset-system",
+        "metering",
+        "GIS",
+        "dispatch",
+        "telemetry"
+      ],
+      "controls": [
+        "critical infrastructure separation",
+        "operator authority",
+        "safety",
+        "regulatory audit"
+      ]
+    },
+    "COMMERCE_CUSTOMER_OPERATIONS": {
+      "market_functions": [
+        "catalog",
+        "pricing",
+        "orders",
+        "payments",
+        "customer service",
+        "returns",
+        "marketing operations",
+        "personalization",
+        "fraud",
+        "fulfilment"
+      ],
+      "required_adapters": [
+        "commerce",
+        "CRM",
+        "payments",
+        "inventory",
+        "messaging"
+      ],
+      "controls": [
+        "consumer law",
+        "pricing authority",
+        "privacy",
+        "refund control"
+      ]
+    },
+    "GOVERNMENT_PUBLIC_ADMIN": {
+      "market_functions": [
+        "case management",
+        "applications",
+        "licensing",
+        "benefits/service delivery",
+        "records",
+        "procurement",
+        "compliance",
+        "correspondence",
+        "audit",
+        "public information"
+      ],
+      "required_adapters": [
+        "case-system",
+        "records",
+        "identity",
+        "payments",
+        "documents"
+      ],
+      "controls": [
+        "administrative authority",
+        "records retention",
+        "privacy",
+        "explainability",
+        "procurement"
+      ]
+    }
+  },
+  "admission": {
+    "local": "GovernedCapabilityService.invoke(capability_id, context, payload, idempotency_key); context includes work_id, actor_id, lease_epoch, scopes, optional approval_token",
+    "production": "Workbook TASK_ENQUEUE/TASK_CLAIM contract attributed by parent; exact deployed adapter binding not obtained",
+    "safeHere": "Local disposable contract testing only; no production assignment submitted"
+  },
+  "limitations": [
+    "Local acquire_lease advances epoch atomically but has no time expiry; not equivalent to workbook bounded leaseMs.",
+    "Capability required scopes and holder/epoch enforced; approval_token only checked for presence in this layer, not independently verified here.",
+    "Idempotency key indexed by capability; request hash includes actor/work/epoch/payload; successful replay returns prior result. Failed or executing key cannot be automatically retried.",
+    "Default circuit opens after three failures for 30 seconds. No automatic retry scheduler or dependency DAG established by these modules.",
+    "CrossSectorExecutor requires explicit handler bindings; unbound returns UNBOUND. Handler-returned observations and receipt hashes are actor evidence, not external different-model assessment.",
+    "Twelve-sector registry is a declared capability map; adapter availability must be independently observed before offload.",
+    "Original R6 test import collides with installed mcp package. With python -S it fails obsolete 17-capability assertion against current 25. Source left unchanged."
+  ],
+  "preparedAssignments": [
+    {
+      "sector": "DATA_INFORMATION_GOVERNANCE",
+      "functions": [
+        "lineage",
+        "privacy classification",
+        "data catalog"
+      ],
+      "status": "PREPARED_NOT_SUBMITTED",
+      "dependencies": [
+        "parent resolves authorized account export scope",
+        "verified input identities and hashes",
+        "native admission binding"
+      ]
+    },
+    {
+      "sector": "ENTERPRISE_AUTOMATION",
+      "functions": [
+        "task routing",
+        "agent handoff",
+        "exception handling"
+      ],
+      "status": "PREPARED_NOT_SUBMITTED",
+      "dependencies": [
+        "bounded admission schema",
+        "lease TTL and retry/dependency policy",
+        "observed authorized worker identity"
+      ]
+    },
+    {
+      "sector": "CYBERSECURITY",
+      "functions": [
+        "agent/tool authorization",
+        "audit"
+      ],
+      "status": "PREPARED_NOT_SUBMITTED",
+      "dependencies": [
+        "scoped adapter manifest",
+        "independent different-model assessor and receipt path"
+      ]
+    }
+  ]
+}

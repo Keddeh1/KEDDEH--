@@ -1,0 +1,17 @@
+✔ telemetry remains unknown until a measured sample is supplied (4.15314ms)
+✔ input supports multiple handlers and explicit detachment (0.589543ms)
+✔ process IDs retain one-origin identity and reject duplicate active processes (0.938769ms)
+✔ sourced KEX component preserves its address and relation contracts (11.379123ms)
+✔ VFS persistence failures do not publish incomplete memory state (250.456859ms)
+✔ dependency ordering handles shared dependencies, cycles and missing identities (5.992269ms)
+[VFSPrimitive] Hydrated 1 persistent inodes.
+✔ VFS queues concurrent writes in invocation order and releases a failed operation (13.330499ms)
+✔ VFS hydration cannot resurrect a record deleted after its initial snapshot (2.610976ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1493.814012

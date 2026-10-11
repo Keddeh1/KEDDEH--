@@ -48,6 +48,8 @@ Documentation provenance: the glossary and monograph draw from named source file
 
 Independent review identified weak initial checkpoint, worker-denial and repeated-editor assertions. The strengthened suite now mutates VFS state before restoring and checks exact equality, asserts unavailable worker/error/zero pending requests, and reads saved editor text in each of three cycles. The [independent final rerun](../evidence/r2-browser-independent/results.json) passes all 15 checks. The [review report](../evidence/r2-independent-review.md) distinguishes independently executed actor-authored tests from independently designed tests. Earlier receipts remain historical; their assertion weaknesses do not describe the final strengthened run.
 
+Native CI qualification correction: R2 review is a same-model separate-worker review. It does not satisfy the owner runtime’s different-model assessment requirement, and no native assessment receipt is claimed. See [existing native CI and domain authority](development.md#existing-native-ci-and-domain-authority-r2-correction).
+
 ---
 © 2026 Aboudy Keddeh | Keddeh Systems | All rights reserved  
 KEDDEH-ENG-EVIDENCE-REGISTER-001 | R2 | Private development material | Draft  

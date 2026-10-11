@@ -1,0 +1,12 @@
+{
+  "schema": "keddeh.authenticated-console-gateway.r25.test/v1",
+  "status": "PASS",
+  "checks": {
+    "unauthenticated_rejected": true,
+    "authenticated_health": true,
+    "runtime_status_readback": true,
+    "capability_manifest": true,
+    "authenticated_mutation": true,
+    "receipt_readback": true
+  }
+}

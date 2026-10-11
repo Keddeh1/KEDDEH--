@@ -1,0 +1,77 @@
+{
+  "checks": {
+    "twelve_sectors": true,
+    "all_have_functions": true,
+    "AI_CLOUD_INFRA_edge_count": true,
+    "AI_CLOUD_INFRA_recursive_fold": true,
+    "CYBERSECURITY_edge_count": true,
+    "CYBERSECURITY_recursive_fold": true,
+    "ENTERPRISE_AUTOMATION_edge_count": true,
+    "ENTERPRISE_AUTOMATION_recursive_fold": true,
+    "priority_sectors_rank_first": true,
+    "collapse_receipts": true
+  },
+  "ranked": [
+    {
+      "sector": "AI_CLOUD_INFRA",
+      "score": 4.44,
+      "function_count": 10,
+      "product_vectors": [
+        "AI operations control plane",
+        "agent workload governor",
+        "AI cost/reliability optimizer"
+      ]
+    },
+    {
+      "sector": "CYBERSECURITY",
+      "score": 4.44,
+      "function_count": 10,
+      "product_vectors": [
+        "agent security governor",
+        "evidence-native security operations",
+        "runtime authorization fabric"
+      ]
+    },
+    {
+      "sector": "DATA_INFORMATION_GOVERNANCE",
+      "score": 4.44,
+      "function_count": 10,
+      "product_vectors": [
+        "IL-LLM semantic operations",
+        "VFS governance",
+        "evidence-addressable data fabric"
+      ]
+    },
+    {
+      "sector": "FINTECH_PAYMENTS",
+      "score": 4.44,
+      "function_count": 10,
+      "product_vectors": [
+        "governed agent payments",
+        "transaction proof fabric",
+        "financial operations automation"
+      ]
+    },
+    {
+      "sector": "ENTERPRISE_AUTOMATION",
+      "score": 4.36,
+      "function_count": 10,
+      "product_vectors": [
+        "governed agentic workflow fabric",
+        "enterprise process supervisor"
+      ]
+    },
+    {
+      "sector": "LEGAL_REGTECH",
+      "score": 2.9400000000000004,
+      "function_count": 10,
+      "product_vectors": [
+        "CasePath service fabric",
+        "legal evidence lineage",
+        "regulated document workflow"
+      ]
+    }
+  ],
+  "edge_count": 300,
+  "receipt_count": 30
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "keddeh.native-ci-correction.v1",
+  "supersedes": "Assistant-added GitHub Actions qualification workflow only",
+  "inheritedWorkflowSHA256": "a733d93b4e3c27f8cd80cf8fca15cdc5dd713913cd7d40b6c902819bbb1ab62b",
+  "domainAuthority": "User states the entire keddeh.com domain is controlled by their systems runtime; paths are mediated by that runtime. Redirect observations do not establish independent application identity.",
+  "canonicalContract": {
+    "evidence": "Parent read-only WEBSITE DEVELOPMENT TEAM workbook investigation; attributed findings, not a live execution receipt",
+    "entryPoints": [
+      "/develop",
+      "/api/development",
+      "/api/development/source",
+      "/api/development/worker"
+    ],
+    "dispatcher": "keddehDispatchReady via owner /api/mcp",
+    "outbox": [
+      "TASK_ENQUEUE",
+      "TASK_CLAIM"
+    ],
+    "namespace": "braink://owner/workbook",
+    "controls": [
+      "expectedVersion CAS",
+      "bounded leaseMs",
+      "separate different-model assessment receipt"
+    ]
+  },
+  "sourceBoundary": "Website dispatcher implementation not present in inspected local checkouts. Supported Sites source helper and site-bindings skill resource were unavailable (failed to read skill resource); source checkout not obtained.",
+  "assessment": {
+    "sameModelWorkerReviewOnly": true,
+    "nativeDifferentModelAssessmentReceipt": null
+  },
+  "nativeQueueSubmitted": false,
+  "nativePublishTriggered": false,
+  "githubActionsBilling": "Historical Actions run was blocked before steps; this is not a native CI failure or blocker."
+}

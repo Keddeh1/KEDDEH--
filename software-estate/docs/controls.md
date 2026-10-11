@@ -37,6 +37,8 @@ This edition records authorized local development; it does not grant authority t
 A promotion decision must state exactly what was tested and against which bytes. Partial browser coverage may support a bounded increment without implying complete estate qualification. HCF candidate source remains quarantined from the exact-original claim. StoreSpace and ServerSpace stay unresolved until the proper source packages are authorized and supplied.
 
 
+Native CI qualification correction: R2 review is a same-model separate-worker review. It does not satisfy the owner runtime’s different-model assessment requirement, and no native assessment receipt is claimed. See [existing native CI and domain authority](development.md#existing-native-ci-and-domain-authority-r2-correction).
+
 ---
 © 2026 Aboudy Keddeh | Keddeh Systems | All rights reserved  
 KEDDEH-ENG-CONTROLS-001 | R2 | Private development material | Draft  
