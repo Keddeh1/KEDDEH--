@@ -1,0 +1,205 @@
+{
+  "source_commit": "d5fac6b573dbba5e01a426a9ee8e3d4e9df8f668",
+  "publication_base": "09f45187dbec29ebe63153f916b67505452dc136",
+  "files": [
+    {
+      "path": "nested-vfs-teams/README.md",
+      "sha256": "131adb54a04c4c1c6bcd3f035665de572b72a30eb7f24bfccec1abd00b769c41",
+      "git_blob": "894cc19519b36d09b6bccb574118afe640527658",
+      "bytes": 13481
+    },
+    {
+      "path": "nested-vfs-teams/canary.py",
+      "sha256": "6872f1ba4b0cd61578401f9c5ee3563d54aec564443e03b5f56cd51143566ac1",
+      "git_blob": "24442651ef9f64c60b87f6dd45fa83800fd7549c",
+      "bytes": 11082
+    },
+    {
+      "path": "nested-vfs-teams/evidence/independent-review/findings.md",
+      "sha256": "7f3466b0ef535d979e7358991c75b8625f07b06a2f9d1673179c7fc420684c1e",
+      "git_blob": "cebb705ba1956cbe97fbebc666af1e53e096b46b",
+      "bytes": 4815
+    },
+    {
+      "path": "nested-vfs-teams/evidence/independent-review/fixed-additional.py",
+      "sha256": "7649a7529a476bbad121a2d8e08547967500a578ee18d04723108a51f2d1908f",
+      "git_blob": "118bf0da5052a35ecfec6143782ee5a80bb24929",
+      "bytes": 2447
+    },
+    {
+      "path": "nested-vfs-teams/evidence/independent-review/integration-checks.py",
+      "sha256": "e56a043703748d0be6daf1303e1f016c449cdbe99143dec26a3f9731b61ee28f",
+      "git_blob": "fd72fe2e2df170811c1d16763e90514a74977de1",
+      "bytes": 2321
+    },
+    {
+      "path": "nested-vfs-teams/evidence/independent-review/integration-review.md",
+      "sha256": "99cdb2c8a4f1819a5116e3c018dbe3a42651ebb4cdc8397ed02385825557e085",
+      "git_blob": "15e02a781e89b443b4d84e684cc63588f973f612",
+      "bytes": 2920
+    },
+    {
+      "path": "nested-vfs-teams/evidence/independent-review/probes.py",
+      "sha256": "db4a5454b77b021463f0d57ac7bed9af0d6acf2644f9b8324a5601aaf642ba50",
+      "git_blob": "ad8d5ee746828ab851c502ec34e8c263d42f791f",
+      "bytes": 2892
+    },
+    {
+      "path": "nested-vfs-teams/ingestion_adapter.py",
+      "sha256": "ec1afb32aef6f6fd3e974ef0a41e36883eccad7a38ef5122e4ffba4b9f79bc13",
+      "git_blob": "94823bc0f6894c1fe27645f0708e94e103584a4e",
+      "bytes": 3328
+    },
+    {
+      "path": "nested-vfs-teams/integration_roundtrip.py",
+      "sha256": "0b14a311597c0ece355ab2cca4815776199ba4aa44b9ef25efc7464a99b11387",
+      "git_blob": "6ee4ea958b9ac39cea33e89eb10a6baddc1c877b",
+      "bytes": 8153
+    },
+    {
+      "path": "nested-vfs-teams/interface.json",
+      "sha256": "d99798b15aa8a798cd86d84d9e5d300373cda600e5f8ed3d070b2190c2929197",
+      "git_blob": "104b6cc8eea61dceacd6ca0a0fe0697d887ea472",
+      "bytes": 1721
+    },
+    {
+      "path": "nested-vfs-teams/manager.py",
+      "sha256": "1158327d259cf5ead4c63e0c258c7b34299eba527f64dfa27af0097c801f16cb",
+      "git_blob": "d914c9ca0eb1a6bcfe1c10bb471aee1304c81bf3",
+      "bytes": 1050
+    },
+    {
+      "path": "nested-vfs-teams/manifest.json",
+      "sha256": "ffb00fd27b038081d91240a64cd5078ccaade9337de2a54416c410480f66face",
+      "git_blob": "8f7aeba518f8c607b06228448bc3633cde98cbc7",
+      "bytes": 9231
+    },
+    {
+      "path": "nested-vfs-teams/observer.py",
+      "sha256": "1544f9553c2ebf3fa7334a0ded4e098336f3d68a79819c8266a89159d8e6e0de",
+      "git_blob": "e50e64aa2ad7c665c56203bbf249ee23ce03aa52",
+      "bytes": 2103
+    },
+    {
+      "path": "nested-vfs-teams/process_runner.py",
+      "sha256": "2c1b49ba85252b77b338a4ba1ef22196adfb0740a4b25c38b10ac5fe05f2d5ff",
+      "git_blob": "07c1b65f64b587e7ee0a028f4b8fc28f6365d823",
+      "bytes": 1042
+    },
+    {
+      "path": "nested-vfs-teams/runtime.py",
+      "sha256": "d8a0bf03fec85832aa2e75dd655b20ed30dfbdf8bed51f2961a96ce66bd1b34c",
+      "git_blob": "9643304c3d20b1a6176202462443749c76b315f7",
+      "bytes": 16150
+    },
+    {
+      "path": "nested-vfs-teams/schemas/team-instance.schema.json",
+      "sha256": "1561f6b12a6e9f16207647c92fb03851be2b5cebf8ded775a99cb71b7172a2b2",
+      "git_blob": "fffaf40b2e04033c3e2db5205a5edd78d46cb488",
+      "bytes": 3773
+    },
+    {
+      "path": "nested-vfs-teams/schemas/team-template.schema.json",
+      "sha256": "90bce7c5a2e602f4cf5bd0cfd3645c4c9cf0c51ee70305e4508fef544720ea39",
+      "git_blob": "2e25e0338402f44c277b8aee378026fd29c888da",
+      "bytes": 1347
+    },
+    {
+      "path": "nested-vfs-teams/schemas/worker-template.schema.json",
+      "sha256": "3a7452bb5ca6f15305a0e2f5901b4c86ad6ee11b5753bfd8a05efa5eef0e3008",
+      "git_blob": "53a0a26b1683e7cba13f0790f4d578ec8f0b6b36",
+      "bytes": 1057
+    },
+    {
+      "path": "nested-vfs-teams/storage.py",
+      "sha256": "885ab15f85e1484a2cb0d490f139f3987c869c54a7e7a99cc98549a9ee51434d",
+      "git_blob": "b5ffe3d4b4aa8f2b6a0805825f261e49a44d8ad2",
+      "bytes": 1318
+    },
+    {
+      "path": "nested-vfs-teams/templates/administration.json",
+      "sha256": "8384274a0f86f4d74f8199aa7843f6465f224a1edbb1fda0bc8acd848c761831",
+      "git_blob": "089bc912b80c02e5d3c02eec8b3832ff99c2bb67",
+      "bytes": 430
+    },
+    {
+      "path": "nested-vfs-teams/templates/manager.json",
+      "sha256": "de160174bdf0a10ec1ae1080643d726f7954e64490fc21e8697347e619208509",
+      "git_blob": "272d1c58f481be84419f97c590fa2de4d72ed645",
+      "bytes": 408
+    },
+    {
+      "path": "nested-vfs-teams/templates/production.json",
+      "sha256": "7ba8b33811caf38aaa98d0985bd7df1a19b2be8d2e481e9fc63bd3311e9fef09",
+      "git_blob": "5af920b46144df96756b3961085d17852b55a85b",
+      "bytes": 420
+    },
+    {
+      "path": "nested-vfs-teams/templates/specialist.json",
+      "sha256": "bb6e7995c3e1d3a990636cf3a87033ac1713e4733c7d701132dd4c1a23847779",
+      "git_blob": "d71490bd8802b3e1436be3ad593514336d4a7772",
+      "bytes": 420
+    },
+    {
+      "path": "nested-vfs-teams/templates/team.json",
+      "sha256": "905cd1b0e8fd02531a2a88824694bd8c03ee057c5c61f85d953df7c3627e4809",
+      "git_blob": "ae2fecd8b35a2b9b29d6731af80631a5631d56b7",
+      "bytes": 868
+    },
+    {
+      "path": "nested-vfs-teams/templates/verification.json",
+      "sha256": "b264848c4600965853205ecf3a6beb7c933ac34450e85e78bc55e5da7df0acd8",
+      "git_blob": "30af881e4cc483f00b5af075fc9c5cde1fa7e988",
+      "bytes": 431
+    },
+    {
+      "path": "nested-vfs-teams/validate.py",
+      "sha256": "219d09fa325dd8f50d3e096dbb9e1745c057df31b29dbed21454b0fba6bf8d7d",
+      "git_blob": "e04561df0926f1ad968bfa8580ca795bd7100759",
+      "bytes": 1682
+    },
+    {
+      "path": "nested-vfs-teams/vendor/native_vfs/__init__.py",
+      "sha256": "5cbb3716711d74f598f6da85c792b5a19006014192e968ccf432841b323bac20",
+      "git_blob": "08b798694e03b0acc33e40eed12f60629a3302be",
+      "bytes": 206
+    },
+    {
+      "path": "nested-vfs-teams/vendor/native_vfs/model.py",
+      "sha256": "ba76419f50a341b20f2d140787485fe5fa5ca7ea443e796a9939c08195853864",
+      "git_blob": "2357cbf956af423c8f6a87cf971cd2813bc5ffaa",
+      "bytes": 819
+    },
+    {
+      "path": "nested-vfs-teams/vendor/native_vfs/store.py",
+      "sha256": "b1aeedf1dc655ec9e99646cf342ccbb5b6e954170a8194da164c6025526bc5ad",
+      "git_blob": "2388bac407b47d5d41bd0d8bbdd93cfe29cec29c",
+      "bytes": 15652
+    },
+    {
+      "path": "nested-vfs-teams/vendor/provenance.json",
+      "sha256": "534445e51e1dfac168a12629faad9f898673df1638e4772085ccd9f9c06abe60",
+      "git_blob": "563ff5b37e8291bc9bc16b041a7f235f17dcdfce",
+      "bytes": 613
+    },
+    {
+      "path": "nested-vfs-teams/verifier.py",
+      "sha256": "d45e4dffa48cb0bc4a17a098acd07595a1ed553b18bb8e8002dd63db3c34f712",
+      "git_blob": "9990994a518172107d72be218f7578ef43df2a2f",
+      "bytes": 428
+    },
+    {
+      "path": "nested-vfs-teams/worker.py",
+      "sha256": "63039f4c975c7801790f7b50ac92a293a1ff0ae14f719a0f20b18b8872cd20d2",
+      "git_blob": "1698cb258afd8d9e33bdac6b216e3f2fbe5befad",
+      "bytes": 1378
+    }
+  ],
+  "exclusions": [
+    "generated integration assignment packets",
+    "runtime state",
+    "bulk historical evidence snapshots",
+    "installed dependencies"
+  ],
+  "note": "Source-only continuation. Original README and manifest retained unchanged as historical context; omitted evidence must not be assumed present. New publication does not establish native dispatch binding or deployment approval."
+}

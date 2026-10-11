@@ -1,0 +1,38 @@
+{
+  "schema_version": "keddeh.team-ingestion-interface.v1",
+  "producer": "nested-vfs-teams/runtime.py:Runtime.export_interface",
+  "consumer_owner": "ingestion child 01a12be5-0a31-7649-951d-c0eee5f2b00f",
+  "required_fields": [
+    "team_template_id",
+    "team_instance_id",
+    "members",
+    "vfs_root",
+    "evidence_state"
+  ],
+  "member_fields": [
+    "member_id",
+    "worker_template_id",
+    "template_digest",
+    "role",
+    "permissions",
+    "adapter",
+    "model_binding",
+    "vfs_root"
+  ],
+  "evidence_states": [
+    "INSTANTIATED_NOT_EXECUTED",
+    "INCOMPLETE",
+    "LOCAL_VERIFIED"
+  ],
+  "mutable_state": "Per-instance SQLite and native VFS bindings; immutable templates referenced by SHA256",
+  "identity_rule": "UUIDv5(instance key + closure digest); member UUIDv5(team instance + role). Template changes require a new instance; no implicit native/chat identity substitution.",
+  "native_dispatch_mapping": null,
+  "transport_adapter": "keddeh.team-transport-adapter.v1 / local-process",
+  "tl2_wire_compatible": false,
+  "permissions": "Parent authority bounds team permissions; role bounds member permissions. Trusted local process interface, not OS isolation of arbitrary code.",
+  "notification_status": "Full schema and actual beta assignment relayed through parent; actual source package materialized and 19-check roundtrip executed",
+  "ingestion_adapter": "ingestion_adapter.py:map_team",
+  "ingestion_source_library_file_id": "libfile_9c5f6ac1aebc8191ade47c9daadbf749",
+  "ingestion_source_commit": "f48a019b5ec3b9b31a4c0672db43a1e2482a143e",
+  "manager_identity_boundary": "Explicit dot registry handle; native manager UUID preserved as workerInstanceId. No automatic alias or grant."
+}
