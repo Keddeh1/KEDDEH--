@@ -1,0 +1,34 @@
+--- before/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html
++++ working/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html
+@@ -439,6 +439,31 @@
+ };
+ 
+ 
++// R2: restore missing state projections; these functions do not execute host/runtime operations.
++function appendLog(message, receipt){
++  const el=document.getElementById("log");
++  if(el) el.textContent += "\n"+message+"\n"+JSON.stringify(receipt,null,2);
++}
++function renderResident(){
++  document.getElementById("residentVolumeRecord").textContent=JSON.stringify(resident.volume,null,2);
++  document.getElementById("corePayloadState").textContent=resident.volume.storage_state;
++}
++function render(){
++  const text=(id,value)=>{document.getElementById(id).textContent=value??"UNOBSERVED";};
++  text("runtimeBadge",state.bound?"BRIDGE CONFIGURED · NOT VERIFIED":"UNBOUND");
++  text("coreBadge",resident.volume.execution_state);
++  text("nodeState",state.node.state);text("chainState",state.node.chain);
++  text("verifyState",state.node.verificationprogress);text("ibd",state.node.ibd);
++  text("bestBlock",state.node.bestblockhash);
++  text("receipts",JSON.stringify(state.receipts,null,2));
++  const pipeline=document.getElementById("btcPipeline");pipeline.replaceChildren();
++  for(const name of state.btc){const el=document.createElement("span");el.className="stage open";el.textContent=name;pipeline.appendChild(el);}
++  const candidate=document.getElementById("candidateKv");candidate.replaceChildren();
++  for(const [key,value] of Object.entries(state.candidate)){for(const item of [key,value]){const el=document.createElement("div");el.textContent=String(item);candidate.appendChild(el);}}
++  const rows=document.getElementById("skillsBody");rows.replaceChildren();
++  for(const skill of skills){const row=document.createElement("tr");for(const item of skill){const cell=document.createElement("td");cell.textContent=item;row.appendChild(cell);}rows.appendChild(row);}
++}
++
+ function makeReceipt(command,status,detail={}){
+   return {command,status,at:new Date().toISOString(),...detail};
+ }

@@ -1,0 +1,1577 @@
+{
+  "root": "/workspace/keddeh-html-browser-r2/software-estate/working/drive",
+  "generatedAt": "2026-10-11T16:34:05.367Z",
+  "apps": [
+    {
+      "file": "CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "bytes": 92798,
+      "sha256": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e",
+      "lineCount": 697,
+      "externalUrls": [
+        "https://casepath-legal.aboudykeddeh276.chatgpt.site/",
+        "http://www.w3.org/2000/svg",
+        "https://www.legislation.sa.gov.au/",
+        "https://lsc.sa.gov.au/FreeLegalHelp",
+        "https://www.lawsocietysa.asn.au/",
+        "https://courtsa.courts.sa.gov.au/",
+        "http://schemas.openxmlformats.org/wordprocessingml/2006/main",
+        "http://schemas.openxmlformats.org/package/2006/content-types",
+        "http://schemas.openxmlformats.org/package/2006/relationships",
+        "http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 2,
+            "token": "https://",
+            "context": "<!DOCTYPE html> <!-- saved from url=(0052)https://casepath-legal.aboudykeddeh276.chatgpt.site/ --> <html lang=\"en\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><sty"
+          },
+          {
+            "line": 39,
+            "token": "http://",
+            "context": "scale=1\"><link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d2933'/%3E%3Ctext x='32' y='40' text-anchor='middle"
+          },
+          {
+            "line": 39,
+            "token": "https://",
+            "context": "a\"></label><label>Official or source URL<input type=\"url\" value=\"https://www.legislation.sa.gov.au/\"></label><label>Source/access date<input type=\"date\" value=\"2026-08-04\"></label><label>Version label<input value=\"C"
+          },
+          {
+            "line": 39,
+            "token": "https://",
+            "context": "ndent of CasePath.</p></div><div class=\"resource-links\"><a href=\"https://lsc.sa.gov.au/FreeLegalHelp\" target=\"_blank\" rel=\"noreferrer\"><span>Free legal help</span><strong>Legal Services Commission of SA</strong><b>↗"
+          },
+          {
+            "line": 39,
+            "token": "https://",
+            "context": "ong>Legal Services Commission of SA</strong><b>↗</b></a><a href=\"https://www.lawsocietysa.asn.au/\" target=\"_blank\" rel=\"noreferrer\"><span>Find a relevant practitioner</span><strong>Law Society of South Australia</st"
+          },
+          {
+            "line": 39,
+            "token": "https://",
+            "context": "rong>Law Society of South Australia</strong><b>↗</b></a><a href=\"https://courtsa.courts.sa.gov.au/\" target=\"_blank\" rel=\"noreferrer\"><span>Official court portal</span><strong>CourtSA</strong><b>↗</b></a></div></sect"
+          },
+          {
+            "line": 380,
+            "token": "http://",
+            "context": "on=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><w:document xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"><w:body>${paragraphs.join('')}<w:sectPr/></w:body></w:document>`; const files=[ "
+          },
+          {
+            "line": 382,
+            "token": "http://",
+            "context": "Types].xml','<?xml version=\"1.0\" encoding=\"UTF-8\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationsh"
+          },
+          {
+            "line": 383,
+            "token": "http://",
+            "context": "ls','<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/rela"
+          },
+          {
+            "line": 383,
+            "token": "http://",
+            "context": "ts.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"word/document.xml\"/></Relationships>'], ['word/docum"
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [
+          {
+            "line": 241,
+            "token": "indexedDB",
+            "context": "B = { name:'KEDDEH_VOLUME', db:null, async open(){ if(!('indexedDB' in window)) return null; if(this.db) return this.db; this.db = await new Promise((resolve,reject)=>{ const req=indexedDB.open"
+          },
+          {
+            "line": 244,
+            "token": "indexedDB",
+            "context": " this.db = await new Promise((resolve,reject)=>{ const req=indexedDB.open(this.name,1); req.onupgradeneeded=()=>{const d=req.result; if(!d.objectStoreNames.contains('vfs'))d.createObjectStore('vfs'); if("
+          },
+          {
+            "line": 252,
+            "token": "localStorage",
+            "context": " const db=await this.open(); if(!db){ try{return JSON.parse(localStorage.getItem(STORAGE_PREFIX+store+'::'+key));}catch{return null;} } return new Promise((resolve)=>{const tx=db.transaction(store,'readonly"
+          },
+          {
+            "line": 257,
+            "token": "localStorage",
+            "context": "ut(store,key,value){ const db=await this.open(); if(!db){localStorage.setItem(STORAGE_PREFIX+store+'::'+key,JSON.stringify(value));return true;} return new Promise((resolve)=>{const tx=db.transaction(sto"
+          },
+          {
+            "line": 260,
+            "token": "localStorage",
+            "context": " }, async del(store,key){const db=await this.open(); if(!db){localStorage.removeItem(STORAGE_PREFIX+store+'::'+key);return true;} return new Promise(r=>{const tx=db.transaction(store,'readwrite');tx.objectStore("
+          },
+          {
+            "line": 285,
+            "token": "indexeddb",
+            "context": "ue,'runtime.dom':true,'runtime.crypto':!!crypto?.subtle,'storage.indexeddb':!!window.indexedDB, 'storage.local':!!window.localStorage,'storage.opfs':!!navigator.storage?.getDirectory,'worker.web':!!window.Work"
+          },
+          {
+            "line": 285,
+            "token": "indexedDB",
+            "context": "e,'runtime.crypto':!!crypto?.subtle,'storage.indexeddb':!!window.indexedDB, 'storage.local':!!window.localStorage,'storage.opfs':!!navigator.storage?.getDirectory,'worker.web':!!window.Worker, 'network.f"
+          },
+          {
+            "line": 286,
+            "token": "localStorage",
+            "context": "ge.indexeddb':!!window.indexedDB, 'storage.local':!!window.localStorage,'storage.opfs':!!navigator.storage?.getDirectory,'worker.web':!!window.Worker, 'network.fetch':!!window.fetch,'network.broadcast':!"
+          }
+        ],
+        "automatic_execution": [
+          {
+            "line": 390,
+            "token": "setTimeout",
+            "context": "URL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1000);} }; const Builder = { steps:[ {title:'Place the matter in context',fields:[['ju"
+          },
+          {
+            "line": 485,
+            "token": "DOMContentLoaded",
+            "context": "me, network:NetworkState, sha256 }; window.addEventListener('DOMContentLoaded',()=>Runtime.boot() .then(()=>window.dispatchEvent(new CustomEvent('keddeh:booted'))) .catch(err=>{console.error('KEDDEH BOOT FAI"
+          },
+          {
+            "line": 684,
+            "token": "setTimeout",
+            "context": ".slice(0,12)+'.json'; document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},0); } }; window.KEXRecovery=KEXRecovery; document.addEventListener('click',e=>{ if(e.tar"
+          }
+        ]
+      }
+    },
+    {
+      "file": "KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "bytes": 276615,
+      "sha256": "660c677332327e470c746853a535f209b4735d139bb992c6e430522c0261ca56",
+      "lineCount": 3506,
+      "externalUrls": [
+        "https://ai.studio/build"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 832,
+            "token": "https://",
+            "context": "\\nPRETTY_NAME=\"AetherOS Linux 6.12 Sovereign Desktop\"\\nHOME_URL=\"https://ai.studio/build\"\\n', '/etc/fstab': '/dev/vfs0 / vfs defaults 0 0\\n/dev/cloud0 /mnt/storage gdrive rw 0 0\\n', "
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [
+          {
+            "line": 2494,
+            "token": "transfer",
+            "context": " // Allocate real 64KB high-entropy binary buffer and run transfer through loopback pipe const frameSize = 65536; const buffer = new Uint8Array(frameSize); for (let i = 0; i < frameSize; i++"
+          }
+        ],
+        "dynamic_code": [],
+        "persistent_storage": [
+          {
+            "line": 799,
+            "token": "localStorage",
+            "context": " document.getElementById('val-lives');\\n\\n // High score from localStorage\\n let highScore = parseInt(localStorage.getItem('cyber_breakout_high') || '0', 10);\\n highEl.textContent = highScore;\\n\\n // Web"
+          },
+          {
+            "line": 799,
+            "token": "localStorage",
+            "context": " // High score from localStorage\\n let highScore = parseInt(localStorage.getItem('cyber_breakout_high') || '0', 10);\\n highEl.textContent = highScore;\\n\\n // Web Audio Synthesizer\\n let audioCtx = null"
+          },
+          {
+            "line": 799,
+            "token": "localStorage",
+            "context": " highEl.textContent = highScore;\\n localStorage.setItem('cyber_breakout_high', String(highScore));\\n }\\n }\\n }\\n }\\n }\\n }\\n\\"
+          },
+          {
+            "line": 800,
+            "token": "IndexedDB",
+            "context": "ameworks.\\n\\n## Key Architecture\\n1. **Local Vault**: Persistent IndexedDB / localStorage mirror for latency-free I/O.\\n2. **REST v3 Proxy**: Transparent synchronization with Google Workspace files.\\n3. **DOM Rigour"
+          },
+          {
+            "line": 800,
+            "token": "localStorage",
+            "context": "n## Key Architecture\\n1. **Local Vault**: Persistent IndexedDB / localStorage mirror for latency-free I/O.\\n2. **REST v3 Proxy**: Transparent synchronization with Google Workspace files.\\n3. **DOM Rigour**: Comprehe"
+          },
+          {
+            "line": 880,
+            "token": "localStorage",
+            "context": "}); function aetherPolicy() { try { return JSON.parse(localStorage.getItem(KEDDEH_POLICY_KEY)) || AETHER_DEFAULT_POLICY; } catch (_) { return AETHER_DEFAULT_POLICY; } } function aetherIdent"
+          },
+          {
+            "line": 886,
+            "token": "sessionStorage",
+            "context": ") { const policy = aetherPolicy(); const requested = sessionStorage.getItem('keddeh.aetheros.user') || 'engineer'; const user = policy.users[requested] ? requested : 'engineer'; return { user"
+          },
+          {
+            "line": 942,
+            "token": "localStorage",
+            "context": " }; let receipts = []; try { receipts = JSON.parse(localStorage.getItem(KEDDEH_RECEIPT_KEY) || '[]'); } catch (_) {} receipts.push(receipt); if (receipts.length > 250) receipts = receipts.s"
+          },
+          {
+            "line": 945,
+            "token": "localStorage",
+            "context": "f (receipts.length > 250) receipts = receipts.slice(-250); localStorage.setItem(KEDDEH_RECEIPT_KEY, JSON.stringify(receipts)); return receipt; } function vfsPersist() { try { local"
+          },
+          {
+            "line": 951,
+            "token": "localStorage",
+            "context": " receipt; } function vfsPersist() { try { localStorage.setItem(KEDDEH_VFS_KEY, JSON.stringify(VFS_OVERLAY)); localStorage.setItem(KEDDEH_VFS_STATE_KEY, JSON.stringify({ schem"
+          },
+          {
+            "line": 952,
+            "token": "localStorage",
+            "context": "ge.setItem(KEDDEH_VFS_KEY, JSON.stringify(VFS_OVERLAY)); localStorage.setItem(KEDDEH_VFS_STATE_KEY, JSON.stringify({ schema: 'keddeh.aetheros.vfs-state/v2', savedAt: new Date().toISOStrin"
+          },
+          {
+            "line": 1038,
+            "token": "localStorage",
+            "context": "reserves earlier user/app work. const saved = JSON.parse(localStorage.getItem(KEDDEH_VFS_KEY) || localStorage.getItem('keddeh.aetheros.vfs.overlay.v1') || '{}'); if (saved && typeof saved === 'object"
+          },
+          {
+            "line": 1038,
+            "token": "localStorage",
+            "context": "const saved = JSON.parse(localStorage.getItem(KEDDEH_VFS_KEY) || localStorage.getItem('keddeh.aetheros.vfs.overlay.v1') || '{}'); if (saved && typeof saved === 'object') { Object.assign(VFS_OVERLAY"
+          },
+          {
+            "line": 1112,
+            "token": "localStorage",
+            "context": "policy and app namespaces before rehydrating user mutations. localStorage.setItem(KEDDEH_POLICY_KEY, JSON.stringify(aetherPolicy())); vfsEnsureDirectory('/etc/aetheros', false, {internal:true}); vfsEnsur"
+          },
+          {
+            "line": 1140,
+            "token": "localStorage",
+            "context": "e:vfsRemove, copy:vfsCopy, move:vfsMove, status:() => JSON.parse(localStorage.getItem(KEDDEH_VFS_STATE_KEY) || '{}')}), apps: Object.freeze({manifest:KEDDEH_APP_MANIFESTS, stateGet:aetherAppStateGet, stateSet:"
+          },
+          {
+            "line": 1142,
+            "token": "localStorage",
+            "context": "install:aetherInstallPackage}), receipts: () => JSON.parse(localStorage.getItem(KEDDEH_RECEIPT_KEY) || '[]') }); // Bootloader sequence const bootLines = [ { text: '[ 0.000000] Linux vers"
+          },
+          {
+            "line": 1741,
+            "token": "LocalStorage",
+            "context": " <span class=\"test-name\">5. Persistent Storage Engine (VFS & LocalStorage Sandbox)</span> <span class=\"test-result\" style=\"color: #4ade80;\">READY</span> </div> <"
+          },
+          {
+            "line": 1872,
+            "token": "IndexedDB",
+            "context": ")</div> <div>Storage: VFS Unified Block Storage (IndexedDB / LocalStorage)</div> </div> </div> </div> `; createWindow('settings', 'System Settings "
+          },
+          {
+            "line": 1872,
+            "token": "LocalStorage",
+            "context": " <div>Storage: VFS Unified Block Storage (IndexedDB / LocalStorage)</div> </div> </div> </div> `; createWindow('settings', 'System Settings & Display', "
+          },
+          {
+            "line": 3250,
+            "token": "localStorage",
+            "context": "} } else if (cmd === 'vfs-status') { const state = localStorage.getItem(KEDDEH_VFS_STATE_KEY) || '{}'; out.textContent += state + '\\n'; } else if (cmd === 'grep') { const pattern "
+          },
+          {
+            "line": 3361,
+            "token": "localStorage",
+            "context": "e }); } // Test 5: Persistent Storage try { localStorage.setItem('__aether_test', '1'); const read = localStorage.getItem('__aether_test'); localStorage.removeItem('__aether_test"
+          },
+          {
+            "line": 3362,
+            "token": "localStorage",
+            "context": "localStorage.setItem('__aether_test', '1'); const read = localStorage.getItem('__aether_test'); localStorage.removeItem('__aether_test'); results.push({ name: \"5. Persistent Storage Engine (V"
+          },
+          {
+            "line": 3363,
+            "token": "localStorage",
+            "context": " const read = localStorage.getItem('__aether_test'); localStorage.removeItem('__aether_test'); results.push({ name: \"5. Persistent Storage Engine (VFS / LocalStorage)\", pass: read === '1', ms: 1."
+          },
+          {
+            "line": 3364,
+            "token": "LocalStorage",
+            "context": " results.push({ name: \"5. Persistent Storage Engine (VFS / LocalStorage)\", pass: read === '1', ms: 1.0 }); } catch(e) { results.push({ name: \"5. Persistent Storage Engine (VFS / LocalStorage)\", pass: fal"
+          },
+          {
+            "line": 3365,
+            "token": "LocalStorage",
+            "context": "h(e) { results.push({ name: \"5. Persistent Storage Engine (VFS / LocalStorage)\", pass: false, err: e.message }); } // Test 6: Microtask Timing try { results.push({ name: \"6. Microtask & Animatio"
+          }
+        ],
+        "automatic_execution": [
+          {
+            "line": 797,
+            "token": "setTimeout",
+            "context": "46.50 }\\n ];\\n arpNotes.forEach((n, idx) => {\\n setTimeout(() => {\\n triggerNoteOn(n.name, n.freq);\\n setTimeout(() => triggerNoteOff(n.name), 160);\\n }, idx * 140);\\n "
+          },
+          {
+            "line": 797,
+            "token": "setTimeout",
+            "context": "out(() => {\\n triggerNoteOn(n.name, n.freq);\\n setTimeout(() => triggerNoteOff(n.name), 160);\\n }, idx * 140);\\n });\\n }\\n\\n // Visualizer Canvas Loop\\n const vCanvas = documen"
+          },
+          {
+            "line": 799,
+            "token": "setTimeout",
+            "context": " (p.type === 'wide') {\\n paddle.w = 140;\\n setTimeout(() => { paddle.w = paddle.baseW; }, 10000);\\n } else if (p.type === 'laser') {\\n paddle.hasLaser = true;\\n s"
+          },
+          {
+            "line": 799,
+            "token": "setTimeout",
+            "context": "=== 'laser') {\\n paddle.hasLaser = true;\\n setTimeout(() => { paddle.hasLaser = false; }, 8000);\\n } else if (p.type === 'multi') {\\n balls.push({ x: paddle.x + 20, y: paddl"
+          },
+          {
+            "line": 1169,
+            "token": "setTimeout",
+            "context": " bootLog.appendChild(line); bootIndex++; setTimeout(runBootStep, 45); } else { setTimeout(() => { bootScreen.style.display = 'none'; desktop.style.display = "
+          },
+          {
+            "line": 1171,
+            "token": "setTimeout",
+            "context": "x++; setTimeout(runBootStep, 45); } else { setTimeout(() => { bootScreen.style.display = 'none'; desktop.style.display = 'flex'; initDesktop(); }, 120); "
+          },
+          {
+            "line": 1433,
+            "token": "setInterval",
+            "context": " openApp('terminal'); // Real-time Clock & CPU setInterval(() => { const now = new Date(); const clk = document.getElementById('top-clock'); if (clk) clk.textContent = now.t"
+          },
+          {
+            "line": 1669,
+            "token": "setTimeout",
+            "context": " (Bio-Centric Neural Studio)', '🧠', 880, 580, content); setTimeout(initBrainkCanvas, 80); } else if (type === 'sql') { createWindow('sql', 'Relational SQL Query Studio', '🗄️', 820, 540, "
+          },
+          {
+            "line": 1705,
+            "token": "setTimeout",
+            "context": "l', 'Bash Terminal (/bin/sh)', '💻', 580, 360, content); setTimeout(() => { const input = document.getElementById('term-cmd'); if (input) { input.focus(); input.on"
+          },
+          {
+            "line": 1813,
+            "token": "setTimeout",
+            "context": "w('vfs', 'File Manager (VFS)', '📁', 540, 420, content); setTimeout(renderVfsTree, 50); } else if (type === 'editor') { const content = ` <div style=\"display: flex; flex-direction: co"
+          },
+          {
+            "line": 1828,
+            "token": "setTimeout",
+            "context": "editor', 'Text & Code Editor', '📄', 620, 440, content); setTimeout(() => { const title = document.getElementById('editor-file-title'); const area = document.getElementById('editor-area')"
+          },
+          {
+            "line": 1846,
+            "token": "setTimeout",
+            "context": "ML5 Web Runner & App Browser', '🌐', 700, 520, content); setTimeout(loadBrowserUrl, 100); } else if (type === 'settings') { const content = ` <div style=\"display: flex; flex-direction"
+          },
+          {
+            "line": 1964,
+            "token": "setTimeout",
+            "context": "ftware Center & Package Hub', '🛍️', 880, 580, content); setTimeout(initSoftwareCenter, 60); } else if (type === 'nettop') { const content = ` <div style=\"display: flex; flex-directio"
+          },
+          {
+            "line": 2008,
+            "token": "setTimeout",
+            "context": "- Socket & Network Inspector', '📡', 760, 500, content); setTimeout(initNettop, 60); } else if (type === 'hexview') { const content = ` <div style=\"display: flex; flex-direction: colu"
+          },
+          {
+            "line": 2035,
+            "token": "setTimeout",
+            "context": " - Binary & Memory Inspector', '🔍', 740, 500, content); setTimeout(initHexview, 60); } } // Software Center Catalog Engine & Helpers const SOFTWARE_CATALOG = [ { id: 'braink"
+          },
+          {
+            "line": 2441,
+            "token": "setTimeout",
+            "context": "t orig = btn.textContent; btn.textContent = '⏳'; setTimeout(() => { btn.textContent = '✅'; setTimeout(() => { btn.textContent = orig; }, 1400); }, 300); } } "
+          },
+          {
+            "line": 2443,
+            "token": "setTimeout",
+            "context": " setTimeout(() => { btn.textContent = '✅'; setTimeout(() => { btn.textContent = orig; }, 1400); }, 300); } } function verifyAllSoftware() { const heading = document"
+          },
+          {
+            "line": 2452,
+            "token": "setTimeout",
+            "context": "ing SHA-256 signatures for all 17 software packages...'; setTimeout(() => { heading.textContent = 'All 17 packages verified successfully (0 integrity errors).'; setTimeout(() => { "
+          },
+          {
+            "line": 2454,
+            "token": "setTimeout",
+            "context": "packages verified successfully (0 integrity errors).'; setTimeout(() => { heading.textContent = '17 pre-installed packages ready for immediate low-latency execution'; }, 2500); "
+          },
+          {
+            "line": 3285,
+            "token": "setTimeout",
+            "context": "igour Engine Benchmark...\\n'; openApp('domlab'); setTimeout(runDomBenchmark, 150); } else if (cmd === 'reboot') { rebootOS(); } else if (cmd === 'ps' || cmd === 'top') { l"
+          },
+          {
+            "line": 3491,
+            "token": "setTimeout",
+            "context": " 'Saved to VFS!'; badge.style.opacity = '1'; setTimeout(() => { badge.style.opacity = '0'; }, 2000); } renderVfsTree(); } } function rebootOS() { bootLog.inne"
+          }
+        ]
+      }
+    },
+    {
+      "file": "KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "bytes": 73482,
+      "sha256": "166f1ff30b8adbb887951625547ab33a0faf5226ac452ba4ea261c622fd353be",
+      "lineCount": 1097,
+      "externalUrls": [
+        "http://127.0.0.1:8799/bridge/command",
+        "https://github.com/copy/v86/releases/download/latest/libv86.js",
+        "https://github.com/copy/v86/releases/download/latest/v86.wasm",
+        "https://raw.githubusercontent.com/copy/v86/e37189a/bios/seabios.bin",
+        "https://raw.githubusercontent.com/copy/v86/e37189a/bios/vgabios.bin",
+        "https://i.copy.sh/buildroot-bzimage68.bin"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 372,
+            "token": "http://",
+            "context": "t\">Resident bridge URL</label> <input id=\"endpoint\" value=\"http://127.0.0.1:8799/bridge/command\" aria-describedby=\"endpointHelp\"> <p class=\"note\" id=\"endpointHelp\">Local by default. No credentials are st"
+          },
+          {
+            "line": 570,
+            "token": "fetch(",
+            "context": "nd:name,seed,authority:\"operator\"}; try{ const r=await fetch(endpoint,{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify(payload)}); const data=await r.json(); const"
+          },
+          {
+            "line": 643,
+            "token": "https://",
+            "context": "v86.js','./volume/libv86.js','./runtime/libv86.js'], remote:'https://github.com/copy/v86/releases/download/latest/libv86.js', sha256:'730d3e4e4bd1d9c7ede4a4995f23da87261a723b3524da9a75c90e6e0610f46b' }, "
+          },
+          {
+            "line": 649,
+            "token": "https://",
+            "context": "v86.wasm','./volume/v86.wasm','./runtime/v86.wasm'], remote:'https://github.com/copy/v86/releases/download/latest/v86.wasm', sha256:'8a969d64cf8f64b8183fdcc3a2ccdb31ae5ae6db7c9fba49949106f574640a7b' }, b"
+          },
+          {
+            "line": 655,
+            "token": "https://",
+            "context": "ates:['/volume/seabios.bin','./volume/seabios.bin'], remote:'https://raw.githubusercontent.com/copy/v86/e37189a/bios/seabios.bin' }, vga: { key:'vgabios.bin', kind:'binary', required:true, localCandi"
+          },
+          {
+            "line": 660,
+            "token": "https://",
+            "context": "ates:['/volume/vgabios.bin','./volume/vgabios.bin'], remote:'https://raw.githubusercontent.com/copy/v86/e37189a/bios/vgabios.bin' }, kernel: { key:'bzimage-linux.bin', kind:'binary', required:true, l"
+          },
+          {
+            "line": 665,
+            "token": "https://",
+            "context": "me/bzimage-linux.bin','./volume/bzimage-linux.bin'], remote:'https://i.copy.sh/buildroot-bzimage68.bin' }, initrd: { key:'buildroot-linux.bin', kind:'binary', required:true, localCandidates:['/volume"
+          },
+          {
+            "line": 769,
+            "token": "fetch(",
+            "context": "r.error); }); } async function fetchBlob(url){ const r=await fetch(url,{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status+' '+url); return await r.blob(); } async function tryCandidates(d){ co"
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [
+          {
+            "line": 71,
+            "token": "Bitcoin",
+            "context": "get=\"linux\">Resident Linux</button> <button data-target=\"node\">Bitcoin Core Node</button> <button data-target=\"runtime\">Runtime & Adapters</button> <button data-target=\"skills\">Skill Fabric</button> <button "
+          },
+          {
+            "line": 92,
+            "token": "BITCOIN",
+            "context": "ge open\">RESIDENT BRIDGE</span> <span class=\"stage open\">BITCOIN CORE</span> <span class=\"stage open\">GETBLOCKTEMPLATE</span> <span class=\"stage open\">CANDIDATE</span> <span class=\"st"
+          },
+          {
+            "line": 105,
+            "token": "Bitcoin",
+            "context": "div>HTML launchpad</div> <div>BTC protocol truth</div><div>Bitcoin Core + consensus rules</div> <div>Execution</div><div>Resident HTML Linux / V86 first; host adapters only where required</div> <di"
+          },
+          {
+            "line": 111,
+            "token": "bitcoin",
+            "context": "a self-contained control surface. It does not claim to run <code>bitcoind</code> inside the browser. When bound to the resident bridge it becomes the operator console for the node server, mining runtime, evidence le"
+          },
+          {
+            "line": 111,
+            "token": "mining",
+            "context": "dent bridge it becomes the operator console for the node server, mining runtime, evidence ledger and skill-governed workflows.</p></article> </div> </section> <section id=\"btc\"> <h2>BTC Protocol Domain</h2> <"
+          },
+          {
+            "line": 118,
+            "token": "Mining",
+            "context": "div class=\"grid\"> <article class=\"card span12\"><h3>Canonical Mining State Machine</h3> <div class=\"pipeline\" id=\"btcPipeline\"></div> </article> <article class=\"card span6\"><h3>Candidate Integrity</"
+          },
+          {
+            "line": 122,
+            "token": "Mining",
+            "context": "andidateKv\"></div></article> <article class=\"card span6\"><h3>Mining Controls</h3> <div class=\"controls\"> <button data-system-action=\"REQUEST_TEMPLATE\">Request template</button> <button data"
+          },
+          {
+            "line": 130,
+            "token": "mining",
+            "context": "ains fail-closed. A target hit is required; a non-hit is a valid mining result, not a build failure.</p> </article> </div> </section> <section id=\"linux\"> <h2>Resident Linux Execution Substrate</h2> <div"
+          },
+          {
+            "line": 150,
+            "token": "Bitcoin",
+            "context": "ticle> <article class=\"card span4\"> <div class=\"label\">Bitcoin Core Payload</div> <div class=\"metric\" id=\"corePayloadState\">NOT STORED</div> <p class=\"note\">After first verified acquisition, th"
+          },
+          {
+            "line": 181,
+            "token": "Bitcoin",
+            "context": "</p> </article> <article class=\"card span12\"> <h3>Bitcoin Core Resident Payload Lifecycle</h3> <div class=\"pipeline\"> <span class=\"stage open\">DOWNLOAD ONCE</span> <span class=\"s"
+          },
+          {
+            "line": 190,
+            "token": "BITCOIN",
+            "context": "e open\">EXECUTE IN LINUX</span> <span class=\"stage open\">BITCOIND</span> <span class=\"stage open\">RPC</span> </div> <p class=\"note\">Once a Bitcoin Core payload has a retained release hash"
+          },
+          {
+            "line": 193,
+            "token": "Bitcoin",
+            "context": "stage open\">RPC</span> </div> <p class=\"note\">Once a Bitcoin Core payload has a retained release hash, manifest hash, signature receipt and resident-volume address, later boots should rehydrate the store"
+          },
+          {
+            "line": 250,
+            "token": "Bitcoin",
+            "context": "e> </article> </div> </section> <section id=\"node\"> <h2>Bitcoin Core Node / Server</h2> <div class=\"grid\"> <article class=\"card span4\"><div class=\"label\">Node State</div><div class=\"metric\" id=\"nodeSt"
+          },
+          {
+            "line": 263,
+            "token": "Bitcoin",
+            "context": " </div> <p class=\"note\">The launchpad governs a resident Bitcoin Core instance through the adapter. Cookie/RPC credentials remain host-side and are never embedded into this HTML.</p> </article> <art"
+          },
+          {
+            "line": 295,
+            "token": "Bitcoin",
+            "context": "al_closure.py ├── solver / SHA256d workers └── Bitcoin Core bitcoind :8332 (mainnet RPC)</pre></article> </div> </section> <section id=\"runtime\"> <h2>Runtime & Adapter Plane</h2> <div class="
+          },
+          {
+            "line": 295,
+            "token": "bitcoin",
+            "context": " ├── solver / SHA256d workers └── Bitcoin Core bitcoind :8332 (mainnet RPC)</pre></article> </div> </section> <section id=\"runtime\"> <h2>Runtime & Adapter Plane</h2> <div class=\"grid\"> <"
+          },
+          {
+            "line": 347,
+            "token": "Bitcoin",
+            "context": "/h3><div class=\"kv\"> <div>F-A</div><div>Wrong / incomplete Bitcoin workload</div> <div>F-B</div><div>Synthetic authority contamination</div> <div>F-C</div><div>Submission-state conflation</div> "
+          },
+          {
+            "line": 516,
+            "token": "Bitcoin",
+            "context": "akeReceipt(name,\"BLOCKED_CORE_NOT_INSTALLED\",{required:\"verified Bitcoin Core payload + install\"}); if(!nodeRunning()) return makeReceipt(name,\"BLOCKED_NODE_NOT_RUNNING\"); return makeReceipt(name,\"PASS_RPC_R"
+          },
+          {
+            "line": 1001,
+            "token": "mining",
+            "context": "DJACENT_LOCAL\", \"mission\": \"Keep agents around the deterministic mining engine; candidate critical path remains deterministic.\"}, {\"id\": \"TEAM-HCI\", \"name\": \"HCI / Runtime Projection\", \"workers\": [\"HCI Auditor\", \"Ac"
+          },
+          {
+            "line": 1060,
+            "token": "bitcoin",
+            "context": "x_worker\":\"TESTED_NON_V86\",\"fresh_v86_kernel\":\"NOT_ESTABLISHED\",\"bitcoin_core_live_rpc\":\"NOT_ESTABLISHED\",\"mainnet_block\":\"NOT_ESTABLISHED\",\"prior_v10\":\"SUPERSEDED_AS_DIRECTION\"},\"capability_resolution\":[{\"capabilit"
+          },
+          {
+            "line": 1060,
+            "token": "Bitcoin",
+            "context": "dispatch\",\"decision\":\"BRIDGE\",\"source\":\"v9\"},{\"capability\":\"live Bitcoin Core authority\",\"decision\":\"DEPENDENCY_BLOCKED\",\"source\":\"external/resident authority required\"}],\"first_material_unresolved_dependencies\":[\"R"
+          },
+          {
+            "line": 1060,
+            "token": "Bitcoin",
+            "context": "dy readback.\",\"Bind resident invocation to an actually executing Bitcoin Core mainnet authority.\",\"Prove Core GBT \\u2192 exact candidate \\u2192 exact header \\u2192 SHA256d \\u2192 complete block \\u2192 submitblock \\u"
+          },
+          {
+            "line": 1060,
+            "token": "Bitcoin",
+            "context": "ker evidence cannot promote V86 RUNNING\",\"HTML projection is not Bitcoin consensus authority\",\"mainnet only\",\"exact payout literal retained\",\"no regtest/testnet/signet fallback\",\"target miss is valid mining work, no"
+          },
+          {
+            "line": 1060,
+            "token": "mining",
+            "context": "ined\",\"no regtest/testnet/signet fallback\",\"target miss is valid mining work, not build failure\",\"Git/repository state is not product state\"],\"falsifiers\":[\"Any UI state claims V86 RUNNING without emulator-ready.\",\""
+          },
+          {
+            "line": 1060,
+            "token": "Bitcoin",
+            "context": "\",\"Any BTC state advances from deterministic/local state without Bitcoin Core receipt.\",\"Any payout address differs from exact literal.\",\"Any regtest/testnet/signet path is selected.\",\"Any new code silently replaces"
+          },
+          {
+            "line": 1061,
+            "token": "Bitcoin",
+            "context": "id\":\"SF009\",\"team\":\"TEAM-BTC\",\"title\":\"Bind resident dispatch to Bitcoin Core mainnet authority\",\"depends\":[\"SF008\"],\"authority\":\"BITCOIN_CORE\",\"state\":\"WAITING\"},{\"id\":\"SF010\",\"team\":\"TEAM-BTC\",\"title\":\"Observe get"
+          },
+          {
+            "line": 1061,
+            "token": "BITCOIN",
+            "context": "Bitcoin Core mainnet authority\",\"depends\":[\"SF008\"],\"authority\":\"BITCOIN_CORE\",\"state\":\"WAITING\"},{\"id\":\"SF010\",\"team\":\"TEAM-BTC\",\"title\":\"Observe getblockchaininfo and sync authority\",\"depends\":[\"SF009\"],\"authority"
+          },
+          {
+            "line": 1061,
+            "token": "BITCOIN",
+            "context": "ckchaininfo and sync authority\",\"depends\":[\"SF009\"],\"authority\":\"BITCOIN_CORE\",\"state\":\"WAITING\"},{\"id\":\"SF011\",\"team\":\"TEAM-BTC\",\"title\":\"Observe getblocktemplate from Core\",\"depends\":[\"SF010\"],\"authority\":\"BITCOIN"
+          },
+          {
+            "line": 1061,
+            "token": "BITCOIN",
+            "context": "rve getblocktemplate from Core\",\"depends\":[\"SF010\"],\"authority\":\"BITCOIN_CORE\",\"state\":\"WAITING\"},{\"id\":\"SF012\",\"team\":\"TEAM-BTC\",\"title\":\"Reconstruct exact candidate/header and SHA256d boundary\",\"depends\":[\"SF011\"]"
+          },
+          {
+            "line": 1061,
+            "token": "BITCOIN",
+            "context": "te/header and SHA256d boundary\",\"depends\":[\"SF011\"],\"authority\":\"BITCOIN_CORE\",\"state\":\"WAITING\"},{\"id\":\"SF013\",\"team\":\"TEAM-BTC\",\"title\":\"Run deterministic search without invented target hit\",\"depends\":[\"SF012\"],\"a"
+          },
+          {
+            "line": 1061,
+            "token": "BITCOIN",
+            "context": "ch without invented target hit\",\"depends\":[\"SF012\"],\"authority\":\"BITCOIN_CORE\",\"state\":\"WAITING\"},{\"id\":\"SF014\",\"team\":\"TEAM-BTC\",\"title\":\"Submit only qualified complete block\",\"depends\":[\"SF013\"],\"authority\":\"BITCO"
+          },
+          {
+            "line": 1061,
+            "token": "BITCOIN",
+            "context": " only qualified complete block\",\"depends\":[\"SF013\"],\"authority\":\"BITCOIN_CORE\",\"state\":\"WAITING\"},{\"id\":\"SF015\",\"team\":\"TEAM-EVIDENCE\",\"title\":\"Independently read active-chain result\",\"depends\":[\"SF014\"],\"authority\""
+          },
+          {
+            "line": 1061,
+            "token": "BITCOIN",
+            "context": "ently read active-chain result\",\"depends\":[\"SF014\"],\"authority\":\"BITCOIN_CORE\",\"state\":\"WAITING\"},{\"id\":\"SF016\",\"team\":\"TEAM-PROMOTION\",\"title\":\"Evaluate property-scoped promotion\",\"depends\":[\"SF004\",\"SF005\",\"SF006\""
+          },
+          {
+            "line": 1080,
+            "token": "BITCOIN",
+            "context": "86_PROMOTION\"); const live=GRAPH.tasks.filter(t=>t.authority===\"BITCOIN_CORE\"&&t.state===\"COMPLETED\");if(live.length&&!globalThis.__KEX_BITCOIN_CORE_AUTHORITY_RECEIPT__)f.push(\"FALSE_CORE_PROMOTION\"); rec(\"GEN11 i"
+          }
+        ],
+        "dynamic_code": [],
+        "persistent_storage": [
+          {
+            "line": 208,
+            "token": "IndexedDB",
+            "context": " real <code>emulator-ready</code> event. Assets are persisted in IndexedDB after first successful acquisition and rehydrated locally on later launches.</p> </article> <article class=\"card span8\"> <h3>"
+          },
+          {
+            "line": 694,
+            "token": "INDEXEDDB",
+            "context": "56?'HASH_CONTRACT_PRESENT':'HASH_NOT_DECLARED', persistence:'INDEXEDDB_ROUTE_WIRED', consumed:id==='hda'?'PROVISIONED_OPTIONAL_NOT_REQUIRED':'CONSUMED_WHEN_VERIFIED', ...prior,...patch,at:new Date().toIS"
+          },
+          {
+            "line": 750,
+            "token": "indexedDB",
+            "context": "openDB(){ return new Promise((resolve,reject)=>{ const req=indexedDB.open(DB_NAME,DB_VERSION); req.onupgradeneeded=()=>{ const db=req.result; if(!db.objectStoreNames.contains(DB_STORE)) db.createObjectStor"
+          },
+          {
+            "line": 776,
+            "token": "indexeddb",
+            "context": "wait dbGet(d.key); if(stored){ return {blob:stored,source:'indexeddb://'+DB_NAME+'/'+d.key,state:'STORED'}; } for(const u of d.localCandidates||[]){ try{ const blob=await fetchBlob(u); if(b"
+          },
+          {
+            "line": 904,
+            "token": "indexeddb",
+            "context": "a256){ STATUS[id]={state:'BLOCKED_HASH_MISMATCH',source:'indexeddb'}; classifyAsset(id,d,{existence:'PRESENT_PERSISTED',resolution:'REHYDRATED_THIS_PASS',integrity:'BLOCKED_HASH_MISMATCH',persistence"
+          },
+          {
+            "line": 907,
+            "token": "indexeddb",
+            "context": "B'}); }else { STATUS[id]={state:'VERIFIED',source:'indexeddb://'+DB_NAME+'/'+d.key,size:stored.size}; classifyAsset(id,d,{existence:'PRESENT_PERSISTED',resolution:'REHYDRATED_THIS_PASS',integri"
+          }
+        ],
+        "automatic_execution": [
+          {
+            "line": 889,
+            "token": "setTimeout",
+            "context": "ed',()=>receipt('LINUX_EMULATOR_STOPPED','OBSERVED')); } setTimeout(()=>finish('BLOCKED_READY_TIMEOUT',{timeout_ms:45000}),45000); }); } async function init(){ DB=await openDB(); render(); document."
+          },
+          {
+            "line": 918,
+            "token": "DOMContentLoaded",
+            "context": "; if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>init().catch(e=>receipt('LINUX_RUNTIME_INIT','BLOCKED_INIT_ERROR',{error:String(e)})),{once:true}); else init().catch(e=>receipt"
+          },
+          {
+            "line": 954,
+            "token": "DOMContentLoaded",
+            "context": " if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>setTimeout(renderV8,50),{once:true}); else setTimeout(renderV8,50); g.KEX_V8_RENDER_EVIDENCE=renderV8; })(globalThis); </script"
+          },
+          {
+            "line": 954,
+            "token": "setTimeout",
+            "context": "te==='loading') document.addEventListener('DOMContentLoaded',()=>setTimeout(renderV8,50),{once:true}); else setTimeout(renderV8,50); g.KEX_V8_RENDER_EVIDENCE=renderV8; })(globalThis); </script> <script id=\"kex-fre"
+          },
+          {
+            "line": 954,
+            "token": "setTimeout",
+            "context": "DOMContentLoaded',()=>setTimeout(renderV8,50),{once:true}); else setTimeout(renderV8,50); g.KEX_V8_RENDER_EVIDENCE=renderV8; })(globalThis); </script> <script id=\"kex-fresh-linux-boot-receipt\" type=\"application/js"
+          },
+          {
+            "line": 979,
+            "token": "DOMContentLoaded",
+            "context": " if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',recordHistorical,{once:true}); else recordHistorical(); })(); </script> <section class=\"panel\" id=\"kex-generation-runtime\" style"
+          },
+          {
+            "line": 1030,
+            "token": "setTimeout",
+            "context": "tContent+=`\\nSTART ${t.id} @ ${t.team}`; await new Promise(r=>setTimeout(r,120)); const result=workResult(t); const r=rec('WORK_RESULT',{task:t.id,team:t.team,result,evidence_scope:'PROPERTY_SCOPED'}); t.st"
+          },
+          {
+            "line": 1042,
+            "token": "setTimeout",
+            "context": "bjectURL(b);a.download=`KEX_${M.seed}_CHECKPOINT.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500);} $('genRun')?.addEventListener('click',runReady);$('genContinue')?.addEventListener('click',continueW"
+          }
+        ]
+      }
+    },
+    {
+      "file": "KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "bytes": 6400478,
+      "sha256": "311485063a7f0583fc787590a566f07945744ae0ef3e8d72f5af8f3f9930e000",
+      "lineCount": 224,
+      "externalUrls": [],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 1,
+            "token": "WebSocket",
+            "context": "andard_transports\":[\"HTTP/2 streams\",\"HTTP/3 over QUIC streams\",\"WebSocket via Extended CONNECT\",\"CONNECT-UDP / HTTP datagrams\"],\"kex_overlays\":[\"VPN\",\"VPN-TL\",\"TL\",\"TL1\",\"TL2\"],\"separation_rule\":\"compression reduce"
+          },
+          {
+            "line": 1,
+            "token": "WEBSOCKET",
+            "context": ",\"carrier_family\":{\"standard\":[\"LOCAL_BUS\",\"HTTP2\",\"HTTP3_QUIC\",\"WEBSOCKET_EXTENDED_CONNECT\",\"CONNECT_UDP\"],\"kex_overlays\":[\"VPN\",\"VPN-TL\",\"TL\",\"TL1\",\"TL2\"],\"tl_family_features\":[\"KEX_PACKET_COMPRESSION\",\"REJECT_BEF"
+          },
+          {
+            "line": 1,
+            "token": "WEBSOCKET",
+            "context": "C\",\"state\":\"AVAILABLE\",\"family\":\"STANDARD\",\"features\":[]},{\"id\":\"WEBSOCKET_EXTENDED_CONNECT\",\"state\":\"AVAILABLE\",\"family\":\"STANDARD\",\"features\":[]},{\"id\":\"CONNECT_UDP\",\"state\":\"AVAILABLE\",\"family\":\"STANDARD\",\"featur"
+          },
+          {
+            "line": 1,
+            "token": "websocket",
+            "context": "webgpu\":false,\"decompression_stream\":true,\"local_storage\":false,\"websocket\":true,\"fetch\":true},\"logical_machine\":\"volume://keddeh/braink/root\",\"machine_contract\":\"machine://kex/hardware-contract\"}}}],\"open_target_de"
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [
+          {
+            "line": 1,
+            "token": "transfer",
+            "context": "e\",\"packet_fields\":[\"seq\",\"from\",\"to\",\"ref\",\"op\"],\"operations\":[\"transfer\"],\"ordering\":\"monotonic logical sequence\"},\"interrupt\":{\"address\":\"device://irq/main\",\"packet_fields\":[\"seq\",\"vector\",\"ref\"],\"operations\":[\"r"
+          },
+          {
+            "line": 1,
+            "token": "transfer",
+            "context": "y\":[\"alloc_pages\",\"free_pages\",\"mram_store\",\"mram_load\"],\"bus\":[\"transfer\"],\"interrupt\":[\"raise\",\"service\"],\"storage\":[\"read\",\"write\",\"map\",\"verify\",\"mark_missing\",\"rehydrate\"],\"nic\":[\"enqueue\",\"dequeue\",\"inspect\"],"
+          }
+        ],
+        "dynamic_code": [],
+        "persistent_storage": [
+          {
+            "line": 81,
+            "token": "localStorage",
+            "context": "(i);return new TextDecoder().decode(u)}; const state=JSON.parse(localStorage.getItem('KEX_V9_STATE')||'null')||{logical_time:1,current:'braink.kex',projection:'human',route_stack:['braink.kex'],observer:'KEX://OBSE"
+          },
+          {
+            "line": 82,
+            "token": "localStorage",
+            "context": "cument-is-volume',hci_mode:'unified'}}; const ledger=JSON.parse(localStorage.getItem('KEX_V9_LEDGER')||'[]'); const hci=[]; const appMeta=META.apps; function persist(){localStorage.setItem('KEX_V9_STATE',JSON.str"
+          },
+          {
+            "line": 84,
+            "token": "localStorage",
+            "context": "]'); const hci=[]; const appMeta=META.apps; function persist(){localStorage.setItem('KEX_V9_STATE',JSON.stringify(state));localStorage.setItem('KEX_V9_LEDGER',JSON.stringify(ledger.slice(-5000)))} function append"
+          },
+          {
+            "line": 84,
+            "token": "localStorage",
+            "context": "ist(){localStorage.setItem('KEX_V9_STATE',JSON.stringify(state));localStorage.setItem('KEX_V9_LEDGER',JSON.stringify(ledger.slice(-5000)))} function append(event,target,detail,extra={}){state.logical_time++;ledger."
+          }
+        ],
+        "automatic_execution": [
+          {
+            "line": 166,
+            "token": "setTimeout",
+            "context": " log(\"RESOLVE\",`${x.id} → ${x.entry}`); await new Promise(r=>setTimeout(r,80)); log(\"COMPILE\",`source-specific spec compiled for ${x.id}`); } async function plan(){ if(busy)return;busy=true;stateEl.textConte"
+          }
+        ]
+      }
+    },
+    {
+      "file": "KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "bytes": 21626378,
+      "sha256": "048ba1150198db0704dd933a5cb77a8fc540b9df5cd98abd38b429f838aa78a4",
+      "lineCount": 3497,
+      "externalUrls": [
+        "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 93,
+            "token": "WebSocket",
+            "context": "andard_transports\":[\"HTTP/2 streams\",\"HTTP/3 over QUIC streams\",\"WebSocket via Extended CONNECT\",\"CONNECT-UDP / HTTP datagrams\"],\"kex_overlays\":[\"VPN\",\"VPN-TL\",\"TL\",\"TL1\",\"TL2\"],\"separation_rule\":\"compression reduce"
+          },
+          {
+            "line": 138,
+            "token": "http://",
+            "context": "].map(sh=>{const rid=sh.getAttribute('r:id')||sh.getAttributeNS('http://schemas.openxmlformats.org/officeDocument/2006/relationships','id'),target=rmap[rid]||'';return{name:sh.getAttribute('name'),path:target.starts"
+          },
+          {
+            "line": 606,
+            "token": "WEBSOCKET",
+            "context": ",\"carrier_family\":{\"standard\":[\"LOCAL_BUS\",\"HTTP2\",\"HTTP3_QUIC\",\"WEBSOCKET_EXTENDED_CONNECT\",\"CONNECT_UDP\"],\"kex_overlays\":[\"VPN\",\"VPN-TL\",\"TL\",\"TL1\",\"TL2\"],\"tl_family_features\":[\"KEX_PACKET_COMPRESSION\",\"REJECT_BEF"
+          },
+          {
+            "line": 607,
+            "token": "WEBSOCKET",
+            "context": "rict'; const DEFAULT_CARRIERS=['LOCAL_BUS','HTTP2','HTTP3_QUIC','WEBSOCKET_EXTENDED_CONNECT','CONNECT_UDP','VPN','VPN-TL','TL','TL1','TL2']; const TL_FEATURES=Object.freeze(['KEX_PACKET_COMPRESSION','REJECT_BEFORE_L"
+          },
+          {
+            "line": 803,
+            "token": "websocket",
+            "context": "Storage!=='undefined'&&!!localStorage}catch(_){return false}})(),websocket:typeof WebSocket!=='undefined',fetch:typeof fetch!=='undefined'},logical_machine:this.model.logical_machine,machine_contract:this.model.mach"
+          },
+          {
+            "line": 803,
+            "token": "WebSocket",
+            "context": "ned'&&!!localStorage}catch(_){return false}})(),websocket:typeof WebSocket!=='undefined',fetch:typeof fetch!=='undefined'},logical_machine:this.model.logical_machine,machine_contract:this.model.machine_contract}}mat"
+          },
+          {
+            "line": 838,
+            "token": "WEBSOCKET",
+            "context": "C\",\"state\":\"AVAILABLE\",\"family\":\"STANDARD\",\"features\":[]},{\"id\":\"WEBSOCKET_EXTENDED_CONNECT\",\"state\":\"AVAILABLE\",\"family\":\"STANDARD\",\"features\":[]},{\"id\":\"CONNECT_UDP\",\"state\":\"AVAILABLE\",\"family\":\"STANDARD\",\"featur"
+          },
+          {
+            "line": 838,
+            "token": "websocket",
+            "context": "webgpu\":false,\"decompression_stream\":true,\"local_storage\":false,\"websocket\":true,\"fetch\":true},\"logical_machine\":\"volume://keddeh/braink/root\",\"machine_contract\":\"machine://kex/hardware-contract\"}}}],\"open_target_de"
+          },
+          {
+            "line": 3456,
+            "token": "websocket",
+            "context": "s.socket=null;this.url=null;this.rx=[]} probe(){return receipt('websocket.probe',typeof WebSocket==='function'?'PASS':'BLOCKED',{available:typeof WebSocket==='function'})} connect(url){if(typeof WebSocket!=='funct"
+          },
+          {
+            "line": 3456,
+            "token": "WebSocket",
+            "context": "ull;this.rx=[]} probe(){return receipt('websocket.probe',typeof WebSocket==='function'?'PASS':'BLOCKED',{available:typeof WebSocket==='function'})} connect(url){if(typeof WebSocket!=='function')return Promise.reje"
+          },
+          {
+            "line": 3456,
+            "token": "WebSocket",
+            "context": "typeof WebSocket==='function'?'PASS':'BLOCKED',{available:typeof WebSocket==='function'})} connect(url){if(typeof WebSocket!=='function')return Promise.reject(Error('E_WEBSOCKET_UNAVAILABLE'));if(!/^wss?:\\/\\//i.tes"
+          },
+          {
+            "line": 3457,
+            "token": "WebSocket",
+            "context": "ailable:typeof WebSocket==='function'})} connect(url){if(typeof WebSocket!=='function')return Promise.reject(Error('E_WEBSOCKET_UNAVAILABLE'));if(!/^wss?:\\/\\//i.test(String(url)))return Promise.reject(Error('E_WEBS"
+          },
+          {
+            "line": 3457,
+            "token": "WebSocket",
+            "context": "tring(url);return new Promise((ok,no)=>{const ws=this.socket=new WebSocket(this.url);ws.onopen=()=>{receipt('websocket.connect','PASS',{url:this.url});ok({state:'CONNECTED',url:this.url})};ws.onerror=()=>{receipt('w"
+          },
+          {
+            "line": 3457,
+            "token": "websocket",
+            "context": "t ws=this.socket=new WebSocket(this.url);ws.onopen=()=>{receipt('websocket.connect','PASS',{url:this.url});ok({state:'CONNECTED',url:this.url})};ws.onerror=()=>{receipt('websocket.connect','FAIL',{url:this.url});no("
+          },
+          {
+            "line": 3457,
+            "token": "websocket",
+            "context": ");ok({state:'CONNECTED',url:this.url})};ws.onerror=()=>{receipt('websocket.connect','FAIL',{url:this.url});no(Error('E_WEBSOCKET_CONNECT'))};ws.onmessage=e=>{this.rx.push({ts:new Date().toISOString(),data:e.data});r"
+          },
+          {
+            "line": 3457,
+            "token": "websocket",
+            "context": "this.rx.push({ts:new Date().toISOString(),data:e.data});receipt('websocket.receive','PASS',{url:this.url,bytes:String(e.data).length})};ws.onclose=e=>receipt('websocket.close','PASS',{url:this.url,code:e.code})})} "
+          },
+          {
+            "line": 3457,
+            "token": "websocket",
+            "context": "l:this.url,bytes:String(e.data).length})};ws.onclose=e=>receipt('websocket.close','PASS',{url:this.url,code:e.code})})} send(data){if(!this.socket||this.socket.readyState!==WebSocket.OPEN)throw Error('E_WEBSOCKET_N"
+          },
+          {
+            "line": 3458,
+            "token": "WebSocket",
+            "context": ".code})})} send(data){if(!this.socket||this.socket.readyState!==WebSocket.OPEN)throw Error('E_WEBSOCKET_NOT_OPEN');this.socket.send(data);return receipt('websocket.send','PASS',{url:this.url,bytes:String(data).leng"
+          },
+          {
+            "line": 3458,
+            "token": "websocket",
+            "context": "r('E_WEBSOCKET_NOT_OPEN');this.socket.send(data);return receipt('websocket.send','PASS',{url:this.url,bytes:String(data).length})} close(){this.socket?.close();return true} } const persistence=new KEXBrowserPersist"
+          },
+          {
+            "line": 3461,
+            "token": "websocket",
+            "context": "stence=new KEXBrowserPersistence(),worker=new KEXWorkerCompute(),websocket=new KEXWebSocketAdapter(); async function checkpoint(label='latest'){const state={schema:'kex.host-adapter.checkpoint.v1',label,created_at:n"
+          },
+          {
+            "line": 3466,
+            "token": "websocket",
+            "context": "bes={persistence:await persistence.probe(),worker:worker.probe(),websocket:websocket.probe()};if(probes.worker.state==='PASS')probes.worker=worker.start();receipt('host-adapter.boot',Object.values(probes).every(x=>x"
+          },
+          {
+            "line": 3466,
+            "token": "websocket",
+            "context": "stence:await persistence.probe(),worker:worker.probe(),websocket:websocket.probe()};if(probes.worker.state==='PASS')probes.worker=worker.start();receipt('host-adapter.boot',Object.values(probes).every(x=>x.state==='"
+          },
+          {
+            "line": 3467,
+            "token": "websocket",
+            "context": "eze({schema:'kex.braink.host-adapters.p19.v1',persistence,worker,websocket,checkpoint,restore,boot,receipts:()=>receipts.map(x=>({...x})),capabilities:()=>({persistence:persistence.backend,worker:!!worker.worker,web"
+          },
+          {
+            "line": 3467,
+            "token": "websocket",
+            "context": "ies:()=>({persistence:persistence.backend,worker:!!worker.worker,websocket_api:typeof WebSocket==='function',websocket_state:websocket.socket?.readyState??null})}); boot().catch(e=>receipt('host-adapter.boot','FAIL'"
+          },
+          {
+            "line": 3467,
+            "token": "WebSocket",
+            "context": ":persistence.backend,worker:!!worker.worker,websocket_api:typeof WebSocket==='function',websocket_state:websocket.socket?.readyState??null})}); boot().catch(e=>receipt('host-adapter.boot','FAIL',{error:String(e)}));"
+          },
+          {
+            "line": 3467,
+            "token": "websocket",
+            "context": "rker:!!worker.worker,websocket_api:typeof WebSocket==='function',websocket_state:websocket.socket?.readyState??null})}); boot().catch(e=>receipt('host-adapter.boot','FAIL',{error:String(e)})); })(globalThis); </scri"
+          },
+          {
+            "line": 3467,
+            "token": "websocket",
+            "context": "rker,websocket_api:typeof WebSocket==='function',websocket_state:websocket.socket?.readyState??null})}); boot().catch(e=>receipt('host-adapter.boot','FAIL',{error:String(e)})); })(globalThis); </script>\\n<script id="
+          },
+          {
+            "line": 3470,
+            "token": "WebSocket",
+            "context": "ers\":[\"IndexedDB/localStorage persistence\",\"Web Worker compute\",\"WebSocket external transport\"],\"laws\":[\"existing S30 machine remains authoritative for resident CPU/VFS/network model\",\"host adapters report capabilit"
+          },
+          {
+            "line": 3470,
+            "token": "WebSocket",
+            "context": " report capability rather than inventing availability\",\"external WebSocket connection requires explicit endpoint\",\"persistent checkpoint contains VFS plus hardware/network readback\",\"no PASS for browser capability u"
+          }
+        ],
+        "worker_or_serviceworker": [
+          {
+            "line": 3450,
+            "token": "Worker(",
+            "context": "new Blob([source],{type:'text/javascript'}));try{this.worker=new Worker(url)}catch(e){this.worker=null;return receipt('worker.start','BLOCKED',{reason:'WORKER_START_FAILED',error:String(e)})}finally{URL.revokeObject"
+          }
+        ],
+        "financial_or_mining": [
+          {
+            "line": 498,
+            "token": "transfer",
+            "context": "e\",\"packet_fields\":[\"seq\",\"from\",\"to\",\"ref\",\"op\"],\"operations\":[\"transfer\"],\"ordering\":\"monotonic logical sequence\"},\"interrupt\":{\"address\":\"device://irq/main\",\"packet_fields\":[\"seq\",\"vector\",\"ref\"],\"operations\":[\"r"
+          },
+          {
+            "line": 549,
+            "token": "transfer",
+            "context": "mory:['alloc_pages','free_pages','mram_store','mram_load'],bus:['transfer'],interrupt:['raise','service'],storage:['read','write','map','verify','mark_missing','rehydrate'],nic:['enqueue','dequeue','inspect'],displa"
+          },
+          {
+            "line": 554,
+            "token": "transfer",
+            "context": "y\":[\"alloc_pages\",\"free_pages\",\"mram_store\",\"mram_load\"],\"bus\":[\"transfer\"],\"interrupt\":[\"raise\",\"service\"],\"storage\":[\"read\",\"write\",\"map\",\"verify\",\"mark_missing\",\"rehydrate\"],\"nic\":[\"enqueue\",\"dequeue\",\"inspect\"],"
+          },
+          {
+            "line": 1038,
+            "token": "mining",
+            "context": "ates, ledgers, virtual RAM, KEX execution, BRAINK processing and mining-related reporting. Those are real assets. ### 4.2 What does not yet follow The transcript does **not** prove that: - all mapped files have "
+          },
+          {
+            "line": 1055,
+            "token": "Bitcoin",
+            "context": "cessfully modifies runnable software; - the scaffold itself is a Bitcoin miner. The strongest source-level description of `ai.py` explicitly characterises BRAINKbyK-SYSTEMS as a **local, VM-wrapped, Desktop-aware A"
+          },
+          {
+            "line": 1059,
+            "token": "Mining",
+            "context": "should be treated as an architectural boundary, not as a defect. Mining can exist as a separate product/runtime plane with explicit contracts rather than being falsely inferred from the knowledge scaffold. --- ## "
+          },
+          {
+            "line": 1375,
+            "token": "mining",
+            "context": "ai.py` explicitly says its scaffold does not mine. A functioning mining engine therefore cannot be inferred merely because mining-related registry entries or planning functions exist. ### 8.6 Evidence plane Every "
+          },
+          {
+            "line": 1375,
+            "token": "mining",
+            "context": "ioning mining engine therefore cannot be inferred merely because mining-related registry entries or planning functions exist. ### 8.6 Evidence plane Every stage writes receipts: - source hash; - parser result; - "
+          },
+          {
+            "line": 1572,
+            "token": "mining",
+            "context": "d expressly says it does not itself mine. Therefore the correct mining architecture is: ```text BRAINK knowledge/control plane ↓ explicit tested contract K-MINES execution plane ↓ Bitcoin/node/RPC "
+          },
+          {
+            "line": 1579,
+            "token": "Bitcoin",
+            "context": " ↓ explicit tested contract K-MINES execution plane ↓ Bitcoin/node/RPC adapter plane ↓ real protocol/runtime tests ↓ submission/result evidence ``` The product claim must be proven at the"
+          },
+          {
+            "line": 1586,
+            "token": "mining",
+            "context": "m BRAINK indexing, graph density, registry presence or generated mining reports. This also means work on a miner should not destructively rewrite the stronger general BRAINK knowledge substrate. It should consume i"
+          },
+          {
+            "line": 3216,
+            "token": "wallet",
+            "context": "PE\",\"Python source compilation, direct MasterCore, registrar and wallet tests; inherited R4/R6/R7 and R9 Node/V8 common-oracle tests.\"],[\"VALIDATE\",\"QUALIFIED_LOCAL_RUNTIME_SCOPE\",\"Local mechanics reconciled against"
+          },
+          {
+            "line": 3216,
+            "token": "wallet",
+            "context": ":\"self-hosted FastAPI host integrates MasterCore, cascade, mesh, wallet and BRAINK query surfaces\",\"sha256\":\"5081cd5fe919ac93f57f86011436e270e79139ec49ac2ed053bd321e8761a117\",\"detail\":\"Syntax PASS. Direct import/run"
+          },
+          {
+            "line": 3216,
+            "token": "WALLET",
+            "context": "lated register/resolve PASS; apex.test → 127.0.0.7.\"},{\"id\":\"SRC-WALLET\",\"label\":\"KEX Wallet / Entitlement\",\"kind\":\"PYTHON_SOURCE\",\"state\":\"IMPLEMENTATION_DEFECT_WITH_MECHANIC_PASS\",\"property\":\"identity + logical en"
+          },
+          {
+            "line": 3216,
+            "token": "Wallet",
+            "context": "e PASS; apex.test → 127.0.0.7.\"},{\"id\":\"SRC-WALLET\",\"label\":\"KEX Wallet / Entitlement\",\"kind\":\"PYTHON_SOURCE\",\"state\":\"IMPLEMENTATION_DEFECT_WITH_MECHANIC_PASS\",\"property\":\"identity + logical entitlement\",\"sha256\":\""
+          },
+          {
+            "line": 3216,
+            "token": "wallet",
+            "context": "eservation, optional BTC Core bridge, executable hash-cycle/hook/wallet semantics\",\"sha256\":\"97ed08c09e63c1d532e37c429bf7b953f032d11911b566da8cef3d7be41a9908\",\"detail\":\"Used as adjacent resident engineering context;"
+          },
+          {
+            "line": 3216,
+            "token": "WALLET",
+            "context": "; R8 useful mechanics re-derived under common oracle.\"},{\"id\":\"F-WALLET-001\",\"class\":\"IMPLEMENTATION_DEFECT\",\"state\":\"IN_DEVELOPMENT\",\"subject\":\"WalletEngine.initialize_ledger\",\"finding\":\"Clean isolated bootstrap ra"
+          },
+          {
+            "line": 3216,
+            "token": "Wallet",
+            "context": "ass\":\"IMPLEMENTATION_DEFECT\",\"state\":\"IN_DEVELOPMENT\",\"subject\":\"WalletEngine.initialize_ledger\",\"finding\":\"Clean isolated bootstrap raises sqlite3.OperationalError because substrate_ledger parent is not created.\",\""
+          },
+          {
+            "line": 3216,
+            "token": "wallet",
+            "context": "rent-directory creation or bind registrar/bootstrap owner before wallet init; retest clean bootstrap.\"},{\"id\":\"F-MESH-001\",\"class\":\"DEPENDENCY_DEFECT\",\"state\":\"BLOCKED_BY_DEPENDENCY\",\"subject\":\"GLOBAL_MESH_ROUTER\",\""
+          },
+          {
+            "line": 3245,
+            "token": "Wallet",
+            "context": "e>apex.test → 127.0.0.7</code>.</p></div><div class=\"r9card\"><h3>Wallet</h3><div class=\"r9read\">DEFECT + PASS</div><p>Clean bootstrap defect retained; entitlement mechanics pass when ledger parent exists.</p></div><"
+          },
+          {
+            "line": 3251,
+            "token": "wallet",
+            "context": "ion, and environment identity.</li><li>Reconcile source defects: wallet bootstrap, mesh dependency, port ownership.</li><li>Continue Q04 native weighted-state development with candidate + falsifier.</li></ol></secti"
+          },
+          {
+            "line": 3401,
+            "token": "Wallet",
+            "context": "IRECT SOURCE EXECUTION</b><p>MasterCore 86/86 · Registrar PASS · Wallet bootstrap defect retained.</p></div><div class=\"r9proof\"><b>ACTIVE NATIVE RESEARCH</b><p>Q04 weighted-state invariant → Q05 phase.</p></div><di"
+          },
+          {
+            "line": 3401,
+            "token": "WALLET",
+            "context": "dence.find(x=>x.id==='SRC-OS')?.state==='LOCALLY_EXECUTED');add('WALLET_DEFECT_RETAINED',M.failure_register.some(x=>x.id==='F-WALLET-001'));add('MESH_DEFECT_RETAINED',M.failure_register.some(x=>x.id==='F-MESH-001'))"
+          },
+          {
+            "line": 3401,
+            "token": "WALLET",
+            "context": "dd('WALLET_DEFECT_RETAINED',M.failure_register.some(x=>x.id==='F-WALLET-001'));add('MESH_DEFECT_RETAINED',M.failure_register.some(x=>x.id==='F-MESH-001'));add('ONTOLOGY_BOUNDARY',M.failure_register.some(x=>x.id==='F"
+          }
+        ],
+        "dynamic_code": [],
+        "persistent_storage": [
+          {
+            "line": 803,
+            "token": "localStorage",
+            "context": "essionStream!=='undefined',local_storage:(()=>{try{return typeof localStorage!=='undefined'&&!!localStorage}catch(_){return false}})(),websocket:typeof WebSocket!=='undefined',fetch:typeof fetch!=='undefined'},logic"
+          },
+          {
+            "line": 803,
+            "token": "localStorage",
+            "context": "al_storage:(()=>{try{return typeof localStorage!=='undefined'&&!!localStorage}catch(_){return false}})(),websocket:typeof WebSocket!=='undefined',fetch:typeof fetch!=='undefined'},logical_machine:this.model.logical_"
+          },
+          {
+            "line": 3442,
+            "token": "indexedDB",
+            "context": "his.ready||(this.ready=this._probe())} async _probe(){if(typeof indexedDB!=='undefined'){try{this.db=await new Promise((ok,no)=>{const q=indexedDB.open('KEDDEH_BRAINK_P19',1);q.onupgradeneeded=()=>q.result.createOb"
+          },
+          {
+            "line": 3442,
+            "token": "indexedDB",
+            "context": "B!=='undefined'){try{this.db=await new Promise((ok,no)=>{const q=indexedDB.open('KEDDEH_BRAINK_P19',1);q.onupgradeneeded=()=>q.result.createObjectStore('state');q.onsuccess=()=>ok(q.result);q.onerror=()=>no(q.error)"
+          },
+          {
+            "line": 3442,
+            "token": "INDEXEDDB",
+            "context": "ccess=()=>ok(q.result);q.onerror=()=>no(q.error)});this.backend='INDEXEDDB';return receipt('persistence.probe','PASS',{backend:this.backend})}catch(e){receipt('persistence.probe','DEGRADED',{backend:'INDEXEDDB',erro"
+          },
+          {
+            "line": 3442,
+            "token": "INDEXEDDB",
+            "context": "kend})}catch(e){receipt('persistence.probe','DEGRADED',{backend:'INDEXEDDB',error:String(e)})}}try{if(typeof localStorage!=='undefined'){localStorage.setItem(this.key+':probe','1');localStorage.removeItem(this.key+'"
+          },
+          {
+            "line": 3442,
+            "token": "localStorage",
+            "context": "'DEGRADED',{backend:'INDEXEDDB',error:String(e)})}}try{if(typeof localStorage!=='undefined'){localStorage.setItem(this.key+':probe','1');localStorage.removeItem(this.key+':probe');this.backend='LOCALSTORAGE';return "
+          },
+          {
+            "line": 3442,
+            "token": "localStorage",
+            "context": "DB',error:String(e)})}}try{if(typeof localStorage!=='undefined'){localStorage.setItem(this.key+':probe','1');localStorage.removeItem(this.key+':probe');this.backend='LOCALSTORAGE';return receipt('persistence.probe',"
+          },
+          {
+            "line": 3442,
+            "token": "localStorage",
+            "context": "orage!=='undefined'){localStorage.setItem(this.key+':probe','1');localStorage.removeItem(this.key+':probe');this.backend='LOCALSTORAGE';return receipt('persistence.probe','PASS',{backend:this.backend})}}catch(e){rec"
+          },
+          {
+            "line": 3442,
+            "token": "LOCALSTORAGE",
+            "context": "e','1');localStorage.removeItem(this.key+':probe');this.backend='LOCALSTORAGE';return receipt('persistence.probe','PASS',{backend:this.backend})}}catch(e){receipt('persistence.probe','DEGRADED',{backend:'LOCALSTORAG"
+          },
+          {
+            "line": 3442,
+            "token": "LOCALSTORAGE",
+            "context": "end})}}catch(e){receipt('persistence.probe','DEGRADED',{backend:'LOCALSTORAGE',error:String(e)})}this.backend='MEMORY_ONLY';return receipt('persistence.probe','BLOCKED',{backend:this.backend})} async put(name,value"
+          },
+          {
+            "line": 3443,
+            "token": "INDEXEDDB",
+            "context": "=undefined)throw Error('E_PERSISTENCE_VALUE');if(this.backend==='INDEXEDDB')return new Promise((ok,no)=>{const tx=this.db.transaction('state','readwrite');tx.objectStore('state').put(body,name);tx.oncomplete=()=>ok("
+          },
+          {
+            "line": 3443,
+            "token": "LOCALSTORAGE",
+            "context": "STENCE_ABORT'));tx.onerror=()=>no(tx.error)});if(this.backend==='LOCALSTORAGE'){localStorage.setItem(this.key+':'+name,body);return receipt('persistence.put','PASS',{name,bytes:body.length,backend:this.backend})}thr"
+          },
+          {
+            "line": 3443,
+            "token": "localStorage",
+            "context": ";tx.onerror=()=>no(tx.error)});if(this.backend==='LOCALSTORAGE'){localStorage.setItem(this.key+':'+name,body);return receipt('persistence.put','PASS',{name,bytes:body.length,backend:this.backend})}throw Error('E_PER"
+          },
+          {
+            "line": 3444,
+            "token": "INDEXEDDB",
+            "context": "nc get(name){await this.probe();let body=null;if(this.backend==='INDEXEDDB')body=await new Promise((ok,no)=>{const tx=this.db.transaction('state','readonly'),q=tx.objectStore('state').get(name);q.onsuccess=()=>ok(q."
+          },
+          {
+            "line": 3444,
+            "token": "LOCALSTORAGE",
+            "context": "NCE_ABORT'));q.onerror=()=>no(q.error)});else if(this.backend==='LOCALSTORAGE')body=localStorage.getItem(this.key+':'+name);else throw Error('E_PERSISTENCE_UNAVAILABLE');receipt('persistence.get',body==null?'MISS':'"
+          },
+          {
+            "line": 3444,
+            "token": "localStorage",
+            "context": "ror=()=>no(q.error)});else if(this.backend==='LOCALSTORAGE')body=localStorage.getItem(this.key+':'+name);else throw Error('E_PERSISTENCE_UNAVAILABLE');receipt('persistence.get',body==null?'MISS':'PASS',{name,backend"
+          },
+          {
+            "line": 3470,
+            "token": "IndexedDB",
+            "context": "without replacing existing S30 machine primitives.\",\"adapters\":[\"IndexedDB/localStorage persistence\",\"Web Worker compute\",\"WebSocket external transport\"],\"laws\":[\"existing S30 machine remains authoritative for resid"
+          },
+          {
+            "line": 3470,
+            "token": "localStorage",
+            "context": "placing existing S30 machine primitives.\",\"adapters\":[\"IndexedDB/localStorage persistence\",\"Web Worker compute\",\"WebSocket external transport\"],\"laws\":[\"existing S30 machine remains authoritative for resident CPU/VF"
+          },
+          {
+            "line": 3490,
+            "token": "localStorage",
+            "context": "r14.checkpoint','PASS',{label,backend:host.persistence.backend})}localStorage.setItem('keddeh:'+label,JSON.stringify(state));return receipt('r14.checkpoint','PASS',{label,backend:'localStorage'})} async function res"
+          },
+          {
+            "line": 3490,
+            "token": "localStorage",
+            "context": "y(state));return receipt('r14.checkpoint','PASS',{label,backend:'localStorage'})} async function restore(label='r14-latest'){let state=null;const host=g.KEXHostAdapters;if(host?.persistence?.get)state=await host.per"
+          },
+          {
+            "line": 3491,
+            "token": "localStorage",
+            "context": "istence.get('checkpoint:'+label);if(!state){try{state=JSON.parse(localStorage.getItem('keddeh:'+label)||'null')}catch{}}if(!state)return receipt('r14.restore','MISS',{label});ledger.splice(0,ledger.length,...(state."
+          }
+        ],
+        "automatic_execution": [
+          {
+            "line": 43,
+            "token": "DOMContentLoaded",
+            "context": "',{readyState:document.readyState}); document.addEventListener('DOMContentLoaded',()=>emit('DOM_CONTENT_LOADED',{bodyChildren:document.body?.children?.length||0})); g.addEventListener('load',()=>emit('WINDOW_LOAD'"
+          },
+          {
+            "line": 44,
+            "token": "addEventListener('load",
+            "context": "_LOADED',{bodyChildren:document.body?.children?.length||0})); g.addEventListener('load',()=>emit('WINDOW_LOAD',{bodyChildren:document.body?.children?.length||0})); const snapshot=()=>({ schema:'kex.braink.runti"
+          },
+          {
+            "line": 59,
+            "token": "setTimeout",
+            "context": "ime.observer.p20.v1',events:()=>events.slice(),snapshot,emit}); setTimeout(()=>emit('OBSERVE_100MS',snapshot().subsystems),100); setTimeout(()=>emit('OBSERVE_1000MS',snapshot().subsystems),1000); setTimeout(()=>e"
+          },
+          {
+            "line": 60,
+            "token": "setTimeout",
+            "context": "etTimeout(()=>emit('OBSERVE_100MS',snapshot().subsystems),100); setTimeout(()=>emit('OBSERVE_1000MS',snapshot().subsystems),1000); setTimeout(()=>emit('OBSERVE_5000MS',snapshot().subsystems),5000); })(globalThis);"
+          },
+          {
+            "line": 61,
+            "token": "setTimeout",
+            "context": "Timeout(()=>emit('OBSERVE_1000MS',snapshot().subsystems),1000); setTimeout(()=>emit('OBSERVE_5000MS',snapshot().subsystems),5000); })(globalThis); </script> <script id=\"p20-runtime-observer-manifest\" type=\"applicat"
+          },
+          {
+            "line": 2147,
+            "token": "DOMContentLoaded",
+            "context": ") today.classList.remove(\"show\"); } document.addEventListener(\"DOMContentLoaded\",function(){ const actions=document.querySelector(\".actions\"); if(actions && !document.getElementById(\"ksTodayBtn\")){ c"
+          },
+          {
+            "line": 2331,
+            "token": "setTimeout",
+            "context": "r4frame\"); const loaded=new Promise((resolve,reject)=>{const to=setTimeout(()=>reject(Error(\"R4_LOAD_TIMEOUT\")),20000);f.onload=()=>{clearTimeout(to);resolve()};f.onerror=()=>{clearTimeout(to);reject(Error(\"R4_LOAD"
+          },
+          {
+            "line": 2404,
+            "token": "setTimeout",
+            "context": "; if(new URLSearchParams(location.search).get(\"autotest\")===\"1\"){setTimeout(async()=>{const r=await selfTest();document.body.dataset.s29qAutotest=r.status;$(\"s29q\").classList.add(\"open\");const pre=document.createEle"
+          },
+          {
+            "line": 2717,
+            "token": "setTimeout",
+            "context": "s:t}; } $(\"kq4-hide\").onclick=()=>{$(\"kq4\").style.display=\"none\";setTimeout(()=>{const b=document.createElement(\"button\");b.textContent=\"RETURN TO S29 LEARNING SURFACE\";b.id=\"kq4-return\";b.style.cssText=\"position:fi"
+          },
+          {
+            "line": 2785,
+            "token": "DOMContentLoaded",
+            "context": "); if(document.readyState===\"loading\")document.addEventListener(\"DOMContentLoaded\",render);else render(); })(globalThis); </script> <!-- KEDDEH CONNECTION-QUALIFIED RUNTIME R6 --> <script id=\"kc6-manifest\" type=\"ap"
+          },
+          {
+            "line": 3432,
+            "token": "DOMContentLoaded",
+            "context": "(g.document?.readyState==='loading')g.document.addEventListener('DOMContentLoaded',run,{once:true});else run(); })(globalThis); </script> \\n<script id=\"p19-host-adapter-runtime\"> (function(g){'use strict'; const rec"
+          }
+        ]
+      }
+    },
+    {
+      "file": "KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "bytes": 5122943,
+      "sha256": "7f6e4ce0a41d3ba8823984533f41479be77efa7656f3e016f591af6e49c13fec",
+      "lineCount": 2248,
+      "externalUrls": [
+        "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 49,
+            "token": "WebSocket",
+            "context": "andard_transports\":[\"HTTP/2 streams\",\"HTTP/3 over QUIC streams\",\"WebSocket via Extended CONNECT\",\"CONNECT-UDP / HTTP datagrams\"],\"kex_overlays\":[\"VPN\",\"VPN-TL\",\"TL\",\"TL1\",\"TL2\"],\"separation_rule\":\"compression reduce"
+          },
+          {
+            "line": 94,
+            "token": "http://",
+            "context": "].map(sh=>{const rid=sh.getAttribute('r:id')||sh.getAttributeNS('http://schemas.openxmlformats.org/officeDocument/2006/relationships','id'),target=rmap[rid]||'';return{name:sh.getAttribute('name'),path:target.starts"
+          },
+          {
+            "line": 560,
+            "token": "WEBSOCKET",
+            "context": ",\"carrier_family\":{\"standard\":[\"LOCAL_BUS\",\"HTTP2\",\"HTTP3_QUIC\",\"WEBSOCKET_EXTENDED_CONNECT\",\"CONNECT_UDP\"],\"kex_overlays\":[\"VPN\",\"VPN-TL\",\"TL\",\"TL1\",\"TL2\"],\"tl_family_features\":[\"KEX_PACKET_COMPRESSION\",\"REJECT_BEF"
+          },
+          {
+            "line": 561,
+            "token": "WEBSOCKET",
+            "context": "rict'; const DEFAULT_CARRIERS=['LOCAL_BUS','HTTP2','HTTP3_QUIC','WEBSOCKET_EXTENDED_CONNECT','CONNECT_UDP','VPN','VPN-TL','TL','TL1','TL2']; const TL_FEATURES=Object.freeze(['KEX_PACKET_COMPRESSION','REJECT_BEFORE_L"
+          },
+          {
+            "line": 751,
+            "token": "websocket",
+            "context": "Storage!=='undefined'&&!!localStorage}catch(_){return false}})(),websocket:typeof WebSocket!=='undefined',fetch:typeof fetch!=='undefined'},logical_machine:this.model.logical_machine,machine_contract:this.model.mach"
+          },
+          {
+            "line": 751,
+            "token": "WebSocket",
+            "context": "ned'&&!!localStorage}catch(_){return false}})(),websocket:typeof WebSocket!=='undefined',fetch:typeof fetch!=='undefined'},logical_machine:this.model.logical_machine,machine_contract:this.model.machine_contract}}mat"
+          },
+          {
+            "line": 786,
+            "token": "WEBSOCKET",
+            "context": "C\",\"state\":\"AVAILABLE\",\"family\":\"STANDARD\",\"features\":[]},{\"id\":\"WEBSOCKET_EXTENDED_CONNECT\",\"state\":\"AVAILABLE\",\"family\":\"STANDARD\",\"features\":[]},{\"id\":\"CONNECT_UDP\",\"state\":\"AVAILABLE\",\"family\":\"STANDARD\",\"featur"
+          },
+          {
+            "line": 786,
+            "token": "websocket",
+            "context": "webgpu\":false,\"decompression_stream\":true,\"local_storage\":false,\"websocket\":true,\"fetch\":true},\"logical_machine\":\"volume://keddeh/braink/root\",\"machine_contract\":\"machine://kex/hardware-contract\"}}}],\"open_target_de"
+          },
+          {
+            "line": 2111,
+            "token": "WebSocket",
+            "context": "d client. Use for Canvas, OffscreenCanvas, WebGPU, WebTransport, WebSocket, remote desktops, server-rendered workstations, scene graphs, dirty-region rendering, semantic input envelopes, replay-safe interaction sess"
+          },
+          {
+            "line": 2111,
+            "token": "WebSocket",
+            "context": "d client. Use for Canvas, OffscreenCanvas, WebGPU, WebTransport, WebSocket, remote desktops, server-rendered workstations, scene graphs, dirty-region rendering, semantic input envelopes, replay-safe interaction sess"
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [
+          {
+            "line": 452,
+            "token": "transfer",
+            "context": "e\",\"packet_fields\":[\"seq\",\"from\",\"to\",\"ref\",\"op\"],\"operations\":[\"transfer\"],\"ordering\":\"monotonic logical sequence\"},\"interrupt\":{\"address\":\"device://irq/main\",\"packet_fields\":[\"seq\",\"vector\",\"ref\"],\"operations\":[\"r"
+          },
+          {
+            "line": 503,
+            "token": "transfer",
+            "context": "mory:['alloc_pages','free_pages','mram_store','mram_load'],bus:['transfer'],interrupt:['raise','service'],storage:['read','write','map','verify','mark_missing','rehydrate'],nic:['enqueue','dequeue','inspect'],displa"
+          },
+          {
+            "line": 508,
+            "token": "transfer",
+            "context": "y\":[\"alloc_pages\",\"free_pages\",\"mram_store\",\"mram_load\"],\"bus\":[\"transfer\"],\"interrupt\":[\"raise\",\"service\"],\"storage\":[\"read\",\"write\",\"map\",\"verify\",\"mark_missing\",\"rehydrate\"],\"nic\":[\"enqueue\",\"dequeue\",\"inspect\"],"
+          },
+          {
+            "line": 986,
+            "token": "mining",
+            "context": "ates, ledgers, virtual RAM, KEX execution, BRAINK processing and mining-related reporting. Those are real assets. ### 4.2 What does not yet follow The transcript does **not** prove that: - all mapped files have "
+          },
+          {
+            "line": 1003,
+            "token": "Bitcoin",
+            "context": "cessfully modifies runnable software; - the scaffold itself is a Bitcoin miner. The strongest source-level description of `ai.py` explicitly characterises BRAINKbyK-SYSTEMS as a **local, VM-wrapped, Desktop-aware A"
+          },
+          {
+            "line": 1007,
+            "token": "Mining",
+            "context": "should be treated as an architectural boundary, not as a defect. Mining can exist as a separate product/runtime plane with explicit contracts rather than being falsely inferred from the knowledge scaffold. --- ## "
+          },
+          {
+            "line": 1323,
+            "token": "mining",
+            "context": "ai.py` explicitly says its scaffold does not mine. A functioning mining engine therefore cannot be inferred merely because mining-related registry entries or planning functions exist. ### 8.6 Evidence plane Every "
+          },
+          {
+            "line": 1323,
+            "token": "mining",
+            "context": "ioning mining engine therefore cannot be inferred merely because mining-related registry entries or planning functions exist. ### 8.6 Evidence plane Every stage writes receipts: - source hash; - parser result; - "
+          },
+          {
+            "line": 1520,
+            "token": "mining",
+            "context": "d expressly says it does not itself mine. Therefore the correct mining architecture is: ```text BRAINK knowledge/control plane ↓ explicit tested contract K-MINES execution plane ↓ Bitcoin/node/RPC "
+          },
+          {
+            "line": 1527,
+            "token": "Bitcoin",
+            "context": " ↓ explicit tested contract K-MINES execution plane ↓ Bitcoin/node/RPC adapter plane ↓ real protocol/runtime tests ↓ submission/result evidence ``` The product claim must be proven at the"
+          },
+          {
+            "line": 1534,
+            "token": "mining",
+            "context": "m BRAINK indexing, graph density, registry presence or generated mining reports. This also means work on a miner should not destructively rewrite the stronger general BRAINK knowledge substrate. It should consume i"
+          },
+          {
+            "line": 2111,
+            "token": "mining",
+            "context": "ompute-audit\\\",\\n \\\"description\\\": \\\"Audit sovereign CPU, mining, blockchain, ASIC, mainnet-console, nonce-search, block-header, compact-target, endian, telemetry, and hardware-control implementations for pro"
+          },
+          {
+            "line": 2111,
+            "token": "mining",
+            "context": "ns for protocol completeness and claim-safe evidence. Use for Go mining engines, Bitcoin-like headers, browser consoles, mining simulations, hardware dashboards, or claims of mainnet processing and valid block solut"
+          },
+          {
+            "line": 2111,
+            "token": "Bitcoin",
+            "context": "completeness and claim-safe evidence. Use for Go mining engines, Bitcoin-like headers, browser consoles, mining simulations, hardware dashboards, or claims of mainnet processing and valid block solutions.\\\",\\n "
+          },
+          {
+            "line": 2111,
+            "token": "mining",
+            "context": "e for Go mining engines, Bitcoin-like headers, browser consoles, mining simulations, hardware dashboards, or claims of mainnet processing and valid block solutions.\\\",\\n \\\"revision_root\\\": \\\"9f16f741225cc8f82"
+          },
+          {
+            "line": 2111,
+            "token": "mining",
+            "context": " \\\"phenotype\\\": {\\n \\\"purpose\\\": \\\"Audit sovereign CPU, mining, blockchain, ASIC, mainnet-console, nonce-search, block-header, compact-target, endian, telemetry, and hardware-control implementations for pro"
+          },
+          {
+            "line": 2111,
+            "token": "mining",
+            "context": "ns for protocol completeness and claim-safe evidence. Use for Go mining engines, Bitcoin-like headers, browser consoles, mining simulations, hardware dashboards, or claims of mainnet processing and valid block solut"
+          },
+          {
+            "line": 2111,
+            "token": "Bitcoin",
+            "context": "completeness and claim-safe evidence. Use for Go mining engines, Bitcoin-like headers, browser consoles, mining simulations, hardware dashboards, or claims of mainnet processing and valid block solutions.\\\",\\n "
+          },
+          {
+            "line": 2111,
+            "token": "mining",
+            "context": "e for Go mining engines, Bitcoin-like headers, browser consoles, mining simulations, hardware dashboards, or claims of mainnet processing and valid block solutions.\\\",\\n \\\"state_family_bindings\\\": [\\n "
+          }
+        ],
+        "dynamic_code": [],
+        "persistent_storage": [
+          {
+            "line": 751,
+            "token": "localStorage",
+            "context": "essionStream!=='undefined',local_storage:(()=>{try{return typeof localStorage!=='undefined'&&!!localStorage}catch(_){return false}})(),websocket:typeof WebSocket!=='undefined',fetch:typeof fetch!=='undefined'},logic"
+          },
+          {
+            "line": 751,
+            "token": "localStorage",
+            "context": "al_storage:(()=>{try{return typeof localStorage!=='undefined'&&!!localStorage}catch(_){return false}})(),websocket:typeof WebSocket!=='undefined',fetch:typeof fetch!=='undefined'},logical_machine:this.model.logical_"
+          }
+        ],
+        "automatic_execution": [
+          {
+            "line": 2095,
+            "token": "DOMContentLoaded",
+            "context": ") today.classList.remove(\"show\"); } document.addEventListener(\"DOMContentLoaded\",function(){ const actions=document.querySelector(\".actions\"); if(actions && !document.getElementById(\"ksTodayBtn\")){ c"
+          },
+          {
+            "line": 2243,
+            "token": "setTimeout",
+            "context": "ist.toggle('active',b.dataset.view===name));if(name==='resolve'){setTimeout(()=>{const r=$('v76ResolveBtn'),i=$('v76InvokeBtn');if(r)r.onclick=()=>{$('v76ResolveOut').textContent=JSON.stringify(resolve({objective:$("
+          }
+        ]
+      }
+    },
+    {
+      "file": "KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "bytes": 135601,
+      "sha256": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b",
+      "lineCount": 248,
+      "externalUrls": [],
+      "findings": {
+        "remote_network": [],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": []
+      }
+    },
+    {
+      "file": "KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "bytes": 31281,
+      "sha256": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41",
+      "lineCount": 471,
+      "externalUrls": [],
+      "findings": {
+        "remote_network": [],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": [
+          {
+            "line": 200,
+            "token": "setTimeout",
+            "context": "CTIVE_CHECKPOINT_${stamp.replace(/[:.]/g,\"-\")}.html`; a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000); log(`CHECKPOINT SHA256=${hash}`); $(\"#terminal\").textContent=`CHECKPOINT CREATED\\n${stamp}\\nSHA-25"
+          },
+          {
+            "line": 298,
+            "token": "setInterval",
+            "context": "g triggers, not a claim of physical Hz equivalence. clockHandle=setInterval(()=>{logicalTick(1);render()},Math.max(1,Math.floor(1000/hz))); return `CLOCK running requested=${hz}Hz host-scheduled`; } function clock"
+          }
+        ]
+      }
+    },
+    {
+      "file": "KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "bytes": 66244,
+      "sha256": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028",
+      "lineCount": 925,
+      "externalUrls": [],
+      "findings": {
+        "remote_network": [],
+        "worker_or_serviceworker": [
+          {
+            "line": 678,
+            "token": "Worker(",
+            "context": "avascript\"}); const url=URL.createObjectURL(blob);const w=new Worker(url); const result=await new Promise((resolve,reject)=>{const to=setTimeout(()=>reject(Error(\"timeout\")),1500);w.onmessage=e=>{clearTimeout("
+          }
+        ],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": [
+          {
+            "line": 271,
+            "token": "setTimeout",
+            "context": "CTIVE_CHECKPOINT_${stamp.replace(/[:.]/g,\"-\")}.html`; a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000); recovery.dataset.checkpoints=String(Number(recovery.dataset.checkpoints)+1);recovery.dataset.last=s"
+          },
+          {
+            "line": 410,
+            "token": "setInterval",
+            "context": "g triggers, not a claim of physical Hz equivalence. clockHandle=setInterval(()=>{logicalTick(1);render()},Math.max(1,Math.floor(1000/hz))); return `CLOCK running requested=${hz}Hz host-scheduled`; } function clock"
+          },
+          {
+            "line": 679,
+            "token": "setTimeout",
+            "context": "); const result=await new Promise((resolve,reject)=>{const to=setTimeout(()=>reject(Error(\"timeout\")),1500);w.onmessage=e=>{clearTimeout(to);resolve(e.data)};w.onerror=reject;w.postMessage({value:9})}); w.term"
+          }
+        ]
+      }
+    },
+    {
+      "file": "hcf_workstation.html",
+      "bytes": 103660,
+      "sha256": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec",
+      "lineCount": 1193,
+      "externalUrls": [
+        "https://fonts.googleapis.com/",
+        "https://fonts.gstatic.com/",
+        "https://fonts.googleapis.com/css2?[redacted]",
+        "https://esm.sh/@google/genai@0.7.0",
+        "https://esm.sh/@tailwindcss/browser@%5E4.1.3",
+        "https://accounts.google.com/gsi/client",
+        "https://cdn.jsdelivr.net/npm/v86@latest/build/libv86.js",
+        "https://example.com/"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 7,
+            "token": "https://",
+            "context": ">ONE (OS 1) Workstation</title> <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" /> <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin /> <link href=\"https://fonts.google"
+          },
+          {
+            "line": 8,
+            "token": "https://",
+            "context": "ttps://fonts.googleapis.com\" /> <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin /> <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap\" "
+          },
+          {
+            "line": 10,
+            "token": "https://",
+            "context": "\"https://fonts.gstatic.com\" crossorigin /> <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap\" rel=\"stylesheet\" /> <script type=\"importmap\"> { "
+          },
+          {
+            "line": 16,
+            "token": "https://",
+            "context": "rtmap\"> { \"imports\": { \"@google/genai\": \"https://esm.sh/@google/genai@0.7.0\", \"@tailwindcss/browser\": \"https://esm.sh/@tailwindcss/browser@^4.1.3\" } } </script> "
+          },
+          {
+            "line": 17,
+            "token": "https://",
+            "context": "/esm.sh/@google/genai@0.7.0\", \"@tailwindcss/browser\": \"https://esm.sh/@tailwindcss/browser@^4.1.3\" } } </script> <link rel=\"stylesheet\" href=\"/index.css\"> <script src=\"https://account"
+          },
+          {
+            "line": 22,
+            "token": "https://",
+            "context": "ript> <link rel=\"stylesheet\" href=\"/index.css\"> <script src=\"https://accounts.google.com/gsi/client\" async defer></script> <script src=\"https://cdn.jsdelivr.net/npm/v86@latest/build/libv86.js\" async defer></sc"
+          },
+          {
+            "line": 23,
+            "token": "https://",
+            "context": "unts.google.com/gsi/client\" async defer></script> <script src=\"https://cdn.jsdelivr.net/npm/v86@latest/build/libv86.js\" async defer></script> </head> <body> <!-- Keddeh Independent Workstation - Instant Comp"
+          },
+          {
+            "line": 295,
+            "token": "https://",
+            "context": "v> <input id=\"chrome-url-bar\" type=\"text\" value=\"https://example.com\" style=\"flex: 1; background: #020617; border: 1px solid #334155; color: #f8fafc; padding: 6px 12px; border-radius: 24px; font-size"
+          },
+          {
+            "line": 904,
+            "token": "WebSocket",
+            "context": "an style=\"color: #94a3b8; font-size: 10px;\">Unified REST bridge, WebSocket routing, and Vite middleware integration.</span> </div> </div> </div> <!-- Sect"
+          },
+          {
+            "line": 958,
+            "token": "WebSocket",
+            "context": "4a3b8; font-size: 10px;\">Managed via `/server.ts` middleware and WebSocket stream pipes (`/api/mesh/stream`), enabling impenetrable state injection.</span> </div> </div> "
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": []
+      }
+    }
+  ]
+}

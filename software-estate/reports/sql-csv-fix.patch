@@ -1,0 +1,32 @@
+--- a/src/data/html5SqlStudioTemplate.ts
++++ b/src/data/html5SqlStudioTemplate.ts
+@@ -497,13 +497,24 @@
+       document.getElementById('sqlInput').value = formatted;
+     }
+ 
++    function serializeCSVValue(value) {
++      const text = value === null || value === undefined ? '' : String(value);
++      return /[",\\r\\n]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
++    }
++
++    function serializeCSV(rows) {
++      if (!rows || rows.length === 0) return '';
++      const cols = Object.keys(rows[0]);
++      const records = [cols.map(serializeCSVValue).join(',')];
++      rows.forEach(row => {
++        records.push(cols.map(col => serializeCSVValue(row[col])).join(','));
++      });
++      return records.join('\\r\\n') + '\\r\\n';
++    }
++
+     function exportCSV() {
+       if (!lastResultSet || lastResultSet.length === 0) return;
+-      const cols = Object.keys(lastResultSet[0]);
+-      let csv = cols.join(",") + "\\n";
+-      lastResultSet.forEach(row => {
+-        csv += cols.map(c => JSON.stringify(row[c] || "")).join(",") + "\\n";
+-      });
++      const csv = serializeCSV(lastResultSet);
+       const blob = new Blob([csv], { type: 'text/csv' });
+       const url = URL.createObjectURL(blob);
+       const a = document.createElement('a');

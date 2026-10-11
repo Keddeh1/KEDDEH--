@@ -1,0 +1,38 @@
+--- originals/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html
++++ working/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html
+@@ -1315,6 +1315,8 @@
+     const dragShield = document.getElementById('window-drag-shield');
+ 
+     function startDragWindow(e, appId) {
++      // R2: window controls must receive their click, not start the drag shield.
++      if (e.button !== 0 || e.target.closest('.window-controls')) return;
+       focusWindow(appId);
+       const win = openWindows[appId].el;
+       if (openWindows[appId].isMax) return;
+@@ -1812,6 +1814,8 @@
+         createWindow('vfs', 'File Manager (VFS)', '📁', 540, 420, content);
+         setTimeout(renderVfsTree, 50);
+       } else if (type === 'editor') {
++        // R2: focusing an existing editor preserves its unsaved buffer.
++        if (openWindows.editor) { focusWindow('editor'); return; }
+         const content = `
+           <div style="display: flex; flex-direction: column; height: 100%;">
+             <div style="padding: 6px 12px; background: #1e293b; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+@@ -1825,12 +1829,11 @@
+           </div>
+         `;
+         createWindow('editor', 'Text & Code Editor', '📄', 620, 440, content);
+-        setTimeout(() => {
+-          const title = document.getElementById('editor-file-title');
+-          const area = document.getElementById('editor-area');
+-          if (title) title.textContent = 'Editing: ' + (window.currentEditingPath || '/home/engineer/welcome.txt');
+-          if (area) area.value = VFS[window.currentEditingPath || '/home/engineer/welcome.txt'] || '';
+-        }, 50);
++        // R2: createWindow inserts synchronously; no delayed write over user input.
++        const title = document.getElementById('editor-file-title');
++        const area = document.getElementById('editor-area');
++        if (title) title.textContent = 'Editing: ' + (window.currentEditingPath || '/home/engineer/welcome.txt');
++        if (area) area.value = VFS[window.currentEditingPath || '/home/engineer/welcome.txt'] || '';
+       } else if (type === 'browser') {
+         const content = `
+           <div style="display: flex; flex-direction: column; height: 100%;">

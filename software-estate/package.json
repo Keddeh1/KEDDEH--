@@ -1,0 +1,24 @@
+{
+  "name": "keddeh-html-software-estate",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Preserved Keddeh HTML sources, bounded working repairs and isolated browser qualification",
+  "scripts": {
+    "test:browser": "node tests/r2-browser.cjs",
+    "test:families": "node tests/r2-family-controls.cjs --root working/drive --out evidence/r2-family-drive --execute-reviewed && node tests/r2-family-controls.cjs --root working/html5 --out evidence/r2-family-html5 --execute-reviewed && node tests/r2-family-controls.cjs --root working/github --out evidence/r2-family-github --execute-reviewed && python3 tests/r2-family-summary.py",
+    "test:static": "node tests/static-verify.cjs working/drive working/html5",
+    "test:r14": "node development/r14/regression.cjs",
+    "test:csv": "node tools/test-sql-csv.cjs && python3 tools/test-sql-csv-roundtrip.py",
+    "test:hcf": "python3 tests/verify-hcf-recovery.py",
+    "test:integrity": "python3 tests/verify-estate.py",
+    "docs:render": "node docs/render.cjs",
+    "docs:validate": "node docs/validate.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "marked": "17.0.5"
+  }
+}

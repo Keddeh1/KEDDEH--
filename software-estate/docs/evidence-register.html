@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KEDDEH SYSTEMS · evidence-register</title><style>@page{size:A4;margin:18mm}*{box-sizing:border-box}body{font:15px/1.65 Arial,sans-serif;color:#101820;background:#edf1f4;margin:0}main{max-width:1100px;margin:32px auto;padding:48px;background:white;border-top:8px solid #103b50}h1{font-size:30px;color:#000}h2{font-size:21px;margin-top:32px;color:#123c50}h3{font-size:18px}a{color:#075b7c}table{border-collapse:collapse;width:100%;font-size:13px;margin:20px 0}th,td{border:1px solid #ccd5db;padding:9px;text-align:left;vertical-align:top;overflow-wrap:anywhere}th{background:#e9f0f3}thead{display:table-header-group}pre{white-space:pre-wrap;background:#f2f5f7;padding:16px}code{overflow-wrap:anywhere}footer{font-size:12px;border-top:1px solid #ccc;padding-top:16px}@media print{body{background:white;font-size:10pt}main{margin:0;padding:0;border:0;max-width:none}h1,h2,h3{break-after:avoid}tr{break-inside:avoid}a{color:#000}thead{display:table-header-group}}</style></head><body><main><p>KEDDEH SYSTEMS | RESEARCH AND FORMAL PUBLISHING | ENGINEER · AUTOMATE · SCALE</p>
+<h3 id="document-control">Document control</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Title</td>
+<td>Evidence register and qualification boundary</td>
+</tr>
+<tr>
+<td>Document ID</td>
+<td>KEDDEH-ENG-EVIDENCE-REGISTER-001</td>
+</tr>
+<tr>
+<td>Version / date</td>
+<td>R2 / 2026-10-11 UTC</td>
+</tr>
+<tr>
+<td>Classification / status</td>
+<td>Private development material / Draft</td>
+</tr>
+<tr>
+<td>Assessor / approval receipt</td>
+<td>Unrecorded / Unrecorded</td>
+</tr>
+</tbody></table>
+<h3 id="authorship-and-licensing">Authorship and licensing</h3>
+<p>Author: Aboudy Keddeh — Systems Architect. Rights holder: Aboudy Keddeh. Publisher: Keddeh Systems. Legal context: The Layna Company Pty Limited, user-stated parent. Licence profile: KEDDEH-RESERVED-1.0.</p>
+<p>Architecture and research direction: Aboudy Keddeh. AI-assisted drafting and source synthesis: OpenAI ChatGPT. No independent approval is implied.</p>
+<p>All rights reserved. No licence is granted by this document. Separate written permission governs reuse, redistribution and implementation, subject to applicable law. Third-party material retains its own rights.</p>
+<h3 id="publication-identity-and-visual-attribution">Publication identity and visual attribution</h3>
+<p>KEDDEH SYSTEMS · ENGINEER · AUTOMATE · SCALE. Local repository research and engineering edition. Source identities and original third-party notices remain preserved. See <a href="publication-controls.html">publication controls</a> for reference access and layout verification limits.</p>
+<h1 id="evidence-register-and-qualification-boundary">Evidence register and qualification boundary</h1>
+<table>
+<thead>
+<tr>
+<th>Evidence ID</th>
+<th>Artifact</th>
+<th>Scope and result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>E-R1-CUSTODY</td>
+<td><a href="../evidence/independent-verdict.json">Independent verdict</a></td>
+<td>27 originals verified: ten Drive and seventeen GitHub hashes/sizes match; GitHub blobs match pinned commit</td>
+</tr>
+<tr>
+<td>E-R1-SYNTAX</td>
+<td><a href="../evidence/independent-verdict.json">Independent verdict</a></td>
+<td>91 classic scripts across 24 working HTMLs compile; this excludes runtime behavior and external modules</td>
+</tr>
+<tr>
+<td>E-R1-R14</td>
+<td><a href="../development/r14/regression.cjs">R14 regression</a></td>
+<td>Eleven component checks independently rerun in Node VM with mocked browser APIs</td>
+</tr>
+<tr>
+<td>E-R1-CSV</td>
+<td><a href="../tools/test-sql-csv.cjs">CSV checks</a></td>
+<td>Nineteen serializer checks; no browser editor/download qualification</td>
+</tr>
+<tr>
+<td>E-R1-CSV-PARSER</td>
+<td><a href="../tools/test-sql-csv-roundtrip.py">Python round-trip</a></td>
+<td>Sixteen fields survive independent CSV parsing</td>
+</tr>
+<tr>
+<td>E-HCF</td>
+<td><a href="../evidence/independent-hcf-recovery-verdict.json">HCF verdict</a></td>
+<td>Custody/lineage checks pass; application not executed; eleven imports absent</td>
+</tr>
+<tr>
+<td>E-R2-BROWSER</td>
+<td><a href="../evidence/r2-browser/results.json">Priority results</a></td>
+<td>15 checks passed, zero failed; Chromium 151.0.7922.173 / Playwright 1.62.1; actual browser controls and persistence, bounded scope</td>
+</tr>
+<tr>
+<td>E-R2-PRIORITY</td>
+<td><a href="../evidence/r2-browser/results.json">Focused browser results</a></td>
+<td>15 passed, zero failed; R14 real IDB/localStorage reload, worker recovery/checkpoint; AetherOS editor/VFS; KEX nano; Markdown preview/export; SQL UI/export/error recovery</td>
+</tr>
+<tr>
+<td>E-R2-FAMILY</td>
+<td><a href="../evidence/r2-family-controls.json">Family results</a> and <a href="../evidence/R2_FAMILY_BROWSER_VERDICT.md">verdict</a></td>
+<td>33 assertions passed across 23 file identities, zero failed and zero runtime errors in final receipts; initial four error cases preserved separately; safe selected controls only</td>
+</tr>
+<tr>
+<td>E-R2-FAMILY-REPAIRS</td>
+<td><a href="../development/r2-family/changes.json">Repair manifest</a></td>
+<td>Three bounded carrier repairs; bootchain source unchanged, harness service-worker blocker corrected; preserved pre-repair failure receipts</td>
+</tr>
+<tr>
+<td>E-R2-INDEPENDENT</td>
+<td><a href="../evidence/r2-browser-independent/results.json">Strengthened priority rerun</a> and <a href="../evidence/r2-independent-review.md">review</a></td>
+<td>15 passed, zero failed; checkpoint mutation/readback, worker-denial and repeated-editor assertions strengthened</td>
+</tr>
+<tr>
+<td>E-R2-PACKAGE</td>
+<td><a href="../evidence/r2-package-audit.json">Package audit</a></td>
+<td>Original custody and exclusion audit; inspect report for precise checks</td>
+</tr>
+</tbody></table>
+<p>The inherited verdict&#39;s <code>NOT RUN</code> browser status describes R1&#39;s environment and remains valid historical evidence. It must not be edited to describe R2. R2 is a new evidence series with actual browser version, source digests, observed controls, persistence readback and blocked/failed/not-run cases. R2 priority results now exist and are linked above. Broader <a href="../evidence/r2-family-controls.json">family results</a> record 33 passing assertions, zero failed assertions and zero runtime errors across 23 separately loaded file identities. Initial receipts with four runtime/isolation error cases are preserved in <code>evidence/r2-family-before-repair</code>. Bounded repairs and affected reruns close those observed failures; missing host dependencies and untested behavior remain distinct. Passing a selected control is not complete application qualification.</p>
+<p>The following are source declarations or actor outputs, not independent results: runtime PASS labels, embedded historical receipts, declared provider bindings, logical hosting contracts, synthetic telemetry and self-tests displayed by applications. Inspection verifies that code implements a mechanism; only the right execution/readback test can demonstrate its outcome under stated conditions.</p>
+<p>Documentation provenance: the glossary and monograph draw from named source files, symbols and manifests, with explicit inference boundaries. Missing publishing reference/template reads are recorded in <a href="publication-controls.html">publication controls</a>. The machine-readable index contains no acquisition URLs and no inferred hashes for missing originals.</p>
+<p>Independent review identified weak initial checkpoint, worker-denial and repeated-editor assertions. The strengthened suite now mutates VFS state before restoring and checks exact equality, asserts unavailable worker/error/zero pending requests, and reads saved editor text in each of three cycles. The <a href="../evidence/r2-browser-independent/results.json">independent final rerun</a> passes all 15 checks. The <a href="../evidence/r2-independent-review.md">review report</a> distinguishes independently executed actor-authored tests from independently designed tests. Earlier receipts remain historical; their assertion weaknesses do not describe the final strengthened run.</p>
+<hr>
+<p>© 2026 Aboudy Keddeh | Keddeh Systems | All rights reserved<br>KEDDEH-ENG-EVIDENCE-REGISTER-001 | R2 | Private development material | Draft<br><a href="index.html">Master index</a> · <a href="publication-controls.html">Publication controls</a></p>
+<footer><a href="evidence-register.md">Canonical Markdown source</a></footer></main></body></html>

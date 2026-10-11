@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "file": "KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+  "sha256": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028",
+  "startedAt": "2026-10-11T16:36:51.375Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:35179/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "KEX Computer Stack v10 — Developer Runtime",
+    "readyState": "complete",
+    "bodyText": "KEX COMPUTER STACK v10 — DEVELOPER RUNTIME — DOM/table is authoritative machine state; projections and relations point to it\nCANONICAL ACTIVE FABRIC\n1\nX1\n2\nX2\n3\nX3\n4\nX4\n5\nX5\n6\nX6\n7\nX7\n8\nX8\n9\nX9\nBOOT\nFULL CONFORMANCE\nPROBE PROVIDERS\nMIRROR ACTIVE X\nSELF TEST\nPERFORMANCE TEST\nCHECKPOINT\nWired operator CLI\nKEX ACTIVE CLI READY\nType HELP for command contract.\nEXEC\nDeveloper Workbench — code into the machine\nLanguage\nKEX Assembly\nJavaScript\nPython\nC\nC++\nProgram ID\nBUILD\nBUILD + RUN\nDEVELOPER GUIDE\nWorkbench ready. KEX Assembly executes directly. JavaScript executes through the browser runtime. Python, C and C++ are registered source languages and require their bound runtime/compiler provider before those language semantics can execute.\nCompiler / traversal instructions\nCOMPILE → TRAVERSE ACTIVE STATE\nPOWER OFF\nLIVE STATE INSPECTION\nboot\noff\nactive X\nX1\nNUMBER(X)\n1\naddress\nKEX:X1:1.1.1:R1\norigin\n1\nlane\n1\nextent\n1\nX revision\n1\nregister R1\nX1\ncontainers\n1\nroutes\n0\nOperating process table\nPID1  init               ready    pri=9 pc=X1 provider=main\nPID2  shell              ready    pri=8 pc=X1 provider=main\nPID3  scheduler          ready    pri=9 pc=X1 provider=main\nPID4  memory-manager     ready    pri=9 pc=X1 provider=main\nPID5  interrupt-service  waiting  pri=9 pc=X1 provider=main\nPID6  storage-service    ready    pri=7 pc=X1 provider=main\nPID7  device-manager     ready    pri=8 pc=X1 provider=main\nPID8  compositor         ready    pri=7 pc=X1 provider=main\nPID9  security-audit     ready    pri=9 pc=X1 provider=main\nKernel / ISA / memory / interrupts\nISA word=32b version=8\nMM pages=81 pageSize=4096 allocated=0 faults=0\nIRQ pending=0 serviced=0\nSCHED policy=RR quantum=9 current=PID1 switches=0\nATOM value=1 ops=0\nLOADER loaded=0\nRECOVERY checkpoints=0 last=none\nSource / runtimes / runners\nABI=KEX-ABI-1\nword=32 bits\nsyscall-number=16 bits\naddress=XREF\nPATH: source -> frontend/runtime -> ABI/ISA -> loader -> PID -> scheduler -> provider -> X state\nC and C++ are source languages/frontends, not machine operators. Both target the same operating contract.\nSRC_PY language=python runtime=PY0 entry=main\nSRC_JS language=javascript runtime=JS0 entry=main\nSRC_C language=c runtime=C0 entry=main\nSRC_CPP language=cpp runtime=CPP0 entry=main\nC0 kind=c provider=compiler-bridge state=unbound\nCPP0 kind=cpp provider=compiler-bridge state=unbound\nJS0 kind=javascript provider=browser state=online\nPY0 kind=python provider=bridge state=unbound\nRUNNER0 runtime=JS0 pid=PID2 state=idle\nPID / ports / bridges\nPIDSPACE count=9 next=10\nPID1 init state=ready\nPID2 shell state=ready\nPID3 scheduler state=ready\nPID4 memory-manager state=ready\nPID5 interrupt-service state=waiting\nPID6 storage-service state=ready\nPID7 device-manager state=ready\nPID8 compositor state=ready\nPID9 security-audit state=ready\nPORT1 owner=PID1 state=bound protocol=KEX\nPORT2 owner=PID2 state=bound protocol=KEX\nBRIDGE0 PORT1<->PORT2 state=online seq=0\nPhysical providers\nPROVIDER_MAIN kind=main state=online\nPROVIDER_WORKER kind=worker state=unprobed\nPROVIDER_WEBGPU kind=webgpu state=unprobed\nWarehouse compute fabric\nWAREHOUSE0 axis=1.WAREHOUSE\nlogical chips=1\nthreads/chip=9\nlogical thread slots=9\nclock tick=0 state=stopped requested_hz=1000\ncompleted thread operations=0\nphysical compute=host-bound\nIMPORTANT: logical chip/thread multiplication does not create additional physical CPU/GPU silicon.\nThe browser host supplies the actual compute; this fabric supplies addressing, scheduling and virtual topology.\nCompute fabric\nCPU0 axis=1.1.CPU state=idle pc=X1 acc=X1 cycles=0\nGPU0 axis=1.1.GPU state=idle source=X1 frames=0\nMRAM0 axis=1.1.MRAM ref=X1 rev=1\nVRAM0 axis=1.1.VRAM ref=X1 frame=0\nBUS0 axis=1.1.BUS sequence=0\nRoutes / containers\n(none)\nValidation\nPerformance\nLedger\n(empty)\nEngineering evidence\n{\n  \"artifact\": \"KEX Computer Stack v10 — Developer Runtime\",\n  \"magic\": \"KEXSTACK10_1\",\n  \"authority\": \"canonical DOM X fabric\",\n  \"shadow_runtime\": false,\n  \"operator\": \"OP0\",\n  \"controls\": {\n    \"traceability\": \"sequenced audit ledger\",\n    \"fault_handling\": \"explicit live fault element\",\n    \"verification\": \"SELF TEST + PERFORMANCE TEST\",\n    \"change_control\": \"MIRROR revision + CHECKPOINT\",\n    \"command_surface\": \"wired CLI using same executor\",\n    \"isa\": \"32-bit encoded instruction words with decoder\",\n    \"memory\": \"page allocation + owner/rights metadata\",\n    \"interrupts\": \"queued vector/ref interrupt service\",\n    \"scheduler\": \"round-robin process scheduler\",\n    \"atomics\": \"compare-and-swap primitive\",\n    \"providers\": \"main thread + Worker probe + WebGPU probe\",\n    \"loader\": \"packaged program loader/executor\",\n    \"processes\": \"init,shell,scheduler,memory,interrupt,storage,device,compositor,security-audit + dynamic PID creation\",\n    \"source\": \"embedded source units with runtime bindings\",\n    \"runtimes\": \"browser JS native; Python bridge contract explicit\",\n    \"ipc\": \"logical ports + bilateral bridges + X-reference messages\",\n    \"persistence\": \"explicit serialized active-DOM checkpoint\"\n  },\n  \"standards_position\": \"engineering controls are mapped toward ISO/IEC/IEEE 12207, ISO/IEC 25010, ISO/IEC 27001/27002 and ISO/IEC 27034; no certification claim\"\n}",
+    "elementCount": 187,
+    "headings": [
+      "CANONICAL ACTIVE FABRIC",
+      "Wired operator CLI",
+      "Developer Workbench — code into the machine",
+      "Compiler / traversal instructions",
+      "LIVE STATE INSPECTION",
+      "Operating process table",
+      "Kernel / ISA / memory / interrupts",
+      "Source / runtimes / runners",
+      "PID / ports / bridges",
+      "Physical providers",
+      "Warehouse compute fabric",
+      "Compute fabric",
+      "Routes / containers",
+      "Validation",
+      "Performance",
+      "Ledger",
+      "Engineering evidence"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "boot",
+        "name": null,
+        "text": "BOOT",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "conform",
+        "name": null,
+        "text": "FULL CONFORMANCE",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "probe",
+        "name": null,
+        "text": "PROBE PROVIDERS",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "mirror",
+        "name": null,
+        "text": "MIRROR ACTIVE X",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "tests",
+        "name": null,
+        "text": "SELF TEST",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "bench",
+        "name": null,
+        "text": "PERFORMANCE TEST",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "checkpoint",
+        "name": null,
+        "text": "CHECKPOINT",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "cli",
+        "name": null,
+        "text": "KEX command input",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "clisend",
+        "name": null,
+        "text": "EXEC",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "SELECT",
+        "type": "select-one",
+        "id": "devlang",
+        "name": null,
+        "text": "KEX Assembly\nJavaScript\nPython\nC\nC++",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "devid",
+        "name": null,
+        "text": "Program ID",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "id": "devsource",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "devbuild",
+        "name": null,
+        "text": "BUILD",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "devrun",
+        "name": null,
+        "text": "BUILD + RUN",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "devdocs",
+        "name": null,
+        "text": "DEVELOPER GUIDE",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "id": "source",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "run",
+        "name": null,
+        "text": "COMPILE → TRAVERSE ACTIVE STATE",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 51951,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "mirror advances one resident X revision",
+      "passed": true,
+      "detail": {
+        "changed": [
+          {
+            "id": "X1",
+            "rev": "2"
+          }
+        ]
+      }
+    },
+    {
+      "name": "unknown CLI input does not prevent subsequent help",
+      "passed": false,
+      "error": "help recovery absent"
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 2531,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:36:55.753Z",
+  "sha256After": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028",
+  "originalUnchanged": true
+}

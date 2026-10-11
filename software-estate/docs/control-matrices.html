@@ -1,0 +1,410 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KEDDEH SYSTEMS · control-matrices</title><style>@page{size:A4;margin:18mm}*{box-sizing:border-box}body{font:15px/1.65 Arial,sans-serif;color:#101820;background:#edf1f4;margin:0}main{max-width:1100px;margin:32px auto;padding:48px;background:white;border-top:8px solid #103b50}h1{font-size:30px;color:#000}h2{font-size:21px;margin-top:32px;color:#123c50}h3{font-size:18px}a{color:#075b7c}table{border-collapse:collapse;width:100%;font-size:13px;margin:20px 0}th,td{border:1px solid #ccd5db;padding:9px;text-align:left;vertical-align:top;overflow-wrap:anywhere}th{background:#e9f0f3}thead{display:table-header-group}pre{white-space:pre-wrap;background:#f2f5f7;padding:16px}code{overflow-wrap:anywhere}footer{font-size:12px;border-top:1px solid #ccc;padding-top:16px}@media print{body{background:white;font-size:10pt}main{margin:0;padding:0;border:0;max-width:none}h1,h2,h3{break-after:avoid}tr{break-inside:avoid}a{color:#000}thead{display:table-header-group}}</style></head><body><main><p>KEDDEH SYSTEMS | RESEARCH AND FORMAL PUBLISHING | ENGINEER · AUTOMATE · SCALE</p>
+<h3 id="document-control">Document control</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Title</td>
+<td>Traceability and control matrices</td>
+</tr>
+<tr>
+<td>Document ID</td>
+<td>KEDDEH-ENG-CONTROL-MATRICES-001</td>
+</tr>
+<tr>
+<td>Version / date</td>
+<td>R2 / 2026-10-11 UTC</td>
+</tr>
+<tr>
+<td>Classification / status</td>
+<td>Private development material / Draft</td>
+</tr>
+<tr>
+<td>Assessor / approval receipt</td>
+<td>Unrecorded / Unrecorded</td>
+</tr>
+</tbody></table>
+<h3 id="authorship-and-licensing">Authorship and licensing</h3>
+<p>Author: Aboudy Keddeh — Systems Architect. Rights holder: Aboudy Keddeh. Publisher: Keddeh Systems. Legal context: The Layna Company Pty Limited, user-stated parent. Licence profile: KEDDEH-RESERVED-1.0.</p>
+<p>Architecture and research direction: Aboudy Keddeh. AI-assisted drafting and source synthesis: OpenAI ChatGPT. No independent approval is implied.</p>
+<p>All rights reserved. No licence is granted by this document. Separate written permission governs reuse, redistribution and implementation, subject to applicable law. Third-party material retains its own rights.</p>
+<h3 id="publication-identity-and-visual-attribution">Publication identity and visual attribution</h3>
+<p>KEDDEH SYSTEMS · ENGINEER · AUTOMATE · SCALE. Local repository research and engineering edition. Source identities and original third-party notices remain preserved. See <a href="publication-controls.html">publication controls</a> for reference access and layout verification limits.</p>
+<h1 id="traceability-and-control-matrices">Traceability and control matrices</h1>
+<h2 id="requirements-source-and-test-traceability">Requirements, source and test traceability</h2>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Source / implementation</th>
+<th>Verification</th>
+<th>Closure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Preserve identities/bytes</td>
+<td>Original manifests and components.json</td>
+<td>R1 independent hash/size checks; R2 custody rerun</td>
+<td>R1 27 verified; R2 receipt governs final</td>
+</tr>
+<tr>
+<td>R14 readiness and worker containment</td>
+<td>P19 extracted adapter and working R14</td>
+<td>Mocked regression + focused browser reload/worker tests</td>
+<td>15 priority checks pass; see E-R2-PRIORITY</td>
+</tr>
+<tr>
+<td>Durable managed VFS</td>
+<td>Drive managed AetherOS overlay/helpers</td>
+<td>Write/read/reload; AetherOS storage denial untested</td>
+<td>Focused checks pass; see E-R2-PRIORITY</td>
+</tr>
+<tr>
+<td>Close windows without dragging; retain editor buffer</td>
+<td>AetherOS header/editor lifecycle repairs</td>
+<td>Browser close and repeated-open assertions</td>
+<td>Focused checks pass; see E-R2-PRIORITY</td>
+</tr>
+<tr>
+<td>Generated JS parses</td>
+<td>Terminal/Markdown templates and extracted HTML</td>
+<td>Static compiler + focused UI</td>
+<td>R1 syntax pass; R2 UI evidence separate</td>
+</tr>
+<tr>
+<td>CSV retains zero/false/quotes</td>
+<td>SQL source and generated HTML</td>
+<td>Nineteen JS cases + Python + browser export</td>
+<td>Component pass; browser export check passes</td>
+</tr>
+<tr>
+<td>Complete original StoreSpace/ServerSpace</td>
+<td>Missing authorized packages</td>
+<td>None available</td>
+<td>BLOCKED, separate identities</td>
+</tr>
+<tr>
+<td>Recover HCF exact app</td>
+<td>Standalone plus candidate</td>
+<td>Custody/source-map/DOM comparison</td>
+<td>BLOCKED: eleven imports and uncertain lineage</td>
+</tr>
+</tbody></table>
+<h2 id="claims-and-evidence">Claims and evidence</h2>
+<table>
+<thead>
+<tr>
+<th>Claim type</th>
+<th>Example</th>
+<th>Permitted conclusion</th>
+<th>Prohibited upgrade</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>User-supplied semantics</td>
+<td>Normalisation child relative index</td>
+<td>Intended relationship described by source</td>
+<td>Uniform implementation everywhere</td>
+</tr>
+<tr>
+<td>Inspected mechanism</td>
+<td>R14 checkpoint calls persistence adapter</td>
+<td>Call path exists in inspected bytes</td>
+<td>Durable state restored in every browser</td>
+</tr>
+<tr>
+<td>Mocked component result</td>
+<td>Pending worker promises reject on stop</td>
+<td>Tested VM logic settles</td>
+<td>Browser worker lifecycle fully qualified</td>
+</tr>
+<tr>
+<td>Independent browser result</td>
+<td>Same-origin reload returns test marker</td>
+<td>Persistence for tested file/backend/action</td>
+<td>Entire estate persistence certified</td>
+</tr>
+<tr>
+<td>Actor receipt</td>
+<td>UI PASS</td>
+<td>Actor reported success</td>
+<td>Independent approval</td>
+</tr>
+<tr>
+<td>Custody hash</td>
+<td>Original digest matches manifest</td>
+<td>Preserved bytes match reference</td>
+<td>Scientific validation or rights grant</td>
+</tr>
+</tbody></table>
+<h2 id="interface-matrix">Interface matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Producer → consumer</th>
+<th>Contract</th>
+<th>Failure boundary</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KEDDEHVolume / ProjectionBus</td>
+<td>Registry/payload → shell iframe</td>
+<td>Logical identity resolves to resident carrier</td>
+<td>Missing route, decode or child runtime failure</td>
+</tr>
+<tr>
+<td>KEXHostAdapters.persistence</td>
+<td>Runtime → IndexedDB/localStorage</td>
+<td>Probe readiness; JSON get/put</td>
+<td>Denial, abort, unavailable backend</td>
+</tr>
+<tr>
+<td>KEXHostAdapters.worker</td>
+<td>Runtime → Web Worker</td>
+<td>Correlated request/result; stop/error settlement</td>
+<td>Constructor, clone, decode or worker error</td>
+</tr>
+<tr>
+<td>KEXHostAdapters.websocket</td>
+<td>Runtime → explicit endpoint</td>
+<td>Connect before send</td>
+<td>No endpoint tested; early close deferred</td>
+</tr>
+<tr>
+<td>AetherOS VFS helpers</td>
+<td>Apps → base plus overlay</td>
+<td>Normalize path; authorize protected mutations</td>
+<td>Memory/disk divergence; quota/denial</td>
+</tr>
+<tr>
+<td>KEX provider bridge</td>
+<td>Language source → bound runtime</td>
+<td>Provider must implement language semantics</td>
+<td>Unbound provider; no false execution success</td>
+</tr>
+<tr>
+<td>Template extractor</td>
+<td>TS literal/asset → runnable HTML</td>
+<td>No live interpolation; preserve inner syntax</td>
+<td>Escaping or unsupported template</td>
+</tr>
+</tbody></table>
+<h2 id="dependency-matrix">Dependency matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Dependency</th>
+<th>Available evidence</th>
+<th>Unresolved boundary</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R14 persistence</td>
+<td>Browser IndexedDB/localStorage</td>
+<td>VM + actual browser tests in R2</td>
+<td>Cross-browser/blocked-open policies</td>
+</tr>
+<tr>
+<td>R14 compute</td>
+<td>Blob URLs and Worker</td>
+<td>Failure containment and R2 lifecycle</td>
+<td>No GPU/remote compute qualification</td>
+</tr>
+<tr>
+<td>KEX Terminal</td>
+<td>Host bridge for host commands</td>
+<td>Local command/editor checks</td>
+<td>Absent host adapter is explicit</td>
+</tr>
+<tr>
+<td>Managed AetherOS</td>
+<td>Browser-origin storage</td>
+<td>R2 tests</td>
+<td>Not a mounted host filesystem</td>
+</tr>
+<tr>
+<td>HCF candidate</td>
+<td>Eleven local imports + package/config</td>
+<td>Independent missing-import inventory</td>
+<td>Not runnable reconstruction</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>Publishing standard/template</td>
+<td>Parent verified requirements</td>
+<td>Direct bundled resource retrieval failed; exact layout unverified</td>
+</tr>
+</tbody></table>
+<h2 id="risk-and-failure-mode-matrix">Risk and failure-mode matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Failure mode</th>
+<th>Impact</th>
+<th>Containment / evidence</th>
+<th>Residual status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Storage getter throws</td>
+<td>Boot abort before fallback</td>
+<td>R14 bounded catch repair and failure injection</td>
+<td>Priority failure-containment check passes</td>
+</tr>
+<tr>
+<td>Worker stops with requests pending</td>
+<td>Awaiters hang</td>
+<td>Reject/clear pending operations</td>
+<td>Tested scope only</td>
+</tr>
+<tr>
+<td>UI close triggers drag shield</td>
+<td>Window remains / interaction intercepted</td>
+<td>Exclude button from drag start</td>
+<td>R2 bounded repair</td>
+</tr>
+<tr>
+<td>Delayed/repeated editor init</td>
+<td>Fresh or unsaved input overwritten</td>
+<td>Preserve mounted editor buffer</td>
+<td>R2 bounded repair</td>
+</tr>
+<tr>
+<td>Source-wide escape replacement</td>
+<td>Embedded payload corruption</td>
+<td>Patch named script/template only; custody checks</td>
+<td>Ongoing invariant</td>
+</tr>
+<tr>
+<td>App PASS used as oracle</td>
+<td>False qualification</td>
+<td>External assertions and byte readback</td>
+<td>Reviewer must enforce</td>
+</tr>
+<tr>
+<td>Missing input replaced by similar carrier</td>
+<td>Identity/lineage loss</td>
+<td>Explicit unresolved component record</td>
+<td>Open acquisition blockers</td>
+</tr>
+<tr>
+<td>Harness expectation differs from contract</td>
+<td>False defect report</td>
+<td>Preserve initial result and correct oracle with rationale</td>
+<td>KEX host cat / SQL CRLF examples</td>
+</tr>
+</tbody></table>
+<h2 id="authority-controls">Authority controls</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Authority in current work</th>
+<th>Receipt / control</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Local repairs, docs, browser tests</td>
+<td>User instruction</td>
+<td>Versioned source and test evidence</td>
+</tr>
+<tr>
+<td>Disposable local storage</td>
+<td>Authorized isolated test state</td>
+<td>Fresh contexts; no user profile</td>
+</tr>
+<tr>
+<td>Real mining/payment/messages/credentials</td>
+<td>Excluded</td>
+<td>Do not invoke</td>
+</tr>
+<tr>
+<td>Push / merge / deploy</td>
+<td>Separate authority decisions</td>
+<td>Coordinating agent owns authorized push; no authority inferred for merge/deploy</td>
+</tr>
+<tr>
+<td>Independent publication approval</td>
+<td>Unrecorded</td>
+<td>Keep Draft metadata</td>
+</tr>
+</tbody></table>
+<h2 id="version-change-matrix">Version/change matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Baseline</th>
+<th>Successor / change</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Source</td>
+<td>Pinned GitHub commit plus ten Drive originals</td>
+<td>Originals immutable</td>
+</tr>
+<tr>
+<td>R1 working</td>
+<td>P19 encoding/readiness/worker fixes; Terminal/Markdown escaping; CSV fidelity</td>
+<td>See repair reports</td>
+</tr>
+<tr>
+<td>R2 working</td>
+<td>R1</td>
+<td>IndexedDB getter and AetherOS lifecycle repairs; actual browser evidence</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>R1 README/reports</td>
+<td>R2 complete controlled dossier and component index</td>
+</tr>
+</tbody></table>
+<h2 id="review-closure-matrix">Review closure matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Review item</th>
+<th>Required evidence</th>
+<th>Current status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Source/document consistency</td>
+<td>Separate reviewer findings</td>
+<td><a href="../evidence/r2-independent-review.md">Separate review</a>; 15 strengthened checks independently pass</td>
+</tr>
+<tr>
+<td>Links and index paths</td>
+<td>Validator receipt</td>
+<td><a href="validation.json">Validation receipt</a></td>
+</tr>
+<tr>
+<td>Rendered HTML</td>
+<td>Browser inspection and screenshots</td>
+<td>HTML rendered locally; review receipt separate</td>
+</tr>
+<tr>
+<td>R2 evidence totals</td>
+<td><a href="../evidence/r2-browser-independent/results.json">Independent priority results</a> and family receipts</td>
+<td>15 priority checks independently pass; family history and repair pass separate</td>
+</tr>
+<tr>
+<td>Exact DOCX fidelity</td>
+<td>Accessible template + rendered page inspection</td>
+<td>Not claimed</td>
+</tr>
+<tr>
+<td>Open application errors</td>
+<td>Final broad-browser report and affected reruns</td>
+<td>Observed four cases repaired or harness-corrected; dependencies and untested behavior remain explicit</td>
+</tr>
+</tbody></table>
+<hr>
+<p>© 2026 Aboudy Keddeh | Keddeh Systems | All rights reserved<br>KEDDEH-ENG-CONTROL-MATRICES-001 | R2 | Private development material | Draft<br><a href="index.html">Master index</a> · <a href="publication-controls.html">Publication controls</a></p>
+<footer><a href="control-matrices.md">Canonical Markdown source</a></footer></main></body></html>

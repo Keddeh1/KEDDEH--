@@ -1,0 +1,140 @@
+{
+  "at": "2026-10-11T16:35:34.325Z",
+  "checks": [
+    {
+      "name": "R14 actual IndexedDB write, independent read and reload",
+      "status": "passed",
+      "detail": {
+        "backend": "real IndexedDB",
+        "value": {
+          "zero": 0,
+          "bool": false,
+          "text": "r2-independent-persistence"
+        }
+      }
+    },
+    {
+      "name": "R14 actual Worker results, repeated boot and interruption recovery",
+      "status": "passed",
+      "detail": {
+        "same": true,
+        "roundtrip": {
+          "a": 0,
+          "b": false
+        },
+        "digest": "1a47e90b",
+        "stopped": {
+          "error": "E_WORKER_STOPPED"
+        },
+        "pending": 0,
+        "recovered": {
+          "ok": 1
+        }
+      }
+    },
+    {
+      "name": "R14 checkpoint actual persisted VFS snapshot and restore",
+      "status": "passed",
+      "detail": {
+        "snapshotEqual": true
+      }
+    },
+    {
+      "name": "R14 storage and Worker denial contained",
+      "status": "failed",
+      "error": "page.evaluate: SecurityError: test denied\n    at /workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:37:109\n    at async check (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:8:48)\n    at async main (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:37:2)"
+    },
+    {
+      "name": "AetherOS terminal create, editor save and reload persistence",
+      "status": "failed",
+      "error": "locator.dblclick: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[ondblclick=\"openApp(\\'terminal\\')\"]')\u001b[22m\n\u001b[2m    - locator resolved to <div class=\"desktop-icon\" ondblclick=\"openApp('terminal')\">…</div>\u001b[22m\n\u001b[2m  - attempting dblclick action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"window-header\" ondblclick=\"maximizeWindow('terminal')\" onmousedown=\"startDragWindow(event, 'terminal')\">…</div> from <div id=\"windows-container\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying dblclick action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"window-header\" ondblclick=\"maximizeWindow('terminal')\" onmousedown=\"startDragWindow(event, 'terminal')\">…</div> from <div id=\"windows-container\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying dblclick action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    9 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"window-header\" ondblclick=\"maximizeWindow('terminal')\" onmousedown=\"startDragWindow(event, 'terminal')\">…</div> from <div id=\"windows-container\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying dblclick action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\n    at /workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:41:114\n    at async check (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:8:48)\n    at async main (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:40:2)"
+    },
+    {
+      "name": "AetherOS repeated open and close retains saved content",
+      "status": "passed",
+      "detail": {
+        "cycles": 3
+      }
+    },
+    {
+      "name": "KEX Terminal real input creates file, nano save and reload",
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /KEX R2 persistence/. Input:\n\n'[kernel] KEX Linux Kernel 6.0.297 (Braink AI / A. Keddeh) [x86_64 / WASI]\\n' +\n  '[kernel] Initializing Inode Table & Process Control Block Subsystem... OK\\n' +\n  '[kernel] Mounting VFS root: / (mode=0755, inode=2)... OK\\n' +\n  '[kernel] Mounting dynamic /proc (process reflection table)... OK\\n' +\n  '[kernel] Mounting /kex-volume (lineage=verified, authority=A.KEDDEH)... OK\\n' +\n  '[kernel] Executing /bin/init-kex [PID 1]... OK\\n' +\n  '[kernel] Starting core system daemons: kex-volume, braink-ai-core, proof-ledgerd... OK\\n' +\n  '[kernel] Registering WASI execution bridge for WebAssembly binaries (/bin/fib.wasm)... OK\\n' +\n  '[kernel] Verified Root Cryptographic Proof: 3807f83f9af105b8...\\n' +\n  '[kernel] System initialization complete. Terminal workstation is ready.\\n' +\n  '\\n' +\n  'KEX Linux Workstation (tty1)\\n' +\n  \"Real process lifecycle embedded in VFS. Try: 'ls /bin', 'cat /proc/1/status', 'ps -ef', 'wasm /bin/fib.wasm 10'\\n\" +\n  '\\n' +\n  'root@kex-linux:/home/ak# nano /home/ak/r2.txt\\n' +\n  '[nano] closed /home/ak/r2.txt\\n' +\n  'root@kex-linux:/home/ak# cat /home/ak/r2.txt\\n'\n\n    at /workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:50:357\n    at async check (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:8:48)\n    at async main (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:50:2)"
+    },
+    {
+      "name": "KEX invalid command then valid command recovers",
+      "status": "passed"
+    },
+    {
+      "name": "Markdown input renders headings code and escaped markup",
+      "status": "passed"
+    },
+    {
+      "name": "Markdown download exact bytes and repeated template changes",
+      "status": "passed",
+      "detail": {
+        "bytesVerified": true,
+        "hostPersistence": "not qualified: no host adapter; app has no standalone localStorage saving"
+      }
+    },
+    {
+      "name": "SQL real query UI and CSV download zero false quoting",
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'number,flag,\"head,quote\"\\r\\n0,false,\"line\\n\"\"quoted\"\", value\"\\r\\n'\n- 'number,flag,\"head,quote\"\\n0,false,\"line\\n\"\"quoted\"\", value\"'\n\n    at /workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:56:525\n    at async check (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:8:48)\n    at async main (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:56:2)"
+    },
+    {
+      "name": "SQL invalid query visible error then valid query recovers",
+      "status": "passed"
+    }
+  ],
+  "apps": [
+    {
+      "file": "working/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "sha256": "048ba1150198db0704dd933a5cb77a8fc540b9df5cd98abd38b429f838aa78a4",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    },
+    {
+      "file": "working/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "sha256": "048ba1150198db0704dd933a5cb77a8fc540b9df5cd98abd38b429f838aa78a4",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    },
+    {
+      "file": "working/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "sha256": "660c677332327e470c746853a535f209b4735d139bb992c6e430522c0261ca56",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    },
+    {
+      "file": "working/html5/KEX_Linux_Terminal.html",
+      "sha256": "2d44e0edb96fc4c93918344958b379cd79913b2ba245213dd61ebeee0dcfb3ab",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    },
+    {
+      "file": "working/html5/HTML5_Markdown_Notebook_Studio.html",
+      "sha256": "7ccfac527bb876941aeeada548086b390e2318b17d89c0b6c1749ee5cf5935c3",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    },
+    {
+      "file": "working/html5/HTML5_Relational_SQL_Studio.html",
+      "sha256": "cfb261af4a48c2f7a1cd32598837380d27a000f49345c46a68c245607f7b6e92",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    }
+  ],
+  "isolation": "Ephemeral contexts; exact loopback GET/HEAD only; CSP connect none; service workers blocked; sockets intercepted; only reviewed blob worker code allowed for R14.",
+  "browserVersion": "151.0.7922.173",
+  "summary": {
+    "passed": 8,
+    "failed": 4
+  }
+}

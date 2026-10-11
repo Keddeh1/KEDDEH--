@@ -1,0 +1,57 @@
+{
+  "kind": "developer-component-regressions",
+  "runtime": "Node.js VM; browser APIs mocked",
+  "at": "2026-10-11T16:43:36.933Z",
+  "workingSha256": "c41f36a379e2c867ef8f6809e47f129108d4830d07ee0614b5eb2c800d44db1e",
+  "tests": [
+    {
+      "name": "original P19 fails JavaScript parsing",
+      "status": "passed"
+    },
+    {
+      "name": "all working executable scripts parse",
+      "status": "passed"
+    },
+    {
+      "name": "all original components preserved; only P19/R14 executable scripts changed",
+      "status": "passed"
+    },
+    {
+      "name": "immediate put/get wait for delayed persistence probe; one boot",
+      "status": "passed"
+    },
+    {
+      "name": "persistence read survives new runtime with same storage",
+      "status": "passed"
+    },
+    {
+      "name": "worker constructor failure degrades boot while persistence stays usable",
+      "status": "passed"
+    },
+    {
+      "name": "denied storage getter produces bounded unavailable error and degraded boot",
+      "status": "passed"
+    },
+    {
+      "name": "worker stop rejects and removes pending work",
+      "status": "passed"
+    },
+    {
+      "name": "worker clone failure leaves no dangling pending job",
+      "status": "passed"
+    },
+    {
+      "name": "worker error rejects pending job and clears capability",
+      "status": "passed"
+    },
+    {
+      "name": "R14 startup restore waits for host persistence instead of racing UNPROBED",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "This is not browser execution or independent verification.",
+    "IndexedDB real transactions, UI navigation, embedded applications and live network integrations are not exercised.",
+    "LocalStorage reload is a shared Map across new VM contexts, not real browser persistence."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-10-10T23:48:01.811Z",
+  "apps": [
+    {
+      "file": "isolation-smoke.html",
+      "sha256": "b6b4c9387e382a72210ad618773211ed3f8e4781209f08fadcbb8d440c8458db",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "isolation-smoke.html-7b0e8da1.runtime.json",
+      "status": "incomplete"
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 1,
+  "file": "HTML5_Scientific_Calculator.html",
+  "sha256": "2d33c27a3d9328879c6cda0185ebe99ea25f1b3f792ff3b604cbe19c9d0268f3",
+  "startedAt": "2026-10-11T16:34:35.618Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "log",
+      "text": "[Calculator] Verifying application provenance..."
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:46191/HTML5_Scientific_Calculator.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "AetherOS Scientific Calculator",
+    "readyState": "complete",
+    "bodyText": "0\nsin\ncos\ntan\ndeg\nAC\nln\nlog\nx^y\n√\n⌫\nπ\n7\n8\n9\n÷\ne\n4\n5\n6\n×\n(\n1\n2\n3\n−\n)\n0\n.\nn!\n+\n= EVALUATE\nCALCULATION TAPE:",
+    "elementCount": 48,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "sin",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "cos",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "tan",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "deg",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "AC",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "ln",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "log",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "x^y",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "√",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "⌫",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "π",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "7",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "8",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "9",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "÷",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "e",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "4",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "5",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "6",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "×",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "(",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "1",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "2",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "3",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "−",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": ")",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "0",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": ".",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "n!",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "+",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "= EVALUATE",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 5807,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "HTML5_Scientific_Calculator.html-a994dcfe.png",
+  "elapsedMs": 1671,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:39.023Z",
+  "sha256After": "2d33c27a3d9328879c6cda0185ebe99ea25f1b3f792ff3b604cbe19c9d0268f3",
+  "originalUnchanged": true
+}

@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-11T16:39:53.485756+00:00",
+  "verdict": "Partial lineage recovery, not runnable, exact-version identity unverified.",
+  "separateFromCoreCounts": true,
+  "documentationCorrection": "HTMLParser finds 80 actual capture DOM IDs; initial source-regex count of 89 included non-DOM strings. Common IDs remain 65 of standalone 96.",
+  "checks": [
+    {
+      "name": "Custody: hcf_workstation.entrypoint.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Custody: index.css",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Custody: index.recovered-0.ts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Custody: index.served.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Custody: saved_resource.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Custody: source-metadata.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source-map derivative exactly matches preserved TypeScript",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Working TypeScript matches source-map derivative",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source-map source identity",
+      "passed": true,
+      "detail": {
+        "file": "/app/applet/index.ts",
+        "sources": [
+          "index.ts"
+        ]
+      }
+    },
+    {
+      "name": "Exactly 11 declared local dependencies",
+      "passed": true,
+      "detail": [
+        "./firebase-applet-config.json",
+        "./firebase-setup",
+        "./src/adr-registry",
+        "./src/apex_processor",
+        "./src/braink-sectors",
+        "./src/governance-scheduler",
+        "./src/pixel-analyzer",
+        "./src/provider-hypervisor",
+        "./src/substrate_memory.ts",
+        "./src/topology-validator",
+        "./substrate_effect"
+      ]
+    },
+    {
+      "name": "All 11 local imports remain absent",
+      "passed": true,
+      "detail": [
+        "./firebase-applet-config.json",
+        "./firebase-setup",
+        "./src/adr-registry",
+        "./src/apex_processor",
+        "./src/braink-sectors",
+        "./src/governance-scheduler",
+        "./src/pixel-analyzer",
+        "./src/provider-hypervisor",
+        "./src/substrate_memory.ts",
+        "./src/topology-validator",
+        "./substrate_effect"
+      ]
+    },
+    {
+      "name": "DOM overlap supports lineage only",
+      "passed": true,
+      "detail": {
+        "standalone": 96,
+        "capture": 80,
+        "common": 65
+      }
+    },
+    {
+      "name": "Standalone custody unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Older standalone differs by entrypoint line only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Served module parses without executing",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "allPassed": true,
+  "applicationExecuted": false
+}

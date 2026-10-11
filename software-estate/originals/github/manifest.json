@@ -1,0 +1,143 @@
+{
+  "repository": "Keddeh1/KEDDEH--",
+  "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+  "retrieved_at": "2026-10-10T23:46:27Z",
+  "files": [
+    {
+      "path": "src/data/html5Apps.ts",
+      "git_blob_sha": "17ea27ad34ada77188a84570c90356d1031fabbd",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/html5Apps.ts",
+      "bytes": 8084,
+      "sha256": "9e7edcc8770208a9dfbca36e344099a66b2757eaed9708262c9231ba84a7e6e6",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/openSourceOsTemplate.ts",
+      "git_blob_sha": "c841185ebcd58d26ac0a5bc82fdfb1f315e0d43f",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/openSourceOsTemplate.ts",
+      "bytes": 677,
+      "sha256": "728c48177749d95aa2e225c64d26a803d4701099ba7f662dff853e9e7b7ae2c9",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/kexLinuxTerminalTemplate.ts",
+      "git_blob_sha": "f606677bd2b38e4c9bdbc243e2c1a24bade0df31",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/kexLinuxTerminalTemplate.ts",
+      "bytes": 66938,
+      "sha256": "7a3ad2e6fa63b43cc24036148ba2fe49fe3aad8d5d1a09539e8d21313c246fa3",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/kexBootchainTemplate.ts",
+      "git_blob_sha": "7cdfab479f40ac1f79032575d94f3947c8b87d8d",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/kexBootchainTemplate.ts",
+      "bytes": 31023,
+      "sha256": "210fcfe59754c753af615f2ea9cb1bd7b33acdea2262e295dc67b80b08761328",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/html5ParticlePhysicsTemplate.ts",
+      "git_blob_sha": "f7c0334994bfe4911f952b9cdbedbdde53cd5e79",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/html5ParticlePhysicsTemplate.ts",
+      "bytes": 15014,
+      "sha256": "d3258602c3be2c3568f9a7ed3de67e969328faf6f02df0f6347b672d33009517",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/html5BreakoutGameTemplate.ts",
+      "git_blob_sha": "36369f6e0257aa765f37d18c3c984c2025e6e675",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/html5BreakoutGameTemplate.ts",
+      "bytes": 21653,
+      "sha256": "95a6f290dfe77dd3143305c9f8f053e32c3a66b82319091c7dcf1c00777cef2f",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/html5SynthesizerTemplate.ts",
+      "git_blob_sha": "0bae2438f8e5a30dac24f2bf4035fec83feafa16",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/html5SynthesizerTemplate.ts",
+      "bytes": 26300,
+      "sha256": "5fa0a5df8553192849dc0b1d2f497fcfb4940b8e8c1778c9c580c9d426c49f96",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/html5SqlStudioTemplate.ts",
+      "git_blob_sha": "7b1c27ceacaaac7016dea2dce1c34d5b490e8c36",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/html5SqlStudioTemplate.ts",
+      "bytes": 19731,
+      "sha256": "00b4897528e3f33300b92d4de79506ca7a6a326d08eb77271bb12a0a8ce4baf8",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/html5MarkdownStudioTemplate.ts",
+      "git_blob_sha": "f7d21c2e8baeff60696911479b55a6198afc8fd5",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/html5MarkdownStudioTemplate.ts",
+      "bytes": 13997,
+      "sha256": "0b2628ecdaed8eed0f548b501ee80ad6f2a86db302eed1d532f13b30c0a40923",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/html5PaintStudioTemplate.ts",
+      "git_blob_sha": "c19c411d42d1629ffa4b6da5ef4bcb3d51c33944",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/html5PaintStudioTemplate.ts",
+      "bytes": 10509,
+      "sha256": "e5362f230e0f195879396925185ceab23959cd0d887aafd19c0c6642c5fb0c3e",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/html5CalculatorTemplate.ts",
+      "git_blob_sha": "9efbb25e9ad7e50533a9b10f9759c10d3bd4f6d5",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/html5CalculatorTemplate.ts",
+      "bytes": 11591,
+      "sha256": "8641613ac1d746211ce38b4abe3e77680a05a45f7dcaf717ec3494fe290a69c8",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/data/html5ChromeBrowserTemplate.ts",
+      "git_blob_sha": "a0fcd78281cf3c9f15dbc834826beb9c8e8a856a",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/data/html5ChromeBrowserTemplate.ts",
+      "bytes": 336,
+      "sha256": "c26bab3273bb2b6c17d95bf45734b98814e1070f28f4f67b228a50505a3eb6ce",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/assets/os/AetherOS.html",
+      "git_blob_sha": "f26b7a3d54b984aa2be1fc59448be4371c4dd306",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/assets/os/AetherOS.html",
+      "bytes": 19973,
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/assets/os/MiningOS.html",
+      "git_blob_sha": "df1a896d7d79ae8f62dcf784de6f1b6f7f0311f7",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/assets/os/MiningOS.html",
+      "bytes": 17598,
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/assets/os/KexLinux.html",
+      "git_blob_sha": "9551dbdd310180aa55cf078ca6acbd89bdb17f7b",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/assets/os/KexLinux.html",
+      "bytes": 35784,
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/assets/os/KeraMeshOS.html",
+      "git_blob_sha": "65c056fe95f0669438e817119944a2bf9082380a",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/assets/os/KeraMeshOS.html",
+      "bytes": 14542,
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+      "git_blob_verified": true
+    },
+    {
+      "path": "src/assets/workstations/Chrome.html",
+      "git_blob_sha": "0808c1ecfab9aeb6b310c390a39883979d6fcf57",
+      "source_url": "https://github.com/Keddeh1/KEDDEH--/blob/09f45187dbec29ebe63153f916b67505452dc136/src/assets/workstations/Chrome.html",
+      "bytes": 23454,
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805",
+      "git_blob_verified": true
+    }
+  ]
+}

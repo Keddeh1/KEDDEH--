@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "file": "KEX_MICROKERNEL_VFS_BOOTCHAIN.html",
+  "sha256": "e9855e375e64fb44fc41ddddcb76f77affc71f68c7d962835447621d9247f71c",
+  "startedAt": "2026-10-11T16:34:48.846Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "log",
+      "text": "[KEX Bootchain] Verifying application provenance..."
+    }
+  ],
+  "runtimeErrors": [
+    {
+      "name": "SecurityError",
+      "message": "Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.",
+      "stack": "SecurityError: Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.\n    at <anonymous>:3:15\n    at <anonymous>:5:7"
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:35945/KEX_MICROKERNEL_VFS_BOOTCHAIN.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "KEX Microkernel VFS Bootchain · A. Keddeh · Braink AI",
+    "readyState": "complete",
+    "bodyText": "KEX-BOOTCHAIN\nA. KEDDEH // BRAINK AI\nVFS-Driven Bootloader → Microkernel → Micro-OS → Assembler\nSTAGE 0: BOOTSTRAP TERMINAL\n1. TERMINAL_0\nBootstrap carrier\n2. PRELOAD_VFS\nImage validation\n3. BOOTLOADER\n/boot/kexboot.json\n4. MICROKERNEL\nRing-0 vfs mount\n5. MICRO-OS\nDaemons & processes\n6. ASSEMBLER\nSpec → Terminal vNext\n7. TERMINAL_1\nAssembled workstation\nKEX_TERMINAL_0 [BOOTSTRAP_PROMPT]\n▶ boot\nvfs inspect\nhelp\nreset\nKEX BOOTSTRAP CARRIER · TERMINAL_0\nAuthority: A. KEDDEH // BRAINK AI\nVFS Preloaded: 13 inodes available in disk image.\nAwaiting operator directive. Type 'boot' to commence bootchain.\n\nkex-bootldr#\nPRELOADED VFS IMAGE\nINODES: 13\n/\n├── /boot/grub/grub.cfg\n├── /boot/kexboot.json\n├── /build/terminal/spec.json\n├── /build/terminal/theme.css\n├── /etc/hostname\n├── /etc/os-release\n├── /home/operator/manifest.yaml\n├── /kernel/microkernel.kex\n├── /kex-volume/proof/SEED_HASH.txt\n├── /micro-os/daemons.conf\n├── /micro-os/init.kex\n├── /micro-os/services.json\n└── /var/log/bootchain_audit.log\n\nINSPECTED INODE\n/boot/kexboot.json\n{\n  \"schema\": \"kexboot/v1\",\n  \"authority\": \"A.KEDDEH\",\n  \"kernel_entry\": \"/kernel/microkernel.kex\",\n  \"init_entry\": \"/micro-os/init.kex\",\n  \"assembly_spec\": \"/build/terminal/spec.json\",\n  \"required_manifest\": [\n    \"/boot/kexboot.json\",\n    \"/kernel/microkernel.kex\",\n    \"/micro-os/init.kex\",\n    \"/micro-os/services.json\",\n    \"/build/terminal/spec.json\"\n  ],\n  \"hash_algorithm\": \"SHA-256\",\n  \"zero_policy\": \"strictly non-zero weighted live state\"\n}",
+    "elementCount": 68,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "▶ boot",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "vfs inspect",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "help",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "reset",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "t0-input",
+        "name": null,
+        "text": "type 'boot' to execute bootchain, or 'help'...",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 20949,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "KEX_MICROKERNEL_VFS_BOOTCHAIN.html-0cb060e0.png",
+  "elapsedMs": 1648,
+  "status": "runtime-errors",
+  "finishedAt": "2026-10-11T16:34:51.536Z",
+  "sha256After": "e9855e375e64fb44fc41ddddcb76f77affc71f68c7d962835447621d9247f71c",
+  "originalUnchanged": true
+}

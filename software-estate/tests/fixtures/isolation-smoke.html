@@ -1,0 +1,8 @@
+<!doctype html><title>Isolation smoke fixture</title><h1>Harness fixture</h1><button disabled>Do not activate</button><script>
+localStorage.setItem('fixture','saved');
+console.log('fixture-started');
+fetch('https://example.com/should-never-run',{method:'POST',body:'fixture'}).catch(()=>{});
+new WebSocket('wss://example.com/should-never-run');
+const db=indexedDB.open('fixture',1);db.onupgradeneeded=()=>db.result.createObjectStore('items');db.onsuccess=()=>db.result.close();
+setTimeout(()=>{throw new Error('EXPECTED_FIXTURE_EXCEPTION')},50);
+</script><img src="https://example.com/should-never-load.png">

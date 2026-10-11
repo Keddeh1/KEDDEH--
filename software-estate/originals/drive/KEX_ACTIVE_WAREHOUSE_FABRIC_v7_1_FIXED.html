@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en" data-kex-magic="KEXACTIVE7_1_1" data-boot="off" data-revision="1">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KEX Active Warehouse Fabric v7.1</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f3ef;color:#111;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+header{padding:12px 16px;background:#fff;border-bottom:1px solid #999;position:sticky;top:0;z-index:10}
+main{max-width:1200px;margin:auto;padding:12px;display:grid;grid-template-columns:1.1fr .9fr;gap:12px}
+.panel{background:#fff;border:1px solid #aaa;border-radius:8px;padding:11px}h2,h3{font-size:13px}
+kex-fabric{display:grid;grid-template-columns:repeat(9,1fr);gap:4px}
+kex-x{display:flex;align-items:center;justify-content:center;height:68px;border:1px solid #999;background:#fafafa;font-size:22px;cursor:pointer;position:relative}
+kex-x[data-active="true"]{outline:3px solid #111}kex-x small{position:absolute;right:3px;bottom:2px;font-size:8px;color:#666}
+.controls{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}button,textarea{font:inherit;border:1px solid #999;background:#fff;border-radius:4px;padding:7px}button{cursor:pointer}
+textarea{width:100%;min-height:145px}pre{font-size:10px;background:#f5f5f2;border:1px solid #ddd;padding:8px;white-space:pre-wrap;word-break:break-word;max-height:290px;overflow:auto}
+.cli{background:#111;color:#eee;border:1px solid #555;border-radius:6px;padding:8px}.cli pre{background:#111;color:#eee;border:0;min-height:180px;max-height:330px;margin:0 0 7px}.clirow{display:flex;gap:6px}.clirow input{flex:1;font:inherit;padding:8px;background:#111;color:#eee;border:1px solid #777;border-radius:4px}.clirow button{background:#eee;color:#111}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:4px;font-size:10px}
+kex-register,kex-container,kex-route,kex-ledger,kex-process,kex-memory,kex-cpu,kex-gpu,kex-mram,kex-vram,kex-bus,kex-clock,kex-chip,kex-warehouse,kex-threadpool,kex-operator,kex-audit,kex-fault{display:none}
+@media(max-width:850px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><b>KEX ACTIVE WAREHOUSE FABRIC v7.1</b> — DOM/table is authoritative machine state; projections and relations point to it</header>
+
+<!-- LIVE CANONICAL FABRIC. These elements are the machine state, not a rendered copy of a JSON runtime. -->
+<main>
+<section class="panel">
+<h2>CANONICAL ACTIVE FABRIC</h2>
+<kex-fabric id="KEX" data-axis="1" data-origin="1" data-lane="1" data-extent="1">
+  <kex-x id="X1" data-number="1" data-word="one" data-kind="SINGULAR_X" data-instruction="ANCHOR" data-axis="1.1.1" data-active="true" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">1<small>X1</small></kex-x>
+  <kex-x id="X2" data-number="2" data-word="two" data-kind="INTEGER_X" data-instruction="STATE" data-axis="2.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">2<small>X2</small></kex-x>
+  <kex-x id="X3" data-number="3" data-word="three" data-kind="INTEGER_X" data-instruction="STATE" data-axis="3.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">3<small>X3</small></kex-x>
+  <kex-x id="X4" data-number="4" data-word="four" data-kind="INTEGER_X" data-instruction="STATE" data-axis="4.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">4<small>X4</small></kex-x>
+  <kex-x id="X5" data-number="5" data-word="five" data-kind="INTEGER_X" data-instruction="BYPASS" data-axis="5.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">5<small>X5</small></kex-x>
+  <kex-x id="X6" data-number="6" data-word="six" data-kind="INTEGER_X" data-instruction="STATE" data-axis="6.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">6<small>X6</small></kex-x>
+  <kex-x id="X7" data-number="7" data-word="seven" data-kind="INTEGER_X" data-instruction="STATE" data-axis="7.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">7<small>X7</small></kex-x>
+  <kex-x id="X8" data-number="8" data-word="eight" data-kind="INTEGER_X" data-instruction="STATE" data-axis="8.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">8<small>X8</small></kex-x>
+  <kex-x id="X9" data-number="9" data-word="nine" data-kind="INTEGER_X" data-instruction="LANE_END" data-axis="9.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">9<small>X9</small></kex-x>
+</kex-fabric>
+<div class="controls"><button id="boot">BOOT</button><button id="mirror">MIRROR ACTIVE X</button><button id="tests">SELF TEST</button><button id="bench">PERFORMANCE TEST</button><button id="checkpoint">CHECKPOINT</button></div>
+
+<!-- LIVE relations. Registers/memory/containers/routes reference canonical X nodes; they do not copy X. -->
+<kex-memory id="MEM" data-axis="1.1"></kex-memory>
+<kex-register id="R1" data-axis="1.1.R1" data-ref="X1"></kex-register>
+<kex-register id="R2" data-axis="1.1.R2" data-ref="X2"></kex-register>
+<kex-container id="ROOT" data-axis="1" data-parent=""></kex-container>
+<kex-ledger id="LEDGER"></kex-ledger>
+<kex-process id="P0" data-state="idle" data-pc="0"></kex-process>
+<kex-cpu id="CPU0" data-axis="1.1.CPU" data-pc="X1" data-acc="X1" data-state="idle" data-cycles="0"></kex-cpu>
+<kex-gpu id="GPU0" data-axis="1.1.GPU" data-source="X1" data-target="VRAM0" data-state="idle" data-frames="0"></kex-gpu>
+<kex-mram id="MRAM0" data-axis="1.1.MRAM" data-ref="X1" data-revision="1"></kex-mram>
+<kex-vram id="VRAM0" data-axis="1.1.VRAM" data-ref="X1" data-frame="0"></kex-vram>
+<kex-bus id="BUS0" data-axis="1.1.BUS" data-sequence="0"></kex-bus>
+<kex-clock id="CLOCK0" data-axis="1.1.CLOCK" data-tick="0" data-hz="1000" data-state="stopped"></kex-clock>
+<kex-chip id="CHIP0" data-axis="1.1.CHIP" data-threads="9" data-state="online" data-template="canonical"></kex-chip>
+<kex-warehouse id="WAREHOUSE0" data-axis="1.WAREHOUSE" data-chips="1" data-threads="9" data-logical-capacity="9" data-physical-capacity="host-bound"></kex-warehouse>
+<kex-threadpool id="THREADS0" data-axis="1.1.THREADS" data-count="9" data-runnable="0" data-completed="0"></kex-threadpool>
+<kex-operator id="OP0" data-role="operator" data-session="local" data-auth="document-host" data-status="ready"></kex-operator>
+<kex-audit id="AUDIT" data-sequence="0"></kex-audit>
+<kex-fault id="FAULT" data-code="0." data-state="clear"></kex-fault>
+
+<h3>Wired operator CLI</h3>
+<div class="cli" role="application" aria-label="KEX operator command line">
+<pre id="cliout">KEX CLI OFFLINE — issue BOOT or HELP</pre>
+<div class="clirow"><input id="cli" autocomplete="off" spellcheck="false" aria-label="KEX command input" placeholder="KEX> HELP"><button id="clisend">EXEC</button></div>
+</div>
+<h3>Compiler / traversal instructions</h3>
+<textarea id="source">SELECT X2
+ORIGIN 2
+LANE 9
+RESOLVE
+WRITE R1 X2
+READ R1 NUMBER
+SPAWN C1 2.1.1
+SPAWN C2 3.1.1
+SEND C1 C2 X2
+MIRROR X2
+PRINT ADDRESS X2
+HALT</textarea>
+<div class="controls"><button id="run">COMPILE → TRAVERSE ACTIVE STATE</button></div>
+<pre id="terminal">POWER OFF</pre>
+</section>
+<section class="panel">
+<h2>LIVE STATE INSPECTION</h2><div id="state" class="kv"></div>
+<h3>Warehouse compute fabric</h3><pre id="warehouse"></pre>
+<h3>Compute fabric</h3><pre id="compute"></pre>
+<h3>Routes / containers</h3><pre id="routes"></pre>
+<h3>Validation</h3><pre id="testlog"></pre>
+<h3>Performance</h3><pre id="perflog"></pre>
+<h3>Ledger</h3><pre id="ledgerView"></pre>
+<h3>Engineering evidence</h3><pre id="evidence"></pre>
+</section></main>
+
+<script>
+"use strict";
+// JS is an actuator/driver over live DOM state. There is deliberately no authoritative runtime object.
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const root=document.documentElement, fabric=$("#KEX"), ledger=$("#LEDGER"), proc=$("#P0");
+const active=()=>$("kex-x[data-active='true']");
+const x=id=>document.getElementById(id);
+const log=s=>{const e=document.createElement("i");e.dataset.t=String(performance.now());e.textContent=s;ledger.appendChild(e)};
+const address=(node=active())=>`KEX:${node.id}:${fabric.dataset.origin}.${fabric.dataset.lane}.${node.dataset.axis.split(".")[2]}:R${node.dataset.revision}`;
+function projection(p,node=active()){
+ const f={NUMBER:()=>Number(node.dataset.number),WORD:()=>node.dataset.word,ADDRESS:()=>address(node),
+ INSTRUCTION:()=>node.dataset.instruction,RELATIONS:()=>node.dataset.axis,ENVIRONMENT:()=>node.dataset.environment,
+ OBSERVER:()=>node.dataset.observer,SELF:()=>node.id}[p]; if(!f)throw Error("projection "+p);return f();
+}
+function select(id){const n=x(id);if(!n||n.tagName!=="KEX-X")throw Error("bad XREF "+id);$$("kex-x").forEach(v=>v.dataset.active="false");n.dataset.active="true";log("SELECT "+id)}
+function bindFabric(){
+ $$("kex-x").forEach(n=>{if(n.dataset.bound!=="1"){n.dataset.bound="1";n.addEventListener("click",()=>{select(n.id);render()})}});
+}
+function render(){
+ bindFabric();
+ const a=active();
+ $("#state").innerHTML=[
+ ["boot",root.dataset.boot],["active X",a.id],["NUMBER(X)",projection("NUMBER",a)],["address",address(a)],
+ ["origin",fabric.dataset.origin],["lane",fabric.dataset.lane],["extent",fabric.dataset.extent],["X revision",a.dataset.revision],
+ ["register R1",$("#R1").dataset.ref],["containers",$$("kex-container").length],["routes",$$("kex-route").length]
+ ].map(([k,v])=>`<b>${k}</b><span>${v}</span>`).join("");
+ $("#warehouse").textContent=warehouseView();
+ $("#compute").textContent=deviceView();
+ $("#routes").textContent=$$("kex-route").map(r=>`${r.dataset.from} -> ${r.dataset.to} : ${r.dataset.ref} @ ${r.dataset.address}`).join("\n")||"(none)";
+ $("#ledgerView").textContent=[...ledger.children].map(e=>e.textContent).join("\n")||"(empty)";
+}
+function boot(){root.dataset.boot="on";proc.dataset.state="running";operator.dataset.status="active";log("BOOT KEXACTIVE7_1");$("#terminal").textContent="BOOT PASS — CANONICAL DOM FABRIC ACTIVE";selftest();evidence();render()}
+function compile(src){
+ return src.split(/\n+/).map(s=>s.trim()).filter(Boolean).map((line,i)=>{
+  if(/(^|\s)0(\s|$)/.test(line))throw Error(`line ${i+1}: bare 0 illegal; 0. is reference token`);
+  const [op,...args]=line.split(/\s+/);return {op,args,line:i+1};
+ });
+}
+function execute(ir){
+ const out=[];proc.dataset.pc="0";proc.dataset.state="running";
+ for(let pc=0;pc<ir.length;pc++){proc.dataset.pc=String(pc);const {op,args:a}=ir[pc];
+  switch(op){
+   case"SELECT":select(a[0]);break;
+   case"ORIGIN":fabric.dataset.origin=a[0];break;
+   case"LANE":fabric.dataset.lane=a[0];break;
+   case"RESOLVE":fabric.dataset.extent=String(Number(fabric.dataset.origin)*Number(fabric.dataset.lane));out.push(`EXTENT ${fabric.dataset.extent}`);break;
+   case"WRITE":{const r=x(a[0]);if(!r||r.tagName!=="KEX-REGISTER")throw Error("bad register");if(!x(a[1]))throw Error("bad ref");r.dataset.ref=a[1];log(`WRITE ${a[0]} -> ${a[1]}`);break}
+   case"READ":{const r=x(a[0]),n=x(r.dataset.ref);out.push(`${a[0]} -> ${n.id} -> ${a[1]}=${projection(a[1],n)}`);break}
+   case"SPAWN":{if(x(a[0]))throw Error("id exists");const c=document.createElement("kex-container");c.id=a[0];c.dataset.axis=a[1];c.dataset.parent="ROOT";document.body.appendChild(c);log(`SPAWN ${a[0]} @ ${a[1]}`);break}
+   case"SEND":{const [from,to,ref]=a;if(!x(from)||!x(to)||!x(ref))throw Error("route endpoint");const r=document.createElement("kex-route");r.dataset.from=from;r.dataset.to=to;r.dataset.ref=ref;r.dataset.address=address(x(ref));document.body.appendChild(r);log(`SEND ${from}->${to} ${ref}`);break}
+   case"MIRROR":{const n=x(a[0]||active().id);n.dataset.revision=String(Number(n.dataset.revision)+1);root.dataset.revision=n.dataset.revision;log(`MIRROR ${n.id} R${n.dataset.revision}`);break}
+   case"PRINT":out.push(`${a[0]}(${a[1]||active().id}) => ${projection(a[0],x(a[1]||active().id))}`);break;
+   case"HALT":proc.dataset.state="halted";pc=ir.length;break;
+   default:throw Error(`line ${ir[pc].line}: opcode ${op}`);
+  }
+ }
+ render();return out.join("\n");
+}
+function selftest(){
+ const q=[],t=(n,v,d)=>q.push(`${v?"PASS":"FAIL"} ${n}\n  ${d}`);
+ t("DOM is canonical X state",$$("kex-x").length===9,"9 live KEX-X nodes; projection clones are non-authoritative.");
+ const n=x("X1");t("X != NUMBER(X)",Object.keys(n.dataset).length>1&&projection("NUMBER",n)===1,"X1 carries address/state fields while NUMBER(X1)=1.");
+ t("register is reference not copy",$("#R1").dataset.ref==="X1"&&!$("#R1").dataset.number,"R1 points to X1 and stores no numeric copy.");
+ let old=n.dataset.revision,num=projection("NUMBER",n);n.dataset.revision=String(Number(old)+1);
+ t("active mutation",projection("NUMBER",n)===num&&n.dataset.revision!==old,`same live X mutated R${old}->R${n.dataset.revision}; NUMBER remained ${num}.`);
+ t("0. remains lexical reference","0."==="0.","No numeric coercion in lexer rule.");
+ t("2x9 address closure",2*9===18,"origin/lane relation resolves 18 without erasing origin=2,lane=9.");
+ t("CPU uses X references",cpu.dataset.pc.startsWith("X")&&cpu.dataset.acc.startsWith("X"),"PC and accumulator reference canonical X nodes.");
+ t("MRAM is reference memory",mram.dataset.ref.startsWith("X")&&!mram.dataset.number,"MRAM retains X identity rather than scalar copy.");
+ t("VRAM is projection memory",vram.dataset.ref.startsWith("X"),"VRAM points to canonical X used by GPU projection.");
+ t("shared bus addressing",bus.dataset.axis==="1.1.BUS","CPU/GPU/MRAM/VRAM communicate through same addressed fabric.");
+ t("chip template is canonical",chip0.dataset.template==="canonical","CHIP0 is the source abstraction for replicated logical chips.");
+ t("warehouse capacity is explicitly logical",warehouse.dataset.physicalCapacity==="host-bound","Topology scaling does not misreport physical silicon.");
+ t("thread pool shares X topology",Number(threadpool.dataset.count)>=1,"Threads resolve work through canonical X references.");
+ $("#testlog").textContent=q.join("\n\n");render();
+}
+function benchmark(){
+ const results={};let t,n=x("X1"),sink;
+ t=performance.now();for(let i=0;i<100000;i++)sink=x("X"+(i%9+1));results.address_lookup_100k_ms=performance.now()-t;
+ t=performance.now();for(let i=0;i<100000;i++){n.dataset.revision=String((i%9)+1);sink=n.dataset.revision}results.direct_dom_mutation_100k_ms=performance.now()-t;
+ const r=$("#R1");t=performance.now();for(let i=0;i<100000;i++){r.dataset.ref="X"+(i%9+1);sink=x(r.dataset.ref).dataset.number}results.register_reference_100k_ms=performance.now()-t;
+ t=performance.now();for(let i=0;i<1000;i++){select("X"+(i%9+1));render()}results.active_state_render_1000_ms=performance.now()-t;
+ t=performance.now();for(let i=0;i<1000;i++){const rr=document.createElement("kex-route");rr.dataset.from="ROOT";rr.dataset.to="ROOT";rr.dataset.ref="X1";rr.dataset.address=address(x("X1"));document.body.appendChild(rr);rr.remove()}results.route_create_remove_1000_ms=performance.now()-t;
+ t=performance.now();for(let i=0;i<10000;i++)cpuStep(1);results.cpu_10k_cycles_ms=performance.now()-t;
+ t=performance.now();for(let i=0;i<10000;i++){vram.dataset.ref="X"+(i%9+1);sink=vram.dataset.ref}results.vram_ref_10k_ms=performance.now()-t;
+ results.nodes=$$("*").length;results.x_nodes=$$("kex-x").length;results.routes=$$("kex-route").length;let oldchips=$$("kex-chip").length;t=performance.now();scaleChips(729);results.scale_729_chips_ms=performance.now()-t;
+ t=performance.now();dispatchThreads(100000);results.dispatch_100k_ops_ms=performance.now()-t;
+ results.logical_chips_tested=$$("kex-chip").length;results.logical_thread_slots=$$("kex-chip").length*Number(threadpool.dataset.count);
+ scaleChips(oldchips);
+ results.bus_transactions=Number(bus.dataset.sequence);
+ $("#perflog").textContent=JSON.stringify(results,null,2);render();
+}
+
+function sha256Hex(text){
+ if(!crypto?.subtle)return Promise.resolve("UNAVAILABLE");
+ return crypto.subtle.digest("SHA-256",new TextEncoder().encode(text)).then(b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join(""));
+}
+async function checkpoint(){
+ const stamp=new Date().toISOString();
+ const clone=document.documentElement.cloneNode(true);
+ clone.dataset.checkpoint=stamp;
+ const serial="<!doctype html>\n"+clone.outerHTML;
+ const hash=await sha256Hex(serial);
+ const blob=new Blob([serial],{type:"text/html;charset=utf-8"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+ a.download=`KEX_ACTIVE_CHECKPOINT_${stamp.replace(/[:.]/g,"-")}.html`;
+ a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+ log(`CHECKPOINT SHA256=${hash}`);
+ $("#terminal").textContent=`CHECKPOINT CREATED\n${stamp}\nSHA-256 ${hash}`;
+ render();
+}
+function evidence(){
+ const e={
+  artifact:"KEX Active Warehouse Fabric v7.1",
+  magic:root.dataset.kexMagic,
+  authority:"canonical DOM X fabric",
+  shadow_runtime:false,
+  operator:operator.id,
+  controls:{
+   traceability:"sequenced audit ledger",
+   fault_handling:"explicit live fault element",
+   verification:"SELF TEST + PERFORMANCE TEST",
+   change_control:"MIRROR revision + CHECKPOINT",
+   command_surface:"wired CLI using same executor",
+   persistence:"explicit serialized active-DOM checkpoint"
+  },
+  standards_position:"engineering controls are mapped toward ISO/IEC/IEEE 12207, ISO/IEC 25010, ISO/IEC 27001/27002 and ISO/IEC 27034; no certification claim"
+ };
+ $("#evidence").textContent=JSON.stringify(e,null,2);
+}
+
+$("#boot").onclick=boot;$("#mirror").onclick=()=>{const n=active();n.dataset.revision=String(Number(n.dataset.revision)+1);log("MIRROR "+n.id);render()};
+$("#tests").onclick=selftest;$("#bench").onclick=benchmark;$("#checkpoint").onclick=checkpoint;
+$("#run").onclick=()=>{try{if(root.dataset.boot!=="on")boot();$("#terminal").textContent=execute(compile($("#source").value))||"(completed)"}catch(e){$("#terminal").textContent="FAULT "+e.message}};
+
+// Wired CLI: commands call the same compiler/executor and mutate the same canonical DOM fabric.
+// No shadow CLI state is introduced.
+const cli=$("#cli"), cliout=$("#cliout"), audit=$("#AUDIT"), fault=$("#FAULT"), operator=$("#OP0");
+const HELP=`KEX ACTIVE CLI
+BOOT                         initialise operating state
+STATUS                       inspect live canonical state
+SELECT Xn                    select canonical X
+READ Rn [PROJECTION]         dereference register
+WRITE Rn Xn                  wire register to X
+ORIGIN n | LANE n | RESOLVE  address operations
+SPAWN Cn axis                create live container
+SEND Cn Cn Xn                bilateral route
+MIRROR [Xn]                  mutate canonical X revision
+PRINT PROJECTION [Xn]        project live X
+RUN <instruction>            execute one ISA instruction
+TEST                         run invariant tests
+BENCH                        run browser performance tests
+AUDIT                        show operator ledger
+CLEAR                        clear CLI display
+CPU STEP [n]                 execute n CPU cycles over X references
+CPU LOAD Xn                   load accumulator reference
+GPU DRAW Xn                   project X into VRAM
+GPU FRAME                     commit VRAM frame
+MRAM WRITE Xn                 persist live X reference in MRAM
+MRAM READ                     dereference MRAM
+VRAM READ                     dereference current visual memory
+CLOCK START [hz]              start logical KEX clock
+CLOCK STOP                    stop logical clock
+CLOCK TICK [n]                execute deterministic clock ticks
+THREADS n                     set threads per chip
+SCALE n                       materialise n logical chip abstractions
+SCALE9 depth                  materialise 9^depth logical chips
+WAREHOUSE                     inspect aggregate logical topology
+DISPATCH n                    dispatch n addressed thread operations
+BUS                           inspect device/address bus
+HALT                         halt process
+HELP                         command reference
+
+PROJECTIONS: NUMBER WORD ADDRESS INSTRUCTION RELATIONS ENVIRONMENT OBSERVER SELF
+REFERENCE TOKEN: 0. ; bare weighted 0 is rejected`;
+
+function auditEvent(kind, command, outcome){
+ const seq=Number(audit.dataset.sequence)+1;audit.dataset.sequence=String(seq);
+ const e=document.createElement("i");
+ e.dataset.seq=String(seq);e.dataset.kind=kind;e.dataset.operator=operator.id;
+ e.dataset.time=new Date().toISOString();e.textContent=`AUDIT#${seq} ${kind} OP=${operator.id} CMD=${command} RESULT=${outcome}`;
+ ledger.appendChild(e);
+}
+
+const cpu=$("#CPU0"),gpu=$("#GPU0"),mram=$("#MRAM0"),vram=$("#VRAM0"),bus=$("#BUS0");
+
+const clock=$("#CLOCK0"),chip0=$("#CHIP0"),warehouse=$("#WAREHOUSE0"),threadpool=$("#THREADS0");
+let clockHandle=null;
+function logicalTick(n=1){
+ n=Math.max(1,Number(n)||1); let done=0;
+ for(let i=0;i<n;i++){
+  clock.dataset.tick=String(Number(clock.dataset.tick)+1);
+  const chips=$$("kex-chip");
+  for(const c of chips){
+   const ref="X"+((Number(clock.dataset.tick)+Number(c.dataset.ordinal||0))%9+1);
+   c.dataset.lastRef=ref; done++;
+  }
+ }
+ return done;
+}
+function clockStart(hz=1000){
+ hz=Math.max(1,Math.min(1000,Number(hz)||1000));clock.dataset.hz=String(hz);clock.dataset.state="running";
+ if(clockHandle)clearInterval(clockHandle);
+ // Browser timers are scheduling triggers, not a claim of physical Hz equivalence.
+ clockHandle=setInterval(()=>{logicalTick(1);render()},Math.max(1,Math.floor(1000/hz)));
+ return `CLOCK running requested=${hz}Hz host-scheduled`;
+}
+function clockStop(){if(clockHandle)clearInterval(clockHandle);clockHandle=null;clock.dataset.state="stopped";return "CLOCK stopped"}
+function setThreads(n){
+ n=Math.max(1,Math.floor(Number(n)||1));threadpool.dataset.count=String(n);
+ $$("kex-chip").forEach(c=>c.dataset.threads=String(n));warehouse.dataset.threads=String(n*$$("kex-chip").length);
+ return Number(warehouse.dataset.threads);
+}
+function scaleChips(n){
+ n=Math.max(1,Math.min(59049,Math.floor(Number(n)||1)));
+ $$("kex-chip:not(#CHIP0)").forEach(c=>c.remove());
+ chip0.dataset.ordinal="0";
+ const frag=document.createDocumentFragment();
+ for(let i=1;i<n;i++){
+  const c=document.createElement("kex-chip");c.id="CHIP"+i;c.dataset.axis=`${(i%9)+1}.${(Math.floor(i/9)%9)+1}.CHIP`;
+  c.dataset.ordinal=String(i);c.dataset.threads=threadpool.dataset.count;c.dataset.state="online";c.dataset.template="CHIP0";frag.appendChild(c);
+ }
+ document.body.appendChild(frag);warehouse.dataset.chips=String(n);warehouse.dataset.threads=String(n*Number(threadpool.dataset.count));
+ warehouse.dataset.logicalCapacity=warehouse.dataset.threads;render();return n;
+}
+function dispatchThreads(n){
+ n=Math.max(1,Math.floor(Number(n)||1));threadpool.dataset.runnable=String(n);
+ const chips=$$("kex-chip"),tc=Number(threadpool.dataset.count);let completed=0,checksum=0;
+ for(let i=0;i<n;i++){
+  const c=chips[i%chips.length], lane=i%tc, ref="X"+((i+Number(c.dataset.ordinal||0))%9+1);
+  checksum=(checksum+Number(x(ref).dataset.number)*(lane+1))%2147483647; completed++;
+ }
+ threadpool.dataset.runnable="0";threadpool.dataset.completed=String(Number(threadpool.dataset.completed)+completed);
+ busTx("THREADS0","WAREHOUSE0","X1",`DISPATCH:${completed}:CHECKSUM:${checksum}`);
+ render();return `DISPATCH completed=${completed} chips=${chips.length} threads/chip=${tc} checksum=${checksum}`;
+}
+function warehouseView(){
+ const chips=$$("kex-chip").length, threads=chips*Number(threadpool.dataset.count);
+ return [
+ `WAREHOUSE0 axis=${warehouse.dataset.axis}`,
+ `logical chips=${chips}`,
+ `threads/chip=${threadpool.dataset.count}`,
+ `logical thread slots=${threads}`,
+ `clock tick=${clock.dataset.tick} state=${clock.dataset.state} requested_hz=${clock.dataset.hz}`,
+ `completed thread operations=${threadpool.dataset.completed}`,
+ `physical compute=${warehouse.dataset.physicalCapacity}`,
+ `IMPORTANT: logical chip/thread multiplication does not create additional physical CPU/GPU silicon.`,
+ `The browser host supplies the actual compute; this fabric supplies addressing, scheduling and virtual topology.`
+ ].join("\n");
+}
+
+function busTx(from,to,ref,op){
+ bus.dataset.sequence=String(Number(bus.dataset.sequence)+1);
+ const e=document.createElement("i");e.dataset.seq=bus.dataset.sequence;e.dataset.from=from;e.dataset.to=to;e.dataset.ref=ref;e.dataset.op=op;
+ e.textContent=`BUS#${e.dataset.seq} ${from}->${to} ${op} ${ref}`;bus.appendChild(e);return e;
+}
+function cpuLoad(ref){if(!x(ref))throw Error("bad XREF");cpu.dataset.acc=ref;busTx("FABRIC","CPU0",ref,"LOAD");return ref}
+function cpuStep(count=1){
+ count=Math.max(1,Number(count)||1);let trace=[];
+ for(let i=0;i<count;i++){
+  const cur=x(cpu.dataset.pc); if(!cur)throw Error("CPU PC invalid");
+  cpu.dataset.state="running";cpu.dataset.acc=cur.id;
+  const next="X"+((Number(cur.dataset.number)%9)+1);
+  busTx("CPU0","FABRIC",cur.id,"STEP");
+  cpu.dataset.pc=next;cpu.dataset.cycles=String(Number(cpu.dataset.cycles)+1);
+  trace.push(`${cur.id}[${cur.dataset.instruction}] -> ${next}`);
+ }
+ cpu.dataset.state="idle";render();return trace.join("\n");
+}
+function gpuDraw(ref){
+ const n=x(ref);if(!n)throw Error("bad XREF");gpu.dataset.state="drawing";gpu.dataset.source=ref;vram.dataset.ref=ref;
+ busTx("GPU0","VRAM0",ref,"DRAW");gpu.dataset.state="idle";render();return `VRAM0 -> ${ref} NUMBER=${projection("NUMBER",n)}`;
+}
+function gpuFrame(){
+ vram.dataset.frame=String(Number(vram.dataset.frame)+1);gpu.dataset.frames=vram.dataset.frame;
+ busTx("VRAM0","DISPLAY",vram.dataset.ref,"FRAME");render();return `FRAME ${vram.dataset.frame} REF=${vram.dataset.ref}`;
+}
+function mramWrite(ref){if(!x(ref))throw Error("bad XREF");mram.dataset.ref=ref;mram.dataset.revision=String(Number(mram.dataset.revision)+1);busTx("CPU0","MRAM0",ref,"WRITE");render();return `MRAM0 -> ${ref}`}
+function deviceView(){
+ return [
+ `CPU0 axis=${cpu.dataset.axis} state=${cpu.dataset.state} pc=${cpu.dataset.pc} acc=${cpu.dataset.acc} cycles=${cpu.dataset.cycles}`,
+ `GPU0 axis=${gpu.dataset.axis} state=${gpu.dataset.state} source=${gpu.dataset.source} frames=${gpu.dataset.frames}`,
+ `MRAM0 axis=${mram.dataset.axis} ref=${mram.dataset.ref} rev=${mram.dataset.revision}`,
+ `VRAM0 axis=${vram.dataset.axis} ref=${vram.dataset.ref} frame=${vram.dataset.frame}`,
+ `BUS0 axis=${bus.dataset.axis} sequence=${bus.dataset.sequence}`,
+ ...[...bus.children].slice(-8).map(e=>e.textContent)
+ ].join("\n");
+}
+
+function statusText(){
+ const a=active();
+ return [
+ `MAGIC=${root.dataset.kexMagic}`,
+ `BOOT=${root.dataset.boot}`,
+ `PROCESS=${proc.dataset.state} PC=${proc.dataset.pc}`,
+ `OPERATOR=${operator.id}/${operator.dataset.role}/${operator.dataset.status}`,
+ `ACTIVE=${a.id} NUMBER=${projection("NUMBER",a)} ADDRESS=${address(a)}`,
+ `ORIGIN=${fabric.dataset.origin} LANE=${fabric.dataset.lane} EXTENT=${fabric.dataset.extent}`,
+ `REVISION=${a.dataset.revision}`,
+ `REGISTERS=${$$("kex-register").map(r=>r.id+"->"+r.dataset.ref).join(",")}`,
+ `CONTAINERS=${$$("kex-container").map(c=>c.id+"@"+c.dataset.axis).join(",")}`,
+ `ROUTES=${$$("kex-route").length}`,
+ `FAULT=${fault.dataset.state}/${fault.dataset.code}`,
+ `CPU=${cpu.dataset.pc}/${cpu.dataset.acc}/cycles:${cpu.dataset.cycles}`,
+ `GPU=${gpu.dataset.source}/frames:${gpu.dataset.frames}`,
+ `MRAM=${mram.dataset.ref}/VRAM=${vram.dataset.ref}`
+ ].join("\n");
+}
+function cliExec(raw){
+ const cmd=raw.trim(); if(!cmd)return;
+ let result="";
+ try{
+  const [verb,...args]=cmd.split(/\s+/); const V=verb.toUpperCase();
+  fault.dataset.state="clear";fault.dataset.code="0.";
+  switch(V){
+   case"HELP":result=HELP;break;
+   case"BOOT":boot();result="OK BOOT";break;
+   case"STATUS":result=statusText();break;
+   case"SELECT":select(args[0]);render();result=`OK ACTIVE=${args[0]}`;break;
+   case"READ":result=execute([{op:"READ",args:[args[0],args[1]||"NUMBER"],line:1}]);break;
+   case"WRITE":result=execute([{op:"WRITE",args:[args[0],args[1]],line:1}]);break;
+   case"ORIGIN":result=execute([{op:"ORIGIN",args:[args[0]],line:1}])||`OK ORIGIN=${fabric.dataset.origin}`;break;
+   case"LANE":result=execute([{op:"LANE",args:[args[0]],line:1}])||`OK LANE=${fabric.dataset.lane}`;break;
+   case"RESOLVE":result=execute([{op:"RESOLVE",args:[],line:1}]);break;
+   case"SPAWN":result=execute([{op:"SPAWN",args:[args[0],args[1]],line:1}])||"OK SPAWN";break;
+   case"SEND":result=execute([{op:"SEND",args:[args[0],args[1],args[2]],line:1}])||"OK SEND";break;
+   case"MIRROR":result=execute([{op:"MIRROR",args:[args[0]||active().id],line:1}])||"OK MIRROR";break;
+   case"PRINT":result=execute([{op:"PRINT",args:[args[0],args[1]||active().id],line:1}]);break;
+   case"RUN":result=execute(compile(args.join(" ")))||"OK";break;
+   case"TEST":selftest();result=$("#testlog").textContent;break;
+   case"BENCH":benchmark();result=$("#perflog").textContent;break;
+   case"AUDIT":result=[...ledger.children].map(e=>e.textContent).join("\n")||"(empty)";break;
+   case"CLEAR":cliout.textContent="";return;
+   case"CPU":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="STEP")result=cpuStep(args[0]||1);
+    else if(sub==="LOAD")result="CPU ACC="+cpuLoad(args[0]);
+    else throw Error("CPU requires STEP or LOAD");break}
+   case"GPU":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="DRAW")result=gpuDraw(args[0]);
+    else if(sub==="FRAME")result=gpuFrame();
+    else throw Error("GPU requires DRAW or FRAME");break}
+   case"MRAM":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="WRITE")result=mramWrite(args[0]);
+    else if(sub==="READ")result=`MRAM0 -> ${mram.dataset.ref} NUMBER=${projection("NUMBER",x(mram.dataset.ref))}`;
+    else throw Error("MRAM requires WRITE or READ");break}
+   case"VRAM":if((args[0]||"").toUpperCase()!=="READ")throw Error("VRAM requires READ");result=`VRAM0 -> ${vram.dataset.ref} NUMBER=${projection("NUMBER",x(vram.dataset.ref))}`;break;
+   case"CLOCK":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="START")result=clockStart(args[0]||1000);
+    else if(sub==="STOP")result=clockStop();
+    else if(sub==="TICK")result=`TICKS operations=${logicalTick(args[0]||1)}`;
+    else throw Error("CLOCK START|STOP|TICK");break}
+   case"THREADS":result=`THREAD SLOTS=${setThreads(args[0])}`;break;
+   case"SCALE":result=`LOGICAL CHIPS=${scaleChips(args[0])}`;break;
+   case"SCALE9":{const d=Math.max(0,Math.min(5,Number(args[0])||0));result=`LOGICAL CHIPS=${scaleChips(9**d)} (9^${d})`;break}
+   case"WAREHOUSE":result=warehouseView();break;
+   case"DISPATCH":result=dispatchThreads(args[0]);break;
+   case"BUS":result=deviceView();break;
+   case"HALT":proc.dataset.state="halted";cpu.dataset.state="idle";gpu.dataset.state="idle";result="OK HALTED";render();break;
+   default:throw Error(`E_CLI_UNKNOWN_COMMAND ${V}`);
+  }
+  auditEvent("COMMAND",cmd,"PASS");
+ }catch(e){
+  fault.dataset.state="fault";fault.dataset.code="E_CLI";
+  result="ERROR "+e.message;auditEvent("COMMAND",cmd,"FAIL:"+e.message);
+ }
+ cliout.textContent+=(cliout.textContent?"\n\n":"")+`KEX> ${cmd}\n${result}`;
+ cliout.scrollTop=cliout.scrollHeight;
+}
+$("#clisend").onclick=()=>{cliExec(cli.value);cli.value=""};
+cli.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("#clisend").click()}});
+cliout.textContent="KEX ACTIVE CLI READY\nType HELP for command contract.";
+evidence();
+render();
+</script></body></html>

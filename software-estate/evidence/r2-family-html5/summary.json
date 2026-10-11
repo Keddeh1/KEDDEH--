@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "apps": [
+    {
+      "file": "working/html5/Google_Chrome_Workstation.html",
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/Google_Chrome_Workstation.html-2a12929c.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+      ]
+    },
+    {
+      "file": "working/html5/HTML5_Audio_Synthesizer.html",
+      "sha256": "fa7eac68fac1a6452154958eef789203b712acbfac0a1cff9a50fea08fc0d47f",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/HTML5_Audio_Synthesizer.html-9f583e67.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Audio output, musical fidelity and arpeggio playback not exercised."
+      ]
+    },
+    {
+      "file": "working/html5/HTML5_Particle_Physics_Lab.html",
+      "sha256": "b3500255a046e1bbb8d7d922c62bd43b7f592bafae40e0e59c0d420bb420371d",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/HTML5_Particle_Physics_Lab.html-a102424c.runtime.json",
+      "assertionsPassed": 2,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+      ]
+    },
+    {
+      "file": "working/html5/HTML5_Raster_Paint_Studio.html",
+      "sha256": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/HTML5_Raster_Paint_Studio.html-272d14cd.runtime.json",
+      "assertionsPassed": 2,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+      ]
+    },
+    {
+      "file": "working/html5/HTML5_Retro_Arcade_Breakout.html",
+      "sha256": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/HTML5_Retro_Arcade_Breakout.html-92c28ea0.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "No completed game, high-score persistence or all-level collision qualification."
+      ]
+    },
+    {
+      "file": "working/html5/HTML5_Scientific_Calculator.html",
+      "sha256": "2d33c27a3d9328879c6cda0185ebe99ea25f1b3f792ff3b604cbe19c9d0268f3",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/HTML5_Scientific_Calculator.html-a994dcfe.runtime.json",
+      "assertionsPassed": 2,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+      ]
+    },
+    {
+      "file": "working/html5/KERA_Mesh_Node.html",
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/KERA_Mesh_Node.html-92eec2c6.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+      ]
+    },
+    {
+      "file": "working/html5/KEX_MICROKERNEL_VFS_BOOTCHAIN.html",
+      "sha256": "e9855e375e64fb44fc41ddddcb76f77affc71f68c7d962835447621d9247f71c",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/KEX_MICROKERNEL_VFS_BOOTCHAIN.html-0cb060e0.runtime.json",
+      "assertionsPassed": 2,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Bootchain worker execution and assembled terminal were not qualified under worker-denying isolation."
+      ]
+    },
+    {
+      "file": "working/html5/KexLinux.html",
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/KexLinux.html-273f57ca.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+      ]
+    },
+    {
+      "file": "working/html5/Open_Source_Operating_System.html",
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/Open_Source_Operating_System.html-0ad893f2.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+      ]
+    },
+    {
+      "file": "working/html5/Stratum_Mining_Core_OS.html",
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-html5/Stratum_Mining_Core_OS.html-2a4529f9.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+      ]
+    }
+  ]
+}

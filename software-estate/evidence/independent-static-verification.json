@@ -1,0 +1,3102 @@
+{
+  "generatedAt": "2026-10-11T16:44:36.604Z",
+  "verification": "Static compilation only; no browser DOM, controls, persistence or integrations executed.",
+  "apps": [
+    {
+      "file": "working/drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "sha256": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e",
+      "scripts": [
+        {
+          "index": 0,
+          "id": "kex-recovery-estate",
+          "type": "application/json",
+          "line": 159,
+          "bytes": 2552,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 1,
+          "id": "keddeh-root-contract",
+          "type": "application/json",
+          "line": 169,
+          "bytes": 1590,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 2,
+          "id": "keddeh-runtime-volume",
+          "type": "classic",
+          "line": 201,
+          "bytes": 23238,
+          "status": "parsed"
+        },
+        {
+          "index": 3,
+          "id": "kex-historical-recovery-engine",
+          "type": "classic",
+          "line": 492,
+          "bytes": 7918,
+          "status": "parsed"
+        }
+      ],
+      "executable": 2,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "sha256": "ebc78e313e93b0ca6b3f1ac4e0752281e1e053b1b6f4cd0d5fb617d18c7a698a",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 791,
+          "bytes": 247959,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "sha256": "5bf2a5979aec8761aa693d2a4c33f8d076d2d3bec376ab74354205323e6f0574",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 392,
+          "bytes": 13667,
+          "status": "parsed"
+        },
+        {
+          "index": 1,
+          "id": "kex-linux-full-dependency-runtime",
+          "type": "classic",
+          "line": 656,
+          "bytes": 13772,
+          "status": "parsed"
+        },
+        {
+          "index": 2,
+          "id": "kex-v8-evidence-authority-runtime",
+          "type": "classic",
+          "line": 960,
+          "bytes": 1497,
+          "status": "parsed"
+        },
+        {
+          "index": 3,
+          "id": "kex-fresh-linux-boot-receipt",
+          "type": "application/json",
+          "line": 984,
+          "bytes": 1957,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 4,
+          "id": null,
+          "type": "classic",
+          "line": 985,
+          "bytes": 1232,
+          "status": "parsed"
+        },
+        {
+          "index": 5,
+          "id": "kex-generation-runtime-code",
+          "type": "classic",
+          "line": 1023,
+          "bytes": 7496,
+          "status": "parsed"
+        },
+        {
+          "index": 6,
+          "id": "kex-story-first-gen11-code",
+          "type": "classic",
+          "line": 1083,
+          "bytes": 10464,
+          "status": "parsed"
+        }
+      ],
+      "executable": 6,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "sha256": "e6aa81bd614ae95f39973bb261cd9ba3c03ab06f25ad0178f7ede283eb66c3a2",
+      "scripts": [
+        {
+          "index": 0,
+          "id": "kex-app-registry-v1",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 2326,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 1,
+          "id": "kex-resident-illlm",
+          "type": "application/octet-stream",
+          "line": 1,
+          "bytes": 148608,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 2,
+          "id": "registry",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 18240,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 3,
+          "id": "apps",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 12642,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 4,
+          "id": "payloads",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 2248761,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 5,
+          "id": "resources",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1440,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 6,
+          "id": "resource-payloads",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 23226,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 7,
+          "id": "machine-requirements",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 7200,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 8,
+          "id": "resident-workbooks",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1092097,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 9,
+          "id": "fabric",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 5683,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 10,
+          "id": "architecture-root",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 7618,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 11,
+          "id": "p00-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1041,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 12,
+          "id": "p00-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 935,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 13,
+          "id": "p01-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1263,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 14,
+          "id": "p01-state-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 5003,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 15,
+          "id": "p01-transition-table",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 3184,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 16,
+          "id": "p01-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 2105,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 17,
+          "id": "p02-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1194,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 18,
+          "id": "p02-address-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1301,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 19,
+          "id": "p02-relation-registry",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 2881,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 20,
+          "id": "p02-graph",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 93071,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 21,
+          "id": "p02-continuation-schema",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 3564,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 22,
+          "id": "p02-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 2173,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 23,
+          "id": "p03-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1803,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 24,
+          "id": "p03-action-plan__2",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1546,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 25,
+          "id": "p03-compiler-chain",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 3542,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 26,
+          "id": "p03-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 6038,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 27,
+          "id": "p04-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1559,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 28,
+          "id": "p04-action-plan__2",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1576,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 29,
+          "id": "p04-boot-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 4698,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 30,
+          "id": "p04-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 9632,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 31,
+          "id": "p05-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1723,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 32,
+          "id": "p05-action-plan__2",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1754,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 33,
+          "id": "p05-kernel-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 3386,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 34,
+          "id": "p05-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 5795,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 35,
+          "id": "p06-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 865,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 36,
+          "id": "p06-hardware-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 3867,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 37,
+          "id": "p06-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 3991,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 38,
+          "id": "p07-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 460,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 39,
+          "id": "p07-storage-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 25461,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 40,
+          "id": "p07-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1957,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 41,
+          "id": "p08-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 423,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 42,
+          "id": "p08-network-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 6004,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 43,
+          "id": "p08-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1994,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 44,
+          "id": "p09-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 355,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 45,
+          "id": "p09-compute-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1871,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 46,
+          "id": "p09-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1936,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 47,
+          "id": "p10-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 344,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 48,
+          "id": "p10-projection-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 6524,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 49,
+          "id": "p10-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 2221,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 50,
+          "id": "p11-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 385,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 51,
+          "id": "p11-carrier-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 36154,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 52,
+          "id": "p11-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1485,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 53,
+          "id": "p12-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 377,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 54,
+          "id": "p12-host-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 11543,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 55,
+          "id": "p12-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 2218,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 56,
+          "id": "p13-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1697,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 57,
+          "id": "p13-a13-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 10209,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 58,
+          "id": "p13-a13-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1313,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 59,
+          "id": "p14-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1513,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 60,
+          "id": "p14-a14-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 11909,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 61,
+          "id": "p14-a14-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 903,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 62,
+          "id": "p15-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1502,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 63,
+          "id": "p15-a15-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 2128,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 64,
+          "id": "p15-a15-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 208,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 65,
+          "id": "p16-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1468,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 66,
+          "id": "p16-a16-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 978,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 67,
+          "id": "p16-a16-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 757,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 68,
+          "id": "p17-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1385,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 69,
+          "id": "p17-a17-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 3101,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 70,
+          "id": "p17-a17-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 561,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 71,
+          "id": "illlm-signal-grammar-v2",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 710,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 72,
+          "id": "p18-alignment-event-chain",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1191,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 73,
+          "id": "p18-action-plan",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1159,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 74,
+          "id": "p18-a18-model",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1218,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 75,
+          "id": "p18-a18-direct-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 652,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 76,
+          "id": "p18-a18-executed-browser-receipt",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 41535,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 77,
+          "id": "p08-p09-p12-signal-alignment-proof",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 788,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 78,
+          "id": "deployment-continuation-p17",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1847,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 79,
+          "id": "engineering-skill-registry-v1",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 2602,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 80,
+          "id": "p18-receipt-resolution-event-chain",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 905,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 81,
+          "id": "ks-20260815-convergence-manifest",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 745,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 82,
+          "id": "keddeh-carriers-v7",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1205345,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 83,
+          "id": "kx-machine-spec-v8",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 3629,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 84,
+          "id": "kx-carrier-spec-v8",
+          "type": "application/json",
+          "line": 1,
+          "bytes": 1205345,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 85,
+          "id": "kex-v9-runtime",
+          "type": "classic",
+          "line": 73,
+          "bytes": 12226,
+          "status": "parsed"
+        },
+        {
+          "index": 86,
+          "id": "kex-v9-bootstrap",
+          "type": "classic",
+          "line": 112,
+          "bytes": 397,
+          "status": "parsed"
+        },
+        {
+          "index": 87,
+          "id": "kex-spec-v9",
+          "type": "application/json",
+          "line": 119,
+          "bytes": 3334,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 88,
+          "id": "kex-runtime-v9",
+          "type": "classic",
+          "line": 120,
+          "bytes": 5440,
+          "status": "parsed"
+        },
+        {
+          "index": 89,
+          "id": "kex-kex-app-v9",
+          "type": "classic",
+          "line": 221,
+          "bytes": 392,
+          "status": "parsed"
+        },
+        {
+          "index": 90,
+          "id": "kex-binding-v10",
+          "type": "application/json",
+          "line": 224,
+          "bytes": 1061,
+          "status": "data-not-executable"
+        }
+      ],
+      "executable": 4,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "sha256": "c41f36a379e2c867ef8f6809e47f129108d4830d07ee0614b5eb2c800d44db1e",
+      "scripts": [
+        {
+          "index": 0,
+          "id": "p20-runtime-observer-v1",
+          "type": "classic",
+          "line": 34,
+          "bytes": 2193,
+          "status": "parsed"
+        },
+        {
+          "index": 1,
+          "id": "p20-runtime-observer-manifest",
+          "type": "application/json",
+          "line": 64,
+          "bytes": 496,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 2,
+          "id": "p21-mcp-app-runtime-bridge-v1",
+          "type": "classic",
+          "line": 65,
+          "bytes": 1271,
+          "status": "parsed"
+        },
+        {
+          "index": 3,
+          "id": "p21-mcp-app-runtime-bridge-manifest",
+          "type": "application/json",
+          "line": 77,
+          "bytes": 537,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 4,
+          "id": "registry",
+          "type": "application/json",
+          "line": 86,
+          "bytes": 18240,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 5,
+          "id": "apps",
+          "type": "application/json",
+          "line": 87,
+          "bytes": 12642,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 6,
+          "id": "payloads",
+          "type": "application/json",
+          "line": 88,
+          "bytes": 2248761,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 7,
+          "id": "resources",
+          "type": "application/json",
+          "line": 89,
+          "bytes": 1440,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 8,
+          "id": "resource-payloads",
+          "type": "application/json",
+          "line": 90,
+          "bytes": 23226,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 9,
+          "id": "machine-requirements",
+          "type": "application/json",
+          "line": 91,
+          "bytes": 7200,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 10,
+          "id": "resident-workbooks",
+          "type": "application/json",
+          "line": 92,
+          "bytes": 1092097,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 11,
+          "id": "fabric",
+          "type": "application/json",
+          "line": 93,
+          "bytes": 5683,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 12,
+          "id": null,
+          "type": "classic",
+          "line": 94,
+          "bytes": 11455,
+          "status": "parsed"
+        },
+        {
+          "index": 13,
+          "id": "kex-v5-runtime",
+          "type": "classic",
+          "line": 121,
+          "bytes": 14986,
+          "status": "parsed"
+        },
+        {
+          "index": 14,
+          "id": "architecture-root",
+          "type": "application/json",
+          "line": 150,
+          "bytes": 7618,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 15,
+          "id": "p00-action-plan",
+          "type": "application/json",
+          "line": 151,
+          "bytes": 1041,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 16,
+          "id": "p00-direct-proof",
+          "type": "application/json",
+          "line": 152,
+          "bytes": 935,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 17,
+          "id": "p01-action-plan",
+          "type": "application/json",
+          "line": 153,
+          "bytes": 1263,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 18,
+          "id": "p01-state-model",
+          "type": "application/json",
+          "line": 154,
+          "bytes": 5003,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 19,
+          "id": "p01-transition-table",
+          "type": "application/json",
+          "line": 155,
+          "bytes": 3184,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 20,
+          "id": "p01-direct-proof",
+          "type": "application/json",
+          "line": 156,
+          "bytes": 2105,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 21,
+          "id": "p02-action-plan",
+          "type": "application/json",
+          "line": 157,
+          "bytes": 1194,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 22,
+          "id": "p02-address-model",
+          "type": "application/json",
+          "line": 158,
+          "bytes": 1301,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 23,
+          "id": "p02-relation-registry",
+          "type": "application/json",
+          "line": 159,
+          "bytes": 2881,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 24,
+          "id": "p02-graph",
+          "type": "application/json",
+          "line": 160,
+          "bytes": 93071,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 25,
+          "id": "p02-continuation-schema",
+          "type": "application/json",
+          "line": 161,
+          "bytes": 3564,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 26,
+          "id": "p02-direct-proof",
+          "type": "application/json",
+          "line": 162,
+          "bytes": 2173,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 27,
+          "id": "p03-action-plan",
+          "type": "application/json",
+          "line": 163,
+          "bytes": 1803,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 28,
+          "id": "p00-root-runtime",
+          "type": "classic",
+          "line": 164,
+          "bytes": 4284,
+          "status": "parsed"
+        },
+        {
+          "index": 29,
+          "id": "p01-zeroless-runtime",
+          "type": "classic",
+          "line": 211,
+          "bytes": 5510,
+          "status": "parsed"
+        },
+        {
+          "index": 30,
+          "id": "p02-illlm-runtime",
+          "type": "classic",
+          "line": 261,
+          "bytes": 5121,
+          "status": "parsed"
+        },
+        {
+          "index": 31,
+          "id": "p03-action-plan",
+          "type": "application/json",
+          "line": 289,
+          "bytes": 1546,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 32,
+          "id": "p03-compiler-chain",
+          "type": "application/json",
+          "line": 290,
+          "bytes": 3542,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 33,
+          "id": "p03-direct-proof",
+          "type": "application/json",
+          "line": 291,
+          "bytes": 6038,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 34,
+          "id": "p04-action-plan",
+          "type": "application/json",
+          "line": 292,
+          "bytes": 1559,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 35,
+          "id": "p03-compiler-runtime",
+          "type": "classic",
+          "line": 293,
+          "bytes": 5283,
+          "status": "parsed"
+        },
+        {
+          "index": 36,
+          "id": "p04-action-plan",
+          "type": "application/json",
+          "line": 386,
+          "bytes": 1576,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 37,
+          "id": "p04-boot-model",
+          "type": "application/json",
+          "line": 387,
+          "bytes": 4698,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 38,
+          "id": "p04-direct-proof",
+          "type": "application/json",
+          "line": 388,
+          "bytes": 9632,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 39,
+          "id": "p05-action-plan",
+          "type": "application/json",
+          "line": 389,
+          "bytes": 1723,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 40,
+          "id": "p04-boot-runtime",
+          "type": "classic",
+          "line": 390,
+          "bytes": 4245,
+          "status": "parsed"
+        },
+        {
+          "index": 41,
+          "id": "p05-action-plan",
+          "type": "application/json",
+          "line": 441,
+          "bytes": 1754,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 42,
+          "id": "p05-kernel-model",
+          "type": "application/json",
+          "line": 442,
+          "bytes": 3386,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 43,
+          "id": "p05-direct-proof",
+          "type": "application/json",
+          "line": 443,
+          "bytes": 5795,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 44,
+          "id": "p06-action-plan",
+          "type": "application/json",
+          "line": 444,
+          "bytes": 865,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 45,
+          "id": "p05-kernel-runtime",
+          "type": "classic",
+          "line": 445,
+          "bytes": 4617,
+          "status": "parsed"
+        },
+        {
+          "index": 46,
+          "id": "p06-hardware-model",
+          "type": "application/json",
+          "line": 498,
+          "bytes": 3867,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 47,
+          "id": "p06-hardware-runtime",
+          "type": "classic",
+          "line": 498,
+          "bytes": 10140,
+          "status": "parsed"
+        },
+        {
+          "index": 48,
+          "id": "p06-direct-proof",
+          "type": "application/json",
+          "line": 554,
+          "bytes": 3991,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 49,
+          "id": "p07-action-plan",
+          "type": "application/json",
+          "line": 554,
+          "bytes": 460,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 50,
+          "id": "p07-storage-model",
+          "type": "application/json",
+          "line": 554,
+          "bytes": 25461,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 51,
+          "id": "p07-volume-runtime",
+          "type": "classic",
+          "line": 554,
+          "bytes": 13745,
+          "status": "parsed"
+        },
+        {
+          "index": 52,
+          "id": "p07-direct-proof",
+          "type": "application/json",
+          "line": 606,
+          "bytes": 1957,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 53,
+          "id": "p08-action-plan",
+          "type": "application/json",
+          "line": 606,
+          "bytes": 423,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 54,
+          "id": "p08-network-model",
+          "type": "application/json",
+          "line": 606,
+          "bytes": 6004,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 55,
+          "id": "p08-network-runtime",
+          "type": "classic",
+          "line": 606,
+          "bytes": 6842,
+          "status": "parsed"
+        },
+        {
+          "index": 56,
+          "id": "p08-direct-proof",
+          "type": "application/json",
+          "line": 627,
+          "bytes": 1994,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 57,
+          "id": "p09-action-plan",
+          "type": "application/json",
+          "line": 627,
+          "bytes": 355,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 58,
+          "id": "p09-compute-model",
+          "type": "application/json",
+          "line": 627,
+          "bytes": 1871,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 59,
+          "id": "p09-compute-runtime",
+          "type": "classic",
+          "line": 627,
+          "bytes": 5212,
+          "status": "parsed"
+        },
+        {
+          "index": 60,
+          "id": "p09-direct-proof",
+          "type": "application/json",
+          "line": 643,
+          "bytes": 1936,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 61,
+          "id": "p10-action-plan",
+          "type": "application/json",
+          "line": 643,
+          "bytes": 344,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 62,
+          "id": "p10-projection-model",
+          "type": "application/json",
+          "line": 643,
+          "bytes": 6524,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 63,
+          "id": "p10-projection-runtime",
+          "type": "classic",
+          "line": 643,
+          "bytes": 4985,
+          "status": "parsed"
+        },
+        {
+          "index": 64,
+          "id": "p10-direct-proof",
+          "type": "application/json",
+          "line": 662,
+          "bytes": 2221,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 65,
+          "id": "p11-action-plan",
+          "type": "application/json",
+          "line": 662,
+          "bytes": 385,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 66,
+          "id": "p11-carrier-model",
+          "type": "application/json",
+          "line": 662,
+          "bytes": 36154,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 67,
+          "id": "p11-carrier-runtime",
+          "type": "classic",
+          "line": 662,
+          "bytes": 2284,
+          "status": "parsed"
+        },
+        {
+          "index": 68,
+          "id": "p11-direct-proof",
+          "type": "application/json",
+          "line": 662,
+          "bytes": 1485,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 69,
+          "id": "p12-action-plan",
+          "type": "application/json",
+          "line": 662,
+          "bytes": 377,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 70,
+          "id": "p12-host-model",
+          "type": "application/json",
+          "line": 662,
+          "bytes": 11543,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 71,
+          "id": "p12-host-runtime",
+          "type": "classic",
+          "line": 662,
+          "bytes": 4152,
+          "status": "parsed"
+        },
+        {
+          "index": 72,
+          "id": "p12-direct-proof",
+          "type": "application/json",
+          "line": 685,
+          "bytes": 2218,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 73,
+          "id": "p13-action-plan",
+          "type": "application/json",
+          "line": 685,
+          "bytes": 1697,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 74,
+          "id": "p13-a13-model",
+          "type": "application/json",
+          "line": 686,
+          "bytes": 10209,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 75,
+          "id": "p13-a13-runtime",
+          "type": "classic",
+          "line": 687,
+          "bytes": 13797,
+          "status": "parsed"
+        },
+        {
+          "index": 76,
+          "id": "p13-a13-direct-proof",
+          "type": "application/json",
+          "line": 727,
+          "bytes": 1313,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 77,
+          "id": "p14-action-plan",
+          "type": "application/json",
+          "line": 728,
+          "bytes": 1513,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 78,
+          "id": "p14-a14-model",
+          "type": "application/json",
+          "line": 729,
+          "bytes": 11909,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 79,
+          "id": "p14-a14-runtime",
+          "type": "classic",
+          "line": 730,
+          "bytes": 9566,
+          "status": "parsed"
+        },
+        {
+          "index": 80,
+          "id": "p14-a14-direct-proof",
+          "type": "application/json",
+          "line": 752,
+          "bytes": 903,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 81,
+          "id": "p15-action-plan",
+          "type": "application/json",
+          "line": 753,
+          "bytes": 1502,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 82,
+          "id": "p15-a15-model",
+          "type": "application/json",
+          "line": 754,
+          "bytes": 2128,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 83,
+          "id": "p15-a15-runtime",
+          "type": "classic",
+          "line": 755,
+          "bytes": 6166,
+          "status": "parsed"
+        },
+        {
+          "index": 84,
+          "id": "p15-a15-direct-proof",
+          "type": "application/json",
+          "line": 774,
+          "bytes": 208,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 85,
+          "id": "p16-action-plan",
+          "type": "application/json",
+          "line": 775,
+          "bytes": 1468,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 86,
+          "id": "p16-a16-model",
+          "type": "application/json",
+          "line": 776,
+          "bytes": 978,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 87,
+          "id": "p16-a16-runtime",
+          "type": "classic",
+          "line": 777,
+          "bytes": 8050,
+          "status": "parsed"
+        },
+        {
+          "index": 88,
+          "id": "p16-a16-direct-proof",
+          "type": "application/json",
+          "line": 793,
+          "bytes": 757,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 89,
+          "id": "p17-action-plan",
+          "type": "application/json",
+          "line": 794,
+          "bytes": 1385,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 90,
+          "id": "p17-a17-model",
+          "type": "application/json",
+          "line": 795,
+          "bytes": 3101,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 91,
+          "id": "p17-node-adapter-source",
+          "type": "text/plain",
+          "line": 796,
+          "bytes": 607,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 92,
+          "id": "p17-a17-runtime",
+          "type": "classic",
+          "line": 802,
+          "bytes": 4239,
+          "status": "parsed"
+        },
+        {
+          "index": 93,
+          "id": "p17-a17-direct-proof",
+          "type": "application/json",
+          "line": 806,
+          "bytes": 561,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 94,
+          "id": "illlm-signal-grammar-v2",
+          "type": "application/json",
+          "line": 808,
+          "bytes": 710,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 95,
+          "id": "p18-alignment-event-chain",
+          "type": "application/json",
+          "line": 809,
+          "bytes": 1191,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 96,
+          "id": "p18-action-plan",
+          "type": "application/json",
+          "line": 810,
+          "bytes": 1159,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 97,
+          "id": "p18-a18-model",
+          "type": "application/json",
+          "line": 811,
+          "bytes": 1218,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 98,
+          "id": "p18-a18-runtime",
+          "type": "classic",
+          "line": 812,
+          "bytes": 7845,
+          "status": "parsed"
+        },
+        {
+          "index": 99,
+          "id": "p18-a18-direct-proof",
+          "type": "application/json",
+          "line": 836,
+          "bytes": 652,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 100,
+          "id": "p18-a18-executed-browser-receipt",
+          "type": "application/json",
+          "line": 838,
+          "bytes": 41535,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 101,
+          "id": "p08-p09-p12-signal-alignment-proof",
+          "type": "application/json",
+          "line": 839,
+          "bytes": 788,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 102,
+          "id": "deployment-continuation-p17",
+          "type": "application/json",
+          "line": 840,
+          "bytes": 1847,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 103,
+          "id": "engineering-skill-registry-v1",
+          "type": "application/json",
+          "line": 841,
+          "bytes": 2602,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 104,
+          "id": "engineering-skill-runtime",
+          "type": "classic",
+          "line": 842,
+          "bytes": 1074,
+          "status": "parsed"
+        },
+        {
+          "index": 105,
+          "id": "p18-receipt-resolution-event-chain",
+          "type": "application/json",
+          "line": 844,
+          "bytes": 905,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 106,
+          "id": "ks-20260815-convergence-manifest",
+          "type": "application/json",
+          "line": 872,
+          "bytes": 975,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 107,
+          "id": "ks-20260815-convergence-runtime",
+          "type": "classic",
+          "line": 2131,
+          "bytes": 1611,
+          "status": "parsed"
+        },
+        {
+          "index": 108,
+          "id": "files-as-tools-governance-v2",
+          "type": "application/json",
+          "line": 2161,
+          "bytes": 1515,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 109,
+          "id": "files-as-tools-runtime-v2",
+          "type": "classic",
+          "line": 2162,
+          "bytes": 10968,
+          "status": "parsed"
+        },
+        {
+          "index": 110,
+          "id": "s29q-manifest",
+          "type": "application/json",
+          "line": 2196,
+          "bytes": 3185,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 111,
+          "id": "s29q-r4payload",
+          "type": "text/plain",
+          "line": 2197,
+          "bytes": 17400100,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 112,
+          "id": "s29q-runtime",
+          "type": "classic",
+          "line": 2303,
+          "bytes": 13223,
+          "status": "parsed"
+        },
+        {
+          "index": 113,
+          "id": "kq4-manifest",
+          "type": "application/json",
+          "line": 2409,
+          "bytes": 3563,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 114,
+          "id": "kq4-runtime",
+          "type": "classic",
+          "line": 2663,
+          "bytes": 5949,
+          "status": "parsed"
+        },
+        {
+          "index": 115,
+          "id": "kq5-manifest",
+          "type": "application/json",
+          "line": 2726,
+          "bytes": 4974,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 116,
+          "id": "kq5-browser-receipt",
+          "type": "application/json",
+          "line": 2726,
+          "bytes": 4451,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 117,
+          "id": "kq5-runtime",
+          "type": "classic",
+          "line": 2755,
+          "bytes": 2099,
+          "status": "parsed"
+        },
+        {
+          "index": 118,
+          "id": "kc6-manifest",
+          "type": "application/json",
+          "line": 2790,
+          "bytes": 5717,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 119,
+          "id": "kc6-runtime",
+          "type": "classic",
+          "line": 2843,
+          "bytes": 9503,
+          "status": "parsed"
+        },
+        {
+          "index": 120,
+          "id": "kr7-manifest",
+          "type": "application/json",
+          "line": 2965,
+          "bytes": 2823,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 121,
+          "id": "kr7-runtime",
+          "type": "classic",
+          "line": 3139,
+          "bytes": 5944,
+          "status": "parsed"
+        },
+        {
+          "index": 122,
+          "id": "r9-manifest",
+          "type": "application/json",
+          "line": 3216,
+          "bytes": 11019,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 123,
+          "id": "r9-resident-orchestrator-runtime",
+          "type": "classic",
+          "line": 3253,
+          "bytes": 6157,
+          "status": "parsed"
+        },
+        {
+          "index": 124,
+          "id": "r9-runtime",
+          "type": "classic",
+          "line": 3401,
+          "bytes": 7613,
+          "status": "parsed"
+        },
+        {
+          "index": 125,
+          "id": "r10-recursive-self-host-proof",
+          "type": "classic",
+          "line": 3402,
+          "bytes": 2678,
+          "status": "parsed"
+        },
+        {
+          "index": 126,
+          "id": "p19-host-adapter-runtime",
+          "type": "classic",
+          "line": 3435,
+          "bytes": 7631,
+          "status": "parsed"
+        },
+        {
+          "index": 127,
+          "id": "p19-host-adapter-manifest",
+          "type": "application/json",
+          "line": 3470,
+          "bytes": 686,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 128,
+          "id": "keddeh-r14-converged-runtime",
+          "type": "classic",
+          "line": 3471,
+          "bytes": 6787,
+          "status": "parsed"
+        },
+        {
+          "index": 129,
+          "id": "keddeh-r14-manifest",
+          "type": "application/json",
+          "line": 3496,
+          "bytes": 737,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 130,
+          "id": "keddeh-r14-local-fix-1-manifest",
+          "type": "application/json",
+          "line": 3496,
+          "bytes": 346,
+          "status": "data-not-executable"
+        }
+      ],
+      "executable": 36,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "sha256": "265e43209c1e42fdb01827124d0ba7519a011f6cdd7f7a9a4f4fa65436f3083c",
+      "scripts": [
+        {
+          "index": 0,
+          "id": "registry",
+          "type": "application/json",
+          "line": 42,
+          "bytes": 18240,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 1,
+          "id": "apps",
+          "type": "application/json",
+          "line": 43,
+          "bytes": 12642,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 2,
+          "id": "payloads",
+          "type": "application/json",
+          "line": 44,
+          "bytes": 2248761,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 3,
+          "id": "resources",
+          "type": "application/json",
+          "line": 45,
+          "bytes": 1440,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 4,
+          "id": "resource-payloads",
+          "type": "application/json",
+          "line": 46,
+          "bytes": 23226,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 5,
+          "id": "machine-requirements",
+          "type": "application/json",
+          "line": 47,
+          "bytes": 7200,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 6,
+          "id": "resident-workbooks",
+          "type": "application/json",
+          "line": 48,
+          "bytes": 1092097,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 7,
+          "id": "fabric",
+          "type": "application/json",
+          "line": 49,
+          "bytes": 5683,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 8,
+          "id": null,
+          "type": "classic",
+          "line": 50,
+          "bytes": 11455,
+          "status": "parsed"
+        },
+        {
+          "index": 9,
+          "id": "kex-v5-runtime",
+          "type": "classic",
+          "line": 77,
+          "bytes": 14986,
+          "status": "parsed"
+        },
+        {
+          "index": 10,
+          "id": "architecture-root",
+          "type": "application/json",
+          "line": 106,
+          "bytes": 7618,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 11,
+          "id": "p00-action-plan",
+          "type": "application/json",
+          "line": 107,
+          "bytes": 1041,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 12,
+          "id": "p00-direct-proof",
+          "type": "application/json",
+          "line": 108,
+          "bytes": 935,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 13,
+          "id": "p01-action-plan",
+          "type": "application/json",
+          "line": 109,
+          "bytes": 1263,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 14,
+          "id": "p01-state-model",
+          "type": "application/json",
+          "line": 110,
+          "bytes": 5003,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 15,
+          "id": "p01-transition-table",
+          "type": "application/json",
+          "line": 111,
+          "bytes": 3184,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 16,
+          "id": "p01-direct-proof",
+          "type": "application/json",
+          "line": 112,
+          "bytes": 2105,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 17,
+          "id": "p02-action-plan",
+          "type": "application/json",
+          "line": 113,
+          "bytes": 1194,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 18,
+          "id": "p02-address-model",
+          "type": "application/json",
+          "line": 114,
+          "bytes": 1301,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 19,
+          "id": "p02-relation-registry",
+          "type": "application/json",
+          "line": 115,
+          "bytes": 2881,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 20,
+          "id": "p02-graph",
+          "type": "application/json",
+          "line": 116,
+          "bytes": 93071,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 21,
+          "id": "p02-continuation-schema",
+          "type": "application/json",
+          "line": 117,
+          "bytes": 3564,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 22,
+          "id": "p02-direct-proof",
+          "type": "application/json",
+          "line": 118,
+          "bytes": 2173,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 23,
+          "id": "p03-action-plan",
+          "type": "application/json",
+          "line": 119,
+          "bytes": 1803,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 24,
+          "id": "p00-root-runtime",
+          "type": "classic",
+          "line": 120,
+          "bytes": 4284,
+          "status": "parsed"
+        },
+        {
+          "index": 25,
+          "id": "p01-zeroless-runtime",
+          "type": "classic",
+          "line": 167,
+          "bytes": 5510,
+          "status": "parsed"
+        },
+        {
+          "index": 26,
+          "id": "p02-illlm-runtime",
+          "type": "classic",
+          "line": 217,
+          "bytes": 5121,
+          "status": "parsed"
+        },
+        {
+          "index": 27,
+          "id": "p03-action-plan",
+          "type": "application/json",
+          "line": 245,
+          "bytes": 1546,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 28,
+          "id": "p03-compiler-chain",
+          "type": "application/json",
+          "line": 246,
+          "bytes": 3542,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 29,
+          "id": "p03-direct-proof",
+          "type": "application/json",
+          "line": 247,
+          "bytes": 6038,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 30,
+          "id": "p04-action-plan",
+          "type": "application/json",
+          "line": 248,
+          "bytes": 1559,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 31,
+          "id": "p03-compiler-runtime",
+          "type": "classic",
+          "line": 249,
+          "bytes": 5283,
+          "status": "parsed"
+        },
+        {
+          "index": 32,
+          "id": "p04-action-plan",
+          "type": "application/json",
+          "line": 342,
+          "bytes": 1576,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 33,
+          "id": "p04-boot-model",
+          "type": "application/json",
+          "line": 343,
+          "bytes": 4698,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 34,
+          "id": "p04-direct-proof",
+          "type": "application/json",
+          "line": 344,
+          "bytes": 9632,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 35,
+          "id": "p05-action-plan",
+          "type": "application/json",
+          "line": 345,
+          "bytes": 1723,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 36,
+          "id": "p04-boot-runtime",
+          "type": "classic",
+          "line": 346,
+          "bytes": 3160,
+          "status": "parsed"
+        },
+        {
+          "index": 37,
+          "id": "p05-action-plan",
+          "type": "application/json",
+          "line": 395,
+          "bytes": 1754,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 38,
+          "id": "p05-kernel-model",
+          "type": "application/json",
+          "line": 396,
+          "bytes": 3386,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 39,
+          "id": "p05-direct-proof",
+          "type": "application/json",
+          "line": 397,
+          "bytes": 5795,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 40,
+          "id": "p06-action-plan",
+          "type": "application/json",
+          "line": 398,
+          "bytes": 865,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 41,
+          "id": "p05-kernel-runtime",
+          "type": "classic",
+          "line": 399,
+          "bytes": 4617,
+          "status": "parsed"
+        },
+        {
+          "index": 42,
+          "id": "p06-hardware-model",
+          "type": "application/json",
+          "line": 452,
+          "bytes": 3867,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 43,
+          "id": "p06-hardware-runtime",
+          "type": "classic",
+          "line": 452,
+          "bytes": 10116,
+          "status": "parsed"
+        },
+        {
+          "index": 44,
+          "id": "p06-direct-proof",
+          "type": "application/json",
+          "line": 508,
+          "bytes": 3991,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 45,
+          "id": "p07-action-plan",
+          "type": "application/json",
+          "line": 508,
+          "bytes": 460,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 46,
+          "id": "p07-storage-model",
+          "type": "application/json",
+          "line": 508,
+          "bytes": 25461,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 47,
+          "id": "p07-volume-runtime",
+          "type": "classic",
+          "line": 508,
+          "bytes": 13745,
+          "status": "parsed"
+        },
+        {
+          "index": 48,
+          "id": "p07-direct-proof",
+          "type": "application/json",
+          "line": 560,
+          "bytes": 1957,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 49,
+          "id": "p08-action-plan",
+          "type": "application/json",
+          "line": 560,
+          "bytes": 423,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 50,
+          "id": "p08-network-model",
+          "type": "application/json",
+          "line": 560,
+          "bytes": 6004,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 51,
+          "id": "p08-network-runtime",
+          "type": "classic",
+          "line": 560,
+          "bytes": 6842,
+          "status": "parsed"
+        },
+        {
+          "index": 52,
+          "id": "p08-direct-proof",
+          "type": "application/json",
+          "line": 581,
+          "bytes": 1994,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 53,
+          "id": "p09-action-plan",
+          "type": "application/json",
+          "line": 581,
+          "bytes": 355,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 54,
+          "id": "p09-compute-model",
+          "type": "application/json",
+          "line": 581,
+          "bytes": 1871,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 55,
+          "id": "p09-compute-runtime",
+          "type": "classic",
+          "line": 581,
+          "bytes": 5212,
+          "status": "parsed"
+        },
+        {
+          "index": 56,
+          "id": "p09-direct-proof",
+          "type": "application/json",
+          "line": 597,
+          "bytes": 1936,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 57,
+          "id": "p10-action-plan",
+          "type": "application/json",
+          "line": 597,
+          "bytes": 344,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 58,
+          "id": "p10-projection-model",
+          "type": "application/json",
+          "line": 597,
+          "bytes": 6524,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 59,
+          "id": "p10-projection-runtime",
+          "type": "classic",
+          "line": 597,
+          "bytes": 4985,
+          "status": "parsed"
+        },
+        {
+          "index": 60,
+          "id": "p10-direct-proof",
+          "type": "application/json",
+          "line": 616,
+          "bytes": 2221,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 61,
+          "id": "p11-action-plan",
+          "type": "application/json",
+          "line": 616,
+          "bytes": 385,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 62,
+          "id": "p11-carrier-model",
+          "type": "application/json",
+          "line": 616,
+          "bytes": 36154,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 63,
+          "id": "p11-carrier-runtime",
+          "type": "classic",
+          "line": 616,
+          "bytes": 2284,
+          "status": "parsed"
+        },
+        {
+          "index": 64,
+          "id": "p11-direct-proof",
+          "type": "application/json",
+          "line": 616,
+          "bytes": 1485,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 65,
+          "id": "p12-action-plan",
+          "type": "application/json",
+          "line": 616,
+          "bytes": 377,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 66,
+          "id": "p12-host-model",
+          "type": "application/json",
+          "line": 616,
+          "bytes": 11543,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 67,
+          "id": "p12-host-runtime",
+          "type": "classic",
+          "line": 616,
+          "bytes": 4152,
+          "status": "parsed"
+        },
+        {
+          "index": 68,
+          "id": "p12-direct-proof",
+          "type": "application/json",
+          "line": 639,
+          "bytes": 2218,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 69,
+          "id": "p13-action-plan",
+          "type": "application/json",
+          "line": 639,
+          "bytes": 1697,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 70,
+          "id": "p13-a13-model",
+          "type": "application/json",
+          "line": 640,
+          "bytes": 10209,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 71,
+          "id": "p13-a13-runtime",
+          "type": "classic",
+          "line": 641,
+          "bytes": 11907,
+          "status": "parsed"
+        },
+        {
+          "index": 72,
+          "id": "p13-a13-direct-proof",
+          "type": "application/json",
+          "line": 675,
+          "bytes": 1313,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 73,
+          "id": "p14-action-plan",
+          "type": "application/json",
+          "line": 676,
+          "bytes": 1513,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 74,
+          "id": "p14-a14-model",
+          "type": "application/json",
+          "line": 677,
+          "bytes": 11909,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 75,
+          "id": "p14-a14-runtime",
+          "type": "classic",
+          "line": 678,
+          "bytes": 9566,
+          "status": "parsed"
+        },
+        {
+          "index": 76,
+          "id": "p14-a14-direct-proof",
+          "type": "application/json",
+          "line": 700,
+          "bytes": 903,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 77,
+          "id": "p15-action-plan",
+          "type": "application/json",
+          "line": 701,
+          "bytes": 1502,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 78,
+          "id": "p15-a15-model",
+          "type": "application/json",
+          "line": 702,
+          "bytes": 2128,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 79,
+          "id": "p15-a15-runtime",
+          "type": "classic",
+          "line": 703,
+          "bytes": 6166,
+          "status": "parsed"
+        },
+        {
+          "index": 80,
+          "id": "p15-a15-direct-proof",
+          "type": "application/json",
+          "line": 722,
+          "bytes": 208,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 81,
+          "id": "p16-action-plan",
+          "type": "application/json",
+          "line": 723,
+          "bytes": 1468,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 82,
+          "id": "p16-a16-model",
+          "type": "application/json",
+          "line": 724,
+          "bytes": 978,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 83,
+          "id": "p16-a16-runtime",
+          "type": "classic",
+          "line": 725,
+          "bytes": 8050,
+          "status": "parsed"
+        },
+        {
+          "index": 84,
+          "id": "p16-a16-direct-proof",
+          "type": "application/json",
+          "line": 741,
+          "bytes": 757,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 85,
+          "id": "p17-action-plan",
+          "type": "application/json",
+          "line": 742,
+          "bytes": 1385,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 86,
+          "id": "p17-a17-model",
+          "type": "application/json",
+          "line": 743,
+          "bytes": 3101,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 87,
+          "id": "p17-node-adapter-source",
+          "type": "text/plain",
+          "line": 744,
+          "bytes": 607,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 88,
+          "id": "p17-a17-runtime",
+          "type": "classic",
+          "line": 750,
+          "bytes": 4239,
+          "status": "parsed"
+        },
+        {
+          "index": 89,
+          "id": "p17-a17-direct-proof",
+          "type": "application/json",
+          "line": 754,
+          "bytes": 561,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 90,
+          "id": "illlm-signal-grammar-v2",
+          "type": "application/json",
+          "line": 756,
+          "bytes": 710,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 91,
+          "id": "p18-alignment-event-chain",
+          "type": "application/json",
+          "line": 757,
+          "bytes": 1191,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 92,
+          "id": "p18-action-plan",
+          "type": "application/json",
+          "line": 758,
+          "bytes": 1159,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 93,
+          "id": "p18-a18-model",
+          "type": "application/json",
+          "line": 759,
+          "bytes": 1218,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 94,
+          "id": "p18-a18-runtime",
+          "type": "classic",
+          "line": 760,
+          "bytes": 7845,
+          "status": "parsed"
+        },
+        {
+          "index": 95,
+          "id": "p18-a18-direct-proof",
+          "type": "application/json",
+          "line": 784,
+          "bytes": 652,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 96,
+          "id": "p18-a18-executed-browser-receipt",
+          "type": "application/json",
+          "line": 786,
+          "bytes": 41535,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 97,
+          "id": "p08-p09-p12-signal-alignment-proof",
+          "type": "application/json",
+          "line": 787,
+          "bytes": 788,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 98,
+          "id": "deployment-continuation-p17",
+          "type": "application/json",
+          "line": 788,
+          "bytes": 1847,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 99,
+          "id": "engineering-skill-registry-v1",
+          "type": "application/json",
+          "line": 789,
+          "bytes": 2602,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 100,
+          "id": "engineering-skill-runtime",
+          "type": "classic",
+          "line": 790,
+          "bytes": 1074,
+          "status": "parsed"
+        },
+        {
+          "index": 101,
+          "id": "p18-receipt-resolution-event-chain",
+          "type": "application/json",
+          "line": 792,
+          "bytes": 905,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 102,
+          "id": "ks-20260815-convergence-manifest",
+          "type": "application/json",
+          "line": 820,
+          "bytes": 975,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 103,
+          "id": "ks-20260815-convergence-runtime",
+          "type": "classic",
+          "line": 2079,
+          "bytes": 1611,
+          "status": "parsed"
+        },
+        {
+          "index": 104,
+          "id": "r4-model",
+          "type": "application/json",
+          "line": 2110,
+          "bytes": 1109,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 105,
+          "id": "r4-vfs",
+          "type": "application/json",
+          "line": 2111,
+          "bytes": 1061547,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 106,
+          "id": "r4-runtime",
+          "type": "classic",
+          "line": 2112,
+          "bytes": 5042,
+          "status": "parsed"
+        },
+        {
+          "index": 107,
+          "id": "v76-state",
+          "type": "application/json",
+          "line": 2178,
+          "bytes": 20720,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 108,
+          "id": "v76-runtime",
+          "type": "classic",
+          "line": 2213,
+          "bytes": 15465,
+          "status": "parsed"
+        }
+      ],
+      "executable": 25,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "sha256": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 174,
+          "bytes": 116358,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "sha256": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 94,
+          "bytes": 23570,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "sha256": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 160,
+          "bytes": 51963,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/drive/hcf_workstation.html",
+      "sha256": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "importmap",
+          "line": 13,
+          "bytes": 196,
+          "status": "data-not-executable"
+        },
+        {
+          "index": 1,
+          "id": null,
+          "type": "classic",
+          "line": 22,
+          "bytes": 0,
+          "status": "external-not-compiled"
+        },
+        {
+          "index": 2,
+          "id": null,
+          "type": "classic",
+          "line": 23,
+          "bytes": 0,
+          "status": "external-not-compiled"
+        }
+      ],
+      "executable": 0,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/Google_Chrome_Workstation.html",
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 516,
+          "bytes": 3792,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/HTML5_Audio_Synthesizer.html",
+      "sha256": "fa7eac68fac1a6452154958eef789203b712acbfac0a1cff9a50fea08fc0d47f",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 348,
+          "bytes": 15622,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/HTML5_Markdown_Notebook_Studio.html",
+      "sha256": "7ccfac527bb876941aeeada548086b390e2318b17d89c0b6c1749ee5cf5935c3",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 183,
+          "bytes": 7970,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/HTML5_Particle_Physics_Lab.html",
+      "sha256": "b3500255a046e1bbb8d7d922c62bd43b7f592bafae40e0e59c0d420bb420371d",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 203,
+          "bytes": 8832,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/HTML5_Raster_Paint_Studio.html",
+      "sha256": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 143,
+          "bytes": 5990,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/HTML5_Relational_SQL_Studio.html",
+      "sha256": "cfb261af4a48c2f7a1cd32598837380d27a000f49345c46a68c245607f7b6e92",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 226,
+          "bytes": 13808,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/HTML5_Retro_Arcade_Breakout.html",
+      "sha256": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 122,
+          "bytes": 17923,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/HTML5_Scientific_Calculator.html",
+      "sha256": "2d33c27a3d9328879c6cda0185ebe99ea25f1b3f792ff3b604cbe19c9d0268f3",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 172,
+          "bytes": 5807,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/KERA_Mesh_Node.html",
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 356,
+          "bytes": 4008,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/KEX_Linux_Terminal.html",
+      "sha256": "2d44e0edb96fc4c93918344958b379cd79913b2ba245213dd61ebeee0dcfb3ab",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 661,
+          "bytes": 48560,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/KEX_MICROKERNEL_VFS_BOOTCHAIN.html",
+      "sha256": "e9855e375e64fb44fc41ddddcb76f77affc71f68c7d962835447621d9247f71c",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 393,
+          "bytes": 20963,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/KexLinux.html",
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 19,
+          "bytes": 35058,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/Open_Source_Operating_System.html",
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 296,
+          "bytes": 11878,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    },
+    {
+      "file": "working/html5/Stratum_Mining_Core_OS.html",
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+      "scripts": [
+        {
+          "index": 0,
+          "id": null,
+          "type": "classic",
+          "line": 411,
+          "bytes": 5822,
+          "status": "parsed"
+        }
+      ],
+      "executable": 1,
+      "syntaxErrors": []
+    }
+  ]
+}

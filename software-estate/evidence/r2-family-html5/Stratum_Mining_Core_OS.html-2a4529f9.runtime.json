@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "file": "Stratum_Mining_Core_OS.html",
+  "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+  "startedAt": "2026-10-11T16:37:24.132Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:36133/Stratum_Mining_Core_OS.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "method": "GET",
+      "type": "stylesheet",
+      "allowed": false
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "blocked": [
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "reason": "network-isolation"
+    }
+  ],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+    "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "Stratum Mining Core OS · Production Runtime · A. Keddeh",
+    "readyState": "complete",
+    "bodyText": "S+\nSTRATUM MINING CORE OS\n\nPowered by Sovereign Microkernel · A. Keddeh\n\nISO 29119: CERTIFIED\nHSM: VERIFIED (1x8F9B)\nPOOL: bitcoin.viabtc.io:3333\nWORKER: keddeh.001\nUPTIME: 0d 0h 0m\nSECURE UI ↗\n829.08\nGH/S AGGREGATE RATE\n🔌 NETWORK STATUS\nLATENCY\n25 ms\nDIFF\n16384\n💎 SHARE ANALYTICS\nACCEPTED SHARES\n0\nREJECTED SHARES\n0\nEFFICIENCY\n100.00%\n🖥️ RESOURCE LOAD\nvCPU LOAD\n18%\nvRAM USAGE\n40%\n16:37:27\n[SYSTEM]\nStratum Mining Core OS v2.0.4 booting...\n16:37:28\n[SYSTEM]\nInitializing multi-threaded communication loops...\n16:37:29\n[SYSTEM]\nEstablishing raw socket connection to bitcoin.viabtc.io:3333\nSYSTEM OPERATIONAL\nID: 1x8F9B2C4E_BRAINK_MINER · v2.0.4-production",
+    "elementCount": 96,
+    "headings": [
+      "STRATUM MINING CORE OS"
+    ],
+    "controls": [
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "SECURE UI ↗",
+        "disabled": false,
+        "visible": true,
+        "href": "https://10.240.0.50:8443"
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 5822,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "read-only shell inventory",
+      "passed": true,
+      "detail": {
+        "canvasCount": 0,
+        "textBytes": 792,
+        "visibleInputs": 0,
+        "title": "Stratum Mining Core OS · Production Runtime · A. Keddeh"
+      }
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 2936,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:37:30.487Z",
+  "sha256After": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+  "originalUnchanged": true
+}

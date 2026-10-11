@@ -1,0 +1,200 @@
+{
+  "scope": "software-estate only; read-only source audit; no comprehensive secret-free guarantee",
+  "file_count": 247,
+  "text_files_scanned": 222,
+  "pattern_match_counts": {
+    "google_api_key": 0,
+    "jwt": 0,
+    "credential_format": 0,
+    "signed_acquisition_query": 0
+  },
+  "findings": [],
+  "excluded_sensitive_filename_count": 0,
+  "originals": [
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/drive/hcf_workstation.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/html5Apps.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/openSourceOsTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/kexLinuxTerminalTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/kexBootchainTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/html5ParticlePhysicsTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/html5BreakoutGameTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/html5SynthesizerTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/html5SqlStudioTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/html5MarkdownStudioTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/html5PaintStudioTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/html5CalculatorTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/data/html5ChromeBrowserTemplate.ts",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/assets/os/AetherOS.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/assets/os/MiningOS.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/assets/os/KexLinux.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/assets/os/KeraMeshOS.html",
+      "category": "original_hash_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/github/src/assets/workstations/Chrome.html",
+      "category": "original_hash_verified",
+      "count": 1
+    }
+  ],
+  "context_findings": [
+    {
+      "path": "originals/drive/hcf_workstation.html",
+      "category": "human_readable_demo_hmac_default_not_live_credential_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/hcf-recovery/hcf_workstation.entrypoint.html",
+      "category": "human_readable_demo_hmac_default_not_live_credential_verified",
+      "count": 1
+    },
+    {
+      "path": "originals/hcf-recovery/index.recovered-0.ts",
+      "category": "provider_key_localstorage_code_no_entered_keys_found",
+      "count": 1
+    },
+    {
+      "path": "originals/hcf-recovery/saved_resource.html",
+      "category": "saved_page_cloud_origin_not_signed_acquisition_url",
+      "count": 1
+    },
+    {
+      "path": "originals/hcf-recovery/index.served.js",
+      "category": "inline_sourcemap_single_relative_source_no_source_root",
+      "count": 1
+    },
+    {
+      "path": "originals/drive/manifest.json",
+      "category": "ordinary_drive_view_provenance_urls",
+      "count": 10
+    },
+    {
+      "path": "originals/hcf-recovery/source-metadata.json",
+      "category": "ordinary_drive_view_provenance_urls",
+      "count": 3
+    },
+    {
+      "path": "originals/github/manifest.json",
+      "category": "pinned_github_source_provenance_urls",
+      "count": 17
+    }
+  ],
+  "omissions_required_by_current_findings": [],
+  "future_omit_patterns": [
+    "browser profiles",
+    "auth state",
+    "acquisition URL metadata",
+    "private assistant notes",
+    "download helpers and transfer results"
+  ]
+}

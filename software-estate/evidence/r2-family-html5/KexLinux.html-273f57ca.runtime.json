@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "file": "KexLinux.html",
+  "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+  "startedAt": "2026-10-11T16:37:42.287Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:39617/KexLinux.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+    "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "KEX Linux Virtual State Runtime — Epic Games & Universal Substrate",
+    "readyState": "complete",
+    "bodyText": "",
+    "elementCount": 11,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "id": "hidden-file-input",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 34998,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "read-only shell inventory",
+      "passed": true,
+      "detail": {
+        "canvasCount": 1,
+        "textBytes": 0,
+        "visibleInputs": 0,
+        "title": "KEX Linux Virtual State Runtime — Epic Games & Universal Substrate"
+      }
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 2208,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:37:48.472Z",
+  "sha256After": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+  "originalUnchanged": true
+}

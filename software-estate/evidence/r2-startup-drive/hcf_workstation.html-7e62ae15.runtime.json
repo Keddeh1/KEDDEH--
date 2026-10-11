@@ -1,0 +1,809 @@
+{
+  "schemaVersion": 1,
+  "file": "hcf_workstation.html",
+  "sha256": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec",
+  "startedAt": "2026-10-11T16:34:49.273Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:43395/hcf_workstation.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "method": "GET",
+      "type": "stylesheet",
+      "allowed": false
+    },
+    {
+      "url": "http://127.0.0.1:43395/index.css",
+      "method": "GET",
+      "type": "stylesheet",
+      "allowed": true
+    },
+    {
+      "url": "https://accounts.google.com/gsi/client",
+      "method": "GET",
+      "type": "script",
+      "allowed": false
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/v86@latest/build/libv86.js",
+      "method": "GET",
+      "type": "script",
+      "allowed": false
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "http://127.0.0.1:43395/index.css",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://accounts.google.com/gsi/client",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/v86@latest/build/libv86.js",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "blocked": [
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "reason": "network-isolation"
+    },
+    {
+      "url": "https://accounts.google.com/gsi/client",
+      "reason": "network-isolation"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/v86@latest/build/libv86.js",
+      "reason": "network-isolation"
+    }
+  ],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "ONE (OS 1) Workstation",
+    "readyState": "complete",
+    "bodyText": "[ PLANE: INDEPENDENT_SUBSTRATE ]\nUPTIME: 00:00:00\nCOMPUTE_LOAD: 1.4%\nENTROPY: 0.82 bits\nLATENCY: 0.002ms\nONE_OS_1_CORE_LOCKED\nHEADLESS AGENT\nBackend Applet Logic Workflow & Injection\nARCHITECTURE CONTEXT\nWHAT IT DOES:\nProvides a headless translation layer bridging the ONE OS user interface with the underlying deterministic Python/Rust kernel substrates.\nMEANT TO DO:\nIsolate and automate complex background orchestration—such as network routing, cryptography, and logic scaling—removing human error while retaining execution transparency.\nWHAT IT CAN DO:\nExecute AI agent logic sequences, dispatch tasks to isolated background workers, and dynamically inject parameters into the live substrate without halting the OS.\nHOW:\nBy parsing parameter inputs below and compiling them into execute_agent_task() payloads. These are securely forwarded to the backend which proxies commands to the native exokernel processes, streaming results back via the Event Stream.\nSYSTEM PARAMETERS\nWorkflow Context:\nInject Logic Sequence:\nINJECT PARAMETERS\nAGENT EVENT STREAM\n[AGENT] Substrate bindings active.\n[AGENT] Waiting for logic injection...\n-- Listening on internal loopback --\nSYSTEM TELEMETRY\nKernel Substrate & Performance Gauges\nWhat is this? This telemetry panel tracks the real-time execution context of the underlying Independent Substrate.\nHow it works: It monitors the simulated algebraic hardware layer, measuring logic cycles, deterministic entropy (for secure random operations), and simulated network latency inside the V86 matrix.\nIt ensures all operations remain isolated, reproducible, and strictly within the user's secure memory boundary.\nUPTIME:\n00:00:00\nCOMPUTE LOAD:\n1.4%\nENTROPY:\n0.82 bits\nLATENCY:\n0.002ms\nCORE LOCK:\nLOCKED_1_CORE\nKERNEL DIAGNOSTIC LOGS\n[00.001] KERNEL: Initializing Independent Substrate...\n[00.014] MESH: BGP Route table synchronized.\n[00.042] SEC: ISO/IEC 27001 audit matrix passed.\n[00.089] VFS: Neural-VFS mounted at /aware_functions.\n[00.125] GPU: Framebuffer 96x54 RGBA active.\n[00.190] READY: Awaiting user workstation input.\nSUBSTRATE HEALTH\nRAM Integrity\n100% SECURE\nBGP Mesh Tunnels\nACTIVE (10G)\nBRAINK AI Sync\nOPTIMAL\nIndependent Workstation & Application Matrix\n\nAll application launchers, user spaces, social channels, secure mail, and video streams hosted on the active canvas.\n\nAPPLICATION LAUNCHERS & INDEPENDENT RUNTIMES\n Load Balancer\n Governance\n Auditor\n Telemetry\n Buffer Vis\n Logic Graph\n Bliss OS\n Linux VM\n BRAINK AI\n Independent Mail\n Code Studio\n Terminal\n Processes\n Classroom\n Play Store\n Browser\n System DNA\n ADR Log\n SIMB Bridge\n Creative DAW\n AI Notebook",
+    "elementCount": 836,
+    "headings": [
+      "Independent Workstation & Application Matrix",
+      "APPLICATION LAUNCHERS & INDEPENDENT RUNTIMES",
+      "CODE_IL_LLM_GOVERNED_STACK_V2",
+      "IL-LLM Deterministic Interlanguage Matrix",
+      "Formal Model Constraints",
+      "Workbook-Native Runtime (KEX-WP-16)",
+      "Runtime Ledger Validator",
+      "INDEPENDENT_VM_RESOURCE_AUDIT",
+      "Architectural Verification & System Substantiation Report",
+      "1. Architectural Substantiation & Verification Matrix",
+      "2. Rationale for Layout Compression & Window Overlapping",
+      "3. Desktop Integration Necessity Matrix",
+      "4. Projected DOM Ingress & Headless Buffer Pipeline Architecture",
+      "5. Global Expansion & Autonomous API Gateway Deployment Schedule (Linux & ChatGPT Scale)"
+    ],
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "command-palette-input",
+        "name": null,
+        "text": "Type a command or search...",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "agent-workflow-context",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "id": "agent-logic-sequence",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "agent-inject-btn",
+        "name": null,
+        "text": "INJECT PARAMETERS",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "chrome-back",
+        "name": null,
+        "text": "←",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "chrome-forward",
+        "name": null,
+        "text": "→",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "chrome-reload",
+        "name": null,
+        "text": "⟳",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "chrome-url-bar",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "chrome-go",
+        "name": null,
+        "text": "Go",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "_",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "□",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Store Catalog",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Loaded APKs & Runtimes",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "id": "apk-file-input",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "play-upload-apk",
+        "name": null,
+        "text": "+ Sideload APK",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "_",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "□",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "simb-run-audit-btn",
+        "name": null,
+        "text": "⚡ EXECUTE ADVERSARIAL PIPELINE",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "password",
+        "id": "simb-gemini-key",
+        "name": null,
+        "text": "AI Studio API Key...",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "password",
+        "id": "simb-openai-key",
+        "name": null,
+        "text": "OpenAI API Key...",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "password",
+        "id": "simb-hmac-secret",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "_",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "□",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Governed Stack",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Deterministic Matrix",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Runtime Ledgers & Proof",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Replay Latest Stack Packet",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Execute local_validate.sh",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "_",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "□",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "[ TERMINAL ]",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "[ DESKTOP_GUI ]",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "[ SYS_RESOURCES ]",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "term-input",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "_",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "□",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "_",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "□",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "_",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "□",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "lb-spawn-btn",
+        "name": null,
+        "text": "+ Join & Link Child Server",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "lb-dispatch-btn",
+        "name": null,
+        "text": "⚡ Dispatch Burst Traffic (100 reqs)",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "lb-refresh-btn",
+        "name": null,
+        "text": "🔄 Sync Mesh Topology",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "SELECT",
+        "type": "select-one",
+        "id": "lb-select-parent",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "lb-input-name",
+        "name": null,
+        "text": "e.g. EU-Worker Compute Node Beta",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "lb-input-region",
+        "name": null,
+        "text": "e.g. eu-central-1b",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "id": "lb-input-weight",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "lb-modal-cancel",
+        "name": null,
+        "text": "Cancel",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "lb-modal-confirm",
+        "name": null,
+        "text": "Execute Spawn & Join",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "_",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "□",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "_",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "□",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "_",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "□",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 196,
+        "type": "importmap"
+      },
+      {
+        "src": "https://accounts.google.com/gsi/client",
+        "inlineBytes": 0,
+        "type": "classic"
+      },
+      {
+        "src": "https://cdn.jsdelivr.net/npm/v86@latest/build/libv86.js",
+        "inlineBytes": 0,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "hcf_workstation.html-7e62ae15.png",
+  "elapsedMs": 1678,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:52.470Z",
+  "sha256After": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec",
+  "originalUnchanged": true
+}

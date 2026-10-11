@@ -1,0 +1,129 @@
+{
+  "at": "2026-10-11T16:37:16.337Z",
+  "checks": [
+    {
+      "name": "R14 actual IndexedDB write, independent read and reload",
+      "status": "failed",
+      "error": "page.reload: Timeout 4500ms exceeded.\nCall log:\n\u001b[2m  - waiting for navigation until \"load\"\u001b[22m\n\u001b[2m    - navigated to \"http://127.0.0.1:41605/working/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html\"\u001b[22m\n\n    at /workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:26:11\n    at async check (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:8:48)\n    at async main (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:22:2)"
+    },
+    {
+      "name": "R14 actual Worker results, repeated boot and interruption recovery",
+      "status": "failed",
+      "error": "page.evaluate: TypeError: h.boot is not a function\n    at eval (eval at evaluate (:311:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:29:19\n    at check (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:8:54)\n    at main (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:28:8)"
+    },
+    {
+      "name": "R14 checkpoint actual persisted VFS snapshot and restore",
+      "status": "failed",
+      "error": "page.evaluate: TypeError: h.checkpoint is not a function\n    at eval (eval at evaluate (:311:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:33:19\n    at check (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:8:54)\n    at main (/workspace/keddeh-html-browser-r2/software-estate/tests/r2-browser.cjs:32:8)"
+    },
+    {
+      "name": "R14 storage and Worker denial contained",
+      "status": "passed",
+      "detail": {
+        "backend": "LOCALSTORAGE",
+        "value": {
+          "fallback": 1
+        }
+      }
+    },
+    {
+      "name": "AetherOS terminal create, editor save and reload persistence",
+      "status": "passed",
+      "detail": {
+        "reload": true
+      }
+    },
+    {
+      "name": "AetherOS repeated open and close retains saved content",
+      "status": "passed",
+      "detail": {
+        "cycles": 3
+      }
+    },
+    {
+      "name": "KEX Terminal real input creates file, nano save and reload",
+      "status": "passed",
+      "detail": {
+        "localStorageKey": "kex_linux_vfs_proc",
+        "host": "absent; host-bound syscalls not qualified"
+      }
+    },
+    {
+      "name": "KEX invalid command then valid command recovers",
+      "status": "passed"
+    },
+    {
+      "name": "Markdown input renders headings code and escaped markup",
+      "status": "passed"
+    },
+    {
+      "name": "Markdown download exact bytes and repeated template changes",
+      "status": "passed",
+      "detail": {
+        "bytesVerified": true,
+        "hostPersistence": "not qualified: no host adapter; app has no standalone localStorage saving"
+      }
+    },
+    {
+      "name": "SQL real query UI and CSV download zero false quoting",
+      "status": "passed",
+      "detail": {
+        "csv": "number,flag,\"head,quote\"\r\n0,false,\"line\n\"\"quoted\"\", value\"\r\n"
+      }
+    },
+    {
+      "name": "SQL invalid query visible error then valid query recovers",
+      "status": "passed"
+    }
+  ],
+  "apps": [
+    {
+      "file": "working/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "sha256": "c41f36a379e2c867ef8f6809e47f129108d4830d07ee0614b5eb2c800d44db1e",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    },
+    {
+      "file": "working/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "sha256": "c41f36a379e2c867ef8f6809e47f129108d4830d07ee0614b5eb2c800d44db1e",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    },
+    {
+      "file": "working/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "sha256": "ebc78e313e93b0ca6b3f1ac4e0752281e1e053b1b6f4cd0d5fb617d18c7a698a",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    },
+    {
+      "file": "working/html5/KEX_Linux_Terminal.html",
+      "sha256": "2d44e0edb96fc4c93918344958b379cd79913b2ba245213dd61ebeee0dcfb3ab",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    },
+    {
+      "file": "working/html5/HTML5_Markdown_Notebook_Studio.html",
+      "sha256": "7ccfac527bb876941aeeada548086b390e2318b17d89c0b6c1749ee5cf5935c3",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    },
+    {
+      "file": "working/html5/HTML5_Relational_SQL_Studio.html",
+      "sha256": "cfb261af4a48c2f7a1cd32598837380d27a000f49345c46a68c245607f7b6e92",
+      "errors": [],
+      "blocked": [],
+      "dialogs": []
+    }
+  ],
+  "isolation": "Ephemeral contexts; exact loopback GET/HEAD only; CSP connect none; service workers blocked; sockets intercepted; only reviewed blob worker code allowed for R14.",
+  "browserVersion": "151.0.7922.173",
+  "summary": {
+    "passed": 9,
+    "failed": 3
+  }
+}

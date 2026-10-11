@@ -1,0 +1,6 @@
+{
+  "checks": 19,
+  "passed": true,
+  "source": "working/html5/HTML5_Relational_SQL_Studio.html",
+  "scope": "Actual extracted app helper functions, deterministic serialization only; no host or network execution."
+}

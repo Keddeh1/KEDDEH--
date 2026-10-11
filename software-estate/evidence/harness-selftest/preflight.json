@@ -1,0 +1,62 @@
+{
+  "root": "/workspace/scratch/2062dba7f8f6/software-estate/tests/fixtures",
+  "generatedAt": "2026-10-10T23:48:01.417Z",
+  "apps": [
+    {
+      "file": "isolation-smoke.html",
+      "bytes": 609,
+      "sha256": "b6b4c9387e382a72210ad618773211ed3f8e4781209f08fadcbb8d440c8458db",
+      "lineCount": 9,
+      "externalUrls": [
+        "https://example.com/should-never-run",
+        "https://example.com/should-never-load.png"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 4,
+            "token": "fetch(",
+            "context": "rage.setItem('fixture','saved'); console.log('fixture-started'); fetch('https://example.com/should-never-run',{method:'POST',body:'fixture'}).catch(()=>{}); new WebSocket('wss://example.com/should-never-run'); const"
+          },
+          {
+            "line": 4,
+            "token": "https://",
+            "context": "tItem('fixture','saved'); console.log('fixture-started'); fetch('https://example.com/should-never-run',{method:'POST',body:'fixture'}).catch(()=>{}); new WebSocket('wss://example.com/should-never-run'); const db=ind"
+          },
+          {
+            "line": 5,
+            "token": "WebSocket",
+            "context": "ld-never-run',{method:'POST',body:'fixture'}).catch(()=>{}); new WebSocket('wss://example.com/should-never-run'); const db=indexedDB.open('fixture',1);db.onupgradeneeded=()=>db.result.createObjectStore('items');db.o"
+          },
+          {
+            "line": 8,
+            "token": "https://",
+            "context": "new Error('EXPECTED_FIXTURE_EXCEPTION')},50); </script><img src=\"https://example.com/should-never-load.png\"> "
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [
+          {
+            "line": 2,
+            "token": "localStorage",
+            "context": "ss fixture</h1><button disabled>Do not activate</button><script> localStorage.setItem('fixture','saved'); console.log('fixture-started'); fetch('https://example.com/should-never-run',{method:'POST',body:'fixture'})."
+          },
+          {
+            "line": 6,
+            "token": "indexedDB",
+            "context": "); new WebSocket('wss://example.com/should-never-run'); const db=indexedDB.open('fixture',1);db.onupgradeneeded=()=>db.result.createObjectStore('items');db.onsuccess=()=>db.result.close(); setTimeout(()=>{throw new "
+          }
+        ],
+        "automatic_execution": [
+          {
+            "line": 7,
+            "token": "setTimeout",
+            "context": "t.createObjectStore('items');db.onsuccess=()=>db.result.close(); setTimeout(()=>{throw new Error('EXPECTED_FIXTURE_EXCEPTION')},50); </script><img src=\"https://example.com/should-never-load.png\"> "
+          }
+        ]
+      }
+    }
+  ]
+}

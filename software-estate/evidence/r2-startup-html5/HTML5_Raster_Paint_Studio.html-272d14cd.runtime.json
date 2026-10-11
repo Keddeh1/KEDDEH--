@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "file": "HTML5_Raster_Paint_Studio.html",
+  "sha256": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688",
+  "startedAt": "2026-10-11T16:34:22.210Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "log",
+      "text": "[Paint Studio] Verifying application provenance..."
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:40625/HTML5_Raster_Paint_Studio.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "AetherPaint Graphics Studio",
+    "readyState": "complete",
+    "bodyText": "🎨\nAetherPaint\n✏️ Brush\n📏 Line\n⬜ Rect\n⭕ Circle\n🧹 Eraser\nSize:\n4px\n↩️ Undo\n🗑️ Clear\n💾 Export PNG\nX: 0, Y: 0\n800 × 520px · 24-bit RGB Canvas Engine",
+    "elementCount": 44,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-brush",
+        "name": null,
+        "text": "✏️ Brush",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-line",
+        "name": null,
+        "text": "📏 Line",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-rect",
+        "name": null,
+        "text": "⬜ Rect",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-circle",
+        "name": null,
+        "text": "⭕ Circle",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-eraser",
+        "name": null,
+        "text": "🧹 Eraser",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "brushSize",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "color",
+        "id": "customColor",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "↩️ Undo",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "🗑️ Clear",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "💾 Export PNG",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 5990,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "HTML5_Raster_Paint_Studio.html-272d14cd.png",
+  "elapsedMs": 1672,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:25.433Z",
+  "sha256After": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688",
+  "originalUnchanged": true
+}

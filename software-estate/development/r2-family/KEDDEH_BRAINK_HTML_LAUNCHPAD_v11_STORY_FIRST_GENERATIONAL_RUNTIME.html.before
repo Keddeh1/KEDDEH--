@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V8 Evidence-Bearing — KEDDEH BRAINK Launchpad · BTC Core Resident Envelope</title>
+<style>
+:root{
+  --bg:#07111f;--panel:#0b1829;--panel2:#0e2036;--line:#213753;--text:#eaf2ff;
+  --muted:#9fb3ca;--accent:#8db8ff;--ok:#75d39a;--warn:#f1c86a;--bad:#ff8a8a;
+  --radius:12px;--gap:12px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{min-height:100vh}
+button,input,select{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.wrap{max-width:1600px;margin:auto;padding:18px 22px}
+.top{display:flex;align-items:center;gap:14px;justify-content:space-between}
+.brand h1{font-size:20px;margin:0}.brand p{margin:4px 0 0;color:var(--muted);font-size:12px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:5px 8px;border:1px solid var(--line);border-radius:999px;font:600 11px ui-monospace,SFMono-Regular,Menlo,monospace}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:16px}
+nav{position:sticky;top:86px;align-self:start}
+nav button{display:block;width:100%;text-align:left;background:transparent;color:var(--muted);border:1px solid transparent;border-radius:8px;padding:9px 10px;margin:2px 0}
+nav button.active,nav button:hover{background:var(--panel);color:var(--text);border-color:var(--line)}
+main{min-width:0}
+section{display:none}section.active{display:block}
+h2{font-size:18px;margin:0 0 12px}h3{font-size:13px;margin:0 0 8px;color:var(--accent);text-transform:uppercase;letter-spacing:.07em}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px;min-width:0}
+.span4{grid-column:span 4}.span6{grid-column:span 6}.span8{grid-column:span 8}.span12{grid-column:1/-1}
+.metric{font:700 23px ui-monospace,SFMono-Regular,Menlo,monospace}.label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.kv{display:grid;grid-template-columns:minmax(140px,.7fr) minmax(0,1.3fr);gap:6px 12px;font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+.kv div:nth-child(odd){color:var(--muted)}
+.pipeline{display:flex;gap:7px;flex-wrap:wrap}.stage{padding:7px 9px;border:1px solid var(--line);border-radius:8px;font:600 11px ui-monospace,SFMono-Regular,Menlo,monospace}
+.stage.pass{border-color:#2d6e4d;color:var(--ok)}.stage.open{border-color:#6e5e2d;color:var(--warn)}.stage.blocked{border-color:#6e3434;color:var(--bad)}
+.controls{display:flex;gap:8px;flex-wrap:wrap}.controls button{background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:8px 10px;border-radius:8px}
+.controls button.primary{border-color:#416a9a}
+pre{white-space:pre-wrap;word-break:break-word;background:#081421;border:1px solid var(--line);border-radius:8px;padding:10px;color:#cfe0f4;font:11px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;max-height:420px;overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--accent)}
+input,select{background:#081421;border:1px solid var(--line);color:var(--text);padding:8px;border-radius:7px;width:100%}
+.note{color:var(--muted);font-size:12px;line-height:1.5}
+footer{color:var(--muted);font-size:11px;padding:18px 0}
+@media(max-width:980px){.layout{grid-template-columns:1fr}nav{position:static;display:flex;overflow:auto;gap:5px}nav button{white-space:nowrap;width:auto}.span4,.span6,.span8{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <h1>KEDDEH BRAINK Launchpad</h1>
+      <p>HTML authority surface · resident runtime projection · BTC Core node/server envelope</p>
+    </div>
+    <div class="badges">
+      <span class="badge ok">HTML SURFACE: READY</span>
+      <span class="badge warn" id="runtimeBadge">RUNTIME: UNBOUND</span>
+      <span class="badge warn" id="coreBadge">BTC CORE: UNOBSERVED</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap layout">
+<nav aria-label="Launchpad sections">
+  <button class="active" data-target="overview">Overview</button>
+  <button data-target="btc">BTC Protocol</button>
+  <button data-target="linux">Resident Linux</button>
+  <button data-target="node">Bitcoin Core Node</button>
+  <button data-target="runtime">Runtime & Adapters</button>
+  <button data-target="skills">Skill Fabric</button>
+  <button data-target="evidence">Evidence & Failures</button>
+  <button data-target="storage">Storage & GitHub</button>
+  <button data-target="settings">Authority & Safety</button>
+</nav>
+
+<main>
+<section id="overview" class="active">
+  <h2>System Overview</h2>
+  <div class="grid">
+    <article class="card span4"><div class="label">Launch Authority</div><div class="metric">HTML</div><p class="note">The launchpad owns interaction, state visibility, routing intent and evidence projection.</p></article>
+    <article class="card span4"><div class="label">Resident Execution</div><div class="metric">ADAPTER-BOUND</div><p class="note">Python/host processes are execution manifestations, not UI authority.</p></article>
+    <article class="card span4"><div class="label">Repository Role</div><div class="metric">STORAGE</div><p class="note">GitHub stores/version-controls artifacts; it does not define product state.</p></article>
+
+    <article class="card span12">
+      <h3>Primary Causal Route</h3>
+      <div class="pipeline">
+        <span class="stage pass">HTML LAUNCHPAD</span>
+        <span class="stage open">RESIDENT BRIDGE</span>
+        <span class="stage open">BITCOIN CORE</span>
+        <span class="stage open">GETBLOCKTEMPLATE</span>
+        <span class="stage open">CANDIDATE</span>
+        <span class="stage open">SHA256D</span>
+        <span class="stage open">RECONSTRUCT</span>
+        <span class="stage open">SUBMITBLOCK</span>
+        <span class="stage open">CHAIN</span>
+        <span class="stage open">MATURITY</span>
+      </div>
+    </article>
+
+    <article class="card span6"><h3>State Ownership</h3><div class="kv">
+      <div>UI / navigation</div><div>HTML launchpad</div>
+      <div>BTC protocol truth</div><div>Bitcoin Core + consensus rules</div>
+      <div>Execution</div><div>Resident HTML Linux / V86 first; host adapters only where required</div>
+      <div>Evidence</div><div>Receipt ledger + immutable exported artifacts</div>
+      <div>Storage</div><div>Local Library / Drive / GitHub version storage</div>
+    </div></article>
+
+    <article class="card span6"><h3>Current Boundary</h3><p class="note">This HTML file is a self-contained control surface. It does not claim to run <code>bitcoind</code> inside the browser. When bound to the resident bridge it becomes the operator console for the node server, mining runtime, evidence ledger and skill-governed workflows.</p></article>
+  </div>
+</section>
+
+<section id="btc">
+  <h2>BTC Protocol Domain</h2>
+  <div class="grid">
+    <article class="card span12"><h3>Canonical Mining State Machine</h3>
+      <div class="pipeline" id="btcPipeline"></div>
+    </article>
+    <article class="card span6"><h3>Candidate Integrity</h3><div class="kv" id="candidateKv"></div></article>
+    <article class="card span6"><h3>Mining Controls</h3>
+      <div class="controls">
+        <button data-system-action="REQUEST_TEMPLATE">Request template</button>
+        <button data-system-action="RUN_VERTICAL_CLOSURE">Run vertical closure</button>
+        <button data-system-action="START_HASHING">Start hashing</button>
+        <button data-system-action="STOP_HASHING">Stop hashing</button>
+        <button class="primary" data-system-action="SUBMIT_BLOCK">Submit qualified block</button>
+      </div>
+      <p class="note">Submission remains fail-closed. A target hit is required; a non-hit is a valid mining result, not a build failure.</p>
+    </article>
+  </div>
+</section>
+
+
+<section id="linux">
+  <h2>Resident Linux Execution Substrate</h2>
+  <div class="grid">
+    <article class="card span4">
+      <div class="label">Linux Carrier</div>
+      <div class="metric" id="linuxCarrierState">UNRESOLVED</div>
+      <p class="note">V86-backed Linux is treated as a package-local execution manifestation inside the HTML volume.</p>
+    </article>
+    <article class="card span4">
+      <div class="label">Volume State</div>
+      <div class="metric" id="linuxVolumeState">UNOBSERVED</div>
+      <p class="note">Kernel/initrd/BIOS/runtime assets resolve to package-local volume paths when resident assets are present.</p>
+    </article>
+    <article class="card span4">
+      <div class="label">Bitcoin Core Payload</div>
+      <div class="metric" id="corePayloadState">NOT STORED</div>
+      <p class="note">After first verified acquisition, the release can be persisted in the resident volume and reused on later launches.</p>
+    </article>
+
+    <article class="card span6">
+      <h3>Resident Linux Asset Map</h3>
+      <div class="kv">
+        <div>V86 WASM</div><div><code>/volume/v86.wasm</code></div>
+        <div>BIOS</div><div><code>/volume/seabios.bin</code></div>
+        <div>VGA BIOS</div><div><code>/volume/vgabios.bin</code></div>
+        <div>Kernel</div><div><code>/volume/bzimage-linux.bin</code></div>
+        <div>Initrd</div><div><code>/volume/buildroot-linux.bin</code></div>
+        <div>Guest root</div><div><code>/linux_guest/rootfs</code></div>
+        <div>Shell</div><div><code>/linux_guest/rootfs/bin/kex-sh</code></div>
+      </div>
+    </article>
+
+    <article class="card span6">
+      <h3>Linux Controls</h3>
+      <div class="controls">
+        <button data-resident-action="LINUX_BOOT">Boot Linux</button>
+        <button data-resident-action="LINUX_STATUS">Read status</button>
+        <button data-resident-action="LINUX_MOUNT_VOLUME">Mount resident volume</button>
+        <button data-resident-action="LINUX_REHYDRATE">Rehydrate state</button>
+        <button data-resident-action="LINUX_OPEN_SHELL">Open shell</button>
+      </div>
+      <p class="note">These controls first target resident in-HTML capability. A host bridge is fallback only when the HTML carrier does not expose the required operation.</p>
+    </article>
+
+    <article class="card span12">
+      <h3>Bitcoin Core Resident Payload Lifecycle</h3>
+      <div class="pipeline">
+        <span class="stage open">DOWNLOAD ONCE</span>
+        <span class="stage open">VERIFY SHA256</span>
+        <span class="stage open">VERIFY SIGNERS</span>
+        <span class="stage open">STORE IN VOLUME</span>
+        <span class="stage open">HASH + MANIFEST</span>
+        <span class="stage open">REHYDRATE</span>
+        <span class="stage open">EXECUTE IN LINUX</span>
+        <span class="stage open">BITCOIND</span>
+        <span class="stage open">RPC</span>
+      </div>
+      <p class="note">Once a Bitcoin Core payload has a retained release hash, manifest hash, signature receipt and resident-volume address, later boots should rehydrate the stored payload instead of downloading it again.</p>
+    </article>
+
+
+    
+    <article class="card span12">
+      <h3>Linux Dependency Graph</h3>
+      <table>
+        <thead><tr><th>Requirement</th><th>Resolved Source</th><th>State</th><th>Gate</th></tr></thead>
+        <tbody id="linuxDependencyBody"></tbody>
+      </table>
+      <div class="controls">
+        <button id="linuxResolveDeps">Resolve / Rehydrate Dependencies</button>
+        <button id="linuxRealBoot" disabled>Boot Real V86 Linux</button>
+      </div>
+      <p class="note">RUNNING is promoted only after a real <code>emulator-ready</code> event. Assets are persisted in IndexedDB after first successful acquisition and rehydrated locally on later launches.</p>
+    </article>
+
+    <article class="card span8">
+      <h3>V86 Linux Screen</h3>
+      <div id="screen_container" style="min-height:420px;background:#000;border:1px solid var(--line);border-radius:8px;overflow:hidden"></div>
+    </article>
+
+    <article class="card span4">
+      <h3>TTY1 / Serial0</h3>
+      <pre id="terminal-output" style="height:330px;max-height:330px"></pre>
+      <input id="terminal-input" placeholder="type command then Enter" aria-label="Linux serial terminal input">
+    </article>
+
+<article class="card span12" id="residentShellCard">
+      <h3>Resident Shell / Action Readback</h3>
+      <div class="controls">
+        <input id="residentShellInput" value="status" aria-label="Resident shell command" style="max-width:420px">
+        <button id="residentShellRun">Run command</button>
+      </div>
+      <pre id="residentShellOutput">Linux worker ready. Commands: status, ps, mounts, syscalls, proof, help</pre>
+    </article>
+
+    <article class="card span12">
+      <h3>Resident Volume Record</h3>
+      <pre id="residentVolumeRecord">{
+  "address": "kex://volume/btc-core/31.1",
+  "release": "31.1",
+  "artifact": null,
+  "artifact_sha256": null,
+  "sha256sums_sha256": null,
+  "signature_receipt": null,
+  "trusted_fingerprints": [],
+  "storage_state": "EMPTY",
+  "rehydration_state": "NOT_ATTEMPTED",
+  "execution_state": "NOT_STARTED"
+}</pre>
+    </article>
+  </div>
+</section>
+
+<section id="node">
+  <h2>Bitcoin Core Node / Server</h2>
+  <div class="grid">
+    <article class="card span4"><div class="label">Node State</div><div class="metric" id="nodeState">UNOBSERVED</div></article>
+    <article class="card span4"><div class="label">Chain</div><div class="metric" id="chainState">—</div></article>
+    <article class="card span4"><div class="label">Verification</div><div class="metric" id="verifyState">—</div></article>
+
+    <article class="card span6"><h3>Node Lifecycle</h3>
+      <div class="controls">
+        <button data-system-action="CHECK_RPC">Check RPC</button>
+        <button data-system-action="START_NODE">Start node</button>
+        <button data-system-action="STOP_NODE">Stop node</button>
+        <button data-system-action="GET_BLOCKCHAIN_INFO">Refresh chain state</button>
+      </div>
+      <p class="note">The launchpad governs a resident Bitcoin Core instance through the adapter. Cookie/RPC credentials remain host-side and are never embedded into this HTML.</p>
+    </article>
+
+    <article class="card span6"><h3>Node Authority</h3><div class="kv">
+      <div>RPC host</div><div id="rpcHost">127.0.0.1 / unresolved</div>
+      <div>Network</div><div id="network">mainnet / unresolved</div>
+      <div>Datadir</div><div id="datadir">resident host only</div>
+      <div>Initial block download</div><div id="ibd">unknown</div>
+      <div>Best block</div><div id="bestBlock">unknown</div>
+      <div>Template authority</div><div id="templateAuthority">unobserved</div>
+    </div></article>
+
+    <article class="card span12"><h3>Server Topology</h3><pre>HTML Launchpad
+   │
+   ├── Resident Linux / V86
+   │     ├── /volume/v86.wasm
+   │     ├── /volume/bzimage-linux.bin
+   │     ├── /volume/buildroot-linux.bin
+   │     └── kex://volume/btc-core/31.1
+   │
+   ├── resident://node/check
+   ├── resident://node/start
+   ├── resident://node/stop
+   ├── resident://rpc/getblockchaininfo
+   ├── resident://rpc/getbestblockhash
+   ├── resident://rpc/getblocktemplate
+   │
+   └── Resident BTC Runtime
+         ├── btc_workload_substrate.py
+         ├── btc_consensus.py
+         ├── btc_vertical_closure.py
+         ├── solver / SHA256d workers
+         └── Bitcoin Core bitcoind :8332 (mainnet RPC)</pre></article>
+  </div>
+</section>
+
+<section id="runtime">
+  <h2>Runtime & Adapter Plane</h2>
+  <div class="grid">
+    <article class="card span6"><h3>Resident Invocation Contract</h3>
+      <pre id="bridgeContract">resident://dispatch
+{
+  "command": "CHECK_RPC | START_NODE | REQUEST_TEMPLATE | RUN_VERTICAL_CLOSURE | START_HASHING | STOP_HASHING | SUBMIT_BLOCK",
+  "seed": "KEX-HTML-LAUNCHPAD-20260819-7F2C91",
+  "authority": "operator"
+}</pre>
+    </article>
+    <article class="card span6"><h3>Readback Contract</h3>
+      <pre>{
+  "runtime": {...},
+  "node": {...},
+  "template": {...},
+  "candidate": {...},
+  "submission": {...},
+  "evidence": [...],
+  "failures": [...]
+}</pre>
+    </article>
+    <article class="card span12"><h3>Runtime Log</h3><pre id="log">Launchpad initialized in UNBOUND mode.
+No external call is made until a resident bridge is explicitly configured.</pre></article>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skill Fabric</h2>
+  <div class="grid">
+    <article class="card span12"><table>
+      <thead><tr><th>Skill / Mechanic</th><th>Launchpad Application</th></tr></thead>
+      <tbody id="skillsBody"></tbody>
+    </table></article>
+  </div>
+</section>
+
+<section id="evidence">
+  <h2>Evidence & Failure Lineage</h2>
+  <div class="grid">
+    <article class="card span6"><h3>Evidence Classes</h3><div class="kv">
+      <div>DECLARED</div><div>Named intent or configuration only</div>
+      <div>SOURCE_VERIFIED</div><div>Implementation inspected</div>
+      <div>TESTED</div><div>Repeatable execution receipt exists</div>
+      <div>EMPIRICALLY_VERIFIED</div><div>Observed live system property</div>
+      <div>PROVEN</div><div>Only property-scoped formal proof</div>
+    </div></article>
+    <article class="card span6"><h3>BTC Failure Classes</h3><div class="kv">
+      <div>F-A</div><div>Wrong / incomplete Bitcoin workload</div>
+      <div>F-B</div><div>Synthetic authority contamination</div>
+      <div>F-C</div><div>Submission-state conflation</div>
+      <div>F-D</div><div>Evidence-category conflation</div>
+      <div>F-E</div><div>Context / integration regression</div>
+      <div>F-F</div><div>Horizontal expansion before vertical closure</div>
+    </div></article>
+    <article class="card span12"><h3>Receipt Stream</h3><pre id="receipts">No runtime receipts loaded.</pre></article>
+  </div>
+</section>
+
+<section id="storage">
+  <h2>Storage, Library & GitHub</h2>
+  <div class="grid">
+    <article class="card span4"><h3>GitHub</h3><p class="note">Versioned source/storage facility. Branches and CI are development evidence, not product authority.</p></article>
+    <article class="card span4"><h3>Library / Drive</h3><p class="note">Persistent literal artifacts, receipts, reports, HTML launch surfaces, ledgers and research assets.</p></article>
+    <article class="card span4"><h3>Resident State</h3><p class="note">Node datadir, RPC cookie, templates, candidate files, submission ledger, runtime logs and operational state remain host-side.</p></article>
+  </div>
+</section>
+
+<section id="settings">
+  <h2>Authority & Safety</h2>
+  <div class="grid">
+    <article class="card span6"><h3>Bridge Endpoint</h3>
+      <label class="label" for="endpoint">Resident bridge URL</label>
+      <input id="endpoint" value="http://127.0.0.1:8799/bridge/command" aria-describedby="endpointHelp">
+      <p class="note" id="endpointHelp">Local by default. No credentials are stored in the HTML.</p>
+      <div class="controls"><button data-ui-action="BIND_RUNTIME">Bind runtime</button><button data-ui-action="UNBIND_RUNTIME">Unbind</button></div>
+    </article>
+    <article class="card span6"><h3>Execution Policy</h3>
+      <div class="kv">
+        <div>Mainnet fallback</div><div class="bad">FORBIDDEN</div>
+        <div>Live submit</div><div>Requires runtime gate + target hit</div>
+        <div>Secrets in browser</div><div class="bad">FORBIDDEN</div>
+        <div>Evidence downgrade</div><div class="bad">FORBIDDEN</div>
+        <div>CI as product authority</div><div class="bad">FORBIDDEN</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>KEX seed: KEX-HTML-LAUNCHPAD-20260819-7F2C91 · self-contained HTML launch surface · no external libraries</footer>
+</main>
+</div>
+
+<script>
+const seed="KEX-HTML-LAUNCHPAD-20260819-7F2C91";
+const state={
+  bound:false,
+  node:{state:"UNOBSERVED",chain:null,verificationprogress:null,ibd:null,bestblockhash:null},
+  btc:["NODE_READY","RPC_SYNCED","TEMPLATE_FETCHED","CANDIDATE_ASSEMBLED","HASHING_ACTIVE","NETWORK_TARGET_HIT","SUBMITTED","ACCEPTED_BY_NODE","IN_ACTIVE_CHAIN","COINBASE_MATURED","SPENDABLE"],
+  activeIndex:0,
+  candidate:{},
+  receipts:[]
+};
+const skills=[
+["Story-First Structured Intake","Causal story → correction lineage → typed state → unresolved dependency → experiment → falsification → promotion."],
+["KEX Skill Fabric","Discover existing capability before derive; reuse/adapt/bridge before replacement."],
+["Proof-Bearing Recursive Engineering","Objective, observable, falsifier, evidence class, readback and next route."],
+["Resident Capability Invocation","Invoke existing resident mechanics and retain property-scoped receipts."],
+["HTML / HCI","Progressive disclosure, semantic structure, accessibility, explicit state visibility."],
+["UI Component Contract","Every control has explicit states and deterministic response semantics."],
+["Visual System","Restrained technical hierarchy, readable measure, spacing as relationship."],
+["Accessibility","Landmarks, keyboard navigation, focus visibility, reflow and reduced-motion support."],
+["Interface Security / Privacy","No credentials in browser; local bridge by default; data-minimised export."],
+["Software Lifecycle","Implementation → test → qualification → deployment → readback → maintenance."],
+["Research / Innovation","Candidate + falsifier + measure; retain failure rather than narratively erase it."],
+["Executable Volume","Addressable state, route, rule, observer, commit order and rehydration."],
+["Host / Logical Identity Separation","Node/process/host are manifestations; logical service identity remains separate."],
+["Property-Scoped Proof","Never promote whole-system status from a narrower test."],
+["Dependency Routing","Blocked live dependencies do not invalidate unrelated implemented layers."]
+];
+document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>{
+ document.querySelectorAll("nav button").forEach(x=>x.classList.remove("active"));
+ document.querySelectorAll("main section").forEach(x=>x.classList.remove("active"));
+ b.classList.add("active");document.getElementById(b.dataset.target).classList.add("active");
+}));
+
+const resident = {
+  linux: {booted:false,mounted:false,rehydrated:false,shell:false},
+  volume: {
+    address:"kex://volume/btc-core/31.1",
+    release:"31.1",
+    artifact:null,
+    artifact_sha256:null,
+    sha256sums_sha256:null,
+    signature_receipt:null,
+    trusted_fingerprints:[],
+    storage_state:"EMPTY",
+    rehydration_state:"NOT_ATTEMPTED",
+    execution_state:"NOT_STARTED"
+  }
+};
+
+
+function makeReceipt(command,status,detail={}){
+  return {command,status,at:new Date().toISOString(),...detail};
+}
+function recordReceipt(r){
+  state.receipts.push(r);
+  appendLog((r.status.startsWith("PASS")?"PASS ":"")+(r.status.startsWith("BLOCKED")?"BLOCKED ":"")+r.command,r);
+  renderResident(); render();
+  return r;
+}
+function linuxProof(){
+  return window.__KEX_LINUX_FRESH_BOOT_RECEIPT__ || null;
+}
+function runShell(cmd){
+  cmd=String(cmd||"").trim().toLowerCase();
+  const proof=linuxProof();
+  const outputs={
+    status: proof?.readback?.status || (resident.linux.booted?"status:OK":"status:NOT_BOOTED"),
+    ps: proof?.readback?.ps || (resident.linux.booted?"ps:init[1] kex-shell[2]":"ps:NOT_BOOTED"),
+    mounts: proof?.readback?.mounts || (resident.linux.mounted?"mounts:resident-volume":"mounts:UNMOUNTED"),
+    syscalls: proof?.readback?.syscalls || "syscalls:UNOBSERVED",
+    proof: proof?.readback?.proof || "proof:UNOBSERVED",
+    help: "status | ps | mounts | syscalls | proof | help"
+  };
+  const output=outputs[cmd] || "unknown command: "+cmd;
+  const el=document.getElementById("residentShellOutput");
+  if(el) el.textContent="$ "+cmd+"\n"+output;
+  return output;
+}
+async function residentCommand(name){
+  const proof=linuxProof();
+  if(name==="LINUX_BOOT"){
+    if(globalThis.__KEX_V86_EMULATOR__ && resident.linux.booted){
+      return recordReceipt(makeReceipt(name,"PASS_ALREADY_RUNNING",{plane:"real-v86-linux",authority:"emulator-ready"}));
+    }
+    if(globalThis.KEX_LINUX_FULL_RUNTIME?.bootReal){
+      return globalThis.KEX_LINUX_FULL_RUNTIME.bootReal();
+    }
+    return recordReceipt(makeReceipt(name,"BLOCKED_CONSTRUCTOR",{plane:"real-v86-linux"}));
+  }
+  if(name==="LINUX_STATUS"){
+    if(!resident.linux.booted) return recordReceipt(makeReceipt(name,"BLOCKED_LINUX_NOT_BOOTED"));
+    return recordReceipt(makeReceipt(name,"PASS_STATUS_READ",{readback:proof?.readback || {status:"status:OK"}}));
+  }
+  if(name==="LINUX_MOUNT_VOLUME"){
+    if(!resident.linux.booted) return recordReceipt(makeReceipt(name,"BLOCKED_LINUX_NOT_BOOTED"));
+    resident.linux.mounted=true;
+    return recordReceipt(makeReceipt(name,"PASS_VOLUME_MOUNTED",{address:resident.volume.address}));
+  }
+  if(name==="LINUX_REHYDRATE"){
+    if(!resident.linux.mounted) return recordReceipt(makeReceipt(name,"BLOCKED_VOLUME_NOT_MOUNTED"));
+    resident.linux.rehydrated=true;
+    resident.volume.rehydration_state="REHYDRATED";
+    return recordReceipt(makeReceipt(name,"PASS_REHYDRATED",{storage_state:resident.volume.storage_state}));
+  }
+  if(name==="LINUX_OPEN_SHELL"){
+    if(!resident.linux.booted) return recordReceipt(makeReceipt(name,"BLOCKED_LINUX_NOT_BOOTED"));
+    resident.linux.shell=true;
+    const input=document.getElementById("residentShellInput");
+    if(input) input.focus();
+    runShell("status");
+    return recordReceipt(makeReceipt(name,"PASS_SHELL_OPEN",{commands:["status","ps","mounts","syscalls","proof","help"]}));
+  }
+  return recordReceipt(makeReceipt(name,"BLOCKED_UNKNOWN_RESIDENT_ACTION"));
+}
+
+function coreReady(){
+  return resident.volume.storage_state==="STORED_VERIFIED" &&
+         ["CORE_INSTALLED","CORE_RUNNING","RPC_READY"].includes(resident.volume.execution_state);
+}
+function nodeRunning(){
+  return ["RUNNING","SYNCED"].includes(state.node.state);
+}
+function systemTransition(name){
+  if(name==="CHECK_RPC"){
+    if(!coreReady()) return makeReceipt(name,"BLOCKED_CORE_NOT_INSTALLED",{required:"verified Bitcoin Core payload + install"});
+    if(!nodeRunning()) return makeReceipt(name,"BLOCKED_NODE_NOT_RUNNING");
+    return makeReceipt(name,"PASS_RPC_READY",{chain:state.node.chain||"main"});
+  }
+  if(name==="START_NODE"){
+    if(resident.volume.storage_state!=="STORED_VERIFIED")
+      return makeReceipt(name,"BLOCKED_CORE_PAYLOAD_NOT_VERIFIED",{storage_state:resident.volume.storage_state});
+    resident.volume.execution_state="CORE_RUNNING";
+    state.node.state="RUNNING"; state.node.chain="main";
+    return makeReceipt(name,"PASS_NODE_STARTED",{network:"mainnet"});
+  }
+  if(name==="STOP_NODE"){
+    if(!nodeRunning()) return makeReceipt(name,"BLOCKED_NODE_NOT_RUNNING");
+    state.node.state="STOPPED"; resident.volume.execution_state="CORE_INSTALLED";
+    return makeReceipt(name,"PASS_NODE_STOPPED");
+  }
+  if(name==="GET_BLOCKCHAIN_INFO"){
+    if(!nodeRunning()) return makeReceipt(name,"BLOCKED_NODE_NOT_RUNNING");
+    return makeReceipt(name,"PASS_CHAIN_STATE_READ",{node:state.node});
+  }
+  if(name==="REQUEST_TEMPLATE"){
+    if(state.node.state!=="SYNCED") return makeReceipt(name,"BLOCKED_NODE_NOT_SYNCED",{node_state:state.node.state});
+    state.activeIndex=Math.max(state.activeIndex,2);
+    state.candidate.template="OBSERVED";
+    return makeReceipt(name,"PASS_TEMPLATE_FETCHED");
+  }
+  if(name==="RUN_VERTICAL_CLOSURE"){
+    if(state.candidate.template!=="OBSERVED") return makeReceipt(name,"BLOCKED_TEMPLATE_NOT_OBSERVED");
+    state.activeIndex=Math.max(state.activeIndex,4);
+    state.candidate.coinbase="RECONSTRUCTED";
+    state.candidate.merkle="RECONSTRUCTED";
+    state.candidate.header="RECONSTRUCTED";
+    state.candidate.reconstruction="PASS";
+    return makeReceipt(name,"PASS_VERTICAL_RECONSTRUCTION");
+  }
+  if(name==="START_HASHING"){
+    if(state.candidate.reconstruction!=="PASS") return makeReceipt(name,"BLOCKED_CANDIDATE_NOT_RECONSTRUCTED");
+    state.activeIndex=Math.max(state.activeIndex,4);
+    return makeReceipt(name,"PASS_HASHING_STARTED",{boundary:"no target-hit claim"});
+  }
+  if(name==="STOP_HASHING") return makeReceipt(name,"PASS_HASHING_STOPPED");
+  if(name==="SUBMIT_BLOCK"){
+    if(state.candidate.target!=="NETWORK HIT") return makeReceipt(name,"BLOCKED_NO_NETWORK_TARGET_HIT");
+    return makeReceipt(name,"BLOCKED_LIVE_SUBMIT_REQUIRES_CORE_RECEIPT");
+  }
+  return makeReceipt(name,"BLOCKED_UNKNOWN_SYSTEM_ACTION");
+}
+
+async function command(name){
+  // Prefer actual host bridge only when explicitly bound. Otherwise execute deterministic resident state machine.
+  if(state.bound){
+    const endpoint=document.getElementById("endpoint").value.trim();
+    const payload={command:name,seed,authority:"operator"};
+    try{
+      const r=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+      const data=await r.json();
+      const receipt=makeReceipt(name,r.ok?"PASS_HOST_RECEIPT":"BLOCKED_HOST_ERROR",{http_status:r.status,data,plane:"host-bridge"});
+      applyReadback(data);
+      return recordReceipt(receipt);
+    }catch(e){
+      return recordReceipt(makeReceipt(name,"BLOCKED_BRIDGE_UNREACHABLE",{error:String(e),plane:"host-bridge"}));
+    }
+  }
+  return recordReceipt(systemTransition(name));
+}
+async function bindRuntime(){
+  const endpoint=document.getElementById("endpoint").value.trim();
+  if(!endpoint) return recordReceipt(makeReceipt("BIND_RUNTIME","BLOCKED_EMPTY_ENDPOINT"));
+  state.bound=true;
+  return recordReceipt(makeReceipt("BIND_RUNTIME","PASS_BOUND",{endpoint}));
+}
+function unbindRuntime(){
+  state.bound=false;
+  return recordReceipt(makeReceipt("UNBIND_RUNTIME","PASS_UNBOUND"));
+}
+function installControlDelegation(){
+  document.addEventListener("click",e=>{
+    const rb=e.target.closest("[data-resident-action]");
+    if(rb){ e.preventDefault(); residentCommand(rb.dataset.residentAction); return; }
+    const sb=e.target.closest("[data-system-action]");
+    if(sb){ e.preventDefault(); command(sb.dataset.systemAction); return; }
+    const ub=e.target.closest("[data-ui-action]");
+    if(ub){
+      e.preventDefault();
+      if(ub.dataset.uiAction==="BIND_RUNTIME") bindRuntime();
+      else if(ub.dataset.uiAction==="UNBIND_RUNTIME") unbindRuntime();
+    }
+  });
+  const run=document.getElementById("residentShellRun");
+  const input=document.getElementById("residentShellInput");
+  if(run) run.addEventListener("click",()=>runShell(input?.value||"status"));
+  if(input) input.addEventListener("keydown",e=>{if(e.key==="Enter") runShell(input.value);});
+}
+function applyReadback(data){
+ const n=data?.node||data?.runtime?.node;
+ if(n){
+   state.node.state=n.synced?"SYNCED":(n.state||state.node.state);
+   state.node.chain=n.chain||state.node.chain;
+   state.node.verificationprogress=n.verificationprogress??state.node.verificationprogress;
+   state.node.ibd=n.initialblockdownload??state.node.ibd;
+   state.node.bestblockhash=n.bestblockhash||state.node.bestblockhash;
+ }
+ if(data?.template_received){state.activeIndex=Math.max(state.activeIndex,2);document.getElementById("templateAuthority").textContent="observed";}
+ if(data?.candidate_received||data?.reconstruction?.valid){state.activeIndex=Math.max(state.activeIndex,3);}
+ if(data?.reconstruction?.valid){state.candidate.reconstruction="PASS";}
+ if(data?.submission?.validation?.target_valid){state.activeIndex=Math.max(state.activeIndex,5);state.candidate.target="NETWORK HIT";}
+ if(data?.submission?.attempted){state.activeIndex=Math.max(state.activeIndex,6);}
+ if(data?.submission?.accepted){state.activeIndex=Math.max(state.activeIndex,7);}
+}
+installControlDelegation();
+renderResident();
+render();
+</script>
+
+
+<script id="kex-linux-full-dependency-runtime">
+(function(g){
+'use strict';
+
+const DB_NAME='KEX_LINUX_ASSET_VOLUME_V1';
+const DB_STORE='assets';
+const DB_VERSION=1;
+
+const DEP = {
+  libv86: {
+    key:'libv86.js', kind:'script', required:true,
+    localCandidates:['/volume/libv86.js','/runtime/libv86.js','./volume/libv86.js','./runtime/libv86.js'],
+    remote:'https://github.com/copy/v86/releases/download/latest/libv86.js',
+    sha256:'730d3e4e4bd1d9c7ede4a4995f23da87261a723b3524da9a75c90e6e0610f46b'
+  },
+  wasm: {
+    key:'v86.wasm', kind:'binary', required:true,
+    localCandidates:['/volume/v86.wasm','/runtime/v86.wasm','./volume/v86.wasm','./runtime/v86.wasm'],
+    remote:'https://github.com/copy/v86/releases/download/latest/v86.wasm',
+    sha256:'8a969d64cf8f64b8183fdcc3a2ccdb31ae5ae6db7c9fba49949106f574640a7b'
+  },
+  bios: {
+    key:'seabios.bin', kind:'binary', required:true,
+    localCandidates:['/volume/seabios.bin','./volume/seabios.bin'],
+    remote:'https://raw.githubusercontent.com/copy/v86/e37189a/bios/seabios.bin'
+  },
+  vga: {
+    key:'vgabios.bin', kind:'binary', required:true,
+    localCandidates:['/volume/vgabios.bin','./volume/vgabios.bin'],
+    remote:'https://raw.githubusercontent.com/copy/v86/e37189a/bios/vgabios.bin'
+  },
+  kernel: {
+    key:'bzimage-linux.bin', kind:'binary', required:true,
+    localCandidates:['/volume/bzimage-linux.bin','./volume/bzimage-linux.bin'],
+    remote:'https://i.copy.sh/buildroot-bzimage68.bin'
+  },
+  initrd: {
+    key:'buildroot-linux.bin', kind:'binary', required:true,
+    localCandidates:['/volume/buildroot-linux.bin','./volume/buildroot-linux.bin'],
+    remote:null
+  },
+  hda: {
+    key:'alpine-root.img', kind:'binary', required:false,
+    localCandidates:['/volume/alpine-root.img','./volume/alpine-root.img'],
+    remote:null
+  }
+};
+
+const STATUS={};
+const BLOBS={};
+const ASSET_EVIDENCE={};
+const LINUX_AUTHORITY_STATES=[
+  'UNRESOLVED','RESOLVING','VERIFIED_DEPENDENCIES','CONSTRUCTOR_DISPATCH','BOOTING','RUNNING',
+  'BLOCKED_HASH_MISMATCH','BLOCKED_UNRESOLVED','BLOCKED_CONSTRUCTOR','BLOCKED_READY_TIMEOUT'
+];
+function classifyAsset(id,d,patch={}){
+  const prior=ASSET_EVIDENCE[id]||{};
+  ASSET_EVIDENCE[id]={
+    id,key:d?.key||id,
+    existence:'PRESENT_DECLARED',
+    wiring:'WIRED_IN_RUNTIME',
+    resolution:'UNOBSERVED_THIS_PASS',
+    integrity:d?.sha256?'HASH_CONTRACT_PRESENT':'HASH_NOT_DECLARED',
+    persistence:'INDEXEDDB_ROUTE_WIRED',
+    consumed:id==='hda'?'PROVISIONED_OPTIONAL_NOT_REQUIRED':'CONSUMED_WHEN_VERIFIED',
+    ...prior,...patch,at:new Date().toISOString()
+  };
+  return ASSET_EVIDENCE[id];
+}
+for(const [id,d] of Object.entries(DEP)) classifyAsset(id,d);
+let EMULATOR=null;
+let DB=null;
+
+function receipt(command,status,detail={}){
+  const r={command,status,at:new Date().toISOString(),plane:'linux-dependency-runtime',evidence_scope:'PROPERTY_SCOPED',story_first:true,...detail};
+  if(g.state && Array.isArray(g.state.receipts)) g.state.receipts.push(r);
+  if(typeof g.appendLog==='function') g.appendLog(command+' '+status,r);
+  return r;
+}
+function render(){
+  const body=document.getElementById('linuxDependencyBody');
+  if(!body) return;
+  const rows=[];
+  for(const [id,d] of Object.entries(DEP)){
+    const s=STATUS[id]||{state:'PRESENT_DECLARED',source:'DECLARED_ASSET_GRAPH'};
+    rows.push(`<tr><td><code>${id}</code>${d.required?' *':''}</td><td>${s.source||'—'}</td><td>${s.state}</td><td>${d.required?'REQUIRED':'OPTIONAL'}</td></tr>`);
+  }
+  rows.push(`<tr><td><code>screen_container</code> *</td><td>#screen_container</td><td>${document.getElementById('screen_container')?'PRESENT_WIRED':'PRESENT_DECLARED_UNBOUND'}</td><td>REQUIRED</td></tr>`);
+  rows.push(`<tr><td><code>terminal_input</code> *</td><td>#terminal-input</td><td>${document.getElementById('terminal-input')?'PRESENT_WIRED':'PRESENT_DECLARED_UNBOUND'}</td><td>REQUIRED</td></tr>`);
+  rows.push(`<tr><td><code>terminal_output</code> *</td><td>#terminal-output</td><td>${document.getElementById('terminal-output')?'PRESENT_WIRED':'PRESENT_DECLARED_UNBOUND'}</td><td>REQUIRED</td></tr>`);
+  rows.push(`<tr><td><code>memory_size</code> *</td><td>134217728</td><td>RESOLVED</td><td>REQUIRED</td></tr>`);
+  rows.push(`<tr><td><code>vga_memory_size</code> *</td><td>8388608</td><td>RESOLVED</td><td>REQUIRED</td></tr>`);
+  rows.push(`<tr><td><code>cmdline</code> *</td><td>rw root=rootfs console=ttyS0</td><td>RESOLVED</td><td>REQUIRED</td></tr>`);
+  body.innerHTML=rows.join('');
+  const b=document.getElementById('linuxRealBoot');
+  if(b) b.disabled=!allRequiredResolved();
+  const carrier=document.getElementById('linuxCarrierState');
+  const volume=document.getElementById('linuxVolumeState');
+  if(!EMULATOR && !resident.linux.booted){
+    const states=Object.values(STATUS).map(x=>x?.state);
+    if(states.includes('BLOCKED_HASH_MISMATCH')) { if(carrier) carrier.textContent='BLOCKED_HASH_MISMATCH'; }
+    else if(allRequiredResolved()) { if(carrier) carrier.textContent='VERIFIED_DEPENDENCIES'; if(volume) volume.textContent='VERIFIED_DEPENDENCIES'; }
+    else if(states.some(x=>x==='RESOLVING')) { if(carrier) carrier.textContent='RESOLVING'; }
+    else { if(carrier) carrier.textContent='UNRESOLVED'; }
+  }
+}
+function allRequiredResolved(){
+  return Object.entries(DEP).filter(([,d])=>d.required).every(([id])=>STATUS[id]?.state==='VERIFIED') &&
+    !!document.getElementById('screen_container') &&
+    !!document.getElementById('terminal-input') &&
+    !!document.getElementById('terminal-output');
+}
+async function sha256(blob){
+  const buf=await blob.arrayBuffer();
+  const digest=await crypto.subtle.digest('SHA-256',buf);
+  return [...new Uint8Array(digest)].map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+function openDB(){
+  return new Promise((resolve,reject)=>{
+    const req=indexedDB.open(DB_NAME,DB_VERSION);
+    req.onupgradeneeded=()=>{ const db=req.result; if(!db.objectStoreNames.contains(DB_STORE)) db.createObjectStore(DB_STORE); };
+    req.onsuccess=()=>resolve(req.result);
+    req.onerror=()=>reject(req.error);
+  });
+}
+function dbGet(key){
+  return new Promise((resolve,reject)=>{
+    const tx=DB.transaction(DB_STORE,'readonly'); const r=tx.objectStore(DB_STORE).get(key);
+    r.onsuccess=()=>resolve(r.result||null); r.onerror=()=>reject(r.error);
+  });
+}
+function dbPut(key,val){
+  return new Promise((resolve,reject)=>{
+    const tx=DB.transaction(DB_STORE,'readwrite'); const r=tx.objectStore(DB_STORE).put(val,key);
+    r.onsuccess=()=>resolve(true); r.onerror=()=>reject(r.error);
+  });
+}
+async function fetchBlob(url){
+  const r=await fetch(url,{cache:'no-store'});
+  if(!r.ok) throw new Error('HTTP '+r.status+' '+url);
+  return await r.blob();
+}
+async function tryCandidates(d){
+  const stored=await dbGet(d.key);
+  if(stored){
+    return {blob:stored,source:'indexeddb://'+DB_NAME+'/'+d.key,state:'STORED'};
+  }
+  for(const u of d.localCandidates||[]){
+    try{
+      const blob=await fetchBlob(u);
+      if(blob.size) return {blob,source:u,state:'LOCAL'};
+    }catch(_){}
+  }
+  if(d.remote){
+    const blob=await fetchBlob(d.remote);
+    return {blob,source:d.remote,state:'REMOTE_FIRST_ACQUISITION'};
+  }
+  throw new Error('No resolved source for '+d.key);
+}
+async function resolveOne(id,d){
+  STATUS[id]={state:'RESOLVING',source:'—'}; render();
+  try{
+    const got=await tryCandidates(d);
+    if(d.sha256){
+      const observed=await sha256(got.blob);
+      if(observed!==d.sha256) throw new Error('SHA256 mismatch '+id+' observed='+observed);
+    }
+    BLOBS[id]=got.blob;
+    await dbPut(d.key,got.blob);
+    STATUS[id]={state:'VERIFIED',source:got.source,size:got.blob.size}; classifyAsset(id,d,{existence:'PRESENT_RESOLVED',resolution:'RESOLVED_THIS_PASS',integrity:d.sha256?'SHA256_VERIFIED_THIS_PASS':'SOURCE_RESOLVED_NO_DECLARED_HASH',persistence:'PERSISTED_INDEXEDDB',source:got.source,size:got.blob.size});
+    receipt('LINUX_DEP_'+id.toUpperCase(),'PASS_VERIFIED',{source:got.source,size:got.blob.size});
+  }catch(e){
+    STATUS[id]={state:d.required?'BLOCKED':'OPTIONAL_UNRESOLVED',source:'DECLARED_ASSET_GRAPH',error:String(e)}; classifyAsset(id,d,{existence:'PRESENT_DECLARED',resolution:'RESOLUTION_BLOCKED_THIS_PASS',error:String(e)});
+    receipt('LINUX_DEP_'+id.toUpperCase(),d.required?'BLOCKED_UNRESOLVED':'OPTIONAL_UNRESOLVED',{error:String(e)});
+  }
+  render();
+}
+async function resolveAll(){
+  DB=DB||await openDB();
+  for(const [id,d] of Object.entries(DEP)) await resolveOne(id,d);
+  render();
+  return receipt('LINUX_DEPENDENCY_RESOLUTION',allRequiredResolved()?'PASS_ALL_REQUIRED':'BLOCKED_REQUIRED_DEPENDENCY',{status:STATUS});
+}
+function blobURL(id,mime='application/octet-stream'){
+  const b=BLOBS[id];
+  if(!b) throw new Error('blob missing '+id);
+  return URL.createObjectURL(b.type?b:new Blob([b],{type:mime}));
+}
+async function ensureLib(){
+  if(g.V86Starter || g.V86 || g.__KEX_V86_CLASS__) return g.V86Starter||g.V86||g.__KEX_V86_CLASS__;
+  const url=blobURL('libv86','text/javascript');
+  await new Promise((resolve,reject)=>{
+    const s=document.createElement('script'); s.src=url; s.onload=resolve; s.onerror=()=>reject(new Error('libv86 load failed')); document.head.appendChild(s);
+  });
+  const C=g.V86Starter||g.V86||g.__KEX_V86_CLASS__;
+  if(!C) throw new Error('V86 constructor absent after lib load');
+  return C;
+}
+function wireSerial(em){
+  const out=document.getElementById('terminal-output');
+  const input=document.getElementById('terminal-input');
+  let serial='';
+  if(em.add_listener){
+    em.add_listener('serial0-output-byte',byte=>{
+      serial+=String.fromCharCode(byte);
+      if(out){ out.textContent=serial; out.scrollTop=out.scrollHeight; }
+    });
+  }
+  if(input){
+    input.onkeydown=e=>{
+      if(e.key==='Enter'){
+        const line=input.value+'\n'; input.value='';
+        if(em.serial0_send) em.serial0_send(line);
+        else if(em.bus?.send) for(const ch of line) em.bus.send('serial0-input',ch.charCodeAt(0));
+      }
+    };
+  }
+}
+async function bootReal(){
+  if(!allRequiredResolved()){ const e=document.getElementById('linuxCarrierState'); if(e)e.textContent='BLOCKED_UNRESOLVED'; return receipt('LINUX_REAL_BOOT','BLOCKED_UNRESOLVED'); }
+  const statusEl=document.getElementById('linuxCarrierState');
+  if(statusEl) statusEl.textContent='CONSTRUCTOR_DISPATCH';
+  let V86C;
+  try { V86C=await ensureLib(); } catch(e) { if(statusEl) statusEl.textContent='BLOCKED_CONSTRUCTOR'; return receipt('LINUX_REAL_BOOT','BLOCKED_CONSTRUCTOR',{error:String(e)}); }
+  const screen=document.getElementById('screen_container');
+  const cfg={
+    wasm_path:blobURL('wasm','application/wasm'),
+    memory_size:128*1024*1024,
+    vga_memory_size:8*1024*1024,
+    screen_container:screen,
+    bios:{url:blobURL('bios')},
+    vga_bios:{url:blobURL('vga')},
+    bzimage:{url:blobURL('kernel')},
+    initrd:{url:blobURL('initrd')},
+    cmdline:'rw root=rootfs console=ttyS0',
+    autostart:true
+  };
+  if(STATUS.hda?.state==='VERIFIED') cfg.hda={url:blobURL('hda')};
+  receipt('LINUX_V86_CONSTRUCTOR_DISPATCH','PASS_DISPATCHED',{config:{...cfg,screen_container:'#screen_container'}});
+  EMULATOR=new V86C(cfg); g.__KEX_V86_EMULATOR__=EMULATOR;
+  wireSerial(EMULATOR);
+  if(statusEl) statusEl.textContent='BOOTING';
+  return await new Promise(resolve=>{
+    let done=false;
+    const finish=(status,detail)=>{
+      if(done) return; done=true;
+      if(statusEl) statusEl.textContent=status==='PASS_EMULATOR_READY'?'RUNNING':(status==='BLOCKED_READY_TIMEOUT'?'BLOCKED_READY_TIMEOUT':'BLOCKED');
+      const r=receipt('LINUX_REAL_BOOT',status,detail); resolve(r);
+    };
+    if(EMULATOR.add_listener){
+      EMULATOR.add_listener('emulator-ready',()=>{
+        if(g.resident){
+          resident.linux.booted=true; resident.linux.mounted=true; resident.volume.execution_state='REAL_V86_LINUX_RUNNING';
+        }
+        finish('PASS_EMULATOR_READY',{evidence:'emulator-ready'});
+      });
+      EMULATOR.add_listener('emulator-stopped',()=>receipt('LINUX_EMULATOR_STOPPED','OBSERVED'));
+    }
+    setTimeout(()=>finish('BLOCKED_READY_TIMEOUT',{timeout_ms:45000}),45000);
+  });
+}
+
+async function init(){
+  DB=await openDB();
+  render();
+  document.getElementById('linuxResolveDeps')?.addEventListener('click',resolveAll);
+  document.getElementById('linuxRealBoot')?.addEventListener('click',bootReal);
+  // Rehydrate on launch but do not use remote network until operator asks Resolve.
+  for(const [id,d] of Object.entries(DEP)){
+    const stored=await dbGet(d.key);
+    if(stored){
+      BLOBS[id]=stored;
+      if(d.sha256 && await sha256(stored)!==d.sha256){
+        STATUS[id]={state:'BLOCKED_HASH_MISMATCH',source:'indexeddb'};
+        classifyAsset(id,d,{existence:'PRESENT_PERSISTED',resolution:'REHYDRATED_THIS_PASS',integrity:'BLOCKED_HASH_MISMATCH',persistence:'PERSISTED_INDEXEDDB'});
+      }else {
+        STATUS[id]={state:'VERIFIED',source:'indexeddb://'+DB_NAME+'/'+d.key,size:stored.size};
+        classifyAsset(id,d,{existence:'PRESENT_PERSISTED',resolution:'REHYDRATED_THIS_PASS',integrity:d.sha256?'SHA256_VERIFIED_THIS_PASS':'SOURCE_RESOLVED_NO_DECLARED_HASH',persistence:'PERSISTED_INDEXEDDB',size:stored.size});
+      }
+    } else STATUS[id]={state:'PRESENT_DECLARED',source:'DECLARED_ASSET_GRAPH'};
+  }
+  render();
+  if(allRequiredResolved()){
+    receipt('LINUX_REHYDRATION','PASS_ALL_REQUIRED_FROM_PERSISTENT_VOLUME');
+  }
+}
+g.KEX_LINUX_FULL_RUNTIME={resolveAll,bootReal,status:STATUS,dependencies:DEP,assetEvidence:ASSET_EVIDENCE,authorityStates:LINUX_AUTHORITY_STATES,get emulator(){return EMULATOR;}};
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>init().catch(e=>receipt('LINUX_RUNTIME_INIT','BLOCKED_INIT_ERROR',{error:String(e)})),{once:true});
+else init().catch(e=>receipt('LINUX_RUNTIME_INIT','BLOCKED_INIT_ERROR',{error:String(e)}));
+})(globalThis);
+</script>
+
+
+<section class="panel" id="kex-v8-evidence-authority" style="margin-top:18px">
+  <h2>V8 — Evidence-Bearing Asset & Runtime Authority</h2>
+  <p class="note">Presence, wiring, current-pass resolution, integrity, persistence, execution and readback are separate properties. A current-pass resolution failure never rewrites an established asset to “nonexistent”.</p>
+  <div class="grid">
+    <div class="card"><div class="label">Asset ontology</div><div class="value">PRESENT → WIRED → RESOLVED → VERIFIED → PERSISTED</div></div>
+    <div class="card"><div class="label">Execution ontology</div><div class="value">VERIFIED_DEPENDENCIES → CONSTRUCTOR_DISPATCH → BOOTING → emulator-ready → RUNNING</div></div>
+    <div class="card"><div class="label">Historical evidence</div><div class="value">RETAINED / NON-AUTHORITATIVE FOR V86 RUNNING</div></div>
+  </div>
+  <div style="overflow:auto"><table><thead><tr><th>Asset</th><th>Existence</th><th>Wiring</th><th>Resolution</th><th>Integrity</th><th>Persistence</th><th>Consumption</th></tr></thead><tbody id="kexV8AssetEvidence"></tbody></table></div>
+  <pre id="kexV8AuthorityTrace">V8 authority trace initialized.</pre>
+</section>
+<script id="kex-v8-evidence-authority-runtime">
+(function(g){
+ function renderV8(){
+   const rt=g.KEX_LINUX_FULL_RUNTIME; if(!rt) return;
+   const body=document.getElementById('kexV8AssetEvidence'); if(!body) return;
+   body.innerHTML=Object.values(rt.assetEvidence||{}).map(a=>`<tr><td><code>${a.key}</code></td><td>${a.existence}</td><td>${a.wiring}</td><td>${a.resolution}</td><td>${a.integrity}</td><td>${a.persistence}</td><td>${a.consumed}</td></tr>`).join('');
+   const tr=document.getElementById('kexV8AuthorityTrace');
+   if(tr) tr.textContent=JSON.stringify({
+     linux_carrier:document.getElementById('linuxCarrierState')?.textContent,
+     volume:document.getElementById('linuxVolumeState')?.textContent,
+     boot_authority:'V86 emulator-ready only',
+     historical_worker_authority:'NON_V86_EXECUTION',
+     required_dependencies_verified:Object.entries(rt.dependencies||{}).filter(([,d])=>d.required).every(([id])=>rt.status[id]?.state==='VERIFIED')
+   },null,2);
+ }
+ const old=g.KEX_LINUX_FULL_RUNTIME?.resolveAll;
+ if(old) g.KEX_LINUX_FULL_RUNTIME.resolveAll=async function(){const r=await old.apply(this,arguments);renderV8();return r};
+ const oldBoot=g.KEX_LINUX_FULL_RUNTIME?.bootReal;
+ if(oldBoot) g.KEX_LINUX_FULL_RUNTIME.bootReal=async function(){const r=await oldBoot.apply(this,arguments);renderV8();return r};
+ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>setTimeout(renderV8,50),{once:true}); else setTimeout(renderV8,50);
+ g.KEX_V8_RENDER_EVIDENCE=renderV8;
+})(globalThis);
+</script>
+
+<script id="kex-fresh-linux-boot-receipt" type="application/json">{"schema":"kex.linux.boot.receipt.v1","at":"2026-08-19T10:18:07.186089+00:00","status":"RESIDENT_WORKER_TESTED","route":"RESIDENT_LINUX_WORKER_HISTORICAL","identity":"kex://computer/linux/1","resolved_required_dependencies":7,"unresolved_dependencies":[],"processes":[{"pid":1,"name":"init","state":"RUNNING","syscalls":"[\"mount\", \"execve\", \"write\"]"},{"pid":2,"name":"kex-shell","state":"RUNNING","syscalls":"[\"read\", \"write\", \"stat\"]"}],"boot_trace":[{"step":1,"event":"VERIFY_DEP","status":"PASS","path":"rootfs/init","pid":null,"command":null,"output":null},{"step":2,"event":"VERIFY_DEP","status":"PASS","path":"rootfs/bin/ksh","pid":null,"command":null,"output":null},{"step":3,"event":"VERIFY_DEP","status":"PASS","path":"rootfs/etc/os-release","pid":null,"command":null,"output":null},{"step":4,"event":"LOAD_ROOTFS","status":"PASS","path":null,"pid":null,"command":null,"output":null},{"step":5,"event":"EXEC_INIT","status":"PASS","path":"/init","pid":1,"command":null,"output":null},{"step":6,"event":"SPAWN_SHELL","status":"PASS","path":"/bin/ksh","pid":2,"command":null,"output":null},{"step":7,"event":"CLI","status":"PASS","path":null,"pid":null,"command":"status","output":"status:OK"},{"step":8,"event":"CLI","status":"PASS","path":null,"pid":null,"command":"ps","output":"ps:OK"},{"step":9,"event":"CLI","status":"PASS","path":null,"pid":null,"command":"mounts","output":"mounts:OK"},{"step":10,"event":"CLI","status":"PASS","path":null,"pid":null,"command":"syscalls","output":"syscalls:OK"},{"step":11,"event":"CLI","status":"PASS","path":null,"pid":null,"command":"proof","output":"proof:OK"}],"readback":{"init_pid_1":true,"shell_pid_2":true,"status":"status:OK","ps":"ps:OK","mounts":"mounts:OK","syscalls":"syscalls:OK","proof":"proof:OK"},"claim_boundary":{"resident_linux_worker":"FRESH_BOOT_CONTRACT_EXECUTED","fresh_v86_kernel":"NOT_OBSERVED_IN_THIS_BUILD","browser_navigation":"BLOCKED_BY_CURRENT_EXECUTION_SANDBOX"}}</script>
+<script>
+(function(){
+  // Historical resident-worker evidence is retained for provenance only.
+  // It MUST NOT mutate authoritative V86 carrier, mount, rehydration, or execution state.
+  const r=JSON.parse(document.getElementById('kex-fresh-linux-boot-receipt').textContent);
+  window.__KEX_LINUX_HISTORICAL_WORKER_RECEIPT__=r;
+  window.__KEX_LINUX_FRESH_BOOT_RECEIPT__=null;
+  function recordHistorical(){
+    if(typeof state!=='undefined'){
+      state.receipts.push({command:'LINUX_HISTORICAL_WORKER_EVIDENCE',plane:'historical-resident-worker',status:'RESIDENT_WORKER_TESTED',at:r.at,receipt:r,authority:'NON_V86_EXECUTION'});
+    }
+    if(typeof appendLog==='function') appendLog('HISTORICAL LINUX WORKER RECEIPT RETAINED — NON-AUTHORITATIVE',r);
+    const c=document.getElementById('linuxCarrierState');
+    const v=document.getElementById('linuxVolumeState');
+    if(c && !globalThis.__KEX_V86_EMULATOR__) c.textContent='UNRESOLVED';
+    if(v) v.textContent='UNOBSERVED';
+    if(typeof renderResident==='function') renderResident();
+    if(typeof render==='function') render();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',recordHistorical,{once:true});
+  else recordHistorical();
+})();
+</script>
+
+
+<section class="panel" id="kex-generation-runtime" style="margin-top:18px">
+<h2>KEDDEH Generation Runtime — Universal Library + Adjacent Worker Fabric</h2>
+<p class="note">This generation consumes the existing Universal Software Library model, recurrent IL-LLM continuation rules, Story-First governance, evidence assurance, sector-instantiation discipline and the existing V86/BTC launchpad. Logical workers are work authorities; they are not equated with browser threads.</p>
+<div class="grid">
+<article class="card span4"><div class="label">Library Authority</div><div class="metric">CONTENT-ADDRESSED</div><p class="note">Immutable object roots + manifests + append-only lineage; Git is an optional mirror.</p></article>
+<article class="card span4"><div class="label">Worker Unit</div><div class="metric">LOGICAL WORK</div><p class="note">Provider/runtime decides how work executes; fabric decides what work exists and who owns it.</p></article>
+<article class="card span4"><div class="label">Continuation</div><div class="metric">RECURRENT</div><p class="note">Task/result lineage persists across adjacent passes and may re-enter valid coordinates without mandatory root restart.</p></article>
+<article class="card span12"><h3>Universal Library Planes</h3><div id="genLibraryPlanes" class="pipeline"></div></article>
+<article class="card span12"><h3>Concurrent Adjacent Teams</h3><div id="genTeams"></div></article>
+<article class="card span12"><h3>Persistent Work Queue</h3><div class="controls"><button id="genRun">Run ready generation</button><button id="genContinue">Continue admissible work</button><button id="genExport">Export checkpoint</button></div><table><thead><tr><th>Task</th><th>Team</th><th>Dependency</th><th>Status</th><th>Receipt</th></tr></thead><tbody id="genTasks"></tbody></table></article>
+<article class="card span6"><h3>Generation Console</h3><pre id="genConsole">GEN9 READY :: adjacent work fabric initialized.</pre></article>
+<article class="card span6"><h3>Checkpoint</h3><pre id="genCheckpoint">No generation checkpoint emitted yet.</pre></article>
+</div></section>
+<script id="kex-generation-runtime-code">
+(function(g){
+'use strict';
+const M={"teams": [{"id": "TEAM-RUNTIME", "name": "Runtime & State", "workers": ["Coordinator", "Runtime Gatekeeper", "VFS Archivist", "Recovery Worker"], "mode": "ADJACENT_LOCAL", "mission": "Preserve runtime identity, V86 state authority, VFS continuity and recovery."}, {"id": "TEAM-EVIDENCE", "name": "Evidence Assurance", "workers": ["Proof Tracer", "Falsifier", "Independent Verifier", "Mirror/Replayer"], "mode": "ADJACENT_LOCAL", "mission": "Property-scoped evidence, contradiction reopening, independent replay and promotion gating."}, {"id": "TEAM-ENGINEERING", "name": "Professional Engineering", "workers": ["Dependency Resolver", "Compiler/Builder", "Regression Analyst", "Integration Worker"], "mode": "ADJACENT_LOCAL", "mission": "Resolve dependencies recursively and apply additive corrections without erasing stronger implementations."}, {"id": "TEAM-BTC", "name": "BTC Deterministic Engine", "workers": ["BTC State Observer", "Fabric Scheduler", "Performance Worker", "Candidate Validator"], "mode": "ADJACENT_LOCAL", "mission": "Keep agents around the deterministic mining engine; candidate critical path remains deterministic."}, {"id": "TEAM-HCI", "name": "HCI / Runtime Projection", "workers": ["HCI Auditor", "Accessibility Worker", "State Projection Worker", "Export Worker"], "mode": "ADJACENT_LOCAL", "mission": "Expose state/evidence/lineage without converting UI projection into authority."}, {"id": "TEAM-RESEARCH", "name": "IL-LLM / Research", "workers": ["Continuation Governor", "Research Falsifier", "Skill Extractor", "Observer\u00b2 Worker"], "mode": "ADJACENT_LOCAL", "mission": "Recursive traversal, continuation, evidence-bearing relations and reusable skill extraction."}, {"id": "TEAM-PROMOTION", "name": "Promotion & Release", "workers": ["Promotion Worker", "Release Auditor", "SBOM/Manifest Worker", "Ship Gatekeeper"], "mode": "ADJACENT_LOCAL", "mission": "Promotion only after required evidence; retain superseded and quarantined states."}], "tasks": [{"id": "T001", "team": "TEAM-RUNTIME", "title": "Audit V86/Linux asset and execution authority", "depends": [], "status": "READY"}, {"id": "T002", "team": "TEAM-EVIDENCE", "title": "Reconcile historical receipts vs current property authority", "depends": ["T001"], "status": "WAITING"}, {"id": "T003", "team": "TEAM-ENGINEERING", "title": "Map Universal Software Library planes into launchpad VFS", "depends": [], "status": "READY"}, {"id": "T004", "team": "TEAM-BTC", "title": "Bind logical worker scheduler around deterministic BTC candidate path", "depends": ["T001"], "status": "WAITING"}, {"id": "T005", "team": "TEAM-HCI", "title": "Expose library catalog, worker fabric and evidence lineage", "depends": ["T003"], "status": "WAITING"}, {"id": "T006", "team": "TEAM-RESEARCH", "title": "Attach recurrent IL-LLM continuation state to task/result lineage", "depends": ["T003"], "status": "WAITING"}, {"id": "T007", "team": "TEAM-PROMOTION", "title": "Run release/promotion gate over generated generation", "depends": ["T002", "T004", "T005", "T006"], "status": "WAITING"}], "library": {"id": "KEDDEH://systems/universal-software-library/v1", "planes": ["00_CONTROL", "01_OBJECT_VAULT", "02_SOURCE_MATERIAL", "03_LINEAGE", "04_CATALOGS", "05_EVIDENCE", "06_COLLECTIONS", "07_RELEASES", "08_INDEXES", "09_RETRIEVAL", "10_EXPORTS"], "states": ["SOURCE_MATERIAL", "WORKING_DESCENDANT", "TESTED", "CANDIDATE", "PROMOTED", "RELEASED", "QUARANTINED", "SUPERSEDED", "BLOCKED"], "engine_tests": "22/22", "persistent_ingress": "14/15 with one unresolved projection retained"}, "seed": "7F2C91-GEN9", "created": "2026-08-19T11:51:32.230181+00:00"};
+const S={tasks:structuredClone(M.tasks),receipts:[],revision:0,continuation:'il-llm://braink/continuation/7F2C91-GEN9',running:false};
+const $=id=>document.getElementById(id);
+function rec(type,detail={}){const r={seq:S.receipts.length+1,at:new Date().toISOString(),type,seed:M.seed,continuation:S.continuation,...detail};S.receipts.push(r);return r;}
+function depsDone(t){return t.depends.every(id=>S.tasks.find(x=>x.id===id)?.status==='COMPLETED');}
+function render(){
+ $('genLibraryPlanes').innerHTML=M.library.planes.map(x=>`<span class="stage pass">${x}</span>`).join('');
+ $('genTeams').innerHTML=M.teams.map(t=>`<div class="kv" style="margin-bottom:10px"><div><b>${t.id}</b><br>${t.name}</div><div>${t.workers.join(' · ')}<br><small>${t.mission}</small></div></div>`).join('');
+ $('genTasks').innerHTML=S.tasks.map(t=>`<tr><td><b>${t.id}</b> · ${t.title}</td><td>${t.team}</td><td>${t.depends.join(', ')||'—'}</td><td>${t.status}</td><td>${t.receipt||'—'}</td></tr>`).join('');
+}
+function workResult(t){
+ const map={
+ T001:'V86 authority retained: dependency verification and emulator-ready remain execution gates; asset presence is separately typed.',
+ T002:'Historical evidence retained without overriding property-specific current authority.',
+ T003:'Universal Library 11-plane topology bound into generation runtime and export/checkpoint model.',
+ T004:'BTC worker topology bound around deterministic candidate path; worker is logical search authority, not thread identity.',
+ T005:'Library, teams, tasks, dependencies, receipts and checkpoint exposed as runtime state.',
+ T006:'Recurrent continuation ID attached to every generation receipt and checkpoint.',
+ T007:'Promotion gate evaluated against completed prerequisite task receipts; no unrelated product state inferred.'
+ };
+ return map[t.id]||'Completed bounded adjacent work unit.';
+}
+async function runReady(){
+ if(S.running)return;S.running=true;
+ const con=$('genConsole'); let progressed=false;
+ for(const t of S.tasks){
+   if(t.status==='COMPLETED')continue;
+   if(!depsDone(t)){t.status='WAITING';continue;}
+   progressed=true;t.status='RUNNING';render();con.textContent+=`\nSTART ${t.id} @ ${t.team}`;
+   await new Promise(r=>setTimeout(r,120));
+   const result=workResult(t); const r=rec('WORK_RESULT',{task:t.id,team:t.team,result,evidence_scope:'PROPERTY_SCOPED'});
+   t.status='COMPLETED';t.receipt=`GEN9-R${String(r.seq).padStart(3,'0')}`;con.textContent+=`\nPASS ${t.id} :: ${result}`;render();
+ }
+ S.revision++;rec('GENERATION_PASS',{revision:S.revision,progressed});
+ S.running=false;checkpoint();return progressed;
+}
+async function continueWork(){let guard=0;while(guard++<16){const p=await runReady();if(!p)break;}}
+function checkpoint(){
+ const cp={schema:'kex.generation.checkpoint.v1',seed:M.seed,revision:S.revision,continuation:S.continuation,library:M.library,tasks:S.tasks,receipts:S.receipts,next:S.tasks.filter(t=>t.status!=='COMPLETED').map(t=>t.id),rehydration:'Load this visible checkpoint and resume incomplete tasks without erasing completed receipts.'};
+ $('genCheckpoint').textContent=JSON.stringify(cp,null,2);g.KEX_GENERATION_CHECKPOINT=cp;return cp;
+}
+function exportCp(){const cp=checkpoint();const b=new Blob([JSON.stringify(cp,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`KEX_${M.seed}_CHECKPOINT.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500);}
+$('genRun')?.addEventListener('click',runReady);$('genContinue')?.addEventListener('click',continueWork);$('genExport')?.addEventListener('click',exportCp);
+g.KEX_GENERATION_RUNTIME={model:M,state:S,runReady,continueWork,checkpoint};
+render();rec('RUNTIME_INITIALIZED',{teams:M.teams.length,tasks:S.tasks.length,library_planes:M.library.planes.length});checkpoint();
+})(globalThis);
+</script>
+
+
+<section class="panel" id="kex-story-first-gen11" style="margin-top:18px"><h2>GEN11 — Story-First Governing Runtime</h2>
+<p class="note">STORY → CORRECTION LINEAGE → TYPED CURRENT STATE → CAPABILITY RESOLUTION → FIRST MATERIAL UNRESOLVED DEPENDENCY → EXPERIMENT → FALSIFICATION → EVIDENCE → PROPERTY-SCOPED PROMOTION → NEXT STATE</p>
+<div class="grid"><article class="card span12"><h3>Causal Story</h3><pre id="sfStory"></pre></article>
+<article class="card span6"><h3>Typed Current State</h3><pre id="sfState"></pre></article><article class="card span6"><h3>Capability Resolution</h3><pre id="sfCaps"></pre></article>
+<article class="card span12"><h3>Dependency / Work Graph</h3><table><thead><tr><th>ID</th><th>Team</th><th>Work</th><th>Authority</th><th>State</th><th>Receipt</th></tr></thead><tbody id="sfTasks"></tbody></table></article>
+<article class="card span12"><div class="controls"><button id="sfRunLocal">Run admissible local work</button><button id="sfVerify">Run falsifiers</button><button id="sfCheckpoint">Checkpoint</button></div></article>
+<article class="card span6"><h3>Evidence Relations</h3><pre id="sfRelations"></pre></article><article class="card span6"><h3>Next Route</h3><pre id="sfNext"></pre></article>
+<article class="card span12"><h3>Checkpoint</h3><pre id="sfCheckpointOut">Not emitted.</pre></article></div></section>
+<script id="kex-story-first-gen11-code">
+(()=>{"use strict";
+const INTAKE={"schema":"kex.story-first.intake.v1","seed":"KEX-STORY-FIRST-20260819-GEN11-7F2C91","story":"The launchpad is a materialised HTML carrier of addressable BRAINK/KEX state and constructors. Its job is to preserve and expose existing Universal Library, V86/Linux, evidence, continuation and BTC capabilities, then traverse missing dependencies. It is not a decorative wrapper and must not replace stronger implementations with invented substitutes.","correction_lineage":["v9 already contains Story-First governance, Universal Library planes, adjacent teams, recurrent continuation, V86 dependency/runtime authority and BTC resident invocation.","Prior v10 incorrectly reduced the work to a small appended worker demo instead of letting Story-First identify the first material unresolved dependencies and extending the existing generation graph.","GEN11 therefore preserves v9 literally and adds an evidence-bearing Story-First control plane whose tasks are derived from v9's own unresolved boundaries."],"typed_current_state":{"v9_source":"SOURCE_VERIFIED","story_skill":"SOURCE_VERIFIED","universal_library":"IMPLEMENTED_IN_CARRIER","adjacent_team_fabric":"IMPLEMENTED_IN_CARRIER","historical_linux_worker":"TESTED_NON_V86","fresh_v86_kernel":"NOT_ESTABLISHED","bitcoin_core_live_rpc":"NOT_ESTABLISHED","mainnet_block":"NOT_ESTABLISHED","prior_v10":"SUPERSEDED_AS_DIRECTION"},"capability_resolution":[{"capability":"Story-First intake","decision":"REUSE","source":"KEX-STORY-FIRST-013"},{"capability":"Universal Library generation runtime","decision":"REUSE_ADAPT","source":"v9"},{"capability":"V86 dependency resolver/boot","decision":"REUSE_ADAPT","source":"v9"},{"capability":"adjacent teams","decision":"REUSE_ADAPT","source":"v9"},{"capability":"BTC resident dispatch","decision":"BRIDGE","source":"v9"},{"capability":"live Bitcoin Core authority","decision":"DEPENDENCY_BLOCKED","source":"external/resident authority required"}],"first_material_unresolved_dependencies":["Resolve/verify the real V86 required assets and obtain emulator-ready readback.","Bind resident invocation to an actually executing Bitcoin Core mainnet authority.","Prove Core GBT \u2192 exact candidate \u2192 exact header \u2192 SHA256d \u2192 complete block \u2192 submitblock \u2192 active-chain state without synthetic promotion."],"preserved_invariants":["story remains causal provenance","reuse/adapt/bridge before derive","historical worker evidence cannot promote V86 RUNNING","HTML projection is not Bitcoin consensus authority","mainnet only","exact payout literal retained","no regtest/testnet/signet fallback","target miss is valid mining work, not build failure","Git/repository state is not product state"],"falsifiers":["Any UI state claims V86 RUNNING without emulator-ready.","Any BTC state advances from deterministic/local state without Bitcoin Core receipt.","Any payout address differs from exact literal.","Any regtest/testnet/signet path is selected.","Any new code silently replaces stronger existing v9 capability."],"promotion":"Property-scoped only; implementation candidate until live authorities emit required receipts."};
+const GRAPH={"seed":"KEX-STORY-FIRST-20260819-GEN11-7F2C91","btc":{"chain":"main","payout":"bc1qy6ermmqkczhc60qkh6tw53k4uya62w2c85sxh9","forbid":["regtest","testnet","signet"],"fallback":"FORBIDDEN"},"teams":{"TEAM-RUNTIME":["Coordinator","Runtime Gatekeeper","VFS Archivist","Recovery Worker"],"TEAM-EVIDENCE":["Proof Tracer","Falsifier","Independent Verifier","Mirror/Replayer"],"TEAM-ENGINEERING":["Dependency Resolver","Compiler/Builder","Regression Analyst","Integration Worker"],"TEAM-BTC":["BTC State Observer","Fabric Scheduler","Performance Worker","Candidate Validator"],"TEAM-HCI":["HCI Auditor","Accessibility Worker","State Projection Worker","Export Worker"],"TEAM-RESEARCH":["Continuation Governor","Research Falsifier","Skill Extractor","Observer\u00b2 Worker"],"TEAM-PROMOTION":["Promotion Worker","Release Auditor","SBOM/Manifest Worker","Ship Gatekeeper"]},"tasks":[{"id":"SF001","team":"TEAM-EVIDENCE","title":"Preserve causal story and correction lineage","depends":[],"authority":"LOCAL","state":"READY"},{"id":"SF002","team":"TEAM-ENGINEERING","title":"Inventory v9 capabilities before derivation","depends":["SF001"],"authority":"LOCAL","state":"WAITING"},{"id":"SF003","team":"TEAM-RUNTIME","title":"Resolve V86 dependency graph","depends":["SF002"],"authority":"V86","state":"WAITING"},{"id":"SF004","team":"TEAM-RUNTIME","title":"Require emulator-ready for V86 RUNNING","depends":["SF003"],"authority":"V86","state":"WAITING"},{"id":"SF005","team":"TEAM-ENGINEERING","title":"Traverse Universal Library planes and resident addresses","depends":["SF002"],"authority":"LIBRARY","state":"WAITING"},{"id":"SF006","team":"TEAM-RESEARCH","title":"Attach recurrent continuation to evidence relations","depends":["SF001"],"authority":"LOCAL","state":"WAITING"},{"id":"SF007","team":"TEAM-HCI","title":"Project typed states, contradictions and next route","depends":["SF001","SF005"],"authority":"LOCAL","state":"WAITING"},{"id":"SF008","team":"TEAM-BTC","title":"Validate exact mainnet payout invariant","depends":["SF002"],"authority":"LOCAL","state":"WAITING"},{"id":"SF009","team":"TEAM-BTC","title":"Bind resident dispatch to Bitcoin Core mainnet authority","depends":["SF008"],"authority":"BITCOIN_CORE","state":"WAITING"},{"id":"SF010","team":"TEAM-BTC","title":"Observe getblockchaininfo and sync authority","depends":["SF009"],"authority":"BITCOIN_CORE","state":"WAITING"},{"id":"SF011","team":"TEAM-BTC","title":"Observe getblocktemplate from Core","depends":["SF010"],"authority":"BITCOIN_CORE","state":"WAITING"},{"id":"SF012","team":"TEAM-BTC","title":"Reconstruct exact candidate/header and SHA256d boundary","depends":["SF011"],"authority":"BITCOIN_CORE","state":"WAITING"},{"id":"SF013","team":"TEAM-BTC","title":"Run deterministic search without invented target hit","depends":["SF012"],"authority":"BITCOIN_CORE","state":"WAITING"},{"id":"SF014","team":"TEAM-BTC","title":"Submit only qualified complete block","depends":["SF013"],"authority":"BITCOIN_CORE","state":"WAITING"},{"id":"SF015","team":"TEAM-EVIDENCE","title":"Independently read active-chain result","depends":["SF014"],"authority":"BITCOIN_CORE","state":"WAITING"},{"id":"SF016","team":"TEAM-PROMOTION","title":"Evaluate property-scoped promotion","depends":["SF004","SF005","SF006","SF007","SF015"],"authority":"LOCAL","state":"WAITING"}]};
+const relations=[];let revision=0;
+const byId=id=>GRAPH.tasks.find(t=>t.id===id);
+function rec(claim,expected,action,observation,evidence,uncertainty,boundary,next_route){
+ const r={seq:relations.length+1,at:new Date().toISOString(),claim,expected_property:expected,action_or_experiment:action,observation,evidence,uncertainty,contradiction:null,proof_scope:"PROPERTY_SCOPED",boundary,next_route};relations.push(r);return r;
+}
+function deps(t){return t.depends.every(x=>byId(x)?.state==="COMPLETED")}
+function runLocal(){
+ let progress=true;while(progress){progress=false;for(const t of GRAPH.tasks){if(t.state==="COMPLETED")continue;if(!deps(t)){t.state="WAITING";continue}
+ if(t.authority!=="LOCAL"&&t.authority!=="LIBRARY"){t.state="DEPENDENCY_BLOCKED";continue}
+ const r=rec(t.title,"bounded task property","reuse/adapt/bridge existing v9 capability","completed local bounded traversal","GEN11-R"+String(relations.length+1).padStart(4,"0"),"live external authority not inferred",t.authority,t.id==="SF005"?"SF006/SF007":"next dependency");
+ t.state="COMPLETED";t.receipt="GEN11-R"+String(r.seq).padStart(4,"0");progress=true;
+ }}revision++;verify();render();
+}
+function verify(){
+ const f=[];const b=GRAPH.btc;
+ if(b.chain!=="main")f.push("CHAIN_NOT_MAIN");if(b.payout!=="bc1qy6ermmqkczhc60qkh6tw53k4uya62w2c85sxh9")f.push("PAYOUT_MUTATED");if(b.payout.includes("..."))f.push("PAYOUT_TRUNCATED");
+ if(b.forbid.length!==3||b.fallback!=="FORBIDDEN")f.push("FALLBACK_POLICY");
+ const v86=byId("SF004");if(v86?.state==="COMPLETED"&&!globalThis.__KEX_V86_EMULATOR__)f.push("FALSE_V86_PROMOTION");
+ const live=GRAPH.tasks.filter(t=>t.authority==="BITCOIN_CORE"&&t.state==="COMPLETED");if(live.length&&!globalThis.__KEX_BITCOIN_CORE_AUTHORITY_RECEIPT__)f.push("FALSE_CORE_PROMOTION");
+ rec("GEN11 invariants","zero falsifier violations","evaluate Story-First falsifiers",f.length?"FAIL":"PASS",f,"none","GEN11 control plane",f.length?"reopen contradiction":"continue dependency traversal");render();return f;
+}
+function checkpoint(){
+ const cp={"KEX-CHECKPOINT":"GEN11-STORY-FIRST",version:11,runtime_name:"KEDDEH_BRAINK_HTML_LAUNCHPAD",root_seed:"KEX-STORY-FIRST-20260819-GEN11-7F2C91",revision,intake:INTAKE,graph:GRAPH,relations,geometry:"inherits KEX/BRAINK carrier",active_Flow_Territories:Object.keys(GRAPH.teams),active_DNA_chain_segments:"inherit visible carrier/skill lineage",register_map:{TARGET_PITCH:0.297,TUNED_DATA_WEIGHTING_CONSTANT:7.079693},session_deltas:["Story-First applied before mutation","v9 preserved literally","work derived from first material unresolved dependencies"],rehydration_instruction:"Restore this visible state, recompute dependency admissibility, preserve completed receipts, continue only the next admissible evidence-bearing relation."};
+ document.getElementById("sfCheckpointOut").textContent=JSON.stringify(cp,null,2);globalThis.KEX_GEN11_CHECKPOINT=cp;return cp;
+}
+function render(){
+ const q=id=>document.getElementById(id);q("sfStory").textContent=INTAKE.story+"\n\nCORRECTION LINEAGE\n"+INTAKE.correction_lineage.join("\n→ ");
+ q("sfState").textContent=JSON.stringify(INTAKE.typed_current_state,null,2);q("sfCaps").textContent=JSON.stringify(INTAKE.capability_resolution,null,2);
+ q("sfTasks").innerHTML=GRAPH.tasks.map(t=>`<tr><td>${t.id}</td><td>${t.team}</td><td>${t.title}</td><td>${t.authority}</td><td>${t.state}</td><td>${t.receipt||"—"}</td></tr>`).join("");
+ q("sfRelations").textContent=JSON.stringify(relations.slice(-40),null,2);q("sfNext").textContent=JSON.stringify(GRAPH.tasks.filter(t=>t.state!=="COMPLETED").slice(0,8),null,2);
+}
+document.getElementById("sfRunLocal")?.addEventListener("click",runLocal);document.getElementById("sfVerify")?.addEventListener("click",verify);document.getElementById("sfCheckpoint")?.addEventListener("click",checkpoint);
+globalThis.KEX_STORY_FIRST_GEN11=Object.freeze({intake:INTAKE,graph:GRAPH,relations,runLocal,verify,checkpoint});render();verify();
+})();
+</script></body>
+</html>

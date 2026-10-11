@@ -1,0 +1,159 @@
+{
+  "originals": [
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "sha256": "b9295524288f1981b4b673c4f47a729cd0253733563ffb8e24a4e7433c9f32e9",
+      "match": true
+    },
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "sha256": "7f6e4ce0a41d3ba8823984533f41479be77efa7656f3e016f591af6e49c13fec",
+      "match": true
+    },
+    {
+      "path": "originals/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "sha256": "660c677332327e470c746853a535f209b4735d139bb992c6e430522c0261ca56",
+      "match": true
+    },
+    {
+      "path": "originals/drive/hcf_workstation.html",
+      "sha256": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec",
+      "match": true
+    },
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "sha256": "311485063a7f0583fc787590a566f07945744ae0ef3e8d72f5af8f3f9930e000",
+      "match": true
+    },
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "sha256": "166f1ff30b8adbb887951625547ab33a0faf5226ac452ba4ea261c622fd353be",
+      "match": true
+    },
+    {
+      "path": "originals/drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "sha256": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028",
+      "match": true
+    },
+    {
+      "path": "originals/drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "sha256": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41",
+      "match": true
+    },
+    {
+      "path": "originals/drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "sha256": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b",
+      "match": true
+    },
+    {
+      "path": "originals/drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "sha256": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e",
+      "match": true
+    },
+    {
+      "path": "originals/github/src/data/html5Apps.ts",
+      "sha256": "9e7edcc8770208a9dfbca36e344099a66b2757eaed9708262c9231ba84a7e6e6",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/openSourceOsTemplate.ts",
+      "sha256": "728c48177749d95aa2e225c64d26a803d4701099ba7f662dff853e9e7b7ae2c9",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/kexLinuxTerminalTemplate.ts",
+      "sha256": "7a3ad2e6fa63b43cc24036148ba2fe49fe3aad8d5d1a09539e8d21313c246fa3",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/kexBootchainTemplate.ts",
+      "sha256": "210fcfe59754c753af615f2ea9cb1bd7b33acdea2262e295dc67b80b08761328",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/html5ParticlePhysicsTemplate.ts",
+      "sha256": "d3258602c3be2c3568f9a7ed3de67e969328faf6f02df0f6347b672d33009517",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/html5BreakoutGameTemplate.ts",
+      "sha256": "95a6f290dfe77dd3143305c9f8f053e32c3a66b82319091c7dcf1c00777cef2f",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/html5SynthesizerTemplate.ts",
+      "sha256": "5fa0a5df8553192849dc0b1d2f497fcfb4940b8e8c1778c9c580c9d426c49f96",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/html5SqlStudioTemplate.ts",
+      "sha256": "00b4897528e3f33300b92d4de79506ca7a6a326d08eb77271bb12a0a8ce4baf8",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/html5MarkdownStudioTemplate.ts",
+      "sha256": "0b2628ecdaed8eed0f548b501ee80ad6f2a86db302eed1d532f13b30c0a40923",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/html5PaintStudioTemplate.ts",
+      "sha256": "e5362f230e0f195879396925185ceab23959cd0d887aafd19c0c6642c5fb0c3e",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/html5CalculatorTemplate.ts",
+      "sha256": "8641613ac1d746211ce38b4abe3e77680a05a45f7dcaf717ec3494fe290a69c8",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/data/html5ChromeBrowserTemplate.ts",
+      "sha256": "c26bab3273bb2b6c17d95bf45734b98814e1070f28f4f67b228a50505a3eb6ce",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/assets/os/AetherOS.html",
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/assets/os/MiningOS.html",
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/assets/os/KexLinux.html",
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/assets/os/KeraMeshOS.html",
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+      "match": true,
+      "gitBlobMatch": true
+    },
+    {
+      "path": "originals/github/src/assets/workstations/Chrome.html",
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805",
+      "match": true,
+      "gitBlobMatch": true
+    }
+  ],
+  "originalMatches": 27,
+  "githubBlobMatches": 17,
+  "priorityWorkingDigestsMatch": true
+}

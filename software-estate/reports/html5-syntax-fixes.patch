@@ -1,0 +1,196 @@
+--- a/src/data/kexLinuxTerminalTemplate.ts
++++ b/src/data/kexLinuxTerminalTemplate.ts
+@@ -1168,23 +1168,23 @@
+       if (current && current[part]) {
+         current = current[part];
+       } else {
+-        return \`ls: cannot access '\${pArg}': No such file or directory\n\`;
++        return \`ls: cannot access '\${pArg}': No such file or directory\\n\`;
+       }
+     }
+ 
+-    if (typeof current === 'string') return pArg + "\n";
++    if (typeof current === 'string') return pArg + "\\n";
+     const keys = Object.keys(current).sort();
+     if (showLong) {
+-      let out = "total " + keys.length + "\n";
++      let out = "total " + keys.length + "\\n";
+       for (const k of keys) {
+         const item = current[k];
+         const isDir = typeof item !== 'string';
+         const mode = isDir ? "drwxr-xr-x" : "-rw-r--r--";
+-        out += mode.padEnd(11) + " 1 ak   ak   " + String(isDir ? 4096 : item.length).padStart(6) + " Jul 22 " + k + (isDir ? "/" : "") + "\n";
++        out += mode.padEnd(11) + " 1 ak   ak   " + String(isDir ? 4096 : item.length).padStart(6) + " Jul 22 " + k + (isDir ? "/" : "") + "\\n";
+       }
+       return out;
+     }
+-    return keys.map(k => k + (typeof current[k] !== 'string' ? "/" : "")).join("  ") + "\n";
++    return keys.map(k => k + (typeof current[k] !== 'string' ? "/" : "")).join("  ") + "\\n";
+   },
+ 
+   cd: async (args) => {
+@@ -1197,10 +1197,10 @@
+       if (current && typeof current !== 'string' && current[part]) {
+         current = current[part];
+       } else if (p !== '/') {
+-        return \`cd: no such directory: \${target}\n\`;
++        return \`cd: no such directory: \${target}\\n\`;
+       }
+     }
+-    if (typeof current === 'string') return \`cd: \${target}: Not a directory\n\`;
++    if (typeof current === 'string') return \`cd: \${target}: Not a directory\\n\`;
+     kernel.cwd = p;
+     setPrompt();
+     return "";
+@@ -1211,15 +1211,15 @@
+     const p = pathNorm(args[0]);
+     // Real syscall to host kernel
+     const content = await syscall('SYS_READ_INODE', [p]);
+-    if (content === null) return \`cat: \${args[0]}: No such file or directory\n\`;
++    if (content === null) return \`cat: \${args[0]}: No such file or directory\\n\`;
+     const txt = String(content);
+     const displayEl = document.getElementById("fileView");
+     if (displayEl) displayEl.textContent = txt;
+-    return txt.endsWith("\n") ? txt : txt + "\n";
++    return txt.endsWith("\\n") ? txt : txt + "\\n";
+   },
+ 
+   touch: async (args) => {
+-    if (!args.length) return "usage: touch <filename>\n";
++    if (!args.length) return "usage: touch <filename>\\n";
+     for (const p of args) {
+       const path = pathNorm(p);
+       await syscall('SYS_WRITE_INODE', [path, "", 0o644]);
+@@ -1229,7 +1229,7 @@
+   },
+ 
+   mkdir: async (args) => {
+-    if (!args.length) return "usage: mkdir <directory>\n";
++    if (!args.length) return "usage: mkdir <directory>\\n";
+     for (const p of args) {
+       const path = pathNorm(p);
+       await syscall('SYS_WRITE_INODE', [path, {}, 0o755]);
+@@ -1239,7 +1239,7 @@
+   },
+ 
+   rm: async (args) => {
+-    if (!args.length) return "usage: rm [-rf] <target>\n";
++    if (!args.length) return "usage: rm [-rf] <target>\\n";
+     const targets = args.filter(x => !x.startsWith("-"));
+     for (const t of targets) {
+       const p = pathNorm(t);
+@@ -1248,7 +1248,7 @@
+       // Let's assume a SYS_DELETE_INODE or similar if I were to add it.
+       // For now, let's stick to SYS_WRITE_INODE with empty content if it's a file.
+     }
+-    return "rm: operation requires elevated microkernel privileges (use sudo)\n";
++    return "rm: operation requires elevated microkernel privileges (use sudo)\\n";
+   },
+ 
+   chmod: async (args) => {
+@@ -1279,10 +1279,10 @@
+ 
+   ps: async (args) => {
+     const procs = await syscall('SYS_GET_PROCS');
+-    let out = "UID        PID  PPID  C STIME TTY          TIME CMD\n";
++    let out = "UID        PID  PPID  C STIME TTY          TIME CMD\\n";
+     for (const proc of procs) {
+       const startTime = new Date(proc.startTime).toLocaleTimeString();
+-      out += (proc.uid === 0 ? "root" : "ak").padEnd(10) + " " + String(proc.pid).padStart(4) + " " + String(proc.ppid).padStart(5) + "  0 " + startTime + " " + proc.ttyId.padEnd(8) + " 00:00:00 " + proc.command + "\n";
++      out += (proc.uid === 0 ? "root" : "ak").padEnd(10) + " " + String(proc.pid).padStart(4) + " " + String(proc.ppid).padStart(5) + "  0 " + startTime + " " + proc.ttyId.padEnd(8) + " 00:00:00 " + proc.command + "\\n";
+     }
+     return out;
+   },
+@@ -1290,12 +1290,12 @@
+   top: async () => {
+     const procs = await syscall('SYS_GET_PROCS');
+     const telemetry = await syscall('SYS_GET_TELEMETRY');
+-    let out = "top - " + new Date().toLocaleTimeString() + " up 4:22, 1 user, load: " + telemetry.activeProcesses + " tasks\n";
+-    out += "Tasks: " + procs.length + " total, " + procs.filter(p => p.state === 'RUNNING').length + " running, " + procs.filter(p => p.state !== 'RUNNING').length + " sleeping\n";
+-    out += "%Cpu(s): 12.4%us, 3.1%sy, 0.0%ni, 84.5%id\n\n";
+-    out += "  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND\n";
++    let out = "top - " + new Date().toLocaleTimeString() + " up 4:22, 1 user, load: " + telemetry.activeProcesses + " tasks\\n";
++    out += "Tasks: " + procs.length + " total, " + procs.filter(p => p.state === 'RUNNING').length + " running, " + procs.filter(p => p.state !== 'RUNNING').length + " sleeping\\n";
++    out += "%Cpu(s): 12.4%us, 3.1%sy, 0.0%ni, 84.5%id\\n\\n";
++    out += "  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND\\n";
+     for (const proc of procs) {
+-      out += " " + String(proc.pid).padStart(4) + " " + (proc.uid === 0 ? "root" : "ak").padEnd(9) + " 20   0  2048   512   1024 " + proc.state[0] + "   1.2   0.8   0:00.12 " + proc.command + "\n";
++      out += " " + String(proc.pid).padStart(4) + " " + (proc.uid === 0 ? "root" : "ak").padEnd(9) + " 20   0  2048   512   1024 " + proc.state[0] + "   1.2   0.8   0:00.12 " + proc.command + "\\n";
+     }
+     return out;
+   },
+@@ -1657,10 +1657,10 @@
+   ].join("\\n"));
+ 
+   writeFile("/home/ak/neural_pipeline.py", [
+-    "\"\"\"",
++    "\\"\\"\\"",
+     "Streaming Multi-Head Attention Tensor Pipeline",
+     "High-throughput vector projection with KV-Cache acceleration",
+-    "\"\"\"",
++    "\\"\\"\\"",
+     "import math",
+     "",
+     "class MultiHeadAttention:",
+--- a/src/data/html5MarkdownStudioTemplate.ts
++++ b/src/data/html5MarkdownStudioTemplate.ts
+@@ -240,13 +240,13 @@
+ 
+ | Region | Inode Address | Function | Write Access |
+ | :--- | :--- | :--- | :--- |
+-| \`/boot\` | 0x00010000 | Kexboot Manifest | Read-Only |
+-| \`/kernel\` | 0x00020000 | WASM Microkernel Bytecode | Execute-Only |
+-| \`/micro-os\` | 0x00040000 | Process Daemons | Superuser |
+-| \`/run\` | 0x00080000 | Ephemeral Sockets | Read-Write |
++| \\\`/boot\\\` | 0x00010000 | Kexboot Manifest | Read-Only |
++| \\\`/kernel\\\` | 0x00020000 | WASM Microkernel Bytecode | Execute-Only |
++| \\\`/micro-os\\\` | 0x00040000 | Process Daemons | Superuser |
++| \\\`/run\\\` | 0x00080000 | Ephemeral Sockets | Read-Write |
+ 
+ ## 3. Daemons Configuration
+-\`\`\`json
++\\\`\\\`\\\`json
+ {
+   "authority": "A.KEDDEH",
+   "daemons": [
+@@ -255,7 +255,7 @@
+     { "name": "proof-ledgerd", "pid": 4, "state": "RUNNING" }
+   ]
+ }
+-\`\`\`
++\\\`\\\`\\\`
+ 
+ > **Note:** All storage transactions are verified against the Root Authority signature prior to disk commitment.
+ \`,
+@@ -279,24 +279,24 @@
+ \`,
+ 
+       runbook: \`# Production DevOps Incident Runbook
+-**Cluster:** \`us-central1-kex-nodes\`  
++**Cluster:** \\\`us-central1-kex-nodes\\\`  
+ **Target:** 99.999% Service Level Objective (SLO)  
+ 
+ ---
+ 
+ ## Severity 1: Storage Volume Quota Breach
+ 1. Verify free disk sectors on primary carrier:
+-   \`\`\`bash
++   \\\`\\\`\\\`bash
+    $ kex-volume-vfs --inspect /kex-volume --df -h
+-   \`\`\`
++   \\\`\\\`\\\`
+ 2. Execute automated log rotation:
+-   \`\`\`bash
++   \\\`\\\`\\\`bash
+    $ journalctl --vacuum-time=2d
+-   \`\`\`
++   \\\`\\\`\\\`
+ 3. Trigger lineage integrity check:
+-   \`\`\`bash
++   \\\`\\\`\\\`bash
+    $ proof-ledgerd --verify-all
+-   \`\`\`
++   \\\`\\\`\\\`
+ \`
+     };
+ 

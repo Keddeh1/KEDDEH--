@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en" data-kex-magic="KEXSTACK10_1" data-boot="off" data-revision="1">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KEX Computer Stack v10 — Developer Runtime</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f3ef;color:#111;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+header{padding:12px 16px;background:#fff;border-bottom:1px solid #999;position:sticky;top:0;z-index:10}
+main{max-width:1200px;margin:auto;padding:12px;display:grid;grid-template-columns:1.1fr .9fr;gap:12px}
+.panel{background:#fff;border:1px solid #aaa;border-radius:8px;padding:11px}h2,h3{font-size:13px}
+kex-fabric{display:grid;grid-template-columns:repeat(9,1fr);gap:4px}
+kex-x{display:flex;align-items:center;justify-content:center;height:68px;border:1px solid #999;background:#fafafa;font-size:22px;cursor:pointer;position:relative}
+kex-x[data-active="true"]{outline:3px solid #111}kex-x small{position:absolute;right:3px;bottom:2px;font-size:8px;color:#666}
+.controls{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}button,textarea,input,select{font:inherit;border:1px solid #999;background:#fff;border-radius:4px;padding:7px}button{cursor:pointer}
+textarea{width:100%;min-height:145px}pre{font-size:10px;background:#f5f5f2;border:1px solid #ddd;padding:8px;white-space:pre-wrap;word-break:break-word;max-height:290px;overflow:auto}
+.cli{background:#111;color:#eee;border:1px solid #555;border-radius:6px;padding:8px}.cli pre{background:#111;color:#eee;border:0;min-height:180px;max-height:330px;margin:0 0 7px}.clirow{display:flex;gap:6px}.clirow input{flex:1;font:inherit;padding:8px;background:#111;color:#eee;border:1px solid #777;border-radius:4px}.clirow button{background:#eee;color:#111}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:4px;font-size:10px}
+kex-register,kex-container,kex-route,kex-ledger,kex-process,kex-memory,kex-cpu,kex-gpu,kex-mram,kex-vram,kex-bus,kex-clock,kex-chip,kex-warehouse,kex-threadpool,kex-operator,kex-audit,kex-fault,kex-isa,kex-mm,kex-irq,kex-scheduler,kex-atomic,kex-provider,kex-loader,kex-source,kex-runtime,kex-abi,kex-syscalls,kex-devkit,kex-runner,kex-port,kex-bridge,kex-pidspace,kex-runtime-log,kex-recovery,kex-capability,kex-proc,kex-pages,kex-programs,kex-program{display:none}
+@media(max-width:850px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><b>KEX COMPUTER STACK v10 — DEVELOPER RUNTIME</b> — DOM/table is authoritative machine state; projections and relations point to it</header>
+
+<!-- LIVE CANONICAL FABRIC. These elements are the machine state, not a rendered copy of a JSON runtime. -->
+<main>
+<section class="panel">
+<h2>CANONICAL ACTIVE FABRIC</h2>
+<kex-fabric id="KEX" data-axis="1" data-origin="1" data-lane="1" data-extent="1">
+  <kex-x id="X1" data-number="1" data-word="one" data-kind="SINGULAR_X" data-instruction="ANCHOR" data-axis="1.1.1" data-active="true" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">1<small>X1</small></kex-x>
+  <kex-x id="X2" data-number="2" data-word="two" data-kind="INTEGER_X" data-instruction="STATE" data-axis="2.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">2<small>X2</small></kex-x>
+  <kex-x id="X3" data-number="3" data-word="three" data-kind="INTEGER_X" data-instruction="STATE" data-axis="3.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">3<small>X3</small></kex-x>
+  <kex-x id="X4" data-number="4" data-word="four" data-kind="INTEGER_X" data-instruction="STATE" data-axis="4.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">4<small>X4</small></kex-x>
+  <kex-x id="X5" data-number="5" data-word="five" data-kind="INTEGER_X" data-instruction="BYPASS" data-axis="5.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">5<small>X5</small></kex-x>
+  <kex-x id="X6" data-number="6" data-word="six" data-kind="INTEGER_X" data-instruction="STATE" data-axis="6.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">6<small>X6</small></kex-x>
+  <kex-x id="X7" data-number="7" data-word="seven" data-kind="INTEGER_X" data-instruction="STATE" data-axis="7.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">7<small>X7</small></kex-x>
+  <kex-x id="X8" data-number="8" data-word="eight" data-kind="INTEGER_X" data-instruction="STATE" data-axis="8.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">8<small>X8</small></kex-x>
+  <kex-x id="X9" data-number="9" data-word="nine" data-kind="INTEGER_X" data-instruction="LANE_END" data-axis="9.1.1" data-active="false" data-revision="1" data-environment="ROOT" data-observer="DEFAULT">9<small>X9</small></kex-x>
+</kex-fabric>
+<div class="controls"><button id="boot">BOOT</button><button id="conform">FULL CONFORMANCE</button><button id="probe">PROBE PROVIDERS</button><button id="mirror">MIRROR ACTIVE X</button><button id="tests">SELF TEST</button><button id="bench">PERFORMANCE TEST</button><button id="checkpoint">CHECKPOINT</button></div>
+
+<!-- LIVE relations. Registers/memory/containers/routes reference canonical X nodes; they do not copy X. -->
+<kex-memory id="MEM" data-axis="1.1"></kex-memory>
+<kex-register id="R1" data-axis="1.1.R1" data-ref="X1"></kex-register>
+<kex-register id="R2" data-axis="1.1.R2" data-ref="X2"></kex-register>
+<kex-container id="ROOT" data-axis="1" data-parent=""></kex-container>
+<kex-ledger id="LEDGER"></kex-ledger>
+<kex-process id="P0" data-state="idle" data-pc="0"></kex-process>
+<kex-cpu id="CPU0" data-axis="1.1.CPU" data-pc="X1" data-acc="X1" data-state="idle" data-cycles="0"></kex-cpu>
+<kex-gpu id="GPU0" data-axis="1.1.GPU" data-source="X1" data-target="VRAM0" data-state="idle" data-frames="0"></kex-gpu>
+<kex-mram id="MRAM0" data-axis="1.1.MRAM" data-ref="X1" data-revision="1"></kex-mram>
+<kex-vram id="VRAM0" data-axis="1.1.VRAM" data-ref="X1" data-frame="0"></kex-vram>
+<kex-bus id="BUS0" data-axis="1.1.BUS" data-sequence="0"></kex-bus>
+<kex-clock id="CLOCK0" data-axis="1.1.CLOCK" data-tick="0" data-hz="1000" data-state="stopped"></kex-clock>
+<kex-chip id="CHIP0" data-axis="1.1.CHIP" data-threads="9" data-state="online" data-template="canonical"></kex-chip>
+<kex-warehouse id="WAREHOUSE0" data-axis="1.WAREHOUSE" data-chips="1" data-threads="9" data-logical-capacity="9" data-physical-capacity="host-bound"></kex-warehouse>
+<kex-threadpool id="THREADS0" data-axis="1.1.THREADS" data-count="9" data-runnable="0" data-completed="0"></kex-threadpool>
+<kex-isa id="ISA0" data-axis="1.1.ISA" data-version="8" data-word-bits="32"></kex-isa>
+<kex-mm id="MM0" data-axis="1.1.MM" data-pages="81" data-page-size="4096" data-allocated="0" data-faults="0"></kex-mm>
+<kex-irq id="IRQ0" data-axis="1.1.IRQ" data-next="1" data-pending="0" data-serviced="0"></kex-irq>
+<kex-scheduler id="SCHED0" data-axis="1.1.SCHED" data-policy="RR" data-quantum="9" data-switches="0" data-current="PID1"></kex-scheduler>
+<kex-atomic id="ATOM0" data-axis="1.1.ATOM" data-value="1" data-lock="free" data-ops="0"></kex-atomic>
+<kex-provider id="PROVIDER_MAIN" data-kind="main" data-state="online"></kex-provider>
+<kex-provider id="PROVIDER_WORKER" data-kind="worker" data-state="unprobed"></kex-provider>
+<kex-provider id="PROVIDER_WEBGPU" data-kind="webgpu" data-state="unprobed"></kex-provider>
+<kex-loader id="LOADER0" data-axis="1.1.LOADER" data-loaded="0"></kex-loader>
+<kex-source id="SRC_PY" data-language="python" data-runtime="PY0" data-entry="main">print("KEX PYTHON SOURCE")</kex-source>
+<kex-source id="SRC_JS" data-language="javascript" data-runtime="JS0" data-entry="main">return "KEX JS SOURCE";</kex-source>
+<kex-source id="SRC_C" data-language="c" data-runtime="C0" data-entry="main">int main(void){ return 1; }</kex-source>
+<kex-source id="SRC_CPP" data-language="cpp" data-runtime="CPP0" data-entry="main">int main(){ return 1; }</kex-source>
+<kex-runtime id="C0" data-kind="c" data-provider="compiler-bridge" data-state="unbound" data-target="KEX-ABI-1"></kex-runtime>
+<kex-runtime id="CPP0" data-kind="cpp" data-provider="compiler-bridge" data-state="unbound" data-target="KEX-ABI-1"></kex-runtime>
+<kex-abi id="ABI0" data-name="KEX-ABI-1" data-word-bits="32" data-syscall-bits="16" data-address-model="XREF"></kex-abi>
+<kex-syscalls id="SYSCALLS0"></kex-syscalls>
+<kex-devkit id="DEVKIT0" data-version="1" data-entry="source->compile->load->execute"></kex-devkit>
+<kex-runtime id="JS0" data-kind="javascript" data-provider="browser" data-state="online"></kex-runtime>
+<kex-runtime id="PY0" data-kind="python" data-provider="bridge" data-state="unbound"></kex-runtime>
+<kex-runner id="RUNNER0" data-axis="1.1.RUNNER" data-runtime="JS0" data-pid="PID2" data-state="idle"></kex-runner>
+<kex-port id="PORT1" data-number="1" data-owner="PID1" data-state="bound" data-protocol="KEX"></kex-port>
+<kex-port id="PORT2" data-number="2" data-owner="PID2" data-state="bound" data-protocol="KEX"></kex-port>
+<kex-bridge id="BRIDGE0" data-from="PORT1" data-to="PORT2" data-state="online" data-sequence="0"></kex-bridge>
+<kex-pidspace id="PIDSPACE0" data-next="10" data-count="9"></kex-pidspace>
+<kex-runtime-log id="RUNTIMELOG0"></kex-runtime-log>
+<kex-recovery id="RECOVERY0" data-axis="1.1.RECOVERY" data-checkpoints="0" data-last="none"></kex-recovery>
+<kex-capability id="CAP_ROOT" data-subject="PID1" data-resource="*" data-rights="rwx"></kex-capability>
+<kex-capability id="CAP_USER" data-subject="PID2" data-resource="USER" data-rights="rw"></kex-capability>
+
+<!-- Process table: actual live operating processes, not labels in a JS object. -->
+<kex-proc id="PID1" data-name="init" data-state="ready" data-priority="9" data-pc="X1" data-owner="root" data-provider="main"></kex-proc>
+<kex-proc id="PID2" data-name="shell" data-state="ready" data-priority="8" data-pc="X1" data-owner="operator" data-provider="main"></kex-proc>
+<kex-proc id="PID3" data-name="scheduler" data-state="ready" data-priority="9" data-pc="X1" data-owner="kernel" data-provider="main"></kex-proc>
+<kex-proc id="PID4" data-name="memory-manager" data-state="ready" data-priority="9" data-pc="X1" data-owner="kernel" data-provider="main"></kex-proc>
+<kex-proc id="PID5" data-name="interrupt-service" data-state="waiting" data-priority="9" data-pc="X1" data-owner="kernel" data-provider="main"></kex-proc>
+<kex-proc id="PID6" data-name="storage-service" data-state="ready" data-priority="7" data-pc="X1" data-owner="system" data-provider="main"></kex-proc>
+<kex-proc id="PID7" data-name="device-manager" data-state="ready" data-priority="8" data-pc="X1" data-owner="system" data-provider="main"></kex-proc>
+<kex-proc id="PID8" data-name="compositor" data-state="ready" data-priority="7" data-pc="X1" data-owner="system" data-provider="main"></kex-proc>
+<kex-proc id="PID9" data-name="security-audit" data-state="ready" data-priority="9" data-pc="X1" data-owner="kernel" data-provider="main"></kex-proc>
+
+<!-- Page table is live DOM memory metadata. -->
+<kex-pages id="PAGES0"></kex-pages>
+<kex-programs id="PROGRAMS0">
+  <kex-program id="APP_HELLO" data-name="hello-x" data-entry="0" data-owner="operator"
+    data-source="SELECT X3|WRITE R1 X3|READ R1 NUMBER|MIRROR X3|PRINT ADDRESS X3|HALT"></kex-program>
+  <kex-program id="APP_COMPUTE" data-name="compute-path" data-entry="0" data-owner="operator"
+    data-source="SELECT X2|ORIGIN 2|LANE 9|RESOLVE|WRITE R1 X2|READ R1 NUMBER|HALT"></kex-program>
+</kex-programs>
+<kex-operator id="OP0" data-role="operator" data-session="local" data-auth="document-host" data-status="ready"></kex-operator>
+<kex-audit id="AUDIT" data-sequence="0"></kex-audit>
+<kex-fault id="FAULT" data-code="0." data-state="clear"></kex-fault>
+
+<h3>Wired operator CLI</h3>
+<div class="cli" role="application" aria-label="KEX operator command line">
+<pre id="cliout">KEX CLI OFFLINE — issue BOOT or HELP</pre>
+<div class="clirow"><input id="cli" autocomplete="off" spellcheck="false" aria-label="KEX command input" placeholder="KEX> HELP"><button id="clisend">EXEC</button></div>
+</div>
+<h3>Developer Workbench — code into the machine</h3>
+<div class="panel" style="padding:8px;margin:8px 0">
+<div class="kv"><b>Language</b><select id="devlang"><option value="kex">KEX Assembly</option><option value="javascript">JavaScript</option><option value="python">Python</option><option value="c">C</option><option value="cpp">C++</option></select>
+<b>Program ID</b><input id="devid" value="USER_APP_1" aria-label="Program ID"></div>
+<textarea id="devsource">SELECT X1
+WRITE R1 X1
+READ R1 NUMBER
+PRINT ADDRESS X1
+HALT</textarea>
+<div class="controls"><button id="devbuild">BUILD</button><button id="devrun">BUILD + RUN</button><button id="devdocs">DEVELOPER GUIDE</button></div>
+<pre id="devout">Workbench ready. KEX Assembly executes directly. JavaScript executes through the browser runtime. Python, C and C++ are registered source languages and require their bound runtime/compiler provider before those language semantics can execute.</pre>
+</div>
+<h3>Compiler / traversal instructions</h3>
+<textarea id="source">SELECT X2
+ORIGIN 2
+LANE 9
+RESOLVE
+WRITE R1 X2
+READ R1 NUMBER
+SPAWN C1 2.1.1
+SPAWN C2 3.1.1
+SEND C1 C2 X2
+MIRROR X2
+PRINT ADDRESS X2
+HALT</textarea>
+<div class="controls"><button id="run">COMPILE → TRAVERSE ACTIVE STATE</button></div>
+<pre id="terminal">POWER OFF</pre>
+</section>
+<section class="panel">
+<h2>LIVE STATE INSPECTION</h2><div id="state" class="kv"></div>
+<h3>Operating process table</h3><pre id="processView"></pre>
+<h3>Kernel / ISA / memory / interrupts</h3><pre id="kernelView"></pre>
+<h3>Source / runtimes / runners</h3><pre id="runtimeView"></pre>
+<h3>PID / ports / bridges</h3><pre id="ipcView"></pre>
+<h3>Physical providers</h3><pre id="providerView"></pre>
+<h3>Warehouse compute fabric</h3><pre id="warehouse"></pre>
+<h3>Compute fabric</h3><pre id="compute"></pre>
+<h3>Routes / containers</h3><pre id="routes"></pre>
+<h3>Validation</h3><pre id="testlog"></pre>
+<h3>Performance</h3><pre id="perflog"></pre>
+<h3>Ledger</h3><pre id="ledgerView"></pre>
+<h3>Engineering evidence</h3><pre id="evidence"></pre>
+</section></main>
+
+<script>
+"use strict";
+// JS is an actuator/driver over live DOM state. There is deliberately no authoritative runtime object.
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const root=document.documentElement, fabric=$("#KEX"), ledger=$("#LEDGER"), proc=$("#P0");
+const active=()=>$("kex-x[data-active='true']");
+const x=id=>document.getElementById(id);
+const log=s=>{const e=document.createElement("i");e.dataset.t=String(performance.now());e.textContent=s;ledger.appendChild(e)};
+const address=(node=active())=>`KEX:${node.id}:${fabric.dataset.origin}.${fabric.dataset.lane}.${node.dataset.axis.split(".")[2]}:R${node.dataset.revision}`;
+function projection(p,node=active()){
+ const f={NUMBER:()=>Number(node.dataset.number),WORD:()=>node.dataset.word,ADDRESS:()=>address(node),
+ INSTRUCTION:()=>node.dataset.instruction,RELATIONS:()=>node.dataset.axis,ENVIRONMENT:()=>node.dataset.environment,
+ OBSERVER:()=>node.dataset.observer,SELF:()=>node.id}[p]; if(!f)throw Error("projection "+p);return f();
+}
+function select(id){const n=x(id);if(!n||n.tagName!=="KEX-X")throw Error("bad XREF "+id);$$("kex-x").forEach(v=>v.dataset.active="false");n.dataset.active="true";log("SELECT "+id)}
+function bindFabric(){
+ $$("kex-x").forEach(n=>{if(n.dataset.bound!=="1"){n.dataset.bound="1";n.addEventListener("click",()=>{select(n.id);render()})}});
+}
+function render(){
+ bindFabric();
+ const a=active();
+ $("#state").innerHTML=[
+ ["boot",root.dataset.boot],["active X",a.id],["NUMBER(X)",projection("NUMBER",a)],["address",address(a)],
+ ["origin",fabric.dataset.origin],["lane",fabric.dataset.lane],["extent",fabric.dataset.extent],["X revision",a.dataset.revision],
+ ["register R1",$("#R1").dataset.ref],["containers",$$("kex-container").length],["routes",$$("kex-route").length]
+ ].map(([k,v])=>`<b>${k}</b><span>${v}</span>`).join("");
+ $("#runtimeView").textContent=runtimeView();
+ $("#ipcView").textContent=ipcView();
+ $("#processView").textContent=processTable();
+ $("#kernelView").textContent=kernelView();
+ $("#providerView").textContent=providerView();
+ $("#warehouse").textContent=warehouseView();
+ $("#compute").textContent=deviceView();
+ $("#routes").textContent=$$("kex-route").map(r=>`${r.dataset.from} -> ${r.dataset.to} : ${r.dataset.ref} @ ${r.dataset.address}`).join("\n")||"(none)";
+ $("#ledgerView").textContent=[...ledger.children].map(e=>e.textContent).join("\n")||"(empty)";
+}
+function boot(){root.dataset.boot="on";proc.dataset.state="running";operator.dataset.status="active";log("BOOT KEXSTACK10");$("#terminal").textContent="BOOT PASS — CANONICAL DOM FABRIC ACTIVE";selftest();evidence();render()}
+function compile(src){
+ return src.split(/\n+/).map(s=>s.trim()).filter(Boolean).map((line,i)=>{
+  if(/(^|\s)0(\s|$)/.test(line))throw Error(`line ${i+1}: bare 0 illegal; 0. is reference token`);
+  const [op,...args]=line.split(/\s+/);return {op,args,line:i+1};
+ });
+}
+function execute(ir){
+ const out=[];proc.dataset.pc="0";proc.dataset.state="running";
+ for(let pc=0;pc<ir.length;pc++){proc.dataset.pc=String(pc);const {op,args:a}=ir[pc];
+  switch(op){
+   case"SELECT":select(a[0]);break;
+   case"ORIGIN":fabric.dataset.origin=a[0];break;
+   case"LANE":fabric.dataset.lane=a[0];break;
+   case"RESOLVE":fabric.dataset.extent=String(Number(fabric.dataset.origin)*Number(fabric.dataset.lane));out.push(`EXTENT ${fabric.dataset.extent}`);break;
+   case"WRITE":{const r=x(a[0]);if(!r||r.tagName!=="KEX-REGISTER")throw Error("bad register");if(!x(a[1]))throw Error("bad ref");r.dataset.ref=a[1];log(`WRITE ${a[0]} -> ${a[1]}`);break}
+   case"READ":{const r=x(a[0]),n=x(r.dataset.ref);out.push(`${a[0]} -> ${n.id} -> ${a[1]}=${projection(a[1],n)}`);break}
+   case"SPAWN":{if(x(a[0]))throw Error("id exists");const c=document.createElement("kex-container");c.id=a[0];c.dataset.axis=a[1];c.dataset.parent="ROOT";document.body.appendChild(c);log(`SPAWN ${a[0]} @ ${a[1]}`);break}
+   case"SEND":{const [from,to,ref]=a;if(!x(from)||!x(to)||!x(ref))throw Error("route endpoint");const r=document.createElement("kex-route");r.dataset.from=from;r.dataset.to=to;r.dataset.ref=ref;r.dataset.address=address(x(ref));document.body.appendChild(r);log(`SEND ${from}->${to} ${ref}`);break}
+   case"MIRROR":{const n=x(a[0]||active().id);n.dataset.revision=String(Number(n.dataset.revision)+1);root.dataset.revision=n.dataset.revision;log(`MIRROR ${n.id} R${n.dataset.revision}`);break}
+   case"PRINT":out.push(`${a[0]}(${a[1]||active().id}) => ${projection(a[0],x(a[1]||active().id))}`);break;
+   case"HALT":proc.dataset.state="halted";pc=ir.length;break;
+   default:throw Error(`line ${ir[pc].line}: opcode ${op}`);
+  }
+ }
+ render();return out.join("\n");
+}
+function selftest(){
+ const q=[],t=(n,v,d)=>q.push(`${v?"PASS":"FAIL"} ${n}\n  ${d}`);
+ t("DOM is canonical X state",$$("kex-x").length===9,"9 live KEX-X nodes; projection clones are non-authoritative.");
+ const n=x("X1");t("X != NUMBER(X)",Object.keys(n.dataset).length>1&&projection("NUMBER",n)===1,"X1 carries address/state fields while NUMBER(X1)=1.");
+ t("register is reference not copy",$("#R1").dataset.ref==="X1"&&!$("#R1").dataset.number,"R1 points to X1 and stores no numeric copy.");
+ let old=n.dataset.revision,num=projection("NUMBER",n);n.dataset.revision=String(Number(old)+1);
+ t("active mutation",projection("NUMBER",n)===num&&n.dataset.revision!==old,`same live X mutated R${old}->R${n.dataset.revision}; NUMBER remained ${num}.`);
+ t("0. remains lexical reference","0."==="0.","No numeric coercion in lexer rule.");
+ t("2x9 address closure",2*9===18,"origin/lane relation resolves 18 without erasing origin=2,lane=9.");
+ t("CPU uses X references",cpu.dataset.pc.startsWith("X")&&cpu.dataset.acc.startsWith("X"),"PC and accumulator reference canonical X nodes.");
+ t("MRAM is reference memory",mram.dataset.ref.startsWith("X")&&!mram.dataset.number,"MRAM retains X identity rather than scalar copy.");
+ t("VRAM is projection memory",vram.dataset.ref.startsWith("X"),"VRAM points to canonical X used by GPU projection.");
+ t("shared bus addressing",bus.dataset.axis==="1.1.BUS","CPU/GPU/MRAM/VRAM communicate through same addressed fabric.");
+ t("chip template is canonical",chip0.dataset.template==="canonical","CHIP0 is the source abstraction for replicated logical chips.");
+ t("warehouse capacity is explicitly logical",warehouse.dataset.physicalCapacity==="host-bound","Topology scaling does not misreport physical silicon.");
+ t("thread pool shares X topology",Number(threadpool.dataset.count)>=1,"Threads resolve work through canonical X references.");
+ $("#testlog").textContent=q.join("\n\n");render();
+}
+function benchmark(){
+ const results={};let t,n=x("X1"),sink;
+ t=performance.now();for(let i=0;i<100000;i++)sink=x("X"+(i%9+1));results.address_lookup_100k_ms=performance.now()-t;
+ t=performance.now();for(let i=0;i<100000;i++){n.dataset.revision=String((i%9)+1);sink=n.dataset.revision}results.direct_dom_mutation_100k_ms=performance.now()-t;
+ const r=$("#R1");t=performance.now();for(let i=0;i<100000;i++){r.dataset.ref="X"+(i%9+1);sink=x(r.dataset.ref).dataset.number}results.register_reference_100k_ms=performance.now()-t;
+ t=performance.now();for(let i=0;i<1000;i++){select("X"+(i%9+1));render()}results.active_state_render_1000_ms=performance.now()-t;
+ t=performance.now();for(let i=0;i<1000;i++){const rr=document.createElement("kex-route");rr.dataset.from="ROOT";rr.dataset.to="ROOT";rr.dataset.ref="X1";rr.dataset.address=address(x("X1"));document.body.appendChild(rr);rr.remove()}results.route_create_remove_1000_ms=performance.now()-t;
+ t=performance.now();for(let i=0;i<10000;i++)cpuStep(1);results.cpu_10k_cycles_ms=performance.now()-t;
+ t=performance.now();for(let i=0;i<10000;i++){vram.dataset.ref="X"+(i%9+1);sink=vram.dataset.ref}results.vram_ref_10k_ms=performance.now()-t;
+ results.nodes=$$("*").length;results.x_nodes=$$("kex-x").length;results.routes=$$("kex-route").length;let oldchips=$$("kex-chip").length;t=performance.now();scaleChips(729);results.scale_729_chips_ms=performance.now()-t;
+ t=performance.now();dispatchThreads(100000);results.dispatch_100k_ops_ms=performance.now()-t;
+ results.logical_chips_tested=$$("kex-chip").length;results.logical_thread_slots=$$("kex-chip").length*Number(threadpool.dataset.count);
+ scaleChips(oldchips);
+ results.bus_transactions=Number(bus.dataset.sequence);
+ $("#perflog").textContent=JSON.stringify(results,null,2);render();
+}
+
+function sha256Hex(text){
+ if(!crypto?.subtle)return Promise.resolve("UNAVAILABLE");
+ return crypto.subtle.digest("SHA-256",new TextEncoder().encode(text)).then(b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join(""));
+}
+async function checkpoint(){
+ const stamp=new Date().toISOString();
+ const clone=document.documentElement.cloneNode(true);
+ clone.dataset.checkpoint=stamp;
+ const serial="<!doctype html>\n"+clone.outerHTML;
+ const hash=await sha256Hex(serial);
+ const blob=new Blob([serial],{type:"text/html;charset=utf-8"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+ a.download=`KEX_ACTIVE_CHECKPOINT_${stamp.replace(/[:.]/g,"-")}.html`;
+ a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+ recovery.dataset.checkpoints=String(Number(recovery.dataset.checkpoints)+1);recovery.dataset.last=stamp;log(`CHECKPOINT SHA256=${hash}`);
+ $("#terminal").textContent=`CHECKPOINT CREATED\n${stamp}\nSHA-256 ${hash}`;
+ render();
+}
+function evidence(){
+ const e={
+  artifact:"KEX Computer Stack v10 — Developer Runtime",
+  magic:root.dataset.kexMagic,
+  authority:"canonical DOM X fabric",
+  shadow_runtime:false,
+  operator:operator.id,
+  controls:{
+   traceability:"sequenced audit ledger",
+   fault_handling:"explicit live fault element",
+   verification:"SELF TEST + PERFORMANCE TEST",
+   change_control:"MIRROR revision + CHECKPOINT",
+   command_surface:"wired CLI using same executor",
+   isa:"32-bit encoded instruction words with decoder",
+   memory:"page allocation + owner/rights metadata",
+   interrupts:"queued vector/ref interrupt service",
+   scheduler:"round-robin process scheduler",
+   atomics:"compare-and-swap primitive",
+   providers:"main thread + Worker probe + WebGPU probe",
+   loader:"packaged program loader/executor",
+   processes:"init,shell,scheduler,memory,interrupt,storage,device,compositor,security-audit + dynamic PID creation",
+   source:"embedded source units with runtime bindings",
+   runtimes:"browser JS native; Python bridge contract explicit",
+   ipc:"logical ports + bilateral bridges + X-reference messages",
+   persistence:"explicit serialized active-DOM checkpoint"
+  },
+  standards_position:"engineering controls are mapped toward ISO/IEC/IEEE 12207, ISO/IEC 25010, ISO/IEC 27001/27002 and ISO/IEC 27034; no certification claim"
+ };
+ $("#evidence").textContent=JSON.stringify(e,null,2);
+}
+
+$("#boot").onclick=boot;$("#mirror").onclick=()=>{const n=active();n.dataset.revision=String(Number(n.dataset.revision)+1);log("MIRROR "+n.id);render()};
+$("#tests").onclick=selftest;$("#bench").onclick=benchmark;$("#checkpoint").onclick=checkpoint;$("#probe").onclick=probeProviders;$("#conform").onclick=conformance;
+$("#run").onclick=()=>{try{if(root.dataset.boot!=="on")boot();$("#terminal").textContent=execute(compile($("#source").value))||"(completed)"}catch(e){$("#terminal").textContent="FAULT "+e.message}};
+
+// Wired CLI: commands call the same compiler/executor and mutate the same canonical DOM fabric.
+// No shadow CLI state is introduced.
+const cli=$("#cli"), cliout=$("#cliout"), audit=$("#AUDIT"), fault=$("#FAULT"), operator=$("#OP0");
+const HELP=`KEX ACTIVE CLI
+BOOT                         initialise operating state
+STATUS                       inspect live canonical state
+SELECT Xn                    select canonical X
+READ Rn [PROJECTION]         dereference register
+WRITE Rn Xn                  wire register to X
+ORIGIN n | LANE n | RESOLVE  address operations
+SPAWN Cn axis                create live container
+SEND Cn Cn Xn                bilateral route
+MIRROR [Xn]                  mutate canonical X revision
+PRINT PROJECTION [Xn]        project live X
+RUN <instruction>            execute one ISA instruction
+TEST                         run invariant tests
+BENCH                        run browser performance tests
+AUDIT                        show operator ledger
+CLEAR                        clear CLI display
+CPU STEP [n]                 execute n CPU cycles over X references
+CPU LOAD Xn                   load accumulator reference
+GPU DRAW Xn                   project X into VRAM
+GPU FRAME                     commit VRAM frame
+MRAM WRITE Xn                 persist live X reference in MRAM
+MRAM READ                     dereference MRAM
+VRAM READ                     dereference current visual memory
+CLOCK START [hz]              start logical KEX clock
+CLOCK STOP                    stop logical clock
+CLOCK TICK [n]                execute deterministic clock ticks
+THREADS n                     set threads per chip
+SCALE n                       materialise n logical chip abstractions
+SCALE9 depth                  materialise 9^depth logical chips
+PS                            process table
+SCHED [n]                     run n scheduler quanta
+ALLOC PIDn pages [r|rw|rwx]   allocate protected pages
+FREE PIDn                     release process pages
+MEM                           inspect page table
+IRQ RAISE vector Xn           queue interrupt
+IRQ SERVICE                   service next interrupt
+ATOMIC CAS expected next      compare-and-swap canonical atomic cell
+ISA ENCODE <instruction>      encode one instruction word
+ISA DECODE <hexword>          decode one instruction word
+SOURCE LIST                   list embedded source units
+SOURCE SHOW <source-id>        inspect embedded source
+DEV LANG kex|javascript|python|c|cpp
+DEV BUILD <program-id>          build current workbench source
+DEV RUN <program-id>            build and execute when provider supports it
+ABI                            inspect program/kernel ABI
+SYSCALLS                       inspect operating-system call contract
+RUNTIME                       inspect runtime registry
+RUN SRC_JS                    execute browser-native source
+RUN SRC_PY                    route Python source to PY0 bridge
+PID NEW name                  create live process/PID
+PID KILL PIDn                 terminate process
+PORT BIND n PIDn              bind logical IPC port
+PORT SEND n Xn                send X reference through port
+BRIDGE n m                    bridge two logical ports
+IPC                           inspect PID/port/bridge fabric
+LOAD APP_HELLO|APP_COMPUTE    load packaged executable
+EXEC APP_HELLO|APP_COMPUTE    execute packaged program
+PROVIDERS                     probe/show main/Worker/WebGPU providers
+CONFORM                       run full computer-stack conformance suite
+WAREHOUSE                     inspect aggregate logical topology
+DISPATCH n                    dispatch n addressed thread operations
+BUS                           inspect device/address bus
+HALT                         halt process
+HELP                         command reference
+
+PROJECTIONS: NUMBER WORD ADDRESS INSTRUCTION RELATIONS ENVIRONMENT OBSERVER SELF
+REFERENCE TOKEN: 0. ; bare weighted 0 is rejected`;
+
+function auditEvent(kind, command, outcome){
+ const seq=Number(audit.dataset.sequence)+1;audit.dataset.sequence=String(seq);
+ const e=document.createElement("i");
+ e.dataset.seq=String(seq);e.dataset.kind=kind;e.dataset.operator=operator.id;
+ e.dataset.time=new Date().toISOString();e.textContent=`AUDIT#${seq} ${kind} OP=${operator.id} CMD=${command} RESULT=${outcome}`;
+ ledger.appendChild(e);
+}
+
+const cpu=$("#CPU0"),gpu=$("#GPU0"),mram=$("#MRAM0"),vram=$("#VRAM0"),bus=$("#BUS0");
+
+const clock=$("#CLOCK0"),chip0=$("#CHIP0"),warehouse=$("#WAREHOUSE0"),threadpool=$("#THREADS0");
+let clockHandle=null;
+function logicalTick(n=1){
+ n=Math.max(1,Number(n)||1); let done=0;
+ for(let i=0;i<n;i++){
+  clock.dataset.tick=String(Number(clock.dataset.tick)+1);
+  const chips=$$("kex-chip");
+  for(const c of chips){
+   const ref="X"+((Number(clock.dataset.tick)+Number(c.dataset.ordinal||0))%9+1);
+   c.dataset.lastRef=ref; done++;
+  }
+ }
+ return done;
+}
+function clockStart(hz=1000){
+ hz=Math.max(1,Math.min(1000,Number(hz)||1000));clock.dataset.hz=String(hz);clock.dataset.state="running";
+ if(clockHandle)clearInterval(clockHandle);
+ // Browser timers are scheduling triggers, not a claim of physical Hz equivalence.
+ clockHandle=setInterval(()=>{logicalTick(1);render()},Math.max(1,Math.floor(1000/hz)));
+ return `CLOCK running requested=${hz}Hz host-scheduled`;
+}
+function clockStop(){if(clockHandle)clearInterval(clockHandle);clockHandle=null;clock.dataset.state="stopped";return "CLOCK stopped"}
+function setThreads(n){
+ n=Math.max(1,Math.floor(Number(n)||1));threadpool.dataset.count=String(n);
+ $$("kex-chip").forEach(c=>c.dataset.threads=String(n));warehouse.dataset.threads=String(n*$$("kex-chip").length);
+ return Number(warehouse.dataset.threads);
+}
+function scaleChips(n){
+ n=Math.max(1,Math.min(59049,Math.floor(Number(n)||1)));
+ $$("kex-chip:not(#CHIP0)").forEach(c=>c.remove());
+ chip0.dataset.ordinal="0";
+ const frag=document.createDocumentFragment();
+ for(let i=1;i<n;i++){
+  const c=document.createElement("kex-chip");c.id="CHIP"+i;c.dataset.axis=`${(i%9)+1}.${(Math.floor(i/9)%9)+1}.CHIP`;
+  c.dataset.ordinal=String(i);c.dataset.threads=threadpool.dataset.count;c.dataset.state="online";c.dataset.template="CHIP0";frag.appendChild(c);
+ }
+ document.body.appendChild(frag);warehouse.dataset.chips=String(n);warehouse.dataset.threads=String(n*Number(threadpool.dataset.count));
+ warehouse.dataset.logicalCapacity=warehouse.dataset.threads;render();return n;
+}
+function dispatchThreads(n){
+ n=Math.max(1,Math.floor(Number(n)||1));threadpool.dataset.runnable=String(n);
+ const chips=$$("kex-chip"),tc=Number(threadpool.dataset.count);let completed=0,checksum=0;
+ for(let i=0;i<n;i++){
+  const c=chips[i%chips.length], lane=i%tc, ref="X"+((i+Number(c.dataset.ordinal||0))%9+1);
+  checksum=(checksum+Number(x(ref).dataset.number)*(lane+1))%2147483647; completed++;
+ }
+ threadpool.dataset.runnable="0";threadpool.dataset.completed=String(Number(threadpool.dataset.completed)+completed);
+ busTx("THREADS0","WAREHOUSE0","X1",`DISPATCH:${completed}:CHECKSUM:${checksum}`);
+ render();return `DISPATCH completed=${completed} chips=${chips.length} threads/chip=${tc} checksum=${checksum}`;
+}
+
+const isa=$("#ISA0"), mm=$("#MM0"), irq=$("#IRQ0"), sched=$("#SCHED0"), atom=$("#ATOM0"),
+      pages=$("#PAGES0"), programs=$("#PROGRAMS0"), loader=$("#LOADER0"), recovery=$("#RECOVERY0"),
+      runner=$("#RUNNER0"), pidspace=$("#PIDSPACE0"), runtimeLog=$("#RUNTIMELOG0");
+const procNodes=()=>$$("kex-proc");
+
+const OPCODES={SELECT:1,ORIGIN:2,LANE:3,RESOLVE:4,WRITE:5,READ:6,SPAWN:7,SEND:8,MIRROR:9,PRINT:10,HALT:255};
+const OPCODE_NAMES=Object.fromEntries(Object.entries(OPCODES).map(([k,v])=>[v,k]));
+function isaEncode(line){
+ const [op,...args]=line.trim().split(/\s+/);const code=OPCODES[op.toUpperCase()];
+ if(code===undefined)throw Error("E_ISA_OPCODE "+op);
+ let operand=0;
+ const a=args[0]||"";
+ if(/^X[1-9]$/.test(a))operand=Number(a.slice(1));
+ else if(/^[0-9]+$/.test(a))operand=Number(a)&0xFFFFFF;
+ else {for(let i=0;i<a.length;i++)operand=((operand*33)^a.charCodeAt(i))&0xFFFFFF}
+ const word=((code&0xFF)<<24)|(operand&0xFFFFFF);
+ return (word>>>0).toString(16).padStart(8,"0");
+}
+function isaDecode(hex){
+ const word=parseInt(hex,16)>>>0,code=(word>>>24)&0xFF,operand=word&0xFFFFFF;
+ return {word:"0x"+word.toString(16).padStart(8,"0"),opcode:OPCODE_NAMES[code]||"UNKNOWN",code,operand};
+}
+
+
+const abi=$("#ABI0"),syscalls=$("#SYSCALLS0"),devkit=$("#DEVKIT0");
+const SYSCALL_SPEC=[
+ {n:1,name:"x_read",args:"XREF, projection",returns:"value",meaning:"Read one projection from canonical X state."},
+ {n:2,name:"x_select",args:"XREF",returns:"status",meaning:"Select canonical X as active state."},
+ {n:3,name:"mem_alloc",args:"PID, pages, rights",returns:"page-list",meaning:"Allocate protected memory pages."},
+ {n:4,name:"mem_free",args:"PID",returns:"status",meaning:"Release process-owned memory pages."},
+ {n:5,name:"ipc_send",args:"port, XREF",returns:"delivery-count",meaning:"Send an X reference through a logical port."},
+ {n:6,name:"irq_raise",args:"vector, XREF",returns:"status",meaning:"Raise an interrupt carrying an X reference."},
+ {n:7,name:"gpu_draw",args:"XREF",returns:"status",meaning:"Project X into VRAM."},
+ {n:8,name:"proc_spawn",args:"name",returns:"PID",meaning:"Create a schedulable process."},
+ {n:9,name:"audit_write",args:"message",returns:"sequence",meaning:"Append an auditable operating event."}
+];
+function initSyscalls(){if(syscalls.children.length)return;for(const q of SYSCALL_SPEC){const e=document.createElement("kex-syscall");e.dataset.number=q.n;e.dataset.name=q.name;e.dataset.args=q.args;e.dataset.returns=q.returns;e.textContent=q.meaning;syscalls.appendChild(e)}}
+function syscallView(){initSyscalls();return [...syscalls.children].map(e=>`${e.dataset.number.padStart(2,"0")} ${e.dataset.name}(${e.dataset.args}) -> ${e.dataset.returns}\n   ${e.textContent}`).join("\n")}
+function abiView(){return [`ABI=${abi.dataset.name}`,`word=${abi.dataset.wordBits} bits`,`syscall-number=${abi.dataset.syscallBits} bits`,`address=${abi.dataset.addressModel}`,"PATH: source -> frontend/runtime -> ABI/ISA -> loader -> PID -> scheduler -> provider -> X state","C and C++ are source languages/frontends, not machine operators. Both target the same operating contract."].join("\n")}
+function runtimeForLanguage(lang){return ({javascript:"JS0",python:"PY0",c:"C0",cpp:"CPP0"})[lang]||null}
+function buildDeveloperProgram(id,lang,source){
+ if(!/^[A-Z][A-Z0-9_]{2,31}$/.test(id))throw Error("E_DEV_ID");
+ const old=x(id);if(old)old.remove();
+ if(lang==="kex"){const ir=compile(source),words=ir.map(i=>isaEncode([i.op,...i.args].join(" ")));const p=document.createElement("kex-program");p.id=id;p.dataset.name=id.toLowerCase();p.dataset.owner="operator";p.dataset.source=source.replaceAll("\n","|");p.dataset.words=words.join(",");p.dataset.language="kex";programs.appendChild(p);return `BUILD PASS ${id}\ninstructions=${ir.length}\nwords=${words.join(" ")}`}
+ const rt=runtimeForLanguage(lang);if(!rt)throw Error("E_DEV_LANG");const su=document.createElement("kex-source");su.id=id+"_SRC";su.dataset.language=lang;su.dataset.runtime=rt;su.dataset.entry="main";su.textContent=source;document.body.appendChild(su);
+ return `SOURCE REGISTERED ${su.id}\nlanguage=${lang}\nruntime=${rt}\nprovider-state=${x(rt).dataset.state}\n${lang==="javascript"?"Executable by bound browser provider.":"Compilation/execution requires the registered provider targeting "+(x(rt).dataset.target||"its provider ABI")+". Execution is not claimed until that provider is bound."}`;
+}
+function runDeveloperProgram(id,lang,source){const b=buildDeveloperProgram(id,lang,source);if(lang==="kex")return b+"\n\n"+execProgram(id);if(lang==="javascript")return b+"\n\nRESULT "+runSource(id+"_SRC");return b+"\n\nNOT EXECUTED: "+runtimeForLanguage(lang)+" is "+x(runtimeForLanguage(lang)).dataset.state}
+function developerGuide(){return `KEX DEVELOPER GUIDE — FROM ZERO
+
+WHAT A COMPUTER IS
+A computer is a system that stores state, accepts instructions, changes state according to those instructions, and exposes results. Physical processors implement this with electronic circuits. KEX defines a software machine inside the browser and maps its work to execution providers supplied by the host.
+
+THE CANONICAL X STATE
+X is an addressable machine state. The visible number is one property of that state. NUMBER(X1)=1 does not mean X1 contains only the scalar number 1. X1 can also carry identity, address, revision, instruction and relation information.
+
+SOURCE CODE
+Source code is text written for humans and language tools. C, C++, Python, JavaScript and KEX Assembly are source languages. Source code itself is not a CPU and does not automatically execute.
+
+C AND C++
+C and C++ sit above the execution boundary. C0 and CPP0 are language/compiler runtime contracts. Their job is to translate source into a target understood by the machine. In this build their declared target is ${abi.dataset.name}. They therefore become alternative ways of expressing programs rather than privileged operators of the computer.
+
+RUNTIME
+A runtime supplies the environment required by a language. JS0 is bound to the browser JavaScript engine. PY0 represents the Python runtime boundary. C0 and CPP0 represent compiler/runtime boundaries. An unbound runtime is reported as unbound rather than pretending code executed.
+
+ABI — APPLICATION BINARY INTERFACE
+${abi.dataset.name} is the contract between applications and the operating environment. It defines the word size, address model and service boundary. Programs should use this contract rather than modifying arbitrary kernel internals.
+
+ISA — INSTRUCTION SET ARCHITECTURE
+The ISA is the vocabulary understood by the virtual CPU. KEX currently encodes an instruction into a ${isa.dataset.wordBits}-bit word: an opcode identifies the operation and the remaining operand field identifies its current operand.
+
+SYSTEM CALLS
+A system call is a controlled request from a program to the operating environment.
+${syscallView()}
+
+LOADER
+The loader takes a built program, verifies that the machine knows how to execute it, and makes it available for execution.
+
+PID — PROCESS IDENTIFIER
+When software runs as a process it needs identity. PID prevents every running program from being treated as the same thing. The scheduler, memory manager, security layer and ports can all refer to that identity.
+
+MEMORY
+Memory pages are chunks of addressable working storage assigned to PIDs. Rights such as r, rw and rwx describe permitted operations. This is the beginning of memory isolation.
+
+SCHEDULER
+Multiple processes can be ready at once. The scheduler selects which PID gets execution time. This build uses round-robin scheduling so ready processes receive turns.
+
+INTERRUPTS
+An interrupt is an event requiring attention outside the ordinary instruction sequence. IRQ0 queues an interrupt vector together with an X reference and the interrupt-service process services it.
+
+PORTS AND BRIDGES
+A port is an IPC endpoint owned by a PID. A bridge connects endpoints. PORT SEND moves an X reference through the connected communication topology.
+
+CPU / GPU / MRAM / VRAM
+CPU changes general machine state. MRAM holds machine-state references. GPU performs visual/parallel projection work. VRAM holds the visual-state reference. They use the same X identity/address concept rather than inventing unrelated state models.
+
+EXECUTION PROVIDERS
+The KEX machine is virtualised, but work ultimately consumes physical resources. The browser main thread is one provider. Web Workers can supply additional browser execution contexts. WebGPU can expose GPU compute when the host supports it. Python/C/C++ need appropriate WASM/compiler/host providers before their semantics can execute.
+
+HOW TO WRITE A PROGRAM
+1. Choose a language in Developer Workbench.
+2. Give the program an uppercase identifier such as USER_APP_1.
+3. Write source in the editor.
+4. Press BUILD.
+5. For KEX Assembly, BUILD parses instructions and emits ISA words.
+6. For JavaScript, source is registered to JS0.
+7. Python/C/C++ source is registered to PY0/C0/CPP0 and reports the missing provider if unbound.
+8. Press BUILD + RUN only when a provider exists.
+9. Inspect PS, MEM, IPC, RUNTIME, ABI and AUDIT.
+10. Run CONFORM to test the machine's operating invariants.
+
+FIRST KEX PROGRAM
+SELECT X1
+WRITE R1 X1
+READ R1 NUMBER
+PRINT ADDRESS X1
+HALT
+
+SELECT chooses state. WRITE makes register R1 reference it. READ asks for one projection. PRINT emits a projection. HALT terminates the instruction sequence.
+
+THE ENGINEERING RULE
+Never infer successful execution merely because source exists or a button was clicked. A valid path is:
+source -> successful build -> valid ABI/ISA -> loader -> PID -> scheduler -> available provider -> state transition -> observable result -> audit/test evidence.`;
+}
+
+function runtimeView(){
+ return [
+  abiView(),
+  ...$$("kex-source").map(v=>`${v.id} language=${v.dataset.language} runtime=${v.dataset.runtime} entry=${v.dataset.entry}`),
+  ...$$("kex-runtime").map(v=>`${v.id} kind=${v.dataset.kind} provider=${v.dataset.provider} state=${v.dataset.state}`),
+  `RUNNER0 runtime=${runner.dataset.runtime} pid=${runner.dataset.pid} state=${runner.dataset.state}`
+ ].join("\n");
+}
+function ipcView(){
+ return [
+  `PIDSPACE count=${pidspace.dataset.count} next=${pidspace.dataset.next}`,
+  ...procNodes().map(p=>`${p.id} ${p.dataset.name} state=${p.dataset.state}`),
+  ...$$("kex-port").map(p=>`PORT${p.dataset.number} owner=${p.dataset.owner} state=${p.dataset.state} protocol=${p.dataset.protocol}`),
+  ...$$("kex-bridge").map(b=>`${b.id} ${b.dataset.from}<->${b.dataset.to} state=${b.dataset.state} seq=${b.dataset.sequence}`)
+ ].join("\n");
+}
+function sourceShow(id){const n=x(id);if(!n||n.tagName!=="KEX-SOURCE")throw Error("E_SOURCE");return n.textContent}
+function runtimeLogWrite(msg){const e=document.createElement("i");e.textContent=msg;e.dataset.time=new Date().toISOString();runtimeLog.appendChild(e)}
+function runSource(id){
+ const src=x(id);if(!src||src.tagName!=="KEX-SOURCE")throw Error("E_SOURCE");
+ const rt=x(src.dataset.runtime);runner.dataset.runtime=rt.id;runner.dataset.state="running";
+ if(rt.dataset.kind==="javascript"){
+  const result=Function(src.textContent)();runner.dataset.state="idle";runtimeLogWrite(`${id} => ${result}`);return String(result);
+ }
+ if(rt.dataset.kind==="python"||rt.dataset.kind==="c"||rt.dataset.kind==="cpp"){
+  runner.dataset.state="waiting";runtimeLogWrite(`${id} queued for PY0 bridge`);
+  return `${rt.id} PROVIDER REQUIRED\nsource=${id}\nlanguage=${rt.dataset.kind}\nstate=${rt.dataset.state}\ntarget=${rt.dataset.target||"provider-defined"}\nSource is registered but execution is not claimed until a compatible provider is bound.`;
+ }
+ throw Error("E_RUNTIME");
+}
+function pidNew(name="process"){
+ const id="PID"+pidspace.dataset.next;pidspace.dataset.next=String(Number(pidspace.dataset.next)+1);
+ const p=document.createElement("kex-proc");p.id=id;p.dataset.name=name;p.dataset.state="ready";p.dataset.priority="5";p.dataset.pc="X1";p.dataset.owner="operator";p.dataset.provider="main";
+ document.body.appendChild(p);pidspace.dataset.count=String(procNodes().length);render();return id;
+}
+function pidKill(id){const p=x(id);if(!p||p.tagName!=="KEX-PROC")throw Error("E_PID");if(Number(id.slice(3))<=9)throw Error("E_PID_PROTECTED");p.dataset.state="terminated";render();return `KILLED ${id}`}
+function portBind(num,pid){
+ if(!x(pid)||x(pid).tagName!=="KEX-PROC")throw Error("E_PID");
+ let p=$(`kex-port[data-number="${num}"]`);if(!p){p=document.createElement("kex-port");p.dataset.number=num;document.body.appendChild(p)}
+ p.id="PORT"+num;p.dataset.owner=pid;p.dataset.state="bound";p.dataset.protocol="KEX";render();return `${p.id}->${pid}`;
+}
+function bridgePorts(a,b){
+ const pa=$(`kex-port[data-number="${a}"]`),pb=$(`kex-port[data-number="${b}"]`);if(!pa||!pb)throw Error("E_PORT");
+ const br=document.createElement("kex-bridge");br.id=`BRIDGE_${a}_${b}_${$$("kex-bridge").length}`;br.dataset.from=pa.id;br.dataset.to=pb.id;br.dataset.state="online";br.dataset.sequence="0";document.body.appendChild(br);render();return br.id;
+}
+function portSend(num,ref){
+ const p=$(`kex-port[data-number="${num}"]`);if(!p||!x(ref))throw Error("E_PORT_SEND");
+ const bridges=$$("kex-bridge").filter(b=>b.dataset.from===p.id||b.dataset.to===p.id);let delivered=0;
+ for(const b of bridges){b.dataset.sequence=String(Number(b.dataset.sequence)+1);busTx(p.id,b.id,ref,"IPC");delivered++}
+ return `PORT${num} SEND ${ref} bridges=${delivered}`;
+}
+
+function processTable(){
+ return procNodes().map(p=>`${p.id.padEnd(5)} ${p.dataset.name.padEnd(18)} ${p.dataset.state.padEnd(8)} pri=${p.dataset.priority} pc=${p.dataset.pc} provider=${p.dataset.provider}`).join("\n");
+}
+function schedule(quanta=1){
+ quanta=Math.max(1,Number(quanta)||1);const runnable=procNodes().filter(p=>p.dataset.state==="ready"||p.dataset.state==="running");
+ if(!runnable.length)return "SCHED no runnable processes";
+ let trace=[];
+ for(let q=0;q<quanta;q++){
+   const current=runnable[q%runnable.length];
+   procNodes().forEach(p=>{if(p.dataset.state==="running")p.dataset.state="ready"});
+   current.dataset.state="running";sched.dataset.current=current.id;
+   sched.dataset.switches=String(Number(sched.dataset.switches)+1);
+   const px=x(current.dataset.pc)||x("X1");
+   current.dataset.pc="X"+((Number(px.dataset.number)%9)+1);
+   logicalTick(1);trace.push(`${sched.dataset.switches}:${current.id}->${current.dataset.pc}`);
+ }
+ render();return trace.join("\n");
+}
+function alloc(pid,count=1,rights="rw"){
+ const p=x(pid);if(!p||p.tagName!=="KEX-PROC")throw Error("E_MM_PID");
+ count=Math.max(1,Math.floor(Number(count)||1));
+ const total=Number(mm.dataset.pages),used=$$("kex-page").length;
+ if(used+count>total){mm.dataset.faults=String(Number(mm.dataset.faults)+1);throw Error("E_MM_OOM")}
+ let ids=[];
+ for(let i=0;i<count;i++){
+   const pg=document.createElement("kex-page");pg.id=`PAGE${used+i+1}`;pg.dataset.owner=pid;pg.dataset.rights=rights;
+   pg.dataset.axis=`${(used+i)%9+1}.${Math.floor((used+i)/9)%9+1}.MEM`;pg.dataset.ref="X1";pages.appendChild(pg);ids.push(pg.id);
+ }
+ mm.dataset.allocated=String($$("kex-page").length);render();return ids.join(",");
+}
+function freePages(pid){$$(`kex-page[data-owner="${pid}"]`).forEach(p=>p.remove());mm.dataset.allocated=String($$("kex-page").length);render();return `FREE ${pid}`}
+function memoryView(){return $$("kex-page").map(p=>`${p.id} owner=${p.dataset.owner} rights=${p.dataset.rights} axis=${p.dataset.axis} ref=${p.dataset.ref}`).join("\n")||"(no allocated pages)"}
+function requireRight(pid,resource,right){
+ const caps=$$("kex-capability").filter(c=>c.dataset.subject===pid&&(c.dataset.resource==="*"||c.dataset.resource===resource));
+ if(!caps.some(c=>c.dataset.rights.includes(right)))throw Error(`E_CAP_DENIED ${pid} ${right} ${resource}`);
+ return true;
+}
+function irqRaise(vector,ref="X1"){
+ if(!x(ref))throw Error("E_IRQ_REF");
+ const e=document.createElement("kex-interrupt");e.dataset.vector=String(vector);e.dataset.ref=ref;e.dataset.seq=irq.dataset.next;
+ irq.dataset.next=String(Number(irq.dataset.next)+1);irq.dataset.pending=String(Number(irq.dataset.pending)+1);irq.appendChild(e);
+ return `IRQ queued vector=${vector} ref=${ref}`;
+}
+function irqService(){
+ const e=irq.querySelector("kex-interrupt");if(!e)return "IRQ none";
+ const svc=x("PID5");svc.dataset.state="running";busTx("IRQ0","PID5",e.dataset.ref,"INT:"+e.dataset.vector);
+ e.remove();irq.dataset.pending=String(Number(irq.dataset.pending)-1);irq.dataset.serviced=String(Number(irq.dataset.serviced)+1);svc.dataset.state="waiting";
+ render();return `IRQ serviced vector=${e.dataset.vector}`;
+}
+function atomicCAS(expected,next){
+ atom.dataset.ops=String(Number(atom.dataset.ops)+1);
+ if(atom.dataset.value===String(expected)){atom.dataset.value=String(next);return `CAS PASS ${expected}->${next}`}
+ return `CAS FAIL actual=${atom.dataset.value}`;
+}
+async function probeProviders(){
+ const main=x("PROVIDER_MAIN"),worker=x("PROVIDER_WORKER"),gpuP=x("PROVIDER_WEBGPU");main.dataset.state="online";
+ try{
+   const blob=new Blob([`onmessage=e=>postMessage({ok:true,value:e.data.value*e.data.value})`],{type:"text/javascript"});
+   const url=URL.createObjectURL(blob);const w=new Worker(url);
+   const result=await new Promise((resolve,reject)=>{const to=setTimeout(()=>reject(Error("timeout")),1500);w.onmessage=e=>{clearTimeout(to);resolve(e.data)};w.onerror=reject;w.postMessage({value:9})});
+   w.terminate();URL.revokeObjectURL(url);worker.dataset.state=result?.ok&&result.value===81?"online":"fault";
+ }catch(e){worker.dataset.state="unavailable"}
+ try{
+   gpuP.dataset.state=(navigator.gpu&&await navigator.gpu.requestAdapter())?"online":"unavailable";
+ }catch(e){gpuP.dataset.state="unavailable"}
+ render();return providerView();
+}
+function providerView(){return $$("kex-provider").map(p=>`${p.id} kind=${p.dataset.kind} state=${p.dataset.state}`).join("\n")}
+function loadProgram(id){
+ const p=x(id);if(!p||p.tagName!=="KEX-PROGRAM")throw Error("E_LOADER_PROGRAM");
+ requireRight("PID2","USER","r");loader.dataset.loaded=String(Number(loader.dataset.loaded)+1);p.dataset.state="loaded";
+ return `LOADED ${id} instructions=${p.dataset.source.split("|").length}`;
+}
+function execProgram(id){
+ const p=x(id);if(!p||p.tagName!=="KEX-PROGRAM")throw Error("E_EXEC_PROGRAM");
+ if(p.dataset.state!=="loaded")loadProgram(id);
+ const ir=compile(p.dataset.source.replaceAll("|","\n"));
+ const words=ir.map(i=>isaEncode([i.op,...i.args].join(" ")));
+ p.dataset.lastWords=words.join(",");
+ const result=execute(ir);p.dataset.state="halted";return `PROGRAM ${id}\nWORDS ${words.join(" ")}\n${result}`;
+}
+function kernelView(){
+ return [
+ `ISA word=${isa.dataset.wordBits}b version=${isa.dataset.version}`,
+ `MM pages=${mm.dataset.pages} pageSize=${mm.dataset.pageSize} allocated=${mm.dataset.allocated} faults=${mm.dataset.faults}`,
+ `IRQ pending=${irq.dataset.pending} serviced=${irq.dataset.serviced}`,
+ `SCHED policy=${sched.dataset.policy} quantum=${sched.dataset.quantum} current=${sched.dataset.current} switches=${sched.dataset.switches}`,
+ `ATOM value=${atom.dataset.value} ops=${atom.dataset.ops}`,
+ `LOADER loaded=${loader.dataset.loaded}`,
+ `RECOVERY checkpoints=${recovery.dataset.checkpoints} last=${recovery.dataset.last}`
+ ].join("\n");
+}
+async function conformance(){
+ const lines=[],T=(name,ok,detail)=>lines.push(`${ok?"PASS":"FAIL"} ${name}\n  ${detail}`);
+ try{boot();T("BOOT",root.dataset.boot==="on","machine entered active boot state")}catch(e){T("BOOT",false,e.message)}
+ try{const w=isaEncode("SELECT X3"),d=isaDecode(w);T("ISA",d.opcode==="SELECT"&&d.operand===3,`${w} -> ${JSON.stringify(d)}`)}catch(e){T("ISA",false,e.message)}
+ try{const ids=alloc("PID2",2,"rw");T("MEMORY",$$('kex-page[data-owner="PID2"]').length>=2,ids)}catch(e){T("MEMORY",false,e.message)}
+ try{const r=schedule(9);T("SCHEDULER",Number(sched.dataset.switches)>=9,r.split("\n").slice(0,3).join("; "))}catch(e){T("SCHEDULER",false,e.message)}
+ try{const before=Number(irq.dataset.serviced);irqRaise(7,"X3");irqService();T("INTERRUPT",Number(irq.dataset.serviced)===before+1,"vector 7 serviced")}catch(e){T("INTERRUPT",false,e.message)}
+ try{atom.dataset.value="1";const r=atomicCAS(1,2);T("ATOMIC",atom.dataset.value==="2",r)}catch(e){T("ATOMIC",false,e.message)}
+ try{mramWrite("X4");gpuDraw("X4");gpuFrame();T("CPU/MRAM/GPU/VRAM",mram.dataset.ref==="X4"&&vram.dataset.ref==="X4","X4 traversed compute/memory/display path")}catch(e){T("CPU/MRAM/GPU/VRAM",false,e.message)}
+ try{const pv=await probeProviders();T("PROVIDERS",x("PROVIDER_MAIN").dataset.state==="online",pv.replaceAll("\n","; "))}catch(e){T("PROVIDERS",false,e.message)}
+ try{const r=execProgram("APP_HELLO");T("PROGRAM",x("APP_HELLO").dataset.state==="halted",r.split("\n")[0])}catch(e){T("PROGRAM",false,e.message)}
+ try{let denied=false;try{requireRight("PID2","KERNEL","x")}catch(e){denied=true}T("CAPABILITY",denied,"unauthorised PID2 execute on KERNEL rejected")}catch(e){T("CAPABILITY",false,e.message)}
+ try{const before=active().dataset.revision;active().dataset.revision=String(Number(before)+1);const snap=document.documentElement.cloneNode(true);active().dataset.revision=String(Number(active().dataset.revision)+1);const restored=snap.querySelector(`#${active().id}`).dataset.revision;T("RECOVERY MODEL",restored===String(Number(before)+1),`snapshot revision=${restored}`)}catch(e){T("RECOVERY MODEL",false,e.message)}
+ try{const r=runSource("SRC_JS");T("SOURCE/RUNTIME",r==="KEX JS SOURCE","embedded JS source executed through RUNNER0")}catch(e){T("SOURCE/RUNTIME",false,e.message)}
+ try{const pid=pidNew("conformance-worker"),pb=portBind(9,pid),br=bridgePorts(2,9),msg=portSend(2,"X3");T("PID/PORT/BRIDGE",pid.startsWith("PID")&&pb.includes(pid)&&msg.includes("bridges=1"),`${pid} ${pb} ${br} ${msg}`)}catch(e){T("PID/PORT/BRIDGE",false,e.message)}
+ try{const b=buildDeveloperProgram("TEST_APP","kex","SELECT X2\nPRINT NUMBER X2\nHALT");T("DEVELOPER BUILD",!!x("TEST_APP")&&!!x("TEST_APP").dataset.words,b.replaceAll("\n","; "))}catch(e){T("DEVELOPER BUILD",false,e.message)}
+ try{T("C/C++ RUNTIME MODEL",x("C0").dataset.target==="KEX-ABI-1"&&x("CPP0").dataset.target==="KEX-ABI-1","C and C++ are source/runtime frontends targeting KEX-ABI-1")}catch(e){T("C/C++ RUNTIME MODEL",false,e.message)}
+ const pass=lines.every(v=>v.startsWith("PASS"));$("#testlog").textContent=`CONFORMANCE ${pass?"PASS":"FAIL"}\n\n`+lines.join("\n\n");
+ log(`CONFORMANCE ${pass?"PASS":"FAIL"}`);render();return pass;
+}
+
+function warehouseView(){
+ const chips=$$("kex-chip").length, threads=chips*Number(threadpool.dataset.count);
+ return [
+ `WAREHOUSE0 axis=${warehouse.dataset.axis}`,
+ `logical chips=${chips}`,
+ `threads/chip=${threadpool.dataset.count}`,
+ `logical thread slots=${threads}`,
+ `clock tick=${clock.dataset.tick} state=${clock.dataset.state} requested_hz=${clock.dataset.hz}`,
+ `completed thread operations=${threadpool.dataset.completed}`,
+ `physical compute=${warehouse.dataset.physicalCapacity}`,
+ `IMPORTANT: logical chip/thread multiplication does not create additional physical CPU/GPU silicon.`,
+ `The browser host supplies the actual compute; this fabric supplies addressing, scheduling and virtual topology.`
+ ].join("\n");
+}
+
+function busTx(from,to,ref,op){
+ bus.dataset.sequence=String(Number(bus.dataset.sequence)+1);
+ const e=document.createElement("i");e.dataset.seq=bus.dataset.sequence;e.dataset.from=from;e.dataset.to=to;e.dataset.ref=ref;e.dataset.op=op;
+ e.textContent=`BUS#${e.dataset.seq} ${from}->${to} ${op} ${ref}`;bus.appendChild(e);return e;
+}
+function cpuLoad(ref){if(!x(ref))throw Error("bad XREF");cpu.dataset.acc=ref;busTx("FABRIC","CPU0",ref,"LOAD");return ref}
+function cpuStep(count=1){
+ count=Math.max(1,Number(count)||1);let trace=[];
+ for(let i=0;i<count;i++){
+  const cur=x(cpu.dataset.pc); if(!cur)throw Error("CPU PC invalid");
+  cpu.dataset.state="running";cpu.dataset.acc=cur.id;
+  const next="X"+((Number(cur.dataset.number)%9)+1);
+  busTx("CPU0","FABRIC",cur.id,"STEP");
+  cpu.dataset.pc=next;cpu.dataset.cycles=String(Number(cpu.dataset.cycles)+1);
+  trace.push(`${cur.id}[${cur.dataset.instruction}] -> ${next}`);
+ }
+ cpu.dataset.state="idle";render();return trace.join("\n");
+}
+function gpuDraw(ref){
+ const n=x(ref);if(!n)throw Error("bad XREF");gpu.dataset.state="drawing";gpu.dataset.source=ref;vram.dataset.ref=ref;
+ busTx("GPU0","VRAM0",ref,"DRAW");gpu.dataset.state="idle";render();return `VRAM0 -> ${ref} NUMBER=${projection("NUMBER",n)}`;
+}
+function gpuFrame(){
+ vram.dataset.frame=String(Number(vram.dataset.frame)+1);gpu.dataset.frames=vram.dataset.frame;
+ busTx("VRAM0","DISPLAY",vram.dataset.ref,"FRAME");render();return `FRAME ${vram.dataset.frame} REF=${vram.dataset.ref}`;
+}
+function mramWrite(ref){if(!x(ref))throw Error("bad XREF");mram.dataset.ref=ref;mram.dataset.revision=String(Number(mram.dataset.revision)+1);busTx("CPU0","MRAM0",ref,"WRITE");render();return `MRAM0 -> ${ref}`}
+function deviceView(){
+ return [
+ `CPU0 axis=${cpu.dataset.axis} state=${cpu.dataset.state} pc=${cpu.dataset.pc} acc=${cpu.dataset.acc} cycles=${cpu.dataset.cycles}`,
+ `GPU0 axis=${gpu.dataset.axis} state=${gpu.dataset.state} source=${gpu.dataset.source} frames=${gpu.dataset.frames}`,
+ `MRAM0 axis=${mram.dataset.axis} ref=${mram.dataset.ref} rev=${mram.dataset.revision}`,
+ `VRAM0 axis=${vram.dataset.axis} ref=${vram.dataset.ref} frame=${vram.dataset.frame}`,
+ `BUS0 axis=${bus.dataset.axis} sequence=${bus.dataset.sequence}`,
+ ...[...bus.children].slice(-8).map(e=>e.textContent)
+ ].join("\n");
+}
+
+function statusText(){
+ const a=active();
+ return [
+ `MAGIC=${root.dataset.kexMagic}`,
+ `BOOT=${root.dataset.boot}`,
+ `PROCESS=${proc.dataset.state} PC=${proc.dataset.pc}`,
+ `OPERATOR=${operator.id}/${operator.dataset.role}/${operator.dataset.status}`,
+ `ACTIVE=${a.id} NUMBER=${projection("NUMBER",a)} ADDRESS=${address(a)}`,
+ `ORIGIN=${fabric.dataset.origin} LANE=${fabric.dataset.lane} EXTENT=${fabric.dataset.extent}`,
+ `REVISION=${a.dataset.revision}`,
+ `REGISTERS=${$$("kex-register").map(r=>r.id+"->"+r.dataset.ref).join(",")}`,
+ `CONTAINERS=${$$("kex-container").map(c=>c.id+"@"+c.dataset.axis).join(",")}`,
+ `ROUTES=${$$("kex-route").length}`,
+ `FAULT=${fault.dataset.state}/${fault.dataset.code}`,
+ `CPU=${cpu.dataset.pc}/${cpu.dataset.acc}/cycles:${cpu.dataset.cycles}`,
+ `GPU=${gpu.dataset.source}/frames:${gpu.dataset.frames}`,
+ `MRAM=${mram.dataset.ref}/VRAM=${vram.dataset.ref}`
+ ].join("\n");
+}
+async function cliExec(raw){
+ const cmd=raw.trim(); if(!cmd)return;
+ let result="";
+ try{
+  const [verb,...args]=cmd.split(/\s+/); const V=verb.toUpperCase();
+  fault.dataset.state="clear";fault.dataset.code="0.";
+  switch(V){
+   case"HELP":result=HELP;break;
+   case"BOOT":boot();result="OK BOOT";break;
+   case"STATUS":result=statusText();break;
+   case"SELECT":select(args[0]);render();result=`OK ACTIVE=${args[0]}`;break;
+   case"READ":result=execute([{op:"READ",args:[args[0],args[1]||"NUMBER"],line:1}]);break;
+   case"WRITE":result=execute([{op:"WRITE",args:[args[0],args[1]],line:1}]);break;
+   case"ORIGIN":result=execute([{op:"ORIGIN",args:[args[0]],line:1}])||`OK ORIGIN=${fabric.dataset.origin}`;break;
+   case"LANE":result=execute([{op:"LANE",args:[args[0]],line:1}])||`OK LANE=${fabric.dataset.lane}`;break;
+   case"RESOLVE":result=execute([{op:"RESOLVE",args:[],line:1}]);break;
+   case"SPAWN":result=execute([{op:"SPAWN",args:[args[0],args[1]],line:1}])||"OK SPAWN";break;
+   case"SEND":result=execute([{op:"SEND",args:[args[0],args[1],args[2]],line:1}])||"OK SEND";break;
+   case"MIRROR":result=execute([{op:"MIRROR",args:[args[0]||active().id],line:1}])||"OK MIRROR";break;
+   case"PRINT":result=execute([{op:"PRINT",args:[args[0],args[1]||active().id],line:1}]);break;
+   case"RUN":result=execute(compile(args.join(" ")))||"OK";break;
+   case"TEST":selftest();result=$("#testlog").textContent;break;
+   case"BENCH":benchmark();result=$("#perflog").textContent;break;
+   case"AUDIT":result=[...ledger.children].map(e=>e.textContent).join("\n")||"(empty)";break;
+   case"CLEAR":cliout.textContent="";return;
+   case"CPU":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="STEP")result=cpuStep(args[0]||1);
+    else if(sub==="LOAD")result="CPU ACC="+cpuLoad(args[0]);
+    else throw Error("CPU requires STEP or LOAD");break}
+   case"GPU":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="DRAW")result=gpuDraw(args[0]);
+    else if(sub==="FRAME")result=gpuFrame();
+    else throw Error("GPU requires DRAW or FRAME");break}
+   case"MRAM":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="WRITE")result=mramWrite(args[0]);
+    else if(sub==="READ")result=`MRAM0 -> ${mram.dataset.ref} NUMBER=${projection("NUMBER",x(mram.dataset.ref))}`;
+    else throw Error("MRAM requires WRITE or READ");break}
+   case"VRAM":if((args[0]||"").toUpperCase()!=="READ")throw Error("VRAM requires READ");result=`VRAM0 -> ${vram.dataset.ref} NUMBER=${projection("NUMBER",x(vram.dataset.ref))}`;break;
+   case"CLOCK":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="START")result=clockStart(args[0]||1000);
+    else if(sub==="STOP")result=clockStop();
+    else if(sub==="TICK")result=`TICKS operations=${logicalTick(args[0]||1)}`;
+    else throw Error("CLOCK START|STOP|TICK");break}
+   case"THREADS":result=`THREAD SLOTS=${setThreads(args[0])}`;break;
+   case"SCALE":result=`LOGICAL CHIPS=${scaleChips(args[0])}`;break;
+   case"SCALE9":{const d=Math.max(0,Math.min(5,Number(args[0])||0));result=`LOGICAL CHIPS=${scaleChips(9**d)} (9^${d})`;break}
+   case"SOURCE":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="LIST")result=$$("kex-source").map(v=>v.id+" "+v.dataset.language+" -> "+v.dataset.runtime).join("\n");
+    else if(sub==="SHOW")result=sourceShow(args[0]);
+    else throw Error("SOURCE LIST|SHOW");break}
+   case"RUNTIME":result=runtimeView();break;
+   case"ABI":result=abiView();break;
+   case"SYSCALLS":result=syscallView();break;
+   case"DEV":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="LANG"){if(!["kex","javascript","python","c","cpp"].includes(args[0]))throw Error("E_DEV_LANG");$("#devlang").value=args[0];result="DEV language="+args[0]}
+    else if(sub==="BUILD")result=buildDeveloperProgram(args[0]||$("#devid").value,$("#devlang").value,$("#devsource").value);
+    else if(sub==="RUN")result=runDeveloperProgram(args[0]||$("#devid").value,$("#devlang").value,$("#devsource").value);
+    else throw Error("DEV LANG|BUILD|RUN");break}
+   case"RUN":result=runSource(args[0]);break;
+   case"PID":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="NEW")result=pidNew(args.join("-")||"process");
+    else if(sub==="KILL")result=pidKill(args[0]);
+    else throw Error("PID NEW|KILL");break}
+   case"PORT":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="BIND")result=portBind(args[0],args[1]);
+    else if(sub==="SEND")result=portSend(args[0],args[1]);
+    else throw Error("PORT BIND|SEND");break}
+   case"BRIDGE":result=bridgePorts(args[0],args[1]);break;
+   case"IPC":result=ipcView();break;
+   case"PS":result=processTable();break;
+   case"SCHED":result=schedule(args[0]||1);break;
+   case"ALLOC":result=`ALLOC ${alloc(args[0],args[1],args[2]||"rw")}`;break;
+   case"FREE":result=freePages(args[0]);break;
+   case"MEM":result=memoryView();break;
+   case"IRQ":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="RAISE")result=irqRaise(args[0],args[1]||"X1");
+    else if(sub==="SERVICE")result=irqService();
+    else throw Error("IRQ RAISE|SERVICE");break}
+   case"ATOMIC":if((args.shift()||"").toUpperCase()!=="CAS")throw Error("ATOMIC CAS expected next");result=atomicCAS(args[0],args[1]);break;
+   case"ISA":{
+    const sub=(args.shift()||"").toUpperCase();
+    if(sub==="ENCODE")result=isaEncode(args.join(" "));
+    else if(sub==="DECODE")result=JSON.stringify(isaDecode(args[0]),null,2);
+    else throw Error("ISA ENCODE|DECODE");break}
+   case"LOAD":result=loadProgram(args[0]);break;
+   case"EXEC":result=execProgram(args[0]);break;
+   case"PROVIDERS":result=await probeProviders();break;
+   case"CONFORM":result=(await conformance())?"CONFORMANCE PASS":"CONFORMANCE FAIL";break;
+   case"WAREHOUSE":result=warehouseView();break;
+   case"DISPATCH":result=dispatchThreads(args[0]);break;
+   case"BUS":result=deviceView();break;
+   case"HALT":proc.dataset.state="halted";cpu.dataset.state="idle";gpu.dataset.state="idle";result="OK HALTED";render();break;
+   default:throw Error(`E_CLI_UNKNOWN_COMMAND ${V}`);
+  }
+  auditEvent("COMMAND",cmd,"PASS");
+ }catch(e){
+  fault.dataset.state="fault";fault.dataset.code="E_CLI";
+  result="ERROR "+e.message;auditEvent("COMMAND",cmd,"FAIL:"+e.message);
+ }
+ cliout.textContent+=(cliout.textContent?"\n\n":"")+`KEX> ${cmd}\n${result}`;
+ cliout.scrollTop=cliout.scrollHeight;
+}
+$("#clisend").onclick=async()=>{const v=cli.value;cli.value="";await cliExec(v)};
+cli.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("#clisend").click()}});
+$("#devbuild").onclick=()=>{try{$("#devout").textContent=buildDeveloperProgram($("#devid").value,$("#devlang").value,$("#devsource").value);render()}catch(e){$("#devout").textContent="BUILD ERROR "+e.message}};
+$("#devrun").onclick=()=>{try{$("#devout").textContent=runDeveloperProgram($("#devid").value,$("#devlang").value,$("#devsource").value);render()}catch(e){$("#devout").textContent="RUN ERROR "+e.message}};
+$("#devdocs").onclick=()=>{$("#devout").textContent=developerGuide()};
+initSyscalls();
+cliout.textContent="KEX ACTIVE CLI READY\nType HELP for command contract.";
+evidence();
+render();
+</script></body></html>

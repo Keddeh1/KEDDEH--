@@ -1,0 +1,21 @@
+const fs = require('fs'), path = require('path'), vm = require('vm'), assert = require('node:assert/strict');
+const html = fs.readFileSync(path.resolve(__dirname,'../working/html5/HTML5_Relational_SQL_Studio.html'),'utf8');
+const start = html.indexOf('    function serializeCSVValue(value) {');
+const end = html.indexOf('    function exportCSV() {', start);
+assert(start !== -1 && end > start, 'CSV helpers must exist in the actual generated application');
+const actualFunctions = html.slice(start,end);
+const context = vm.createContext(Object.create(null));
+vm.runInContext(actualFunctions,context,{timeout:1000});
+let checks=0;
+function check(actual,expected) {assert.equal(actual,expected);checks++;}
+for (const [value,expected] of [[0,'0'],[false,'false'],[true,'true'],[null,''],[undefined,''],['',''],[-3.2,'-3.2'],['plain','plain'],['a,b','"a,b"'],['a"b','"a""b"'],['a\nb','"a\nb"'],['a\rb','"a\rb"'],['a\r\nb','"a\r\nb"'],['café 日本','café 日本'],['\\path','\\path']]) check(context.serializeCSVValue(value),expected);
+check(context.serializeCSV([]),'');
+check(context.serializeCSV(null),'');
+check(context.serializeCSV([{zero:0,bool:false,empty:null},{zero:1,bool:true}]),'zero,bool,empty\r\n0,false,\r\n1,true,\r\n');
+check(context.serializeCSV([{'a,b':'x"y','line\nheader':'a\nb'}]),'"a,b","line\nheader"\r\n"x""y","a\nb"\r\n');
+const fixtures = [{zero:0,bool:false,quoted:'say "hi"',comma:'a,b',newline:'first\nsecond',crlf:'first\r\nsecond',empty:null,unicode:'café 日本'}, {zero:-1,bool:true,quoted:'',comma:',',newline:'\n',crlf:'\r',empty:undefined,unicode:'λ'}];
+const csv=context.serializeCSV(fixtures);
+fs.writeFileSync(path.resolve(__dirname,'../reports/sql-csv-regression-output.csv'),csv);
+fs.writeFileSync(path.resolve(__dirname,'../reports/sql-csv-functions-tested.js'),actualFunctions);
+fs.writeFileSync(path.resolve(__dirname,'../reports/sql-csv-regression.json'),JSON.stringify({checks,passed:true,source:'working/html5/HTML5_Relational_SQL_Studio.html',scope:'Actual extracted app helper functions, deterministic serialization only; no host or network execution.'},null,2)+'\n');
+console.log(checks+' CSV regression checks passed');

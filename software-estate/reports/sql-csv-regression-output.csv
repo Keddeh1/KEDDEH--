@@ -1,0 +1,6 @@
+zero,bool,quoted,comma,newline,crlf,empty,unicode
+0,false,"say ""hi""","a,b","first
+second","first
+second",,café 日本
+-1,true,,",","
+","",,λ

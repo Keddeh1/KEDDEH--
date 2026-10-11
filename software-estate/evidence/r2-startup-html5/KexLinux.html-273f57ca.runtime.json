@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "file": "KexLinux.html",
+  "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+  "startedAt": "2026-10-11T16:34:52.336Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:32979/KexLinux.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "KEX Linux Virtual State Runtime — Epic Games & Universal Substrate",
+    "readyState": "complete",
+    "bodyText": "",
+    "elementCount": 11,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "file",
+        "id": "hidden-file-input",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 34998,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "KexLinux.html-273f57ca.png",
+  "elapsedMs": 1718,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:55.394Z",
+  "sha256After": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+  "originalUnchanged": true
+}

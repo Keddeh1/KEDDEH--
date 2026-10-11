@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "file": "isolation-smoke.html",
+  "sha256": "b6b4c9387e382a72210ad618773211ed3f8e4781209f08fadcbb8d440c8458db",
+  "startedAt": "2026-10-11T16:33:27.132Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "log",
+      "text": "fixture-started"
+    },
+    {
+      "type": "error",
+      "text": "Connecting to 'https://example.com/should-never-run' violates the following Content Security Policy directive: \"connect-src 'none'\". The action has been blocked."
+    },
+    {
+      "type": "error",
+      "text": "Fetch API cannot load https://example.com/should-never-run. Refused to connect because it violates the document's Content Security Policy."
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "runtimeErrors": [
+    {
+      "name": "Error",
+      "message": "EXPECTED_FIXTURE_EXCEPTION",
+      "stack": "Error: EXPECTED_FIXTURE_EXCEPTION\n    at http://127.0.0.1:37089/isolation-smoke.html:7:23"
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:37089/isolation-smoke.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    },
+    {
+      "url": "https://example.com/should-never-load.png",
+      "method": "GET",
+      "type": "image",
+      "allowed": false
+    },
+    {
+      "url": "https://example.com/should-never-load.png",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "blocked": [
+    {
+      "url": "https://example.com/should-never-load.png",
+      "reason": "network-isolation"
+    },
+    {
+      "url": "wss://example.com/should-never-run",
+      "reason": "websocket-isolation"
+    }
+  ],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "Isolation smoke fixture",
+    "readyState": "complete",
+    "bodyText": "Harness fixture\nDo not activate",
+    "elementCount": 8,
+    "headings": [
+      "Harness fixture"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Do not activate",
+        "disabled": true,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 420,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [
+      {
+        "key": "fixture",
+        "bytes": 5
+      }
+    ],
+    "sessionStorage": [],
+    "indexedDB": [
+      {
+        "name": "fixture",
+        "version": 1,
+        "stores": [
+          {
+            "name": "items",
+            "count": 0
+          }
+        ]
+      }
+    ]
+  },
+  "screenshot": "isolation-smoke.html-7b0e8da1.png",
+  "elapsedMs": 1465,
+  "status": "runtime-errors",
+  "finishedAt": "2026-10-11T16:33:30.933Z",
+  "sha256After": "b6b4c9387e382a72210ad618773211ed3f8e4781209f08fadcbb8d440c8458db",
+  "originalUnchanged": true
+}

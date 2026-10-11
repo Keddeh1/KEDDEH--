@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-10-11T16:34:52.640Z",
+  "apps": [
+    {
+      "file": "CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "sha256": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html-2be9fcf4.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "sha256": "660c677332327e470c746853a535f209b4735d139bb992c6e430522c0261ca56",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html-b6be6ad1.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "sha256": "166f1ff30b8adbb887951625547ab33a0faf5226ac452ba4ea261c622fd353be",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html-a3a309c5.runtime.json",
+      "status": "runtime-errors"
+    },
+    {
+      "file": "KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "sha256": "311485063a7f0583fc787590a566f07945744ae0ef3e8d72f5af8f3f9930e000",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html-f2833839.runtime.json",
+      "status": "runtime-errors"
+    },
+    {
+      "file": "KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "sha256": "048ba1150198db0704dd933a5cb77a8fc540b9df5cd98abd38b429f838aa78a4",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html-5332d404.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "sha256": "7f6e4ce0a41d3ba8823984533f41479be77efa7656f3e016f591af6e49c13fec",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM_1_.html-1b06bc54.runtime.json",
+      "status": "runtime-errors"
+    },
+    {
+      "file": "KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "sha256": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html-f92e2971.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "sha256": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html-984b370a.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "sha256": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html-2fd89d8b.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "hcf_workstation.html",
+      "sha256": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "hcf_workstation.html-7e62ae15.runtime.json",
+      "status": "startup-observed"
+    }
+  ]
+}

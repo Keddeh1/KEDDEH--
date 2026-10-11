@@ -1,0 +1,23 @@
+{
+  "schema": "keddeh.archive-custody.v1",
+  "consumer": "Selected KEDDEH-- execution environment",
+  "extraction": "Both archives extracted into the same isolated local directory; nonidentical overlapping paths rejected.",
+  "archives": [
+    {
+      "library_file_id": "libfile_f0043d09cf2c8191ab21eb661ce77db5",
+      "file_id": "file_0000000047b481f59a20de32649363db",
+      "file_name": "KEDDEH_HTML_ORIGINALS_20261010.zip",
+      "version": 0,
+      "bytes": 11512545,
+      "sha256": "4e1b1cff50e13dbf699e2d3c30ec396d145fe200a7e920cd313ded58e6caf896"
+    },
+    {
+      "library_file_id": "libfile_140cf311bb38819181cd9a12fb411570",
+      "file_id": "file_00000000356081f5a2a45e6293f02149",
+      "file_name": "KEDDEH_HTML_DEVELOPMENT_R1_20261010.zip",
+      "version": 0,
+      "bytes": 11381317,
+      "sha256": "8fe4beaa0428bc571b98899c3f5c9a7223df3794b88e86fb1755805e1a41c7eb"
+    }
+  ]
+}

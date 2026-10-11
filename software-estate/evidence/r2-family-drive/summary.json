@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "apps": [
+    {
+      "file": "working/drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "sha256": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html-2be9fcf4.runtime.json",
+      "assertionsPassed": 2,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+      ]
+    },
+    {
+      "file": "working/drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "sha256": "5bf2a5979aec8761aa693d2a4c33f8d076d2d3bec376ab74354205323e6f0574",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html-a3a309c5.runtime.json",
+      "assertionsPassed": 2,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+      ]
+    },
+    {
+      "file": "working/drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "sha256": "e6aa81bd614ae95f39973bb261cd9ba3c03ab06f25ad0178f7ede283eb66c3a2",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html-f2833839.runtime.json",
+      "assertionsPassed": 2,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Negative route and resolver initialization do not qualify embedded app execution or full IL-LLM semantics."
+      ]
+    },
+    {
+      "file": "working/drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "sha256": "265e43209c1e42fdb01827124d0ba7519a011f6cdd7f7a9a4f4fa65436f3083c",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM_1_.html-1b06bc54.runtime.json",
+      "assertionsPassed": 2,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+      ]
+    },
+    {
+      "file": "working/drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "sha256": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html-f92e2971.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+      ]
+    },
+    {
+      "file": "working/drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "sha256": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html-984b370a.runtime.json",
+      "assertionsPassed": 2,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+      ]
+    },
+    {
+      "file": "working/drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "sha256": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html-2fd89d8b.runtime.json",
+      "assertionsPassed": 2,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "version": "R2",
+  "file": "working/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+  "beforeSHA256": "048ba1150198db0704dd933a5cb77a8fc540b9df5cd98abd38b429f838aa78a4",
+  "afterSHA256": "c41f36a379e2c867ef8f6809e47f129108d4830d07ee0614b5eb2c800d44db1e",
+  "scope": "Move IndexedDB API getter access inside existing exception boundary; preserve P19 host contracts and R14 state schemas.",
+  "reproduction": "Browser indexedDB getter throws SecurityError; R1 fallback escapes; R2 catches and uses actual localStorage."
+}

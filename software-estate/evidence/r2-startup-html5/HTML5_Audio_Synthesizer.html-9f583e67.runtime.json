@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "file": "HTML5_Audio_Synthesizer.html",
+  "sha256": "fa7eac68fac1a6452154958eef789203b712acbfac0a1cff9a50fea08fc0d47f",
+  "startedAt": "2026-10-11T16:34:08.916Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "log",
+      "text": "[Audio Synth] Verifying application provenance..."
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:33909/HTML5_Audio_Synthesizer.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "HTML5 Web Audio Synthesizer & Spectrum Workstation",
+    "readyState": "complete",
+    "bodyText": "🎹 Modular Web Audio Synthesizer\nPATCH:\nCyberpunk Bass 2077\nNeon 80s Lead\nCosmic Ambient Pad\nRetro 8-Bit Chiptune\nGlass Crystal Pluck\nPlay Arp\nFFT SPECTRUM\nOSCILLOSCOPE\n1. OSCILLATOR & FILTER\nWaveform\nSawtooth (Aggressive)\nSquare (Hollow/8-Bit)\nSine (Pure Harmonic)\nTriangle (Mellow)\nFilter Cutoff\n2400 Hz\nFilter Resonance (Q)\n3.5\n2. ADSR ENVELOPE\nAttack\n0.02s\nDecay\n0.30s\nSustain Level\n0.40\nRelease\n0.45s\n3. TIME EFFECTS\nEcho / Delay Time\n0.25s\nFeedback Mix\n35%\nMaster Gain\n70%\nC4\nA\nD4\nS\nE4\nD\nF4\nF\nG4\nG\nA4\nH\nB4\nJ\nC5\nK\nD5\nL\nE5\n;\nF5\n'\nG5\nZ\nA5\nC\nB5\nB\nC6\nN\nC#4\nW\nD#4\nE\nF#4\nT\nG#4\nY\nA#4\nU\nC#5\nO\nD#5\nP\nF#5\n]\nG#5\nX\nA#5\nV\nPlay with Mouse or Computer Keyboard (A-K lower octave, Q-U upper octave)\nPolyphonic Voice Architecture · Web Audio API",
+    "elementCount": 167,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "SELECT",
+        "type": "select-one",
+        "id": "patch-select",
+        "name": null,
+        "text": "Cyberpunk Bass 2077\nNeon 80s Lead\nCosmic Ambient Pad\nRetro 8-Bit Chiptune\nGlass Crystal Pluck",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Play Arp",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-fft",
+        "name": null,
+        "text": "FFT SPECTRUM",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-wave",
+        "name": null,
+        "text": "OSCILLOSCOPE",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "SELECT",
+        "type": "select-one",
+        "id": "osc-wave",
+        "name": null,
+        "text": "Sawtooth (Aggressive)\nSquare (Hollow/8-Bit)\nSine (Pure Harmonic)\nTriangle (Mellow)",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-cutoff",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-q",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-attack",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-decay",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-sustain",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-release",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-delay",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-feedback",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-gain",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 15622,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "HTML5_Audio_Synthesizer.html-9f583e67.png",
+  "elapsedMs": 1675,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:12.176Z",
+  "sha256After": "fa7eac68fac1a6452154958eef789203b712acbfac0a1cff9a50fea08fc0d47f",
+  "originalUnchanged": true
+}

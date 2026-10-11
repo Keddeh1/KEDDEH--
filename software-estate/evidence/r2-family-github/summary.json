@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "apps": [
+    {
+      "file": "working/github/src/assets/os/AetherOS.html",
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-github/AetherOS.html-4ad0218f.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+      ]
+    },
+    {
+      "file": "working/github/src/assets/workstations/Chrome.html",
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-github/Chrome.html-4dad02ae.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+      ]
+    },
+    {
+      "file": "working/github/src/assets/os/KeraMeshOS.html",
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-github/KeraMeshOS.html-5cbf1295.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+      ]
+    },
+    {
+      "file": "working/github/src/assets/os/KexLinux.html",
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-github/KexLinux.html-8ce7b04b.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+      ]
+    },
+    {
+      "file": "working/github/src/assets/os/MiningOS.html",
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+      "sourceUnchangedDuringRun": true,
+      "harnessIncomplete": false,
+      "evidence": "evidence/r2-family-github/MiningOS.html-6398b404.runtime.json",
+      "assertionsPassed": 1,
+      "assertionsFailed": 0,
+      "runtimeErrors": [],
+      "limitations": [
+        "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+        "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+        "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+      ]
+    }
+  ]
+}

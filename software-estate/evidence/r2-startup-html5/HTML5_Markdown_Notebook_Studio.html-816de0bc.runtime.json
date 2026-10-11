@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "file": "HTML5_Markdown_Notebook_Studio.html",
+  "sha256": "7ccfac527bb876941aeeada548086b390e2318b17d89c0b6c1749ee5cf5935c3",
+  "startedAt": "2026-10-11T16:34:13.071Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "log",
+      "text": "[Markdown Studio] Verifying application provenance..."
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:45563/HTML5_Markdown_Notebook_Studio.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "HTML5 Markdown Engineering Studio",
+    "readyState": "complete",
+    "bodyText": "📝 Markdown Engineering Studio\nTEMPLATE:\nKEX Kernel Spec 2026\nCloud Vault RFC\nDevOps Runbook\nExport .MD\nExport HTML\nRAW MARKDOWN EDITOR\nLINES: 38\nLIVE DOCUMENT PREVIEW\nHTML5 PARSER\nKEX Microkernel Architecture Specification\nDocument Version: 6.0.297-RELEASE Authority: A. Keddeh // Braink AI Systems Classification: Engineering Standard (Sovereign WASM)\n1. System Overview\nThe KEX Microkernel is a minimal, fault-tolerant execution container operating inside a browser WASM sandbox. It abstracts persistent Virtual Filesystem (VFS) operations and isolates user space daemons.\n1.1 Core Tenets\nDeterministic Bootchain: Inode tree is mounted via cryptographic SHA-256 verification. Zero Privilege Escalation: Ring-0 memory map bounded strictly to 4MB WASM memory frames. * Dual Carrier Topology: Supports execution inside local storage and Google Drive OAuth v3.\n2. Inode Memory Allocation Table\nRegion\tInode Address\tFunction\tWrite Access\n/boot\t0x00010000\tKexboot Manifest\tRead-Only\n/kernel\t0x00020000\tWASM Microkernel Bytecode\tExecute-Only\n/micro-os\t0x00040000\tProcess Daemons\tSuperuser\n/run\t0x00080000\tEphemeral Sockets\tRead-Write\n3. Daemons Configuration\n{\n  \"authority\": \"A.KEDDEH\",\n  \"daemons\": [\n    { \"name\": \"kex-volume-mnt\", \"pid\": 2, \"state\": \"RUNNING\" },\n    { \"name\": \"braink-ai-mesh\", \"pid\": 3, \"state\": \"RUNNING\" },\n    { \"name\": \"proof-ledgerd\", \"pid\": 4, \"state\": \"RUNNING\" }\n  ]\n}\n\n\n> Note: All storage transactions are verified against the Root Authority signature prior to disk commitment.\n\n\n159 words · 1489 chars · ~1 min read\nUTF-8 · GitHub Flavored Markdown Engine",
+    "elementCount": 85,
+    "headings": [
+      "KEX Microkernel Architecture Specification",
+      "1. System Overview",
+      "1.1 Core Tenets",
+      "2. Inode Memory Allocation Table",
+      "3. Daemons Configuration"
+    ],
+    "controls": [
+      {
+        "tag": "SELECT",
+        "type": "select-one",
+        "id": "",
+        "name": null,
+        "text": "KEX Kernel Spec 2026\nCloud Vault RFC\nDevOps Runbook",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Export .MD",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Export HTML",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "id": "markdownInput",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 7968,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "HTML5_Markdown_Notebook_Studio.html-816de0bc.png",
+  "elapsedMs": 1734,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:16.027Z",
+  "sha256After": "7ccfac527bb876941aeeada548086b390e2318b17d89c0b6c1749ee5cf5935c3",
+  "originalUnchanged": true
+}

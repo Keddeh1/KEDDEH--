@@ -1,0 +1,791 @@
+{
+  "schemaVersion": 1,
+  "file": "CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+  "sha256": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e",
+  "startedAt": "2026-10-11T16:34:05.963Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:40459/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "CasePath | Lawyer-ready legal preparation",
+    "readyState": "complete",
+    "bodyText": "CP\nCasePath\nLegal preparation\nWhat you need\nHow it works\nLegal volume\nBuild a pack\nPackages\nStart my brief\n→\n\nSOUTH AUSTRALIA PILOT\n\nWalk into your first lawyer meeting prepared.\n\nStructure your story, evidence and questions before professional fees begin. Build a calm, lawyer-ready preparation pack—without pretending software can replace legal judgment.\n\nBuild my case pack\n→\nSee what’s included\n!\n\nPreparation, not representation. CasePath is not a law firm and does not provide legal advice. Take every pack to a lawyer qualified in the relevant area and jurisdiction before acting, signing, sending or filing.\n\nYOUR PREPARATION PACK\nLawyer meeting readiness\nDEVICE-LOCAL DRAFT\n9%\nStart with the facts\n\nReadiness reflects preparation fields only—not legal merit, prospects or validity.\n\n01\n\nPlain-language account\n\nNEEDED\n02\n\nChronology and people\n\nNEEDED\n03\n\nEvidence and source mesh\n\nNEEDED\n04\n\nProfessional review agenda\n\nNEEDED\nContinue preparation\n↘\nINFORMATION & ORGANISATION\nNO AUTOMATED LEGAL CONCLUSIONS\nLAWYER REVIEW REQUIRED\nNO DIRECT COURT FILING\n\nWHAT PEOPLE ACTUALLY NEED\n\nFrom a difficult story to a reviewable record.\n\nMost people do not arrive with a neat legal issue. They arrive with events, documents, urgency and uncertainty. CasePath prepares that raw material for professional review.\n\n01\nKnow what matters\n\nTurn an unstructured account into dates, people, decisions, disputed facts and questions that need professional advice.\n\nIssue map\nJurisdiction\nUrgency prompts\n02\nPreserve your account\n\nKeep your original expression intact while separating observed events, recollection, assumptions, quotations and requested outcomes.\n\nSource account\nPeople\nOriginal wording\n03\nBuild the chronology\n\nMap each event by date, actor, action, location and source so the sequence can be checked against records and competing accounts.\n\nTimeline\nDecision points\nUnknown dates\n04\nConstruct the evidence mesh\n\nLink each important proposition to material that may support, contradict or leave it unresolved—without declaring admissibility or weight.\n\nEvidence index\nSource links\nMissing-proof list\n05\nMap the dispute\n\nPlace your propositions, the other side’s likely position, inconsistencies and unanswered questions into separate review lanes.\n\nIssue map\nAlternative account\nContradictions\n06\nResolve the pathway\n\nIdentify possible defence, complaint, review, disclosure, civil and urgent pathways for a lawyer to confirm against current law and procedure.\n\nForum\nForms\nDeadline questions\n07\nSchedule loss and remedy\n\nRecord the outcome sought, claimed loss, supporting records, causation questions and alternative remedies without fixing liability or quantum.\n\nLoss schedule\nReceipts\nRemedy conditions\n08\nUse lawyer time well\n\nDeliver a consistent package so a relevant practitioner can test facts, law, evidence, process, deadlines, risks, costs and final documents faster.\n\nHandover pack\nReview agenda\nCost clarity\n\nCONTEXT-PRESERVING LEGAL PREPARATION\n\nOne matter. Four planes that never collapse.\n\nThe architecture preserves the user’s source material while progressively organising it for legal review. An account does not become evidence, evidence does not become a legal conclusion, and a legal possibility does not become an authorised action.\n\n01\nSource plane\n\nPreserve the user’s expression, dates, people, records and requested outcomes without silently rewriting them.\n\n02\nEvidence plane\n\nLink propositions to supporting, contradicting and missing material while retaining provenance and uncertainty.\n\n03\nLegal plane\n\nPresent possible legal lenses and current official sources conditionally; application remains for the qualified lawyer.\n\n04\nAction plane\n\nPrepare pathway questions, document drafts and a lawyer handover without filing, representing or promising an outcome.\n\nORIGINAL EXPRESSION\n→\nCONTEXT AND CHRONOLOGY\n→\nEVIDENCE MESH\n→\nCONDITIONAL LEGAL LENSES\n→\nLAWYER-REVIEWED ACTION\n\nDNA · DOCUMENT NATURALLY ADVISED\n\nThe document writes its governed structure into the matrix.\n\nA stable fourteen-locus document genome is instantiated as a bounded source variant. Integer traversal activates the linear tape, maps each locus to the zero-free matrix and emits only the services supported by traversed states.\n\nPRESERVE SOURCE\n→\nINSTANTIATE DNA VARIANT\n→\nWRITE STATIC TAPE\n→\nTRAVERSE INTEGERS\n→\nMAP MATRIX\n→\nEMERGE SERVICES\n→\nREAD RECEIPT\nLAW-INGESTION PATHWAY\nSource-to-matrix adapter\nIDLE\n\nUse this workbench for legislation, rules, forms, judgments and official guidance—not confidential case facts. Processing is transient; the latest receipt is retained only in this browser.\n\nSource title\nDocument class\nLegislation\nCourt rule\nPrescribed form\nJudgment\nOfficial guidance\nSecondary material\nUser-supplied source\nJurisdiction\nOfficial or source URL\nSource/access date\nVersion label\nProvision / rule / form\nTraversal cycles\n1 cycle\n2 cycles\n3 cycles\n5 cycles\n8 cycles\nSource passage or source-led summary\nProposition to map—not a conclusion about the matter\nProcedural object\nReview pathway\nUntranslated or undefined terms\nWrite and traverse legal volume\n→\n\nLIVE ARCHITECTURE\nStatic active-state tape\nAwaiting write\n-1\n-2\n+3\n+2\n+1\n+2\n+3\n+2\n+1\n01\nSOURCE IDENTITY\nPreserve a content-addressed source identity.\n02\nDOCUMENT CLASS\nSeparate legislation, rules, forms, judgments, guidance and user material.\n03\nJURISDICTION\nBind the source to the legal system whose authority is asserted.\n04\nAUTHORITY TIER\nRecord source authority without deciding application.\n05\nTITLE\nRetain the official or supplied source title.\n06\nSOURCE LOCATION\nRetain the official URL or local source reference.\n07\nVERSION TIME\nRecord version, access date and the need for currency review.\n08\nCOMMENCEMENT\nKeep commencement and transitional questions visible.\n09\nPROVISION\nAddress the section, rule, form or paragraph being mapped.\n10\nPROPOSITION\nSeparate what the source says from how it may apply.\n11\nPROCEDURAL OBJECT\nIdentify the proceeding, form, complaint, response or review object.\n12\nPATHWAY\nBind the object to a forum and decision pathway for review.\n13\nLAWYER REVIEW\nPrevent automated promotion into advice, filing or outcome.\n14\nLINEAGE\nLink the variant, parent genome, matrix write and readback receipt.\nZERO-FREE MATRIX\n\nEach column is a processing state—not legal merit.\n\n-3\nConflict\n0 loci\n-2\nUnresolved\n0 loci\n+1\nProvisional\n0 loci\n+2\nContext\n0 loci\n+3\nVerified scope\n0 loci\nEMERGED SERVICES\n\nFailure stays local to the capability it supplies.\n\nRun the adapter to see which services the traversed source can support.\n\nDocument Naturally Advised: A stable, ordered document volume whose own governed loci advise structural routing, verification, service activation and professional handover without issuing legal advice.\n\nBoundary: document advice governs structure and routing. It does not replace a lawyer’s legal advice, validate a filing or determine an outcome.\n\nINTERACTIVE PREPARATION TOOL\n\nBuild your lawyer brief.\n\nAnswer in your own words. CasePath keeps allegations, records and questions distinct. It does not decide whether a claim is true or legally valid.\n\n⌁\n\nPrivate draft mode\nYour answers are saved only in this browser for this demonstration. Avoid shared devices and clear the draft when finished.\n\nClear this browser draft\n1\nMatter\n2\nAccount\n3\nChronology\n4\nEvidence\n5\nIssues\n6\nPathways\n7\nLoss\n8\nReview\nStep 1 of 8\nPlace the matter in context\n\nEntries remain part of the local CasePath projection unless you explicitly export them.\n\nJurisdiction\nMatter type\nCurrent stage\nNext known date\nDEVICE-LOCAL DRAFT\nBack\nContinue →\n\nPREPARATION PACKAGES\n\nUse the right amount of structure.\n\nEvery package ends with professional review. None includes representation, legal advice, filing, deadline calculation or a prediction of outcome.\n\nSTART HERE\nMatter Snapshot\n\nFor an initial call or first appointment.\n\n✓\nOne-page matter summary\n✓\nKey dates and people\n✓\nUrgency and missing-information prompts\n✓\nQuestions for the lawyer\nBuild this preparation pack →\nMOST USEFUL\nRECOMMENDED\nLawyer Brief\n\nFor a complex matter with multiple events or records.\n\n✓\nStructured factual chronology\n✓\nAllegation and response map\n✓\nEvidence register with gaps\n✓\nLoss and remedy discussion schedule\n✓\nProfessional review checklist\nBuild this preparation pack →\nBEFORE ACTION\nDocument Review Pack\n\nFor reviewing a response, complaint or court-facing draft.\n\n✓\nDraft purpose and audience\n✓\nSource-linked statement register\n✓\nContradiction and verification flags\n✓\nForms and deadline questions\n✓\nFinal lawyer approval gate\nBuild this preparation pack →\n\nMANDATORY PAGE IN EVERY DELIVERY\n\nOne package. Three distinct perspectives.\n\nThe first substantive page tells the user exactly what each artifact is, who created it, what authority it has, and how it may be used. Conditional analysis never masquerades as settled law.\n\n01\nYour lawyer might, could or would say\n\nPossible questions, professional considerations and necessary review steps—never invented advice or a promised view.\n\nPROFESSIONAL PERSPECTIVE · CONDITIONAL\n02\nHow the law might, could or would see it\n\nAlternative characterisations tied to facts that still must be proved, the correct legal test, and the deciding authority.\n\nLEGAL PERSPECTIVE · CONDITIONAL\n03\nWhat the law says about the conduct\n\nCurrent authorised legislation, rules and official pathways, described with links, currency and limits on application.\n\nAUTHORITY SOURCE · VERIFIED, APPLICATION UNRESOLVED\nOBJECT / ARTIFACT\nPURPOSE\nSTATUS BOUNDARY\nMatter snapshot\nYour instructions, parties, stage and dates\nUser-supplied account—not verified fact\nChronology\nEvents arranged by date with source references\nSequence aid—not proof of an event\nPeople and authority map\nPeople, organisations, roles and asserted decision-makers\nRecorded identities and roles—not findings of authority\nIssue map\nQuestions, disputed propositions and alternatives\nPreparation framework—not legal advice\nProposition register\nEach material statement and the status claimed for it\nAllegation, recollection or question until substantiated\nEvidence register\nMaterial held, missing and requested\nInventory—not a ruling on admissibility\nContradiction register\nDifferences between accounts, records and expected process\nInvestigation prompt—not proof of dishonesty or misconduct\nLawyer perspective\nWhat a practitioner might ask, could consider or would need\nConditional professional-review prompts\nLegal perspective\nHow conduct might be characterised if required facts are established\nPossible analysis—not a court finding\nAuthority register\nCurrent official legislation, rules and service pathways\nSource text—not personalised application\nPathway register\nPossible forums, procedures, forms, dependencies and decision-makers\nOptions for confirmation—not filing instructions\nLoss and remedy schedule\nClaimed impact, records, causation questions and outcomes sought\nDiscussion schedule—not accepted loss, liability or quantum\nDraft documents\nReview versions for a defined audience and purpose\nNot approved to send, sign or file\n\nTHE LINE WE DO NOT CROSS\n\nSoftware can prepare the record. A lawyer must assess the law.\n\nClear boundaries make the pack more useful. CasePath labels what came from you, what is supported by a record, what remains unverified and what requires professional judgment.\n\n01\n\nNo solicitor–client relationship\nUsing this site does not retain a lawyer or create legal professional privilege.\n\n02\n\nNo legal conclusion\nA polished document is not proof that a fact, claim, defence, remedy or amount is legally valid.\n\n03\n\nNo filing authority\nNothing is sent to a court, tribunal, police agency, opponent or lawyer by CasePath.\n\n04\n\nNo deadline assurance\nUrgent time limits can apply. Verify them immediately with a lawyer or the relevant official body.\n\nSOUTH AUSTRALIA RESOURCES\n\nNeed advice or urgent procedural help?\n\nUse an official service or a suitably qualified practitioner. These external services are independent of CasePath.\n\nFree legal help\nLegal Services Commission of SA\n↗\nFind a relevant practitioner\nLaw Society of South Australia\n↗\nOfficial court portal\nCourtSA\n↗\nCP\nCasePath\nLegal preparation\n\nCasePath provides information-management and document-preparation tools only. It is not a law firm, does not provide legal advice or representation, and is not a substitute for a lawyer. Generated material may be incomplete, inaccurate, outdated or unsuitable. Obtain independent legal advice in the relevant jurisdiction before acting on, sending, signing or filing anything.\n\nService boundaryDraft privacy© 2026 CasePath\nPowered by BRAINK\nA KEDDEH SYSTEMS projection\nRuntime status",
+    "elementCount": 834,
+    "headings": [
+      "Walk into your first lawyer meeting prepared.",
+      "Lawyer meeting readiness",
+      "From a difficult story to a reviewable record.",
+      "Know what matters",
+      "Preserve your account",
+      "Build the chronology",
+      "Construct the evidence mesh",
+      "Map the dispute",
+      "Resolve the pathway",
+      "Schedule loss and remedy",
+      "Use lawyer time well",
+      "One matter. Four planes that never collapse.",
+      "Source plane",
+      "Evidence plane",
+      "Legal plane",
+      "Action plane",
+      "The document writes its governed structure into the matrix.",
+      "Source-to-matrix adapter",
+      "Static active-state tape",
+      "Build your lawyer brief.",
+      "Place the matter in context",
+      "Use the right amount of structure.",
+      "Matter Snapshot",
+      "Lawyer Brief",
+      "Document Review Pack",
+      "One package. Three distinct perspectives.",
+      "Your lawyer might, could or would say",
+      "How the law might, could or would see it",
+      "What the law says about the conduct",
+      "Software can prepare the record. A lawyer must assess the law.",
+      "Need advice or urgent procedural help?",
+      "BRAINK",
+      "Workflow execution",
+      "Document generation",
+      "Local state",
+      "Projection resolution",
+      "Capability discovery",
+      "Receipt verification",
+      "Local BRAINK note",
+      "KEDDEH SYSTEMS",
+      "CasePath",
+      "BRAINK",
+      "Edge / Appliance",
+      "Runtime",
+      "EDGE",
+      "runtime.js",
+      "runtime.dom",
+      "runtime.crypto",
+      "storage.indexeddb",
+      "storage.local",
+      "storage.opfs",
+      "worker.web",
+      "network.fetch",
+      "network.broadcast",
+      "document.blob",
+      "document.docx.embedded",
+      "ui.visual",
+      "device.camera",
+      "SYSTEM",
+      "Source-derived plane registry",
+      "Commit / receipt chain",
+      "KEX historical state recovery",
+      "KEX RECOVERY",
+      "Grammar",
+      "Failure law",
+      "Lossless gate",
+      "Successor state",
+      "Execute recovery pass"
+    ],
+    "controls": [
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "CP\nCasePath\nLegal preparation",
+        "disabled": false,
+        "visible": true,
+        "href": "#top"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "What you need",
+        "disabled": false,
+        "visible": true,
+        "href": "#functions"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "How it works",
+        "disabled": false,
+        "visible": true,
+        "href": "#method"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Legal volume",
+        "disabled": false,
+        "visible": true,
+        "href": "#volume"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Build a pack",
+        "disabled": false,
+        "visible": true,
+        "href": "#builder"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Packages",
+        "disabled": false,
+        "visible": true,
+        "href": "#packages"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Start my brief\n→",
+        "disabled": false,
+        "visible": true,
+        "href": "#builder"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Build my case pack\n→",
+        "disabled": false,
+        "visible": true,
+        "href": "#builder"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "See what’s included",
+        "disabled": false,
+        "visible": true,
+        "href": "#functions"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Continue preparation\n↘",
+        "disabled": false,
+        "visible": true,
+        "href": "#builder"
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "SELECT",
+        "type": "select-one",
+        "id": "",
+        "name": null,
+        "text": "Legislation\nCourt rule\nPrescribed form\nJudgment\nOfficial guidance\nSecondary material\nUser-supplied source",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "url",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "date",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "SELECT",
+        "type": "select-one",
+        "id": "",
+        "name": null,
+        "text": "1 cycle\n2 cycles\n3 cycles\n5 cycles\n8 cycles",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "Comma-separated; creates Mirror Lane tasks",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "id": "",
+        "name": null,
+        "text": "Write and traverse legal volume\n→",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Clear this browser draft",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "1\nMatter",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "2\nAccount",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "3\nChronology",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "4\nEvidence",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "5\nIssues",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "6\nPathways",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "7\nLoss",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "8\nReview",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Back",
+        "disabled": true,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Continue →",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Build this preparation pack →",
+        "disabled": false,
+        "visible": true,
+        "href": "#builder"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Build this preparation pack →",
+        "disabled": false,
+        "visible": true,
+        "href": "#builder"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Build this preparation pack →",
+        "disabled": false,
+        "visible": true,
+        "href": "#builder"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Free legal help\nLegal Services Commission of SA\n↗",
+        "disabled": false,
+        "visible": true,
+        "href": "https://lsc.sa.gov.au/FreeLegalHelp"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Find a relevant practitioner\nLaw Society of South Australia\n↗",
+        "disabled": false,
+        "visible": true,
+        "href": "https://www.lawsocietysa.asn.au/"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Official court portal\nCourtSA\n↗",
+        "disabled": false,
+        "visible": true,
+        "href": "https://courtsa.courts.sa.gov.au/"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Service boundary",
+        "disabled": false,
+        "visible": true,
+        "href": "#safeguards"
+      },
+      {
+        "tag": "A",
+        "type": null,
+        "id": "",
+        "name": null,
+        "text": "Draft privacy",
+        "disabled": false,
+        "visible": true,
+        "href": "#builder"
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "id": "",
+        "name": null,
+        "text": "Powered by BRAINK",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "id": "",
+        "name": null,
+        "text": "A KEDDEH SYSTEMS projection",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "button",
+        "id": "",
+        "name": null,
+        "text": "Runtime status",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Return to CasePath",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "id": "braink-note",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "braink-note-save",
+        "name": null,
+        "text": "Commit locally",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Return to CasePath",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Open projection",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Open projection",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Open projection",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Inspect system",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Return to CasePath",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Return to CasePath",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Open recovery plane",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Return to CasePath",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "kex-run-recovery",
+        "name": null,
+        "text": "Run deterministic recovery",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "kex-export-successor",
+        "name": null,
+        "text": "Export successor state",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 2552,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1590,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 23230,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 7918,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": [
+      {
+        "name": "KEDDEH_VOLUME",
+        "version": 1,
+        "stores": [
+          {
+            "name": "meta",
+            "count": 3
+          },
+          {
+            "name": "vfs",
+            "count": 3
+          }
+        ]
+      }
+    ]
+  },
+  "screenshot": "CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html-2be9fcf4.png",
+  "elapsedMs": 1728,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:08.976Z",
+  "sha256After": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e",
+  "originalUnchanged": true
+}

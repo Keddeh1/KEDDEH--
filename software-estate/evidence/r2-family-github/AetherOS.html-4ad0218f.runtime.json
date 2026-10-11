@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "file": "src/assets/os/AetherOS.html",
+  "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+  "startedAt": "2026-10-11T16:36:40.740Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:38267/AetherOS.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "method": "GET",
+      "type": "stylesheet",
+      "allowed": false
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "blocked": [
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "reason": "network-isolation"
+    }
+  ],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+    "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "Aether OS · Sovereign Microkernel · A. Keddeh",
+    "readyState": "complete",
+    "bodyText": "⌬\n[4:36:43 PM] Initializing Sovereign Microkernel (AetherOS v6.8)...\n[4:36:44 PM] Verifying application provenance...\n⌬\n🌐\n🐚\n🧠\n📊\nCPU --%\nRAM --/-- GB",
+    "elementCount": 30,
+    "headings": [],
+    "controls": [],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 11841,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "read-only shell inventory",
+      "passed": true,
+      "detail": {
+        "textBytes": 152,
+        "visibleInputs": 0,
+        "title": "Aether OS · Sovereign Microkernel · A. Keddeh"
+      }
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 1880,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:36:45.381Z",
+  "sha256After": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+  "originalUnchanged": true
+}

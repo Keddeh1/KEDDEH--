@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "file": "HTML5_Retro_Arcade_Breakout.html",
+  "sha256": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e",
+  "startedAt": "2026-10-11T16:34:30.641Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "log",
+      "text": "[Breakout] Verifying application provenance..."
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:37917/HTML5_Retro_Arcade_Breakout.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "HTML5 Retro Cyber Breakout",
+    "readyState": "complete",
+    "bodyText": "SCORE: 0\nCOMBO: 1x\nHIGH: 0\nSTAGE: 1/3\nSHIELDS: ❤❤❤\nMouse / Left & Right Arrows to Move Paddle · Click or Space to Launch Ball & Fire Lasers",
+    "elementCount": 26,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "overlay-btn",
+        "name": null,
+        "text": "LAUNCH NEXT SECTOR",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 17915,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "HTML5_Retro_Arcade_Breakout.html-92c28ea0.png",
+  "elapsedMs": 1831,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:34.492Z",
+  "sha256After": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e",
+  "originalUnchanged": true
+}

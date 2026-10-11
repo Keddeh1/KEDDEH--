@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-10-11T16:35:02.808Z",
+  "apps": [
+    {
+      "file": "Google_Chrome_Workstation.html",
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "Google_Chrome_Workstation.html-2a12929c.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "HTML5_Audio_Synthesizer.html",
+      "sha256": "fa7eac68fac1a6452154958eef789203b712acbfac0a1cff9a50fea08fc0d47f",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "HTML5_Audio_Synthesizer.html-9f583e67.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "HTML5_Markdown_Notebook_Studio.html",
+      "sha256": "7ccfac527bb876941aeeada548086b390e2318b17d89c0b6c1749ee5cf5935c3",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "HTML5_Markdown_Notebook_Studio.html-816de0bc.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "HTML5_Particle_Physics_Lab.html",
+      "sha256": "b3500255a046e1bbb8d7d922c62bd43b7f592bafae40e0e59c0d420bb420371d",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "HTML5_Particle_Physics_Lab.html-a102424c.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "HTML5_Raster_Paint_Studio.html",
+      "sha256": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "HTML5_Raster_Paint_Studio.html-272d14cd.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "HTML5_Relational_SQL_Studio.html",
+      "sha256": "cfb261af4a48c2f7a1cd32598837380d27a000f49345c46a68c245607f7b6e92",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "HTML5_Relational_SQL_Studio.html-7cb9d41c.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "HTML5_Retro_Arcade_Breakout.html",
+      "sha256": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "HTML5_Retro_Arcade_Breakout.html-92c28ea0.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "HTML5_Scientific_Calculator.html",
+      "sha256": "2d33c27a3d9328879c6cda0185ebe99ea25f1b3f792ff3b604cbe19c9d0268f3",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "HTML5_Scientific_Calculator.html-a994dcfe.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "KERA_Mesh_Node.html",
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KERA_Mesh_Node.html-92eec2c6.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "KEX_Linux_Terminal.html",
+      "sha256": "2d44e0edb96fc4c93918344958b379cd79913b2ba245213dd61ebeee0dcfb3ab",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KEX_Linux_Terminal.html-e0239b5f.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "KEX_MICROKERNEL_VFS_BOOTCHAIN.html",
+      "sha256": "e9855e375e64fb44fc41ddddcb76f77affc71f68c7d962835447621d9247f71c",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KEX_MICROKERNEL_VFS_BOOTCHAIN.html-0cb060e0.runtime.json",
+      "status": "runtime-errors"
+    },
+    {
+      "file": "KexLinux.html",
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "KexLinux.html-273f57ca.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "Open_Source_Operating_System.html",
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "Open_Source_Operating_System.html-0ad893f2.runtime.json",
+      "status": "startup-observed"
+    },
+    {
+      "file": "Stratum_Mining_Core_OS.html",
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+      "exitCode": 0,
+      "signal": null,
+      "log": "",
+      "evidence": "Stratum_Mining_Core_OS.html-2a4529f9.runtime.json",
+      "status": "startup-observed"
+    }
+  ]
+}

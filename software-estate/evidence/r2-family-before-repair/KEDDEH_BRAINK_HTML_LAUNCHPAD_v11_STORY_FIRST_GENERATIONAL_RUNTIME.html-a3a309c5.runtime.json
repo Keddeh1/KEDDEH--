@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "file": "KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+  "sha256": "166f1ff30b8adbb887951625547ab33a0faf5226ac452ba4ea261c622fd353be",
+  "startedAt": "2026-10-11T16:36:21.555Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [],
+  "runtimeErrors": [
+    {
+      "name": "ReferenceError",
+      "message": "renderResident is not defined",
+      "stack": "ReferenceError: renderResident is not defined\n    at http://127.0.0.1:33401/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html:626:1"
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:33401/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "V8 Evidence-Bearing — KEDDEH BRAINK Launchpad · BTC Core Resident Envelope",
+    "readyState": "complete",
+    "bodyText": "KEDDEH BRAINK Launchpad\n\nHTML authority surface · resident runtime projection · BTC Core node/server envelope\n\nHTML SURFACE: READY\nRUNTIME: UNBOUND\nBTC CORE: UNOBSERVED\nOverview\nBTC Protocol\nResident Linux\nBitcoin Core Node\nRuntime & Adapters\nSkill Fabric\nEvidence & Failures\nStorage & GitHub\nAuthority & Safety\nSystem Overview\nLAUNCH AUTHORITY\nHTML\n\nThe launchpad owns interaction, state visibility, routing intent and evidence projection.\n\nRESIDENT EXECUTION\nADAPTER-BOUND\n\nPython/host processes are execution manifestations, not UI authority.\n\nREPOSITORY ROLE\nSTORAGE\n\nGitHub stores/version-controls artifacts; it does not define product state.\n\nPRIMARY CAUSAL ROUTE\nHTML LAUNCHPAD\nRESIDENT BRIDGE\nBITCOIN CORE\nGETBLOCKTEMPLATE\nCANDIDATE\nSHA256D\nRECONSTRUCT\nSUBMITBLOCK\nCHAIN\nMATURITY\nSTATE OWNERSHIP\nUI / navigation\nHTML launchpad\nBTC protocol truth\nBitcoin Core + consensus rules\nExecution\nResident HTML Linux / V86 first; host adapters only where required\nEvidence\nReceipt ledger + immutable exported artifacts\nStorage\nLocal Library / Drive / GitHub version storage\nCURRENT BOUNDARY\n\nThis HTML file is a self-contained control surface. It does not claim to run bitcoind inside the browser. When bound to the resident bridge it becomes the operator console for the node server, mining runtime, evidence ledger and skill-governed workflows.\n\nKEX seed: KEX-HTML-LAUNCHPAD-20260819-7F2C91 · self-contained HTML launch surface · no external libraries",
+    "elementCount": 791,
+    "headings": [
+      "KEDDEH BRAINK Launchpad",
+      "System Overview",
+      "Primary Causal Route",
+      "State Ownership",
+      "Current Boundary",
+      "BTC Protocol Domain",
+      "Canonical Mining State Machine",
+      "Candidate Integrity",
+      "Mining Controls",
+      "Resident Linux Execution Substrate",
+      "Resident Linux Asset Map",
+      "Linux Controls",
+      "Bitcoin Core Resident Payload Lifecycle",
+      "Linux Dependency Graph",
+      "V86 Linux Screen",
+      "TTY1 / Serial0",
+      "Resident Shell / Action Readback",
+      "Resident Volume Record",
+      "Bitcoin Core Node / Server",
+      "Node Lifecycle",
+      "Node Authority",
+      "Server Topology",
+      "Runtime & Adapter Plane",
+      "Resident Invocation Contract",
+      "Readback Contract",
+      "Runtime Log",
+      "Skill Fabric",
+      "Evidence & Failure Lineage",
+      "Evidence Classes",
+      "BTC Failure Classes",
+      "Receipt Stream",
+      "Storage, Library & GitHub",
+      "GitHub",
+      "Library / Drive",
+      "Resident State",
+      "Authority & Safety",
+      "Bridge Endpoint",
+      "Execution Policy",
+      "V8 — Evidence-Bearing Asset & Runtime Authority",
+      "KEDDEH Generation Runtime — Universal Library + Adjacent Worker Fabric",
+      "Universal Library Planes",
+      "Concurrent Adjacent Teams",
+      "Persistent Work Queue",
+      "Generation Console",
+      "Checkpoint",
+      "GEN11 — Story-First Governing Runtime",
+      "Causal Story",
+      "Typed Current State",
+      "Capability Resolution",
+      "Dependency / Work Graph",
+      "Evidence Relations",
+      "Next Route",
+      "Checkpoint"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Overview",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "BTC Protocol",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Resident Linux",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Bitcoin Core Node",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Runtime & Adapters",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Skill Fabric",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Evidence & Failures",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Storage & GitHub",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Authority & Safety",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Request template",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Run vertical closure",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Start hashing",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Stop hashing",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Submit qualified block",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Boot Linux",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Read status",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Mount resident volume",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Rehydrate state",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Open shell",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "linuxResolveDeps",
+        "name": null,
+        "text": "Resolve / Rehydrate Dependencies",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "linuxRealBoot",
+        "name": null,
+        "text": "Boot Real V86 Linux",
+        "disabled": true,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "terminal-input",
+        "name": null,
+        "text": "Linux serial terminal input",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "residentShellInput",
+        "name": null,
+        "text": "Resident shell command",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "residentShellRun",
+        "name": null,
+        "text": "Run command",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Check RPC",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Start node",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Stop node",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Refresh chain state",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "endpoint",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Bind runtime",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Unbind",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "genRun",
+        "name": null,
+        "text": "Run ready generation",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "genContinue",
+        "name": null,
+        "text": "Continue admissible work",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "genExport",
+        "name": null,
+        "text": "Export checkpoint",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "sfRunLocal",
+        "name": null,
+        "text": "Run admissible local work",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "sfVerify",
+        "name": null,
+        "text": "Run falsifiers",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "sfCheckpoint",
+        "name": null,
+        "text": "Checkpoint",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 11883,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 13768,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1497,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1957,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1230,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 7490,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 10460,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "overview to authority navigation changes selected content",
+      "passed": true,
+      "detail": "KEDDEH BRAINK Launchpad\n\nHTML authority surface · resident runtime projection · BTC Core node/server envelope\n\nHTML SURFACE: READY\nRUNTIME: UNBOUND\nBTC CORE: UNOBSERVED\nOverview\nBTC Protocol\nResident Linux\nBitcoin Core Node\nRuntime & Adapters\nSkill Fabric\nEvidence & Failures\nStorage & GitHub\nAuthority & Safety\nAuthority & Safety\nBRIDGE ENDPOINT\nRESIDENT BRIDGE URL \n\nLocal by default. No credentials are stored in the HTML.\n\nBind runtime\nUnbind\nEXECUTION POLICY\nMainnet fallback\nFORBIDDEN\nLive submit\nRequires runtime gate + target hit\nSecrets in browser\nFORBIDDEN\nEvidence downgrade\nFORBIDDEN\nCI as product authority\nFORBIDDEN\nKEX seed: KEX-HTML-LAUNCHPAD-20260819-7F2C91 · self-contained HTML launch surface · no external libraries"
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": [
+      {
+        "name": "KEX_LINUX_ASSET_VOLUME_V1",
+        "version": 1,
+        "stores": [
+          {
+            "name": "assets",
+            "count": 0
+          }
+        ]
+      }
+    ]
+  },
+  "elapsedMs": 2239,
+  "status": "runtime-errors",
+  "finishedAt": "2026-10-11T16:36:24.932Z",
+  "sha256After": "166f1ff30b8adbb887951625547ab33a0faf5226ac452ba4ea261c622fd353be",
+  "originalUnchanged": true
+}

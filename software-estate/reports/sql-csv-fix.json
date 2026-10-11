@@ -1,0 +1,8 @@
+{
+  "path": "src/data/html5SqlStudioTemplate.ts",
+  "source_commit": "09f45187dbec29ebe63153f916b67505452dc136",
+  "original_sha256": "00b4897528e3f33300b92d4de79506ca7a6a326d08eb77271bb12a0a8ce4baf8",
+  "working_sha256": "37190d64a32b596c00ab84b92fedfed0f0f3f419cb94c0a19677ad420280a95e",
+  "patch_sha256": "5c3b1ff5a9fce05d12ece995138f3829036bd67803adc752fa6b84fe1e51b731",
+  "scope": "Only CSV serialization; schema/order remain first-row Object.keys; null/undefined become empty; original data kept unchanged. Spreadsheet formula interpretation is not mitigated by this fidelity fix."
+}

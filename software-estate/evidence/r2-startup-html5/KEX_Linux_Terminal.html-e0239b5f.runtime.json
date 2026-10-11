@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "file": "KEX_Linux_Terminal.html",
+  "sha256": "2d44e0edb96fc4c93918344958b379cd79913b2ba245213dd61ebeee0dcfb3ab",
+  "startedAt": "2026-10-11T16:34:43.889Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "log",
+      "text": "[KEX Kernel] Verifying application provenance..."
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:36057/KEX_Linux_Terminal.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "KEX Linux Workstation · VFS-Embedded Process Kernel · A. Keddeh · Braink AI",
+    "readyState": "complete",
+    "bodyText": "⚡ A. KEDDEH\n•\nKEX LINUX VFS-EMBEDDED PROCESS KERNEL\n•\nBRAINK AI\n\nBooted KEX Linux\n\nReal process execution engine embedded directly into the VFS: Process Control Blocks (PCB), fork/execve lifecycle, live dynamic /proc/[pid] reflection, standard file descriptor tables (0, 1, 2), WASI / WebAssembly binary execution, real FIFO pipes, and an in-VFS binary library in /bin.\n\nONLINE\nVFS_EMBEDDED_PROC\nWASI_WASM_EXEC\nDYNAMIC_/PROC\nTerminal Workstation\nFull Linux Process Subsystem: Executables in /bin • Live /proc entries • chmod +x executable scripts • WASI Wasm loader • Drag & drop files.\n↺ Reboot\n▶ Run Demo\n🎨 Theme\n🔔\nSound: Off\nClear\nTTY 1 (bash)\nTTY 2 (top)\nTTY 3 (eval)\n16:34:46\n[kernel] KEX Linux Kernel 6.0.297 (Braink AI / A. Keddeh) [x86_64 / WASI]\n[kernel] Initializing Inode Table & Process Control Block Subsystem... OK\n[kernel] Mounting VFS root: / (mode=0755, inode=2)... OK\n[kernel] Mounting dynamic /proc (process reflection table)... OK\n[kernel] Mounting /kex-volume (lineage=verified, authority=A.KEDDEH)... OK\n[kernel] Executing /bin/init-kex [PID 1]... OK\n[kernel] Starting core system daemons: kex-volume, braink-ai-core, proof-ledgerd... OK\n[kernel] Registering WASI execution bridge for WebAssembly binaries (/bin/fib.wasm)... OK\n[kernel] Verified Root Cryptographic Proof: 3807f83f9af105b8...\n[kernel] System initialization complete. Terminal workstation is ready.\n\nKEX Linux Workstation (tty1)\nReal process lifecycle embedded in VFS. Try: 'ls /bin', 'cat /proc/1/status', 'ps -ef', 'wasm /bin/fib.wasm 10'\n\n\nroot@kex-linux:/home/ak#\nQuick Run:\nhelp\nls /bin\nls /proc\ncat /proc/1/status\ncat /proc/meminfo\nrun custom_app.sh\nwasm fib.wasm\nps -ef\nsystemctl\nkex status\nKernel & Process Telemetry\nKERNEL\n6.0.297-kexw-v6-proc\nVFS PROCESSES\n6\nINODE TABLE\nONLINE (POSIX)\nSERVICES\n4/4\nWASM SUBSYSTEM\nWASI-ENABLED\nDYNAMIC /PROC\nMOUNTED\nAUTHORITY\nA.KEDDEH\nSECTORS\n7\nCPU Registers & Process Bus\nPC\n21\nACC\n142\nR1\n31\nR2\n360\nR3\n291\nBUS\n576\nFLAGS\n02\nTICKS\n21\nVirtual Filesystem (VFS)\n/\n├── bin/\n│   ├── appctl\n│   ├── fib.wasm\n│   └── hello\n├── boot/\n│   └── vmlinuz-6.0.297\n├── dev/\n├── etc/\n│   ├── hostname\n│   ├── hosts\n│   ├── os-release\n│   └── sysctl.conf\n├── home/\n│   └── ak/\n│       ├── README_KEX_VFS.md\n│       ├── benchmark_suite.sh\n│       ├── cluster_topology.json\n│       ├── custom_app.sh\n│       ├── distributed_consensus.rs\n│       ├── neural_pipeline.py\n│       └── notes.txt\n├── kex-volume/\n│   ├── instances/\n│   ├── proof/\n│   │   └── KEX_BOOT_PROOF.json\n│   ├── registry/\n│   │   └── KEX_SEED.json\n│   └── sectors/\n│       ├── app_primary/\n│       │   └── sector.json\n│       ├── braink_ai/\n│       │   └── sector.json\n│       ├── control_plane_ui/\n│       │   └── sector.json\n│       ├── dns_registry/\n│       │   └── sector.json\n│       ├── mining/\n│       │   └── sector.json\n│       ├── repo_library_23/\n│       │   └── sector.json\n│       └── static_public_surface/\n│           └── sector.json\n├── proc/\n│   ├── 1/\n│   │   ├── cmdline\n│   │   ├── environ\n│   │   ├── stat\n│   │   └── status\n│   ├── 104/\n│   │   ├── cmdline\n│   │   ├── environ\n│   │   ├── stat\n│   │   └── status\n│   ├── 11/\n│   │   ├── cmdline\n│   │   ├── environ\n│   │   ├── stat\n│   │   └── status\n│   ├── 2/\n│   │   ├── cmdline\n│   │   ├── environ\n│   │   ├── stat\n│   │   └── status\n│   ├── 7/\n│   │   ├── cmdline\n│   │   ├── environ\n│   │   ├── stat\n│   │   └── status\n│   ├── 97/\n│   │   ├── cmdline\n│   │   ├── environ\n│   │   ├── stat\n│   │   └── status\n│   ├── cpuinfo\n│   ├── meminfo\n│   ├── uptime\n│   └── version\n├── sys/\n├── tmp/\n├── usr/\n│   └── bin/\n└── var/\n    └── log/\n        ├── dmesg\n        └── kex-audit.log\nActive Inode Buffer\ncat an inode or open nano to inspect it here.\nCryptographic Process Ledger (SHA-256)\n[2026-10-11T16:34:46.823Z] KERNEL_BOOT_VFS_PROC 298D55CB7CAA78E45FC3A47280062B29\n  detail={\"authority\":\"A.KEDDEH\",\"pids\":6}",
+    "elementCount": 154,
+    "headings": [
+      "Booted KEX Linux",
+      "Terminal Workstation",
+      "Kernel & Process Telemetry",
+      "KERNEL",
+      "VFS PROCESSES",
+      "INODE TABLE",
+      "SERVICES",
+      "WASM SUBSYSTEM",
+      "DYNAMIC /PROC",
+      "AUTHORITY",
+      "SECTORS",
+      "CPU Registers & Process Bus",
+      "Virtual Filesystem (VFS)",
+      "Active Inode Buffer",
+      "Cryptographic Process Ledger (SHA-256)"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "↺ Reboot",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "▶ Run Demo",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "🎨 Theme",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "🔔\nSound: Off",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Clear",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "id": "nanoContent",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "^O WriteOut (Save)",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "^X Exit",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "cmd",
+        "name": null,
+        "text": "type a command (e.g. ls /bin, ps -ef, cat /proc/1/status, ./app.sh)...",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 48544,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [
+      {
+        "key": "kex_linux_vfs_proc",
+        "bytes": 15320
+      }
+    ],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "KEX_Linux_Terminal.html-e0239b5f.png",
+  "elapsedMs": 2597,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:48.033Z",
+  "sha256After": "2d44e0edb96fc4c93918344958b379cd79913b2ba245213dd61ebeee0dcfb3ab",
+  "originalUnchanged": true
+}

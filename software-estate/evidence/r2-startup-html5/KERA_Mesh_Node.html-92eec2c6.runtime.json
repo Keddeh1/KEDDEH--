@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "file": "KERA_Mesh_Node.html",
+  "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+  "startedAt": "2026-10-11T16:34:39.889Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:44141/KERA_Mesh_Node.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "method": "GET",
+      "type": "stylesheet",
+      "allowed": false
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "blocked": [
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "reason": "network-isolation"
+    }
+  ],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "KERA Sovereign Mesh Node · P2P Discovery Matrix · A. Keddeh",
+    "readyState": "complete",
+    "bodyText": "K\nKERA Sovereign Mesh Node\n\nserver://kex/kera-mesh-node · P2P Discovery Substrate\n\nMULTICAST: 239.29.7.100:4003\nDOMAIN PORT: 18054\nNAMESPACE: kex\nP2P CLUSTER DISCOVERY & CARRIER TELEMETRY\nACTIVE ROUTE: SERVER://KEX/KERA-MESH-NODE\nNODE IDENTIFIER\nKERA_DOMAIN_01\nACTIVE MESH PEERS\n6 Connected\nTOPOLOGY ARCHITECTURE\nTriad of Triad\nSUPERVISION STATE\nREHYDRATION\nHOST-OWNED SECTOR CARRIER WORKERS\n5 ATTACHED WORKERS\nSECTOR_001 (keddeh.ALPHA)\nSocket: /run/stratum/v2/mining_lane_01.sock\nSECTOR_002 (keddeh.BETA)\nSocket: /run/stratum/v2/mining_lane_02.sock\nSECTOR_003 (keddeh.GAMMA)\nSocket: /run/stratum/v2/mining_lane_03.sock\nSECTOR_004 (keddeh.DELTA)\nSocket: /run/stratum/v2/mining_lane_04.sock\nSECTOR_005 (keddeh.EPSILON)\nSocket: /run/stratum/v2/mining_lane_05.sock\n16:34:41\n[KERA]\nBooting KERA Sovereign Mesh Node...\n16:34:41\n[MESH]\nBinding physical UDP multicast socket 239.29.7.100:4003\n16:34:42\n[MESH]\nStarting domain_runtime on 127.0.0.1:18054 (namespace=kex)\n16:34:42\n[OK]\nPHYSICAL P2P MATRIX ACTIVE · Subscribed to sovereign mesh\nPHYSICAL UDP MULTICAST ACTIVE\nKERA_MESH_NODE · Physical Group 239.29.7.100:4003 · dgram Linux Socket",
+    "elementCount": 93,
+    "headings": [
+      "KERA Sovereign Mesh Node"
+    ],
+    "controls": [],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 4003,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "KERA_Mesh_Node.html-92eec2c6.png",
+  "elapsedMs": 1877,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:43.063Z",
+  "sha256After": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+  "originalUnchanged": true
+}

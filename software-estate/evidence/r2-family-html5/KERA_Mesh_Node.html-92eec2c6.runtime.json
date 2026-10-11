@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "file": "KERA_Mesh_Node.html",
+  "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+  "startedAt": "2026-10-11T16:37:00.755Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:42621/KERA_Mesh_Node.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "method": "GET",
+      "type": "stylesheet",
+      "allowed": false
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "blocked": [
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "reason": "network-isolation"
+    }
+  ],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+    "Host-dependent shell only. Navigation, mining, mesh joining and host mutations deliberately not activated."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "KERA Sovereign Mesh Node · P2P Discovery Matrix · A. Keddeh",
+    "readyState": "complete",
+    "bodyText": "K\nKERA Sovereign Mesh Node\n\nserver://kex/kera-mesh-node · P2P Discovery Substrate\n\nMULTICAST: 239.29.7.100:4003\nDOMAIN PORT: 18054\nNAMESPACE: kex\nP2P CLUSTER DISCOVERY & CARRIER TELEMETRY\nACTIVE ROUTE: SERVER://KEX/KERA-MESH-NODE\nNODE IDENTIFIER\nKERA_DOMAIN_01\nACTIVE MESH PEERS\n6 Connected\nTOPOLOGY ARCHITECTURE\nTriad of Triad\nSUPERVISION STATE\nREHYDRATION\nHOST-OWNED SECTOR CARRIER WORKERS\n5 ATTACHED WORKERS\nSECTOR_001 (keddeh.ALPHA)\nSocket: /run/stratum/v2/mining_lane_01.sock\nSECTOR_002 (keddeh.BETA)\nSocket: /run/stratum/v2/mining_lane_02.sock\nSECTOR_003 (keddeh.GAMMA)\nSocket: /run/stratum/v2/mining_lane_03.sock\nSECTOR_004 (keddeh.DELTA)\nSocket: /run/stratum/v2/mining_lane_04.sock\nSECTOR_005 (keddeh.EPSILON)\nSocket: /run/stratum/v2/mining_lane_05.sock\n16:37:03\n[KERA]\nBooting KERA Sovereign Mesh Node...\n16:37:03\n[MESH]\nBinding physical UDP multicast socket 239.29.7.100:4003\n16:37:04\n[MESH]\nStarting domain_runtime on 127.0.0.1:18054 (namespace=kex)\n16:37:04\n[OK]\nPHYSICAL P2P MATRIX ACTIVE · Subscribed to sovereign mesh\nPHYSICAL UDP MULTICAST ACTIVE\nKERA_MESH_NODE · Physical Group 239.29.7.100:4003 · dgram Linux Socket",
+    "elementCount": 93,
+    "headings": [
+      "KERA Sovereign Mesh Node"
+    ],
+    "controls": [],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 4003,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "read-only shell inventory",
+      "passed": true,
+      "detail": {
+        "textBytes": 1133,
+        "visibleInputs": 0,
+        "title": "KERA Sovereign Mesh Node · P2P Discovery Matrix · A. Keddeh"
+      }
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 1703,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:37:04.742Z",
+  "sha256After": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+  "originalUnchanged": true
+}

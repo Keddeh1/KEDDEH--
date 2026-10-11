@@ -1,0 +1,1440 @@
+{
+  "schema": "keddeh.html-development-release.v1",
+  "edition": "R2",
+  "createdAt": "2026-10-11T16:45:34.413036+00:00",
+  "sourceCommit": "09f45187dbec29ebe63153f916b67505452dc136",
+  "branch": "codex/html-software-estate-r2",
+  "destination": "Keddeh1/KEDDEH--",
+  "publicationStatus": "Draft",
+  "publicationApprovalReceipt": null,
+  "review": "evidence/r2-independent-review.json",
+  "recordScope": "Hashes cover packaged estate files except this self-referential manifest. Git commit and archive digests are supplied in delivery readback.",
+  "excluded": "Internal QA screenshots; transfer helpers and transient signed URLs; browser profiles/auth files; node_modules; private assistant notes.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 147,
+      "sha256": "94c6eabe4733bd929dd229e883d0bdea16f3a30a2408949ca60f1324ffad9794"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5787,
+      "sha256": "e6fadc3a619f00a632a6b3b13c7e4583f9f7c48c775c6d6f95f55b95498c04f5"
+    },
+    {
+      "path": "development/r14/README.md",
+      "bytes": 5592,
+      "sha256": "05afa62555039a8bc715d5437bc950c6da51ebe59b1e111c6e4a422c3f20c18f"
+    },
+    {
+      "path": "development/r14/keddeh-r14-converged-runtime.js",
+      "bytes": 6787,
+      "sha256": "62458f096f8e6dbfd47ab8e999d14049a079c7cb100addcec5fb6caaf0fe6877"
+    },
+    {
+      "path": "development/r14/p19-host-adapter-runtime.js",
+      "bytes": 7631,
+      "sha256": "c0cfa79d68e9d8de5ea69c7861ea2fd217578cac430c3cd326e6353d8037c50c"
+    },
+    {
+      "path": "development/r14/patch.py",
+      "bytes": 4468,
+      "sha256": "1b0b771ff5df5efc730eee52ce6501904e33e340fbb08243edfe5a9224d59a64"
+    },
+    {
+      "path": "development/r14/regression-results.json",
+      "bytes": 1791,
+      "sha256": "a13064c15600a1958b356448d67dda4c2c0d732eefb7fddb22ea5492eb5ea745"
+    },
+    {
+      "path": "development/r14/regression.cjs",
+      "bytes": 7178,
+      "sha256": "97f52c8ce70182233c1ea50ca38fac948d0eb54b356ba5283d75baf403fbb5ea"
+    },
+    {
+      "path": "development/r14/script126-original.js",
+      "bytes": 6581,
+      "sha256": "3989cb2e89d541486c6c056a61cfef14c69688770360ab6b9565ed0c168040de"
+    },
+    {
+      "path": "development/r2/README.md",
+      "bytes": 2577,
+      "sha256": "42446003bbffadd78af73f59041e2e48082afe1ca8a8a12274c49dcb04745682"
+    },
+    {
+      "path": "development/r2/aether-original-to-r2.patch",
+      "bytes": 2268,
+      "sha256": "3cb734cb9b28cbf5886f786a206eee919b95e5d147c0cc77c8216a242c8d22ab"
+    },
+    {
+      "path": "development/r2/aether-r2-change.json",
+      "bytes": 506,
+      "sha256": "9372367c5a6e33ed0e04cac7900847cb9beb7be1b1f0bae873b140592daaf1aa"
+    },
+    {
+      "path": "development/r2/p19-host-adapter-runtime.js",
+      "bytes": 7631,
+      "sha256": "3e6e24295dd15866059d0e66df970f8c688233c6e1e86f1d0c0f30a7f1f7d719"
+    },
+    {
+      "path": "development/r2/r14-original-to-r2.patch",
+      "bytes": 19276,
+      "sha256": "6d085017fc81901e10b68b2fcc6c69c97673ed03fa4eaf8a1d883628cdf324bb"
+    },
+    {
+      "path": "development/r2/r14-r2-change.json",
+      "bytes": 554,
+      "sha256": "51612fa8735d768ed766d12af9cee2f03d78e150a9c52a2fb6951e41734e110c"
+    },
+    {
+      "path": "development/r2-family/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html.before",
+      "bytes": 73482,
+      "sha256": "166f1ff30b8adbb887951625547ab33a0faf5226ac452ba4ea261c622fd353be"
+    },
+    {
+      "path": "development/r2-family/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html.patch",
+      "bytes": 2099,
+      "sha256": "4df4330a1e02b6a2dcea1dd62758c4ed089c661591a630377b8f78ae49ecf5eb"
+    },
+    {
+      "path": "development/r2-family/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html.before",
+      "bytes": 6400478,
+      "sha256": "311485063a7f0583fc787590a566f07945744ae0ef3e8d72f5af8f3f9930e000"
+    },
+    {
+      "path": "development/r2-family/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html.patch",
+      "bytes": 12735933,
+      "sha256": "f31ba4077903b409b50c52b0058e74059fa4eb9166fe370a5f7e1a721d84c99f"
+    },
+    {
+      "path": "development/r2-family/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html.before",
+      "bytes": 5122943,
+      "sha256": "7f6e4ce0a41d3ba8823984533f41479be77efa7656f3e016f591af6e49c13fec"
+    },
+    {
+      "path": "development/r2-family/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html.patch",
+      "bytes": 1218,
+      "sha256": "3eb00de3b96b0b28d9383e379fea7af2e517973a389e917409a91d3ed700adc3"
+    },
+    {
+      "path": "development/r2-family/README.md",
+      "bytes": 2174,
+      "sha256": "876848e94ccf05cb1f426705f35e9d1d920b98c5b6bd8ad327a2c3a44888418e"
+    },
+    {
+      "path": "development/r2-family/changes.json",
+      "bytes": 1046,
+      "sha256": "db2f5a03c4ffcfdb08f6e5fbe4d9cfbd6e7cfd48befc55e4065cf1e822356065"
+    },
+    {
+      "path": "docs/components.json",
+      "bytes": 31014,
+      "sha256": "c12833d769e1eb13bc6719c7be04b304a866bb200c0b0f3df0657ce180ba2ce8"
+    },
+    {
+      "path": "docs/considerations.html",
+      "bytes": 6375,
+      "sha256": "6f0922d7d34c7350823fe0273f67779d6a44ad47f868932a93b9bc6ce847ebbb"
+    },
+    {
+      "path": "docs/considerations.md",
+      "bytes": 4297,
+      "sha256": "1c1c0e98508006b38f5f538838899f548e9b05900d8655915f808b7227bb854e"
+    },
+    {
+      "path": "docs/control-matrices.html",
+      "bytes": 13157,
+      "sha256": "9147e6187ad9a8a2a9fbf9257c15eefc45b41c544ea7fe6741303a161eb14626"
+    },
+    {
+      "path": "docs/control-matrices.md",
+      "bytes": 9018,
+      "sha256": "293c2bc623167904bd80b120c5c5af50be6c9a07f02cf9b3fbd683376dcd1387"
+    },
+    {
+      "path": "docs/controls.html",
+      "bytes": 5031,
+      "sha256": "dc5034d8fe0e5c3ad87496fca6cd1048e7e3841bf3cbc09a028693257df2a1b9"
+    },
+    {
+      "path": "docs/controls.md",
+      "bytes": 3355,
+      "sha256": "9a1518ce1fc7f60e41017285758f92604406b014bf83a1d9e4c8be014bbcbb7c"
+    },
+    {
+      "path": "docs/conventions.html",
+      "bytes": 5430,
+      "sha256": "75b93e5cc88a1c5757d326f08f288ca1d326749a3ae371ed241f1055b7c92ef0"
+    },
+    {
+      "path": "docs/conventions.md",
+      "bytes": 3571,
+      "sha256": "724a7d5891a2222dfc1040064b3e73a042fe6913664c19a3c02c3f4da29d951f"
+    },
+    {
+      "path": "docs/development.html",
+      "bytes": 7088,
+      "sha256": "e9c94c794be98fc93cb7c1b6ebd8b0c39365bf96f6229bca25c2936df2664971"
+    },
+    {
+      "path": "docs/development.md",
+      "bytes": 5199,
+      "sha256": "c868c9c81799b476a92b287f1f9f9aa73f36f9a79271e608e9d2c267e2a90ee4"
+    },
+    {
+      "path": "docs/evidence-register.html",
+      "bytes": 8572,
+      "sha256": "bfa38620d051519717d761b65cadac72bae458abb43cea1670f50c6a3e21eda4"
+    },
+    {
+      "path": "docs/evidence-register.md",
+      "bytes": 6264,
+      "sha256": "0e31b8c3db105c1bb46c17028a7b7794061460ac6617bb9d62b4a7d28de2c269"
+    },
+    {
+      "path": "docs/glossary.html",
+      "bytes": 7477,
+      "sha256": "6fb6bdef23fbab415e0794a0d8a022e7c916585889ab3bbdffe93ba1e7de62df"
+    },
+    {
+      "path": "docs/glossary.md",
+      "bytes": 5037,
+      "sha256": "aea88aa7070e1bfd8905eeb9a267e321531762f8a1e554d19c284ef593cc42b2"
+    },
+    {
+      "path": "docs/index.html",
+      "bytes": 10738,
+      "sha256": "1b9f72792dec98ad8d128046920d648e58275e5ae65c12e3cf32de25a4988099"
+    },
+    {
+      "path": "docs/index.md",
+      "bytes": 7301,
+      "sha256": "2946dff72628028a961f2fc986f1caefadd60d8221f93c83352fc9491b415949"
+    },
+    {
+      "path": "docs/introduction.html",
+      "bytes": 5193,
+      "sha256": "c2fa755b7c114b41d99c4d6c79052dce7e4677946194cd1120b619d37a2a8902"
+    },
+    {
+      "path": "docs/introduction.md",
+      "bytes": 3490,
+      "sha256": "8a51f24cadb56449ed42bbd933a4bad6e8a5979557ed5a99fef01532ea5fa22a"
+    },
+    {
+      "path": "docs/monograph.html",
+      "bytes": 26669,
+      "sha256": "1b07fd542dcca094135eb9f82a7109d142fd60fc60db1cf6e711c022df791b83"
+    },
+    {
+      "path": "docs/monograph.md",
+      "bytes": 22863,
+      "sha256": "794e6b9d384b14cf58dc72e58f9510e2040720d3061e7f78535caa9e6b2dd1e0"
+    },
+    {
+      "path": "docs/normalisation.html",
+      "bytes": 6254,
+      "sha256": "40c2f81ebe979d0b1d3eb1a4ef8d5f3dddb00d998752773b0bebf6251e44c8f7"
+    },
+    {
+      "path": "docs/normalisation.md",
+      "bytes": 4191,
+      "sha256": "dcbfb611bea8bd1415703fce23303f9f477380ac21a6d46d9901b0b2c001e90b"
+    },
+    {
+      "path": "docs/publication-controls.html",
+      "bytes": 5656,
+      "sha256": "4d731f9ba70b349ba7e0b461888f76d3f3e595c8bc8737b0ce373146f86e942d"
+    },
+    {
+      "path": "docs/publication-controls.md",
+      "bytes": 3900,
+      "sha256": "536b83c109023c9eeaf6a7502cf0dc0304b6ce73cf8dc8358b786c77c542577e"
+    },
+    {
+      "path": "docs/recovery.html",
+      "bytes": 5782,
+      "sha256": "e16979796fde86e5aaefcd90515fb64a9b2476673a851d678e1bd105bb2409bf"
+    },
+    {
+      "path": "docs/recovery.md",
+      "bytes": 3895,
+      "sha256": "dce787e338a179cfca221a94c3b63bdc11092f17200528901f21d1a4c202aaae"
+    },
+    {
+      "path": "docs/render.cjs",
+      "bytes": 2033,
+      "sha256": "45cd4297e2a2db59e447ff5a8d3c9e01bb91182c91b8da44601cc8874cb35db6"
+    },
+    {
+      "path": "docs/validate.cjs",
+      "bytes": 2291,
+      "sha256": "38927792bf608b6e7fc9d38da4bce76243893ff99dbf163d02ccd4ab75d702cb"
+    },
+    {
+      "path": "docs/validation.json",
+      "bytes": 3511,
+      "sha256": "9436c5f5687b40bd62dc3e4accd84d5bf9e8442ad8e62e088d72db0e649e1a58"
+    },
+    {
+      "path": "evidence/R2_FAMILY_BROWSER_VERDICT.md",
+      "bytes": 8413,
+      "sha256": "7338e08099dbcb3318e9e0071cae0cafeb360f8dba213e9672f5e53b37d1bf50"
+    },
+    {
+      "path": "evidence/baseline/preflight.json",
+      "bytes": 111899,
+      "sha256": "2d5cbe0bcf0b9f1fcde4108cef0138c06595367a009cd64568c61dd100874897"
+    },
+    {
+      "path": "evidence/harness-selftest/isolation-smoke.html-7b0e8da1.runtime.json",
+      "bytes": 6301,
+      "sha256": "4614f16ffd891404fee9856af8e121e0ae0cdd33bd45c49ea0ff2c7c900c6ab6"
+    },
+    {
+      "path": "evidence/harness-selftest/preflight.json",
+      "bytes": 2840,
+      "sha256": "b86f9fec3f745070bcaff8d58a8d5dc817b7fd52ba175150224b7128cde9b4f3"
+    },
+    {
+      "path": "evidence/harness-selftest/summary.json",
+      "bytes": 351,
+      "sha256": "61e2e8722adc25fcbe2b7008ee44c540421921fa068e7dc6844d2351bbcb961a"
+    },
+    {
+      "path": "evidence/hcf-recovery.json",
+      "bytes": 2621,
+      "sha256": "3e1334a730fb10931f54abc12f8ab872abc77dd5d49aa4d9ea32754fb75685f8"
+    },
+    {
+      "path": "evidence/independent-hcf-recovery-verdict.json",
+      "bytes": 2971,
+      "sha256": "57d4ef914e3d73c98f3cd22d6ce903e5262d239461da755b372b305f038866e8"
+    },
+    {
+      "path": "evidence/independent-original-integrity.json",
+      "bytes": 7074,
+      "sha256": "9296a2b0abe0891cd678a37bee623ef230c322350d78eed89c024b1e23acabe6"
+    },
+    {
+      "path": "evidence/independent-static-summary.txt",
+      "bytes": 4622,
+      "sha256": "3e3024686238e77a1a684d5e4d4d7db699503df0d4e141cea8a719ce330dc7c9"
+    },
+    {
+      "path": "evidence/independent-static-verification.json",
+      "bytes": 79421,
+      "sha256": "c6c74251c75feba237dbe4c0c921d59d408d9998d03665917bebae81850547b7"
+    },
+    {
+      "path": "evidence/independent-verdict.json",
+      "bytes": 9745,
+      "sha256": "2d3cb7417ba21596ac3fe181a2d1031493e602f99d5a7ead7943d037c56854a8"
+    },
+    {
+      "path": "evidence/r2-browser/after-r14-results.json",
+      "bytes": 5386,
+      "sha256": "6ca938044e8bed9fa44809714b2bbef3489e0430d52a0e150835620c685e2576"
+    },
+    {
+      "path": "evidence/r2-browser/initial-results.json",
+      "bytes": 8632,
+      "sha256": "b6e424ee54256ad2f972c6ad2a493261788ac47debae7eb71e806745030b2c84"
+    },
+    {
+      "path": "evidence/r2-browser/navigation-timeout-results.json",
+      "bytes": 5284,
+      "sha256": "f04b9d71559c8ed3fab9e721c1cfa2b305036d4b7adac0035ae571f338b76337"
+    },
+    {
+      "path": "evidence/r2-browser/overlay-selector-results.json",
+      "bytes": 6800,
+      "sha256": "1c9bf4dc7d7d21a5aedf7bc19bc7cdcbecaf721f0da82c828ae0829df697c388"
+    },
+    {
+      "path": "evidence/r2-browser/results.json",
+      "bytes": 4947,
+      "sha256": "324d9c23e9eb27fdf464afe6340d758ddadd228a0e25096536e5b46358b3fa17"
+    },
+    {
+      "path": "evidence/r2-browser-independent/results.json",
+      "bytes": 4947,
+      "sha256": "7417223f6e498216248dda3df11a141e7b382d6b3b5376829212c9bc97f77eaa"
+    },
+    {
+      "path": "evidence/r2-browser-independent-pre-strengthening/results.json",
+      "bytes": 4756,
+      "sha256": "3134fc760f8ddebbef9c1a2449e1bc73b6def08eb71ecae6162250c0e8d024fc"
+    },
+    {
+      "path": "evidence/r2-family-before-repair/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html-a3a309c5.runtime.json",
+      "bytes": 14855,
+      "sha256": "3532d1732739f91184136677543208057c188dc4b6aa34562446d8559f8c8cd8"
+    },
+    {
+      "path": "evidence/r2-family-before-repair/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html-f2833839.runtime.json",
+      "bytes": 22138,
+      "sha256": "522fae6d34e4194d9c288c54e758f231b00a0b068fa38fb21248f4ee872cd892"
+    },
+    {
+      "path": "evidence/r2-family-before-repair/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM_1_.html-1b06bc54.runtime.json",
+      "bytes": 31487,
+      "sha256": "0ea637d1614b425a4f9f05009c27b065f4add5047c2e046ce15e8ef4045388ca"
+    },
+    {
+      "path": "evidence/r2-family-before-repair/KEX_MICROKERNEL_VFS_BOOTCHAIN.html-0cb060e0.runtime.json",
+      "bytes": 5682,
+      "sha256": "bc0380005ed76e73dd00303935687902ca2762612632c2f03b9d98751d30bf5f"
+    },
+    {
+      "path": "evidence/r2-family-controls.json",
+      "bytes": 22993,
+      "sha256": "b519c6f13200085ddfb2567439add697bdb321acae44494ccd0346ab2edc6958"
+    },
+    {
+      "path": "evidence/r2-family-drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html-2be9fcf4.runtime.json",
+      "bytes": 31995,
+      "sha256": "fa564e60c792bc5dc5f143fb3a1311cbf4e38266496b22ffcc75705023ceeb3a"
+    },
+    {
+      "path": "evidence/r2-family-drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html-a3a309c5.runtime.json",
+      "bytes": 19128,
+      "sha256": "6a3aa1900654e39fdb9736970abc0a1c1d572d765d1b8594e4f00c96652f7e41"
+    },
+    {
+      "path": "evidence/r2-family-drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html-f2833839.runtime.json",
+      "bytes": 24511,
+      "sha256": "7b8e6d2f8b38785a503c88c785ea39e1845e41c5150f94f5ee1adbcbc12d0eab"
+    },
+    {
+      "path": "evidence/r2-family-drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM_1_.html-1b06bc54.runtime.json",
+      "bytes": 31602,
+      "sha256": "75bd453904f87e9ce9beb5769b9815fdc1c434041e58d97e9b1270dad4f0815d"
+    },
+    {
+      "path": "evidence/r2-family-drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html-f92e2971.runtime.json",
+      "bytes": 10238,
+      "sha256": "e0a2db3a5bd15e67bcbe1b6852181114d0246b12aa133c74a08321e59ff7eeb7"
+    },
+    {
+      "path": "evidence/r2-family-drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html-984b370a.runtime.json",
+      "bytes": 7013,
+      "sha256": "cd56262863ccb7c033c9741129605032f83f2cb86d3a0b449ca31b8cccf0d7ec"
+    },
+    {
+      "path": "evidence/r2-family-drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html-2fd89d8b.runtime.json",
+      "bytes": 12401,
+      "sha256": "5490305dbe8f794bdaf829741815206da44fbb58ff2e00296219ed4010fb7704"
+    },
+    {
+      "path": "evidence/r2-family-drive/preflight.json",
+      "bytes": 46371,
+      "sha256": "dcc29809b52b42437b8180c97ff5222b757778d89e764a2bc5ff7d0705214451"
+    },
+    {
+      "path": "evidence/r2-family-drive/summary.json",
+      "bytes": 5970,
+      "sha256": "e25a81bb7192b27b556a218653212683d61e06835e1e7bed3cb9164772019a13"
+    },
+    {
+      "path": "evidence/r2-family-github/AetherOS.html-4ad0218f.runtime.json",
+      "bytes": 2488,
+      "sha256": "56008704e6c8f60ca2bb1ffba95a40b2d1803c912fc640ad9b8f5500824b3c7a"
+    },
+    {
+      "path": "evidence/r2-family-github/Chrome.html-4dad02ae.runtime.json",
+      "bytes": 6393,
+      "sha256": "38ac30ff1e5abff8000a03b4875758b4baa08ce448684cfe742a9954fb7e198f"
+    },
+    {
+      "path": "evidence/r2-family-github/KeraMeshOS.html-5cbf1295.runtime.json",
+      "bytes": 3565,
+      "sha256": "691d7879e37eece772b5105252765917f71c7999cd42ae56b1acca670b6be37e"
+    },
+    {
+      "path": "evidence/r2-family-github/KexLinux.html-8ce7b04b.runtime.json",
+      "bytes": 2095,
+      "sha256": "a34f6f90cfd49665a7d9e9ee977cdc063127641a57f90801605670f31d983e51"
+    },
+    {
+      "path": "evidence/r2-family-github/MiningOS.html-6398b404.runtime.json",
+      "bytes": 3311,
+      "sha256": "3462cae5daa7d9406faa34eff22e656bf598a88df8ae239c6a8889251ed64cb4"
+    },
+    {
+      "path": "evidence/r2-family-github/preflight.json",
+      "bytes": 18028,
+      "sha256": "2cfa21f3db39f2849a7b47a9ed07db2871ee7cdb16771d25eb77292a893ccf25"
+    },
+    {
+      "path": "evidence/r2-family-github/summary.json",
+      "bytes": 4466,
+      "sha256": "74d70861a96055436208313d8db2b67cda5803cda5687bd3cfb4963ab92de878"
+    },
+    {
+      "path": "evidence/r2-family-harness-initial-failures/HTML5_Particle_Physics_Lab.html-a102424c.runtime.json",
+      "bytes": 4029,
+      "sha256": "0b3cf36f40d13136b6ea3ec4b21960f23de6254a0650e548bf96102e268f1248"
+    },
+    {
+      "path": "evidence/r2-family-harness-initial-failures/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html-984b370a.runtime.json",
+      "bytes": 6239,
+      "sha256": "bcad5f43cb496044451b75c834027f24963d2c81e58b427d9d311248806b05e0"
+    },
+    {
+      "path": "evidence/r2-family-harness-initial-failures/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html-2fd89d8b.runtime.json",
+      "bytes": 11627,
+      "sha256": "6fc8a573dadb9d90107dab6402b8c97d0f0aa76b71ba8011945aca0da1aa6ae8"
+    },
+    {
+      "path": "evidence/r2-family-harness-initial-failures/KexLinux.html-273f57ca.runtime.json",
+      "bytes": 1918,
+      "sha256": "708ba50ca8213a834ca07ba6c451d12423f44f8fa02a2e8f4c28878464fa0c85"
+    },
+    {
+      "path": "evidence/r2-family-harness-initial-failures/KexLinux.html-8ce7b04b.runtime.json",
+      "bytes": 2072,
+      "sha256": "29cb09e5df8070c08edcc3cd6aeeb1103843c618e871a573c1cdab58a41347b9"
+    },
+    {
+      "path": "evidence/r2-family-html5/Google_Chrome_Workstation.html-2a12929c.runtime.json",
+      "bytes": 6407,
+      "sha256": "669a06244551aff0d24ace88393f419df904a89727d1416b038c76e145214b0f"
+    },
+    {
+      "path": "evidence/r2-family-html5/HTML5_Audio_Synthesizer.html-9f583e67.runtime.json",
+      "bytes": 5803,
+      "sha256": "13a185a52f7a1f8397d9d6412a42fd6d5acddde39517151eda12b3685b1c35a4"
+    },
+    {
+      "path": "evidence/r2-family-html5/HTML5_Particle_Physics_Lab.html-a102424c.runtime.json",
+      "bytes": 3666,
+      "sha256": "50e854dce702907491c99a6d519546eb38110ffb58aef3e9a0b326189f8b3daa"
+    },
+    {
+      "path": "evidence/r2-family-html5/HTML5_Raster_Paint_Studio.html-272d14cd.runtime.json",
+      "bytes": 4189,
+      "sha256": "7f63dc73cd68f7a125de4d1357cc6a2f9907b2334b4d2d540b632e7e45f5b8ec"
+    },
+    {
+      "path": "evidence/r2-family-html5/HTML5_Retro_Arcade_Breakout.html-92c28ea0.runtime.json",
+      "bytes": 2204,
+      "sha256": "6464b0c5bc9062fb9251136a5802565397b9e21063e47aea815cd931f7e6f92c"
+    },
+    {
+      "path": "evidence/r2-family-html5/HTML5_Scientific_Calculator.html-a994dcfe.runtime.json",
+      "bytes": 8303,
+      "sha256": "f0c0e1748e77a3917959ddd17c530e02e081f11358b565b235c39ecc32983918"
+    },
+    {
+      "path": "evidence/r2-family-html5/KERA_Mesh_Node.html-92eec2c6.runtime.json",
+      "bytes": 3559,
+      "sha256": "a9b750ebf496c73ee4678985e6fe83f20cf2ab1e543977f3be4d84e5558690a2"
+    },
+    {
+      "path": "evidence/r2-family-html5/KEX_MICROKERNEL_VFS_BOOTCHAIN.html-0cb060e0.runtime.json",
+      "bytes": 5297,
+      "sha256": "c2e1c01c12935aada35d221dbb1e98ce1c116fafecce82aef68e2ce88218a415"
+    },
+    {
+      "path": "evidence/r2-family-html5/KexLinux.html-273f57ca.runtime.json",
+      "bytes": 2081,
+      "sha256": "4365bc4e927757180e11820240244f019210676681da8176c377ec0bc93fa251"
+    },
+    {
+      "path": "evidence/r2-family-html5/Open_Source_Operating_System.html-0ad893f2.runtime.json",
+      "bytes": 2540,
+      "sha256": "cea70d707c6bc2a89248b46fb07493afc2dc60af8a1230dc00471a5a247332dc"
+    },
+    {
+      "path": "evidence/r2-family-html5/Stratum_Mining_Core_OS.html-2a4529f9.runtime.json",
+      "bytes": 3351,
+      "sha256": "cb0c6f580f078ff285f06e15de2e9d744d3aa6c0491f9d673baf4c19642b47ce"
+    },
+    {
+      "path": "evidence/r2-family-html5/preflight.json",
+      "bytes": 22946,
+      "sha256": "7fe839966d8ffb25906dd2fdc83693dcb2215ccb6b330c00dda7f82d2af6170e"
+    },
+    {
+      "path": "evidence/r2-family-html5/summary.json",
+      "bytes": 9484,
+      "sha256": "36e0158cc2d92f44926218800a71006514aac284b93e3f5a6512da9f37ef1ebe"
+    },
+    {
+      "path": "evidence/r2-family-independent/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html-a3a309c5.runtime.json",
+      "bytes": 19128,
+      "sha256": "2f44f8a36426225b02848411761074244f3a7bbc6a4c417b1c899b1a3ac09153"
+    },
+    {
+      "path": "evidence/r2-family-independent/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html-f2833839.runtime.json",
+      "bytes": 24511,
+      "sha256": "7f5f0f4acac30a7a82fb7b581108d652bf0b2aecaafc1311976237101d9fe36c"
+    },
+    {
+      "path": "evidence/r2-family-independent/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM_1_.html-1b06bc54.runtime.json",
+      "bytes": 31580,
+      "sha256": "976f6cbec9be9d9d30a5fb2f7d440e93adac3b08f3e7b39abf4edd809ae4bea1"
+    },
+    {
+      "path": "evidence/r2-family-independent/KEX_MICROKERNEL_VFS_BOOTCHAIN.html-0cb060e0.runtime.json",
+      "bytes": 5297,
+      "sha256": "7253bed7a41a03c48524db5c46613ee056ac79786af731401657236631b8d39f"
+    },
+    {
+      "path": "evidence/r2-family-independent-source.json",
+      "bytes": 1290,
+      "sha256": "81aba901ff68dc764aa26c9d9431a3537354ad136322b8b6fe98f78b29c9f1ee"
+    },
+    {
+      "path": "evidence/r2-harness-selftest/isolation-smoke.html-7b0e8da1.runtime.json",
+      "bytes": 3314,
+      "sha256": "2728207c394bd05dc2a508864e7667df26cc35a63c0d94efb5e100fe12b3f597"
+    },
+    {
+      "path": "evidence/r2-harness-selftest/preflight.json",
+      "bytes": 2842,
+      "sha256": "651668db18cd819eb07e16887668d59042ac67dac5b99ae8625166de0242df42"
+    },
+    {
+      "path": "evidence/r2-harness-selftest/summary.json",
+      "bytes": 355,
+      "sha256": "89a5ed9b3d7927bf347c1019762badc7b16fc0a80d2194d596d3d97d8678db9c"
+    },
+    {
+      "path": "evidence/r2-independent-custody.json",
+      "bytes": 5752,
+      "sha256": "6594c65ff9a614fa4f6d4e3e30e3c0164a85e53e4f15480f954b507a3e5135ab"
+    },
+    {
+      "path": "evidence/r2-independent-review.json",
+      "bytes": 6833,
+      "sha256": "c7ffcd5d3586560d548cd033650fcf86910099bc88a9565800ca3558afca46a3"
+    },
+    {
+      "path": "evidence/r2-independent-review.md",
+      "bytes": 6569,
+      "sha256": "b8338b7e6193c8f76fa9eb8b6af3d4996f7c24222830790fd9f827f492be9d9d"
+    },
+    {
+      "path": "evidence/r2-package-audit.json",
+      "bytes": 5886,
+      "sha256": "f15020aebb08ab18bf78b9b18db79efffd1c55f04cb5815f60f130dac7344a2a"
+    },
+    {
+      "path": "evidence/r2-preflight/preflight.json",
+      "bytes": 144102,
+      "sha256": "b5e7aad4ac6aff3bfa72d9e33337d2d30f73795b1fccda3239d21c2df5b128de"
+    },
+    {
+      "path": "evidence/r2-source-integrity.json",
+      "bytes": 5736,
+      "sha256": "ebfc98241ae4511c12a53d6a6a1f20280fad1a5bf1e1e865c12b0f7ff0991a99"
+    },
+    {
+      "path": "evidence/r2-startup-drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html-2be9fcf4.runtime.json",
+      "bytes": 31544,
+      "sha256": "0422d0d1238e86b80c8e429466f088fe505962bf6a87d2ef9b1cd920abb5e641"
+    },
+    {
+      "path": "evidence/r2-startup-drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html-b6be6ad1.runtime.json",
+      "bytes": 4670,
+      "sha256": "b2a5c8cf7ab9ad1c5351437637e7a0e194e4d092e684bb35a5ba058598b33d67"
+    },
+    {
+      "path": "evidence/r2-startup-drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html-a3a309c5.runtime.json",
+      "bytes": 14093,
+      "sha256": "ffae61d47e16f751dfefe15b80cb77a8a391e56c6344a47d7698ebb2cde5e25d"
+    },
+    {
+      "path": "evidence/r2-startup-drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html-f2833839.runtime.json",
+      "bytes": 20717,
+      "sha256": "b1e84cbd25ac5b3e905c2c772e4b88885e32174357b599a469a70ba97e7ae313"
+    },
+    {
+      "path": "evidence/r2-startup-drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html-5332d404.runtime.json",
+      "bytes": 73730,
+      "sha256": "b9196884c5ed1aa54631731e9e0a60814b165622b31d25a97d4d9f9f115ba8de"
+    },
+    {
+      "path": "evidence/r2-startup-drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM_1_.html-1b06bc54.runtime.json",
+      "bytes": 30437,
+      "sha256": "87480f86567869ec1a718bf5a16a923a0d34f9bbf1c4c71a7efa43a01f596e71"
+    },
+    {
+      "path": "evidence/r2-startup-drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html-f92e2971.runtime.json",
+      "bytes": 10161,
+      "sha256": "10f6a846e1b08c52be6b5e3e102822eaedcadc00fbfd609d538572ba3268b9cd"
+    },
+    {
+      "path": "evidence/r2-startup-drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html-984b370a.runtime.json",
+      "bytes": 5991,
+      "sha256": "a00f5f33796da34cf31ef51d02b49a8b2448ae069d80fa2c09f17bc04df8bf28"
+    },
+    {
+      "path": "evidence/r2-startup-drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html-2fd89d8b.runtime.json",
+      "bytes": 11381,
+      "sha256": "94d3eeef879dbd232c8daf8f1456c13eca6fd6a38a2116ed76ff58ec9ba84e3b"
+    },
+    {
+      "path": "evidence/r2-startup-drive/hcf_workstation.html-7e62ae15.runtime.json",
+      "bytes": 21628,
+      "sha256": "c584ecc35c7d7d990ca22abb1882d6d73b1b5a976d20b3cc76a4832ac6f3f50e"
+    },
+    {
+      "path": "evidence/r2-startup-drive/preflight.json",
+      "bytes": 93881,
+      "sha256": "ffea66ec037c708fc927aa788d862e6a6584c90e9be089fd8941edc441e4c314"
+    },
+    {
+      "path": "evidence/r2-startup-drive/summary.json",
+      "bytes": 3609,
+      "sha256": "82b114d028bf28c688082f4bf41c2e97603247f48d3d4253673f136c64e86b00"
+    },
+    {
+      "path": "evidence/r2-startup-html5/Google_Chrome_Workstation.html-2a12929c.runtime.json",
+      "bytes": 6178,
+      "sha256": "02079fd707bbdaa5b208e392b6c4d3a695b4bd0876c814911ffdbcb7db4a4225"
+    },
+    {
+      "path": "evidence/r2-startup-html5/HTML5_Audio_Synthesizer.html-9f583e67.runtime.json",
+      "bytes": 5683,
+      "sha256": "5a1f3b7541e38f1f3f067ace6145846b389af2d0ece506fa3133d06e32ec8f19"
+    },
+    {
+      "path": "evidence/r2-startup-html5/HTML5_Markdown_Notebook_Studio.html-816de0bc.runtime.json",
+      "bytes": 4463,
+      "sha256": "c4a362cb958b5d7f7770b7d8828c37a1213e60d00d77ba00a80f05d26171be72"
+    },
+    {
+      "path": "evidence/r2-startup-html5/HTML5_Particle_Physics_Lab.html-a102424c.runtime.json",
+      "bytes": 3458,
+      "sha256": "578003b266c5cec483910790ea6ad114d193ef3ae3074fa65341fca09c7ce621"
+    },
+    {
+      "path": "evidence/r2-startup-html5/HTML5_Raster_Paint_Studio.html-272d14cd.runtime.json",
+      "bytes": 4025,
+      "sha256": "9bb4c97ae5569a71a3b320b3fed46ba1927c24174d9dab6b58f5c2077e4044f3"
+    },
+    {
+      "path": "evidence/r2-startup-html5/HTML5_Relational_SQL_Studio.html-7cb9d41c.runtime.json",
+      "bytes": 3585,
+      "sha256": "e20b1507bc47f29d370b45d47e744c3ac1ecd2a6108ad670be511e91d2651d9f"
+    },
+    {
+      "path": "evidence/r2-startup-html5/HTML5_Retro_Arcade_Breakout.html-92c28ea0.runtime.json",
+      "bytes": 2061,
+      "sha256": "0abe199ce52f0533b35712084944e8bbbf209b36c044820558a84d764e998ee7"
+    },
+    {
+      "path": "evidence/r2-startup-html5/HTML5_Scientific_Calculator.html-a994dcfe.runtime.json",
+      "bytes": 8125,
+      "sha256": "9c696bf109d790bc1a81608a0acc2990f4dba1061962fae4d9f6c5a63d152837"
+    },
+    {
+      "path": "evidence/r2-startup-html5/KERA_Mesh_Node.html-92eec2c6.runtime.json",
+      "bytes": 3295,
+      "sha256": "ced670d9f6e147d899f338daaf752e1f4481b5e86d7b9c289f7326d195f5e1e1"
+    },
+    {
+      "path": "evidence/r2-startup-html5/KEX_Linux_Terminal.html-e0239b5f.runtime.json",
+      "bytes": 8952,
+      "sha256": "733139160d7a7fbb58abc5451988ae9958a6ea537589d101763333efd4ac6ebb"
+    },
+    {
+      "path": "evidence/r2-startup-html5/KEX_MICROKERNEL_VFS_BOOTCHAIN.html-0cb060e0.runtime.json",
+      "bytes": 4954,
+      "sha256": "c6ce48e6b12bfac7484bb24f3308c3435357fe80b2419d0b405f547f994abb05"
+    },
+    {
+      "path": "evidence/r2-startup-html5/KexLinux.html-273f57ca.runtime.json",
+      "bytes": 1781,
+      "sha256": "7ad5e5cc028cae26f36b062c23acd09e9ef262a25aa61cdb492247f3882561e6"
+    },
+    {
+      "path": "evidence/r2-startup-html5/Open_Source_Operating_System.html-0ad893f2.runtime.json",
+      "bytes": 2279,
+      "sha256": "feca6f1fce56a7016e63eb12080429fc40afce8e6cbbc25ceac7134449cdad24"
+    },
+    {
+      "path": "evidence/r2-startup-html5/Stratum_Mining_Core_OS.html-2a4529f9.runtime.json",
+      "bytes": 3074,
+      "sha256": "f87c63beb188d83d51790c71c923d6b071c3e7ec0dc1dc7f65ea488782e791d4"
+    },
+    {
+      "path": "evidence/r2-startup-html5/preflight.json",
+      "bytes": 27934,
+      "sha256": "73bc68d127aaa4215404531c96475c39377d7b2b792d26d0cd90a357645b68e8"
+    },
+    {
+      "path": "evidence/r2-startup-html5/summary.json",
+      "bytes": 4415,
+      "sha256": "7b8419c0f5285b8fb8b7651033f647ccc8ef5fd75f3ddbc9f3826c217991da78"
+    },
+    {
+      "path": "originals/drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "bytes": 92798,
+      "sha256": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e"
+    },
+    {
+      "path": "originals/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "bytes": 276615,
+      "sha256": "660c677332327e470c746853a535f209b4735d139bb992c6e430522c0261ca56"
+    },
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "bytes": 73482,
+      "sha256": "166f1ff30b8adbb887951625547ab33a0faf5226ac452ba4ea261c622fd353be"
+    },
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "bytes": 6400478,
+      "sha256": "311485063a7f0583fc787590a566f07945744ae0ef3e8d72f5af8f3f9930e000"
+    },
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "bytes": 21624891,
+      "sha256": "b9295524288f1981b4b673c4f47a729cd0253733563ffb8e24a4e7433c9f32e9"
+    },
+    {
+      "path": "originals/drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "bytes": 5122943,
+      "sha256": "7f6e4ce0a41d3ba8823984533f41479be77efa7656f3e016f591af6e49c13fec"
+    },
+    {
+      "path": "originals/drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "bytes": 135601,
+      "sha256": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b"
+    },
+    {
+      "path": "originals/drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "bytes": 31281,
+      "sha256": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41"
+    },
+    {
+      "path": "originals/drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "bytes": 66244,
+      "sha256": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028"
+    },
+    {
+      "path": "originals/drive/SHA256SUMS",
+      "bytes": 1176,
+      "sha256": "8df194603b186ae7866b2d004b196ff2f44e422813a8c82e7f8d79bf6a49c0b8"
+    },
+    {
+      "path": "originals/drive/hcf_workstation.html",
+      "bytes": 103660,
+      "sha256": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec"
+    },
+    {
+      "path": "originals/drive/manifest.json",
+      "bytes": 7461,
+      "sha256": "0906718157d9d901ace8c152c7ab315cb13f534b7caedc921e5b9798f5ad3ecd"
+    },
+    {
+      "path": "originals/github/SHA256SUMS",
+      "bytes": 1700,
+      "sha256": "dc36ef21cf63ef10b60fbb9b2f2766d736b3ea8cf2c3e2bdfaea0e35167d7e5a"
+    },
+    {
+      "path": "originals/github/manifest.json",
+      "bytes": 7068,
+      "sha256": "f3c31af30b1fd0fd09f21302e6728ebeaf47ea25640d4b5c525e7f190aee6e2d"
+    },
+    {
+      "path": "originals/github/src/assets/os/AetherOS.html",
+      "bytes": 19973,
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1"
+    },
+    {
+      "path": "originals/github/src/assets/os/KeraMeshOS.html",
+      "bytes": 14542,
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628"
+    },
+    {
+      "path": "originals/github/src/assets/os/KexLinux.html",
+      "bytes": 35784,
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d"
+    },
+    {
+      "path": "originals/github/src/assets/os/MiningOS.html",
+      "bytes": 17598,
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc"
+    },
+    {
+      "path": "originals/github/src/assets/workstations/Chrome.html",
+      "bytes": 23454,
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805"
+    },
+    {
+      "path": "originals/github/src/data/html5Apps.ts",
+      "bytes": 8084,
+      "sha256": "9e7edcc8770208a9dfbca36e344099a66b2757eaed9708262c9231ba84a7e6e6"
+    },
+    {
+      "path": "originals/github/src/data/html5BreakoutGameTemplate.ts",
+      "bytes": 21653,
+      "sha256": "95a6f290dfe77dd3143305c9f8f053e32c3a66b82319091c7dcf1c00777cef2f"
+    },
+    {
+      "path": "originals/github/src/data/html5CalculatorTemplate.ts",
+      "bytes": 11591,
+      "sha256": "8641613ac1d746211ce38b4abe3e77680a05a45f7dcaf717ec3494fe290a69c8"
+    },
+    {
+      "path": "originals/github/src/data/html5ChromeBrowserTemplate.ts",
+      "bytes": 336,
+      "sha256": "c26bab3273bb2b6c17d95bf45734b98814e1070f28f4f67b228a50505a3eb6ce"
+    },
+    {
+      "path": "originals/github/src/data/html5MarkdownStudioTemplate.ts",
+      "bytes": 13997,
+      "sha256": "0b2628ecdaed8eed0f548b501ee80ad6f2a86db302eed1d532f13b30c0a40923"
+    },
+    {
+      "path": "originals/github/src/data/html5PaintStudioTemplate.ts",
+      "bytes": 10509,
+      "sha256": "e5362f230e0f195879396925185ceab23959cd0d887aafd19c0c6642c5fb0c3e"
+    },
+    {
+      "path": "originals/github/src/data/html5ParticlePhysicsTemplate.ts",
+      "bytes": 15014,
+      "sha256": "d3258602c3be2c3568f9a7ed3de67e969328faf6f02df0f6347b672d33009517"
+    },
+    {
+      "path": "originals/github/src/data/html5SqlStudioTemplate.ts",
+      "bytes": 19731,
+      "sha256": "00b4897528e3f33300b92d4de79506ca7a6a326d08eb77271bb12a0a8ce4baf8"
+    },
+    {
+      "path": "originals/github/src/data/html5SynthesizerTemplate.ts",
+      "bytes": 26300,
+      "sha256": "5fa0a5df8553192849dc0b1d2f497fcfb4940b8e8c1778c9c580c9d426c49f96"
+    },
+    {
+      "path": "originals/github/src/data/kexBootchainTemplate.ts",
+      "bytes": 31023,
+      "sha256": "210fcfe59754c753af615f2ea9cb1bd7b33acdea2262e295dc67b80b08761328"
+    },
+    {
+      "path": "originals/github/src/data/kexLinuxTerminalTemplate.ts",
+      "bytes": 66938,
+      "sha256": "7a3ad2e6fa63b43cc24036148ba2fe49fe3aad8d5d1a09539e8d21313c246fa3"
+    },
+    {
+      "path": "originals/github/src/data/openSourceOsTemplate.ts",
+      "bytes": 677,
+      "sha256": "728c48177749d95aa2e225c64d26a803d4701099ba7f662dff853e9e7b7ae2c9"
+    },
+    {
+      "path": "originals/hcf-recovery/hcf_workstation.entrypoint.html",
+      "bytes": 103709,
+      "sha256": "341f81c70b7766f8728b2ff515ca8f8bf47a2a0bd8dc5b724980555ca98b2534"
+    },
+    {
+      "path": "originals/hcf-recovery/index.css",
+      "bytes": 68692,
+      "sha256": "9c51646da737314562a35c29fdeb2036f0859fe71abbd9fb62b83a0befa1ce20"
+    },
+    {
+      "path": "originals/hcf-recovery/index.recovered-0.ts",
+      "bytes": 709628,
+      "sha256": "3c5d7695bb364afccb5f5acabeccecadaaf2d769b02266bd26c604e02640af79"
+    },
+    {
+      "path": "originals/hcf-recovery/index.served.js",
+      "bytes": 1872580,
+      "sha256": "0dcb1276c02680c8e619bc3576f0d8ea3d0e7dfc2c68205c0a11e0f7ae64fbbd"
+    },
+    {
+      "path": "originals/hcf-recovery/saved_resource.html",
+      "bytes": 203832,
+      "sha256": "2122b30fcebc8b1912f9481d6c82d03b119e045e3a7aa74246d027afd780ac96"
+    },
+    {
+      "path": "originals/hcf-recovery/source-metadata.json",
+      "bytes": 857,
+      "sha256": "d0153d08d2d567d5f3e0d5b26abec67da4f02bf21cbf5eaf654cefc8f60114ba"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 2250,
+      "sha256": "ab2196f2637f82a6aa6b85d00795b63be87a9ce600a82249b895bae540397be1"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1192,
+      "sha256": "f7ffdebb68bd90c0f96e255d47971562bc25cdf4d5ad4409a5c29832ca94bccb"
+    },
+    {
+      "path": "release/source-archives.json",
+      "bytes": 900,
+      "sha256": "a40f5010d413684872bd7ac95b26d912d42c8a2008d9c0fe4607152150f99d6f"
+    },
+    {
+      "path": "reports/R1_WORKSPACE_README.md",
+      "bytes": 5307,
+      "sha256": "3d32db7a9fe7336bb52092a04c8368df35985ec547128bea69ac759f0f5dd7e3"
+    },
+    {
+      "path": "reports/drive-source-handoff.md",
+      "bytes": 4120,
+      "sha256": "70cd30a0b3f6a2b7936990b76d11603a23f2681852bda7c8d6b557cda1e455d3"
+    },
+    {
+      "path": "reports/drive-static-inventory.json",
+      "bytes": 22771,
+      "sha256": "84f71b7b4e3f2ba942c26df61f0bb7cf4c62c14a11225d034c5ae767e076a9c0"
+    },
+    {
+      "path": "reports/github-html5-review.md",
+      "bytes": 5000,
+      "sha256": "7d417fb330ae7ac781c5dfa132558854279aaa8321198f0d2bafc8bf841a5dfa"
+    },
+    {
+      "path": "reports/hcf-recovery.md",
+      "bytes": 2932,
+      "sha256": "a6bb3a0f5ba56662ce721bf39e55a6c997fd4c92d14670f392a709047dc6ec88"
+    },
+    {
+      "path": "reports/html5-static-baseline.json",
+      "bytes": 3448,
+      "sha256": "6f67e4c9b7ea4b8357f78a920ffa3b868d0a3a1ee20b24b75948767c49b85b95"
+    },
+    {
+      "path": "reports/html5-static-checks.json",
+      "bytes": 1921,
+      "sha256": "453f316d527b872f1e4c0e6999b124baf7a830b8992803004626e909f266caf4"
+    },
+    {
+      "path": "reports/html5-syntax-fixes.json",
+      "bytes": 843,
+      "sha256": "4a7b95831f6576ddc47015300fca9b6f15850f54c989e41c0b9ecd8296143ec8"
+    },
+    {
+      "path": "reports/html5-syntax-fixes.patch",
+      "bytes": 8245,
+      "sha256": "e49d3f769c4cfebbf71719bd18b7984b77ac019b03dca0de27038d0d6103395a"
+    },
+    {
+      "path": "reports/inspect_drive_static.py",
+      "bytes": 2825,
+      "sha256": "34d10054859b87d7a348c48ed1c5ef8b38663715982ac938c363c4ca10e9acc9"
+    },
+    {
+      "path": "reports/sql-csv-fix.json",
+      "bytes": 591,
+      "sha256": "d782283689c499f4cf03128fb40471759e2c681ec96d66e1fc6e71b29c7c7768"
+    },
+    {
+      "path": "reports/sql-csv-fix.patch",
+      "bytes": 1270,
+      "sha256": "5c3b1ff5a9fce05d12ece995138f3829036bd67803adc752fa6b84fe1e51b731"
+    },
+    {
+      "path": "reports/sql-csv-functions-tested.js",
+      "bytes": 562,
+      "sha256": "80166870bdc6db689dc945be0aadfa0c37e1ddb6523b4354fd695e8f98f962d9"
+    },
+    {
+      "path": "reports/sql-csv-regression-output.csv",
+      "bytes": 150,
+      "sha256": "322d1ba32ce569dd08ee944820177b1780ef551a1d06b8182dee286a6d33b769"
+    },
+    {
+      "path": "reports/sql-csv-regression.json",
+      "bytes": 216,
+      "sha256": "6097cf11fe6c8bdaec682f1086da4e02f29c947b42f056e8ff280ebe3b4a5151"
+    },
+    {
+      "path": "reports/sql-csv-roundtrip.json",
+      "bytes": 96,
+      "sha256": "a5f1587be04821c8f9b30b2693261d08aa3b744970e001c746caf8da7d554bd2"
+    },
+    {
+      "path": "tests/README.md",
+      "bytes": 3534,
+      "sha256": "200d281f5c538bd08dfb3e1db9bdaef8f1a4c1031beb187215ca20b9fdc6e02e"
+    },
+    {
+      "path": "tests/baseline.cjs",
+      "bytes": 9649,
+      "sha256": "215a7e1c11b2082c5e6fe5cd6268ade88ba369f224286a622c06cfd4b5fc993f"
+    },
+    {
+      "path": "tests/fixtures/isolation-smoke.html",
+      "bytes": 609,
+      "sha256": "b6b4c9387e382a72210ad618773211ed3f8e4781209f08fadcbb8d440c8458db"
+    },
+    {
+      "path": "tests/github-baseline-html5/Google_Chrome_Workstation.html",
+      "bytes": 23454,
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805"
+    },
+    {
+      "path": "tests/github-baseline-html5/HTML5_Audio_Synthesizer.html",
+      "bytes": 26245,
+      "sha256": "fa7eac68fac1a6452154958eef789203b712acbfac0a1cff9a50fea08fc0d47f"
+    },
+    {
+      "path": "tests/github-baseline-html5/HTML5_Markdown_Notebook_Studio.html",
+      "bytes": 13896,
+      "sha256": "7ccfac527bb876941aeeada548086b390e2318b17d89c0b6c1749ee5cf5935c3"
+    },
+    {
+      "path": "tests/github-baseline-html5/HTML5_Particle_Physics_Lab.html",
+      "bytes": 14962,
+      "sha256": "b3500255a046e1bbb8d7d922c62bd43b7f592bafae40e0e59c0d420bb420371d"
+    },
+    {
+      "path": "tests/github-baseline-html5/HTML5_Raster_Paint_Studio.html",
+      "bytes": 10466,
+      "sha256": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688"
+    },
+    {
+      "path": "tests/github-baseline-html5/HTML5_Relational_SQL_Studio.html",
+      "bytes": 19639,
+      "sha256": "35d63bc4f44bf6766af1eb09fda8f33a717d4cb4099cd3991ede0dab2f30232e"
+    },
+    {
+      "path": "tests/github-baseline-html5/HTML5_Retro_Arcade_Breakout.html",
+      "bytes": 21609,
+      "sha256": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e"
+    },
+    {
+      "path": "tests/github-baseline-html5/HTML5_Scientific_Calculator.html",
+      "bytes": 11540,
+      "sha256": "2d33c27a3d9328879c6cda0185ebe99ea25f1b3f792ff3b604cbe19c9d0268f3"
+    },
+    {
+      "path": "tests/github-baseline-html5/KERA_Mesh_Node.html",
+      "bytes": 14542,
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628"
+    },
+    {
+      "path": "tests/github-baseline-html5/KEX_Linux_Terminal.html",
+      "bytes": 66510,
+      "sha256": "82817ea35783c7df7950dbc519ee970648f6c8c702f8a341654e7c202a98dbc8"
+    },
+    {
+      "path": "tests/github-baseline-html5/KEX_MICROKERNEL_VFS_BOOTCHAIN.html",
+      "bytes": 30940,
+      "sha256": "e9855e375e64fb44fc41ddddcb76f77affc71f68c7d962835447621d9247f71c"
+    },
+    {
+      "path": "tests/github-baseline-html5/KexLinux.html",
+      "bytes": 35784,
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d"
+    },
+    {
+      "path": "tests/github-baseline-html5/Open_Source_Operating_System.html",
+      "bytes": 19973,
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1"
+    },
+    {
+      "path": "tests/github-baseline-html5/Stratum_Mining_Core_OS.html",
+      "bytes": 17598,
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc"
+    },
+    {
+      "path": "tests/r2-browser.cjs",
+      "bytes": 13341,
+      "sha256": "71e851008119280776440c7b79f71305699130f62cb589f39b77980cb016d178"
+    },
+    {
+      "path": "tests/r2-family-actions.cjs",
+      "bytes": 9991,
+      "sha256": "c85e946eb852d8f729b0ad3b26b817a797d8d4dfc81bd80be12cd4fe49e8c44a"
+    },
+    {
+      "path": "tests/r2-family-controls.cjs",
+      "bytes": 10588,
+      "sha256": "67504533efe9e951cb6fe9399a667ccffb224c776c3b476bcd8971b5eb88e7a0"
+    },
+    {
+      "path": "tests/r2-family-summary.py",
+      "bytes": 2903,
+      "sha256": "9e2ee751cb01aa6edb5b01d54ced92fb100083fae87902d5c481635e8250d452"
+    },
+    {
+      "path": "tests/serve-isolated.cjs",
+      "bytes": 2623,
+      "sha256": "1d6d5da3b05cbac39e3edd839e8251269ca532a0aeff92bc80d57b6541896ff0"
+    },
+    {
+      "path": "tests/serve-isolated.js",
+      "bytes": 2623,
+      "sha256": "1d6d5da3b05cbac39e3edd839e8251269ca532a0aeff92bc80d57b6541896ff0"
+    },
+    {
+      "path": "tests/serve-isolated.mjs",
+      "bytes": 2727,
+      "sha256": "d1ea88a930e01aa2e0a260678ce5a78ab8fe7e4bddd4c014fa7d8388022deb33"
+    },
+    {
+      "path": "tests/static-verify.cjs",
+      "bytes": 2398,
+      "sha256": "310918af6a711cff08445930124ec7c0108abc2c5b26a22361a90e88ff829694"
+    },
+    {
+      "path": "tests/verify-estate.py",
+      "bytes": 1719,
+      "sha256": "96a7fe0f646a911f81991efef9db0040f3d05da385a1e0c57929e66aaa92e540"
+    },
+    {
+      "path": "tests/verify-hcf-recovery.py",
+      "bytes": 3199,
+      "sha256": "1c923bee9cae0bd8bceb3bb13c282f8d5c402cc56320c37409c2175d221e8320"
+    },
+    {
+      "path": "tools/extract-html5.cjs",
+      "bytes": 2205,
+      "sha256": "5856cf1a5c6075ff472ced0221672fdbdd9e722463814c84b176715cde052e92"
+    },
+    {
+      "path": "tools/test-sql-csv-roundtrip.py",
+      "bytes": 961,
+      "sha256": "639884a93c2fe89f6e6b70a41732179e39231d8a6be7c77244ceb0e1cfbc7534"
+    },
+    {
+      "path": "tools/test-sql-csv.cjs",
+      "bytes": 2172,
+      "sha256": "fe72e701e6d37bbd25bd375a9189d71dedf86a2df69ea737ba909de0aa265e97"
+    },
+    {
+      "path": "working/drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "bytes": 92798,
+      "sha256": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e"
+    },
+    {
+      "path": "working/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "bytes": 276945,
+      "sha256": "ebc78e313e93b0ca6b3f1ac4e0752281e1e053b1b6f4cd0d5fb617d18c7a698a"
+    },
+    {
+      "path": "working/drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "bytes": 75244,
+      "sha256": "5bf2a5979aec8761aa693d2a4c33f8d076d2d3bec376ab74354205323e6f0574"
+    },
+    {
+      "path": "working/drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "bytes": 6390693,
+      "sha256": "e6aa81bd614ae95f39973bb261cd9ba3c03ab06f25ad0178f7ede283eb66c3a2"
+    },
+    {
+      "path": "working/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "bytes": 21626378,
+      "sha256": "c41f36a379e2c867ef8f6809e47f129108d4830d07ee0614b5eb2c800d44db1e"
+    },
+    {
+      "path": "working/drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "bytes": 5123415,
+      "sha256": "265e43209c1e42fdb01827124d0ba7519a011f6cdd7f7a9a4f4fa65436f3083c"
+    },
+    {
+      "path": "working/drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "bytes": 135601,
+      "sha256": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b"
+    },
+    {
+      "path": "working/drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "bytes": 31281,
+      "sha256": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41"
+    },
+    {
+      "path": "working/drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "bytes": 66244,
+      "sha256": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028"
+    },
+    {
+      "path": "working/drive/hcf_workstation.html",
+      "bytes": 103660,
+      "sha256": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec"
+    },
+    {
+      "path": "working/github/SHA256SUMS",
+      "bytes": 1700,
+      "sha256": "dc36ef21cf63ef10b60fbb9b2f2766d736b3ea8cf2c3e2bdfaea0e35167d7e5a"
+    },
+    {
+      "path": "working/github/manifest.json",
+      "bytes": 7068,
+      "sha256": "f3c31af30b1fd0fd09f21302e6728ebeaf47ea25640d4b5c525e7f190aee6e2d"
+    },
+    {
+      "path": "working/github/src/assets/os/AetherOS.html",
+      "bytes": 19973,
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1"
+    },
+    {
+      "path": "working/github/src/assets/os/KeraMeshOS.html",
+      "bytes": 14542,
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628"
+    },
+    {
+      "path": "working/github/src/assets/os/KexLinux.html",
+      "bytes": 35784,
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d"
+    },
+    {
+      "path": "working/github/src/assets/os/MiningOS.html",
+      "bytes": 17598,
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc"
+    },
+    {
+      "path": "working/github/src/assets/workstations/Chrome.html",
+      "bytes": 23454,
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805"
+    },
+    {
+      "path": "working/github/src/data/html5Apps.ts",
+      "bytes": 8084,
+      "sha256": "9e7edcc8770208a9dfbca36e344099a66b2757eaed9708262c9231ba84a7e6e6"
+    },
+    {
+      "path": "working/github/src/data/html5BreakoutGameTemplate.ts",
+      "bytes": 21653,
+      "sha256": "95a6f290dfe77dd3143305c9f8f053e32c3a66b82319091c7dcf1c00777cef2f"
+    },
+    {
+      "path": "working/github/src/data/html5CalculatorTemplate.ts",
+      "bytes": 11591,
+      "sha256": "8641613ac1d746211ce38b4abe3e77680a05a45f7dcaf717ec3494fe290a69c8"
+    },
+    {
+      "path": "working/github/src/data/html5ChromeBrowserTemplate.ts",
+      "bytes": 336,
+      "sha256": "c26bab3273bb2b6c17d95bf45734b98814e1070f28f4f67b228a50505a3eb6ce"
+    },
+    {
+      "path": "working/github/src/data/html5MarkdownStudioTemplate.ts",
+      "bytes": 14065,
+      "sha256": "d589ed135b0fc95be18730c23aeff0340bf94b14c6dea8d83863df80f7f34a59"
+    },
+    {
+      "path": "working/github/src/data/html5PaintStudioTemplate.ts",
+      "bytes": 10509,
+      "sha256": "e5362f230e0f195879396925185ceab23959cd0d887aafd19c0c6642c5fb0c3e"
+    },
+    {
+      "path": "working/github/src/data/html5ParticlePhysicsTemplate.ts",
+      "bytes": 15014,
+      "sha256": "d3258602c3be2c3568f9a7ed3de67e969328faf6f02df0f6347b672d33009517"
+    },
+    {
+      "path": "working/github/src/data/html5SqlStudioTemplate.ts",
+      "bytes": 20131,
+      "sha256": "37190d64a32b596c00ab84b92fedfed0f0f3f419cb94c0a19677ad420280a95e"
+    },
+    {
+      "path": "working/github/src/data/html5SynthesizerTemplate.ts",
+      "bytes": 26300,
+      "sha256": "5fa0a5df8553192849dc0b1d2f497fcfb4940b8e8c1778c9c580c9d426c49f96"
+    },
+    {
+      "path": "working/github/src/data/kexBootchainTemplate.ts",
+      "bytes": 31023,
+      "sha256": "210fcfe59754c753af615f2ea9cb1bd7b33acdea2262e295dc67b80b08761328"
+    },
+    {
+      "path": "working/github/src/data/kexLinuxTerminalTemplate.ts",
+      "bytes": 66966,
+      "sha256": "fa6c11bf96cbf8cb4a6eb7807911962132adcde02e5e385cc2d739d9d73e0731"
+    },
+    {
+      "path": "working/github/src/data/openSourceOsTemplate.ts",
+      "bytes": 677,
+      "sha256": "728c48177749d95aa2e225c64d26a803d4701099ba7f662dff853e9e7b7ae2c9"
+    },
+    {
+      "path": "working/hcf-recovered/README.md",
+      "bytes": 2264,
+      "sha256": "a8550b90e0f55d8139f12de96dcc3e821b54a105ce6c7cbbd65777fcd93965a9"
+    },
+    {
+      "path": "working/hcf-recovered/index.css",
+      "bytes": 68692,
+      "sha256": "9c51646da737314562a35c29fdeb2036f0859fe71abbd9fb62b83a0befa1ce20"
+    },
+    {
+      "path": "working/hcf-recovered/index.ts",
+      "bytes": 709628,
+      "sha256": "3c5d7695bb364afccb5f5acabeccecadaaf2d769b02266bd26c604e02640af79"
+    },
+    {
+      "path": "working/hcf-recovered/saved_resource.reference.html",
+      "bytes": 203832,
+      "sha256": "2122b30fcebc8b1912f9481d6c82d03b119e045e3a7aa74246d027afd780ac96"
+    },
+    {
+      "path": "working/html5/Google_Chrome_Workstation.html",
+      "bytes": 23454,
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805"
+    },
+    {
+      "path": "working/html5/HTML5_Audio_Synthesizer.html",
+      "bytes": 26245,
+      "sha256": "fa7eac68fac1a6452154958eef789203b712acbfac0a1cff9a50fea08fc0d47f"
+    },
+    {
+      "path": "working/html5/HTML5_Markdown_Notebook_Studio.html",
+      "bytes": 13896,
+      "sha256": "7ccfac527bb876941aeeada548086b390e2318b17d89c0b6c1749ee5cf5935c3"
+    },
+    {
+      "path": "working/html5/HTML5_Particle_Physics_Lab.html",
+      "bytes": 14962,
+      "sha256": "b3500255a046e1bbb8d7d922c62bd43b7f592bafae40e0e59c0d420bb420371d"
+    },
+    {
+      "path": "working/html5/HTML5_Raster_Paint_Studio.html",
+      "bytes": 10466,
+      "sha256": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688"
+    },
+    {
+      "path": "working/html5/HTML5_Relational_SQL_Studio.html",
+      "bytes": 20035,
+      "sha256": "cfb261af4a48c2f7a1cd32598837380d27a000f49345c46a68c245607f7b6e92"
+    },
+    {
+      "path": "working/html5/HTML5_Retro_Arcade_Breakout.html",
+      "bytes": 21609,
+      "sha256": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e"
+    },
+    {
+      "path": "working/html5/HTML5_Scientific_Calculator.html",
+      "bytes": 11540,
+      "sha256": "2d33c27a3d9328879c6cda0185ebe99ea25f1b3f792ff3b604cbe19c9d0268f3"
+    },
+    {
+      "path": "working/html5/KERA_Mesh_Node.html",
+      "bytes": 14542,
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628"
+    },
+    {
+      "path": "working/html5/KEX_Linux_Terminal.html",
+      "bytes": 66516,
+      "sha256": "2d44e0edb96fc4c93918344958b379cd79913b2ba245213dd61ebeee0dcfb3ab"
+    },
+    {
+      "path": "working/html5/KEX_MICROKERNEL_VFS_BOOTCHAIN.html",
+      "bytes": 30940,
+      "sha256": "e9855e375e64fb44fc41ddddcb76f77affc71f68c7d962835447621d9247f71c"
+    },
+    {
+      "path": "working/html5/KexLinux.html",
+      "bytes": 35784,
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d"
+    },
+    {
+      "path": "working/html5/Open_Source_Operating_System.html",
+      "bytes": 19973,
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1"
+    },
+    {
+      "path": "working/html5/Stratum_Mining_Core_OS.html",
+      "bytes": 17598,
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc"
+    }
+  ]
+}

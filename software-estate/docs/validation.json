@@ -1,0 +1,127 @@
+{
+  "schema": "keddeh.docs.review.v1",
+  "at": "2026-10-11T16:45:25.362Z",
+  "linksChecked": 297,
+  "missingLinks": [],
+  "htmlPages": [
+    {
+      "file": "considerations.html",
+      "title": "KEDDEH SYSTEMS · considerations",
+      "h1": "Engineering, UX, security, operations and evidence considerations",
+      "tables": 2,
+      "overflow": false,
+      "bodyText": 4048,
+      "externalScripts": 0
+    },
+    {
+      "file": "control-matrices.html",
+      "title": "KEDDEH SYSTEMS · control-matrices",
+      "h1": "Traceability and control matrices",
+      "tables": 9,
+      "overflow": false,
+      "bodyText": 7994,
+      "externalScripts": 0
+    },
+    {
+      "file": "controls.html",
+      "title": "KEDDEH SYSTEMS · controls",
+      "h1": "Development control and governance",
+      "tables": 1,
+      "overflow": false,
+      "bodyText": 3210,
+      "externalScripts": 0
+    },
+    {
+      "file": "conventions.html",
+      "title": "KEDDEH SYSTEMS · conventions",
+      "h1": "Naming, versioning, files, interfaces and receipts",
+      "tables": 1,
+      "overflow": false,
+      "bodyText": 3411,
+      "externalScripts": 0
+    },
+    {
+      "file": "development.html",
+      "title": "KEDDEH SYSTEMS · development",
+      "h1": "Development, run and test guide",
+      "tables": 1,
+      "overflow": false,
+      "bodyText": 5009,
+      "externalScripts": 0
+    },
+    {
+      "file": "evidence-register.html",
+      "title": "KEDDEH SYSTEMS · evidence-register",
+      "h1": "Evidence register and qualification boundary",
+      "tables": 2,
+      "overflow": false,
+      "bodyText": 5287,
+      "externalScripts": 0
+    },
+    {
+      "file": "glossary.html",
+      "title": "KEDDEH SYSTEMS · glossary",
+      "h1": "Controlled glossary and definitions",
+      "tables": 2,
+      "overflow": false,
+      "bodyText": 4596,
+      "externalScripts": 0
+    },
+    {
+      "file": "index.html",
+      "title": "KEDDEH SYSTEMS · index",
+      "h1": "Master index",
+      "tables": 2,
+      "overflow": false,
+      "bodyText": 4775,
+      "externalScripts": 0
+    },
+    {
+      "file": "introduction.html",
+      "title": "KEDDEH SYSTEMS · introduction",
+      "h1": "Formal introduction",
+      "tables": 1,
+      "overflow": false,
+      "bodyText": 3272,
+      "externalScripts": 0
+    },
+    {
+      "file": "monograph.html",
+      "title": "KEDDEH SYSTEMS · monograph",
+      "h1": "Architectural monograph: identities, carriers and execution boundaries",
+      "tables": 4,
+      "overflow": false,
+      "bodyText": 21477,
+      "externalScripts": 0
+    },
+    {
+      "file": "normalisation.html",
+      "title": "KEDDEH SYSTEMS · normalisation",
+      "h1": "Normalisation standards",
+      "tables": 2,
+      "overflow": false,
+      "bodyText": 3935,
+      "externalScripts": 0
+    },
+    {
+      "file": "publication-controls.html",
+      "title": "KEDDEH SYSTEMS · publication-controls",
+      "h1": "Publication controls and layout dependency record",
+      "tables": 1,
+      "overflow": false,
+      "bodyText": 3762,
+      "externalScripts": 0
+    },
+    {
+      "file": "recovery.html",
+      "title": "KEDDEH SYSTEMS · recovery",
+      "h1": "Recovery and unresolved dependencies",
+      "tables": 1,
+      "overflow": false,
+      "bodyText": 3670,
+      "externalScripts": 0
+    }
+  ],
+  "visualInspection": "13 HTML views rendered; monograph masthead viewport visually inspected separately; no template pagination qualification",
+  "canonicalMarkdown": 13
+}

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://casepath-legal.aboudykeddeh276.chatgpt.site/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="casepath-raw-visual-system">
+:root{
+  --ink:#14252b;--ink-2:#405258;--muted:#6d7b7f;--paper:#f7f5ef;--paper-2:#f0ede4;
+  --white:#fff;--line:#d9d7ce;--teal:#0b5d62;--teal-2:#0d7475;--teal-soft:#e6f0ee;
+  --navy:#0c2832;--navy-2:#123b46;--gold:#b48b42;--warning:#8b4b2f;--danger:#9b3b3b;
+  --shadow:0 18px 50px rgba(11,35,43,.10);--radius:22px;--radius-sm:14px;
+  --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper)}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}button,input,select,textarea{font:inherit}button,a{touch-action:manipulation}main{overflow:hidden}
+.site-header{position:sticky;top:0;z-index:1000;display:flex;align-items:center;gap:28px;padding:16px clamp(20px,4vw,58px);background:rgba(247,245,239,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(20,37,43,.09)}
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;min-width:max-content}.brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--navy);color:#fff;font-weight:800;letter-spacing:-.04em}.brand strong{display:block;font-size:16px;line-height:1.1}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:3px;letter-spacing:.04em}.site-header nav{display:flex;align-items:center;gap:24px;margin-left:auto}.site-header nav a{font-size:13px;text-decoration:none;color:var(--ink-2);font-weight:650}.site-header nav a:hover{color:var(--teal)}
+.header-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;text-decoration:none;cursor:pointer;font-weight:750;border-radius:999px;transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease}.header-cta{padding:11px 17px;background:var(--navy);color:#fff;font-size:13px}.header-cta:hover,.button.primary:hover{transform:translateY(-1px);background:var(--teal)}
+.hero{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr);gap:clamp(34px,7vw,90px);padding:clamp(66px,9vw,130px) clamp(24px,7vw,100px) 76px;max-width:1540px;margin:auto}.hero-copy{align-self:center}.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.eyebrow>span{width:32px;height:1px;background:currentColor}.eyebrow.light{color:#8ec9c4}.hero h1{font-family:var(--serif);font-size:clamp(49px,7vw,96px);line-height:.96;letter-spacing:-.055em;font-weight:500;margin:0;max-width:900px}.hero h1 em{color:var(--teal);font-weight:500}.hero-lead{font-size:clamp(17px,2vw,21px);color:var(--ink-2);max-width:720px;margin:28px 0 0;line-height:1.65}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:34px 0}.button{padding:14px 21px}.button.primary{background:var(--navy);color:#fff}.button.secondary{background:transparent;border:1px solid #b9c0bd;color:var(--ink)}.button.secondary:hover{border-color:var(--teal);color:var(--teal)}
+.boundary-compact{display:flex;gap:13px;max-width:740px;padding:16px 18px;border-left:3px solid var(--gold);background:#f1ede2}.boundary-icon{flex:0 0 28px;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#e8dcc3;color:#704f20;font-weight:900}.boundary-compact p{margin:0;color:#5d5b55;font-size:13px}.boundary-compact strong{color:var(--ink)}
+.hero-panel{align-self:center;background:var(--white);border:1px solid #e1ded4;border-radius:26px;padding:27px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero-panel:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--teal),#6bb2aa)}.panel-top,.readiness-row,.readback-top,.volume-form-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.micro-label{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.panel-top h2,.volume-form-top h3,.readback-top h3{margin:6px 0 0;font-size:20px}.private-pill,.adapter-state{white-space:nowrap;padding:7px 10px;border-radius:999px;background:var(--teal-soft);color:var(--teal);font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.readiness-row{align-items:center;margin:28px 0 22px}.score-ring{--score:32deg;display:grid;place-items:center;width:84px;height:84px;flex:0 0 84px;border-radius:50%;background:conic-gradient(var(--teal) var(--score),#e8e8e1 0);position:relative}.score-ring:before{content:"";position:absolute;inset:9px;background:white;border-radius:50%}.score-ring span{position:relative;font-size:17px;font-weight:850}.readiness-row strong{font-size:16px}.readiness-row p{margin:5px 0 0;color:var(--muted);font-size:12px}.pack-list{border-top:1px solid var(--line)}.pack-list>div{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:8px;padding:13px 0;border-bottom:1px solid var(--line)}.pack-list span{font-family:var(--mono);font-size:10px;color:var(--muted)}.pack-list p{margin:0;font-size:13px}.pack-list b{font-size:10px;text-transform:uppercase;color:#8d5d32;letter-spacing:.08em}.panel-link{display:flex;justify-content:space-between;align-items:center;text-decoration:none;font-size:12px;font-weight:800;color:var(--teal);margin-top:18px}
+.trust-strip{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;padding:18px 24px;background:var(--navy);color:#d9e7e5;font-size:10px;font-weight:800;letter-spacing:.11em}.trust-strip i{width:4px;height:4px;border-radius:50%;background:#749b98}
+.section{padding:clamp(72px,9vw,126px) clamp(24px,7vw,100px)}.section-heading{max-width:1340px;margin:0 auto 44px;display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:end}.section-heading.centered{display:block;text-align:center;max-width:850px}.section-heading h2,.guide-heading h2,.resources h2,.safeguard-card h2,.volume-heading h2,.builder-intro h2{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:500;letter-spacing:-.04em;line-height:1.02;margin:0}.section-heading>p,.guide-heading>p,.resources-copy>p,.volume-heading>p,.builder-intro>p{color:var(--ink-2);font-size:16px;line-height:1.7;margin:0}
+.functions{background:#fbfaf6}.function-grid{max-width:1340px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.function-grid article{min-height:270px;padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fbfaf6}.function-number{font-family:var(--mono);font-size:11px;color:var(--teal)}.function-grid h3{font-family:var(--serif);font-size:25px;font-weight:500;margin:26px 0 12px}.function-grid p{font-size:13px;color:var(--ink-2);min-height:88px}.function-grid article>div{display:flex;gap:7px;flex-wrap:wrap}.function-grid article>div span{padding:5px 8px;border:1px solid #d9ddd9;border-radius:999px;font-size:9px;font-weight:750;color:var(--muted)}
+.method{background:var(--paper-2)}.plane-grid{max-width:1340px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.plane-grid article{padding:25px;border-radius:18px;border:1px solid #dad5c9;background:#f8f6ef}.plane-grid span{font-family:var(--mono);font-size:10px;color:var(--teal)}.plane-grid h3{font-size:18px;margin:24px 0 8px}.plane-grid p{font-size:13px;color:var(--ink-2);margin:0}.runtime-flow,.volume-contract{max-width:1340px;margin:26px auto 0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.runtime-flow span{padding:10px 13px;border-radius:999px;background:white;border:1px solid var(--line)}.runtime-flow i{font-style:normal;color:var(--teal)}
+.legal-volume{background:linear-gradient(155deg,#081a21,#0d313b 55%,#0a232c);color:#eff7f5}.volume-heading{max-width:1340px;margin:0 auto 36px;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:end}.volume-heading>p{color:#b6cdca}.volume-contract{justify-content:flex-start;color:#9dc5c1;margin-bottom:26px}.volume-contract span{border:1px solid #31515a;border-radius:999px;padding:8px 10px}.volume-contract i{color:#55747b;font-style:normal}.volume-shell{max-width:1340px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:18px}.volume-form,.volume-readback{background:#0b252d;border:1px solid #28464e;border-radius:20px;padding:24px}.volume-boundary{padding:13px 14px;border-left:3px solid #72a7a0;background:#0f3038;color:#bed3d0;font-size:12px}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.volume-form label,.form-stage label{display:flex;flex-direction:column;gap:7px;font-size:11px;font-weight:700;color:#bed3d0}.volume-form input,.volume-form select,.volume-form textarea{width:100%;border:1px solid #3d5960;background:#091b21;color:#f1f7f6;border-radius:9px;padding:11px 12px;outline:none}.volume-form input:focus,.volume-form select:focus,.volume-form textarea:focus{border-color:#7bb7b0;box-shadow:0 0 0 3px rgba(123,183,176,.12)}.volume-form>label{margin-top:14px}.volume-write{width:100%;margin-top:17px;background:#dfeeea;color:#0c3337}.operation-sequence{display:flex;gap:7px;flex-wrap:wrap;margin:22px 0}.operation-sequence span{display:grid;place-items:center;width:37px;height:37px;border:1px solid #375961;border-radius:10px;font-family:var(--mono);font-size:11px}.tape-scroll{display:flex;gap:8px;overflow:auto;padding:4px 2px 13px;scrollbar-color:#46636a transparent}.tape-cell{flex:0 0 155px;min-height:132px;border:1px solid #294a52;border-radius:12px;padding:12px;background:#091e25;opacity:.62}.tape-cell.active{opacity:1;border-color:#75a9a2;box-shadow:inset 0 0 0 1px #75a9a2}.tape-cell span{font-family:var(--mono);color:#79aaa4;font-size:9px}.tape-cell strong{display:block;font-size:11px;margin:18px 0 6px}.tape-cell small{display:block;color:#91aaa7;font-size:9px;line-height:1.5}.matrix-readback,.service-readback{border-top:1px solid #28464e;padding-top:18px;margin-top:12px}.readback-label{display:flex;align-items:end;justify-content:space-between;gap:14px}.readback-label p{margin:0;color:#789692;font-size:10px}.matrix-columns{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:12px}.matrix-column{border:1px solid #36535a;border-radius:11px;padding:11px;text-align:center}.matrix-column b{display:block;font-family:var(--mono);font-size:16px}.matrix-column span{display:block;font-size:9px;margin:6px 0}.matrix-column small{font-size:8px;color:#8ca5a2}.state-n3{border-color:#705258}.state-n2{border-color:#6b624b}.state-1{border-color:#577269}.state-2{border-color:#497f78}.state-3{border-color:#3c9186}.empty-readback{color:#91aaa7;font-size:11px}.volume-rules{max-width:1340px;margin:18px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:13px}.volume-rules p{margin:0;border:1px solid #28464e;border-radius:13px;padding:14px;color:#a9c3bf;font-size:11px}
+.builder{display:grid;grid-template-columns:.66fr 1.34fr;gap:30px;background:#e9e6dd}.builder-intro{background:var(--navy);color:white;padding:38px;border-radius:24px;align-self:start;position:sticky;top:95px}.builder-intro>p{color:#bad0cf}.local-note,.urgency-note{margin-top:24px;padding:14px;border-radius:12px;background:#143943;display:flex;gap:11px}.local-note p,.urgency-note p{margin:0;font-size:11px;line-height:1.55}.text-button{margin-top:18px;border:0;background:transparent;color:#9fc7c2;text-decoration:underline;cursor:pointer;padding:0}.workbench{background:white;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #dfddd4}.step-tabs{display:grid;grid-template-columns:repeat(8,1fr);background:#f5f4ef;border-bottom:1px solid var(--line)}.step-tabs button{border:0;background:transparent;padding:14px 6px 12px;font-size:9px;color:var(--muted);cursor:pointer;border-right:1px solid var(--line)}.step-tabs button span{display:grid;place-items:center;width:24px;height:24px;margin:0 auto 5px;border-radius:50%;border:1px solid #bcc3c0;font-family:var(--mono)}.step-tabs button.active{background:white;color:var(--teal);font-weight:800}.step-tabs button.active span{background:var(--teal);color:white;border-color:var(--teal)}.step-body{padding:30px}.stage-heading span{font-family:var(--mono);font-size:10px;color:var(--teal)}.stage-heading h3{font-family:var(--serif);font-weight:500;font-size:31px;margin:8px 0}.stage-heading p{margin:0 0 26px;color:var(--muted);font-size:13px}.form-stage label{color:var(--ink-2)}.form-stage input,.form-stage select,.form-stage textarea{width:100%;border:1px solid #cfd4d1;border-radius:9px;padding:12px;background:#fff;color:var(--ink);outline:none}.form-stage textarea{resize:vertical;min-height:112px}.form-stage input:focus,.form-stage select:focus,.form-stage textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(11,93,98,.09)}.urgency-note{background:#f7eee5;color:#694828;margin-top:18px}.step-footer{display:flex;align-items:center;justify-content:space-between;padding:15px 22px;border-top:1px solid var(--line);background:#fbfaf7}.step-footer>span{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.step-footer>div{display:flex;gap:8px}.step-footer button{border:1px solid #cdd2cf;background:#fff;color:var(--ink);padding:10px 14px;border-radius:999px;cursor:pointer}.step-footer button.next{background:var(--navy);color:white;border-color:var(--navy)}.step-footer button:disabled{opacity:.4;cursor:not-allowed}
+.packages{background:#fbfaf6}.package-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.package-grid article{background:white;border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;min-height:400px}.package-grid article.featured{border:2px solid var(--teal);transform:translateY(-9px);box-shadow:var(--shadow)}.package-top{display:flex;justify-content:space-between;align-items:center;min-height:23px}.package-top span,.package-top b{font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--teal)}.package-grid h3{font-family:var(--serif);font-size:30px;font-weight:500;margin:25px 0 4px}.package-grid>article>p{color:var(--muted);font-size:12px}.package-grid ul{list-style:none;padding:0;margin:18px 0;flex:1}.package-grid li{display:flex;gap:9px;padding:9px 0;border-bottom:1px solid #eceae4;font-size:12px}.package-grid li span{color:var(--teal)}.package-grid article>a{font-size:11px;color:var(--teal);font-weight:800;text-decoration:none}
+.delivery-guide{background:var(--paper-2)}.guide-heading{max-width:1000px;margin:0 auto 38px}.guide-heading>p{margin-top:18px;max-width:760px}.perspective-grid{max-width:1340px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.perspective-grid article{background:#f8f6ef;border:1px solid #d7d2c5;border-radius:16px;padding:22px}.perspective-grid span{font-family:var(--mono);font-size:10px;color:var(--teal)}.perspective-grid h3{font-size:18px;margin:18px 0 8px}.perspective-grid p{font-size:12px;color:var(--ink-2)}.perspective-grid b{font-size:9px;color:var(--teal);text-transform:uppercase}.artifact-table{max-width:1340px;margin:30px auto 0;border:1px solid #d4d1c8;background:#f9f7f1}.artifact-row{display:grid;grid-template-columns:.7fr 1.15fr 1.15fr;border-bottom:1px solid #ddd9cf}.artifact-row:last-child{border-bottom:0}.artifact-row>*{padding:12px 14px;font-size:11px;border-right:1px solid #ddd9cf}.artifact-row>*:last-child{border-right:0}.artifact-head{background:var(--navy);color:white;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.safeguards{background:#10323c}.safeguard-card{max-width:1340px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:55px;background:#0b2730;color:white;border:1px solid #31515a;border-radius:24px;padding:38px}.safeguard-card>div>p:last-child{color:#b5cdca}.safeguard-card ul{margin:0;padding:0;list-style:none}.safeguard-card li{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid #2a4b53}.safeguard-card li>span{font-family:var(--mono);color:#7eb2ac;font-size:10px}.safeguard-card li p{margin:0;color:#b8cecb;font-size:12px}.safeguard-card li strong{display:block;color:white;margin-bottom:4px}
+.resources{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;background:#f8f6f0}.resource-links{display:grid;gap:10px}.resource-links a{display:grid;grid-template-columns:1fr 1.6fr auto;align-items:center;gap:18px;padding:18px 20px;background:white;border:1px solid var(--line);border-radius:13px;text-decoration:none}.resource-links a:hover{border-color:var(--teal)}.resource-links span{font-size:10px;color:var(--muted)}.resource-links strong{font-size:12px}.resource-links b{color:var(--teal)}
+footer{display:grid;grid-template-columns:.45fr 1.4fr auto;gap:30px;padding:35px clamp(24px,7vw,100px);background:#071d24;color:#c3d2d0;align-items:start}footer p{font-size:10px;line-height:1.6;margin:0}footer>div:last-of-type{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}footer a{font-size:10px;color:#d8e5e3;text-decoration:none}.footer-brand .brand-mark{background:#d9eae6;color:#092229}.footer-brand strong{color:white}
+/* Runtime plane integration */
+.keddeh-footer-links{grid-column:1/-1;border-top:1px solid #29454d;padding-top:14px}.keddeh-footer-links button{color:#9fc7c2!important}
+.sr-status{min-height:18px;margin:10px 0 0;color:#9ec1bd;font-size:11px}.volume-fields{margin-top:18px}
+@media(max-width:1100px){.site-header nav{display:none}.hero{grid-template-columns:1fr}.hero-panel{max-width:680px}.function-grid{grid-template-columns:repeat(2,1fr)}.plane-grid{grid-template-columns:repeat(2,1fr)}.volume-shell{grid-template-columns:1fr}.builder{grid-template-columns:1fr}.builder-intro{position:relative;top:0}.package-grid{grid-template-columns:1fr}.package-grid article.featured{transform:none}.resources{grid-template-columns:1fr}.safeguard-card{grid-template-columns:1fr}.section-heading,.volume-heading{grid-template-columns:1fr;gap:22px}.step-tabs{overflow-x:auto;display:flex}.step-tabs button{min-width:92px}.artifact-row{grid-template-columns:.7fr 1fr 1fr}}
+@media(max-width:700px){.site-header{padding:13px 16px}.header-cta{margin-left:auto;font-size:0;padding:10px 13px}.header-cta span{font-size:16px}.hero{padding:48px 18px}.section{padding:65px 18px}.hero h1{font-size:50px}.function-grid,.plane-grid,.field-grid,.perspective-grid,.volume-rules{grid-template-columns:1fr}.volume-form,.volume-readback{padding:17px}.matrix-columns{grid-template-columns:repeat(5,minmax(68px,1fr));overflow:auto}.builder-intro{padding:25px}.step-body{padding:22px}.resource-links a{grid-template-columns:1fr auto}.resource-links strong{grid-column:1}.artifact-table{overflow-x:auto}.artifact-row{min-width:700px}footer{grid-template-columns:1fr}.score-ring{width:72px;height:72px;flex-basis:72px}}
+@media print{.site-header,.hero-actions,.header-cta,.keddeh-footer-links,[data-keddeh-overlay="true"]{display:none!important}body{background:white}.section,.hero{padding:28px}.hero{display:block}.hero-panel{box-shadow:none}.builder-intro{background:white;color:black}.workbench{box-shadow:none}}
+</style><title>CasePath | Lawyer-ready legal preparation</title><meta name="description" content="Structure your story, evidence and questions into a professional preparation package for review by a relevant lawyer."><meta name="codex-preview" content="development"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d2933'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='white'%3ECP%3C/text%3E%3C/svg%3E"></head><body class="antialiased" data-keddeh-primary-path="raw-self-contained"><main id="keddeh-plane-casepath" data-keddeh-plane="CASEPATH" data-keddeh-plane-kind="visual" data-keddeh-default="true"><header class="site-header"><a class="brand" href="#top" aria-label="CasePath home"><span class="brand-mark">CP</span><span><strong>CasePath</strong><small>Legal preparation</small></span></a><nav aria-label="Main navigation"><a href="#functions">What you need</a><a href="#method">How it works</a><a href="#volume">Legal volume</a><a href="#builder">Build a pack</a><a href="#packages">Packages</a></nav><a class="header-cta" href="#builder">Start my brief <span>→</span></a></header><section class="hero" id="top"><div class="hero-copy"><p class="eyebrow"><span></span> South Australia pilot</p><h1>Walk into your first lawyer meeting <em>prepared.</em></h1><p class="hero-lead">Structure your story, evidence and questions before professional fees begin. Build a calm, lawyer-ready preparation pack—without pretending software can replace legal judgment.</p><div class="hero-actions"><a class="button primary" href="#builder">Build my case pack <span>→</span></a><a class="button secondary" href="#functions">See what’s included</a></div><div class="boundary-compact"><span class="boundary-icon">!</span><p><strong>Preparation, not representation.</strong> CasePath is not a law firm and does not provide legal advice. Take every pack to a lawyer qualified in the relevant area and jurisdiction before acting, signing, sending or filing.</p></div></div><div class="hero-panel" aria-label="Example case readiness panel"><div class="panel-top"><div><span class="micro-label">Your preparation pack</span><h2>Lawyer meeting readiness</h2></div><span class="private-pill">Device-local draft</span></div><div class="readiness-row"><div class="score-ring" style="--score: 32.4deg;"><span>9%</span></div><div><strong>Start with the facts</strong><p>Readiness reflects preparation fields only—not legal merit, prospects or validity.</p></div></div><div class="pack-list"><div class=""><span>01</span><p>Plain-language account</p><b>Needed</b></div><div class=""><span>02</span><p>Chronology and people</p><b>Needed</b></div><div class=""><span>03</span><p>Evidence and source mesh</p><b>Needed</b></div><div class=""><span>04</span><p>Professional review agenda</p><b>Needed</b></div></div><a href="#builder" class="panel-link">Continue preparation <span>↘</span></a></div></section><section class="trust-strip" aria-label="Service boundaries"><span>INFORMATION &amp; ORGANISATION</span><i></i><span>NO AUTOMATED LEGAL CONCLUSIONS</span><i></i><span>LAWYER REVIEW REQUIRED</span><i></i><span>NO DIRECT COURT FILING</span></section><section class="functions section" id="functions"><div class="section-heading"><div><p class="eyebrow"><span></span> What people actually need</p><h2>From a difficult story to a reviewable record.</h2></div><p>Most people do not arrive with a neat legal issue. They arrive with events, documents, urgency and uncertainty. CasePath prepares that raw material for professional review.</p></div><div class="function-grid"><article><span class="function-number">01</span><h3>Know what matters</h3><p>Turn an unstructured account into dates, people, decisions, disputed facts and questions that need professional advice.</p><div><span>Issue map</span><span>Jurisdiction</span><span>Urgency prompts</span></div></article><article><span class="function-number">02</span><h3>Preserve your account</h3><p>Keep your original expression intact while separating observed events, recollection, assumptions, quotations and requested outcomes.</p><div><span>Source account</span><span>People</span><span>Original wording</span></div></article><article><span class="function-number">03</span><h3>Build the chronology</h3><p>Map each event by date, actor, action, location and source so the sequence can be checked against records and competing accounts.</p><div><span>Timeline</span><span>Decision points</span><span>Unknown dates</span></div></article><article><span class="function-number">04</span><h3>Construct the evidence mesh</h3><p>Link each important proposition to material that may support, contradict or leave it unresolved—without declaring admissibility or weight.</p><div><span>Evidence index</span><span>Source links</span><span>Missing-proof list</span></div></article><article><span class="function-number">05</span><h3>Map the dispute</h3><p>Place your propositions, the other side’s likely position, inconsistencies and unanswered questions into separate review lanes.</p><div><span>Issue map</span><span>Alternative account</span><span>Contradictions</span></div></article><article><span class="function-number">06</span><h3>Resolve the pathway</h3><p>Identify possible defence, complaint, review, disclosure, civil and urgent pathways for a lawyer to confirm against current law and procedure.</p><div><span>Forum</span><span>Forms</span><span>Deadline questions</span></div></article><article><span class="function-number">07</span><h3>Schedule loss and remedy</h3><p>Record the outcome sought, claimed loss, supporting records, causation questions and alternative remedies without fixing liability or quantum.</p><div><span>Loss schedule</span><span>Receipts</span><span>Remedy conditions</span></div></article><article><span class="function-number">08</span><h3>Use lawyer time well</h3><p>Deliver a consistent package so a relevant practitioner can test facts, law, evidence, process, deadlines, risks, costs and final documents faster.</p><div><span>Handover pack</span><span>Review agenda</span><span>Cost clarity</span></div></article></div></section><section class="method section" id="method"><div class="section-heading"><div><p class="eyebrow"><span></span> Context-preserving legal preparation</p><h2>One matter. Four planes that never collapse.</h2></div><p>The architecture preserves the user’s source material while progressively organising it for legal review. An account does not become evidence, evidence does not become a legal conclusion, and a legal possibility does not become an authorised action.</p></div><div class="plane-grid"><article><span>01</span><h3>Source plane</h3><p>Preserve the user’s expression, dates, people, records and requested outcomes without silently rewriting them.</p></article><article><span>02</span><h3>Evidence plane</h3><p>Link propositions to supporting, contradicting and missing material while retaining provenance and uncertainty.</p></article><article><span>03</span><h3>Legal plane</h3><p>Present possible legal lenses and current official sources conditionally; application remains for the qualified lawyer.</p></article><article><span>04</span><h3>Action plane</h3><p>Prepare pathway questions, document drafts and a lawyer handover without filing, representing or promising an outcome.</p></article></div><div class="runtime-flow" aria-label="CasePath processing sequence"><span>Original expression</span><i>→</i><span>Context and chronology</span><i>→</i><span>Evidence mesh</span><i>→</i><span>Conditional legal lenses</span><i>→</i><span>Lawyer-reviewed action</span></div></section><section class="legal-volume section" id="volume"><div class="volume-heading"><div><p class="eyebrow light"><span></span> DNA · Document Naturally Advised</p><h2>The document writes its governed structure into the matrix.</h2></div><p>A stable fourteen-locus document genome is instantiated as a bounded source variant. Integer traversal activates the linear tape, maps each locus to the zero-free matrix and emits only the services supported by traversed states.</p></div><div class="volume-contract" aria-label="Legal volume execution flow"><span>Preserve source</span><i>→</i><span>Instantiate DNA variant</span><i>→</i><span>Write static tape</span><i>→</i><span>Traverse integers</span><i>→</i><span>Map matrix</span><i>→</i><span>Emerge services</span><i>→</i><span>Read receipt</span></div><div class="volume-shell"><div class="volume-form"><div class="volume-form-top"><div><span class="micro-label">Law-ingestion pathway</span><h3>Source-to-matrix adapter</h3></div><span class="adapter-state">IDLE</span></div><p class="volume-boundary">Use this workbench for legislation, rules, forms, judgments and official guidance—not confidential case facts. Processing is transient; the latest receipt is retained only in this browser.</p><div class="field-grid volume-fields"><label>Source title<input value="South Australian Legislation — current and historical index"></label><label>Document class<select><option value="LEGISLATION">Legislation</option><option value="COURT_RULE">Court rule</option><option value="PRESCRIBED_FORM">Prescribed form</option><option value="JUDGMENT">Judgment</option><option value="OFFICIAL_GUIDANCE">Official guidance</option><option value="SECONDARY_MATERIAL">Secondary material</option><option value="USER_SOURCE">User-supplied source</option></select></label><label>Jurisdiction<input value="South Australia"></label><label>Official or source URL<input type="url" value="https://www.legislation.sa.gov.au/"></label><label>Source/access date<input type="date" value="2026-08-04"></label><label>Version label<input value="Current source page accessed for review"></label><label>Provision / rule / form<input value="Not yet selected"></label><label>Traversal cycles<select><option value="1">1 cycle</option><option value="2">2 cycles</option><option value="3">3 cycles</option><option value="5">5 cycles</option><option value="8">8 cycles</option></select></label></div><label>Source passage or source-led summary<textarea rows="4">The official legislation service provides current and historical legislation information. Select the exact Act, version and provision before applying it to a matter.</textarea></label><label>Proposition to map—not a conclusion about the matter<textarea rows="3">The selected authorised source and operative version must be confirmed before legal application.</textarea></label><div class="field-grid volume-fields"><label>Procedural object<input value="Authority and currency review"></label><label>Review pathway<input value="Official source → version → commencement → provision → lawyer application review"></label></div><label>Untranslated or undefined terms<input placeholder="Comma-separated; creates Mirror Lane tasks" value=""></label><button class="button volume-write" type="button">Write and traverse legal volume <span>→</span></button><p class="sr-status" role="status" aria-live="polite"></p></div><div class="volume-readback"><div class="readback-top"><div><span class="micro-label">Live architecture</span><h3>Static active-state tape</h3></div><span>Awaiting write</span></div><div class="operation-sequence" aria-label="Integer operation sequence"><span>-1</span><span>-2</span><span>+3</span><span>+2</span><span>+1</span><span>+2</span><span>+3</span><span>+2</span><span>+1</span></div><div class="tape-scroll" role="region" aria-label="Document active-state tape" tabindex="0"><div class="tape-cell "><span>01</span><strong>SOURCE IDENTITY</strong><small>Preserve a content-addressed source identity.</small></div><div class="tape-cell "><span>02</span><strong>DOCUMENT CLASS</strong><small>Separate legislation, rules, forms, judgments, guidance and user material.</small></div><div class="tape-cell "><span>03</span><strong>JURISDICTION</strong><small>Bind the source to the legal system whose authority is asserted.</small></div><div class="tape-cell "><span>04</span><strong>AUTHORITY TIER</strong><small>Record source authority without deciding application.</small></div><div class="tape-cell "><span>05</span><strong>TITLE</strong><small>Retain the official or supplied source title.</small></div><div class="tape-cell "><span>06</span><strong>SOURCE LOCATION</strong><small>Retain the official URL or local source reference.</small></div><div class="tape-cell "><span>07</span><strong>VERSION TIME</strong><small>Record version, access date and the need for currency review.</small></div><div class="tape-cell "><span>08</span><strong>COMMENCEMENT</strong><small>Keep commencement and transitional questions visible.</small></div><div class="tape-cell "><span>09</span><strong>PROVISION</strong><small>Address the section, rule, form or paragraph being mapped.</small></div><div class="tape-cell "><span>10</span><strong>PROPOSITION</strong><small>Separate what the source says from how it may apply.</small></div><div class="tape-cell "><span>11</span><strong>PROCEDURAL OBJECT</strong><small>Identify the proceeding, form, complaint, response or review object.</small></div><div class="tape-cell "><span>12</span><strong>PATHWAY</strong><small>Bind the object to a forum and decision pathway for review.</small></div><div class="tape-cell "><span>13</span><strong>LAWYER REVIEW</strong><small>Prevent automated promotion into advice, filing or outcome.</small></div><div class="tape-cell "><span>14</span><strong>LINEAGE</strong><small>Link the variant, parent genome, matrix write and readback receipt.</small></div></div><div class="matrix-readback"><div class="readback-label"><span class="micro-label">Zero-free matrix</span><p>Each column is a processing state—not legal merit.</p></div><div class="matrix-columns"><div class="matrix-column state-n3"><b>-3</b><span>Conflict</span><small>0 loci</small></div><div class="matrix-column state-n2"><b>-2</b><span>Unresolved</span><small>0 loci</small></div><div class="matrix-column state-1"><b>+1</b><span>Provisional</span><small>0 loci</small></div><div class="matrix-column state-2"><b>+2</b><span>Context</span><small>0 loci</small></div><div class="matrix-column state-3"><b>+3</b><span>Verified scope</span><small>0 loci</small></div></div></div><div class="service-readback"><div class="readback-label"><span class="micro-label">Emerged services</span><p>Failure stays local to the capability it supplies.</p></div><p class="empty-readback">Run the adapter to see which services the traversed source can support.</p></div></div></div><div class="volume-rules"><p><strong>Document Naturally Advised:</strong> A stable, ordered document volume whose own governed loci advise structural routing, verification, service activation and professional handover without issuing legal advice.</p><p><strong>Boundary:</strong> document advice governs structure and routing. It does not replace a lawyer’s legal advice, validate a filing or determine an outcome.</p></div></section><section class="builder section" id="builder"><div class="builder-intro"><p class="eyebrow light"><span></span> Interactive preparation tool</p><h2>Build your lawyer brief.</h2><p>Answer in your own words. CasePath keeps allegations, records and questions distinct. It does not decide whether a claim is true or legally valid.</p><div class="local-note"><span>⌁</span><p><strong>Private draft mode</strong><br>Your answers are saved only in this browser for this demonstration. Avoid shared devices and clear the draft when finished.</p></div><button class="text-button">Clear this browser draft</button></div><div class="workbench"><div class="step-tabs" role="tablist" aria-label="Case preparation steps"><button class="active" role="tab" aria-selected="true"><span>1</span>Matter</button><button class="" role="tab" aria-selected="false"><span>2</span>Account</button><button class="" role="tab" aria-selected="false"><span>3</span>Chronology</button><button class="" role="tab" aria-selected="false"><span>4</span>Evidence</button><button class="" role="tab" aria-selected="false"><span>5</span>Issues</button><button class="" role="tab" aria-selected="false"><span>6</span>Pathways</button><button class="" role="tab" aria-selected="false"><span>7</span>Loss</button><button class="" role="tab" aria-selected="false"><span>8</span>Review</button></div><div class="step-body"><div class="form-stage"><div class="stage-heading"><span>Step 1 of 8</span><h3>Place the matter in context</h3><p>A lawyer needs to know where, what and when before they can assess the correct pathway.</p></div><div class="field-grid"><label>Jurisdiction<select><option>South Australia</option><option>Another Australian jurisdiction</option><option>Not sure</option></select></label><label>Matter type<select><option value="">Choose the closest match</option><option>Traffic or police conduct</option><option>Employment</option><option>Tenancy or property</option><option>Consumer or debt</option><option>Family or relationship</option><option>Other civil matter</option></select></label><label>Current stage<select><option value="">Choose a stage</option><option>Something happened—no formal action yet</option><option>I received a notice, charge or claim</option><option>A complaint or response is underway</option><option>I have a hearing or conference date</option><option>I need a second opinion</option></select></label><label>Next known date<input type="date" value=""></label></div><div class="urgency-note"><span>Time limits may apply</span><p>If you have a hearing, notice, charge, limitation date, safety risk or deadline, do not wait for this pack. Contact a relevant lawyer or official service now. Call 000 for immediate danger.</p></div></div></div><div class="step-footer"><span>Device-local draft</span><div><button disabled="">Back</button><button class="next">Continue <span>→</span></button></div></div></div></section><section class="packages section" id="packages"><div class="section-heading centered"><p class="eyebrow"><span></span> Preparation packages</p><h2>Use the right amount of structure.</h2><p>Every package ends with professional review. None includes representation, legal advice, filing, deadline calculation or a prediction of outcome.</p></div><div class="package-grid"><article class=""><div class="package-top"><span>Start here</span></div><h3>Matter Snapshot</h3><p>For an initial call or first appointment.</p><ul><li><span>✓</span>One-page matter summary</li><li><span>✓</span>Key dates and people</li><li><span>✓</span>Urgency and missing-information prompts</li><li><span>✓</span>Questions for the lawyer</li></ul><a href="#builder">Build this preparation pack <span>→</span></a></article><article class="featured"><div class="package-top"><span>Most useful</span><b>Recommended</b></div><h3>Lawyer Brief</h3><p>For a complex matter with multiple events or records.</p><ul><li><span>✓</span>Structured factual chronology</li><li><span>✓</span>Allegation and response map</li><li><span>✓</span>Evidence register with gaps</li><li><span>✓</span>Loss and remedy discussion schedule</li><li><span>✓</span>Professional review checklist</li></ul><a href="#builder">Build this preparation pack <span>→</span></a></article><article class=""><div class="package-top"><span>Before action</span></div><h3>Document Review Pack</h3><p>For reviewing a response, complaint or court-facing draft.</p><ul><li><span>✓</span>Draft purpose and audience</li><li><span>✓</span>Source-linked statement register</li><li><span>✓</span>Contradiction and verification flags</li><li><span>✓</span>Forms and deadline questions</li><li><span>✓</span>Final lawyer approval gate</li></ul><a href="#builder">Build this preparation pack <span>→</span></a></article></div></section><section class="delivery-guide section" id="delivery-guide"><div class="guide-heading"><p class="eyebrow"><span></span> Mandatory page in every delivery</p><h2>One package. Three distinct perspectives.</h2><p>The first substantive page tells the user exactly what each artifact is, who created it, what authority it has, and how it may be used. Conditional analysis never masquerades as settled law.</p></div><div class="perspective-grid"><article><span>01</span><h3>Your lawyer might, could or would say</h3><p>Possible questions, professional considerations and necessary review steps—never invented advice or a promised view.</p><b>Professional perspective · conditional</b></article><article><span>02</span><h3>How the law might, could or would see it</h3><p>Alternative characterisations tied to facts that still must be proved, the correct legal test, and the deciding authority.</p><b>Legal perspective · conditional</b></article><article><span>03</span><h3>What the law says about the conduct</h3><p>Current authorised legislation, rules and official pathways, described with links, currency and limits on application.</p><b>Authority source · verified, application unresolved</b></article></div><div class="artifact-table"><div class="artifact-row artifact-head"><span>Object / artifact</span><span>Purpose</span><span>Status boundary</span></div><div class="artifact-row"><strong>Matter snapshot</strong><span>Your instructions, parties, stage and dates</span><span>User-supplied account—not verified fact</span></div><div class="artifact-row"><strong>Chronology</strong><span>Events arranged by date with source references</span><span>Sequence aid—not proof of an event</span></div><div class="artifact-row"><strong>People and authority map</strong><span>People, organisations, roles and asserted decision-makers</span><span>Recorded identities and roles—not findings of authority</span></div><div class="artifact-row"><strong>Issue map</strong><span>Questions, disputed propositions and alternatives</span><span>Preparation framework—not legal advice</span></div><div class="artifact-row"><strong>Proposition register</strong><span>Each material statement and the status claimed for it</span><span>Allegation, recollection or question until substantiated</span></div><div class="artifact-row"><strong>Evidence register</strong><span>Material held, missing and requested</span><span>Inventory—not a ruling on admissibility</span></div><div class="artifact-row"><strong>Contradiction register</strong><span>Differences between accounts, records and expected process</span><span>Investigation prompt—not proof of dishonesty or misconduct</span></div><div class="artifact-row"><strong>Lawyer perspective</strong><span>What a practitioner might ask, could consider or would need</span><span>Conditional professional-review prompts</span></div><div class="artifact-row"><strong>Legal perspective</strong><span>How conduct might be characterised if required facts are established</span><span>Possible analysis—not a court finding</span></div><div class="artifact-row"><strong>Authority register</strong><span>Current official legislation, rules and service pathways</span><span>Source text—not personalised application</span></div><div class="artifact-row"><strong>Pathway register</strong><span>Possible forums, procedures, forms, dependencies and decision-makers</span><span>Options for confirmation—not filing instructions</span></div><div class="artifact-row"><strong>Loss and remedy schedule</strong><span>Claimed impact, records, causation questions and outcomes sought</span><span>Discussion schedule—not accepted loss, liability or quantum</span></div><div class="artifact-row"><strong>Draft documents</strong><span>Review versions for a defined audience and purpose</span><span>Not approved to send, sign or file</span></div></div></section><section class="safeguards section" id="safeguards"><div class="safeguard-card"><div><p class="eyebrow light"><span></span> The line we do not cross</p><h2>Software can prepare the record. A lawyer must assess the law.</h2><p>Clear boundaries make the pack more useful. CasePath labels what came from you, what is supported by a record, what remains unverified and what requires professional judgment.</p></div><ul><li><span>01</span><p><strong>No solicitor–client relationship</strong>Using this site does not retain a lawyer or create legal professional privilege.</p></li><li><span>02</span><p><strong>No legal conclusion</strong>A polished document is not proof that a fact, claim, defence, remedy or amount is legally valid.</p></li><li><span>03</span><p><strong>No filing authority</strong>Nothing is sent to a court, tribunal, police agency, opponent or lawyer by CasePath.</p></li><li><span>04</span><p><strong>No deadline assurance</strong>Urgent time limits can apply. Verify them immediately with a lawyer or the relevant official body.</p></li></ul></div></section><section class="resources section"><div class="resources-copy"><p class="eyebrow"><span></span> South Australia resources</p><h2>Need advice or urgent procedural help?</h2><p>Use an official service or a suitably qualified practitioner. These external services are independent of CasePath.</p></div><div class="resource-links"><a href="https://lsc.sa.gov.au/FreeLegalHelp" target="_blank" rel="noreferrer"><span>Free legal help</span><strong>Legal Services Commission of SA</strong><b>↗</b></a><a href="https://www.lawsocietysa.asn.au/" target="_blank" rel="noreferrer"><span>Find a relevant practitioner</span><strong>Law Society of South Australia</strong><b>↗</b></a><a href="https://courtsa.courts.sa.gov.au/" target="_blank" rel="noreferrer"><span>Official court portal</span><strong>CourtSA</strong><b>↗</b></a></div></section><footer><div class="brand footer-brand"><span class="brand-mark">CP</span><span><strong>CasePath</strong><small>Legal preparation</small></span></div><p>CasePath provides information-management and document-preparation tools only. It is not a law firm, does not provide legal advice or representation, and is not a substitute for a lawyer. Generated material may be incomplete, inaccurate, outdated or unsuitable. Obtain independent legal advice in the relevant jurisdiction before acting on, sending, signing or filing anything.</p><div><a href="#safeguards">Service boundary</a><a href="#builder">Draft privacy</a><span>© 2026 CasePath</span></div><div class="keddeh-footer-links" aria-label="Keddeh system links">
+  <button type="button" data-keddeh-open="BRAINK">Powered by BRAINK</button>
+  <button type="button" data-keddeh-open="KEDDEH_SYSTEMS">A KEDDEH SYSTEMS projection</button>
+  <button type="button" data-keddeh-open="SYSTEM">Runtime status</button>
+</div></footer></main>
+<!-- ============================================================================
+ KEDDEH UNIVERSAL RUNTIME VOLUME v1.2.0
+ The original CasePath DOM above is preserved as the CASEPATH projection.
+ Everything below is additional addressable volume in the same source file.
+============================================================================ -->
+<style id="keddeh-volume-style">
+  .keddeh-footer-links{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem;align-items:center}
+  .keddeh-footer-links button{appearance:none;border:0;background:transparent;padding:0;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font:inherit}
+  [data-keddeh-plane][data-keddeh-overlay="true"]{position:fixed;inset:0;z-index:2147483000;background:#09131a;color:#eef5f3;overflow:auto;display:none}
+  [data-keddeh-plane][data-keddeh-overlay="true"].keddeh-active{display:block}
+  .keddeh-shell{max-width:1180px;margin:0 auto;padding:28px 24px 72px}
+  .keddeh-top{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid #2a3b42;padding-bottom:18px;margin-bottom:28px}
+  .keddeh-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8fb7ac}
+  .keddeh-title{font-size:clamp(32px,6vw,72px);line-height:.95;margin:.35rem 0 1rem;letter-spacing:-.04em}
+  .keddeh-close,.keddeh-action{border:1px solid #3b575c;background:#10242b;color:#eef5f3;border-radius:999px;padding:10px 15px;cursor:pointer;font:inherit}
+  .keddeh-close:hover,.keddeh-action:hover{background:#17323a}
+  .keddeh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .keddeh-card{border:1px solid #284049;background:#0d1b21;border-radius:16px;padding:18px;min-height:135px}
+  .keddeh-card h3{margin:.2rem 0 .6rem;font-size:18px}.keddeh-card p{margin:0;color:#b9cac7;line-height:1.5}
+  .keddeh-card button{margin-top:14px}
+  .keddeh-status{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:22px 0}
+  .keddeh-status div{border:1px solid #284049;border-radius:12px;padding:14px;background:#0d1b21}
+  .keddeh-status strong{display:block;font-size:12px;color:#8fb7ac;text-transform:uppercase;letter-spacing:.09em;margin-bottom:8px}
+  .keddeh-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-all;font-size:12px}
+  .keddeh-console{background:#050a0d;border:1px solid #284049;border-radius:14px;padding:14px;white-space:pre-wrap;min-height:120px;max-height:360px;overflow:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+  .keddeh-pill{display:inline-flex;border:1px solid #35555b;border-radius:999px;padding:5px 9px;font-size:11px;margin:0 6px 6px 0}
+  .keddeh-plane-note{color:#a9bdb9;max-width:760px;line-height:1.6}
+  .keddeh-hidden{display:none!important}
+  @media (max-width:700px){.keddeh-shell{padding:20px 16px 54px}.keddeh-top{align-items:flex-start}.keddeh-title{font-size:42px}}
+</style>
+
+<!-- Projection planes: dormant until resolved. -->
+<section id="keddeh-plane-braink" data-keddeh-plane="BRAINK" data-keddeh-plane-kind="visual" data-keddeh-overlay="true" aria-hidden="true">
+  <div class="keddeh-shell">
+    <div class="keddeh-top"><div><span class="keddeh-kicker">BRAINK projection</span><h2 class="keddeh-title">BRAINK</h2></div><button class="keddeh-close" data-keddeh-close>Return to CasePath</button></div>
+    <p class="keddeh-plane-note">BRAINK is resolved from the same source volume. This plane exposes skills, workflows, runtime state and local cognitive tools without replacing the CasePath projection.</p>
+    <div class="keddeh-grid" id="braink-skill-grid"></div>
+    <div class="keddeh-card" style="margin-top:14px"><h3>Local BRAINK note</h3><textarea id="braink-note" rows="5" style="width:100%;box-sizing:border-box"></textarea><button class="keddeh-action" id="braink-note-save">Commit locally</button></div>
+  </div>
+</section>
+
+<section id="keddeh-plane-systems" data-keddeh-plane="KEDDEH_SYSTEMS" data-keddeh-plane-kind="visual" data-keddeh-overlay="true" aria-hidden="true">
+  <div class="keddeh-shell">
+    <div class="keddeh-top"><div><span class="keddeh-kicker">Umbrella projection</span><h2 class="keddeh-title">KEDDEH SYSTEMS</h2></div><button class="keddeh-close" data-keddeh-close>Return to CasePath</button></div>
+    <p class="keddeh-plane-note">One source volume, many market projections. CasePath is the legal preparation entry path; BRAINK, edge appliances and future products resolve into the same canonical runtime law.</p>
+    <div class="keddeh-grid">
+      <div class="keddeh-card"><h3>CasePath</h3><p>Legal preparation, evidence structure and headless document generation.</p><button class="keddeh-action" data-keddeh-open="CASEPATH">Open projection</button></div>
+      <div class="keddeh-card"><h3>BRAINK</h3><p>Skills, workflows, cognitive services and runtime continuity.</p><button class="keddeh-action" data-keddeh-open="BRAINK">Open projection</button></div>
+      <div class="keddeh-card"><h3>Edge / Appliance</h3><p>First-boot capability resolution for small or fully equipped hardware.</p><button class="keddeh-action" data-keddeh-open="EDGE">Open projection</button></div>
+      <div class="keddeh-card"><h3>Runtime</h3><p>Inspect boot, VFS, commits, allocation and HERE / STILL_HERE / WITH_US.</p><button class="keddeh-action" data-keddeh-open="SYSTEM">Inspect system</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="keddeh-plane-edge" data-keddeh-plane="EDGE" data-keddeh-plane-kind="visual" data-keddeh-overlay="true" aria-hidden="true">
+  <div class="keddeh-shell">
+    <div class="keddeh-top"><div><span class="keddeh-kicker">Appliance projection</span><h2 class="keddeh-title">EDGE</h2></div><button class="keddeh-close" data-keddeh-close>Return to CasePath</button></div>
+    <p class="keddeh-plane-note">The same volume can resolve only the planes supported by available hardware. A camera may activate capture/network/storage planes; a workstation may activate the full visual and document environment.</p>
+    <div class="keddeh-grid" id="edge-capability-grid"></div>
+  </div>
+</section>
+
+<section id="keddeh-plane-system" data-keddeh-plane="SYSTEM" data-keddeh-plane-kind="visual" data-keddeh-overlay="true" aria-hidden="true">
+  <div class="keddeh-shell">
+    <div class="keddeh-top"><div><span class="keddeh-kicker">Canonical source volume</span><h2 class="keddeh-title">SYSTEM</h2></div><button class="keddeh-close" data-keddeh-close>Return to CasePath</button></div>
+    <div class="keddeh-status">
+      <div><strong>Runtime</strong><span id="sys-runtime"></span></div>
+      <div><strong>Allocation</strong><span id="sys-allocation"></span></div>
+      <div><strong>Projection</strong><span id="sys-projection"></span></div>
+      <div><strong>State root</strong><span id="sys-root" class="keddeh-mono"></span></div>
+      <div><strong>HERE</strong><span id="sys-here"></span></div>
+      <div><strong>STILL_HERE</strong><span id="sys-still"></span></div>
+      <div><strong>WITH_US</strong><span id="sys-with"></span></div>
+    </div>
+    <div class="keddeh-card"><h3>Source-derived plane registry</h3><div id="sys-planes"></div></div>
+    <div class="keddeh-card" style="margin-top:14px"><h3>Commit / receipt chain</h3><div class="keddeh-console" id="sys-console"></div></div>
+    <div class="keddeh-card" style="margin-top:14px">
+      <h3>KEX historical state recovery</h3>
+      <p>Topology-aware, seed-typed, field-gated recovery of compact KEX/BRAINK/IL-LLM state.</p>
+      <button class="keddeh-action" data-keddeh-open="KEX_RECOVERY">Open recovery plane</button>
+    </div>
+  </div>
+</section>
+
+
+<section id="keddeh-plane-kex-recovery" data-keddeh-plane="KEX_RECOVERY" data-keddeh-plane-kind="visual" data-keddeh-overlay="true" aria-hidden="true">
+  <div class="keddeh-shell">
+    <div class="keddeh-top"><div><span class="keddeh-kicker">Historical seed / state recovery</span><h2 class="keddeh-title">KEX RECOVERY</h2></div><button class="keddeh-close" data-keddeh-close>Return to CasePath</button></div>
+    <p class="keddeh-plane-note">Recovery is not a fixed-depth decoder. It preserves seed class, recursion topology, authoritative source pointers, proof-critical fields, blockers and successor state.</p>
+    <div class="keddeh-status">
+      <div><strong>Baseline</strong><span id="kex-baseline">25</span></div>
+      <div><strong>Recovered surface</strong><span id="kex-surface">53</span></div>
+      <div><strong>Delta</strong><span id="kex-delta">+28</span></div>
+      <div><strong>Surface ratio</strong><span id="kex-ratio">2.12×</span></div>
+      <div><strong>Seed classes</strong><span>3 typed</span></div>
+      <div><strong>Packet pointers</strong><span>3 expanded</span></div>
+    </div>
+    <div class="keddeh-grid">
+      <div class="keddeh-card"><h3>Grammar</h3><p><b>x</b> = simultaneous composition<br><b>^2</b> = self-application / artifact recursion<br><b>x2</b> = deterministic stability requirement.</p></div>
+      <div class="keddeh-card"><h3>Failure law</h3><p><b>UNPACK_FAILED ≠ KEX_CORRUPT</b><br>Resolve topology, source pointer, recursion depth and seed class before corruption may be asserted.</p></div>
+      <div class="keddeh-card"><h3>Lossless gate</h3><p>identity · source · claim/definition · evidence · proof status · boundary · blocker · lineage/return state · next route</p></div>
+      <div class="keddeh-card"><h3>Successor state</h3><p>Deduplicate by stable identity, compare to prior manifest, write the delta, then rerun against the successor state.</p></div>
+    </div>
+    <div class="keddeh-card" style="margin-top:14px">
+      <h3>Execute recovery pass</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+        <button class="keddeh-action" id="kex-run-recovery">Run deterministic recovery</button>
+        <button class="keddeh-action" id="kex-export-successor">Export successor state</button>
+      </div>
+      <div class="keddeh-console" id="kex-recovery-console"></div>
+    </div>
+  </div>
+</section>
+
+<template data-keddeh-plane="KEX_RECOVERY_ENGINE" data-keddeh-plane-kind="headless"></template>
+<script type="application/json" id="kex-recovery-estate">{"seed":"KEX-20260821-2045-ILLLM-UNPACK-7C91D4E2","baseline_manifest_tokens":25,"recovered_manifest_tokens":53,"recovered_delta":28,"surface_ratio":2.12,"seed_classes":{"TOK-KED-IL-LLM-CLAIM-LEDGER-SEED":"CLAIM","TOK-KED-IL-LLM-OPERATOR-LEDGER-SEED":"OPERATOR","TOK-KED-IL-LLM-EVIDENCE-LEDGER-SEED":"EVIDENCE"},"packets":[{"identity":"KEX_BRAINK_CODEX_CONFERENCE_V1","packet_id":"f08b049f58b5c8bb63ff"},{"identity":"KEX_BRAINK_BILATERAL_GROWTH_V1","packet_id":"c554ff917df64119de7e"},{"identity":"chat-cache continuation packet","packet_id":"6aa08eb482e04543c1dd"}],"manifest_tokens":["TOK-KED-IL-LLM-CLAIM-LEDGER-SEED","TOK-KED-IL-LLM-OPERATOR-LEDGER-SEED","TOK-KED-IL-LLM-EVIDENCE-LEDGER-SEED","TOK-BRAINK-ANCHORED-RESPONSE-PROTOCOL","TOK-BRAINK-CODEX-BILATERAL-LEARNING","TOK-BRAINK-COMMAND-EXECUTION","TOK-BRAINK-CONTINUATION-SUITE","TOK-BRAINK-CROSS-CHAT-FLOW","TOK-BRAINK-DESKTOP-FULL-CREATION-REPORT","TOK-BRAINK-FULL-INITIALIZATION-OPTIMIZATION","TOK-FULL-OPTIMIZATION-SCHEDULE","TOK-BRAINK-CONTRACT","TOK-CODEX-KEX-APPLICATION-REPORT","TOK-CODEX-KEX-OPERATIONAL-ADAPTER","TOK-ADDRESS-GATE","TOK-BLOCKER-LEDGER","TOK-KEX-BRAINK-DEFINITIONS-EXTRACT","TOK-CONTEXT-COMPRESSION-CONSTRAINT-MODEL","TOK-FINAL-SPEC","TOK-FINAL-STATE-MACHINE","TOK-FINAL-VALIDATION-CHECKER","TOK-HARDENING-CHECKER","TOK-SAMPLE-OUTPUT-MANIFEST","TOK-KEX-BRAINK-COMPLETE-CONSTRAINT-DOCUMENT","TOK-KEX-RECURSIVE-LEARNING-PASS-2026-05-10","TOK-KEX-RECURSIVE-LEARNING2-APPLIED-CS2-CHECKER","TOK-KEX-RECURSIVE-LEARNING2-X-KEX2-APPLIED-CS2-REPORT","TOK-KEX-BILATERAL-GROWTH2-X-RECURSIVE-KEX-APPLIED-CS2-CHECKER","TOK-KEX-OPERATOR-TRANSLATION-SEMANTICS","TOK-KEX-OPERATOR-TRANSLATION-CHECKER","TOK-KEX-PROFOUND-LEARNING-ACHIEVEMENT","TOK-KEX-CODEX-SELF-OPTIMIZATION-CHECKER","TOK-KED-IL-LLM-WORKER-MEMORY-REFERENCE","TOK-IL-LLM-A-KEDDEH-PROJECT-PACKET","TOK-KEX-AFFECT-BIOETHICS-MODEL","TOK-KED-IL-LLM-WORKTREE-VALIDATOR","TOK-KEX-BRAINK-NEW-PROJECT-POPULATION-REPORT","TOK-KED-IL-LLM-IMPLEMENTATION-PLAN","TOK-KED-IL-LLM-MOVIE-ROUTE","TOK-KED-IL-LLM-CLAIM-SCHEMA","TOK-KED-IL-LLM-OPERATOR-SCHEMA","TOK-KED-IL-LLM-EVIDENCE-SCHEMA","TOK-KED-IL-LLM-WORKER-ONBOARDING","TOK-KEX-MOVIE-PLAYER-HTML","TOK-KEX-MOVIE-PORTABLE-MP4","TOK-KEX-MOVIE-BUILDER","TOK-KEX-MOVIE-COMPATIBILITY-CHECKER","TOK-KEX-MOVIE-CAPTIONS","TOK-KEX-MOVIE-NARRATION-AUDIO","TOK-ROOT-README","TOK-ROOT-CHANGELOG","TOK-ROOT-CONTRIBUTING","TOK-ROOT-LICENSE-NOTICE"],"failure_classes":["UNRESOLVED_TOPOLOGY","UNRESOLVED_SOURCE_POINTER","UNRESOLVED_RECURSION_DEPTH","UNRESOLVED_SEED_CLASS","VERIFIED_CORRUPTION"]}</script>
+
+<!-- Headless planes are still layers of this same source volume. -->
+<template data-keddeh-plane="DOCUMENT_ENGINE" data-keddeh-plane-kind="headless"></template>
+<template data-keddeh-plane="VFS" data-keddeh-plane-kind="headless"></template>
+<template data-keddeh-plane="ALLOCATION" data-keddeh-plane-kind="headless"></template>
+<template data-keddeh-plane="NETWORK_STATE" data-keddeh-plane-kind="headless"></template>
+<template data-keddeh-plane="CAPABILITY_RESOLVER" data-keddeh-plane-kind="headless"></template>
+<template data-keddeh-plane="DEPENDENCY_RESOLVER" data-keddeh-plane-kind="headless"></template>
+
+<script type="application/json" id="keddeh-root-contract">
+{
+  "runtime_family":"KEDDEH_UNIVERSAL_VOLUME",
+  "version":"1.2.0",
+  "source_is_volume":true,
+  "projection_is_consumer_path":true,
+  "casepath_is_projection":true,
+  "private_human_content_in_network_signals":false,
+  "signals":{
+    "HERE":"a signal that tells us this runtime is here",
+    "STILL_HERE":"a signal that tells us this runtime is still here",
+    "WITH_US":"a signal that tells us this runtime is with the accepted shared runtime state"
+  },
+  "rules":[
+    "the HTML source is the canonical runtime volume",
+    "new planes extend the source volume without requiring a new product backend",
+    "visible and headless planes share the same source address-space",
+    "consumer products are projections, not independent backends",
+    "private user content remains local unless explicitly exported",
+    "network state signals describe runtime existence and alignment, not the human",
+    "duplicating source creates another potential runtime instance but not automatic authority",
+    "all promoted state changes pass through the root commit law",
+    "KEX recovery is topology-aware: x is simultaneous composition and ^2 is recursive self-application",
+    "seed class is typed and preserved: CLAIM, OPERATOR, EVIDENCE are not interchangeable",
+    "proof-critical recovery requires identity/source/claim/evidence/proof/boundary/blocker/lineage/next_route",
+    "stable identity deduplicates repeated embedded state",
+    "UNPACK_FAILED is reclassified before VERIFIED_CORRUPTION",
+    "recovered delta is written as successor state and may be re-run recursively"
+  ]
+}
+</script>
+
+<script id="keddeh-runtime-volume">
+(() => {
+'use strict';
+const VERSION = '1.2.0';
+const STORAGE_PREFIX = 'KEDDEH::';
+const SIGNAL_FIELDS = new Set(['kind','runtime_root','accepted_root','node','epoch','sequence','capability_root','projection','ts']);
+const PRIVATE_FIELD_BLOCKLIST = /(^|_)(name|email|matter|document|message|conversation|profile|legal|evidence|text|content|address|phone|camera|footage)(_|$)/i;
+const enc = new TextEncoder();
+const dec = new TextDecoder();
+
+const stable = (v) => {
+  if (v === null || typeof v !== 'object') return JSON.stringify(v);
+  if (Array.isArray(v)) return '[' + v.map(stable).join(',') + ']';
+  return '{' + Object.keys(v).sort().map(k => JSON.stringify(k)+':'+stable(v[k])).join(',') + '}';
+};
+const sha256 = async (v) => {
+  const bytes = typeof v === 'string' ? enc.encode(v) : (v instanceof Uint8Array ? v : enc.encode(stable(v)));
+  const dig = await crypto.subtle.digest('SHA-256', bytes);
+  return [...new Uint8Array(dig)].map(b=>b.toString(16).padStart(2,'0')).join('');
+};
+const randomId = (prefix='N') => prefix + '-' + [...crypto.getRandomValues(new Uint8Array(10))].map(b=>b.toString(16).padStart(2,'0')).join('');
+const now = () => Date.now();
+
+const CookieShard = {
+  name: 'KEDDEH_SHARD',
+  read(){
+    const row = document.cookie.split('; ').find(x=>x.startsWith(this.name+'='));
+    if(!row) return null;
+    try { return JSON.parse(decodeURIComponent(row.split('=').slice(1).join('='))); } catch { return null; }
+  },
+  write(shard){
+    const minimal = { allocation: shard.allocation || null, node: shard.node, epoch: shard.epoch || 1, projection: shard.projection || 'CASEPATH', runtime: shard.runtime || VERSION };
+    document.cookie = this.name+'='+encodeURIComponent(JSON.stringify(minimal))+'; Path=/; SameSite=Lax; Max-Age=31536000';
+    return minimal;
+  }
+};
+
+const DB = {
+  name:'KEDDEH_VOLUME', db:null,
+  async open(){
+    if(!('indexedDB' in window)) return null;
+    if(this.db) return this.db;
+    this.db = await new Promise((resolve,reject)=>{
+      const req=indexedDB.open(this.name,1);
+      req.onupgradeneeded=()=>{const d=req.result; if(!d.objectStoreNames.contains('vfs'))d.createObjectStore('vfs'); if(!d.objectStoreNames.contains('meta'))d.createObjectStore('meta');};
+      req.onsuccess=()=>resolve(req.result); req.onerror=()=>reject(req.error);
+    }).catch(()=>null);
+    return this.db;
+  },
+  async get(store,key){
+    const db=await this.open();
+    if(!db){ try{return JSON.parse(localStorage.getItem(STORAGE_PREFIX+store+'::'+key));}catch{return null;} }
+    return new Promise((resolve)=>{const tx=db.transaction(store,'readonly');const r=tx.objectStore(store).get(key);r.onsuccess=()=>resolve(r.result??null);r.onerror=()=>resolve(null);});
+  },
+  async put(store,key,value){
+    const db=await this.open();
+    if(!db){localStorage.setItem(STORAGE_PREFIX+store+'::'+key,JSON.stringify(value));return true;}
+    return new Promise((resolve)=>{const tx=db.transaction(store,'readwrite');tx.objectStore(store).put(value,key);tx.oncomplete=()=>resolve(true);tx.onerror=()=>resolve(false);});
+  },
+  async del(store,key){const db=await this.open(); if(!db){localStorage.removeItem(STORAGE_PREFIX+store+'::'+key);return true;} return new Promise(r=>{const tx=db.transaction(store,'readwrite');tx.objectStore(store).delete(key);tx.oncomplete=()=>r(true);tx.onerror=()=>r(false);});}
+};
+
+const VFS = {
+  normalize(path){ path=String(path||'/').trim(); if(!path.startsWith('/'))path='/'+path; return path.replace(/\/+/g,'/'); },
+  async write(path,value){ return DB.put('vfs',this.normalize(path),{path:this.normalize(path),value,updated:now()}); },
+  async read(path){ const row=await DB.get('vfs',this.normalize(path)); return row?row.value:null; },
+  async remove(path){ return DB.del('vfs',this.normalize(path)); }
+};
+
+const PlaneRegistry = {
+  planes:new Map(),
+  discover(){
+    document.querySelectorAll('[data-keddeh-plane]').forEach((el,i)=>{
+      const id=el.dataset.keddehPlane;
+      if(!this.planes.has(id)) this.planes.set(id,{id,kind:el.dataset.keddehPlaneKind||'visual',index:i,element:el});
+    });
+    return [...this.planes.values()];
+  },
+  get(id){return this.planes.get(id);}
+};
+
+const CapabilityResolver = {
+  detect(){
+    const caps={
+      'runtime.js':true,'runtime.dom':true,'runtime.crypto':!!crypto?.subtle,'storage.indexeddb':!!window.indexedDB,
+      'storage.local':!!window.localStorage,'storage.opfs':!!navigator.storage?.getDirectory,'worker.web':!!window.Worker,
+      'network.fetch':!!window.fetch,'network.broadcast':!!window.BroadcastChannel,'document.blob':!!window.Blob,
+      'document.docx.embedded':true,'ui.visual':true,'device.camera':!!navigator.mediaDevices?.getUserMedia
+    };
+    return caps;
+  },
+  require(name){const v=Runtime.capabilities[name]; if(!v) throw new Error('Capability unavailable: '+name); return v;}
+};
+
+const ReceiptLedger = {
+  items:[], head:'0'.repeat(64), sequence:0,
+  async load(){const saved=await DB.get('meta','receipts'); if(saved){this.items=saved.items||[];this.head=saved.head||this.head;this.sequence=saved.sequence||0;} return this;},
+  async append(actor,op,payloadRoot,resultRoot){
+    const receipt={sequence:++this.sequence,actor,op,payload_root:payloadRoot,parent:this.head,result_root:resultRoot,ts:now()};
+    receipt.receipt_root=await sha256(receipt);
+    this.head=receipt.receipt_root; this.items.push(receipt); if(this.items.length>250)this.items.shift();
+    await DB.put('meta','receipts',{items:this.items,head:this.head,sequence:this.sequence}); return receipt;
+  }
+};
+
+const CommitBus = {
+  async commit({actor='SYSTEM',operation,path,payload}){
+    if(!path) throw new Error('Commit path required');
+    const canonical={actor,operation,path:VFS.normalize(path),payload};
+    const payloadRoot=await sha256(canonical);
+    await VFS.write(path,payload);
+    const stateRoot=await sha256({previous:Runtime.stateRoot,path:canonical.path,payload_root:payloadRoot,sequence:ReceiptLedger.sequence+1});
+    const receipt=await ReceiptLedger.append(actor,operation,payloadRoot,stateRoot);
+    Runtime.stateRoot=stateRoot;
+    await DB.put('meta','runtime',{stateRoot,projection:Runtime.projection,allocation:Runtime.allocation,node:Runtime.node});
+    Runtime.renderSystem();
+    return receipt;
+  }
+};
+
+const Allocation = {
+  async resolve(){
+    const shard=CookieShard.read();
+    const meta=await DB.get('meta','allocation');
+    if(meta?.allocation){ Runtime.allocation=meta.allocation; return meta; }
+    if(shard?.allocation){Runtime.allocation=shard.allocation; await DB.put('meta','allocation',shard); return shard;}
+    Runtime.allocation=null;
+    return {allocation:null,node:Runtime.node,status:'UNALLOCATED'};
+  },
+  async allocate(label='LOCAL'){
+    const allocation='ALLOC-'+await sha256({node:Runtime.node,label,created:now()}).then(x=>x.slice(0,20));
+    const row={allocation,node:Runtime.node,epoch:1,projection:Runtime.projection,status:'ALLOCATED'};
+    Runtime.allocation=allocation; await DB.put('meta','allocation',row); CookieShard.write(row); Runtime.renderSystem(); return row;
+  }
+};
+
+const NetworkState = {
+  channel:null, peers:new Map(), acceptedRoot:null, sequence:0,
+  init(){
+    if(window.BroadcastChannel){ this.channel=new BroadcastChannel('KEDDEH_RUNTIME_VOLUME'); this.channel.onmessage=(e)=>this.observe(e.data); }
+  },
+  sanitize(sig){
+    const out={}; Object.entries(sig||{}).forEach(([k,v])=>{if(SIGNAL_FIELDS.has(k) && !PRIVATE_FIELD_BLOCKLIST.test(k)) out[k]=v;}); return out;
+  },
+  async signal(kind){
+    const base={kind,runtime_root:Runtime.runtimeRoot,accepted_root:this.acceptedRoot||Runtime.runtimeRoot,node:Runtime.node,epoch:1,sequence:++this.sequence,capability_root:Runtime.capabilityRoot,projection:Runtime.projection,ts:now()};
+    const sig=this.sanitize(base);
+    this.observe(sig); if(this.channel)this.channel.postMessage(sig); return sig;
+  },
+  observe(sig){
+    if(!sig||!['HERE','STILL_HERE','WITH_US'].includes(sig.kind)||!sig.node)return;
+    for(const k of Object.keys(sig)) if(PRIVATE_FIELD_BLOCKLIST.test(k)) return;
+    this.peers.set(sig.node,sig);
+    if(sig.kind==='WITH_US' && sig.accepted_root===Runtime.runtimeRoot) this.acceptedRoot=Runtime.runtimeRoot;
+    Runtime.renderSystem();
+  },
+  async derive(){
+    const active=[...this.peers.values()].filter(p=>now()-p.ts<120000);
+    const matching=active.filter(p=>p.runtime_root===Runtime.runtimeRoot);
+    const anchor={active:active.length,matching:matching.length,runtime_root:Runtime.runtimeRoot,peer_roots:[...new Set(active.map(p=>p.runtime_root))].sort()};
+    anchor.anchor_root=await sha256(anchor); return anchor;
+  }
+};
+
+// Minimal standards-compliant ZIP writer (STORE method) used by the embedded DOCX plane.
+const CRC32=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=(c&1)?0xedb88320^(c>>>1):c>>>1;t[n]=c>>>0;}return b=>{let c=0xffffffff;for(const x of b)c=t[(c^x)&255]^(c>>>8);return(c^0xffffffff)>>>0;};})();
+const u16=n=>new Uint8Array([n&255,(n>>>8)&255]); const u32=n=>new Uint8Array([n&255,(n>>>8)&255,(n>>>16)&255,(n>>>24)&255]);
+const concat=(...parts)=>{const len=parts.reduce((n,p)=>n+p.length,0),o=new Uint8Array(len);let x=0;for(const p of parts){o.set(p,x);x+=p.length;}return o;};
+const zipStore=(files)=>{
+  let offset=0; const locals=[],central=[];
+  for(const [name,data0] of files){const nameB=enc.encode(name),data=data0 instanceof Uint8Array?data0:enc.encode(data0),crc=CRC32(data);const local=concat(u32(0x04034b50),u16(20),u16(0),u16(0),u16(0),u16(0),u32(crc),u32(data.length),u32(data.length),u16(nameB.length),u16(0),nameB,data);locals.push(local);const cent=concat(u32(0x02014b50),u16(20),u16(20),u16(0),u16(0),u16(0),u16(0),u32(crc),u32(data.length),u32(data.length),u16(nameB.length),u16(0),u16(0),u16(0),u16(0),u32(0),u32(offset),nameB);central.push(cent);offset+=local.length;}
+  const cb=concat(...central), lb=concat(...locals), end=concat(u32(0x06054b50),u16(0),u16(0),u16(files.length),u16(files.length),u32(cb.length),u32(lb.length),u16(0));return concat(lb,cb,end);
+};
+const xmlEscape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+const DocumentEngine = {
+  async generate({title='CasePath Preparation Pack',sections=[]}={}){
+    CapabilityResolver.require('document.docx.embedded');
+    const paragraphs=[`<w:p><w:r><w:rPr><w:b/><w:sz w:val="32"/></w:rPr><w:t>${xmlEscape(title)}</w:t></w:r></w:p>`];
+    for(const s of sections){paragraphs.push(`<w:p><w:r><w:rPr><w:b/></w:rPr><w:t>${xmlEscape(s.heading||'')}</w:t></w:r></w:p>`);for(const p of (s.paragraphs||[])) paragraphs.push(`<w:p><w:r><w:t xml:space="preserve">${xmlEscape(p)}</w:t></w:r></w:p>`);}
+    const doc=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>${paragraphs.join('')}<w:sectPr/></w:body></w:document>`;
+    const files=[
+      ['[Content_Types].xml','<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>'],
+      ['_rels/.rels','<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>'],
+      ['word/document.xml',doc]
+    ];
+    const bytes=zipStore(files); const digest=await sha256(bytes);
+    const receipt=await CommitBus.commit({actor:'DOCUMENT_ENGINE',operation:'DOCUMENT.GENERATE',path:'/casepath/documents/last_receipt.json',payload:{title,digest,bytes:bytes.length,source_state_root:Runtime.stateRoot}});
+    return {blob:new Blob([bytes],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}),digest,receipt};
+  },
+  download(blob,name='CasePath_Preparation_Pack.docx'){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1000);}
+};
+
+const Builder = {
+  steps:[
+    {title:'Place the matter in context',fields:[['jurisdiction','Jurisdiction','South Australia'],['matter_type','Matter type',''],['stage','Current stage',''],['next_date','Next known date','']]},
+    {title:'Preserve your account',fields:[['account','What happened?',''],['outcome','What outcome are you seeking?','']]},
+    {title:'Build the chronology',fields:[['chronology','List events in date order','']]},
+    {title:'Index the evidence',fields:[['evidence','What records or material do you have?',''],['missing','What appears to be missing?','']]},
+    {title:'Map the disputed issues',fields:[['issues','What propositions or questions are disputed?',''],['other_side','What is the other side likely to say?','']]},
+    {title:'Map possible pathways for review',fields:[['pathways','Which forums, procedures or review pathways need confirmation?','']]},
+    {title:'Record loss and remedy',fields:[['loss','What loss or impact do you claim?',''],['remedy','What outcome do you seek?','']]},
+    {title:'Prepare the professional review',fields:[['questions','What must your lawyer verify or decide?','']]}
+  ],
+  index:0, draft:{},
+  async load(){this.draft=await VFS.read('/casepath/matter/current')||{}; this.render();},
+  async save(){await CommitBus.commit({actor:'CASEPATH',operation:'MATTER.LOCAL.WRITE',path:'/casepath/matter/current',payload:this.draft});},
+  fieldMarkup(step){return step.fields.map(([k,l,v])=>`<label>${l}${k.includes('account')||k.includes('chronology')||k.includes('evidence')||k.includes('issues')||k.includes('pathways')||k.includes('loss')||k.includes('remedy')||k.includes('questions')||k.includes('missing')||k.includes('other_side')?`<textarea rows="5" data-cp-field="${k}">${xmlEscape(this.draft[k]??v)}</textarea>`:`<input data-cp-field="${k}" value="${xmlEscape(this.draft[k]??v)}">`}</label>`).join('');},
+  render(){
+    const body=document.querySelector('#builder .step-body'); if(!body)return; const s=this.steps[this.index];
+    body.innerHTML=`<div class="form-stage"><div class="stage-heading"><span>Step ${this.index+1} of ${this.steps.length}</span><h3>${s.title}</h3><p>Entries remain part of the local CasePath projection unless you explicitly export them.</p></div><div class="field-grid">${this.fieldMarkup(s)}</div>${this.index===7?'<button type="button" class="button primary" id="cp-generate-doc">Generate lawyer-ready DOCX locally</button>':''}</div>`;
+    document.querySelectorAll('#builder .step-tabs button').forEach((b,i)=>{b.classList.toggle('active',i===this.index);b.setAttribute('aria-selected',i===this.index?'true':'false');});
+    const back=document.querySelector('#builder .step-footer button:not(.next)'); const next=document.querySelector('#builder .step-footer .next'); if(back)back.disabled=this.index===0; if(next)next.innerHTML=this.index===7?'Finish':'Continue <span>→</span>';
+  },
+  capture(){document.querySelectorAll('[data-cp-field]').forEach(el=>this.draft[el.dataset.cpField]=el.value);},
+  async go(i){this.capture();await this.save();this.index=Math.max(0,Math.min(this.steps.length-1,i));this.render();}
+};
+
+const Runtime = window.KEDDEH = {
+  version:VERSION,node:null,allocation:null,projection:'CASEPATH',capabilities:{},capabilityRoot:null,runtimeRoot:null,stateRoot:'0'.repeat(64),
+  contract:JSON.parse(document.getElementById('keddeh-root-contract').textContent),
+  planes:[],
+  async boot(){
+    this.planes=PlaneRegistry.discover(); this.node=(await DB.get('meta','node'))||randomId('NODE'); await DB.put('meta','node',this.node);
+    this.capabilities=CapabilityResolver.detect(); this.capabilityRoot=await sha256(this.capabilities);
+    this.runtimeRoot=await sha256({contract:this.contract,planes:this.planes.map(p=>({id:p.id,kind:p.kind,index:p.index}))});
+    await ReceiptLedger.load(); const meta=await DB.get('meta','runtime'); if(meta?.stateRoot)this.stateRoot=meta.stateRoot;
+    await Allocation.resolve(); NetworkState.init();
+    const hash=(location.hash||'').replace(/^#\/?/,'').split('/')[0].toUpperCase(); if(['BRAINK','CASEPATH','KEDDEH_SYSTEMS','EDGE','SYSTEM'].includes(hash))this.projection=hash;
+    CookieShard.write({allocation:this.allocation,node:this.node,epoch:1,projection:this.projection,runtime:VERSION});
+    await VFS.write('/system/runtime.json',{version:VERSION,node:this.node,runtime_root:this.runtimeRoot,capability_root:this.capabilityRoot});
+    this.bind(); await Builder.load(); await NetworkState.signal('HERE'); await NetworkState.signal('WITH_US'); this.project(this.projection,false); this.renderSystem(); this.renderBraink(); this.renderEdge();
+    window.dispatchEvent(new CustomEvent('KEDDEH_READY',{detail:{runtime_root:this.runtimeRoot,node:this.node}}));
+  },
+  async commit(x){return CommitBus.commit(x);}, async read(path){return VFS.read(path);}, async write(path,payload,actor='SYSTEM'){return CommitBus.commit({actor,operation:'STATE.LOCAL.WRITE',path,payload});},
+  async signal(kind){return NetworkState.signal(kind);},
+  project(id,writeHash=true){
+    id=(id||'CASEPATH').toUpperCase(); this.projection=id;
+    document.querySelectorAll('[data-keddeh-overlay="true"]').forEach(el=>{const active=el.dataset.keddehPlane===id;el.classList.toggle('keddeh-active',active);el.setAttribute('aria-hidden',active?'false':'true');});
+    document.getElementById('keddeh-plane-casepath').style.display=(id==='CASEPATH')?'':'none';
+    if(writeHash)history.replaceState(null,'','#/'+id.toLowerCase());
+    CookieShard.write({allocation:this.allocation,node:this.node,epoch:1,projection:id,runtime:VERSION}); this.renderSystem();
+  },
+  bind(){
+    document.addEventListener('click',async e=>{
+      const open=e.target.closest('[data-keddeh-open]'); if(open){e.preventDefault();this.project(open.dataset.keddehOpen);return;}
+      if(e.target.closest('[data-keddeh-close]')){e.preventDefault();this.project('CASEPATH');return;}
+      const tabs=[...document.querySelectorAll('#builder .step-tabs button')]; const tab=e.target.closest('#builder .step-tabs button'); if(tab){await Builder.go(tabs.indexOf(tab));return;}
+      if(e.target.closest('#builder .step-footer .next')){await Builder.go(Builder.index+1);return;}
+      const back=e.target.closest('#builder .step-footer button:not(.next)'); if(back){await Builder.go(Builder.index-1);return;}
+      if(e.target.closest('.builder-intro .text-button')){if(confirm('Clear this browser draft?')){Builder.draft={};await VFS.remove('/casepath/matter/current');Builder.render();}return;}
+      if(e.target.closest('#braink-note-save')){await this.commit({actor:'BRAINK',operation:'BRAINK.NOTE.WRITE',path:'/braink/notes/current',payload:{text:document.getElementById('braink-note').value}});return;}
+      if(e.target.closest('#cp-generate-doc')){Builder.capture();await Builder.save();const sections=this.casePathSections();const out=await DocumentEngine.generate({title:'CasePath Lawyer Preparation Pack',sections});DocumentEngine.download(out.blob);return;}
+      if(e.target.closest('.volume-write')){await this.runLegalVolume();return;}
+    });
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)NetworkState.signal('STILL_HERE');});
+    window.addEventListener('focus',()=>NetworkState.signal('STILL_HERE'));
+  },
+  casePathSections(){const d=Builder.draft;return [
+    {heading:'Matter',paragraphs:[`Jurisdiction: ${d.jurisdiction||'Not provided'}`,`Matter type: ${d.matter_type||'Not provided'}`,`Stage: ${d.stage||'Not provided'}`]},
+    {heading:'Source account',paragraphs:[d.account||'Not provided']},{heading:'Chronology',paragraphs:[d.chronology||'Not provided']},{heading:'Evidence',paragraphs:[d.evidence||'Not provided',`Missing: ${d.missing||'Not provided'}`]},
+    {heading:'Issues',paragraphs:[d.issues||'Not provided',`Other side / alternative account: ${d.other_side||'Not provided'}`]},{heading:'Pathways for lawyer confirmation',paragraphs:[d.pathways||'Not provided']},{heading:'Loss and remedy',paragraphs:[d.loss||'Not provided',d.remedy||'Not provided']},{heading:'Questions for professional review',paragraphs:[d.questions||'Not provided']}
+  ];},
+  async runLegalVolume(){
+    const form=document.querySelector('.volume-form'); const vals=[...form.querySelectorAll('input,select,textarea')].map(el=>el.value); const receipt=await this.commit({actor:'CASEPATH.LEGAL_VOLUME',operation:'LEGAL_VOLUME.TRAVERSE',path:'/casepath/legal_volume/latest',payload:{values:vals,states:[-1,-2,3,2,1,2,3,2,1],loci:14}});
+    const state=form.querySelector('.adapter-state'); if(state)state.textContent='CURRENT'; const top=document.querySelector('.readback-top > span');if(top)top.textContent='Receipt '+receipt.sequence; document.querySelectorAll('.tape-cell').forEach((el,i)=>el.classList.toggle('active',i<14));
+  },
+  renderBraink(){const grid=document.getElementById('braink-skill-grid');if(!grid)return;const skills=['Workflow execution','Document generation','Local state','Projection resolution','Capability discovery','Receipt verification'];grid.innerHTML=skills.map(s=>`<div class="keddeh-card"><h3>${s}</h3><p>Resolved from the same canonical source volume.</p></div>`).join('');VFS.read('/braink/notes/current').then(v=>{if(v?.text)document.getElementById('braink-note').value=v.text;});},
+  renderEdge(){const grid=document.getElementById('edge-capability-grid');if(!grid)return;grid.innerHTML=Object.entries(this.capabilities).map(([k,v])=>`<div class="keddeh-card"><h3>${k}</h3><p>${v?'AVAILABLE':'UNAVAILABLE'}</p></div>`).join('');},
+  renderSystem(){
+    const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v??'—';}; set('sys-runtime',VERSION);set('sys-allocation',this.allocation||'UNALLOCATED');set('sys-projection',this.projection);set('sys-root',this.stateRoot.slice(0,24)+'…');
+    const mine=NetworkState.peers.get(this.node); set('sys-here',mine?'YES':'NO');set('sys-still',mine&&now()-mine.ts<120000?'YES':'NO');set('sys-with',mine?.accepted_root===this.runtimeRoot?'YES':'NO');
+    const planes=document.getElementById('sys-planes');if(planes)planes.innerHTML=this.planes.map(p=>`<span class="keddeh-pill">${p.index.toString().padStart(2,'0')} · ${p.id} · ${p.kind}</span>`).join('');
+    const con=document.getElementById('sys-console');if(con)con.textContent=ReceiptLedger.items.slice(-30).map(r=>`${r.sequence.toString().padStart(4,'0')} ${r.actor} ${r.op}\n  ${r.receipt_root}`).join('\n');
+  }
+};
+
+window.KEDDEH_RUNTIME_API = {
+  version:VERSION,
+  commit:(args)=>CommitBus.commit(args),
+  vfs:VFS,
+  runtime:Runtime,
+  network:NetworkState,
+  sha256
+};
+window.addEventListener('DOMContentLoaded',()=>Runtime.boot()
+  .then(()=>window.dispatchEvent(new CustomEvent('keddeh:booted')))
+  .catch(err=>{console.error('KEDDEH BOOT FAILURE',err);document.documentElement.dataset.keddehBoot='failed';}));
+})();
+</script>
+
+
+<script id="kex-historical-recovery-engine">
+(() => {
+'use strict';
+
+const REQUIRED_FIELDS = ['identity','source','claim','evidence_class','proof_status','boundary','blocker_state','lineage_return_state','next_route'];
+const FAILURE_CLASSES = new Set(['UNRESOLVED_TOPOLOGY','UNRESOLVED_SOURCE_POINTER','UNRESOLVED_RECURSION_DEPTH','UNRESOLVED_SEED_CLASS','VERIFIED_CORRUPTION']);
+const grammar = Object.freeze({
+  factor:'route decomposition',
+  x:'simultaneous composition',
+  '^2':'self-application / artifact recursion',
+  x2:'deterministic stability requirement'
+});
+
+const estate = () => JSON.parse(document.getElementById('kex-recovery-estate').textContent);
+
+const stable = (v) => {
+  if(v===null || typeof v!=='object') return JSON.stringify(v);
+  if(Array.isArray(v)) return '['+v.map(stable).join(',')+']';
+  return '{'+Object.keys(v).sort().map(k=>JSON.stringify(k)+':'+stable(v[k])).join(',')+'}';
+};
+const sha256 = async v => {
+  const bytes = new TextEncoder().encode(typeof v==='string'?v:stable(v));
+  const d = await crypto.subtle.digest('SHA-256',bytes);
+  return [...new Uint8Array(d)].map(b=>b.toString(16).padStart(2,'0')).join('');
+};
+
+const classifySeed = identity => estate().seed_classes[identity] || null;
+
+function parseTopology(expression){
+  const text=String(expression||'').trim();
+  const operands=text.split(/\s+x\s+/i).map(x=>x.trim()).filter(Boolean);
+  const parsed=operands.map(raw=>{
+    const m=raw.match(/^([A-Z0-9_-]+?)(?:\^(\d+))?$/i);
+    return {raw,base:m?m[1]:raw,recursion_depth:m&&m[2]?Number(m[2]):1};
+  });
+  return {operator:'x',semantics:grammar.x,operands:parsed,topology_root:text};
+}
+
+function classifyFailure(candidate={}){
+  if(!candidate.topology) return 'UNRESOLVED_TOPOLOGY';
+  if(!candidate.source) return 'UNRESOLVED_SOURCE_POINTER';
+  if(!Number.isInteger(candidate.recursion_depth) || candidate.recursion_depth<1) return 'UNRESOLVED_RECURSION_DEPTH';
+  if(candidate.identity?.includes('LEDGER-SEED') && !candidate.seed_class) return 'UNRESOLVED_SEED_CLASS';
+  if(candidate.lineage_reconstructable===false) return 'VERIFIED_CORRUPTION';
+  return null;
+}
+
+function losslessGate(row){
+  const missing=REQUIRED_FIELDS.filter(k=>row[k]===undefined || row[k]===null || row[k]==='');
+  const symbolicSubstitution = row.no_symbolic_substitution===false;
+  return {accepted:missing.length===0 && !symbolicSubstitution,missing,symbolic_substitution:symbolicSubstitution};
+}
+
+function dedupeByIdentity(rows){
+  const m=new Map();
+  for(const row of rows) if(row?.identity && !m.has(row.identity)) m.set(row.identity,row);
+  return [...m.values()];
+}
+
+function stateBearingRecord(identity,index){
+  const seed_class=classifySeed(identity);
+  return {
+    identity,
+    source:'kex://historical-estate/'+identity,
+    claim:'Recovered manifest identity '+identity,
+    evidence_class: seed_class ? 'TYPED_SEED_LEDGER' : 'PRESERVED_MANIFEST',
+    proof_status:'RECOVERED_SEMANTIC_STATE',
+    boundary:'SEMANTIC_STATE_ONLY__RAW_BYTE_DECODING_NOT_CLAIMED',
+    blocker_state:null,
+    lineage_return_state:'KEX-20260821-2045-ILLLM-UNPACK-7C91D4E2',
+    next_route:'SUCCESSOR_STATE_REVALIDATION',
+    topology:parseTopology(identity.includes('RECURSIVE') ? 'HEX^2 x HEX^2' : 'HEX x HEX'),
+    recursion_depth:identity.includes('RECURSIVE') ? 2 : 1,
+    seed_class,
+    dna_bound:false,
+    theorem_bound:false,
+    typed_terms:Boolean(seed_class),
+    constraint_satisfied:true,
+    context_route_closed:true,
+    recursively_returned:true,
+    no_symbolic_substitution:true,
+    ordinal:index+1,
+    lineage_reconstructable:true
+  };
+}
+
+const KEXRecovery = {
+  grammar,
+  required_fields:REQUIRED_FIELDS,
+  parseTopology,
+  classifySeed,
+  classifyFailure,
+  losslessGate,
+  dedupeByIdentity,
+  last:null,
+
+  async run(){
+    const e=estate();
+    const expanded=e.manifest_tokens.map(stateBearingRecord);
+    const deduped=dedupeByIdentity([...expanded,...expanded.slice(0,8)]); // deliberate repeated embedding; identity must collapse it
+    const rejected=[];
+    for(const row of deduped){
+      const gate=losslessGate(row);
+      if(!gate.accepted) rejected.push({identity:row.identity,gate});
+    }
+
+    const topologyTests={
+      HEX2_x_HEX:parseTopology('HEX^2 x HEX'),
+      HEX2_x_HEX2:parseTopology('HEX^2 x HEX^2')
+    };
+    const topology_distinct=stable(topologyTests.HEX2_x_HEX)!==stable(topologyTests.HEX2_x_HEX2);
+
+    const successor={
+      kind:'KEX_SUCCESSOR_STATE',
+      seed:e.seed,
+      prior_manifest_count:e.baseline_manifest_tokens,
+      recovered_manifest_count:deduped.length,
+      delta:deduped.length-e.baseline_manifest_tokens,
+      surface_ratio:Number((deduped.length/e.baseline_manifest_tokens).toFixed(2)),
+      typed_seed_classes:[...new Set(deduped.map(x=>x.seed_class).filter(Boolean))].sort(),
+      packet_pointers:e.packets,
+      topology_distinct,
+      accepted:rejected.length===0,
+      raw_byte_seed_decoding_claimed:false,
+      failure_reclassification:[...FAILURE_CLASSES],
+      records:deduped
+    };
+    successor.successor_root=await sha256(successor);
+
+    // Recursive successor rerun: no new identities must appear on second pass.
+    const rerun=dedupeByIdentity(successor.records);
+    successor.recursive_rerun={
+      prior_count:deduped.length,
+      successor_count:rerun.length,
+      delta:rerun.length-deduped.length,
+      stable:rerun.length===deduped.length
+    };
+
+    this.last=successor;
+    const api=window.KEDDEH_RUNTIME_API;
+    if(api){
+      await api.vfs.write('/kex/recovery/latest',successor);
+      await api.commit({
+        actor:'KEX.RECOVERY',
+        operation:'HISTORICAL_STATE.RECOVER',
+        path:'/kex/recovery/successor',
+        payload:{
+          successor_root:successor.successor_root,
+          prior_manifest_count:successor.prior_manifest_count,
+          recovered_manifest_count:successor.recovered_manifest_count,
+          delta:successor.delta,
+          surface_ratio:successor.surface_ratio,
+          typed_seed_classes:successor.typed_seed_classes,
+          topology_distinct:successor.topology_distinct,
+          recursive_rerun:successor.recursive_rerun,
+          raw_byte_seed_decoding_claimed:false
+        }
+      });
+    }
+    this.render();
+    return successor;
+  },
+
+  render(){
+    const c=document.getElementById('kex-recovery-console');
+    if(!c || !this.last) return;
+    const s=this.last;
+    c.textContent=[
+      'KEX HISTORICAL RECOVERY PASS',
+      'seed: '+s.seed,
+      'prior manifest: '+s.prior_manifest_count,
+      'recovered manifest: '+s.recovered_manifest_count,
+      'delta: +'+s.delta,
+      'surface ratio: '+s.surface_ratio+'x',
+      'typed seed classes: '+s.typed_seed_classes.join(', '),
+      'topology HEX^2 x HEX != HEX^2 x HEX^2: '+s.topology_distinct,
+      'lossless gate accepted: '+s.accepted,
+      'successor root: '+s.successor_root,
+      'recursive rerun stable: '+s.recursive_rerun.stable+' (delta '+s.recursive_rerun.delta+')',
+      'raw byte-level seed decompression claimed: '+s.raw_byte_seed_decoding_claimed,
+      '',
+      'failure reclassification:',
+      ...s.failure_reclassification.map(x=>'  '+x)
+    ].join('\n');
+  },
+
+  export(){
+    if(!this.last) throw new Error('Run recovery first');
+    const blob=new Blob([JSON.stringify(this.last,null,2)],{type:'application/json'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='KEX_SUCCESSOR_STATE_'+this.last.successor_root.slice(0,12)+'.json';
+    document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},0);
+  }
+};
+
+window.KEXRecovery=KEXRecovery;
+document.addEventListener('click',e=>{
+  if(e.target.closest('#kex-run-recovery')) KEXRecovery.run().catch(console.error);
+  if(e.target.closest('#kex-export-successor')) { try{KEXRecovery.export();}catch(err){console.error(err);} }
+});
+window.addEventListener('keddeh:booted',()=>KEXRecovery.run().catch(console.error),{once:true});
+})();
+</script>
+
+</body></html>

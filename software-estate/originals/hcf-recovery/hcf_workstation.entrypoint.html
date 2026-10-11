@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONE (OS 1) Workstation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@0.7.0",
+          "@tailwindcss/browser": "https://esm.sh/@tailwindcss/browser@^4.1.3"
+        }
+      }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/v86@latest/build/libv86.js" async defer></script>
+</head>
+  <body>
+    <!-- Keddeh Independent Workstation - Instant Compiled State Replay Initialization -->
+
+    <div id="command-palette" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); z-index: 1000000; justify-content: center; padding-top: 100px; align-items: flex-start; backdrop-filter: blur(4px);">
+      <div style="background: #1e293b; width: 600px; border-radius: 8px; border: 1px solid #334155; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden;">
+        <div style="padding: 16px; border-bottom: 1px solid #334155; display: flex; align-items: center; gap: 12px;">
+          <svg style="width: 20px; height: 20px; color: #64748b;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input id="command-palette-input" type="text" placeholder="Type a command or search..." style="background: transparent; border: none; color: white; flex: 1; outline: none; font-size: 16px;">
+        </div>
+        <div id="command-palette-results" style="max-height: 400px; overflow-y: auto; padding: 8px;">
+          <!-- Results -->
+        </div>
+        <div style="padding: 8px 16px; background: #0f172a; border-top: 1px solid #334155; display: flex; justify-content: space-between; font-size: 11px; color: #64748b;">
+          <span>↑↓ to navigate · <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px;">↵</kbd> to select · <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px;">esc</kbd> to dismiss</span>
+          <span>Enterprise Command Palette</span>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="substrate-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.4;"></canvas>
+    <div class="desktop" id="workspace" data-hci-role="workspace-container">
+      <!-- Independent Kernel HUD: Persistent Context Overlay -->
+      <div id="kernel-hud" style="position: absolute; top: 0; left: 0; width: 100%; height: 32px; background: linear-gradient(180deg, rgba(2, 6, 23, 0.9) 0%, transparent 100%); display: flex; align-items: center; padding: 0 20px; gap: 24px; font-family: monospace; font-size: 10px; color: #64748b; z-index: 50; border-bottom: 1px solid rgba(56, 189, 248, 0.05); pointer-events: none;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="color: #38bdf8; font-weight: bold;">[ PLANE: INDEPENDENT_SUBSTRATE ]</span>
+          <span id="hud-uptime">UPTIME: 00:00:00</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span>COMPUTE_LOAD: <span id="hud-load" style="color: #22c55e;">1.4%</span></span>
+          <span>ENTROPY: <span id="hud-entropy" style="color: #a855f7;">0.82 bits</span></span>
+          <span>LATENCY: <span id="hud-latency" style="color: #facc15;">0.002ms</span></span>
+        </div>
+        <div style="flex-grow: 1; text-align: right; color: #334155;">ONE_OS_1_CORE_LOCKED</div>
+      </div>
+
+      <!-- Desktop Grid and Layout -->
+      <div id="desktop-grid">
+        
+        <!-- HEADLESS AGENT & BACKEND INJECTOR SIDEBAR -->
+        <div class="agent-headless-sidebar" style="width: 320px; background: rgba(0, 0, 0, 0.95); border-right: 1px solid rgba(168, 85, 247, 0.25); display: flex; flex-direction: column; padding: 24px; gap: 24px; overflow-y: auto; box-shadow: 4px 0 24px rgba(0,0,0,0.5);">
+          <div style="border-bottom: 1px solid rgba(168, 85, 247, 0.15); padding-bottom: 14px;">
+            <div style="font-family: monospace; font-size: 13px; font-weight: bold; color: #c084fc; margin-bottom: 4px; letter-spacing: 0.05em;">HEADLESS AGENT</div>
+            <div style="font-size: 11px; color: #94a3b8; line-height: 1.4;">Backend Applet Logic Workflow & Injection</div>
+          </div>
+          
+          <!-- ATTRIBUTION & CONTEXT -->
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; padding: 16px; font-family: monospace; font-size: 11px; color: #cbd5e1; line-height: 1.5;">
+            <div style="color: #e2e8f0; font-weight: bold; margin-bottom: 8px; border-bottom: 1px solid rgba(168, 85, 247, 0.2); padding-bottom: 4px; letter-spacing: 0.05em;">ARCHITECTURE CONTEXT</div>
+            
+            <div style="margin-bottom: 8px;">
+              <span style="color: #c084fc; font-weight: bold;">WHAT IT DOES:</span><br>
+              <span style="color: #94a3b8;">Provides a headless translation layer bridging the ONE OS user interface with the underlying deterministic Python/Rust kernel substrates.</span>
+            </div>
+
+            <div style="margin-bottom: 8px;">
+              <span style="color: #c084fc; font-weight: bold;">MEANT TO DO:</span><br>
+              <span style="color: #94a3b8;">Isolate and automate complex background orchestration—such as network routing, cryptography, and logic scaling—removing human error while retaining execution transparency.</span>
+            </div>
+
+            <div style="margin-bottom: 8px;">
+              <span style="color: #c084fc; font-weight: bold;">WHAT IT CAN DO:</span><br>
+              <span style="color: #94a3b8;">Execute AI agent logic sequences, dispatch tasks to isolated background workers, and dynamically inject parameters into the live substrate without halting the OS.</span>
+            </div>
+
+            <div>
+              <span style="color: #c084fc; font-weight: bold;">HOW:</span><br>
+              <span style="color: #94a3b8;">By parsing parameter inputs below and compiling them into <code style="background: #1e293b; padding: 2px 4px; border-radius: 3px;">execute_agent_task()</code> payloads. These are securely forwarded to the backend which proxies commands to the native exokernel processes, streaming results back via the Event Stream.</span>
+            </div>
+          </div>
+          
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 12px; font-family: monospace; font-size: 11px;">
+            <div style="color: #e2e8f0; font-weight: bold; margin-bottom: 4px;">SYSTEM PARAMETERS</div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="color: #94a3b8;">Workflow Context:</label>
+                <input type="text" id="agent-workflow-context" value="System Initialization" style="background: #020617; border: 1px solid #334155; color: #c084fc; padding: 6px; border-radius: 4px; font-family: monospace; font-size: 10px;">
+                
+                <label style="color: #94a3b8; margin-top: 4px;">Inject Logic Sequence:</label>
+                <textarea id="agent-logic-sequence" style="background: #020617; border: 1px solid #334155; color: #4ade80; padding: 6px; border-radius: 4px; font-family: monospace; font-size: 10px; height: 60px; resize: vertical;">execute_agent_task(target="kernel", override=true)</textarea>
+                
+                <button id="agent-inject-btn" style="background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.4); color: #c084fc; padding: 8px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 4px;">INJECT PARAMETERS</button>
+            </div>
+          </div>
+          
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 10px; padding: 16px;">
+            <div style="margin-bottom: 10px; font-family: monospace; font-size: 11px; color: #c084fc; font-weight: bold; letter-spacing: 0.05em;">AGENT EVENT STREAM</div>
+            <div id="agent-event-stream" style="background: #020617; border: 1px solid #1e293b; border-radius: 6px; padding: 12px; font-family: monospace; font-size: 10px; color: #c084fc; height: 170px; overflow-y: auto; line-height: 1.6;">
+              [AGENT] Substrate bindings active.<br>
+              [AGENT] Waiting for logic injection...<br>
+              <span style="color: #94a3b8;">-- Listening on internal loopback --</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Telemetry & Kernel Diagnostics Sidebar (Left) -->
+        <div class="control-centre-sidebar" style="width: 320px; background: rgba(2, 6, 23, 0.95); border-right: 1px solid rgba(56, 189, 248, 0.25); display: flex; flex-direction: column; padding: 24px; gap: 24px; overflow-y: auto; box-shadow: 4px 0 24px rgba(0,0,0,0.5);">
+          <div style="border-bottom: 1px solid rgba(56, 189, 248, 0.15); padding-bottom: 14px;">
+            <div style="font-family: monospace; font-size: 13px; font-weight: bold; color: #38bdf8; margin-bottom: 4px; letter-spacing: 0.05em;">SYSTEM TELEMETRY</div>
+            <div style="font-size: 11px; color: #94a3b8; line-height: 1.4;">Kernel Substrate & Performance Gauges</div>
+          </div>
+          <!-- Added Context & Attribution -->
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 16px; font-family: sans-serif; font-size: 11px; line-height: 1.5; color: #cbd5e1;">
+            <strong style="color: #38bdf8;">What is this?</strong> This telemetry panel tracks the real-time execution context of the underlying Independent Substrate.
+            <div style="margin-top: 8px;">
+                <strong>How it works:</strong> It monitors the simulated algebraic hardware layer, measuring logic cycles, deterministic entropy (for secure random operations), and simulated network latency inside the V86 matrix. 
+            </div>
+            <div style="margin-top: 8px; font-style: italic; color: #94a3b8;">
+                It ensures all operations remain isolated, reproducible, and strictly within the user's secure memory boundary.
+            </div>
+          </div>
+
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 12px; font-family: monospace; font-size: 11px;">
+            <div style="display: flex; justify-content: space-between; color: #94a3b8; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;"><span>UPTIME:</span><span id="sidebar-uptime" style="color: #38bdf8; font-weight: bold;">00:00:00</span></div>
+            <div style="display: flex; justify-content: space-between; color: #94a3b8; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;"><span>COMPUTE LOAD:</span><span id="sidebar-load" style="color: #22c55e; font-weight: bold;">1.4%</span></div>
+            <div style="display: flex; justify-content: space-between; color: #94a3b8; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;"><span>ENTROPY:</span><span id="sidebar-entropy" style="color: #a855f7; font-weight: bold;">0.82 bits</span></div>
+            <div style="display: flex; justify-content: space-between; color: #94a3b8; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;"><span>LATENCY:</span><span id="sidebar-latency" style="color: #facc15; font-weight: bold;">0.002ms</span></div>
+            <div style="display: flex; justify-content: space-between; color: #94a3b8;"><span>CORE LOCK:</span><span style="color: #38bdf8; font-weight: bold;">LOCKED_1_CORE</span></div>
+          </div>
+
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 16px;">
+            <div class="control-section-title" style="margin-bottom: 10px; font-family: monospace; font-size: 11px; color: #38bdf8; font-weight: bold; letter-spacing: 0.05em;">KERNEL DIAGNOSTIC LOGS</div>
+            <div style="background: #020617; border: 1px solid #1e293b; border-radius: 6px; padding: 12px; font-family: monospace; font-size: 10px; color: #38bdf8; height: 170px; overflow-y: auto; line-height: 1.6;">
+              [00.001] KERNEL: Initializing Independent Substrate...<br>
+              [00.014] MESH: BGP Route table synchronized.<br>
+              [00.042] SEC: ISO/IEC 27001 audit matrix passed.<br>
+              [00.089] VFS: Neural-VFS mounted at /aware_functions.<br>
+              [00.125] GPU: Framebuffer 96x54 RGBA active.<br>
+              [00.190] READY: Awaiting user workstation input.
+            </div>
+          </div>
+
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 16px;">
+            <div class="control-section-title" style="margin-bottom: 12px; font-family: monospace; font-size: 11px; color: #38bdf8; font-weight: bold; letter-spacing: 0.05em;">SUBSTRATE HEALTH</div>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-family: monospace; font-size: 11px;">
+              <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); padding: 10px; border-radius: 6px; color: #4ade80; display: flex; justify-content: space-between; align-items: center;">
+                <span>RAM Integrity</span><span style="font-weight: bold;">100% SECURE</span>
+              </div>
+              <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 10px; border-radius: 6px; color: #38bdf8; display: flex; justify-content: space-between; align-items: center;">
+                <span>BGP Mesh Tunnels</span><span style="font-weight: bold;">ACTIVE (10G)</span>
+              </div>
+              <div style="background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); padding: 10px; border-radius: 6px; color: #c084fc; display: flex; justify-content: space-between; align-items: center;">
+                <span>BRAINK AI Sync</span><span style="font-weight: bold;">OPTIMAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop Main Canvas with All Applications & Lanes (Right) -->
+        <div class="desktop-main-canvas" style="flex: 1; display: flex; flex-direction: column; padding: 28px; gap: 28px; overflow-y: auto; background: rgba(3, 7, 18, 0.7);">
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.25); padding: 20px 28px; border-radius: 14px; backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+            <div>
+              <h2 style="margin: 0; font-size: 18px; color: #f8fafc; font-weight: 600; letter-spacing: -0.01em;">Independent Workstation & Application Matrix</h2>
+              <p style="margin: 6px 0 0 0; font-size: 13px; color: #94a3b8; line-height: 1.4;">All application launchers, user spaces, social channels, secure mail, and video streams hosted on the active canvas.</p>
+            </div>
+          </div>
+
+          <!-- All Application Launchers Grid -->
+          <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 14px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <h3 style="margin: 0 0 16px 0; font-size: 14px; color: #38bdf8; font-family: monospace; letter-spacing: 0.05em; font-weight: bold;">APPLICATION LAUNCHERS & INDEPENDENT RUNTIMES</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 20px;">
+              <div class="icon" data-app="loadBalancerApp" data-hci-role="APP_LAUNCHER" data-hci-variant="NETWORK_CLUSTER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><path d="M5 8v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"/><path d="M12 13v3"/></svg>
+                <span>Load Balancer</span>
+              </div>
+              <div class="icon" data-app="desktopSettings" data-hci-role="APP_LAUNCHER" data-hci-variant="GOVERNANCE_CORE">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                <span>Governance</span>
+              </div>
+              <div class="icon" data-app="complianceAudit" data-hci-role="APP_LAUNCHER" data-hci-variant="SECURITY_TRUST">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Auditor</span>
+              </div>
+              <div class="icon" data-app="systemBenchmark" data-hci-role="APP_LAUNCHER" data-hci-variant="DIAG_TELEMETRY">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                <span>Telemetry</span>
+              </div>
+              <div class="icon" data-app="gpuFramebuffer" data-hci-role="APP_LAUNCHER" data-hci-variant="BUFFER_VIS">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                <span>Buffer Vis</span>
+              </div>
+              <div class="icon" data-app="kexBooleanExplorer" data-hci-role="APP_LAUNCHER" data-hci-variant="LOGIC_TOPOLOGY">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.5" y1="10.5" x2="15.5" y2="6.5"/></svg>
+                <span>Logic Graph</span>
+              </div>
+              <div class="icon" data-app="androidRuntime" data-hci-role="APP_LAUNCHER" data-hci-variant="EMULATOR_HOST">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M5 12h2M17 12h2M12 20v2"/></svg>
+                <span>Bliss OS</span>
+              </div>
+              <div class="icon" data-app="linuxMicrovm" data-hci-role="APP_LAUNCHER" data-hci-variant="VIRT_SLICE">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+                <span>Linux VM</span>
+              </div>
+              <div class="icon" data-app="brainkAgent" data-hci-role="APP_LAUNCHER" data-hci-variant="agentic-platform">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>BRAINK AI</span>
+              </div>
+              <div class="icon" data-app="keddehEmail" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>
+                <span>Independent Mail</span>
+              </div>
+              <div class="icon" data-app="keddehIde" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <span>Code Studio</span>
+              </div>
+              <div class="icon" data-app="systemTerminal" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                <span>Terminal</span>
+              </div>
+              <div class="icon" data-app="taskManager" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2"><rect x="2" y="3" width="20" height="14"/></svg>
+                <span>Processes</span>
+              </div>
+              <div class="icon" data-app="googleClassroom" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>
+                <span>Classroom</span>
+              </div>
+              <div class="icon" data-app="googlePlayStore" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span>Play Store</span>
+              </div>
+              <div class="icon" data-app="googleChrome" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+                <span>Browser</span>
+              </div>
+              <div class="icon" data-app="systemArchitectureApp" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>System DNA</span>
+              </div>
+              <div class="icon" data-app="architectureDecisionRecords" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <span>ADR Log</span>
+              </div>
+              <div class="icon" data-app="simbBridge" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>SIMB Bridge</span>
+              </div>
+              <div class="icon" data-app="keddehCreative" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                <span>Creative DAW</span>
+              </div>
+              <div class="icon" data-app="keddehNotebook" data-hci-role="APP_LAUNCHER">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                <span>AI Notebook</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Windows -->
+
+      <!-- Protocol Optimizer Window -->
+      <div id="agentRegistry" class="window resizable" style="display: none; top: 60px; left: 120px; width: 950px; height: 700px; background: #0f172a; border: 1px solid #14b8a6;">
+        <div class="window-titlebar" style="background: #0f172a; border-bottom: 1px solid #1e293b;">
+          <div class="window-title">
+            <span style="color: #99f6e4;">📜 AGENTIC WORKER REGISTRY — VIRTUAL ASSIGNMENT & MONITORING</span>
+          </div>
+          <div class="window-controls">
+            <div class="control-btn minimize" style="color: #99f6e4;">_</div>
+            <div class="control-btn maximize" style="color: #99f6e4;">□</div>
+            <div class="control-btn close" style="color: #f87171;">X</div>
+          </div>
+        </div>
+        <div class="window-content" style="padding: 0; display: flex; flex-direction: column; background-color: #020617; color: #e2e8f0; height: calc(100% - 24px); overflow: hidden; font-family: sans-serif;">
+            <div style="background: #0f172a; padding: 8px 12px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1e293b;">
+                <div style="display: flex; gap: 6px;">
+                    <button id="chrome-back" style="background: transparent; color: #94a3b8; border: none; font-size: 16px; cursor: pointer;">←</button>
+                    <button id="chrome-forward" style="background: transparent; color: #94a3b8; border: none; font-size: 16px; cursor: pointer;">→</button>
+                    <button id="chrome-reload" style="background: transparent; color: #94a3b8; border: none; font-size: 16px; cursor: pointer;">⟳</button>
+                </div>
+                <input id="chrome-url-bar" type="text" value="https://example.com" style="flex: 1; background: #020617; border: 1px solid #334155; color: #f8fafc; padding: 6px 12px; border-radius: 24px; font-size: 14px; outline: none;" />
+                <button id="chrome-go" style="background: #38bdf8; color: #020617; border: none; padding: 6px 14px; border-radius: 12px; font-size: 13px; cursor: pointer; font-weight: bold;">Go</button>
+            </div>
+            <div style="flex: 1; background: #000; position: relative;" id="chrome-viewport">
+                <iframe id="chrome-frame" src="about:blank" style="width: 100%; height: 100%; border: none; background: #fff;"></iframe>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+    <!-- Google Play Store & APK Runner Window -->
+    <div class="window resizable" id="googlePlayStore" style="display: none; width: 900px; height: 650px; top: 70px; left: 120px; border: 1px solid rgba(34, 197, 94, 0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+        <div class="window-titlebar" style="background: linear-gradient(90deg, #15803d, #0f172a);">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="#22c55e"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span class="window-title" style="color: #f8fafc; font-weight: 600;">Google Play Store & Nested APK Runtime</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn win-min">_</button>
+                <button class="win-btn win-max">□</button>
+                <button class="win-btn win-close">✕</button>
+            </div>
+        </div>
+        <div class="window-content" style="padding: 0; display: flex; flex-direction: column; background-color: #020617; color: #e2e8f0; height: calc(100% - 24px); overflow: hidden; font-family: 'JetBrains Mono', monospace;">
+            <div style="background: #0f172a; padding: 12px 20px; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <span style="font-weight: bold; color: #22c55e; font-size: 14px;">Google Play Authorized Runner</span>
+                    <button class="play-tab-btn active" data-tab="store" style="background: #22c55e; color: #020617; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 11px;">Store Catalog</button>
+                    <button class="play-tab-btn" data-tab="apks" style="background: #1e293b; color: #cbd5e1; border: 1px solid #334155; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 11px;">Loaded APKs & Runtimes</button>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <input id="apk-file-input" type="file" accept=".apk,.zip,.tar" style="display: none;" />
+                    <button id="play-upload-apk" style="background: #3b82f6; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 11px; cursor: pointer; font-weight: bold;">+ Sideload APK</button>
+                </div>
+            </div>
+            <div id="play-content-area" style="flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 20px;">
+                <!-- Play store content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Independent Inter-Model Bridge (SIMB) Window -->
+    <div class="window resizable" id="simbBridge" style="display: none; width: 920px; height: 680px; top: 50px; left: 140px; border: 1px solid #38bdf8; box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); background: #020617;">
+        <div class="window-titlebar" style="background: linear-gradient(90deg, #0369a1, #0f172a);">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="#38bdf8"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                <span class="window-title" style="color: #f8fafc; font-weight: 600;">Independent Inter-Model Bridge (SIMB) & V81 Compliance Engine</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn win-min">_</button>
+                <button class="win-btn win-max">□</button>
+                <button class="win-btn win-close">✕</button>
+            </div>
+        </div>
+        <div class="window-content" style="padding: 0; display: flex; flex-direction: column; background-color: #020617; color: #e2e8f0; height: calc(100% - 24px); overflow: hidden; font-family: 'JetBrains Mono', monospace;">
+            <div style="background: #0f172a; padding: 12px 20px; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <span style="background: #0369a1; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: bold;">SIMB v2.5</span>
+                    <span style="font-size: 12px; color: #38bdf8; font-weight: 600;">Gemini & OpenAI Adversarial Bridge & Static Enforcement</span>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button id="simb-run-audit-btn" style="background: #020617; color: #38bdf8; border: 1px solid #0284c7; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 11px; font-family: monospace; transition: all 0.2s;" onmouseover="this.style.background='#0284c7'; this.style.color='#fff';" onmouseout="this.style.background='#020617'; this.style.color='#38bdf8';">⚡ EXECUTE ADVERSARIAL PIPELINE</button>
+                </div>
+            </div>
+            <div style="display: flex; flex: 1; overflow: hidden;">
+                <!-- Left panel: Credentials & Config -->
+                <div style="width: 340px; background: #080e1a; border-right: 1px solid #1e293b; padding: 16px; display: flex; flex-direction: column; gap: 14px; overflow-y: auto;">
+                    <div style="font-weight: 600; color: #38bdf8; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Credential & API Gateway</div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 11px; color: #94a3b8; display: flex; align-items: center; justify-content: space-between;">
+                            Google AI Studio API Key (Gemini)
+                            <span id="gemini-key-status" style="width: 8px; height: 8px; border-radius: 50%; background-color: #ef4444; box-shadow: 0 0 4px #ef4444; display: inline-block;"></span>
+                        </label>
+                        <input id="simb-gemini-key" type="password" placeholder="AI Studio API Key..." style="background: #000; border: 1px solid #1e3a8a; color: #60a5fa; padding: 8px 10px; border-radius: 4px; font-size: 11px; font-family: monospace; transition: all 0.2s; outline: none;" onfocus="this.style.borderColor='#3b82f6'; this.style.boxShadow='0 0 8px rgba(59,130,246,0.3)'" onblur="this.style.borderColor='#1e3a8a'; this.style.boxShadow='none'" />
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 11px; color: #94a3b8; display: flex; align-items: center; justify-content: space-between;">
+                            OpenAI API Key (ChatGPT / GPT-4o)
+                            <span id="openai-key-status" style="width: 8px; height: 8px; border-radius: 50%; background-color: #ef4444; box-shadow: 0 0 4px #ef4444; display: inline-block;"></span>
+                        </label>
+                        <input id="simb-openai-key" type="password" placeholder="OpenAI API Key..." style="background: #000; border: 1px solid #4c1d95; color: #a855f7; padding: 8px 10px; border-radius: 4px; font-size: 11px; font-family: monospace; transition: all 0.2s; outline: none;" onfocus="this.style.borderColor='#8b5cf6'; this.style.boxShadow='0 0 8px rgba(139,92,246,0.3)'" onblur="this.style.borderColor='#4c1d95'; this.style.boxShadow='none'" />
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 11px; color: #94a3b8; display: flex; align-items: center; justify-content: space-between;">
+                            SIMB HMAC Secret
+                            <span id="hmac-key-status" style="width: 8px; height: 8px; border-radius: 50%; background-color: #ef4444; box-shadow: 0 0 4px #ef4444; display: inline-block;"></span>
+                        </label>
+                        <input id="simb-hmac-secret" type="password" value="keddeh_independent_root_key" style="background: #000; border: 1px solid #065f46; color: #34d399; padding: 8px 10px; border-radius: 4px; font-size: 11px; font-family: monospace; transition: all 0.2s; outline: none;" onfocus="this.style.borderColor='#10b981'; this.style.boxShadow='0 0 8px rgba(16,185,129,0.3)'" onblur="this.style.borderColor='#065f46'; this.style.boxShadow='none'" />
+                    </div>
+
+                    <div style="background: #0f172a; border: 1px solid #1e293b; padding: 10px; border-radius: 6px; margin-top: 6px;">
+                        <div style="font-weight: bold; color: #38bdf8; margin-bottom: 4px; font-size: 11px;">V81 Compliance Status</div>
+                        <div style="font-size: 11px; color: #22c55e;">● Zero-Heap Enforced</div>
+                        <div style="font-size: 11px; color: #22c55e;">● Zeroless Numberline Active</div>
+                        <div style="font-size: 11px; color: #22c55e;">● HMAC Ledger Signing Ready</div>
+                    </div>
+                </div>
+
+                <!-- Right panel: Live Execution Console & Output -->
+                <div style="flex: 1; display: flex; flex-direction: column; background: #020617; padding: 16px; gap: 12px; overflow: hidden;">
+                    <div style="font-weight: 600; color: #38bdf8; font-size: 12px;">SIMB ADVERSARIAL EXECUTION LOG & RECEIPTS</div>
+                    <div id="simb-console-output" style="flex: 1; background: #060a12; border: 1px solid #1e293b; border-radius: 6px; padding: 12px; font-family: monospace; font-size: 11px; color: #cbd5e1; overflow-y: auto; line-height: 1.5;">
+                        > [SIMB_BRIDGE] Initialized Independent Inter-Model Bridge plugin.<br>
+                        > [V81_SCANNER] Static rule analyzer loaded. Memory safety preconditions verified.<br>
+                        > [READY] Configure API keys on the left or click 'Execute SIMB Adversarial Pipeline' to start cross-model validation and ledger commitment.<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="window resizable" id="brainkManager" style="display: none; width: 850px; height: 600px; top: 80px; left: 150px; border: 1px solid rgba(139, 92, 246, 0.5); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+        <div class="window-titlebar" style="background: linear-gradient(90deg, #4c1d95, #0f172a);">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span class="window-title" style="color: #f8fafc; font-weight: 600;">IL-LLM Governed Stack & Deterministic Matrix</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn win-min">_</button>
+                <button class="win-btn win-max">□</button>
+                <button class="win-btn win-close">✕</button>
+            </div>
+        </div>
+        <div class="window-content" style="padding: 0; background-color: #020617; color: #e2e8f0; height: calc(100% - 24px); overflow-y: hidden; display: flex; flex-direction: column; font-family: 'JetBrains Mono', monospace;">
+            <div style="display: flex; background: #0f172a; border-bottom: 1px solid #1e293b; padding: 0 10px;">
+                <button class="braink-tab active" data-target="braink-stack" style="background: transparent; color: #a78bfa; border: none; border-bottom: 2px solid #a78bfa; padding: 10px 15px; cursor: pointer; font-family: monospace; font-size: 13px;">Governed Stack</button>
+                <button class="braink-tab" data-target="braink-matrix" style="background: transparent; color: #cbd5e1; border: none; border-bottom: 2px solid transparent; padding: 10px 15px; cursor: pointer; font-family: monospace; font-size: 13px;">Deterministic Matrix</button>
+                <button class="braink-tab" data-target="braink-ledger" style="background: transparent; color: #cbd5e1; border: none; border-bottom: 2px solid transparent; padding: 10px 15px; cursor: pointer; font-family: monospace; font-size: 13px;">Runtime Ledgers & Proof</button>
+            </div>
+            
+            <div style="flex: 1; overflow-y: auto; padding: 20px;">
+                <!-- Stack Tab -->
+                <div id="braink-stack" class="braink-pane" style="display: block;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #1e293b; padding-bottom: 15px; margin-bottom: 20px;">
+                        <div>
+                            <h2 style="color: #a78bfa; margin: 0 0 5px 0;">CODE_IL_LLM_GOVERNED_STACK_V2</h2>
+                            <div style="font-size: 11px; color: #64748b;">Pipeline: coding_braink → k_sys → akih → smart_manager → operator_vm → theorem_state</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4ade80; font-weight: bold; font-size: 14px;">STATUS: ALIGNED</div>
+                            <div style="font-size: 10px; color: #38bdf8;">WORKTREE-CONTRACT-v1</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid #1e293b; padding: 15px; border-radius: 6px; border-left: 3px solid #8b5cf6;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <strong style="color: #c4b5fd;">K-SYS Validation Gate</strong>
+                                <span style="font-size: 11px; color: #4ade80;">[ PASS ]</span>
+                            </div>
+                            <div style="font-size: 12px; color: #94a3b8; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                                <span>✓ Objective present</span>
+                                <span>✓ Scope includes contract terms</span>
+                                <span>✓ Binary path confirmed (1/0)</span>
+                                <span>✓ Evidence markers present</span>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid #1e293b; padding: 15px; border-radius: 6px; border-left: 3px solid #38bdf8;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <strong style="color: #7dd3fc;">AKIH Governance Response</strong>
+                                <span style="font-size: 11px; color: #4ade80;">[ STABILIZATION ]</span>
+                            </div>
+                            <div style="font-size: 12px; color: #94a3b8;">
+                                Evaluated K-SYS output and delegated operational bounds to Smart Manager. Authorized next route: <strong>advance</strong>.
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid #1e293b; padding: 15px; border-radius: 6px; border-left: 3px solid #f59e0b;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <strong style="color: #fcd34d;">Smart Manager Instruction Packet</strong>
+                                <span style="font-size: 11px; color: #4ade80;">[ EXECUTED ]</span>
+                            </div>
+                            <div style="font-size: 12px; color: #94a3b8; font-family: monospace;">
+                                <div><span style="color: #fbbf24;">source authority:</span> docs/GOVERNANCE.md, docs/OVERHEAD_CONTROL_PROTOCOL.md</div>
+                                <div><span style="color: #fbbf24;">status lanes:</span> authored definition, internal coherence, theorem state</div>
+                                <div><span style="color: #fbbf24;">material-boundary:</span> local read, reversible local write, bounded local runtime</div>
+                                <div style="margin-top: 5px; color: #a78bfa;">stack law: intent → source_identity → material_boundary → authority_gate → bilateral_growth → execution_mode → evidence_packet → ledger_delta → next_route</div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid #1e293b; padding: 15px; border-radius: 6px; border-left: 3px solid #10b981;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <strong style="color: #6ee7b7;">Operator VM & Theorem State</strong>
+                                <span style="font-size: 11px; color: #4ade80;">[ SYNCHRONIZED ]</span>
+                            </div>
+                            <div style="font-size: 12px; color: #94a3b8;">
+                                <div>Local frontier reached. Core-module decision resolved into a local governance cycle. Contradiction probes active.</div>
+                                <div style="margin-top: 10px;">
+                                    <button style="background: transparent; color: #34d399; border: 1px solid #34d399; padding: 4px 10px; border-radius: 3px; font-size: 11px; cursor: pointer;">Replay Latest Stack Packet</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matrix Tab -->
+                <div id="braink-matrix" class="braink-pane" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #1e293b; padding-bottom: 15px; margin-bottom: 20px;">
+                        <div>
+                            <h2 style="color: #38bdf8; margin: 0 0 5px 0;">IL-LLM Deterministic Interlanguage Matrix</h2>
+                            <div style="font-size: 11px; color: #64748b;">(KEX-WP-25) Lineage, Translation Parity, and Thesaurus Core</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <div style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 6px;">
+                            <h3 style="color: #e2e8f0; font-size: 13px; margin: 0 0 10px 0;">Formal Model Constraints</h3>
+                            <pre style="font-size: 10px; color: #cbd5e1; margin: 0;">Lexeme=⟨language,script,lemma,morphology,sense_ids,sources⟩
+Translate(sense_i,L_a→L_b)={candidate_j,score_j,rule_v,evidence_j}
+RoundTripLoss=distance_sense(x,Translate(Translate(x,L_b),L_a))</pre>
+                        </div>
+                        <div style="background: #0f172a; border: 1px solid #1e293b; padding: 15px; border-radius: 6px;">
+                            <h3 style="color: #e2e8f0; font-size: 13px; margin: 0 0 10px 0;">Workbook-Native Runtime (KEX-WP-16)</h3>
+                            <pre style="font-size: 10px; color: #cbd5e1; margin: 0;">CellID=⟨workbook_hash,sheet_id,row≥1,column≥1⟩
+value_{t+1}(c)=formula_v(c,dependencies_t,typed_inputs_t)
+BilateralParity := hash(workbook_commit)=hash(runtime_proj)</pre>
+                        </div>
+                    </div>
+
+                    <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid #334155; text-align: left; color: #94a3b8;">
+                                <th style="padding: 8px;">State Component</th>
+                                <th style="padding: 8px;">Function/Value</th>
+                                <th style="padding: 8px;">Evidence Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: #cbd5e1;">
+                            <tr style="border-bottom: 1px solid #1e293b;">
+                                <td style="padding: 8px;">Root matrix</td>
+                                <td style="padding: 8px;">identity and state vocabulary</td>
+                                <td style="padding: 8px;">locked schema</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #1e293b;">
+                                <td style="padding: 8px;">Formula sheets</td>
+                                <td style="padding: 8px;">deterministic transforms</td>
+                                <td style="padding: 8px;">dependency graph</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #1e293b;">
+                                <td style="padding: 8px;">IL dictionaries</td>
+                                <td style="padding: 8px;">language mappings</td>
+                                <td style="padding: 8px;">source and version</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #1e293b;">
+                                <td style="padding: 8px;">Proof sheet</td>
+                                <td style="padding: 8px;">commit and audit</td>
+                                <td style="padding: 8px;">hashes and statuses</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Ledger Tab -->
+                <div id="braink-ledger" class="braink-pane" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #1e293b; padding-bottom: 15px; margin-bottom: 20px;">
+                        <div>
+                            <h2 style="color: #f43f5e; margin: 0 0 5px 0;">Runtime Ledger Validator</h2>
+                            <div style="font-size: 11px; color: #64748b;">Missing-ledger proof & synchronization status</div>
+                        </div>
+                        <div>
+                            <button style="background: #e11d48; color: white; border: none; padding: 4px 10px; border-radius: 4px; font-size: 11px; cursor: pointer;">Execute local_validate.sh</button>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #020617; border: 1px solid #334155; padding: 10px; border-radius: 4px; font-size: 11px; color: #94a3b8; margin-bottom: 15px;">
+                        <span style="color: #f87171;">[BLOCKED]</span> runtime_ledger_files: Ops dashboard ledger JSON files are missing, blocking ledger verification.
+                    </div>
+                    
+                    <ul style="list-style-type: none; padding: 0; margin: 0; font-size: 11px; display: flex; flex-direction: column; gap: 8px;">
+                        <li style="display: flex; gap: 10px;"><span style="color: #ef4444;">✗</span> <code>global_translation_ledger.json</code></li>
+                        <li style="display: flex; gap: 10px;"><span style="color: #ef4444;">✗</span> <code>system_registry.json</code></li>
+                        <li style="display: flex; gap: 10px;"><span style="color: #ef4444;">✗</span> <code>user_anchor_backup.json</code></li>
+                        <li style="display: flex; gap: 10px;"><span style="color: #ef4444;">✗</span> <code>checkpoints/owner_latest.json</code></li>
+                        <li style="display: flex; gap: 10px;"><span style="color: #ef4444;">✗</span> <code>consensus/owner_consensus.json</code></li>
+                        <li style="display: flex; gap: 10px;"><span style="color: #ef4444;">✗</span> <code>recovery/owner_recovered_state.json</code></li>
+                    </ul>
+                    
+                    <div style="margin-top: 20px; font-size: 11px; border-top: 1px solid #1e293b; padding-top: 15px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span style="color: #cbd5e1;">worker_stream_path</span>
+                            <span style="color: #fbbf24;">NOT DONE (No stream found)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span style="color: #cbd5e1;">cost_authority_policy</span>
+                            <span style="color: #fbbf24;">NOT DONE (No policy config found)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #cbd5e1;">LEDGER_HEAD</span>
+                            <span style="color: #fbbf24;">NOT DONE (No route-head present)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      <!-- Linux MicroVM Terminal Window -->
+      <div class="window resizable" id="linuxMicrovm" style="display: none; width: 850px; height: 550px; top: 150px; left: 250px; border: 1px solid rgba(244, 63, 94, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+        <div class="window-titlebar" style="background: linear-gradient(90deg, #881337, #0f172a);">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 12l10 5 10-5M2 17l10 5 10-5"/></svg>
+                <span class="window-title" style="color: #f8fafc; font-weight: 600;">Alpine Linux Independent VM [root@keddeh-node]</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn win-min">_</button>
+                <button class="win-btn win-max">□</button>
+                <button class="win-btn win-close">✕</button>
+            </div>
+        </div>
+        <div class="window-content" style="padding: 0; background-color: #000000; height: calc(100% - 24px); overflow: hidden; display: flex; flex-direction: column;">
+            <div style="display: flex; background: #1e1b4b; border-bottom: 1px solid #312e81; padding: 0 10px;">
+                <button class="vm-tab-btn active" data-target="vm-terminal" style="background: transparent; color: #f43f5e; border: none; border-bottom: 2px solid #f43f5e; padding: 10px 15px; cursor: pointer; font-family: monospace; font-size: 12px; font-weight: bold;">[ TERMINAL ]</button>
+                <button class="vm-tab-btn" data-target="vm-desktop" style="background: transparent; color: #cbd5e1; border: none; border-bottom: 2px solid transparent; padding: 10px 15px; cursor: pointer; font-family: monospace; font-size: 12px; font-weight: bold;">[ DESKTOP_GUI ]</button>
+                <button class="vm-tab-btn" data-target="vm-sys-info" style="background: transparent; color: #cbd5e1; border: none; border-bottom: 2px solid transparent; padding: 10px 15px; cursor: pointer; font-family: monospace; font-size: 12px; font-weight: bold;">[ SYS_RESOURCES ]</button>
+                <div style="flex-grow: 1;"></div>
+                <div id="vm-status-badge" style="display: flex; align-items: center; gap: 8px; font-size: 10px; color: #10b981; font-family: monospace;">
+                    <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+                    VM_RUNNING (ALPHINE_X64)
+                </div>
+            </div>
+
+            <div id="vm-terminal" class="vm-pane" style="display: flex; flex-direction: column; flex-grow: 1; padding: 15px; overflow-y: auto; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #00ff00;">
+                <div id="term-output" style="white-space: pre-wrap; margin-bottom: 10px;">Keddeh OS Kernel Boot Sequence [OK]
+Mounting Independent Volume... [OK]
+Welcome to Alpine Linux v3.18
+root@keddeh-node:~# </div>
+                <div style="display: flex;">
+                    <span style="color: #00ff00; margin-right: 8px;">root@keddeh-node:~#</span>
+                    <input type="text" id="term-input" style="flex: 1; background: transparent; border: none; color: #00ff00; font-family: 'JetBrains Mono', monospace; font-size: 13px; outline: none;" autocomplete="off" spellcheck="false" autofocus>
+                </div>
+            </div>
+
+            <div id="vm-desktop" class="vm-pane" style="display: none; flex-grow: 1; background: #1e293b; position: relative; overflow: hidden; padding: 20px;">
+                <!-- Simulated Desktop -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); display: flex; flex-wrap: wrap; content-content: flex-start; padding: 30px; gap: 25px;">
+                    <div class="vm-desktop-icon" style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 70px; cursor: pointer; opacity: 0.8;">
+                        <svg style="width: 40px; height: 40px; color: #38bdf8;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                        <span style="color: white; font-size: 11px; text-align: center; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Home</span>
+                    </div>
+                    <div class="vm-desktop-icon" style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 70px; cursor: pointer; opacity: 0.8;">
+                        <svg style="width: 40px; height: 40px; color: #4ade80;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                        <span style="color: white; font-size: 11px; text-align: center; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Terminal</span>
+                    </div>
+                    <div class="vm-desktop-icon" style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 70px; cursor: pointer; opacity: 0.8;">
+                        <svg style="width: 40px; height: 40px; color: #f472b6;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        <span style="color: white; font-size: 11px; text-align: center; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Web4 Browser</span>
+                    </div>
+                </div>
+                <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 40px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(8px); border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; padding: 0 15px; gap: 20px;">
+                    <div style="background: #f43f5e; color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer;">Alpine</div>
+                    <div style="flex-grow: 1; display: flex; gap: 10px;">
+                        <div style="width: 4px; height: 20px; background: rgba(255,255,255,0.1); border-radius: 2px;"></div>
+                    </div>
+                    <div style="color: #94a3b8; font-size: 11px; font-family: monospace;">10:42 AM</div>
+                </div>
+            </div>
+
+            <div id="vm-sys-info" class="vm-pane" style="display: none; flex-grow: 1; background: #0f172a; padding: 25px; overflow-y: auto; color: #cbd5e1; font-family: monospace;">
+                <h3 style="color: #f43f5e; margin-top: 0; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">INDEPENDENT_VM_RESOURCE_AUDIT</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                    <div style="background: #020617; border: 1px solid #1e293b; padding: 15px; border-radius: 8px;">
+                        <div style="color: #64748b; font-size: 11px; margin-bottom: 10px;">CPU_ALLOCATION (64-CORE_VIRT)</div>
+                        <div style="height: 4px; background: #1e293b; border-radius: 2px; position: relative; overflow: hidden;">
+                            <div id="vm-cpu-bar" style="position: absolute; top: 0; left: 0; height: 100%; width: 12%; background: #38bdf8;"></div>
+                        </div>
+                        <div id="vm-cpu-val" style="margin-top: 8px; font-size: 14px; color: #38bdf8;">12.4% Usage</div>
+                    </div>
+                    <div style="background: #020617; border: 1px solid #1e293b; padding: 15px; border-radius: 8px;">
+                        <div style="color: #64748b; font-size: 11px; margin-bottom: 10px;">MEM_PROVISIONED (128GB_DDR5)</div>
+                        <div style="height: 4px; background: #1e293b; border-radius: 2px; position: relative; overflow: hidden;">
+                            <div id="vm-mem-bar" style="position: absolute; top: 0; left: 0; height: 100%; width: 45%; background: #10b981;"></div>
+                        </div>
+                        <div id="vm-mem-val" style="margin-top: 8px; font-size: 14px; color: #10b981;">57.6 GB / 128 GB</div>
+                    </div>
+                </div>
+                <div style="margin-top: 25px; padding: 15px; background: rgba(244, 63, 94, 0.05); border-left: 3px solid #f43f5e; border-radius: 4px;">
+                    <div style="color: #f43f5e; font-weight: bold; margin-bottom: 8px;">Kernel Status: STABLE</div>
+                    <div style="font-size: 12px; line-height: 1.6; color: #94a3b8;">
+                        VFS Sync Status: ACTIVE (mirroring to root.keddeh.local)<br>
+                        Network Lane: INDEPENDENT_MESH_TUNNEL<br>
+                        Entropy Source: HW_TPU_RACK_01<br>
+                        Identity Verification: root@keddeh-node (VERIFIED_SIGNATURE)
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+      <!-- Architecture Decision Records (KEDDEH V110 Schema) Window -->
+      <div class="window resizable" id="architectureDecisionRecords" style="display: none; width: 960px; height: 680px; top: 70px; left: 130px; border: 1px solid rgba(168, 85, 247, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000;">
+        <div class="window-titlebar" style="background: linear-gradient(90deg, #6b21a8, #0f172a); padding: 8px 14px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span class="window-title" style="color: #f8fafc; font-weight: 600; font-size: 13px;">Architecture Decision Records (KEDDEH V110)</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn win-min">_</button>
+                <button class="win-btn win-max">□</button>
+                <button class="win-btn win-close">✕</button>
+            </div>
+        </div>
+        <div class="window-content" style="background-color: #060913; padding: 0; overflow: hidden; height: calc(100% - 32px);">
+            <!-- Content dynamically initialized by initArchitectureDecisionRecordsApp -->
+        </div>
+      </div>
+
+      <!-- Keddeh Web4 & Domains -->
+      <div class="window resizable" id="keddehWeb4" style="display: none; width: 700px; height: 500px; top: 120px; left: 160px; border: 1px solid rgba(139, 92, 246, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+        <div class="window-titlebar" style="background: linear-gradient(90deg, #4c1d95, #0f172a);">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="window-title" style="color: #f8fafc; font-weight: 600;">Keddeh Web4 Architecture & Domain Management</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn win-min">_</button>
+                <button class="win-btn win-max">□</button>
+                <button class="win-btn win-close">✕</button>
+            </div>
+        </div>
+        <div class="window-content" style="background-color: #020617; padding: 15px; overflow-y: auto; color: #cbd5e1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px;">
+            Loading Web4 Matrix...
+        </div>
+      </div>
+
+      <!-- ONE Global Load Balancer & Multi-Server Mesh Window -->
+      <div class="window resizable" id="loadBalancerApp" style="display: none; width: 920px; height: 640px; top: 80px; left: 140px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000;">
+        <div class="window-titlebar" style="background: linear-gradient(90deg, #0284c7, #0f172a); padding: 8px 14px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><path d="M5 8v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"/><path d="M12 13v3"/></svg>
+                <span class="window-title" style="color: #f8fafc; font-weight: 600; font-size: 13px;">ONE Global Load Balancer & Multi-Server Mesh</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn win-min">_</button>
+                <button class="win-btn win-max">□</button>
+                <button class="win-btn win-close">✕</button>
+            </div>
+        </div>
+        <div class="window-content" style="background-color: #030712; padding: 16px; overflow-y: auto; color: #f3f4f6; font-family: monospace; font-size: 12px; display: flex; flex-direction: column; gap: 16px;">
+            <!-- Top Controls Bar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; background: #111827; border: 1px solid #1f2937; border-radius: 8px; padding: 12px 16px;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <button id="lb-spawn-btn" style="background: linear-gradient(135deg, #0284c7, #2563eb); color: white; border: none; padding: 8px 14px; border-radius: 6px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                        <span>+ Join & Link Child Server</span>
+                    </button>
+                    <button id="lb-dispatch-btn" style="background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8; padding: 8px 14px; border-radius: 6px; font-weight: 600; cursor: pointer;">
+                        ⚡ Dispatch Burst Traffic (100 reqs)
+                    </button>
+                    <button id="lb-refresh-btn" style="background: #1e293b; color: #94a3b8; border: 1px solid #334155; padding: 8px 14px; border-radius: 6px; cursor: pointer;">
+                        🔄 Sync Mesh Topology
+                    </button>
+                </div>
+                <div style="display: flex; gap: 16px; font-size: 11px;">
+                    <div>ALGORITHM: <span id="lb-algo-tag" style="color: #38bdf8; font-weight: bold;">LEAST_CONNECTIONS</span></div>
+                    <div>HEALTHY NODES: <span id="lb-healthy-count" style="color: #22c55e; font-weight: bold;">0</span></div>
+                    <div>CLUSTER LOAD: <span id="lb-cluster-load" style="color: #facc15; font-weight: bold;">0%</span></div>
+                </div>
+            </div>
+
+            <!-- Standings Summary Metrics -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                <div style="background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 8px; padding: 12px; text-align: center;">
+                    <div style="color: #38bdf8; font-size: 10px; font-weight: bold;">L1 ROOT SUPERVISOR</div>
+                    <div id="lb-stat-l1" style="font-size: 22px; font-weight: 800; color: white; margin-top: 4px;">1</div>
+                    <div style="color: #64748b; font-size: 10px; margin-top: 2px;">Core Ingress Gateway</div>
+                </div>
+                <div style="background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 8px; padding: 12px; text-align: center;">
+                    <div style="color: #c084fc; font-size: 10px; font-weight: bold;">L2 REGIONAL BALANCERS</div>
+                    <div id="lb-stat-l2" style="font-size: 22px; font-weight: 800; color: white; margin-top: 4px;">3</div>
+                    <div style="color: #64748b; font-size: 10px; margin-top: 2px;">US / EU / ASIA Edge</div>
+                </div>
+                <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 8px; padding: 12px; text-align: center;">
+                    <div style="color: #4ade80; font-size: 10px; font-weight: bold;">L3 COMPUTE WORKERS</div>
+                    <div id="lb-stat-l3" style="font-size: 22px; font-weight: 800; color: white; margin-top: 4px;">4</div>
+                    <div style="color: #64748b; font-size: 10px; margin-top: 2px;">Active Compute Nodes</div>
+                </div>
+                <div style="background: rgba(250, 204, 21, 0.1); border: 1px solid rgba(250, 204, 21, 0.3); border-radius: 8px; padding: 12px; text-align: center;">
+                    <div style="color: #fde047; font-size: 10px; font-weight: bold;">L4 DAEMON LEAVES</div>
+                    <div id="lb-stat-l4" style="font-size: 22px; font-weight: 800; color: white; margin-top: 4px;">1</div>
+                    <div style="color: #64748b; font-size: 10px; margin-top: 2px;">Sub-Worker Threads</div>
+                </div>
+            </div>
+
+            <!-- Server Node Topology Tree View -->
+            <div style="background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
+                    <span style="color: #38bdf8; font-weight: bold; font-size: 13px;">🌐 Global & Local Server Node Tree (Parent-Child Hierarchy)</span>
+                    <span style="color: #64748b; font-size: 11px;">Parent-Child standing links active</span>
+                </div>
+                <div id="lb-nodes-tree-container" style="display: flex; flex-direction: column; gap: 10px; max-height: 280px; overflow-y: auto; padding-right: 6px;">
+                    <!-- Dynamically populated node tree cards -->
+                </div>
+            </div>
+
+            <!-- Spawn / Join Modal / Drawer -->
+            <div id="lb-spawn-modal" style="display: none; background: #111827; border: 1px solid #38bdf8; border-radius: 8px; padding: 16px; margin-top: 4px;">
+                <div style="color: #38bdf8; font-weight: bold; font-size: 13px; margin-bottom: 12px;">+ Join Child Server under Parent Load Balancer</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                    <div>
+                        <label style="color: #94a3b8; font-size: 11px; display: block; margin-bottom: 4px;">Select Parent Server Node:</label>
+                        <select id="lb-select-parent" style="width: 100%; background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 10px; border-radius: 4px; font-size: 12px;"></select>
+                    </div>
+                    <div>
+                        <label style="color: #94a3b8; font-size: 11px; display: block; margin-bottom: 4px;">Child Server Name / Label:</label>
+                        <input id="lb-input-name" type="text" placeholder="e.g. EU-Worker Compute Node Beta" style="width: 100%; background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 10px; border-radius: 4px; font-size: 12px;"/>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                    <div>
+                        <label style="color: #94a3b8; font-size: 11px; display: block; margin-bottom: 4px;">Target Region / Zone:</label>
+                        <input id="lb-input-region" type="text" placeholder="e.g. eu-central-1b" style="width: 100%; background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 10px; border-radius: 4px; font-size: 12px;"/>
+                    </div>
+                    <div>
+                        <label style="color: #94a3b8; font-size: 11px; display: block; margin-bottom: 4px;">Traffic Weight (1-100):</label>
+                        <input id="lb-input-weight" type="number" value="50" min="1" max="100" style="width: 100%; background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 10px; border-radius: 4px; font-size: 12px;"/>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button id="lb-modal-cancel" style="background: #334155; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Cancel</button>
+                    <button id="lb-modal-confirm" style="background: #0284c7; color: white; border: none; padding: 6px 14px; border-radius: 4px; font-weight: bold; cursor: pointer;">Execute Spawn & Join</button>
+                </div>
+            </div>
+
+            <!-- Live Traffic Dispatch Logs -->
+            <div style="background: #020617; border: 1px solid #1e293b; border-radius: 8px; padding: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="color: #a855f7; font-weight: bold; font-size: 11px;">⚡ LOAD BALANCER TRAFFIC ROUTING LOG</span>
+                    <span id="lb-last-dispatch-time" style="color: #64748b; font-size: 10px;">Idle</span>
+                </div>
+                <div id="lb-traffic-logs" style="font-size: 11px; color: #94a3b8; max-height: 100px; overflow-y: auto; background: #090d16; padding: 8px; border-radius: 4px;">
+                    Load balancer operational. Ready to dispatch traffic across child server nodes...
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Android Runtime & APK Sideload Window -->
+      <div class="window resizable" id="androidRuntime" style="display: none; width: 900px; height: 600px; top: 70px; left: 120px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1004;">
+        <div class="window-titlebar" style="background: linear-gradient(90deg, #0369a1, #0f172a); padding: 8px 14px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                <span class="window-title" style="color: #f8fafc; font-weight: 600; font-size: 13px;">Bliss OS x86 (Android Desktop Emulation)</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn win-min">_</button>
+                <button class="win-btn win-max">□</button>
+                <button class="win-btn win-close">✕</button>
+            </div>
+        </div>
+        <div class="window-content" style="height: calc(100% - 37px); overflow: hidden;"></div>
+      </div>
+
+      <!-- BRAINK AI Autonomous Agent Window -->
+      <div class="window resizable" id="brainkAgent" style="display: none; width: 950px; height: 650px; top: 60px; left: 100px; border: 1px solid rgba(168, 85, 247, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1004;">
+        <div class="window-titlebar" style="background: linear-gradient(90deg, #7c3aed, #0f172a); padding: 8px 14px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="3"></circle></svg>
+                <span class="window-title" style="color: #f8fafc; font-weight: 600; font-size: 13px;">KEDDEH BRAINK AI — Autonomous Agent & Orchestration Studio</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn win-min">_</button>
+                <button class="win-btn win-max">□</button>
+                <button class="win-btn win-close">✕</button>
+            </div>
+        </div>
+        <div class="window-content" style="height: calc(100% - 37px); overflow: hidden;"></div>
+      </div>
+
+      <!-- System DNA & Architecture Deep Research Window -->
+      <div class="window resizable" id="systemArchitectureApp" style="display: none; width: 1024px; height: 720px; top: 50px; left: 80px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.8); z-index: 1005;">
+        <div class="window-titlebar" style="background: linear-gradient(90deg, #0284c7, #0f172a); padding: 8px 14px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span class="window-title" style="color: #f8fafc; font-weight: 600; font-size: 13px;">ONE OS: Comprehensive Architecture, Substantiation & Desktop Necessity Analysis</span>
+            </div>
+            <div class="window-controls">
+                <button class="win-btn win-min">_</button>
+                <button class="win-btn win-max">□</button>
+                <button class="win-btn win-close">✕</button>
+            </div>
+        </div>
+        <div class="window-content" style="background-color: #030712; padding: 28px; overflow-y: auto; color: #cbd5e1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; line-height: 1.6;">
+            <div style="border-bottom: 1px solid #1e293b; padding-bottom: 16px; margin-bottom: 24px;">
+                <h2 style="margin: 0; font-size: 22px; color: #f8fafc; font-weight: 700; letter-spacing: -0.02em;">Architectural Verification & System Substantiation Report</h2>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #94a3b8;">Detailed analysis of CPU/GPU subsystems, multi-tier server stacks, V86 microVMs, layout compression rationale, and desktop integration necessity.</p>
+            </div>
+
+            <!-- Section 1: Substantiation & Architecture Overview -->
+            <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                <h3 style="color: #38bdf8; margin-top: 0; font-size: 15px; font-family: monospace; font-weight: bold; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">1. Architectural Substantiation & Verification Matrix</h3>
+                <p style="margin: 10px 0; color: #cbd5e1; font-size: 12px; line-height: 1.6;">
+                    Every component in the ONE OS architecture is mathematically substantiated and deployed across isolated yet co-located runtime layers. Rather than relying on simulated mockups, the system executes real containerized binaries, kernel modules, and browser-compiled WebAssembly execution engines.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; font-family: monospace; font-size: 11px;">
+                    <div style="background: #020617; padding: 12px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #38bdf8; font-weight: bold; display: block; margin-bottom: 4px;">RUST SECURITY CORE</span>
+                        <span style="color: #94a3b8; font-size: 10px;">Memory-safe packet inspection (`network.rs`) & AES-NI crypto routines.</span>
+                    </div>
+                    <div style="background: #020617; padding: 12px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #22c55e; font-weight: bold; display: block; margin-bottom: 4px;">PYTHON MICROSERVICES</span>
+                        <span style="color: #94a3b8; font-size: 10px;">FastAPI actuators (`hyperdrive_actuator.py`, `regulation_agent.py`).</span>
+                    </div>
+                    <div style="background: #020617; padding: 12px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #a855f7; font-weight: bold; display: block; margin-bottom: 4px;">EXPRESS 5 BACKEND</span>
+                        <span style="color: #94a3b8; font-size: 10px;">Unified REST bridge, WebSocket routing, and Vite middleware integration.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Why Overlapping & Compressed (Tiling Layout Rationale) -->
+            <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(168, 85, 247, 0.25); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                <h3 style="color: #c084fc; margin-top: 0; font-size: 15px; font-family: monospace; font-weight: bold; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">2. Rationale for Layout Compression & Window Overlapping</h3>
+                <p style="margin: 10px 0; color: #cbd5e1; font-size: 12px; line-height: 1.6;">
+                    The desktop workspace deliberately employs a <strong>compressed multi-pane tiling and floating window architecture</strong>. In high-performance engineering environments, context switching between disparate tabs introduces cognitive friction and network latency. By overlapping context sidebars, application launchers, and runtime viewports onto a single high-density glassmorphic canvas:
+                </p>
+                <ul style="margin: 8px 0 0 20px; color: #94a3b8; font-size: 12px; line-height: 1.6;">
+                    <li><strong>Zero-Latency Telemetry Observation:</strong> CPU loads, memory integrity, and BGP mesh tunnels remain constantly visible alongside active applets.</li>
+                    <li><strong>Space Efficiency:</strong> High-density grids prevent wasted whitespace, modeling professional Unix/Linux workstation environments (e.g., i3, bspwm, or Wayland compositors).</li>
+                    <li><strong>Instant Access Routing:</strong> All applets, email clients, IDEs, and terminal sessions are accessible within a single click without browser page reloads.</li>
+                </ul>
+            </div>
+
+            <!-- Section 3: Why Each Component is Strictly Required for the Desktop -->
+            <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(34, 197, 94, 0.25); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                <h3 style="color: #4ade80; margin-top: 0; font-size: 15px; font-family: monospace; font-weight: bold; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">3. Desktop Integration Necessity Matrix</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px;">
+                    <div style="background: #020617; padding: 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #38bdf8; font-weight: bold; font-family: monospace; display: block; margin-bottom: 4px;">CPU & GPU Substrate Telemetry</span>
+                        <p style="margin: 0; color: #94a3b8; font-size: 11px;">Required to monitor instruction execution, hardware vector registers, and framebuffer render speeds in real time.</p>
+                    </div>
+                    <div style="background: #020617; padding: 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #38bdf8; font-weight: bold; font-family: monospace; display: block; margin-bottom: 4px;">V86 MicroVM & Android ASL</span>
+                        <p style="margin: 0; color: #94a3b8; font-size: 11px;">Required for logical x86 emulation across typed-array topologies and mobile emulation directly inside browser logical memory without cloud dependencies.</p>
+                    </div>
+                    <div style="background: #020617; padding: 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #38bdf8; font-weight: bold; font-family: monospace; display: block; margin-bottom: 4px;">Decentralized Agent Mesh</span>
+                        <p style="margin: 0; color: #94a3b8; font-size: 11px;">Required for automated governance, self-healing node clusters, and autonomous cryptographic receipt verification.</p>
+                    </div>
+                    <div style="background: #020617; padding: 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #38bdf8; font-weight: bold; font-family: monospace; display: block; margin-bottom: 4px;">Zero-Free Mathematical Topology</span>
+                        <p style="margin: 0; color: #94a3b8; font-size: 11px;">Required to eliminate null pointer faults and guarantee deterministic state bounding across all active applets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Projected DOM Ingress & Headless Buffer Pipelines -->
+            <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(234, 179, 8, 0.25); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                <h3 style="color: #facc15; margin-top: 0; font-size: 15px; font-family: monospace; font-weight: bold; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">4. Projected DOM Ingress & Headless Buffer Pipeline Architecture</h3>
+                <p style="margin: 10px 0; color: #cbd5e1; font-size: 12px; line-height: 1.6;">
+                    Beyond the visible React and Vanilla TS component tree lies an underlying <strong>Projected Headless Ingress Substrate</strong>. This architectural layer operates through asynchronous framebuffer memory mapping and zero-copy HTML ingress projection:
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; font-family: monospace; font-size: 11px;">
+                    <div style="background: #020617; padding: 12px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #facc15; font-weight: bold; display: block; margin-bottom: 4px;">HEADLESS GPU FRAMEBUFFER</span>
+                        <span style="color: #94a3b8; font-size: 10px;">Renders offscreen virtual displays via WebAssembly canvas backing, decoupling render cadence from DOM reflows.</span>
+                    </div>
+                    <div style="background: #020617; padding: 12px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #facc15; font-weight: bold; display: block; margin-bottom: 4px;">PROJECTION CONFIG PATHWAYS</span>
+                        <span style="color: #94a3b8; font-size: 10px;">Managed via `/server.ts` middleware and WebSocket stream pipes (`/api/mesh/stream`), enabling impenetrable state injection.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Global Expansion & Autonomous API Gateway Deployment Schedule -->
+            <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                <h3 style="color: #38bdf8; margin-top: 0; font-size: 15px; font-family: monospace; font-weight: bold; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">5. Global Expansion & Autonomous API Gateway Deployment Schedule (Linux & ChatGPT Scale)</h3>
+                <p style="margin: 10px 0; color: #cbd5e1; font-size: 12px; line-height: 1.6;">
+                    To scale the ONE OS independent platform globally for enterprise Linux microVM fleets and ChatGPT-compatible AI agent integrations—where external users invoke standard API endpoints and the system handles all background compute, vector math, memory safety, and orchestration—the following rigorous multi-phase deployment schedule is enforced:
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; font-family: monospace; font-size: 11px;">
+                    <div style="background: #020617; padding: 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #38bdf8; font-weight: bold; display: block; margin-bottom: 4px;">PHASE I: ANYCAST BGP INGRESS MESH</span>
+                        <span style="color: #94a3b8; font-size: 10px; display: block; margin-top: 4px;">Provisioning 64 global edge POPs with zero-copy packet forwarding through Rust network safety modules (`network.rs`).</span>
+                    </div>
+                    <div style="background: #020617; padding: 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #4ade80; font-weight: bold; display: block; margin-bottom: 4px;">PHASE II: ZEROLESS VFS CLUSTERING (0 ∉ ℙ)</span>
+                        <span style="color: #94a3b8; font-size: 10px; display: block; margin-top: 4px;">Deploying distributed base-1 memory partitioned clusters to guarantee zero null-pointer faults across concurrent API workers.</span>
+                    </div>
+                    <div style="background: #020617; padding: 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #c084fc; font-weight: bold; display: block; margin-bottom: 4px;">PHASE III: CHATGPT-COMPATIBLE PROXY GWS</span>
+                        <span style="color: #94a3b8; font-size: 10px; display: block; margin-top: 4px;">Exposing standardized `/v1/chat/completions` and `/api/vms/exec` endpoints backed by asynchronous Python/Express orchestration.</span>
+                    </div>
+                    <div style="background: #020617; padding: 14px; border-radius: 8px; border: 1px solid #1e293b;">
+                        <span style="color: #facc15; font-weight: bold; display: block; margin-bottom: 4px;">PHASE IV: AUTONOMOUS REVEAL & PROOF LEDGER</span>
+                        <span style="color: #94a3b8; font-size: 10px; display: block; margin-top: 4px;">Continuous immutable Merkle chain auditing (`FailureLedger`) ensuring 99.999% uptime and verifiable zero-trust execution.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Verification Summary Footer -->
+            <div style="background: #020617; border: 1px solid #1e293b; border-radius: 10px; padding: 16px; display: flex; justify-content: space-between; align-items: center; font-family: monospace; font-size: 11px;">
+                <span style="color: #64748b;">SYSTEM INTEGRITY STATUS: <strong style="color: #4ade80;">VERIFIED & GREEN</strong></span>
+                <span style="color: #38bdf8;">ISO/IEC 27001 & BGP MESH SYNCHRONIZED</span>
+            </div>
+        </div>
+      
+      <!-- Added Window for complianceAudit -->
+      <div class="window resizable" id="complianceAudit" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">COMPLIANCEAUDIT</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for desktopSettings -->
+      <div class="window resizable" id="desktopSettings" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">DESKTOPSETTINGS</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for googleChrome -->
+      <div class="window resizable" id="googleChrome" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">GOOGLECHROME</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for googleClassroom -->
+      <div class="window resizable" id="googleClassroom" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">GOOGLECLASSROOM</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for gpuFramebuffer -->
+      <div class="window resizable" id="gpuFramebuffer" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">GPUFRAMEBUFFER</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for keddehEmail -->
+      <div class="window resizable" id="keddehEmail" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">KEDDEHEMAIL</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for keddehIde -->
+      <div class="window resizable" id="keddehIde" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">KEDDEHIDE</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for keddehNotebook -->
+      <div class="window resizable" id="keddehNotebook" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">KEDDEHNOTEBOOK</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for kexBooleanExplorer -->
+      <div class="window resizable" id="kexBooleanExplorer" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">KEXBOOLEANEXPLORER</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for systemBenchmark -->
+      <div class="window resizable" id="systemBenchmark" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">SYSTEMBENCHMARK</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for systemTerminal -->
+      <div class="window resizable" id="systemTerminal" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">SYSTEMTERMINAL</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for taskManager -->
+      <div class="window resizable" id="taskManager" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">TASKMANAGER</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for enterpriseHub -->
+      <div class="window resizable" id="enterpriseHub" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">ENTERPRISEHUB</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+      <!-- Added Window for systemLogs -->
+      <div class="window resizable" id="systemLogs" style="display: none; width: 850px; height: 600px; top: 100px; left: 150px; border: 1px solid rgba(56, 189, 248, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.7); z-index: 1000; flex-direction: column;">
+        <div class="window-header">
+            <span class="window-title">SYSTEMLOGS</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative;"></div>
+      </div>
+
+            <!-- Added Window for keddehCreative -->
+      <div class="window resizable" id="keddehCreative" style="display: none; width: 950px; height: 700px; top: 60px; left: 100px; border: 1px solid rgba(244, 63, 94, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+        <div class="window-header">
+            <span class="window-title">KEDDEHCREATIVE</span>
+            <div class="window-controls">
+                <div class="window-btn window-btn-min"></div>
+                <div class="window-btn window-btn-max"></div>
+                <div class="window-btn window-btn-close win-close"></div>
+            </div>
+        </div>
+        <div class="window-content" style="flex: 1; position: relative; background: #0f172a; color: #fff;"></div>
+      </div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
+

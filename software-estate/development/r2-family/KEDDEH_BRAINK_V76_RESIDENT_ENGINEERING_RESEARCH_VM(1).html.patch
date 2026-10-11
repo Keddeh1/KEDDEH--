@@ -1,0 +1,15 @@
+--- before/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html
++++ working/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html
+@@ -2157,7 +2157,11 @@
+  return {schema:"kex.braink.r4.selftest.v1",status:tests.every(x=>x.pass)?"PASS":"FAIL",passed:tests.filter(x=>x.pass).length,total:tests.length,tests};
+ }
+ g.BRAINK_R4=Object.freeze({MODEL,VFS,read,enter,returnState:ret,checkpoint,kexEvolve,selfTest,getFrame:()=>clone(frame)});
+-if(typeof document!=="undefined"){
++// R2: this carrier retains the R4 runtime but does not include the optional R4 dock.
++const r4DockIds=["r4Out","r4Space","r4VfsCount","r4Status","r4Toggle","r4Dock","r4Enter","r4Return","r4Checkpoint","r4Read","r4Path","r4Self"];
++const r4Missing=typeof document==="undefined"?r4DockIds:r4DockIds.filter(id=>!document.getElementById(id));
++g.BRAINK_R4_UI=Object.freeze({status:r4Missing.length?"OPTIONAL_DOCK_NOT_MOUNTED":"MOUNTED",missing:r4Missing});
++if(typeof document!=="undefined" && !r4Missing.length){
+  const $=id=>document.getElementById(id),out=$("r4Out"),sel=$("r4Space");
+  spaces.forEach(s=>{let o=document.createElement("option");o.textContent=s;o.value=s;sel.appendChild(o)});
+  $("r4VfsCount").textContent=VFS.length;

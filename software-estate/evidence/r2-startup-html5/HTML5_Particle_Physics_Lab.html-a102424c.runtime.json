@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "file": "HTML5_Particle_Physics_Lab.html",
+  "sha256": "b3500255a046e1bbb8d7d922c62bd43b7f592bafae40e0e59c0d420bb420371d",
+  "startedAt": "2026-10-11T16:34:17.266Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "log",
+      "text": "[Physics Lab] Verifying application provenance..."
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:35055/HTML5_Particle_Physics_Lab.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "HTML5 Particle & Vortex Physics Lab",
+    "readyState": "complete",
+    "bodyText": "⚡ Particle & Vortex Dynamics\nVORTEX MODE\nFRAME RATE\n44 FPS\nPARTICLES\n600\nKINETIC ENERGY\n32749 kJ\nGRAVITY FORCE G\n1.0x\nGravity Attraction\n1.0\nAtmospheric Drag\n0.98\nSimulation Mode\nVortex Singularity\nGalaxy Spiral Arms\nQuantum Brownian Diffusion\nBinary Star Orbits\nShockwave Burst\nShift Palette\nPause\nMove mouse to attract · Click anywhere to emit shockwave · Spacebar to burst",
+    "elementCount": 51,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-gravity",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "slider-drag",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "SELECT",
+        "type": "select-one",
+        "id": "mode-select",
+        "name": null,
+        "text": "Vortex Singularity\nGalaxy Spiral Arms\nQuantum Brownian Diffusion\nBinary Star Orbits",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Shockwave Burst",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Shift Palette",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "pause-btn",
+        "name": null,
+        "text": "Pause",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 8832,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "HTML5_Particle_Physics_Lab.html-a102424c.png",
+  "elapsedMs": 2295,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:20.994Z",
+  "sha256After": "b3500255a046e1bbb8d7d922c62bd43b7f592bafae40e0e59c0d420bb420371d",
+  "originalUnchanged": true
+}

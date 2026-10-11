@@ -1,0 +1,856 @@
+{
+  "schemaVersion": 1,
+  "file": "KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+  "sha256": "311485063a7f0583fc787590a566f07945744ae0ef3e8d72f5af8f3f9930e000",
+  "startedAt": "2026-10-11T16:36:25.943Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [],
+  "runtimeErrors": [
+    {
+      "name": "SecurityError",
+      "message": "Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.",
+      "stack": "SecurityError: Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.\n    at <anonymous>:3:15\n    at <anonymous>:5:7"
+    },
+    {
+      "name": "SyntaxError",
+      "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+      "stack": "SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)\n    at JSON.parse (<anonymous>)\n    at http://127.0.0.1:44463/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html:122:14\n    at http://127.0.0.1:44463/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html:218:3"
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:44463/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+    "Contained address field alone does not establish successful routing; source JSON initialization error remains."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "BRAINK / KEX User Space v9",
+    "readyState": "complete",
+    "bodyText": "K\nBRAINK / KEX USER SPACE\none state · one ledger · resident .kex applications\nResolve\nWARM\nHCI ledger\nWarm boot\nRESIDENT .KEX\nBRAINK\napp://braink/workbook\n.kex\nIL-LLM\nvolume://braink/il-llm/sovereign-v2\n.kex\nKEX Computer\napp://kex/computer\n.kex\nClaimPath\napp://claimpath\n.kex\nCasePath\napp://casepath\n.kex\nKOS / BOS\napp://kos/bos\n.kex\nHybrid OS\nos://keddeh/hybrid\n.kex\nCasePath OS\nos://casepath\n.kex\nGlobal Server\nserver://keddeh/global-presence\n.kex\nSovereign Volume\nvolume://keddeh/braink/root\n.kex\nDERIVED SPACES\nHCI Ledger\nil-llm://hci\nIL\nIL-LLM Ledger\nproof://il-llm/ledger\nIL\nContinuation Memory\nmemory://continuation\nIL\nProjection Router\nil-llm://projection/router\nIL\nExecution\nkex://execution\nIL\nRegistry\nkex://registry\nIL\ncontainer://keddeh/kex → braink.kex\nHuman\nMachine\nProof\nSource\nIL-LLM CONTEXT\npackage\nbraink.kex\naddress\napp://braink/workbook\nlogical time\n2\nobserver\nKEX://OBSERVER/1\nprojection\nhuman\nroute depth\n1\nHCI objects\n301\nledger cursor\n1\nRECENT LEDGER\n0001  t0002  WARM_RESTORE   braink.kex\n      Container restored without loading a resident carrier until explicitly projected\nIL-LLM / hci / ledger-bound\nlogical_time=2 · cursor=1 · hci=301\n.KEX",
+    "elementCount": 312,
+    "headings": [
+      "BRAINK",
+      "BRAINK",
+      "Resident .kex",
+      "Derived spaces",
+      "IL-LLM context",
+      "Recent ledger",
+      "Every registered interface object"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "kex-close",
+        "name": null,
+        "text": "RETURN",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "kex-plan",
+        "name": null,
+        "text": "PLAN / DIFF",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "kex-apply",
+        "name": null,
+        "text": "APPLY SOURCE-SPECIFIC STATE",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "kex-observe",
+        "name": null,
+        "text": "OBSERVE / RECONCILE",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "kex-project",
+        "name": null,
+        "text": "PROJECT RESIDENT APP",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Open resident carrier",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "kex-address",
+        "name": null,
+        "text": "KEX application address",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Resolve",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "kex-hci",
+        "name": null,
+        "text": "HCI ledger",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "kex-reboot",
+        "name": null,
+        "text": "Warm boot",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "BRAINK\napp://braink/workbook\n.kex",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "IL-LLM\nvolume://braink/il-llm/sovereign-v2\n.kex",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "KEX Computer\napp://kex/computer\n.kex",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "ClaimPath\napp://claimpath\n.kex",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "CasePath\napp://casepath\n.kex",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "KOS / BOS\napp://kos/bos\n.kex",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Hybrid OS\nos://keddeh/hybrid\n.kex",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "CasePath OS\nos://casepath\n.kex",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Global Server\nserver://keddeh/global-presence\n.kex",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Sovereign Volume\nvolume://keddeh/braink/root\n.kex",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "HCI Ledger\nil-llm://hci\nIL",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "IL-LLM Ledger\nproof://il-llm/ledger\nIL",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Continuation Memory\nmemory://continuation\nIL",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Projection Router\nil-llm://projection/router\nIL",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Execution\nkex://execution\nIL",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Registry\nkex://registry\nIL",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Human",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Machine",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Proof",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Source",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "kex-close",
+        "name": null,
+        "text": "Close",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": ".KEX",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 2326,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 148608,
+        "type": "application/octet-stream"
+      },
+      {
+        "src": null,
+        "inlineBytes": 18240,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 12642,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2248761,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1432,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 23226,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 7200,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1092097,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5683,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 7618,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1041,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 935,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1263,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5003,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3184,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2105,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1194,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1301,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2881,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 93071,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3564,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2173,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1795,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1546,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3542,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 6038,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1559,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1576,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 4698,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 9632,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1723,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1754,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3386,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5795,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 865,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3867,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3991,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 460,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 25461,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1957,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 423,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 6004,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1994,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 355,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1871,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1936,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 344,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 6524,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2221,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 385,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 36154,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1485,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 377,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 11543,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2218,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1697,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 10209,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1313,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1513,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 11909,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 903,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1502,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2128,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 208,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1468,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 978,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 757,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1385,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3101,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 561,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 710,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1191,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1159,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1218,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 652,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 41535,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 788,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1847,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2602,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 905,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 975,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1206785,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 6839,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1206785,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 12199,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 397,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 6134,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5362,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 392,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1781,
+        "type": "application/json"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "negative route remains contained",
+      "passed": true,
+      "detail": "K\nBRAINK / KEX USER SPACE\none state · one ledger · resident .kex applications\nResolve\nWARM\nHCI ledger\nWarm boot\nRESIDENT .KEX\nBRAINK\napp://braink/workbook\n.kex\nIL-LLM\nvolume://braink/il-llm/sovereign-v2\n.kex\nKEX Computer\napp://kex/computer\n.kex\nClaimPath\napp://claimpath\n.kex\nCasePath\napp://casepath\n.kex\nKOS / BOS\napp://kos/bos\n.kex\nHybrid OS\nos://keddeh/hybrid\n.kex\nCasePath OS\nos://casepath\n.kex\nGlobal Server\nserver://keddeh/global-presence\n.kex\nSovereign Volume\nvolume://keddeh/braink/root\n.kex\nDERIVED SPACES\nHCI Ledger\nil-llm://hci\nIL\nIL-LLM Ledger\nproof://il-llm/ledger\nIL\nContinuation Memory\nmemory://continuation\nIL\nProjection Router\nil-llm://projection/router\nIL\nExecution\nkex://execution\nIL\nRegistry\nkex://registry\nIL\ncontainer://keddeh/kex → braink.kex\nHuman\nMachine\nProof\nSource\nIL-LLM CONTEXT\npackage\nbraink.kex\naddress\napp://braink/workbook\nlogical time\n3\nobserver\nKEX://OBSERVER/1\nprojection\nhuman\nroute depth\n1\nHCI objects\n301\nledger cursor\n2\nRECENT LEDGER\n0001  t0002  WARM_RESTORE   braink.kex\n      Container restored without loading a resident carrier until explicitly projected\n0002  t0003  RESOLVE_FAIL   unknown://r2-negative\n      No .kex package registered\nIL-LLM / hci / ledger-bound\nlogical_time=3 · cursor=2 · hci=301\n.KEX"
+    }
+  ],
+  "storage": {
+    "localStorage": [
+      {
+        "key": "KEX_V9_LEDGER",
+        "bytes": 302
+      },
+      {
+        "key": "KEX_V9_STATE",
+        "bytes": 263
+      }
+    ],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 2759,
+  "status": "runtime-errors",
+  "finishedAt": "2026-10-11T16:36:30.505Z",
+  "sha256After": "311485063a7f0583fc787590a566f07945744ae0ef3e8d72f5af8f3f9930e000",
+  "originalUnchanged": true
+}

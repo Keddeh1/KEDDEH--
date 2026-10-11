@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "file": "HTML5_Raster_Paint_Studio.html",
+  "sha256": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688",
+  "startedAt": "2026-10-11T16:36:42.659Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [
+    {
+      "type": "log",
+      "text": "[Paint Studio] Verifying application provenance..."
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:38291/HTML5_Raster_Paint_Studio.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "AetherPaint Graphics Studio",
+    "readyState": "complete",
+    "bodyText": "🎨\nAetherPaint\n✏️ Brush\n📏 Line\n⬜ Rect\n⭕ Circle\n🧹 Eraser\nSize:\n4px\n↩️ Undo\n🗑️ Clear\n💾 Export PNG\nX: 0, Y: 0\n800 × 520px · 24-bit RGB Canvas Engine",
+    "elementCount": 44,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-brush",
+        "name": null,
+        "text": "✏️ Brush",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-line",
+        "name": null,
+        "text": "📏 Line",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-rect",
+        "name": null,
+        "text": "⬜ Rect",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-circle",
+        "name": null,
+        "text": "⭕ Circle",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "btn-eraser",
+        "name": null,
+        "text": "🧹 Eraser",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "id": "brushSize",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "color",
+        "id": "customColor",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "↩️ Undo",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "🗑️ Clear",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "💾 Export PNG",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 5990,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "draw changes raster and undo restores original pixels",
+      "passed": true,
+      "detail": {
+        "rasterChanged": true,
+        "undoExact": true
+      }
+    },
+    {
+      "name": "rectangle tool selection",
+      "passed": true
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 2261,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:36:47.287Z",
+  "sha256After": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688",
+  "originalUnchanged": true
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "file": "Open_Source_Operating_System.html",
+  "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+  "startedAt": "2026-10-11T16:34:56.213Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:40273/Open_Source_Operating_System.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "method": "GET",
+      "type": "stylesheet",
+      "allowed": false
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "blocked": [
+    {
+      "url": "https://fonts.googleapis.com/css2?[redacted]",
+      "reason": "network-isolation"
+    }
+  ],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "Aether OS · Sovereign Microkernel · A. Keddeh",
+    "readyState": "complete",
+    "bodyText": "⌬\n[4:34:57 PM] Initializing Sovereign Microkernel (AetherOS v6.8)...\n[4:34:58 PM] Verifying application provenance...\n⌬\n🌐\n🐚\n🧠\n📊\nCPU --%\nRAM --/-- GB",
+    "elementCount": 30,
+    "headings": [],
+    "controls": [],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 11841,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "Open_Source_Operating_System.html-0ad893f2.png",
+  "elapsedMs": 1536,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:58.934Z",
+  "sha256After": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+  "originalUnchanged": true
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "file": "HTML5_Retro_Arcade_Breakout.html",
+  "sha256": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e",
+  "startedAt": "2026-10-11T16:36:48.837Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [
+    {
+      "type": "log",
+      "text": "[Breakout] Verifying application provenance..."
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:33241/HTML5_Retro_Arcade_Breakout.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions.",
+    "No completed game, high-score persistence or all-level collision qualification."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "HTML5 Retro Cyber Breakout",
+    "readyState": "complete",
+    "bodyText": "SCORE: 0\nCOMBO: 1x\nHIGH: 0\nSTAGE: 1/3\nSHIELDS: ❤❤❤\nMouse / Left & Right Arrows to Move Paddle · Click or Space to Launch Ball & Fire Lasers",
+    "elementCount": 26,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "overlay-btn",
+        "name": null,
+        "text": "LAUNCH NEXT SECTOR",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 17915,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "canvas responds to running game frames and keyboard",
+      "passed": true,
+      "detail": {
+        "frameChanged": true
+      }
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 1960,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:36:52.694Z",
+  "sha256After": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e",
+  "originalUnchanged": true
+}

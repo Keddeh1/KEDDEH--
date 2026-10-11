@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "file": "KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+  "sha256": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41",
+  "startedAt": "2026-10-11T16:37:31.845Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:41693/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "KEX Active Warehouse Fabric v7.1",
+    "readyState": "complete",
+    "bodyText": "KEX ACTIVE WAREHOUSE FABRIC v7.1 — DOM/table is authoritative machine state; projections and relations point to it\nCANONICAL ACTIVE FABRIC\n1\nX1\n2\nX2\n3\nX3\n4\nX4\n5\nX5\n6\nX6\n7\nX7\n8\nX8\n9\nX9\nBOOT\nMIRROR ACTIVE X\nSELF TEST\nPERFORMANCE TEST\nCHECKPOINT\nWired operator CLI\nKEX ACTIVE CLI READY\nType HELP for command contract.\nEXEC\nCompiler / traversal instructions\nCOMPILE → TRAVERSE ACTIVE STATE\nPOWER OFF\nLIVE STATE INSPECTION\nboot\noff\nactive X\nX1\nNUMBER(X)\n1\naddress\nKEX:X1:1.1.1:R1\norigin\n1\nlane\n1\nextent\n1\nX revision\n1\nregister R1\nX1\ncontainers\n1\nroutes\n0\nWarehouse compute fabric\nWAREHOUSE0 axis=1.WAREHOUSE\nlogical chips=1\nthreads/chip=9\nlogical thread slots=9\nclock tick=0 state=stopped requested_hz=1000\ncompleted thread operations=0\nphysical compute=host-bound\nIMPORTANT: logical chip/thread multiplication does not create additional physical CPU/GPU silicon.\nThe browser host supplies the actual compute; this fabric supplies addressing, scheduling and virtual topology.\nCompute fabric\nCPU0 axis=1.1.CPU state=idle pc=X1 acc=X1 cycles=0\nGPU0 axis=1.1.GPU state=idle source=X1 frames=0\nMRAM0 axis=1.1.MRAM ref=X1 rev=1\nVRAM0 axis=1.1.VRAM ref=X1 frame=0\nBUS0 axis=1.1.BUS sequence=0\nRoutes / containers\n(none)\nValidation\nPerformance\nLedger\n(empty)\nEngineering evidence\n{\n  \"artifact\": \"KEX Active Warehouse Fabric v7.1\",\n  \"magic\": \"KEXACTIVE7_1_1\",\n  \"authority\": \"canonical DOM X fabric\",\n  \"shadow_runtime\": false,\n  \"operator\": \"OP0\",\n  \"controls\": {\n    \"traceability\": \"sequenced audit ledger\",\n    \"fault_handling\": \"explicit live fault element\",\n    \"verification\": \"SELF TEST + PERFORMANCE TEST\",\n    \"change_control\": \"MIRROR revision + CHECKPOINT\",\n    \"command_surface\": \"wired CLI using same executor\",\n    \"persistence\": \"explicit serialized active-DOM checkpoint\"\n  },\n  \"standards_position\": \"engineering controls are mapped toward ISO/IEC/IEEE 12207, ISO/IEC 25010, ISO/IEC 27001/27002 and ISO/IEC 27034; no certification claim\"\n}",
+    "elementCount": 106,
+    "headings": [
+      "CANONICAL ACTIVE FABRIC",
+      "Wired operator CLI",
+      "Compiler / traversal instructions",
+      "LIVE STATE INSPECTION",
+      "Warehouse compute fabric",
+      "Compute fabric",
+      "Routes / containers",
+      "Validation",
+      "Performance",
+      "Ledger",
+      "Engineering evidence"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "boot",
+        "name": null,
+        "text": "BOOT",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "mirror",
+        "name": null,
+        "text": "MIRROR ACTIVE X",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "tests",
+        "name": null,
+        "text": "SELF TEST",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "bench",
+        "name": null,
+        "text": "PERFORMANCE TEST",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "checkpoint",
+        "name": null,
+        "text": "CHECKPOINT",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "cli",
+        "name": null,
+        "text": "KEX command input",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "clisend",
+        "name": null,
+        "text": "EXEC",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "id": "source",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "run",
+        "name": null,
+        "text": "COMPILE → TRAVERSE ACTIVE STATE",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 23568,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "mirror advances one resident X revision",
+      "passed": true,
+      "detail": {
+        "changed": [
+          {
+            "id": "X1",
+            "rev": "2"
+          }
+        ]
+      }
+    },
+    {
+      "name": "unknown CLI input does not prevent subsequent help",
+      "passed": true,
+      "detail": {
+        "rejected": "KEX ACTIVE CLI READY\nType HELP for command contract.\n\nKEX> R2_UNKNOWN_COMMAND\nERROR E_CLI_UNKNOWN_COMMAND R2_UNKNOWN_COMMAND",
+        "help": "KEX ACTIVE CLI READY\nType HELP for command contract.\n\nKEX> R2_UNKNOWN_COMMAND\nERROR E_CLI_UNKNOWN_COMMAND R2_UNKNOWN_COMMAND\n\nKEX> help\nKEX ACTIVE CLI\nBOOT                         initialise operating state\nSTATUS                       inspect live canonical state\nSELECT Xn                    select canonical X\nREAD Rn [PROJECTION]         dereference register\nWRITE Rn Xn                  wire register to X\nORIGIN n | LANE n | RESOLVE  address operations\nSPAWN Cn axis                create live container\nSEND Cn Cn Xn                bilateral route\nMIRROR [Xn]                  mutate canonical"
+      }
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 3130,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:37:38.795Z",
+  "sha256After": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41",
+  "originalUnchanged": true
+}

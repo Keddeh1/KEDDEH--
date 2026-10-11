@@ -1,0 +1,1038 @@
+{
+  "schemaVersion": 1,
+  "file": "KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+  "sha256": "7f6e4ce0a41d3ba8823984533f41479be77efa7656f3e016f591af6e49c13fec",
+  "startedAt": "2026-10-11T16:36:32.396Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [],
+  "runtimeErrors": [
+    {
+      "name": "TypeError",
+      "message": "Cannot read properties of null (reading 'appendChild')",
+      "stack": "TypeError: Cannot read properties of null (reading 'appendChild')\n    at http://127.0.0.1:40981/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html:2162:90\n    at Array.forEach (<anonymous>)\n    at http://127.0.0.1:40981/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html:2162:9\n    at http://127.0.0.1:40981/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html:2172:3"
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:40981/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "KEDDEH — Recursive Self-Hosting Referential Volume v24 · P18 + A18 Integration / Closure Gate",
+    "readyState": "complete",
+    "bodyText": "K\nKEDDEH / BRAINK\nRecursive carrier-agnostic referential volume · v24 · P18/A18\nVolume\nBuild Plan\nP02 IL-LLM\nReferences\nMachine\nWorkbooks\nRecursion\nEngineering Ledger\nProof & R&D\nP01 Zeroless\nNetwork Fabric\nOpen ClaimPath\n15 Aug · Unified Service\nPRODUCTS\n◆\nClaimPath\nshippable product\n◆\nCasePath\nshippable product\nSYSTEMS\n▣\nBRAINK Workbook\noperating surface\n▣\nK-OS / BOS\ncontrol surface\n▣\nKEX Computer\ncomputer surface\n▣\nKEX Active State\nmachine state\n▣\nKEX One\nservice hub\nVOLUMES\n◇\nCasePath Executable Volume\nexecutable volume\n◇\nBRAINK Workbook HCI v3\nhistorical ancestor\n◇\nClaim Preparation Service\nservice fragment\n◇\nBRAINK IL-LLM Sovereign Volume v1\naddress space\nOPERATING SYSTEMS\n◇\nKeddeh Systems Hybrid OS\nos projection\n◇\nCasePath Operating Appliance\nsingle html os\nSERVERS & RUNTIME\n◇\nKEX Virtual Infrastructure\nvirtual infrastructure\n◇\nGlobal Discovery Presence Mesh\nserver projection\nVOLUME\nvolume://keddeh/braink/root\nPROJECTION\nSTANDARDS\nSOURCE\nVOLUME OF VOLUMES · RESIDENT APPLICATIONS · REFERENTIAL STANDARDS\nThe recursive Volume carries the machine\nwithout becoming one carrier.\n\nHTML, workbooks, source, compilers, assemblers, firmware, kernels, emulators, runtimes, servers, network fabrics, applications and proof objects remain independently addressable resident carriers or machine objects. The logical Volume sits above those carriers, resolves them by typed address, and can materialise successor KEX machines only through explicit state and signal paths.\n\nPRODUCTS · SHIPPABLE-PRODUCT\nClaimPath\n\nCustomer-facing contents catalogue and contents-claim preparation product.\n\nshippable-product\ncustomer-projection\ncontents-claim-runtime\nPRODUCTS · SHIPPABLE-PRODUCT\nCasePath\n\nPublic legal preparation product with hardened separation between human surface and resident system state.\n\nshippable-product\npublic-projection\ndocument-runtime\nSYSTEMS · OPERATING-SURFACE\nBRAINK Workbook\n\nConverged workbook operating surface and live projection of workbook state.\n\noperating-surface\nworkbook-projection\ndesign-standard\nSYSTEMS · CONTROL-SURFACE\nK-OS / BOS\n\nEvidence-gated system control surface with explicit rehydration and external capability boundaries.\n\ncontrol-surface\nproof-projection\ndesign-standard\nSYSTEMS · COMPUTER-SURFACE\nKEX Computer\n\nComplete user operating surface for KEX compute, memory, scheduler, CLI and pattern analysis.\n\ncomputer-surface\nruntime\ncli\nSYSTEMS · MACHINE-STATE\nKEX Active State\n\nDOM/table authoritative active machine state rather than a decorative JSON copy.\n\nmachine-state\nruntime-proof\ndesign-standard\nSYSTEMS · SERVICE-HUB\nKEX One\n\nPersistent user space that activates specialised services in contained projections.\n\nservice-hub\nproduct-shell\nprojection-host\nVOLUMES · EXECUTABLE-VOLUME\nCasePath Executable Volume\n\nFull CasePath executable-volume implementation retained as resident ancestry and runtime reference.\n\nexecutable-volume\nresident-runtime\nhistorical-ancestor\nVOLUMES · HISTORICAL-ANCESTOR\nBRAINK Workbook HCI v3\n\nEarlier Workbook HCI retained as an addressable design/runtime ancestor.\n\nhistorical-ancestor\ndesign-standard\nreference\nVOLUMES · SERVICE-FRAGMENT\nClaim Preparation Service\n\nEarlier bounded claim-preparation service retained as a service-level reference, not substituted for ClaimPath.\n\nservice-fragment\nhistorical-ancestor\nreference\nVOLUMES · ADDRESS-SPACE\nBRAINK IL-LLM Sovereign Volume v1\n\nEarlier single-document sovereign volume establishing internal address spaces and traversal state.\n\naddress-space\nruntime-reference\nhistorical-ancestor\nOPERATING SYSTEMS · OS-PROJECTION\nKeddeh Systems Hybrid OS\n\nAndroid / PC / Chrome hybrid OS shell with terminal, IDE, BRAINK, VFS, process table, virtual screen, agents and host adapters.\n\nos-projection\nscreen-surface\ndesktop-shell\nOPERATING SYSTEMS · SINGLE-HTML-OS\nCasePath Operating Appliance\n\nCasePath as a single-HTML operating appliance with resident runtime and controlled public projection.\n\nsingle-html-os\nproduct-runtime\nprojection-appliance\nSERVERS & RUNTIME · VIRTUAL-INFRASTRUCTURE\nKEX Virtual Infrastructure\n\nVirtual runtime and infrastructure projection retained as an executable/reference surface.\n\nvirtual-infrastructure\nruntime-projection\nserver-surface\nSERVERS & RUNTIME · SERVER-PROJECTION\nGlobal Discovery Presence Mesh\n\nGlobal discovery/server presence projection that distinguishes model-local readiness from live public deployment.\n\nserver-projection\nglobal-mesh-model\nreadback-dashboard\nREFERENTIAL CONTEXT\nUnified Volume\nRESIDENT LAW\nresident html preserved\nTRUE\nroles are nonexclusive\nTRUE\ndesign standard is referential\nTRUE\nprojection can be executable\nTRUE\nnew surface may inherit multiple sources\nTRUE\nsource is not erased by inheritance\nTRUE\nworkbook defines and is hosted by machine\nTRUE\nrecursive machine self hosting\nTRUE\nrecursive payloads reference not duplicate\nTRUE\nglobal visibility does not imply simultaneous execution\nTRUE\none projection per frame unless compositor\nTRUE\nsignal driven liveness\nTRUE\nfixed substrate variable resolution\nTRUE\nzeroless typed state continuity\nTRUE\nquantum mapping is research hypothesis until formally proven\nTRUE\ncarrier is not architecture\nTRUE\nlogical identity distinct from carrier projection materialisation\nTRUE\nworkbook is one carrier not architecture root\nTRUE\nhtml is one carrier not architecture root\nTRUE\np01 typed transition law\nTRUE\np01 no hidden null reset\nTRUE\np02 internal traversal preserves continuation\nTRUE\np02 multi illlm without external return\nTRUE\np02 typed register initialisation\nTRUE\ndescendant consumes backend independent machine contract\nTRUE\nsoftware defined hardware is declared structure behavior state boundary\nTRUE\nresident reference mount avoids payload duplication\nTRUE\nmachine can host machine definition carriers\nTRUE\nlogical route identity is independent of physical port\nTRUE\ncarrier failure rehydrates route without identity replacement\nTRUE\nresident capability does not allocate new host cpu\nTRUE\nrecursive depth does not multiply physical host capacity\nTRUE\nglobal visibility is not execution or materialisation\nTRUE\nordinary frame has single resolved projection\nTRUE\nmulti projection requires explicit compositor\nTRUE\ncarrier format does not define logical identity\nTRUE\nderived carrier does not erase source carrier\nTRUE\nsignal is definition signaled is evocation\nTRUE\nwhat signal signaled recursive grammar\nTRUE\nlive is not atomic authoritative state\nTRUE\nexecution claims are property scoped\nTRUE\ndependency discovery is recursive\nTRUE\ncontradiction requires traceable event chain and reopen condition\nTRUE\nADDRESS\nroot\nvolume://keddeh/braink/root\nresident HTMLs\n15\nstandards\n68\nBRAINK V76 · RESIDENT ENGINEERING",
+    "elementCount": 609,
+    "headings": [
+      "The recursive Volume carries the machinewithout becoming one carrier.",
+      "ClaimPath",
+      "CasePath",
+      "BRAINK Workbook",
+      "K-OS / BOS",
+      "KEX Computer",
+      "KEX Active State",
+      "KEX One",
+      "CasePath Executable Volume",
+      "BRAINK Workbook HCI v3",
+      "Claim Preparation Service",
+      "BRAINK IL-LLM Sovereign Volume v1",
+      "Keddeh Systems Hybrid OS",
+      "CasePath Operating Appliance",
+      "KEX Virtual Infrastructure",
+      "Global Discovery Presence Mesh",
+      "One Keddeh Systems service.Multiple execution domains.",
+      "Local is not a reduced cloud client.",
+      "Hosted is not the local filesystem on a server.",
+      "Unification occurs through verified contracts.",
+      "Capability state is multidimensional.",
+      "Only explicitly synchronisable state crosses domains.",
+      "Live invocation receipt",
+      "Continuation"
+    ],
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "search",
+        "name": null,
+        "text": "Find a product, system, standard, role or address…",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "homeBtn",
+        "name": null,
+        "text": "Volume",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "planBtn",
+        "name": null,
+        "text": "Build Plan",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "illlmBtn",
+        "name": null,
+        "text": "P02 IL-LLM",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "graphBtn",
+        "name": null,
+        "text": "References",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "machineBtn",
+        "name": null,
+        "text": "Machine",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "workbooksBtn",
+        "name": null,
+        "text": "Workbooks",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "recursionBtn",
+        "name": null,
+        "text": "Recursion",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "ledgerBtn",
+        "name": null,
+        "text": "Engineering Ledger",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "proofRndBtn",
+        "name": null,
+        "text": "Proof & R&D",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "zeroBtn",
+        "name": null,
+        "text": "P01 Zeroless",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "networkBtn",
+        "name": null,
+        "text": "Network Fabric",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "Open ClaimPath",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "ksTodayBtn",
+        "name": null,
+        "text": "15 Aug · Unified Service",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "◆\nClaimPath\nshippable product",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "◆\nCasePath\nshippable product",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "▣\nBRAINK Workbook\noperating surface",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "▣\nK-OS / BOS\ncontrol surface",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "▣\nKEX Computer\ncomputer surface",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "▣\nKEX Active State\nmachine state",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "▣\nKEX One\nservice hub",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "◇\nCasePath Executable Volume\nexecutable volume",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "◇\nBRAINK Workbook HCI v3\nhistorical ancestor",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "◇\nClaim Preparation Service\nservice fragment",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "◇\nBRAINK IL-LLM Sovereign Volume v1\naddress space",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "◇\nKeddeh Systems Hybrid OS\nos projection",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "◇\nCasePath Operating Appliance\nsingle html os",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "◇\nKEX Virtual Infrastructure\nvirtual infrastructure",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "◇\nGlobal Discovery Presence Mesh\nserver projection",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "PROJECTION",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "STANDARDS",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "SOURCE",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "v76Launch",
+        "name": null,
+        "text": "BRAINK V76 · RESIDENT ENGINEERING",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "v76Close",
+        "name": null,
+        "text": "RETURN TO V28",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "01 · Overview",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "02 · Resident resolver",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "03 · Memory / telemetry contradictions",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "04 · S29 quantum research",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "05 · Engineering skills",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "06 · Full engineering chain",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "07 · Lineage / evidence",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 18240,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 12642,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2248761,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1432,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 23226,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 7200,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1092097,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5683,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 11444,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 14941,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 7618,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1041,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 935,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1263,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5003,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3184,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2105,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1194,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1301,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2881,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 93071,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3564,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2173,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1795,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 4257,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5495,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5116,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1546,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3542,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 6038,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1559,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5283,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1576,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 4698,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 9632,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1723,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3160,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1754,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3386,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5795,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 865,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 4617,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3867,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 10116,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3991,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 460,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 25461,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 13745,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1957,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 423,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 6004,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 6842,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1994,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 355,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1871,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 5212,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1936,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 344,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 6524,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 4985,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2221,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 385,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 36154,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2284,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1485,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 377,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 11543,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 4152,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2218,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1697,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 10209,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 11892,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1313,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1513,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 11909,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 9558,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 903,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1502,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2128,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 6157,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 208,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1468,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 978,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 8045,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 757,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1385,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 3101,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 607,
+        "type": "text/plain"
+      },
+      {
+        "src": null,
+        "inlineBytes": 4236,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 561,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 710,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1191,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1159,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1218,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 7842,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 652,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 41535,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 788,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1847,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 2602,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1074,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 905,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 975,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1610,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1109,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 1061450,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 4570,
+        "type": "classic"
+      },
+      {
+        "src": null,
+        "inlineBytes": 20693,
+        "type": "application/json"
+      },
+      {
+        "src": null,
+        "inlineBytes": 15452,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "resident launcher responds despite startup error",
+      "passed": true,
+      "detail": "\nThis descendant joins the existing v28 resident projection/volume dispatcher to the exact R4 continuation/KEX mechanics, then exposes research, regulatory contradictions, S29 research state and the complete engineering chain through one state owner.\n\nOBJECTIVE\nRESOLVE\nINVOKE BACKING MECHANIC\nPROPERTY READBACK\nFALSIFY\nKEX DELTA\nCONTINUATION\nState owner\nbraink://local/orchestrator\nResident target catalogue\n\n20 targets resolved from v28 + R4.\n\nV74 evidence source\ncbe6a33088ff17a23156c800ec7c235a7195113b0c5922b42aa1e8e7ef70e159\nCurrent lifecycle\nIN_DEVELOPMENT\n\ntarget-environment deployment/readback after local browser qualification\n\nAuthoritative unit: the resident mechanic and its integration edge, not this visible projection.\nLive invocation receipt\n{\n  \"status\": \"READY\",\n  \"orchestrator\": \"braink://local/orchestrator\"\n}\nContinuation\n{\n  \"objective\": \"bounded resident invocation\",\n  \"route\": [\n    \"braink://local/orchestrator\"\n  ],\n  \"ledger_head\": 4,\n  \"next\": \"RECONCILE_OR_DEVELOP\"\n}"
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 2982,
+  "status": "runtime-errors",
+  "finishedAt": "2026-10-11T16:36:37.741Z",
+  "sha256After": "7f6e4ce0a41d3ba8823984533f41479be77efa7656f3e016f591af6e49c13fec",
+  "originalUnchanged": true
+}

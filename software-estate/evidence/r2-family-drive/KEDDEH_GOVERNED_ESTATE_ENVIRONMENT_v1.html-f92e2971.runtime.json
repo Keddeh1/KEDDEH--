@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "file": "KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+  "sha256": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b",
+  "startedAt": "2026-10-11T16:36:39.683Z",
+  "mode": "isolated-safe-family-controls",
+  "console": [],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:44463/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "Only the listed controls were exercised; no full product qualification. External traffic, workers, service workers, sockets and forms blocked; fresh disposable browser context.",
+    "No mining/payment activation, credential changes, host integration or external messages. App PASS labels are not accepted as assertions."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "KEDDEH Systems Estate Environment",
+    "readyState": "complete",
+    "bodyText": "K\nKEDDEH SYSTEMS\n\nESTATE ENVIRONMENT\n\n01Overview\n02Normative Standards\n03Logical Registry\n04Carrier Registry\n05Relation Graph\n06Delivery Gates\n07Design Convention\n08Evidence & Boundaries\n09Mechanics\n10Defects / Change\nNormative language\nMUST / MUST NOT / SHOULD / SHOULD NOT / MAY are used as defined by BCP 14 only when uppercase.\nEstate Environment\n\nA governed architecture environment that separates identity, implementation surface, carrier, runtime, projection and evidence.\n\nRECONCILED DATASET\n76\nLOGICAL OBJECTS\n95\nUNIQUE CARRIERS\n19\nMULTI-CARRIER OBJECTS\n32\nTYPED RELATIONS\nARCHITECTURE LAW\n\nThe environment applies the law, it does not merely display it.\n\nLOGICAL IDENTITY\n≠\nIMPLEMENTATION SURFACE\n≠\nRUNTIME\n≠\nPROJECTION\n≠\nCARRIER\n≠\nEVIDENCE\nA relation may connect these classes, but a relation never collapses them into one implementation. Version order also conveys no architectural authority by itself.\nENVIRONMENT ADMISSION MODEL\n\nDerived from the existing estate rather than pasted over it.\n\nIDENTITY PLANE\n\nCanonical logical addresses, architectural class, stable naming, version policy and typed relations.\n\nIMPLEMENTATION PLANE\n\nExecutable volumes, OS/appliances, runtimes, specializations, projections and concrete carriers.\n\nEVIDENCE PLANE\n\nIntegrity, receipts, observed mechanics, execution/readback boundaries, defects and promotion state.\n\nEXTERNAL STANDARDS CROSSWALK\n\nUsed as engineering inputs, not as decorative logos.\n\nEXTERNAL STANDARD\tUSED HERE FOR\tINTERNAL CONSEQUENCE\nISO/IEC/IEEE 42010:2022\tArchitecture description structure, concepts, relationships and viewpoints.\tKES-ARC-001 and KES-REL-001 require distinct identities/classes and typed relations.\nRFC 2119 + RFC 8174 / BCP 14\tNormative requirement language.\tOnly uppercase MUST/SHOULD/MAY forms carry normative meaning.\nWHATWG HTML Living Standard\tSemantic, conforming HTML application structure.\tEnvironment is delivered as semantic HTML, not an opaque canvas-only shell.\nWCAG 2.2 AA target\tAccessible interaction and responsive delivery.\tKeyboard focus, text state labels, responsive layouts and non-color-only status are mandatory UI conventions.\nKEDDEH Systems Estate Environment · standalone HTML · governed registry + standards + qualification views",
+    "elementCount": 3730,
+    "headings": [
+      "KEDDEH SYSTEMS",
+      "Estate Environment",
+      "Architecture law",
+      "Environment admission model",
+      "Identity plane",
+      "Implementation plane",
+      "Evidence plane",
+      "External standards crosswalk",
+      "Typed relation ledger",
+      "Delivery gate standard",
+      "Interactive admission check",
+      "Required delivery dossier",
+      "Visual / interaction convention",
+      "State language",
+      "Design rules",
+      "Evidence levels",
+      "Claim discipline",
+      "Observed evidence boundaries",
+      "Known defects",
+      "Change protocol"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "01Overview",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "02Normative Standards",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "03Logical Registry",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "04Carrier Registry",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "05Relation Graph",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "06Delivery Gates",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "07Design Convention",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "08Evidence & Boundaries",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "09Mechanics",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "10Defects / Change",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "logicalSearch",
+        "name": null,
+        "text": "Search logical identities, classes, roles, source refs…",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "SELECT",
+        "type": "select-one",
+        "id": "logicalClass",
+        "name": null,
+        "text": "All classesAPPARTIFACTEXECUTABLEMESHOSRUNTIMESERVERVOLUMEWORKBOOK",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "carrierSearch",
+        "name": null,
+        "text": "Search carrier IDs, identities, kinds, hashes, roles…",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "SELECT",
+        "type": "select-one",
+        "id": "carrierKind",
+        "name": null,
+        "text": "All kindsEXECUTABLE_IMAGEHTMLHTML_ROOTJSONMANIFEST_JSONOOXMLRESOURCESCRIPTSEMANTIC_INDEX",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "id": "gate0",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "id": "gate1",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "id": "gate2",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "id": "gate3",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "id": "gate4",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "id": "gate5",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "id": "gate6",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "id": "gate7",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "id": "gate8",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "id": "gate9",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "checkAll",
+        "name": null,
+        "text": "Mark all satisfied",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 116334,
+        "type": "classic"
+      }
+    ]
+  },
+  "controlChecks": [
+    {
+      "name": "delivery checklist updates percentage from actual checked count",
+      "passed": true,
+      "detail": {
+        "gateCount": 10,
+        "score": "10%"
+      }
+    }
+  ],
+  "storage": {
+    "localStorage": [],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "elapsedMs": 2702,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:36:44.852Z",
+  "sha256After": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b",
+  "originalUnchanged": true
+}

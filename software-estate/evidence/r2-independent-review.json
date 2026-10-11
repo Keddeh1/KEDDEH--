@@ -1,0 +1,152 @@
+{
+  "schema": "keddeh.independent-ai-engineering-review.v1",
+  "at": "2026-10-11T16:42:31.017098+00:00",
+  "reviewer": "Separate OpenAI ChatGPT review worker, not implementation or documentation author",
+  "status": "bounded R2 increment reviewed; identified findings closed with retained qualification limits",
+  "approval": "No external human peer review, scientific validation, release approval or rights grant",
+  "sourceCommit": "09f45187dbec29ebe63153f916b67505452dc136",
+  "methods": [
+    "Read targeted R2 patches and adapter mechanism",
+    "Reran original SHA256/size and Git blob identities independently",
+    "Inspected browser harness external assertions and network isolation",
+    "Independently executed actor-authored priority suite twice, retaining preliminary run",
+    "Read substantive monograph, glossary, considerations, conventions, recovery and control matrices; checked source mechanisms and source terminology",
+    "Parsed generated HTML for links, heading IDs and scripts; checked 27 indexed hashes"
+  ],
+  "custody": {
+    "originalsMatched": 27,
+    "githubBlobsMatched": 17,
+    "receipt": "r2-independent-custody.json"
+  },
+  "browser": {
+    "receipt": "r2-browser-independent/results.json",
+    "passed": 15,
+    "failed": 0,
+    "browserVersion": "151.0.7922.173",
+    "preliminaryReceipt": "r2-browser-independent-pre-strengthening/results.json",
+    "testDesignIndependence": "Suite authored by implementation worker; review identified and closed three weak assertions; rerun by separate reviewer."
+  },
+  "findings": [
+    {
+      "id": "RV-01",
+      "finding": "Checkpoint test could pass no-op restore",
+      "disposition": "closed",
+      "evidence": "Actor added mkdir mutation and exact snapshot restoration; independent final rerun passes."
+    },
+    {
+      "id": "RV-02",
+      "finding": "Worker-denial label lacked worker assertion",
+      "disposition": "closed",
+      "evidence": "Actor added E_WORKER_NOT_STARTED, unavailable worker and zero pending assertions; independent rerun passes."
+    },
+    {
+      "id": "RV-03",
+      "finding": "Repeated editor cycles only counted nodes",
+      "disposition": "closed",
+      "evidence": "Actor added saved-text readback across three cycles; independent rerun passes."
+    },
+    {
+      "id": "RV-04",
+      "finding": "Documentation claimed AetherOS denied-storage test",
+      "disposition": "closed",
+      "evidence": "Author removed unsupported claim; AetherOS quota/denial remains NOT_RUN."
+    },
+    {
+      "id": "RV-05",
+      "finding": "R1 adapter link could obscure current R2 source",
+      "disposition": "closed",
+      "evidence": "Author explicitly distinguishes R1 and R2 adapter source."
+    },
+    {
+      "id": "RV-06",
+      "finding": "Mandatory monograph sections mixed with metadata levels",
+      "disposition": "closed",
+      "evidence": "Exact eight main sections confirmed; metadata separate."
+    },
+    {
+      "id": "RV-07",
+      "finding": "HTML lacked section IDs and evidence table broken",
+      "disposition": "closed",
+      "evidence": "All thirteen views have unique section IDs and no scripts; evidence table repaired."
+    },
+    {
+      "id": "RV-08",
+      "finding": "HCF candidate digest/frontage reference ambiguity",
+      "disposition": "closed",
+      "evidence": "Candidate now has digest; frontage commit identified as source subset reference."
+    },
+    {
+      "id": "RV-09",
+      "finding": "Concrete next experiments and canonical-source HTML links",
+      "disposition": "closed",
+      "evidence": "Five concrete next experiments include setup/observable acceptance/dependency; all 13 HTML views link canonical Markdown. Independent rendered-link pass:143 links,0 missing."
+    },
+    {
+      "id": "RV-10",
+      "finding": "Four broad-family runtime/isolation errors",
+      "disposition": "closed-bounded",
+      "evidence": "Three source fixes reviewed; four affected carriers independently rerun:8 assertions pass,0 runtime errors,4 registration-denial probes pass; bootchain source unchanged and harness error corrected. Full embedded app behavior remains unqualified."
+    }
+  ],
+  "retainedLimitations": [
+    "Single Chromium build and disposable contexts, no crash or cross-browser qualification",
+    "AetherOS storage quota/denial UI remains untested",
+    "P19 IndexedDB blocked-open/versionchange and early WebSocket-close limitations remain disclosed",
+    "KEX host syscall adapter absent; standalone local nano behavior only",
+    "Markdown has no standalone durable save; export verified",
+    "Broad safe controls do not qualify infrastructure or mining; historical startup failures retained, four affected final carriers independently clean under corrected isolation",
+    "HCF incomplete with eleven missing dependencies and uncertain lineage; StoreSpace/ServerSpace originals missing",
+    "Publishing exact DOCX fidelity not verified; primary project references are not academic validation"
+  ],
+  "failureHistory": {
+    "initial-results.json": "8 pass,4 fail; includes real IndexedDB getter defect and harness assumptions",
+    "after-r14-results.json": "9 pass,3 fail; editor lifecycle and KEX expectation investigated",
+    "navigation-timeout-results.json": "9 pass,3 fail; reload timeout cascades retained",
+    "overlay-selector-results.json": "14 pass,1 fail; navigation overlay selector corrected",
+    "final": "15 pass,0 fail after bounded repairs and stronger assertions"
+  },
+  "reviewedPriorityHarnessSHA256": "71e851008119280776440c7b79f71305699130f62cb589f39b77980cb016d178",
+  "documentationFilesRead": [
+    "conventions.md",
+    "index.md",
+    "recovery.md",
+    "evidence-register.md",
+    "publication-controls.md",
+    "glossary.md",
+    "controls.md",
+    "development.md",
+    "introduction.md",
+    "normalisation.md",
+    "considerations.md",
+    "control-matrices.md",
+    "monograph.md"
+  ],
+  "documentationChecks": {
+    "htmlViews": 13,
+    "uniqueSectionIDs": true,
+    "externalJavaScript": false,
+    "canonicalMarkdownLinks": 13,
+    "renderedLocalLinks": 143,
+    "missingLocalTargets": 0,
+    "monographExactEightSections": true,
+    "primarySourceHashesMatched": 27,
+    "authorValidatorIndependentRerun": {
+      "linksChecked": 273,
+      "missingLinks": 0,
+      "htmlPagesRendered": 13,
+      "horizontalOverflowPages": 0,
+      "externalScriptPages": 0
+    }
+  },
+  "familyFollowup": {
+    "files": 4,
+    "assertionsPassed": 8,
+    "assertionsFailed": 0,
+    "runtimeErrors": 0,
+    "serviceWorkerDenialProbes": 4,
+    "directory": "r2-family-independent",
+    "sourceReview": "r2-family-independent-source.json",
+    "harnessSHA256": "67504533efe9e951cb6fe9399a667ccffb224c776c3b476bcd8971b5eb88e7a0",
+    "actionsSHA256": "c85e946eb852d8f729b0ad3b26b817a797d8d4dfc81bd80be12cd4fe49e8c44a"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "status": "partial-lineage-recovery-not-runnable",
+  "original_sha256": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec",
+  "entrypoint_recovered_from_older_html": "/index.tsx",
+  "saved_capture_entrypoint": "./index.ts",
+  "source_map_file": "/app/applet/index.ts",
+  "source_map_source": "index.ts",
+  "original_typescript_bytes": 709628,
+  "imports": [
+    "./src/substrate_memory.ts",
+    "./src/apex_processor",
+    "./substrate_effect",
+    "./src/pixel-analyzer",
+    "./src/governance-scheduler",
+    "./src/provider-hypervisor",
+    "./firebase-setup",
+    "./firebase-applet-config.json",
+    "./src/braink-sectors",
+    "./src/topology-validator",
+    "./src/adr-registry",
+    "react",
+    "react-dom/client",
+    "recharts",
+    "d3",
+    "v86"
+  ],
+  "missing_local_imports": [
+    "./src/substrate_memory.ts",
+    "./src/apex_processor",
+    "./substrate_effect",
+    "./src/pixel-analyzer",
+    "./src/governance-scheduler",
+    "./src/provider-hypervisor",
+    "./firebase-setup",
+    "./firebase-applet-config.json",
+    "./src/braink-sectors",
+    "./src/topology-validator",
+    "./src/adr-registry"
+  ],
+  "served_module_parse_check": "node --input-type=module --check: PASS",
+  "exact_standalone_version_match": false,
+  "saved_page_title_match": true,
+  "standalone_dom_ids": 96,
+  "common_dom_ids": 65,
+  "standard_secret_pattern_scan": "No Google API-key, GitHub token, private-key header, or JWT signatures detected; not a full credential audit",
+  "files": [
+    {
+      "file": "hcf_workstation.entrypoint.html",
+      "bytes": 103709,
+      "sha256": "341f81c70b7766f8728b2ff515ca8f8bf47a2a0bd8dc5b724980555ca98b2534"
+    },
+    {
+      "file": "index.css",
+      "bytes": 68692,
+      "sha256": "9c51646da737314562a35c29fdeb2036f0859fe71abbd9fb62b83a0befa1ce20"
+    },
+    {
+      "file": "index.recovered-0.ts",
+      "bytes": 709628,
+      "sha256": "3c5d7695bb364afccb5f5acabeccecadaaf2d769b02266bd26c604e02640af79"
+    },
+    {
+      "file": "index.served.js",
+      "bytes": 1872580,
+      "sha256": "0dcb1276c02680c8e619bc3576f0d8ea3d0e7dfc2c68205c0a11e0f7ae64fbbd"
+    },
+    {
+      "file": "saved_resource.html",
+      "bytes": 203832,
+      "sha256": "2122b30fcebc8b1912f9481d6c82d03b119e045e3a7aa74246d027afd780ac96"
+    },
+    {
+      "file": "source-metadata.json",
+      "bytes": 857,
+      "sha256": "d0153d08d2d567d5f3e0d5b26abec67da4f02bf21cbf5eaf654cefc8f60114ba"
+    }
+  ],
+  "saved_page_dom_ids_source_regex": 89,
+  "saved_page_dom_ids": 80,
+  "dom_count_method": "HTML parser (independent verifier); raw source regex included JavaScript strings"
+}

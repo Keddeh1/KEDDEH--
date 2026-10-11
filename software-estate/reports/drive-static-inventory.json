@@ -1,0 +1,961 @@
+[
+  {
+    "filename": "CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+    "title": "CasePath | Lawyer-ready legal preparation",
+    "scripts": 4,
+    "script_sources": [],
+    "style_sources": [
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d2933'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='white'%3ECP%3C/text%3E%3C/svg%3E"
+    ],
+    "iframe_sources": [],
+    "forms": [],
+    "inline_handlers": [],
+    "api_markers": {
+      "fetch": 2,
+      "XMLHttpRequest": 0,
+      "WebSocket": 0,
+      "localStorage": 4,
+      "sessionStorage": 0,
+      "indexedDB": 3,
+      "Worker": 1,
+      "serviceWorker": 0,
+      "eval": 0,
+      "Function": 0,
+      "showOpenFilePicker": 0,
+      "showSaveFilePicker": 0,
+      "postMessage": 1
+    },
+    "events": [
+      "click",
+      "visibilitychange",
+      "focus",
+      "DOMContentLoaded",
+      "keddeh:booted"
+    ],
+    "boot_functions": [],
+    "syntax_checks": [
+      {
+        "script_index": 2,
+        "bytes": 23238,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 3,
+        "bytes": 7918,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  {
+    "filename": "KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+    "title": "AetherOS Linux-Web v6.12 Open-Source Kernel",
+    "scripts": 1,
+    "script_sources": [],
+    "style_sources": [],
+    "iframe_sources": [],
+    "forms": [],
+    "inline_handlers": [
+      "openApp('software')",
+      "openApp('braink')",
+      "openApp('sql')",
+      "openApp('terminal')",
+      "openApp('vfs')",
+      "openApp('editor')",
+      "openApp('synth')",
+      "openApp('sysmon')",
+      "openApp('nettop')",
+      "openApp('physics')",
+      "openApp('paint')",
+      "openApp('calc')",
+      "openApp('settings')",
+      "rebootOS()",
+      "openApp('browser')",
+      "openApp('breakout')",
+      "openApp('markdown')",
+      "openApp('hexview')",
+      "openApp('domlab')",
+      "filterStartApps(this.value)",
+      "openAppFromStart('software')",
+      "openAppFromStart('braink')",
+      "openAppFromStart('sql')",
+      "openAppFromStart('terminal')",
+      "openAppFromStart('editor')",
+      "openAppFromStart('domlab')",
+      "openAppFromStart('markdown')",
+      "openAppFromStart('calc')",
+      "openAppFromStart('vfs')",
+      "openAppFromStart('synth')",
+      "openAppFromStart('paint')",
+      "openAppFromStart('physics')",
+      "openAppFromStart('breakout')",
+      "openAppFromStart('sysmon')",
+      "openAppFromStart('browser')",
+      "openAppFromStart('settings')",
+      "openAppFromStart('nettop')",
+      "openAppFromStart('hexview')",
+      "toggleStartMenu(event)"
+    ],
+    "api_markers": {
+      "fetch": 0,
+      "XMLHttpRequest": 0,
+      "WebSocket": 0,
+      "localStorage": 18,
+      "sessionStorage": 1,
+      "indexedDB": 0,
+      "Worker": 0,
+      "serviceWorker": 0,
+      "eval": 0,
+      "Function": 3,
+      "showOpenFilePicker": 0,
+      "showSaveFilePicker": 0,
+      "postMessage": 0
+    },
+    "events": [
+      "keydown",
+      "mousedown",
+      "mouseup",
+      "mouseleave",
+      "keyup",
+      "input",
+      "resize",
+      "mousemove",
+      "change",
+      "click"
+    ],
+    "boot_functions": [
+      "renderSchemaSidebar",
+      "runSql",
+      "renderTable",
+      "loadPreset",
+      "initAudioEngine",
+      "renderVisualizer",
+      "render",
+      "initBricksForStage",
+      "loadTemplate",
+      "runBootStep",
+      "startDragWindow",
+      "startResizeWindow",
+      "initDesktop",
+      "initSoftwareCenter",
+      "renderSoftwareCatalog",
+      "initNettop",
+      "renderNettopSockets",
+      "initHexview",
+      "loadHexFile",
+      "initBrainkCanvas",
+      "runDomBenchmark",
+      "loadBrowserUrl",
+      "renderVfsTree"
+    ],
+    "syntax_checks": [
+      {
+        "script_index": 0,
+        "bytes": 247629,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  {
+    "filename": "KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+    "title": "V8 Evidence-Bearing \u2014 KEDDEH BRAINK Launchpad \u00b7 BTC Core Resident Envelope",
+    "scripts": 7,
+    "script_sources": [],
+    "style_sources": [],
+    "iframe_sources": [],
+    "forms": [],
+    "inline_handlers": [],
+    "api_markers": {
+      "fetch": 2,
+      "XMLHttpRequest": 0,
+      "WebSocket": 0,
+      "localStorage": 0,
+      "sessionStorage": 0,
+      "indexedDB": 1,
+      "Worker": 20,
+      "serviceWorker": 0,
+      "eval": 0,
+      "Function": 0,
+      "showOpenFilePicker": 0,
+      "showSaveFilePicker": 0,
+      "postMessage": 0
+    },
+    "events": [
+      "click",
+      "keydown",
+      "DOMContentLoaded"
+    ],
+    "boot_functions": [
+      "runShell",
+      "render",
+      "bootReal",
+      "init",
+      "renderV8",
+      "runReady",
+      "runLocal"
+    ],
+    "syntax_checks": [
+      {
+        "script_index": 0,
+        "bytes": 11905,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 1,
+        "bytes": 13772,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 2,
+        "bytes": 1497,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 4,
+        "bytes": 1232,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 5,
+        "bytes": 7496,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 6,
+        "bytes": 10464,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  {
+    "filename": "KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+    "title": "BRAINK / KEX User Space v9",
+    "scripts": 91,
+    "script_sources": [],
+    "style_sources": [],
+    "iframe_sources": [],
+    "forms": [
+      {
+        "class": "kex-address",
+        "id": "kex-form",
+        "data-kex-id": "control.kex.resolver"
+      }
+    ],
+    "inline_handlers": [],
+    "api_markers": {
+      "fetch": 1,
+      "XMLHttpRequest": 0,
+      "WebSocket": 1,
+      "localStorage": 4,
+      "sessionStorage": 0,
+      "indexedDB": 0,
+      "Worker": 0,
+      "serviceWorker": 0,
+      "eval": 0,
+      "Function": 0,
+      "showOpenFilePicker": 0,
+      "showSaveFilePicker": 0,
+      "postMessage": 0
+    },
+    "events": [
+      "submit",
+      "click"
+    ],
+    "boot_functions": [
+      "renderApps",
+      "renderInspector",
+      "renderLedger",
+      "renderSeeds",
+      "render"
+    ],
+    "syntax_checks": [
+      {
+        "script_index": 85,
+        "bytes": 12226,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 86,
+        "bytes": 397,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 88,
+        "bytes": 5385,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 89,
+        "bytes": 392,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  {
+    "filename": "KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+    "title": "KEDDEH \u2014 Recursive Self-Hosting Referential Volume v24 \u00b7 P18 + A18 Integration / Closure Gate",
+    "scripts": 130,
+    "script_sources": [],
+    "style_sources": [],
+    "iframe_sources": [],
+    "forms": [],
+    "inline_handlers": [],
+    "api_markers": {
+      "fetch": 3,
+      "XMLHttpRequest": 0,
+      "WebSocket": 10,
+      "localStorage": 11,
+      "sessionStorage": 0,
+      "indexedDB": 2,
+      "Worker": 6,
+      "serviceWorker": 0,
+      "eval": 0,
+      "Function": 0,
+      "showOpenFilePicker": 0,
+      "showSaveFilePicker": 0,
+      "postMessage": 5
+    },
+    "events": [
+      "error",
+      "unhandledrejection",
+      "DOMContentLoaded",
+      "load",
+      "message",
+      "click",
+      "input",
+      "scroll"
+    ],
+    "boot_functions": [
+      "renderSignal",
+      "mountWorkbook",
+      "renderMachines",
+      "start",
+      "load",
+      "mountOOXML",
+      "renderList",
+      "renderObject",
+      "renderSnapshot",
+      "renderLegend",
+      "renderLines",
+      "renderChain",
+      "render",
+      "renderRoutes",
+      "renderSelected",
+      "renderReceipt",
+      "renderProof",
+      "renderFullChain",
+      "renderIdleChain",
+      "runSelected",
+      "renderDelivery",
+      "run",
+      "restore",
+      "boot"
+    ],
+    "syntax_checks": [
+      {
+        "script_index": 0,
+        "bytes": 2193,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 2,
+        "bytes": 1271,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 12,
+        "bytes": 11455,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 13,
+        "bytes": 14986,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 28,
+        "bytes": 4284,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 29,
+        "bytes": 5510,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 30,
+        "bytes": 5121,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 35,
+        "bytes": 5283,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 40,
+        "bytes": 4245,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 45,
+        "bytes": 4617,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 47,
+        "bytes": 10140,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 51,
+        "bytes": 13745,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 55,
+        "bytes": 6842,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 59,
+        "bytes": 5212,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 63,
+        "bytes": 4985,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 67,
+        "bytes": 2284,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 71,
+        "bytes": 4152,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 75,
+        "bytes": 13797,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 79,
+        "bytes": 9566,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 83,
+        "bytes": 6166,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 87,
+        "bytes": 8050,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 92,
+        "bytes": 4239,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 98,
+        "bytes": 7845,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 104,
+        "bytes": 1074,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 107,
+        "bytes": 1611,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 109,
+        "bytes": 10968,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 112,
+        "bytes": 13223,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 114,
+        "bytes": 5949,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 117,
+        "bytes": 2099,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 119,
+        "bytes": 9503,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 121,
+        "bytes": 5944,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 123,
+        "bytes": 6157,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 124,
+        "bytes": 7613,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 125,
+        "bytes": 2678,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 126,
+        "bytes": 6581,
+        "passed": false,
+        "error": "/tmp/tmpfl5j93kd.js:1\n\\n(function(g){'use strict';\\nconst receipts=[];let seq=0;\\nconst receipt=(op,state,detail={})=>{const r={schema:'kex.host-adapter.receipt.v1',seq:++seq,ts:new Date().toISOString(),op,state,...detail};receipts.push(r);return r};\\nclass KEXBrowserPersistence{\\n constructor(key='keddeh://braink/s30/p19'){this.key=key;this.backend='UNPROBED';this.db=null}\\n async probe(){if(typeof indexedDB!=='undefined'){try{this.db=await new Promise((ok,no)=>{const q=indexedDB.open('KEDDEH_BRAINK_P19',1);q.onupgradeneeded=()=>q.result.createObjectStore('state');q.onsuccess=()=>ok(q.result);q.onerror=()=>no(q.error)});this.backend='INDEXEDDB';return receipt('persistence.probe','PASS',{backend:this.backend})}catch(e){receipt('persistence.probe','DEGRADED',{backend:'INDEXEDDB',error:String(e)})}}if(typeof localStorage!=='undefined'){try{localStorage.setItem(this.key+':probe','1');localStorage.removeItem(this.key+':probe');this.backend='LOCALSTORAGE';return receipt('persistence.probe','PASS',{backend:this.backend})}catch(e){receipt('persistence.probe','DEGRADED',{backend:'LOCALSTORAGE',error:String(e)})}}this.backend='MEMORY_ONLY';return receipt('persistence.probe','BLOCKED',{backend:this.backend})}\\n async put(name,value){const body=JSON.stringify(value);if(this.backend==='INDEXEDDB')return new Promise((ok,no)=>{const tx=this.db.transaction('state','readwrite');tx.objectStore('state').put(body,name);tx.oncomplete=()=>ok(receipt('persistence.put','PASS',{name,bytes:body.lengt"
+      },
+      {
+        "script_index": 128,
+        "bytes": 6775,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  {
+    "filename": "KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+    "title": "KEDDEH \u2014 Recursive Self-Hosting Referential Volume v24 \u00b7 P18 + A18 Integration / Closure Gate",
+    "scripts": 109,
+    "script_sources": [],
+    "style_sources": [],
+    "iframe_sources": [],
+    "forms": [],
+    "inline_handlers": [],
+    "api_markers": {
+      "fetch": 5,
+      "XMLHttpRequest": 0,
+      "WebSocket": 4,
+      "localStorage": 2,
+      "sessionStorage": 0,
+      "indexedDB": 0,
+      "Worker": 2,
+      "serviceWorker": 0,
+      "eval": 2,
+      "Function": 0,
+      "showOpenFilePicker": 0,
+      "showSaveFilePicker": 0,
+      "postMessage": 0
+    },
+    "events": [
+      "click",
+      "DOMContentLoaded"
+    ],
+    "boot_functions": [
+      "renderSignal",
+      "mountWorkbook",
+      "renderMachines",
+      "start",
+      "load",
+      "mountOOXML",
+      "renderList",
+      "renderObject",
+      "renderSnapshot",
+      "renderReceipt",
+      "render"
+    ],
+    "syntax_checks": [
+      {
+        "script_index": 8,
+        "bytes": 11455,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 9,
+        "bytes": 14986,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 24,
+        "bytes": 4284,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 25,
+        "bytes": 5510,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 26,
+        "bytes": 5121,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 31,
+        "bytes": 5283,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 36,
+        "bytes": 3160,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 41,
+        "bytes": 4617,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 43,
+        "bytes": 10116,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 47,
+        "bytes": 13745,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 51,
+        "bytes": 6842,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 55,
+        "bytes": 5212,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 59,
+        "bytes": 4985,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 63,
+        "bytes": 2284,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 67,
+        "bytes": 4152,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 71,
+        "bytes": 11907,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 75,
+        "bytes": 9566,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 79,
+        "bytes": 6166,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 83,
+        "bytes": 8050,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 88,
+        "bytes": 4239,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 94,
+        "bytes": 7845,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 100,
+        "bytes": 1074,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 103,
+        "bytes": 1611,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 106,
+        "bytes": 4570,
+        "passed": true,
+        "error": null
+      },
+      {
+        "script_index": 108,
+        "bytes": 15465,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  {
+    "filename": "KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+    "title": "KEDDEH Systems Estate Environment",
+    "scripts": 1,
+    "script_sources": [],
+    "style_sources": [],
+    "iframe_sources": [],
+    "forms": [],
+    "inline_handlers": [],
+    "api_markers": {
+      "fetch": 0,
+      "XMLHttpRequest": 0,
+      "WebSocket": 0,
+      "localStorage": 0,
+      "sessionStorage": 0,
+      "indexedDB": 0,
+      "Worker": 0,
+      "serviceWorker": 0,
+      "eval": 0,
+      "Function": 0,
+      "showOpenFilePicker": 0,
+      "showSaveFilePicker": 0,
+      "postMessage": 0
+    },
+    "events": [
+      "click",
+      "change"
+    ],
+    "boot_functions": [
+      "renderLogical",
+      "renderCarriers"
+    ],
+    "syntax_checks": [
+      {
+        "script_index": 0,
+        "bytes": 116358,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  {
+    "filename": "KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+    "title": "KEX Active Warehouse Fabric v7.1",
+    "scripts": 1,
+    "script_sources": [],
+    "style_sources": [],
+    "iframe_sources": [],
+    "forms": [],
+    "inline_handlers": [],
+    "api_markers": {
+      "fetch": 0,
+      "XMLHttpRequest": 0,
+      "WebSocket": 0,
+      "localStorage": 0,
+      "sessionStorage": 0,
+      "indexedDB": 0,
+      "Worker": 0,
+      "serviceWorker": 0,
+      "eval": 0,
+      "Function": 0,
+      "showOpenFilePicker": 0,
+      "showSaveFilePicker": 0,
+      "postMessage": 0
+    },
+    "events": [
+      "click",
+      "keydown"
+    ],
+    "boot_functions": [
+      "render",
+      "boot"
+    ],
+    "syntax_checks": [
+      {
+        "script_index": 0,
+        "bytes": 23570,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  {
+    "filename": "KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+    "title": "KEX Computer Stack v10 \u2014 Developer Runtime",
+    "scripts": 1,
+    "script_sources": [],
+    "style_sources": [],
+    "iframe_sources": [],
+    "forms": [],
+    "inline_handlers": [],
+    "api_markers": {
+      "fetch": 0,
+      "XMLHttpRequest": 0,
+      "WebSocket": 0,
+      "localStorage": 0,
+      "sessionStorage": 0,
+      "indexedDB": 0,
+      "Worker": 3,
+      "serviceWorker": 0,
+      "eval": 0,
+      "Function": 1,
+      "showOpenFilePicker": 0,
+      "showSaveFilePicker": 0,
+      "postMessage": 2
+    },
+    "events": [
+      "click",
+      "keydown"
+    ],
+    "boot_functions": [
+      "render",
+      "boot",
+      "initSyscalls",
+      "runtimeForLanguage",
+      "runDeveloperProgram",
+      "runtimeView",
+      "runtimeLogWrite",
+      "runSource",
+      "loadProgram"
+    ],
+    "syntax_checks": [
+      {
+        "script_index": 0,
+        "bytes": 51963,
+        "passed": true,
+        "error": null
+      }
+    ]
+  },
+  {
+    "filename": "hcf_workstation.html",
+    "title": "ONE (OS 1) Workstation",
+    "scripts": 3,
+    "script_sources": [
+      "https://accounts.google.com/gsi/client",
+      "https://cdn.jsdelivr.net/npm/v86@latest/build/libv86.js"
+    ],
+    "style_sources": [
+      "https://fonts.googleapis.com",
+      "https://fonts.gstatic.com",
+      "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "/index.css"
+    ],
+    "iframe_sources": [
+      "about:blank"
+    ],
+    "forms": [],
+    "inline_handlers": [
+      "this.style.background='#0284c7'; this.style.color='#fff';",
+      "this.style.background='#020617'; this.style.color='#38bdf8';",
+      "this.style.borderColor='#3b82f6'; this.style.boxShadow='0 0 8px rgba(59,130,246,0.3)'",
+      "this.style.borderColor='#1e3a8a'; this.style.boxShadow='none'",
+      "this.style.borderColor='#8b5cf6'; this.style.boxShadow='0 0 8px rgba(139,92,246,0.3)'",
+      "this.style.borderColor='#4c1d95'; this.style.boxShadow='none'",
+      "this.style.borderColor='#10b981'; this.style.boxShadow='0 0 8px rgba(16,185,129,0.3)'",
+      "this.style.borderColor='#065f46'; this.style.boxShadow='none'"
+    ],
+    "api_markers": {
+      "fetch": 0,
+      "XMLHttpRequest": 0,
+      "WebSocket": 2,
+      "localStorage": 0,
+      "sessionStorage": 0,
+      "indexedDB": 0,
+      "Worker": 2,
+      "serviceWorker": 0,
+      "eval": 0,
+      "Function": 1,
+      "showOpenFilePicker": 0,
+      "showSaveFilePicker": 0,
+      "postMessage": 0
+    },
+    "events": [],
+    "boot_functions": [],
+    "syntax_checks": [],
+    "importmap_dependencies": {
+      "@google/genai": "https://esm.sh/@google/genai@0.7.0",
+      "@tailwindcss/browser": "https://esm.sh/@tailwindcss/browser@^4.1.3"
+    },
+    "main_runtime_note": "No executable inline application script or module-script entrypoint found; external scripts are Google identity and v86 only. Main app source is absent from this single HTML."
+  }
+]

@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "file": "KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+  "sha256": "660c677332327e470c746853a535f209b4735d139bb992c6e430522c0261ca56",
+  "startedAt": "2026-10-11T16:34:09.629Z",
+  "mode": "isolated-startup-no-controls-activated",
+  "console": [
+    {
+      "type": "log",
+      "text": "[AetherOS] Kernel initializing with preloaded real software suite..."
+    }
+  ],
+  "runtimeErrors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:43301/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "method": "GET",
+      "type": "document",
+      "allowed": true
+    }
+  ],
+  "blocked": [],
+  "dialogs": [],
+  "limitations": [
+    "External network, workers, service workers, WebSockets and live integrations are blocked. Dependency failures under this isolation are not application defects.",
+    "Startup and DOM inventory only; no financial, mining, transaction or other action controls activated.",
+    "Fresh ephemeral context; persistence across sessions and authenticated integrations not exercised."
+  ],
+  "httpStatus": 200,
+  "dom": {
+    "title": "AetherOS Linux-Web v6.12 Open-Source Kernel",
+    "readyState": "complete",
+    "bodyText": "🐧\nAetherOS 6.12\n🛍️ Software\n🧠 Braink AI\n🗄️ SQL Studio\n💻 Terminal\n📁 Files\n📄 Editor\n🎹 Synthesizer\n📊 SysMon\n📡 NetTop\n⚛️ Physics Lab\n🎨 Paint\n🔢 Calculator\n⚙️ Settings\nCPU: 4%\nRAM: 128MB\n12:00:00\n🔄\n🛍️\nSoftware\n🧠\nBraink AI\n💻\nBash Shell\n📁\nFiles (VFS)\n📄\nCode Editor\n🗄️\nSQL Studio\n📊\nTask Manager\n📡\nNetTop\n🎹\nAudio Synth\n🌐\nHTML5 Runner\n⚛️\nPhysics Lab\n🕹️\nCyber Breakout\n📝\nMarkdown Studio\n🎨\nAetherPaint\n🔢\nCalculator\n🔍\nHexView\n🧪\nDOM Rigour Lab\n⚙️\nSettings\n💻\nBash Terminal (/bin/sh)\n—\n▢\n✕\nAetherOS Linux 6.12.0-web (x86_64 preloaded)\nType 'help' to list built-in commands or 'open [app]' to launch real software.\nAvailable software: sql, synth, physics, breakout, markdown, paint, calc, domlab, sysmon, vfs, editor.\n\nengineer@aether:~$\n🐧\nAetherOS\n💻\nBash Terminal (/bin/sh)\nVFS: Synced",
+    "elementCount": 255,
+    "headings": [],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "—",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "▢",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "✕",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "term-cmd",
+        "name": null,
+        "text": "",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "id": "start-search",
+        "name": null,
+        "text": "Type to filter apps...",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "🔄 Reboot OS",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "🔬 Rigour Lab",
+        "disabled": false,
+        "visible": false,
+        "href": null
+      },
+      {
+        "tag": "BUTTON",
+        "type": "submit",
+        "id": "",
+        "name": null,
+        "text": "🐧\nAetherOS",
+        "disabled": false,
+        "visible": true,
+        "href": null
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "inlineBytes": 247282,
+        "type": "classic"
+      }
+    ]
+  },
+  "storage": {
+    "localStorage": [
+      {
+        "key": "keddeh.aetheros.vfs.state.v2",
+        "bytes": 147
+      },
+      {
+        "key": "keddeh.aetheros.policy.v1",
+        "bytes": 661
+      },
+      {
+        "key": "keddeh.aetheros.vfs.overlay.v2",
+        "bytes": 2499
+      }
+    ],
+    "sessionStorage": [],
+    "indexedDB": []
+  },
+  "screenshot": "KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html-b6be6ad1.png",
+  "elapsedMs": 2088,
+  "status": "startup-observed",
+  "finishedAt": "2026-10-11T16:34:13.510Z",
+  "sha256After": "660c677332327e470c746853a535f209b4735d139bb992c6e430522c0261ca56",
+  "originalUnchanged": true
+}

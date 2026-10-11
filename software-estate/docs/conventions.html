@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KEDDEH SYSTEMS · conventions</title><style>@page{size:A4;margin:18mm}*{box-sizing:border-box}body{font:15px/1.65 Arial,sans-serif;color:#101820;background:#edf1f4;margin:0}main{max-width:1100px;margin:32px auto;padding:48px;background:white;border-top:8px solid #103b50}h1{font-size:30px;color:#000}h2{font-size:21px;margin-top:32px;color:#123c50}h3{font-size:18px}a{color:#075b7c}table{border-collapse:collapse;width:100%;font-size:13px;margin:20px 0}th,td{border:1px solid #ccd5db;padding:9px;text-align:left;vertical-align:top;overflow-wrap:anywhere}th{background:#e9f0f3}thead{display:table-header-group}pre{white-space:pre-wrap;background:#f2f5f7;padding:16px}code{overflow-wrap:anywhere}footer{font-size:12px;border-top:1px solid #ccc;padding-top:16px}@media print{body{background:white;font-size:10pt}main{margin:0;padding:0;border:0;max-width:none}h1,h2,h3{break-after:avoid}tr{break-inside:avoid}a{color:#000}thead{display:table-header-group}}</style></head><body><main><p>KEDDEH SYSTEMS | RESEARCH AND FORMAL PUBLISHING | ENGINEER · AUTOMATE · SCALE</p>
+<h3 id="document-control">Document control</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Title</td>
+<td>Naming, versioning, files, interfaces and receipts</td>
+</tr>
+<tr>
+<td>Document ID</td>
+<td>KEDDEH-ENG-CONVENTIONS-001</td>
+</tr>
+<tr>
+<td>Version / date</td>
+<td>R2 / 2026-10-11 UTC</td>
+</tr>
+<tr>
+<td>Classification / status</td>
+<td>Private development material / Draft</td>
+</tr>
+<tr>
+<td>Assessor / approval receipt</td>
+<td>Unrecorded / Unrecorded</td>
+</tr>
+</tbody></table>
+<h3 id="authorship-and-licensing">Authorship and licensing</h3>
+<p>Author: Aboudy Keddeh — Systems Architect. Rights holder: Aboudy Keddeh. Publisher: Keddeh Systems. Legal context: The Layna Company Pty Limited, user-stated parent. Licence profile: KEDDEH-RESERVED-1.0.</p>
+<p>Architecture and research direction: Aboudy Keddeh. AI-assisted drafting and source synthesis: OpenAI ChatGPT. No independent approval is implied.</p>
+<p>All rights reserved. No licence is granted by this document. Separate written permission governs reuse, redistribution and implementation, subject to applicable law. Third-party material retains its own rights.</p>
+<h3 id="publication-identity-and-visual-attribution">Publication identity and visual attribution</h3>
+<p>KEDDEH SYSTEMS · ENGINEER · AUTOMATE · SCALE. Local repository research and engineering edition. Source identities and original third-party notices remain preserved. See <a href="publication-controls.html">publication controls</a> for reference access and layout verification limits.</p>
+<h1 id="naming-versioning-files-interfaces-and-receipts">Naming, versioning, files, interfaces and receipts</h1>
+<p>Use existing source names exactly. New development identifiers may add a local successor suffix but must retain the parent identity. Documentation R2 describes this repository increment; it does not rename every runtime to R2. Historical R13/R14, V9/V11 and v6.12 strings are lineage evidence, not errors to normalize globally.</p>
+<p><code>originals/</code> contains preserved acquisition bytes and manifests; <code>working/</code> contains repaired source and generated HTML; <code>development/</code> contains targeted repair implementations; <code>tools/</code> and <code>tests/</code> contain reproducible checks; <code>reports/</code> and <code>evidence/</code> contain findings; <code>docs/</code> contains this canonical Markdown dossier. A generated HTML documentation view is derivative and must link back to Markdown.</p>
+<p>Logical addresses, VFS paths, browser origins, repository paths and external endpoints are separate namespaces. Do not resolve <code>app://</code>, <code>kex://</code> or a VFS <code>/home/engineer</code> path as a host filesystem path without an explicit adapter. Preserve public interface names and schema identifiers. P19&#39;s <code>kex.host-adapter.receipt.v1</code>, checkpoint schema and <code>KEXHostAdapters</code> contract are distinct from AetherOS <code>keddeh.aetheros.admin-receipt/v1</code>.</p>
+<p>A new independent test receipt should identify its schema/version, UTC time, test implementation, browser/runtime versions, tested file hash, action, expected state, observed state, result and evidence paths. Use <code>PASS</code>, <code>FAIL</code>, <code>BLOCKED</code> and <code>NOT_RUN</code> deliberately; absence of an exception alone is not a functional pass. Record storage backend and reload origin when claiming persistence. Record external requests blocked by the harness without persisting acquisition URLs or credentials.</p>
+<p>Runtime receipts are diagnostic data produced by an actor. Independent receipts must identify their observer and scope without inventing approval. A checksum proves equality relative to its reference; a draft receipt records byte custody. Neither establishes scientific validation or rights clearance.</p>
+<hr>
+<p>© 2026 Aboudy Keddeh | Keddeh Systems | All rights reserved<br>KEDDEH-ENG-CONVENTIONS-001 | R2 | Private development material | Draft<br><a href="index.html">Master index</a> · <a href="publication-controls.html">Publication controls</a></p>
+<footer><a href="conventions.md">Canonical Markdown source</a></footer></main></body></html>

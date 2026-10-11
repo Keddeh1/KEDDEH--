@@ -1,0 +1,680 @@
+{
+  "schema": "keddeh.software-estate.components.v1",
+  "version": "R2",
+  "path_base": "repository-root",
+  "source_commit": "09f45187dbec29ebe63153f916b67505452dc136",
+  "components": [
+    {
+      "id": "drive-01",
+      "name": "KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "source_channel": "drive",
+      "source_id": "1kdxO0Oifa6kclxiBOUfni40XHmI2Hkjh",
+      "original_path": "software-estate/originals/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "working_path": "software-estate/working/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "bytes": 21624891,
+      "sha256": "b9295524288f1981b4b673c4f47a729cd0253733563ffb8e24a4e7433c9f32e9",
+      "status": "preserved-original"
+    },
+    {
+      "id": "drive-02",
+      "name": "KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "source_channel": "drive",
+      "source_id": "1RG7Zv-i_4rtx_wkuLFruA3U_fEDjiluo",
+      "original_path": "software-estate/originals/drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "working_path": "software-estate/working/drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "bytes": 5122943,
+      "sha256": "7f6e4ce0a41d3ba8823984533f41479be77efa7656f3e016f591af6e49c13fec",
+      "status": "preserved-original"
+    },
+    {
+      "id": "drive-03",
+      "name": "KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "source_channel": "drive",
+      "source_id": "12FFY6AvvU-tddcKaQCph6Nxes3l6ridi",
+      "original_path": "software-estate/originals/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "working_path": "software-estate/working/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "bytes": 276615,
+      "sha256": "660c677332327e470c746853a535f209b4735d139bb992c6e430522c0261ca56",
+      "status": "preserved-original"
+    },
+    {
+      "id": "drive-04",
+      "name": "hcf_workstation.html",
+      "source_channel": "drive",
+      "source_id": "171X1yM2Twh6FJsRGAzJt9heJw46cWR27",
+      "original_path": "software-estate/originals/drive/hcf_workstation.html",
+      "working_path": "software-estate/working/drive/hcf_workstation.html",
+      "bytes": 103660,
+      "sha256": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec",
+      "status": "preserved-original"
+    },
+    {
+      "id": "drive-05",
+      "name": "KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "source_channel": "drive",
+      "source_id": "1yorxehgeVdaGutGOvmZw0wIKf14Smo-a",
+      "original_path": "software-estate/originals/drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "working_path": "software-estate/working/drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "bytes": 6400478,
+      "sha256": "311485063a7f0583fc787590a566f07945744ae0ef3e8d72f5af8f3f9930e000",
+      "status": "preserved-original"
+    },
+    {
+      "id": "drive-06",
+      "name": "KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "source_channel": "drive",
+      "source_id": "1x7lEOplZpiNgsG92u72MolmKMus8zKjO",
+      "original_path": "software-estate/originals/drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "working_path": "software-estate/working/drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "bytes": 73482,
+      "sha256": "166f1ff30b8adbb887951625547ab33a0faf5226ac452ba4ea261c622fd353be",
+      "status": "preserved-original"
+    },
+    {
+      "id": "drive-07",
+      "name": "KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "source_channel": "drive",
+      "source_id": "1MQLILcT1dbuvXdcWNqtnaYuBN6F6ZZoo",
+      "original_path": "software-estate/originals/drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "working_path": "software-estate/working/drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "bytes": 66244,
+      "sha256": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028",
+      "status": "preserved-original"
+    },
+    {
+      "id": "drive-08",
+      "name": "KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "source_channel": "drive",
+      "source_id": "1XBehSNfvcbZALwSedcxQdm6GFc9m_pB9",
+      "original_path": "software-estate/originals/drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "working_path": "software-estate/working/drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "bytes": 31281,
+      "sha256": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41",
+      "status": "preserved-original"
+    },
+    {
+      "id": "drive-09",
+      "name": "KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "source_channel": "drive",
+      "source_id": "1FpoteDwiujjhBKaKr8nEmL19jiMAGSfE",
+      "original_path": "software-estate/originals/drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "working_path": "software-estate/working/drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "bytes": 135601,
+      "sha256": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b",
+      "status": "preserved-original"
+    },
+    {
+      "id": "drive-10",
+      "name": "CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "source_channel": "drive",
+      "source_id": "1pcj4Darfn4lIb3Sq7k_C1F-f7v2JeR4s",
+      "original_path": "software-estate/originals/drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "working_path": "software-estate/working/drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "bytes": 92798,
+      "sha256": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-01",
+      "name": "src/data/html5Apps.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "17ea27ad34ada77188a84570c90356d1031fabbd",
+      "original_path": "software-estate/originals/github/src/data/html5Apps.ts",
+      "working_path": "software-estate/working/github/src/data/html5Apps.ts",
+      "bytes": 8084,
+      "sha256": "9e7edcc8770208a9dfbca36e344099a66b2757eaed9708262c9231ba84a7e6e6",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-02",
+      "name": "src/data/openSourceOsTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "c841185ebcd58d26ac0a5bc82fdfb1f315e0d43f",
+      "original_path": "software-estate/originals/github/src/data/openSourceOsTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/openSourceOsTemplate.ts",
+      "bytes": 677,
+      "sha256": "728c48177749d95aa2e225c64d26a803d4701099ba7f662dff853e9e7b7ae2c9",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-03",
+      "name": "src/data/kexLinuxTerminalTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "f606677bd2b38e4c9bdbc243e2c1a24bade0df31",
+      "original_path": "software-estate/originals/github/src/data/kexLinuxTerminalTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/kexLinuxTerminalTemplate.ts",
+      "bytes": 66938,
+      "sha256": "7a3ad2e6fa63b43cc24036148ba2fe49fe3aad8d5d1a09539e8d21313c246fa3",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-04",
+      "name": "src/data/kexBootchainTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "7cdfab479f40ac1f79032575d94f3947c8b87d8d",
+      "original_path": "software-estate/originals/github/src/data/kexBootchainTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/kexBootchainTemplate.ts",
+      "bytes": 31023,
+      "sha256": "210fcfe59754c753af615f2ea9cb1bd7b33acdea2262e295dc67b80b08761328",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-05",
+      "name": "src/data/html5ParticlePhysicsTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "f7c0334994bfe4911f952b9cdbedbdde53cd5e79",
+      "original_path": "software-estate/originals/github/src/data/html5ParticlePhysicsTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/html5ParticlePhysicsTemplate.ts",
+      "bytes": 15014,
+      "sha256": "d3258602c3be2c3568f9a7ed3de67e969328faf6f02df0f6347b672d33009517",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-06",
+      "name": "src/data/html5BreakoutGameTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "36369f6e0257aa765f37d18c3c984c2025e6e675",
+      "original_path": "software-estate/originals/github/src/data/html5BreakoutGameTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/html5BreakoutGameTemplate.ts",
+      "bytes": 21653,
+      "sha256": "95a6f290dfe77dd3143305c9f8f053e32c3a66b82319091c7dcf1c00777cef2f",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-07",
+      "name": "src/data/html5SynthesizerTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "0bae2438f8e5a30dac24f2bf4035fec83feafa16",
+      "original_path": "software-estate/originals/github/src/data/html5SynthesizerTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/html5SynthesizerTemplate.ts",
+      "bytes": 26300,
+      "sha256": "5fa0a5df8553192849dc0b1d2f497fcfb4940b8e8c1778c9c580c9d426c49f96",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-08",
+      "name": "src/data/html5SqlStudioTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "7b1c27ceacaaac7016dea2dce1c34d5b490e8c36",
+      "original_path": "software-estate/originals/github/src/data/html5SqlStudioTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/html5SqlStudioTemplate.ts",
+      "bytes": 19731,
+      "sha256": "00b4897528e3f33300b92d4de79506ca7a6a326d08eb77271bb12a0a8ce4baf8",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-09",
+      "name": "src/data/html5MarkdownStudioTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "f7d21c2e8baeff60696911479b55a6198afc8fd5",
+      "original_path": "software-estate/originals/github/src/data/html5MarkdownStudioTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/html5MarkdownStudioTemplate.ts",
+      "bytes": 13997,
+      "sha256": "0b2628ecdaed8eed0f548b501ee80ad6f2a86db302eed1d532f13b30c0a40923",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-10",
+      "name": "src/data/html5PaintStudioTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "c19c411d42d1629ffa4b6da5ef4bcb3d51c33944",
+      "original_path": "software-estate/originals/github/src/data/html5PaintStudioTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/html5PaintStudioTemplate.ts",
+      "bytes": 10509,
+      "sha256": "e5362f230e0f195879396925185ceab23959cd0d887aafd19c0c6642c5fb0c3e",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-11",
+      "name": "src/data/html5CalculatorTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "9efbb25e9ad7e50533a9b10f9759c10d3bd4f6d5",
+      "original_path": "software-estate/originals/github/src/data/html5CalculatorTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/html5CalculatorTemplate.ts",
+      "bytes": 11591,
+      "sha256": "8641613ac1d746211ce38b4abe3e77680a05a45f7dcaf717ec3494fe290a69c8",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-12",
+      "name": "src/data/html5ChromeBrowserTemplate.ts",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "a0fcd78281cf3c9f15dbc834826beb9c8e8a856a",
+      "original_path": "software-estate/originals/github/src/data/html5ChromeBrowserTemplate.ts",
+      "working_path": "software-estate/working/github/src/data/html5ChromeBrowserTemplate.ts",
+      "bytes": 336,
+      "sha256": "c26bab3273bb2b6c17d95bf45734b98814e1070f28f4f67b228a50505a3eb6ce",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-13",
+      "name": "src/assets/os/AetherOS.html",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "f26b7a3d54b984aa2be1fc59448be4371c4dd306",
+      "original_path": "software-estate/originals/github/src/assets/os/AetherOS.html",
+      "working_path": "software-estate/working/github/src/assets/os/AetherOS.html",
+      "bytes": 19973,
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-14",
+      "name": "src/assets/os/MiningOS.html",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "df1a896d7d79ae8f62dcf784de6f1b6f7f0311f7",
+      "original_path": "software-estate/originals/github/src/assets/os/MiningOS.html",
+      "working_path": "software-estate/working/github/src/assets/os/MiningOS.html",
+      "bytes": 17598,
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-15",
+      "name": "src/assets/os/KexLinux.html",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "9551dbdd310180aa55cf078ca6acbd89bdb17f7b",
+      "original_path": "software-estate/originals/github/src/assets/os/KexLinux.html",
+      "working_path": "software-estate/working/github/src/assets/os/KexLinux.html",
+      "bytes": 35784,
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-16",
+      "name": "src/assets/os/KeraMeshOS.html",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "65c056fe95f0669438e817119944a2bf9082380a",
+      "original_path": "software-estate/originals/github/src/assets/os/KeraMeshOS.html",
+      "working_path": "software-estate/working/github/src/assets/os/KeraMeshOS.html",
+      "bytes": 14542,
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+      "status": "preserved-original"
+    },
+    {
+      "id": "github-17",
+      "name": "src/assets/workstations/Chrome.html",
+      "source_channel": "github",
+      "repository": "Keddeh1/KEDDEH--",
+      "commit": "09f45187dbec29ebe63153f916b67505452dc136",
+      "git_blob_sha": "0808c1ecfab9aeb6b310c390a39883979d6fcf57",
+      "original_path": "software-estate/originals/github/src/assets/workstations/Chrome.html",
+      "working_path": "software-estate/working/github/src/assets/workstations/Chrome.html",
+      "bytes": 23454,
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805",
+      "status": "preserved-original"
+    },
+    {
+      "id": "storespace",
+      "name": "StoreSpace",
+      "status": "original-access-pending",
+      "original_path": null,
+      "sha256": null,
+      "substitute": null
+    },
+    {
+      "id": "serverspace",
+      "name": "ServerSpace",
+      "status": "original-access-pending",
+      "original_path": null,
+      "sha256": null,
+      "substitute": null
+    },
+    {
+      "id": "hcf-candidate",
+      "name": "HCF recovery candidate",
+      "status": "incomplete-not-exact-original",
+      "original_path": "software-estate/originals/hcf-recovery/index.recovered-0.ts",
+      "working_path": "software-estate/working/hcf-recovered",
+      "missing_local_dependencies": 11,
+      "exact_lineage_verified": false,
+      "bytes": 709628,
+      "sha256": "3c5d7695bb364afccb5f5acabeccecadaaf2d769b02266bd26c604e02640af79"
+    },
+    {
+      "id": "public-frontage",
+      "name": "KEDDEH public frontage",
+      "status": "separate-repository-surface-not-qualified-by-html-tests",
+      "repository": "Keddeh1/KEDDEH--",
+      "path": "src",
+      "source_subset_reference_commit": "09f45187dbec29ebe63153f916b67505452dc136"
+    }
+  ],
+  "catalog_derivatives": [
+    {
+      "name": "Google_Chrome_Workstation.html",
+      "path": "software-estate/working/html5/Google_Chrome_Workstation.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 23454,
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "HTML5_Audio_Synthesizer.html",
+      "path": "software-estate/working/html5/HTML5_Audio_Synthesizer.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 26245,
+      "sha256": "fa7eac68fac1a6452154958eef789203b712acbfac0a1cff9a50fea08fc0d47f",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "HTML5_Markdown_Notebook_Studio.html",
+      "path": "software-estate/working/html5/HTML5_Markdown_Notebook_Studio.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 13896,
+      "sha256": "7ccfac527bb876941aeeada548086b390e2318b17d89c0b6c1749ee5cf5935c3",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "HTML5_Particle_Physics_Lab.html",
+      "path": "software-estate/working/html5/HTML5_Particle_Physics_Lab.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 14962,
+      "sha256": "b3500255a046e1bbb8d7d922c62bd43b7f592bafae40e0e59c0d420bb420371d",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "HTML5_Raster_Paint_Studio.html",
+      "path": "software-estate/working/html5/HTML5_Raster_Paint_Studio.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 10466,
+      "sha256": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "HTML5_Relational_SQL_Studio.html",
+      "path": "software-estate/working/html5/HTML5_Relational_SQL_Studio.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 20035,
+      "sha256": "cfb261af4a48c2f7a1cd32598837380d27a000f49345c46a68c245607f7b6e92",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "HTML5_Retro_Arcade_Breakout.html",
+      "path": "software-estate/working/html5/HTML5_Retro_Arcade_Breakout.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 21609,
+      "sha256": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "HTML5_Scientific_Calculator.html",
+      "path": "software-estate/working/html5/HTML5_Scientific_Calculator.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 11540,
+      "sha256": "2d33c27a3d9328879c6cda0185ebe99ea25f1b3f792ff3b604cbe19c9d0268f3",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "KERA_Mesh_Node.html",
+      "path": "software-estate/working/html5/KERA_Mesh_Node.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 14542,
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "KEX_Linux_Terminal.html",
+      "path": "software-estate/working/html5/KEX_Linux_Terminal.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 66516,
+      "sha256": "2d44e0edb96fc4c93918344958b379cd79913b2ba245213dd61ebeee0dcfb3ab",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "KEX_MICROKERNEL_VFS_BOOTCHAIN.html",
+      "path": "software-estate/working/html5/KEX_MICROKERNEL_VFS_BOOTCHAIN.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 30940,
+      "sha256": "e9855e375e64fb44fc41ddddcb76f77affc71f68c7d962835447621d9247f71c",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "KexLinux.html",
+      "path": "software-estate/working/html5/KexLinux.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 35784,
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "Open_Source_Operating_System.html",
+      "path": "software-estate/working/html5/Open_Source_Operating_System.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 19973,
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    },
+    {
+      "name": "Stratum_Mining_Core_OS.html",
+      "path": "software-estate/working/html5/Stratum_Mining_Core_OS.html",
+      "kind": "derived-or-copied-catalog-carrier",
+      "bytes": 17598,
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+      "derivation": "software-estate/tools/extract-html5.cjs",
+      "source_manifest": "software-estate/originals/github/manifest.json",
+      "authority": "working derivative; not an additional acquired original"
+    }
+  ],
+  "working_copy_digests": [
+    {
+      "component_id": "drive-01",
+      "path": "software-estate/working/drive/KEDDEH_BRAINK_S30_P19_HOST_ADAPTER_RUNTIME_R14_CONVERGED_20261007.html",
+      "bytes": 21626378,
+      "sha256": "c41f36a379e2c867ef8f6809e47f129108d4830d07ee0614b5eb2c800d44db1e"
+    },
+    {
+      "component_id": "drive-02",
+      "path": "software-estate/working/drive/KEDDEH_BRAINK_V76_RESIDENT_ENGINEERING_RESEARCH_VM(1).html",
+      "bytes": 5123415,
+      "sha256": "265e43209c1e42fdb01827124d0ba7519a011f6cdd7f7a9a4f4fa65436f3083c"
+    },
+    {
+      "component_id": "drive-03",
+      "path": "software-estate/working/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+      "bytes": 276945,
+      "sha256": "ebc78e313e93b0ca6b3f1ac4e0752281e1e053b1b6f4cd0d5fb617d18c7a698a"
+    },
+    {
+      "component_id": "drive-04",
+      "path": "software-estate/working/drive/hcf_workstation.html",
+      "bytes": 103660,
+      "sha256": "934f10277b59f9a4ef64e793b7f7dc4e5c36b11ea67e9e220d4cd5da82f5feec"
+    },
+    {
+      "component_id": "drive-05",
+      "path": "software-estate/working/drive/KEDDEH_BRAINK_IL_LLM_KEX_USER_SPACE_V11_CONTEXTUAL_CLAIMS_PROJECTIONS.html",
+      "bytes": 6390693,
+      "sha256": "e6aa81bd614ae95f39973bb261cd9ba3c03ab06f25ad0178f7ede283eb66c3a2"
+    },
+    {
+      "component_id": "drive-06",
+      "path": "software-estate/working/drive/KEDDEH_BRAINK_HTML_LAUNCHPAD_v11_STORY_FIRST_GENERATIONAL_RUNTIME.html",
+      "bytes": 75244,
+      "sha256": "5bf2a5979aec8761aa693d2a4c33f8d076d2d3bec376ab74354205323e6f0574"
+    },
+    {
+      "component_id": "drive-07",
+      "path": "software-estate/working/drive/KEX_COMPUTER_STACK_v10_DEVELOPER_RUNTIME.html",
+      "bytes": 66244,
+      "sha256": "abf51ece29fc9922496a9c56203304dbd651096fd091121b851f62a69ced4028"
+    },
+    {
+      "component_id": "drive-08",
+      "path": "software-estate/working/drive/KEX_ACTIVE_WAREHOUSE_FABRIC_v7_1_FIXED.html",
+      "bytes": 31281,
+      "sha256": "6ed9c818593c4eb090b3dfaa2b76a38762bd05b8af5f027cea588b8af02d1e41"
+    },
+    {
+      "component_id": "drive-09",
+      "path": "software-estate/working/drive/KEDDEH_GOVERNED_ESTATE_ENVIRONMENT_v1.html",
+      "bytes": 135601,
+      "sha256": "e5fe57347c2318ef53b8260a0f32e8b441dc27317f95840b1898ffb21940f52b"
+    },
+    {
+      "component_id": "drive-10",
+      "path": "software-estate/working/drive/CasePath_KEDDEH_Volume_v1_2_0_RECOVERY.html",
+      "bytes": 92798,
+      "sha256": "476b873ab7d63b3fba0f0c0ae6ca540a41a543fd8526c2e96cf90cfdaf44ad0e"
+    },
+    {
+      "component_id": "github-01",
+      "path": "software-estate/working/github/src/data/html5Apps.ts",
+      "bytes": 8084,
+      "sha256": "9e7edcc8770208a9dfbca36e344099a66b2757eaed9708262c9231ba84a7e6e6"
+    },
+    {
+      "component_id": "github-02",
+      "path": "software-estate/working/github/src/data/openSourceOsTemplate.ts",
+      "bytes": 677,
+      "sha256": "728c48177749d95aa2e225c64d26a803d4701099ba7f662dff853e9e7b7ae2c9"
+    },
+    {
+      "component_id": "github-03",
+      "path": "software-estate/working/github/src/data/kexLinuxTerminalTemplate.ts",
+      "bytes": 66966,
+      "sha256": "fa6c11bf96cbf8cb4a6eb7807911962132adcde02e5e385cc2d739d9d73e0731"
+    },
+    {
+      "component_id": "github-04",
+      "path": "software-estate/working/github/src/data/kexBootchainTemplate.ts",
+      "bytes": 31023,
+      "sha256": "210fcfe59754c753af615f2ea9cb1bd7b33acdea2262e295dc67b80b08761328"
+    },
+    {
+      "component_id": "github-05",
+      "path": "software-estate/working/github/src/data/html5ParticlePhysicsTemplate.ts",
+      "bytes": 15014,
+      "sha256": "d3258602c3be2c3568f9a7ed3de67e969328faf6f02df0f6347b672d33009517"
+    },
+    {
+      "component_id": "github-06",
+      "path": "software-estate/working/github/src/data/html5BreakoutGameTemplate.ts",
+      "bytes": 21653,
+      "sha256": "95a6f290dfe77dd3143305c9f8f053e32c3a66b82319091c7dcf1c00777cef2f"
+    },
+    {
+      "component_id": "github-07",
+      "path": "software-estate/working/github/src/data/html5SynthesizerTemplate.ts",
+      "bytes": 26300,
+      "sha256": "5fa0a5df8553192849dc0b1d2f497fcfb4940b8e8c1778c9c580c9d426c49f96"
+    },
+    {
+      "component_id": "github-08",
+      "path": "software-estate/working/github/src/data/html5SqlStudioTemplate.ts",
+      "bytes": 20131,
+      "sha256": "37190d64a32b596c00ab84b92fedfed0f0f3f419cb94c0a19677ad420280a95e"
+    },
+    {
+      "component_id": "github-09",
+      "path": "software-estate/working/github/src/data/html5MarkdownStudioTemplate.ts",
+      "bytes": 14065,
+      "sha256": "d589ed135b0fc95be18730c23aeff0340bf94b14c6dea8d83863df80f7f34a59"
+    },
+    {
+      "component_id": "github-10",
+      "path": "software-estate/working/github/src/data/html5PaintStudioTemplate.ts",
+      "bytes": 10509,
+      "sha256": "e5362f230e0f195879396925185ceab23959cd0d887aafd19c0c6642c5fb0c3e"
+    },
+    {
+      "component_id": "github-11",
+      "path": "software-estate/working/github/src/data/html5CalculatorTemplate.ts",
+      "bytes": 11591,
+      "sha256": "8641613ac1d746211ce38b4abe3e77680a05a45f7dcaf717ec3494fe290a69c8"
+    },
+    {
+      "component_id": "github-12",
+      "path": "software-estate/working/github/src/data/html5ChromeBrowserTemplate.ts",
+      "bytes": 336,
+      "sha256": "c26bab3273bb2b6c17d95bf45734b98814e1070f28f4f67b228a50505a3eb6ce"
+    },
+    {
+      "component_id": "github-13",
+      "path": "software-estate/working/github/src/assets/os/AetherOS.html",
+      "bytes": 19973,
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1"
+    },
+    {
+      "component_id": "github-14",
+      "path": "software-estate/working/github/src/assets/os/MiningOS.html",
+      "bytes": 17598,
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc"
+    },
+    {
+      "component_id": "github-15",
+      "path": "software-estate/working/github/src/assets/os/KexLinux.html",
+      "bytes": 35784,
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d"
+    },
+    {
+      "component_id": "github-16",
+      "path": "software-estate/working/github/src/assets/os/KeraMeshOS.html",
+      "bytes": 14542,
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628"
+    },
+    {
+      "component_id": "github-17",
+      "path": "software-estate/working/github/src/assets/workstations/Chrome.html",
+      "bytes": 23454,
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805"
+    }
+  ]
+}

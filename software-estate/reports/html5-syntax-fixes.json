@@ -1,0 +1,17 @@
+{
+  "source_commit": "09f45187dbec29ebe63153f916b67505452dc136",
+  "files": [
+    {
+      "path": "src/data/kexLinuxTerminalTemplate.ts",
+      "original_sha256": "7a3ad2e6fa63b43cc24036148ba2fe49fe3aad8d5d1a09539e8d21313c246fa3",
+      "working_sha256": "fa6c11bf96cbf8cb4a6eb7807911962132adcde02e5e385cc2d739d9d73e0731"
+    },
+    {
+      "path": "src/data/html5MarkdownStudioTemplate.ts",
+      "original_sha256": "0b2628ecdaed8eed0f548b501ee80ad6f2a86db302eed1d532f13b30c0a40923",
+      "working_sha256": "d589ed135b0fc95be18730c23aeff0340bf94b14c6dea8d83863df80f7f34a59"
+    }
+  ],
+  "patch_sha256": "e49d3f769c4cfebbf71719bd18b7984b77ac019b03dca0de27038d0d6103395a",
+  "validation": "All 13 catalog inline scripts compile after literal extraction, with no source interpolation executed. Browser runtime checks coordinated separately."
+}

@@ -1,0 +1,11 @@
+{
+  "version": "R2",
+  "file": "working/drive/KEDDEH_AetherOS_v6.12_MANAGED_VFS_R2.html",
+  "beforeSHA256": "660c677332327e470c746853a535f209b4735d139bb992c6e430522c0261ca56",
+  "afterSHA256": "ebc78e313e93b0ca6b3f1ac4e0752281e1e053b1b6f4cd0d5fb617d18c7a698a",
+  "scope": [
+    "Exclude window controls from drag start; preserve native button clicks",
+    "Initialize editor synchronously so delayed callback cannot overwrite fresh edits",
+    "Repeated editor launch focuses existing unsaved buffer"
+  ]
+}

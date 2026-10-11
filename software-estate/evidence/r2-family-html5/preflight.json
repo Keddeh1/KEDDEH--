@@ -1,0 +1,495 @@
+{
+  "root": "/workspace/keddeh-html-browser-r2/software-estate/working/html5",
+  "generatedAt": "2026-10-11T16:44:32.789Z",
+  "apps": [
+    {
+      "file": "Google_Chrome_Workstation.html",
+      "bytes": 23454,
+      "sha256": "886eeea92bd82b56d28fc557f1595873f47a07541887613d4734868746e13805",
+      "lineCount": 627,
+      "externalUrls": [
+        "https://fonts.googleapis.com/css2?[redacted]",
+        "https://www.google.com/"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 7,
+            "token": "https://",
+            "context": "title>Google Chrome · AetherOS Workstation</title> <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap\" rel=\"stylesheet\"> <style> :root { --ch"
+          },
+          {
+            "line": 262,
+            "token": "https://",
+            "context": "\"address-input\" placeholder=\"Search Google or type a URL\" value=\"https://www.google.com\"> </form> </div> <div class=\"tool-btn\" onclick=\"toggleDevTools()\" title=\"Toggle System DevTools\">🛠️</div> "
+          },
+          {
+            "line": 593,
+            "token": "https://",
+            "context": "put'); addrInput.value = (tabId === 'vfs') ? 'file:///' : 'https://www.google.com'; } function toggleDevTools() { document.getElementById('devtools').classList.toggle('active'); } async"
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": [
+          {
+            "line": 601,
+            "token": "setInterval",
+            "context": "le('active'); } async function startTelemetry() { setInterval(async () => { const stats = await syscall(6); if (stats) { document.getElementById('dt-cpu').textContent = `${st"
+          },
+          {
+            "line": 612,
+            "token": "setInterval",
+            "context": " } }, 2000); } function updateTime() { setInterval(() => { document.getElementById('system-time').textContent = new Date().toLocaleTimeString(); }, 1000); } function "
+          },
+          {
+            "line": 621,
+            "token": "window.onload",
+            "context": "; } function refresh() { refreshVFS(); } window.onload = initBrowser; </script> </body> </html> </body> </html> "
+          }
+        ]
+      }
+    },
+    {
+      "file": "HTML5_Audio_Synthesizer.html",
+      "bytes": 26245,
+      "sha256": "fa7eac68fac1a6452154958eef789203b712acbfac0a1cff9a50fea08fc0d47f",
+      "lineCount": 724,
+      "externalUrls": [],
+      "findings": {
+        "remote_network": [],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": [
+          {
+            "line": 646,
+            "token": "setTimeout",
+            "context": " 1046.50 } ]; arpNotes.forEach((n, idx) => { setTimeout(() => { triggerNoteOn(n.name, n.freq); setTimeout(() => triggerNoteOff(n.name), 160); }, idx * 140); }); "
+          },
+          {
+            "line": 648,
+            "token": "setTimeout",
+            "context": "meout(() => { triggerNoteOn(n.name, n.freq); setTimeout(() => triggerNoteOff(n.name), 160); }, idx * 140); }); } // Visualizer Canvas Loop const vCanvas = document.getE"
+          }
+        ]
+      }
+    },
+    {
+      "file": "HTML5_Particle_Physics_Lab.html",
+      "bytes": 14962,
+      "sha256": "b3500255a046e1bbb8d7d922c62bd43b7f592bafae40e0e59c0d420bb420371d",
+      "lineCount": 451,
+      "externalUrls": [],
+      "findings": {
+        "remote_network": [],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": []
+      }
+    },
+    {
+      "file": "HTML5_Raster_Paint_Studio.html",
+      "bytes": 10466,
+      "sha256": "926c13224f7441522f1e22a256c6f73ab3abfaf18ae46585089675ecb31fc688",
+      "lineCount": 331,
+      "externalUrls": [],
+      "findings": {
+        "remote_network": [],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": []
+      }
+    },
+    {
+      "file": "HTML5_Retro_Arcade_Breakout.html",
+      "bytes": 21609,
+      "sha256": "9031863cf413de0f1e7f125ba3fa31c3c2ad26e0e9f16caeaf3cc671b471453e",
+      "lineCount": 683,
+      "externalUrls": [],
+      "findings": {
+        "remote_network": [],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [
+          {
+            "line": 170,
+            "token": "localStorage",
+            "context": " = document.getElementById('val-lives'); // High score from localStorage let highScore = parseInt(localStorage.getItem('cyber_breakout_high') || '0', 10); highEl.textContent = highScore; // Web Aud"
+          },
+          {
+            "line": 171,
+            "token": "localStorage",
+            "context": " // High score from localStorage let highScore = parseInt(localStorage.getItem('cyber_breakout_high') || '0', 10); highEl.textContent = highScore; // Web Audio Synthesizer let audioCtx = null; "
+          },
+          {
+            "line": 383,
+            "token": "localStorage",
+            "context": " highEl.textContent = highScore; localStorage.setItem('cyber_breakout_high', String(highScore)); // SYSCALL: Persist to host VFS syscall('SYS_WRITE"
+          }
+        ],
+        "automatic_execution": [
+          {
+            "line": 432,
+            "token": "setTimeout",
+            "context": "if (p.type === 'wide') { paddle.w = 140; setTimeout(() => { paddle.w = paddle.baseW; }, 10000); } else if (p.type === 'laser') { paddle.hasLaser = true; setT"
+          },
+          {
+            "line": 435,
+            "token": "setTimeout",
+            "context": "e === 'laser') { paddle.hasLaser = true; setTimeout(() => { paddle.hasLaser = false; }, 8000); } else if (p.type === 'multi') { balls.push({ x: paddle.x + 20, y: paddle."
+          }
+        ]
+      }
+    },
+    {
+      "file": "HTML5_Scientific_Calculator.html",
+      "bytes": 11540,
+      "sha256": "2d33c27a3d9328879c6cda0185ebe99ea25f1b3f792ff3b604cbe19c9d0268f3",
+      "lineCount": 350,
+      "externalUrls": [],
+      "findings": {
+        "remote_network": [],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": []
+      }
+    },
+    {
+      "file": "KERA_Mesh_Node.html",
+      "bytes": 14542,
+      "sha256": "230a4bba29390d933dcbeda859acd7dc7d3103d8c3aab61ee8a7291d7a1c7628",
+      "lineCount": 453,
+      "externalUrls": [
+        "https://fonts.googleapis.com/css2?[redacted]"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 7,
+            "token": "https://",
+            "context": "sh Node · P2P Discovery Matrix · A. Keddeh</title> <link href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@400;600;700&display=swap\" rel=\"stylesheet\"> <style> "
+          },
+          {
+            "line": 395,
+            "token": "fetch(",
+            "context": "unction pollMeshHealth() { try { const res = await fetch('/api/kera_domain/health'); if (res.ok) { const data = await res.json(); if (data && data.ok) { document"
+          },
+          {
+            "line": 410,
+            "token": "fetch(",
+            "context": "tion pollMeshTelemetry() { try { const res = await fetch('/api/mesh/telemetry'); if (res.ok) { const data = await res.json(); if (data && data.ok) { document.get"
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [
+          {
+            "line": 321,
+            "token": "mining",
+            "context": "var(--text-secondary); font-size: 10px;\">Socket: /run/stratum/v2/mining_lane_01.sock</span> </div> <div class=\"peer-card active\"> <div class=\"peer-status\"><div class=\"status-dot\"></di"
+          },
+          {
+            "line": 325,
+            "token": "mining",
+            "context": "var(--text-secondary); font-size: 10px;\">Socket: /run/stratum/v2/mining_lane_02.sock</span> </div> <div class=\"peer-card active\"> <div class=\"peer-status\"><div class=\"status-dot\"></di"
+          },
+          {
+            "line": 329,
+            "token": "mining",
+            "context": "var(--text-secondary); font-size: 10px;\">Socket: /run/stratum/v2/mining_lane_03.sock</span> </div> <div class=\"peer-card active\"> <div class=\"peer-status\"><div class=\"status-dot\"></di"
+          },
+          {
+            "line": 333,
+            "token": "mining",
+            "context": "var(--text-secondary); font-size: 10px;\">Socket: /run/stratum/v2/mining_lane_04.sock</span> </div> <div class=\"peer-card active\"> <div class=\"peer-status\"><div class=\"status-dot\"></di"
+          },
+          {
+            "line": 337,
+            "token": "mining",
+            "context": "var(--text-secondary); font-size: 10px;\">Socket: /run/stratum/v2/mining_lane_05.sock</span> </div> </div> </div> <div class=\"card console\" id=\"console\"></div> </div> <footer> "
+          }
+        ],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": [
+          {
+            "line": 438,
+            "token": "setTimeout",
+            "context": "nitialize addLog('Booting KERA Sovereign Mesh Node...'); setTimeout(() => addLog('Binding physical UDP multicast socket 239.29.7.100:4003', 'mesh'), 400); setTimeout(() => addLog('Starting domain_runtime"
+          },
+          {
+            "line": 439,
+            "token": "setTimeout",
+            "context": "ical UDP multicast socket 239.29.7.100:4003', 'mesh'), 400); setTimeout(() => addLog('Starting domain_runtime on 127.0.0.1:18054 (namespace=kex)', 'mesh'), 800); setTimeout(() => addLog('PHYSICAL P2P MATRIX "
+          },
+          {
+            "line": 440,
+            "token": "setTimeout",
+            "context": "_runtime on 127.0.0.1:18054 (namespace=kex)', 'mesh'), 800); setTimeout(() => addLog('PHYSICAL P2P MATRIX ACTIVE · Subscribed to sovereign mesh', 'success'), 1200); setTimeout(() => { addLog('Registere"
+          },
+          {
+            "line": 441,
+            "token": "setTimeout",
+            "context": "X ACTIVE · Subscribed to sovereign mesh', 'success'), 1200); setTimeout(() => { addLog('Registered fabric route: server://kex/kera-mesh-node (target_type: resident-html)', 'success'); addLog('Registe"
+          },
+          {
+            "line": 448,
+            "token": "setInterval",
+            "context": " pollMeshHealth(); pollMeshTelemetry(); }, 1800); setInterval(pollMeshHealth, 5000); setInterval(pollMeshTelemetry, 8000); </script> </body> </html> "
+          },
+          {
+            "line": 449,
+            "token": "setInterval",
+            "context": "try(); }, 1800); setInterval(pollMeshHealth, 5000); setInterval(pollMeshTelemetry, 8000); </script> </body> </html> "
+          }
+        ]
+      }
+    },
+    {
+      "file": "KEX_MICROKERNEL_VFS_BOOTCHAIN.html",
+      "bytes": 30940,
+      "sha256": "e9855e375e64fb44fc41ddddcb76f77affc71f68c7d962835447621d9247f71c",
+      "lineCount": 1004,
+      "externalUrls": [],
+      "findings": {
+        "remote_network": [],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": [
+          {
+            "line": 996,
+            "token": "setTimeout",
+            "context": "not found]\"; } function delay(ms) { return new Promise(res => setTimeout(res, ms)); } // Initial Boot initTerminal0(); </script> </body> </html> "
+          }
+        ]
+      }
+    },
+    {
+      "file": "KexLinux.html",
+      "bytes": 35784,
+      "sha256": "9a86b269e21b7b8bdf0996708b696b250e73b8a5b10dce7e21ca0f9053464e9d",
+      "lineCount": 795,
+      "externalUrls": [
+        "https://www.fortnite.com/download)",
+        "https://www.fortnite.com/download"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 172,
+            "token": "https://",
+            "context": "ry: [ \"[EPIC] Connected to Epic Games Distribution Matrix (https://www.fortnite.com/download)\", \"[ROUTER] Target profiles: KEDDEH.Env.OCILoop (Fortnite), Android ART, Win32 Proton\", \"[READY] Select"
+          },
+          {
+            "line": 487,
+            "token": "https://",
+            "context": " + 30, 16, \"#f8fafc\", \"left\", \"900\"); text(\"Distribution Node: https://www.fortnite.com/download • Drag & Drop Any APK/EXE to Ingest\", ex + 18, ey + 52, 11, \"#38bdf8\"); // Catalogue Grid const cardW = (ew - 2"
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [
+          {
+            "line": 247,
+            "token": "localStorage",
+            "context": " } return [...out].sort(); } function persist() { try { localStorage.setItem(\"KEX_VFS_V6\", JSON.stringify(VFS)); localStorage.setItem(\"KEX_TERM_V6\", JSON.stringify(state.terminal.lines.slice(-250))); "
+          },
+          {
+            "line": 248,
+            "token": "localStorage",
+            "context": " localStorage.setItem(\"KEX_VFS_V6\", JSON.stringify(VFS)); localStorage.setItem(\"KEX_TERM_V6\", JSON.stringify(state.terminal.lines.slice(-250))); } catch {} } try { const saved = JSON.parse(localStorage.ge"
+          },
+          {
+            "line": 252,
+            "token": "localStorage",
+            "context": "s.slice(-250))); } catch {} } try { const saved = JSON.parse(localStorage.getItem(\"KEX_VFS_V6\") || \"null\"); if (saved && saved[\"/\"]) Object.assign(VFS, saved); } catch {} /* ------------------- INGESTION & RU"
+          }
+        ],
+        "automatic_execution": []
+      }
+    },
+    {
+      "file": "Open_Source_Operating_System.html",
+      "bytes": 19973,
+      "sha256": "a20a0295f1ac69fd8e142acd852bb371f1893eaefaaac089dffd7fcc0a4da3e1",
+      "lineCount": 592,
+      "externalUrls": [
+        "https://fonts.googleapis.com/css2?[redacted]"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 7,
+            "token": "https://",
+            "context": "her OS · Sovereign Microkernel · A. Keddeh</title> <link href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap\" rel=\"stylesheet\"> <style> :root { --bg: #030712"
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": [
+          {
+            "line": 319,
+            "token": "setTimeout",
+            "context": "n Microkernel (AetherOS v6.8)...'); await new Promise(r => setTimeout(r, 400)); logBoot('Verifying application provenance...'); const kernelInfo = window.__kernel_info || { id: 'aether-os', "
+          },
+          {
+            "line": 341,
+            "token": "setTimeout",
+            "context": "ing Userspace Graphics Server...`); await new Promise(r => setTimeout(r, 400)); document.getElementById('boot-overlay').style.opacity = '0'; setTimeout(() => { document.getElementById('boo"
+          },
+          {
+            "line": 344,
+            "token": "setTimeout",
+            "context": "cument.getElementById('boot-overlay').style.opacity = '0'; setTimeout(() => { document.getElementById('boot-overlay').style.display = 'none'; renderDesktop(); updateTaskbar(); s"
+          },
+          {
+            "line": 571,
+            "token": "setInterval",
+            "context": " }; } } async function startTelemetry() { setInterval(async () => { const stats = await syscall(6); if (stats) { document.getElementById('val-cpu').textContent = `${s"
+          },
+          {
+            "line": 588,
+            "token": "window.onload",
+            "context": "hild(line); term.scrollTop = term.scrollHeight; } window.onload = initSystem; </script> </body> </html> "
+          }
+        ]
+      }
+    },
+    {
+      "file": "Stratum_Mining_Core_OS.html",
+      "bytes": 17598,
+      "sha256": "52863c68de56aa6d61e3423cefa363b34279af57053baa94a14d55e4dedfdccc",
+      "lineCount": 571,
+      "externalUrls": [
+        "https://fonts.googleapis.com/css2?[redacted]",
+        "https://10.240.0.50:8443/"
+      ],
+      "findings": {
+        "remote_network": [
+          {
+            "line": 7,
+            "token": "https://",
+            "context": "g Core OS · Production Runtime · A. Keddeh</title> <link href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@400;600;700&display=swap\" rel=\"stylesheet\"> <style> "
+          },
+          {
+            "line": 314,
+            "token": "https://",
+            "context": "E: <strong id=\"uptime\">0d 0h 0m</strong></span> <a href=\"https://10.240.0.50:8443\" target=\"_blank\" style=\"color: var(--accent-cyan); text-decoration: none; border: 1px solid var(--border); padding: 2px 8px; "
+          },
+          {
+            "line": 493,
+            "token": "fetch(",
+            "context": "tion pollLiveTelemetry() { try { const res = await fetch('/api/telemetry'); if (res.ok) { const data = await res.json(); if (data && data.ok) { if (data.hashrate"
+          }
+        ],
+        "worker_or_serviceworker": [],
+        "financial_or_mining": [
+          {
+            "line": 6,
+            "token": "Mining",
+            "context": "ontent=\"width=device-width, initial-scale=1.0\"> <title>Stratum Mining Core OS · Production Runtime · A. Keddeh</title> <link href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&fam"
+          },
+          {
+            "line": 304,
+            "token": "MINING",
+            "context": " <h1 style=\"font-size: 14px; font-weight: 700;\">STRATUM MINING CORE OS</h1> <p style=\"font-size: 10px; color: var(--text-secondary);\">Powered by Sovereign Microkernel · A. Keddeh</p> </div"
+          },
+          {
+            "line": 311,
+            "token": "bitcoin",
+            "context": "ng>VERIFIED (1x8F9B)</strong></span> <span>POOL: <strong>bitcoin.viabtc.io:3333</strong></span> <span>WORKER: <strong>keddeh.001</strong></span> <span>UPTIME: <strong id=\"uptime\">0d 0h 0m</st"
+          },
+          {
+            "line": 552,
+            "token": "Mining",
+            "context": "); }, 30000); } // Initialize addLog('Stratum Mining Core OS v2.0.4 booting...'); setTimeout(() => addLog('Initializing multi-threaded communication loops...'), 500); setTimeout(() => addL"
+          },
+          {
+            "line": 554,
+            "token": "bitcoin",
+            "context": " setTimeout(() => addLog('Establishing raw socket connection to bitcoin.viabtc.io:3333'), 1000); setTimeout(() => addLog('Negotiating Stratum handshakes: mining.subscribe', 'stratum'), 1500); setTimeout(() "
+          },
+          {
+            "line": 555,
+            "token": "mining",
+            "context": "0); setTimeout(() => addLog('Negotiating Stratum handshakes: mining.subscribe', 'stratum'), 1500); setTimeout(() => addLog('Subscription negotiation accepted by target cluster', 'success'), 2000); setTim"
+          },
+          {
+            "line": 559,
+            "token": "MINING",
+            "context": "rified', 'success'), 2500); setTimeout(() => { addLog('MINING CORE ACTIVE. Pipeline established (Dual-Track solo.ckpool & viabtc).'); pollLiveTelemetry(); simulateMining(); }, 3000); s"
+          }
+        ],
+        "dynamic_code": [],
+        "persistent_storage": [],
+        "automatic_execution": [
+          {
+            "line": 545,
+            "token": "setInterval",
+            "context": "iciency}%`; } } function simulateMining() { setInterval(pollLiveTelemetry, 3000); setInterval(() => { addLog(`Heartbeat sent to Stratum pool watchdog (30s keepalive)`, 'stratum'); "
+          },
+          {
+            "line": 546,
+            "token": "setInterval",
+            "context": "lateMining() { setInterval(pollLiveTelemetry, 3000); setInterval(() => { addLog(`Heartbeat sent to Stratum pool watchdog (30s keepalive)`, 'stratum'); }, 30000); } // Initialize "
+          },
+          {
+            "line": 553,
+            "token": "setTimeout",
+            "context": "lize addLog('Stratum Mining Core OS v2.0.4 booting...'); setTimeout(() => addLog('Initializing multi-threaded communication loops...'), 500); setTimeout(() => addLog('Establishing raw socket connection t"
+          },
+          {
+            "line": 554,
+            "token": "setTimeout",
+            "context": "'Initializing multi-threaded communication loops...'), 500); setTimeout(() => addLog('Establishing raw socket connection to bitcoin.viabtc.io:3333'), 1000); setTimeout(() => addLog('Negotiating Stratum hands"
+          },
+          {
+            "line": 555,
+            "token": "setTimeout",
+            "context": "ng raw socket connection to bitcoin.viabtc.io:3333'), 1000); setTimeout(() => addLog('Negotiating Stratum handshakes: mining.subscribe', 'stratum'), 1500); setTimeout(() => addLog('Subscription negotiation a"
+          },
+          {
+            "line": 556,
+            "token": "setTimeout",
+            "context": "ng Stratum handshakes: mining.subscribe', 'stratum'), 1500); setTimeout(() => addLog('Subscription negotiation accepted by target cluster', 'success'), 2000); setTimeout(() => addLog('User authentication aut"
+          },
+          {
+            "line": 557,
+            "token": "setTimeout",
+            "context": " negotiation accepted by target cluster', 'success'), 2000); setTimeout(() => addLog('User authentication authorization mapping verified', 'success'), 2500); setTimeout(() => { addLog('MINING CORE ACTI"
+          },
+          {
+            "line": 558,
+            "token": "setTimeout",
+            "context": "tication authorization mapping verified', 'success'), 2500); setTimeout(() => { addLog('MINING CORE ACTIVE. Pipeline established (Dual-Track solo.ckpool & viabtc).'); pollLiveTelemetry(); simul"
+          },
+          {
+            "line": 564,
+            "token": "setInterval",
+            "context": " pollLiveTelemetry(); simulateMining(); }, 3000); setInterval(updateHashrate, 2000); setInterval(updateStats, 5000); updateHashrate(); updateStats(); </script> </body> </html> "
+          },
+          {
+            "line": 565,
+            "token": "setInterval",
+            "context": "ing(); }, 3000); setInterval(updateHashrate, 2000); setInterval(updateStats, 5000); updateHashrate(); updateStats(); </script> </body> </html> "
+          }
+        ]
+      }
+    }
+  ]
+}

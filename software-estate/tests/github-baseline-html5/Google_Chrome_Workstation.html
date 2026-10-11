@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Chrome · AetherOS Workstation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --chrome-bg: #dee1e6;
+      --tab-active: #ffffff;
+      --tab-inactive: #dee1e6;
+      --toolbar-bg: #ffffff;
+      --border: #cacdd1;
+      --text: #3c4043;
+      --accent: #1a73e8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      background: var(--chrome-bg);
+      color: var(--text);
+    }
+
+    #browser-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    /* Tab Bar */
+    #tab-bar {
+      height: 40px;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 12px;
+      gap: 4px;
+      -webkit-app-region: drag;
+    }
+
+    .tab {
+      height: 32px;
+      min-width: 140px;
+      max-width: 200px;
+      background: var(--tab-inactive);
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      font-size: 12px;
+      gap: 8px;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.1s;
+    }
+
+    .tab.active {
+      background: var(--tab-active);
+      z-index: 10;
+    }
+
+    .tab-icon { font-size: 14px; }
+    .tab-title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .tab-close { 
+      width: 16px; height: 16px; border-radius: 50%; 
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px;
+    }
+    .tab-close:hover { background: rgba(0,0,0,0.1); }
+
+    #new-tab {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 4px; cursor: pointer;
+    }
+    #new-tab:hover { background: rgba(0,0,0,0.1); }
+
+    /* Toolbar */
+    #toolbar {
+      height: 44px;
+      background: var(--toolbar-bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      gap: 8px;
+    }
+
+    .tool-btn {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: #5f6368;
+    }
+    .tool-btn:hover { background: rgba(0,0,0,0.05); }
+
+    #address-bar {
+      flex: 1;
+      height: 28px;
+      background: #f1f3f4;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 8px;
+      font-size: 13px;
+      border: 1px solid transparent;
+    }
+    #address-bar:focus-within {
+      background: #ffffff;
+      box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.4);
+      border-color: var(--accent);
+    }
+
+    #address-input {
+      border: none; background: transparent; outline: none; width: 100%; color: inherit;
+    }
+
+    /* Content Area */
+    #content-viewport {
+      flex: 1;
+      background: #ffffff;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .page {
+      flex: 1;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .page.active { display: flex; }
+
+    /* Web Frame */
+    #web-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff;
+    }
+
+    /* VFS Explorer Page */
+    #vfs-explorer {
+      padding: 24px;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    .vfs-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .vfs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 20px;
+    }
+
+    .vfs-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .vfs-item:hover { background: #f8f9fa; }
+    .vfs-item.file { color: #5f6368; }
+    .vfs-item.dir { color: #1a73e8; }
+    .vfs-item .icon { font-size: 40px; }
+    .vfs-item .name { font-size: 12px; text-align: center; word-break: break-all; }
+
+    /* Kernel Audit Membrane */
+    #kernel-membrane {
+      background: #000;
+      color: #22d3ee;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      padding: 4px 12px;
+      border-bottom: 1px solid #22d3ee44;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    #address-input {
+      border: none; background: transparent; outline: none; width: 100%; color: inherit;
+    }
+    
+    #address-bar form { width: 100%; display: flex; align-items: center; }
+
+    /* DevTools Pane */
+    #devtools {
+      width: 350px;
+      background: #f1f3f4;
+      border-left: 1px solid var(--border);
+      display: none;
+      flex-direction: column;
+      font-size: 11px;
+      font-family: 'Inter', sans-serif;
+    }
+    #devtools.active { display: flex; }
+    .devtools-header {
+      padding: 8px 12px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+    }
+    .devtools-content { flex: 1; overflow-y: auto; padding: 12px; }
+    .vfs-tree-item { padding: 4px 6px; cursor: pointer; white-space: nowrap; border-radius: 4px; }
+    .vfs-tree-item:hover { background: rgba(0,0,0,0.05); }
+    .metric-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #eee; }
+    .metric-val { color: var(--accent); font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body>
+
+  <div id="browser-container">
+    <div id="kernel-membrane">
+      <div style="display:flex; gap:16px;">
+        <span>KERNEL_TRUST_DOMAIN: WORKSTATION_CHROME</span>
+        <span id="provenance-status">PROVENANCE: VERIFYING...</span>
+      </div>
+      <div id="system-time"></div>
+    </div>
+
+    <div id="tab-bar">
+      <div class="tab active" id="tab-google" onclick="switchTab('google')">
+        <span class="tab-icon">🔍</span>
+        <span class="tab-title">Google Search</span>
+        <span class="tab-close">✕</span>
+      </div>
+      <div class="tab" id="tab-vfs" onclick="switchTab('vfs')">
+        <span class="tab-icon">📁</span>
+        <span class="tab-title">System VFS</span>
+        <span class="tab-close">✕</span>
+      </div>
+      <div id="new-tab">＋</div>
+    </div>
+
+    <div id="toolbar">
+      <div class="tool-btn" onclick="history.back()">←</div>
+      <div class="tool-btn" onclick="history.forward()">→</div>
+      <div class="tool-btn" onclick="refresh()">↻</div>
+      <div id="address-bar">
+        <span id="protocol-icon">🔒</span>
+        <form onsubmit="handleNavigate(event)">
+           <input type="text" id="address-input" placeholder="Search Google or type a URL" value="https://www.google.com">
+        </form>
+      </div>
+      <div class="tool-btn" onclick="toggleDevTools()" title="Toggle System DevTools">🛠️</div>
+      <div class="tool-btn">⋮</div>
+    </div>
+
+    <div style="flex:1; display:flex; min-height:0;">
+      <div id="content-viewport">
+        <!-- Google Search Page -->
+        <div id="page-google" class="page active">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; padding-bottom:80px;">
+            <h1 style="font-size: 80px; letter-spacing: -3px; font-weight: 600; font-family: 'Product Sans', 'Inter', sans-serif;">
+              <span style="color:#4285f4">G</span><span style="color:#ea4335">o</span><span style="color:#fbbc05">o</span><span style="color:#4285f4">g</span><span style="color:#34a853">l</span><span style="color:#ea4335">e</span>
+            </h1>
+            <form onsubmit="handleNavigate(event, true)" style="width: 584px;">
+              <div style="width: 100%; height: 46px; border: 1px solid #dfe1e5; border-radius: 24px; display:flex; align-items:center; padding:0 16px; box-shadow: 0 1px 6px rgba(32,33,36,.28);">
+                <span style="color: #9aa0a6; margin-right:12px;">🔍</span>
+                <input type="text" id="google-input" placeholder="Search Google or type a URL" style="flex:1; border:none; outline:none; font-size:16px;">
+                <span style="color: #9aa0a6; margin-left:12px;">🎤</span>
+              </div>
+            </form>
+            <div style="display:flex; gap:12px;">
+              <button onclick="handleNavigate(null, true)" style="padding: 0 16px; line-height: 36px; background:#f8f9fa; border:1px solid #f8f9fa; border-radius:4px; font-size:14px; cursor:pointer; color:#3c4043;">Google Search</button>
+              <button style="padding: 0 16px; line-height: 36px; background:#f8f9fa; border:1px solid #f8f9fa; border-radius:4px; font-size:14px; cursor:pointer; color:#3c4043;">I'm Feeling Lucky</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- VFS Explorer Page -->
+        <div id="page-vfs" class="page">
+          <div id="vfs-explorer">
+            <div class="vfs-header">
+              <h2 style="font-size: 18px; font-weight: 600;">Index of file:///</h2>
+              <div style="font-size: 12px; color: #5f6368; font-family: 'JetBrains Mono', monospace;">ARCHITECTURE: A. KEDDEH VFS CASCADE</div>
+            </div>
+            <div class="vfs-grid" id="vfs-items"></div>
+          </div>
+        </div>
+        
+        <!-- Web Content Page (Proxy Frame) -->
+        <div id="page-web" class="page">
+           <iframe id="web-frame" src="about:blank"></iframe>
+        </div>
+      </div>
+
+      <!-- DevTools Pane -->
+      <div id="devtools">
+        <div class="devtools-header">
+          <span>System DevTools</span>
+          <span style="cursor:pointer" onclick="toggleDevTools()">✕</span>
+        </div>
+        <div class="devtools-content">
+          <div style="margin-bottom:20px;">
+            <h4 style="border-bottom:1px solid #ddd; margin-bottom:8px; padding-bottom:4px; color:#5f6368; text-transform:uppercase; letter-spacing:0.5px;">Kernel Telemetry</h4>
+            <div id="telemetry-stats">
+              <div class="metric-row"><span>CPU Architecture:</span><span class="metric-val">x86_64_KEX</span></div>
+              <div class="metric-row"><span>Load Average:</span><span id="dt-cpu" class="metric-val">--%</span></div>
+              <div class="metric-row"><span>Memory Segment:</span><span id="dt-mem" class="metric-val">-- GB</span></div>
+              <div class="metric-row"><span>Subsystem Uptime:</span><span id="dt-uptime" class="metric-val">--s</span></div>
+            </div>
+          </div>
+          <div>
+            <h4 style="border-bottom:1px solid #ddd; margin-bottom:8px; padding-bottom:4px; color:#5f6368; text-transform:uppercase; letter-spacing:0.5px;">VFS Binary Registry</h4>
+            <div id="vfs-tree-content" style="background:#fff; border:1px solid #ddd; border-radius:4px; padding:4px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </style>
+</head>
+<body>
+
+  <div id="browser-container">
+    <div id="kernel-membrane">
+      <span>KERNEL_TRUST_DOMAIN: WORKSTATION_CHROME</span>
+      <span id="provenance-status">PROVENANCE: VERIFYING...</span>
+    </div>
+
+    <div id="tab-bar">
+      <div class="tab active" id="tab-vfs" onclick="switchTab('vfs')">
+        <span class="tab-icon">📁</span>
+        <span class="tab-title">Local VFS - file:///</span>
+        <span class="tab-close">✕</span>
+      </div>
+      <div class="tab" id="tab-google" onclick="switchTab('google')">
+        <span class="tab-icon">🔍</span>
+        <span class="tab-title">Google Search</span>
+        <span class="tab-close">✕</span>
+      </div>
+      <div id="new-tab">＋</div>
+    </div>
+
+    <div id="toolbar">
+      <div class="tool-btn">←</div>
+      <div class="tool-btn">→</div>
+      <div class="tool-btn" onclick="refresh()">↻</div>
+      <div id="address-bar">
+        <span id="protocol-icon">🔒</span>
+        <input type="text" id="address-input" value="file:///" readonly>
+      </div>
+      <div class="tool-btn">⋮</div>
+    </div>
+
+    <div id="content-viewport">
+      <!-- VFS Explorer Page -->
+      <div id="page-vfs" class="page active">
+        <div id="vfs-explorer">
+          <div class="vfs-header">
+            <h2 style="font-size: 18px; font-weight: 500;">Index of file:///</h2>
+            <div style="font-size: 12px; color: #5f6368;">Embedded Architectural Storage</div>
+          </div>
+          <div class="vfs-grid" id="vfs-items">
+            <!-- Items populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Search Page (Simulated) -->
+      <div id="page-google" class="page">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px;">
+          <h1 style="font-size: 80px; letter-spacing: -2px;"><span style="color:#4285f4">G</span><span style="color:#ea4335">o</span><span style="color:#fbbc05">o</span><span style="color:#4285f4">g</span><span style="color:#34a853">l</span><span style="color:#ea4335">e</span></h1>
+          <div style="width: 580px; height: 44px; border: 1px solid #dfe1e5; border-radius: 22px; display:flex; align-items:center; padding:0 16px; box-shadow: 0 1px 6px rgba(32,33,36,.28);">
+            <span style="color: #9aa0a6;">🔍</span>
+            <input type="text" placeholder="Search Google or type a URL" style="flex:1; border:none; outline:none; margin:0 12px; font-size:16px;">
+            <span style="color: #9aa0a6;">🎤</span>
+          </div>
+          <div style="display:flex; gap:12px;">
+            <button style="padding: 0 16px; line-height: 34px; background:#f8f9fa; border:1px solid #f8f9fa; border-radius:4px; font-size:14px; cursor:pointer;">Google Search</button>
+            <button style="padding: 0 16px; line-height: 34px; background:#f8f9fa; border:1px solid #f8f9fa; border-radius:4px; font-size:14px; cursor:pointer;">I'm Feeling Lucky</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    /* DevTools Pane */
+    #devtools {
+      width: 320px;
+      background: #f1f3f4;
+      border-left: 1px solid var(--border);
+      display: none;
+      flex-direction: column;
+      font-size: 11px;
+    }
+    #devtools.active { display: flex; }
+    .devtools-header {
+      padding: 8px 12px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+    }
+    .devtools-content { flex: 1; overflow-y: auto; padding: 8px; }
+    .vfs-tree-item { padding: 2px 4px; cursor: pointer; white-space: nowrap; }
+    .vfs-tree-item:hover { background: rgba(0,0,0,0.05); }
+    .metric-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #eee; }
+  </style>
+</head>
+<body>
+
+  <div id="browser-container">
+    <div id="kernel-membrane">
+      <div style="display:flex; gap:16px;">
+        <span>KERNEL_TRUST_DOMAIN: WORKSTATION_CHROME</span>
+        <span id="provenance-status">PROVENANCE: VERIFYING...</span>
+      </div>
+      <div id="system-time"></div>
+    </div>
+
+    <div id="tab-bar">
+      <div class="tab active" id="tab-vfs" onclick="switchTab('vfs')">
+        <span class="tab-icon">📁</span>
+        <span class="tab-title">System VFS Explorer</span>
+        <span class="tab-close">✕</span>
+      </div>
+      <div class="tab" id="tab-google" onclick="switchTab('google')">
+        <span class="tab-icon">🔍</span>
+        <span class="tab-title">Google Search</span>
+        <span class="tab-close">✕</span>
+      </div>
+      <div id="new-tab">＋</div>
+    </div>
+
+    <div id="toolbar">
+      <div class="tool-btn">←</div>
+      <div class="tool-btn">→</div>
+      <div class="tool-btn" onclick="refresh()">↻</div>
+      <div id="address-bar">
+        <span id="protocol-icon">🔒</span>
+        <input type="text" id="address-input" value="file:///" readonly>
+      </div>
+      <div class="tool-btn" onclick="toggleDevTools()" title="Toggle System DevTools">🛠️</div>
+      <div class="tool-btn">⋮</div>
+    </div>
+
+    <div style="flex:1; display:flex; min-height:0;">
+      <div id="content-viewport">
+        <!-- VFS Explorer Page -->
+        <div id="page-vfs" class="page active">
+          <div id="vfs-explorer">
+            <div class="vfs-header">
+              <h2 style="font-size: 18px; font-weight: 500;">Index of file:///</h2>
+              <div style="font-size: 12px; color: #5f6368;">Architecture: A. Keddeh Sovereign VFS</div>
+            </div>
+            <div class="vfs-grid" id="vfs-items">
+              <!-- Items populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Search Page -->
+        <div id="page-google" class="page">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px;">
+            <h1 style="font-size: 80px; letter-spacing: -2px;"><span style="color:#4285f4">G</span><span style="color:#ea4335">o</span><span style="color:#fbbc05">o</span><span style="color:#4285f4">g</span><span style="color:#34a853">l</span><span style="color:#ea4335">e</span></h1>
+            <div style="width: 580px; height: 44px; border: 1px solid #dfe1e5; border-radius: 22px; display:flex; align-items:center; padding:0 16px; box-shadow: 0 1px 6px rgba(32,33,36,.28);">
+              <span style="color: #9aa0a6;">🔍</span>
+              <input type="text" placeholder="Search Google or type a URL" style="flex:1; border:none; outline:none; margin:0 12px; font-size:16px;">
+              <span style="color: #9aa0a6;">🎤</span>
+            </div>
+            <div style="display:flex; gap:12px;">
+              <button style="padding: 0 16px; line-height: 34px; background:#f8f9fa; border:1px solid #f8f9fa; border-radius:4px; font-size:14px; cursor:pointer;">Google Search</button>
+              <button style="padding: 0 16px; line-height: 34px; background:#f8f9fa; border:1px solid #f8f9fa; border-radius:4px; font-size:14px; cursor:pointer;">I'm Feeling Lucky</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DevTools Pane -->
+      <div id="devtools">
+        <div class="devtools-header">
+          <span>System DevTools</span>
+          <span style="cursor:pointer" onclick="toggleDevTools()">✕</span>
+        </div>
+        <div class="devtools-content">
+          <div style="margin-bottom:16px;">
+            <h4 style="border-bottom:1px solid #ddd; margin-bottom:4px; padding-bottom:2px;">KERNEL TELEMETRY</h4>
+            <div id="telemetry-stats">
+              <div class="metric-row"><span>CPU Usage:</span><span id="dt-cpu">--%</span></div>
+              <div class="metric-row"><span>Memory Used:</span><span id="dt-mem">-- GB</span></div>
+              <div class="metric-row"><span>Uptime:</span><span id="dt-uptime">--s</span></div>
+            </div>
+          </div>
+          <div>
+            <h4 style="border-bottom:1px solid #ddd; margin-bottom:4px; padding-bottom:2px;">VFS BINARY REGISTRY</h4>
+            <div id="vfs-tree-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function syscall(action, args = []) {
+      return new Promise((resolve) => {
+        const id = Math.random().toString(36).substring(2);
+        const handler = (e) => {
+          if (e.data && e.data.__kernel_syscall_response && e.data.__kernel_syscall_response.id === id) {
+            window.removeEventListener('message', handler);
+            resolve(e.data.__kernel_syscall_response.result);
+          }
+        };
+        window.addEventListener('message', handler);
+        window.parent.postMessage({ __kernel_syscall: { call: action, args, id } }, '*');
+      });
+    }
+
+    async function initBrowser() {
+      // Verify Provenance
+      const kernelInfo = window.__kernel_info || { id: 'chrome', hash: 'unknown' };
+      const statusEl = document.getElementById('provenance-status');
+      
+      const verified = await syscall(8, [kernelInfo.id, kernelInfo.hash]);
+      if (verified) {
+        statusEl.textContent = 'PROVENANCE: VERIFIED (Kernel Signed)';
+        statusEl.style.color = '#10b981';
+      } else {
+        statusEl.textContent = 'PROVENANCE: UNTRUSTED_ORIGIN';
+        statusEl.style.color = '#ef4444';
+      }
+
+      refreshVFS();
+      startTelemetry();
+      updateTime();
+    }
+
+    async function refreshVFS() {
+      const itemsGrid = document.getElementById('vfs-items');
+      const treeContent = document.getElementById('vfs-tree-content');
+      
+      // Query bin for executables
+      const binNodes = await syscall(12, ['/bin']);
+      itemsGrid.innerHTML = '';
+      treeContent.innerHTML = '';
+
+      if (binNodes) {
+        binNodes.forEach(node => {
+          const item = document.createElement('div');
+          item.className = `vfs-item file`;
+          item.innerHTML = `<div class="icon">📄</div><div class="name">${node.name}</div>`;
+          itemsGrid.appendChild(item);
+
+          const treeItem = document.createElement('div');
+          treeItem.className = 'vfs-tree-item';
+          treeItem.textContent = `/bin/${node.name}`;
+          treeContent.appendChild(treeItem);
+        });
+      }
+
+      // Query root for etc/var
+      const rootNodes = await syscall(12, ['/']);
+      rootNodes.forEach(node => {
+        if (node.type === 'dir') {
+          const item = document.createElement('div');
+          item.className = `vfs-item dir`;
+          item.innerHTML = `<div class="icon">📁</div><div class="name">${node.name}</div>`;
+          itemsGrid.appendChild(item);
+        }
+      });
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      
+      document.getElementById(`tab-${tabId}`).classList.add('active');
+      document.getElementById(`page-${tabId}`).classList.add('active');
+      
+      const addrInput = document.getElementById('address-input');
+      addrInput.value = (tabId === 'vfs') ? 'file:///' : 'https://www.google.com';
+    }
+
+    function toggleDevTools() {
+      document.getElementById('devtools').classList.toggle('active');
+    }
+
+    async function startTelemetry() {
+      setInterval(async () => {
+        const stats = await syscall(6);
+        if (stats) {
+          document.getElementById('dt-cpu').textContent = `${stats.cpu.toFixed(1)}%`;
+          document.getElementById('dt-mem').textContent = `${stats.memUsed} GB`;
+          document.getElementById('dt-uptime').textContent = `${Math.floor(stats.uptimeMs / 1000)}s`;
+        }
+      }, 2000);
+    }
+
+    function updateTime() {
+      setInterval(() => {
+        document.getElementById('system-time').textContent = new Date().toLocaleTimeString();
+      }, 1000);
+    }
+
+    function refresh() {
+      refreshVFS();
+    }
+
+    window.onload = initBrowser;
+  </script>
+</body>
+</html>
+</body>
+</html>
