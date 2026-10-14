@@ -90,6 +90,24 @@ def main():
         try:
             result=health(service);outcomes[name]={'status':'ALREADY_RUNNING','health':result};continue
         except (OSError,ConnectionError,subprocess.CalledProcessError,subprocess.TimeoutExpired):pass
+        # An owned supervisor may be reconciling changed canary configuration.
+        # Wait for its actual health rather than launching a duplicate owner.
+        pidfile=estate/(name+'.pid')
+        owned=None
+        if pidfile.exists():
+            try:
+                pid=int(pidfile.read_text())
+                command=(Path('/proc')/str(pid)/'cmdline').read_bytes().decode().strip('\0').split('\0')
+                expected=[str(ROOT/'scripts/service-estate-supervisor.py'),'--config',str(config),'--service',name]
+                if command[1:]==expected:owned=pid
+            except (OSError,ValueError):pass
+        if owned is not None:
+            for attempt in range(100):
+                try:
+                    result=health(service);outcomes[name]={'status':'RECONCILED_RUNNING','health':result};break
+                except (OSError,ConnectionError,subprocess.CalledProcessError,subprocess.TimeoutExpired):time.sleep(.1)
+            else:raise RuntimeError(name+' owned supervisor did not reconcile readiness; preserve its state for inspection')
+            continue
         with open(estate/(name+'.log'),'ab') as log:
             os.chmod(estate/(name+'.log'),0o600)
             child=subprocess.Popen([sys.executable,str(ROOT/'scripts/service-estate-supervisor.py'),'--config',str(config),'--service',name],cwd=ROOT,stdout=log,stderr=log,start_new_session=True)

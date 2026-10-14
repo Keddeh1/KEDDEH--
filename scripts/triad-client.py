@@ -23,6 +23,11 @@ def signed(root,request_id,goal,revision,load=0):
     request=pb.TriadMatrixHopRequest(raw_word_input=goal,target_git_revision=revision,current_load_factor=load,request_id=request_id,authority_key_id=hashlib.sha256((root/'authority.pub').read_bytes()).hexdigest())
     request.authority_signature=base64.b64encode(Ed25519PrivateKey.from_private_bytes((root/'authority.key').read_bytes()).sign(signing_bytes(request))).decode()
     return request
+def verify_readiness(response,config):
+    if response.readiness_mask!=7 or not response.ledger_integrity:
+        raise RuntimeError('Readiness rejected')
+    if response.source_git_revision!=config['revision'] or response.node_identity!=config['node_identity']:
+        raise RuntimeError('DEPLOYED_REVISION_OR_IDENTITY_MISMATCH')
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--root',type=Path,required=True);parser.add_argument('--health',action='store_true');parser.add_argument('--request-id');parser.add_argument('--goal');args=parser.parse_args()
     config=json.loads((args.root/'config.json').read_text())
@@ -30,7 +35,7 @@ if __name__=='__main__':
         client=rpc.TriadMeshOrchestratorStub(connection)
         if args.health:
             response=client.Readiness(pb.TriadReadinessRequest(),timeout=10,wait_for_ready=True)
-            if response.readiness_mask!=7 or not response.ledger_integrity:raise RuntimeError('Readiness rejected')
+            verify_readiness(response,config)
             print(json.dumps({'readiness_mask':response.readiness_mask,'ledger_integrity':response.ledger_integrity,'node_identity':response.node_identity,'revision':response.source_git_revision}))
         else:
             response=client.TraversalMatrixHop(signed(args.root,args.request_id,args.goal,config['revision']),timeout=45,wait_for_ready=True)

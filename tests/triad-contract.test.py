@@ -47,6 +47,14 @@ class ContractTests(unittest.TestCase):
                 with service.connect() as db:self.assertEqual(db.execute('SELECT 1').fetchone()[0],1)
             after=len(list(Path('/proc/self/fd').iterdir()))
             self.assertLessEqual(after,before+2)
+    def test_readiness_rejects_a_running_wrong_revision(self):
+        import importlib.util
+        spec=importlib.util.spec_from_file_location('triad_client_contract',ROOT/'scripts/triad-client.py')
+        client=importlib.util.module_from_spec(spec);spec.loader.exec_module(client)
+        config={'revision':'a'*40,'node_identity':'node://test'}
+        response=pb.TriadReadinessResponse(readiness_mask=7,ledger_integrity=True,node_identity='node://test',source_git_revision='b'*40)
+        with self.assertRaises(RuntimeError):client.verify_readiness(response,config)
+        response.source_git_revision=config['revision'];client.verify_readiness(response,config)
     def test_schema_keeps_original_tags_and_marks_unallocated_memory_absent(self):
         r=pb.TriadMatrixHopResponse();self.assertFalse(r.execution.HasField('kex_memory_allocation_offset'));self.assertFalse(r.integration.provenance.HasField('empirical_saturation_ratio'))
         self.assertEqual(pb.TriadMatrixHopRequest.DESCRIPTOR.fields_by_name['authority_signature'].number,4)
