@@ -29,10 +29,10 @@ if __name__=='__main__':
     with channel(args.root,config['port']) as connection:
         client=rpc.TriadMeshOrchestratorStub(connection)
         if args.health:
-            response=client.Readiness(pb.TriadReadinessRequest(),timeout=10)
+            response=client.Readiness(pb.TriadReadinessRequest(),timeout=10,wait_for_ready=True)
             if response.readiness_mask!=7 or not response.ledger_integrity:raise RuntimeError('Readiness rejected')
             print(json.dumps({'readiness_mask':response.readiness_mask,'ledger_integrity':response.ledger_integrity,'node_identity':response.node_identity,'revision':response.source_git_revision}))
         else:
-            response=client.TraversalMatrixHop(signed(args.root,args.request_id,args.goal,config['revision']),timeout=45)
+            response=client.TraversalMatrixHop(signed(args.root,args.request_id,args.goal,config['revision']),timeout=45,wait_for_ready=True)
             from google.protobuf.json_format import MessageToDict
             print(json.dumps(MessageToDict(response,preserving_proto_field_name=True)))
