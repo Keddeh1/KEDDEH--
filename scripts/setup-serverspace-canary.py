@@ -1,18 +1,25 @@
 """Stage and start separate ServerSpace canary services without replacing active nodes."""
 import json
+import argparse
 import os
 from pathlib import Path
 import subprocess
 import sys
+import uuid
 ROOT=Path(__file__).resolve().parents[1]
-BASE=Path('/workspace/deployments/serverspace/runtime')
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--deployments',type=Path,default=Path('/workspace/deployments'))
+parser.add_argument('--configure-only',action='store_true')
+args=parser.parse_args();deployments=args.deployments.resolve()
+BASE=deployments/'serverspace/runtime'
 BASE.mkdir(mode=0o700,parents=True,exist_ok=True)
 root=BASE/'canary-v1'
 python=ROOT/'.runtime-env/bin/python'
-if not root.exists():subprocess.run([str(python),str(ROOT/'runtime/serverspace_substrate.py'),'--root',str(root),'--provision','--identity','serverspace://canary/v1'],check=True)
+if not python.exists():python=deployments/'keddeh-tensor-shell-20261010/.venv/bin/python'
+if not root.exists():subprocess.run([str(python),str(ROOT/'runtime/serverspace_substrate.py'),'--root',str(root),'--provision','--identity','serverspace://canary/v1/'+uuid.uuid4().hex],check=True)
 # Validate the selected root before recording any startup bindings.
 subprocess.run([str(python),'-c','import sys;sys.path.insert(0,sys.argv[1]);from serverspace_substrate import secured; secured(sys.argv[2])',str(ROOT/'runtime'),str(root)],check=True)
-estate=Path('/workspace/deployments/service-estate');estate.mkdir(mode=0o700,exist_ok=True)
+estate=deployments/'service-estate';estate.mkdir(mode=0o700,exist_ok=True)
 file=estate/'service-addons.json'
 addons=json.loads(file.read_text()) if file.exists() else {}
 new_addons={
@@ -23,4 +30,4 @@ for name,service in new_addons.items():
     if name in addons and addons[name]!=service:raise RuntimeError('Existing canary binding differs; preserve it for inspection: '+name)
     addons.setdefault(name,service)
 file.write_text(json.dumps(addons,indent=2)+'\n');os.chmod(file,0o600)
-subprocess.run([sys.executable,str(ROOT/'scripts/setup-service-estate.py')],check=True)
+subprocess.run([sys.executable,str(ROOT/'scripts/setup-service-estate.py'),'--deployments',str(deployments),*(['--configure-only'] if args.configure_only else [])],check=True)

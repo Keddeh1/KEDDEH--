@@ -15,7 +15,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 def health(service):
-    if service.get('kind')=='uds':
+    if service.get('kind') in {'uds','grpc'}:
         result=subprocess.run(service['health_command'],capture_output=True,text=True,timeout=3,check=True)
         state=json.loads(result.stdout)
         if state.get('readiness_mask')!=7:raise RuntimeError('Substrate readiness rejected')

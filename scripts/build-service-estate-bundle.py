@@ -27,7 +27,7 @@ for role,directory in [('runtime','namespace'),('braink-family-runtime','braink'
     archive=subprocess.check_output(['git','-C',str(checkout),'archive',component['commit'],*selected])
     with tarfile.open(fileobj=io.BytesIO(archive)) as tar:tar.extractall(bundle/'vendor'/directory,filter='data')
 manifest={str(p.relative_to(bundle)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(bundle.rglob('*')) if p.is_file()}
-(bundle/'service-bundle-manifest.json').write_text(json.dumps({'schema':'keddeh.service-estate.bundle.v1','files':manifest},indent=2)+'\n')
+(bundle/'service-bundle-manifest.json').write_text(json.dumps({'schema':'keddeh.service-estate.bundle.v1','source_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'files':manifest},indent=2)+'\n')
 archive=out/'keddeh-service-estate.tar.gz'
 with tarfile.open(archive,'w:gz') as tar:tar.add(bundle,arcname=bundle.name)
 digest=hashlib.sha256(archive.read_bytes()).hexdigest();(out/'keddeh-service-estate.tar.gz.sha256').write_text(digest+'  '+archive.name+'\n')

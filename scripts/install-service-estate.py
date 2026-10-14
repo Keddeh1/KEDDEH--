@@ -14,6 +14,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--deployments',type=Path,default=Path('/workspace/deployments'))
     parser.add_argument('--prepare-only',action='store_true')
+    parser.add_argument('--with-triad-canary',action='store_true')
     args=parser.parse_args()
     if sys.version_info<(3,12):raise RuntimeError('Python 3.12 or later is required')
     manifest=json.loads((ROOT/'service-bundle-manifest.json').read_text())
@@ -54,5 +55,10 @@ def main():
     command=[sys.executable,str(ROOT/'scripts/setup-service-estate.py'),'--deployments',str(deploy)]
     if args.prepare_only:command.append('--configure-only')
     subprocess.run(command,check=True)
+    if args.with_triad_canary:
+        subprocess.run([sys.executable,str(ROOT/'scripts/bootstrap-triad-runtime.py')],check=True)
+        canary_flags=['--deployments',str(deploy),*(['--configure-only'] if args.prepare_only else [])]
+        subprocess.run([sys.executable,str(ROOT/'scripts/setup-serverspace-canary.py'),*canary_flags],check=True)
+        subprocess.run([str(ROOT/'.triad-env/bin/python'),str(ROOT/'scripts/setup-triad-canary.py'),*canary_flags],check=True)
 
 if __name__=='__main__':main()

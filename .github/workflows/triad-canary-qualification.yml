@@ -1,0 +1,60 @@
+name: Triad Contract and Canary Qualification
+on:
+  push:
+    paths: ['protobuf/**', 'runtime/triad/**', 'runtime/triad_grpc_server.py', 'scripts/*triad*', 'tests/triad-*', 'tests/service-supervisor.test.py', 'scripts/service-estate-supervisor.py', 'scripts/setup-service-estate.py', 'deployment/triad-foundry/**', '.github/workflows/triad-canary-qualification.yml']
+  pull_request:
+    paths: ['protobuf/**', 'runtime/triad/**', 'runtime/triad_grpc_server.py', 'scripts/*triad*', 'tests/triad-*', 'tests/service-supervisor.test.py', 'scripts/service-estate-supervisor.py', 'scripts/setup-service-estate.py', 'deployment/triad-foundry/**', '.github/workflows/triad-canary-qualification.yml']
+  workflow_dispatch:
+    inputs:
+      qualify_installed_canary:
+        description: Run real backing-service fault qualification on an installed Keddeh canary runner
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.12.19'
+      - name: Install hash-locked gRPC and generate bindings
+        run: python scripts/bootstrap-triad-runtime.py
+      - name: Ensure generated bindings match the committed schema
+        run: git diff --exit-code -- runtime/triad/triad_mesh_pb2.py runtime/triad/triad_mesh_pb2_grpc.py
+      - name: Enforce calibration and admission contracts
+        run: |
+          .triad-env/bin/python tests/triad-contract.test.py
+          python tests/service-supervisor.test.py
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.9.8'
+          terraform_wrapper: false
+      - name: Validate staged multi-region foundation without applying infrastructure
+        run: |
+          terraform -chdir=deployment/triad-foundry fmt -check
+          terraform -chdir=deployment/triad-foundry init -backend=false -input=false -lockfile=readonly
+          terraform -chdir=deployment/triad-foundry validate
+      - name: Package version-controlled sources after successful verification
+        run: git archive --format=tar.gz --output=triad-canary-source.tar.gz HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: triad-canary-source
+          path: triad-canary-source.tar.gz
+  installed-canary:
+    if: github.event_name == 'workflow_dispatch' && inputs.qualify_installed_canary
+    runs-on: [self-hosted, keddeh-canary]
+    steps:
+      - name: Verify the installed revision and real authenticated execution path
+        working-directory: /workspace/KEDDEH--
+        env:
+          EXPECTED_REVISION: ${{ github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_REVISION"
+          .triad-env/bin/python scripts/triad-client.py --root /workspace/deployments/serverspace/runtime/triad-v1 --health
+          .triad-env/bin/python tests/triad-live.test.py

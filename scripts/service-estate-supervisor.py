@@ -26,12 +26,27 @@ while not stopping:
     started=time.monotonic()
     child=subprocess.Popen(service['command'],cwd=service['cwd'])
     (root/(args.service+'.worker.pid')).write_text(str(child.pid))
+    next_health=time.monotonic()+service.get('health_interval_seconds',5)
+    health_misses=0
     while child.poll() is None:
         if stopping:
             child.terminate()
             try:child.wait(timeout=5)
             except subprocess.TimeoutExpired:child.kill();child.wait()
             break
+        if service.get('health_interval_seconds') and time.monotonic()>=next_health:
+            try:
+                probe=subprocess.run(service['health_command'],capture_output=True,text=True,timeout=service.get('health_timeout_seconds',3),check=True)
+                if json.loads(probe.stdout).get('readiness_mask')!=7:raise ValueError('Readiness rejected')
+                health_misses=0
+            except (OSError,subprocess.SubprocessError,ValueError):
+                health_misses+=1
+            next_health=time.monotonic()+service['health_interval_seconds']
+            if health_misses>=3:
+                child.terminate()
+                try:child.wait(timeout=5)
+                except subprocess.TimeoutExpired:child.kill();child.wait()
+                break
         time.sleep(.1)
     if stopping:break
     if time.monotonic()-started>30:delay=.2

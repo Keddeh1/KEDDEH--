@@ -1,0 +1,3 @@
+grpcio==1.78.0
+grpcio-tools==1.78.0
+cryptography==46.0.7

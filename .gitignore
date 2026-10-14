@@ -14,3 +14,9 @@ opt/keddeh/bin/
 
 __pycache__/
 *.pyc
+.triad-env/
+runtime/triad/generated/
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan

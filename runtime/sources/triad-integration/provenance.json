@@ -1,0 +1,11 @@
+{
+  "source_files": {
+    "original-integration.txt": "f39471fd0fa756bba5ef365ea5fa45c9a106bae69a9e1986125d71bf072a7bb1",
+    "calibration-directive.txt": "af0fcc61ac83e64553866fa9217a6b990c95ce078d26e16bc11251fed14786e3"
+  },
+  "handling": "Preserved byte-for-byte. Embedded administrative scripts are reference material, not automatic execution instructions.",
+  "sediment_ids": [
+    "file_0000000089c0820bade4936193bd6d20",
+    "file_0000000023a481f4acbdff83dda3c0e7"
+  ]
+}
