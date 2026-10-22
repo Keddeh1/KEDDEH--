@@ -326,12 +326,16 @@
       
       logBoot('Verifying application provenance...');
       const kernelInfo = window.__kernel_info || { id: 'aether-os', hash: 'none' };
-      const verified = await syscall(8, [kernelInfo.id, kernelInfo.hash]);
+      let verified = false;
+      try { verified = Boolean(await syscall(8, [kernelInfo.id, kernelInfo.hash])); }
+      catch (error) { logBoot('Host provenance check unavailable: ' + error.message); }
       if (verified) logBoot('Host acknowledged provenance check.');
       else logBoot('Provenance not verified; privileged operations remain unavailable.');
 
       logBoot('Scanning /bin for workstation binaries...');
-      const binEntries = await syscall(12, ['/bin']);
+      let binEntries = [];
+      try { binEntries = await syscall(12, ['/bin']) || []; }
+      catch (error) { logBoot('Host /bin is unavailable: ' + error.message); }
       apps = (binEntries || []).map(e => ({
         id: e.name.replace('.html', ''),
         name: e.name.replace('.html', '').replace(/-/g, ' ').toUpperCase(),
