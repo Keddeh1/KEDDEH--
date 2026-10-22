@@ -301,10 +301,16 @@
 
     // Syscall Bridge
     async function syscall(action, args = []) {
-      return new Promise((resolve) => {
+      return new Promise((resolve, reject) => {
         const id = Math.random().toString(36).substring(2);
+        const timer = setTimeout(() => {
+          window.removeEventListener('message', handler);
+          reject(new Error('KEX_HOST_BRIDGE_TIMEOUT: host did not acknowledge syscall ' + action));
+        }, 5000);
         const handler = (e) => {
+          if (e.source !== window.parent) return;
           if (e.data && e.data.__kernel_syscall_response && e.data.__kernel_syscall_response.id === id) {
+            clearTimeout(timer);
             window.removeEventListener('message', handler);
             resolve(e.data.__kernel_syscall_response.result);
           }
@@ -321,7 +327,8 @@
       logBoot('Verifying application provenance...');
       const kernelInfo = window.__kernel_info || { id: 'aether-os', hash: 'none' };
       const verified = await syscall(8, [kernelInfo.id, kernelInfo.hash]);
-      if (verified) logBoot('Provenance verified. Trusted Domain Active.');
+      if (verified) logBoot('Host acknowledged provenance check.');
+      else logBoot('Provenance not verified; privileged operations remain unavailable.');
 
       logBoot('Scanning /bin for workstation binaries...');
       const binEntries = await syscall(12, ['/bin']);
@@ -434,14 +441,17 @@
       if (app.type === 'sys') {
         renderSysApp(app.id, winId);
       } else {
-        const inode = await syscall(2, [app.path]);
+        let inode = null;
+        let readError = null;
+        try { inode = await syscall(2, [app.path]); }
+        catch (error) { readError = error instanceof Error ? error.message : String(error); }
         const frame = document.getElementById(`frame-${winId}`);
         const contentDiv = document.getElementById(`content-${winId}`);
         if (inode && inode.content) {
           frame.srcdoc = inode.content;
           frame.onload = () => contentDiv.querySelector('.loader').style.display = 'none';
         } else {
-          contentDiv.innerHTML = `<div class="sys-panel" style="color:#ff5f56">EXEC_ERR: Access denied to ${app.path}</div>`;
+          contentDiv.textContent = `EXEC_ERR: ${readError || 'Application bytes unavailable at ' + app.path}. No subscription or login is required for local workstation launch.`;
         }
       }
     }
