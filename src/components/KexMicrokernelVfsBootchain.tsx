@@ -150,7 +150,7 @@ interface ServiceItem {
 
 export function KexMicrokernelVfsBootchain({ onClose, className = '' }: KexMicrokernelVfsBootchainProps) {
   // Bootchain state tracking: Set to Stage 6 by default for "Always Online" access
-  const [stage, setStage] = useState<BootStage>(6);
+  const [stage, setStage] = useState<BootStage>(0);
   const [isBooting, setIsBooting] = useState(false);
   const [t0Input, setT0Input] = useState('');
   const [t0Logs, setT0Logs] = useState<LogEntry[]>([]);
@@ -209,7 +209,7 @@ export function KexMicrokernelVfsBootchain({ onClose, className = '' }: KexMicro
   };
 
   const resetBootchain = () => {
-    setStage(6);
+    setStage(0);
     setIsBooting(false);
     setVfs(PRELOADED_VFS_IMAGE);
     setSelectedFile('/boot/kexboot.json');
@@ -227,27 +227,23 @@ export function KexMicrokernelVfsBootchain({ onClose, className = '' }: KexMicro
       {
         id: 'init-2',
         time: new Date().toLocaleTimeString(),
-        text: 'State: CONNECTED // Authority: A. KEDDEH',
+        text: 'State: LOCAL BOOTSTRAP READY // Authority label: A. KEDDEH',
         type: 'info'
       },
       {
         id: 'init-3',
         time: new Date().toLocaleTimeString(),
-        text: "Relational Continuity Active. Type 'vfs inspect' for inode state.",
+        text: "VFS image preloaded; execution and external authority are not yet verified. Type 'boot' to initialize.",
         type: 'info'
       }
     ]);
     
-    // Automatically seed Terminal_1 for instant access (Always Online)
-    const serviceList: ServiceItem[] = JSON.parse(PRELOADED_VFS_IMAGE['/micro-os/services.json']).services.map((s: any) => ({
-      ...s,
-      state: 'RUNNING'
-    }));
-    setServices(serviceList);
+    // Do not manufacture running services before a successful local boot.
+    setServices([]);
     setT1Logs([
       { text: '=== KEX LINUX WORKSTATION vNEXT (TERMINAL_1) ===', color: 'text-cyan-400 font-bold' },
-      { text: 'ONLINE · Authority Verified: A. KEDDEH // BRAINK AI', color: 'text-emerald-400' },
-      { text: 'Relational State Continuity Active · Layer 1 Root Reserved', color: 'text-slate-400' },
+      { text: 'BOOT PENDING · No external authority verification claimed', color: 'text-amber-400' },
+      { text: 'Preloaded local VFS image; durable host continuity not established', color: 'text-slate-400' },
       { text: "Type 'help', 'ls', 'cat <file>', 'ps', 'uname -a', or 'services'.\n", color: 'text-amber-400' }
     ]);
   };
@@ -258,12 +254,29 @@ export function KexMicrokernelVfsBootchain({ onClose, className = '' }: KexMicro
   const runBootchainSequence = async () => {
     if (isBooting) return;
     setIsBooting(true);
-    addT0Log('>>> RE-SYNCHRONIZING RELATIONAL STATE...', 'cmd');
-
-    // Instant migration to Terminal_1 (Always Online Principle)
-    setStage(6);
-    setIsBooting(false);
-    addT0Log('      -> State Vector Unified. Workstation Active.', 'success');
+    addT0Log('>>> VALIDATING PRELOADED LOCAL BOOT IMAGE...', 'cmd');
+    try {
+      const image = vfs;
+      const manifest = JSON.parse(image['/boot/kexboot.json'] || 'null');
+      const serviceDocument = JSON.parse(image['/micro-os/services.json'] || 'null');
+      if (!manifest || !Array.isArray(serviceDocument?.services)) {
+        throw new Error('Required boot manifest or service catalogue is missing');
+      }
+      const digest = await computeHash(image['/boot/kexboot.json']);
+      setVerifiedHashes(prev => ({ ...prev, '/boot/kexboot.json': digest }));
+      setStage(1);
+      addT0Log('Local boot manifest parsed and SHA-256 computed; host authority is not attested.', 'info');
+      const admitted = serviceDocument.services.map((service: ServiceItem) => ({ ...service, state: 'STOPPED' }));
+      setServices(admitted);
+      addT0Log('Service definitions admitted, not started. No execution receipt exists.', 'info');
+      // Higher boot stages require real host mount, process start and independent readback.
+      addT0Log('BOOT PARTIAL: host mount, assembly and service execution not verified.', 'error');
+    } catch (error) {
+      setStage(0);
+      addT0Log('BOOT BLOCKED: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    } finally {
+      setIsBooting(false);
+    }
   };
 
   // ----------------------------------------------------------------------------
@@ -287,7 +300,7 @@ export function KexMicrokernelVfsBootchain({ onClose, className = '' }: KexMicro
         if (args[0] === 'inspect' || !args[0]) {
           addT0Log('Preloaded VFS Inode Manifest:');
           Object.keys(vfs).forEach((path) => {
-            const bytes = vfs[path].length;
+            const bytes = new TextEncoder().encode(vfs[path]).length;
             addT0Log(`  ${path.padEnd(36)} (${bytes} bytes)`);
           });
         } else {
@@ -301,7 +314,7 @@ export function KexMicrokernelVfsBootchain({ onClose, className = '' }: KexMicro
           break;
         }
         const targetPath = args[0].startsWith('/') ? args[0] : '/' + args[0];
-        if (vfs[targetPath]) {
+        if (Object.prototype.hasOwnProperty.call(vfs, targetPath)) {
           addT0Log(`--- INODE: ${targetPath} ---`, 'info');
           addT0Log(vfs[targetPath]);
           setSelectedFile(targetPath);
@@ -313,12 +326,12 @@ export function KexMicrokernelVfsBootchain({ onClose, className = '' }: KexMicro
       case 'status':
         addT0Log(`Current Stage: ${stage} / 6`);
         addT0Log(`VFS Inodes: ${Object.keys(vfs).length}`);
-        addT0Log(`Services: ${services.length} active`);
+        addT0Log(`Services: ${services.filter(service => service.state === 'RUNNING').length} running / ${services.length} defined`);
         break;
 
       case 'help':
         addT0Log('TERMINAL_0 Bootstrap Directives:');
-        addT0Log('  boot           Execute complete bootchain (/boot/kexboot.json -> Assembler)');
+        addT0Log('  boot           Validate local boot image; host execution requires separate proof');
         addT0Log('  vfs inspect    Enumerate preloaded VFS disk image');
         addT0Log('  cat <path>     Inspect raw file contents in preloaded VFS');
         addT0Log('  status         Report bootchain stage and kernel boundaries');
