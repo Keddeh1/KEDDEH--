@@ -300,7 +300,7 @@ export function KexMicrokernelVfsBootchain({ onClose, className = '' }: KexMicro
         if (args[0] === 'inspect' || !args[0]) {
           addT0Log('Preloaded VFS Inode Manifest:');
           Object.keys(vfs).forEach((path) => {
-            const bytes = vfs[path].length;
+            const bytes = new TextEncoder().encode(vfs[path]).length;
             addT0Log(`  ${path.padEnd(36)} (${bytes} bytes)`);
           });
         } else {
@@ -314,7 +314,7 @@ export function KexMicrokernelVfsBootchain({ onClose, className = '' }: KexMicro
           break;
         }
         const targetPath = args[0].startsWith('/') ? args[0] : '/' + args[0];
-        if (vfs[targetPath]) {
+        if (Object.prototype.hasOwnProperty.call(vfs, targetPath)) {
           addT0Log(`--- INODE: ${targetPath} ---`, 'info');
           addT0Log(vfs[targetPath]);
           setSelectedFile(targetPath);
@@ -326,12 +326,12 @@ export function KexMicrokernelVfsBootchain({ onClose, className = '' }: KexMicro
       case 'status':
         addT0Log(`Current Stage: ${stage} / 6`);
         addT0Log(`VFS Inodes: ${Object.keys(vfs).length}`);
-        addT0Log(`Services: ${services.length} active`);
+        addT0Log(`Services: ${services.filter(service => service.state === 'RUNNING').length} running / ${services.length} defined`);
         break;
 
       case 'help':
         addT0Log('TERMINAL_0 Bootstrap Directives:');
-        addT0Log('  boot           Execute complete bootchain (/boot/kexboot.json -> Assembler)');
+        addT0Log('  boot           Validate local boot image; host execution requires separate proof');
         addT0Log('  vfs inspect    Enumerate preloaded VFS disk image');
         addT0Log('  cat <path>     Inspect raw file contents in preloaded VFS');
         addT0Log('  status         Report bootchain stage and kernel boundaries');
