@@ -583,10 +583,15 @@
 
     async function startTelemetry() {
       setInterval(async () => {
-        const stats = await syscall(6);
-        if (stats) {
-          document.getElementById('val-cpu').textContent = `${stats.cpu.toFixed(1)}%`;
-          document.getElementById('val-mem').textContent = `${stats.memUsed} / ${stats.memTotal} GB`;
+        try {
+          const stats = await syscall(6);
+          if (stats && Number.isFinite(Number(stats.cpu))) {
+            document.getElementById('val-cpu').textContent = `${Number(stats.cpu).toFixed(1)}%`;
+            document.getElementById('val-mem').textContent = `${stats.memUsed ?? '--'} / ${stats.memTotal ?? '--'} GB`;
+          }
+        } catch (error) {
+          document.getElementById('val-cpu').textContent = 'UNAVAILABLE';
+          document.getElementById('val-mem').textContent = 'HOST OFFLINE';
         }
       }, 2000);
     }
